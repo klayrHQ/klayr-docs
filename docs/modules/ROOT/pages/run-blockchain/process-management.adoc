@@ -6,15 +6,15 @@ Muhammad Talha <muhammad.talha@lightcurve.io>
 // External URLs
 :url_pm2_docs: https://pm2.keymetrics.io/docs/usage/quick-start/
 :url_PM2_article: https://futurestud.io/tutorials/pm2-advanced-app-configuration-with-json-file
-:url_mainchain_client: https://github.com/LiskHQ/lisk-core#example-using-pm2
+:url_mainchain_client: https://github.com/KlayrHQ/klayr-core#example-using-pm2
 
 :url_global_cli: build-blockchain/create-blockchain-client.adoc#using-the-client-cli-globally
 :url_build_hello_client: build-blockchain/index.adoc#the-hello-world-client
-:url_core_client: run-blockchain/index.adoc#how-to-set-up-a-lisk-mainnet-node
+:url_core_client: run-blockchain/index.adoc#how-to-set-up-a-klayr-mainnet-node
 :url_startup: https://pm2.keymetrics.io/docs/usage/startup/
 
 // footnotes
-// :fn_sidechain_client_glossary: footnote:client[See xref:{url_mainchain_client}[Running Lisk Core with PM2] for more details.]
+// :fn_sidechain_client_glossary: footnote:client[See xref:{url_mainchain_client}[Running Klayr Core with PM2] for more details.]
 
 // It is recommended to set up an additional process management tool to run a blockchain client{fn_sidechain_client_glossary}.
 It is recommended to set up an additional process management tool to run a blockchain client.
@@ -39,7 +39,7 @@ Once PM2 is installed, you can start your blockchain client via the following tw
 
 === Using a bash script
 A script containing the `./bin/run start` command can be passed to PM2 to initiate the blockchain client on a sidechain node.
-Similarly, the blockchain client of the mainchain can be run via `lisk-core start --network mainnet`.
+Similarly, the blockchain client of the mainchain can be run via `klayr-core start --network mainnet`.
 
 Let's create a script for the blockchain node.
 Create a `run_blockchain_client.sh` file inside the blockchain client's root directory and then copy and paste the following command into it.
@@ -60,7 +60,7 @@ Mainchain::
 --
 [source,bash]
 ----
-lisk-core start --network mainnet
+klayr-core start --network mainnet
 ----
 --
 =====
@@ -116,8 +116,8 @@ Mainchain::
 {
   "apps": [
     {
-      "name": "lisk-core",
-      "script": "lisk-core start --network mainnet"
+      "name": "klayr-core",
+      "script": "klayr-core start --network mainnet"
     }
   ]
 }
@@ -159,7 +159,7 @@ Mainchain::
 ┌------------------------------------------------------------------------------------------------------------------------------------------------┐
 │ id  │ name             │ namespace   │ version │ mode    │ pid      │ uptime │ ↺    │ status    │ cpu    │ mem     │ user  │ watching  │
 ├------------------------------------------------------------------------------------------------------------------------------------------------┤
-│ 0   │ lisk-core        │ default     │ N/A     │ fork    │ 55594    │ 0 s    │ 0    │ online    │ 0%     │ 640.0kb │ XYZ   │ disabled  │
+│ 0   │ klayr-core        │ default     │ N/A     │ fork    │ 55594    │ 0 s    │ 0    │ online    │ 0%     │ 640.0kb │ XYZ   │ disabled  │
 └------------------------------------------------------------------------------------------------------------------------------------------------┘
 ----
 --

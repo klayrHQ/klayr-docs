@@ -6,26 +6,26 @@ Mona Bärenfänger <mona@lightcurve.io> Muhammad Talha <muhammad.talha@lightcurv
 // URLs
 :url_json_schema: https://json-schema.org/specification.html
 :url_json_schema_id: https://json-schema.org/understanding-json-schema/structuring.html#id
-:url_lip27_uniqueness: https://github.com/LiskHQ/lips/blob/master/proposals/lip-0027.md#uniqueness-of-encoding
-:url_token_schema: https://github.com/LiskHQ/lisk-sdk/blob/development/framework/src/modules/token/schemas.ts
-:url_faucet_schema: https://github.com/LiskHQ/lisk-sdk/blob/development/framework-plugins/lisk-framework-faucet-plugin/src/plugin/schemas.ts
+:url_lip27_uniqueness: https://github.com/KlayrHQ/lips/blob/master/proposals/lip-0027.md#uniqueness-of-encoding
+:url_token_schema: https://github.com/KlayrHQ/klayr-sdk/blob/development/framework/src/modules/token/schemas.ts
+:url_faucet_schema: https://github.com/KlayrHQ/klayr-sdk/blob/development/framework-plugins/klayr-framework-faucet-plugin/src/plugin/schemas.ts
 :url_type_keyword: https://json-schema.org/understanding-json-schema/reference/type.html#type
 :url_required_keyword: https://json-schema.org/understanding-json-schema/reference/object.html#required-properties
 :url_properties_keyword: https://json-schema.org/understanding-json-schema/reference/object.html#properties
 
-:url_typedoc_validator: {site-url}/lisk-sdk/v6/references/typedoc/modules/_liskhq_lisk_validator.html
-:url_typedoc_codec: {site-url}/lisk-sdk/v6/references/typedoc/modules/_liskhq_lisk_codec.html
+:url_typedoc_validator: {site-url}/klayr-sdk/v6/references/typedoc/modules/_klayrhq_klayr_validator.html
+:url_typedoc_codec: {site-url}/klayr-sdk/v6/references/typedoc/modules/_klayrhq_klayr_codec.html
 
 // Project URLs
 :url_introduction_modules_accountschema: understand-blockchain/sdk/modules-commands.adoc#account-schema
 :url_introduction_modules_assetschema: understand-blockchain/sdk/modules-commands.adoc#transaction-asset-schema
 :url_guides_decode: integrate-blockchain/encode-decode.adoc
 
-:fn_account: footnote:AccountCodec[Check out the sample usage of the account schemas with a codec: https://github.com/LiskHQ/lisk-sdk/blob/development/elements/lisk-codec/benchmark/encode_decode_account.js[Encode & decode an account's schema^].]
+:fn_account: footnote:AccountCodec[Check out the sample usage of the account schemas with a codec: https://github.com/KlayrHQ/klayr-sdk/blob/development/elements/klayr-codec/benchmark/encode_decode_account.js[Encode & decode an account's schema^].]
 
-:fn_block: footnote:blockCodec[Check out the sample usage of block schemas with a codec: https://github.com/LiskHQ/lisk-sdk/blob/development/elements/lisk-codec/benchmark/encode_decode_full_block.js[Encode & decode a block's schema^].]
+:fn_block: footnote:blockCodec[Check out the sample usage of block schemas with a codec: https://github.com/KlayrHQ/klayr-sdk/blob/development/elements/klayr-codec/benchmark/encode_decode_full_block.js[Encode & decode a block's schema^].]
 
-:fn_transaction: footnote:transactionCodec[Check out the sample usage of transaction schemas with a codec: https://github.com/LiskHQ/lisk-sdk/blob/development/elements/lisk-codec/benchmark/encode_decode_small_lisk_transaction.js[Encode & decode a transaction's schema^].]
+:fn_transaction: footnote:transactionCodec[Check out the sample usage of transaction schemas with a codec: https://github.com/KlayrHQ/klayr-sdk/blob/development/elements/klayr-codec/benchmark/encode_decode_small_klayr_transaction.js[Encode & decode a transaction's schema^].]
 
 
 
@@ -35,20 +35,20 @@ A "schema" is just a declarative format for describing the structure of data.
 Since data can be of various types, such as personal data, financial data, etc., it is essential for a software to pre-define the types of data it will process.
 With schemas, custom properties can be defined to fulfill various configuration and business logic requirements.
 
-Schemas play a vital role within the Lisk SDK, as they are utilized in different areas to encode and decode data that is retrieved or pushed to the blockchain.
-Schemas also provide the ability to validate diverse types of data in the Lisk blockchain.
+Schemas play a vital role within the Klayr SDK, as they are utilized in different areas to encode and decode data that is retrieved or pushed to the blockchain.
+Schemas also provide the ability to validate diverse types of data in the Klayr blockchain.
 
-In Lisk SDK, schemas are mainly used in the following:
+In Klayr SDK, schemas are mainly used in the following:
 
 * *Modules:* whereby modules can have various data structures which are used for storing, validating, and configuring the business logic of a module. 
 ** For example, the {url_token_schema}[schema of the Token module^] defines properties used by the *Token* module commands, the configurations applied to the module, and the request and response schemas for the endpoints among various other properties.
 * *Plugins:* whereby plugins can also have similar needs of storing data in variables, validating it, or using schema to configure a plugin.
  ** For example, the *Faucet* plugin used to seed newly created accounts uses various schemas as defined in its particular {url_faucet_schema}[schemas.ts^] file. 
 * *Codec:* Schemas are also used to encode or decode data such as blocks, transactions, account state, blockchain state data, etc.
-For more information, see the {url_typedoc_validator}[Lisk Validator reference^].
-* *Lisk Validator:* The Lisk validator also relies on pre-defined schemas.
+For more information, see the {url_typedoc_validator}[Klayr Validator reference^].
+* *Klayr Validator:* The Klayr validator also relies on pre-defined schemas.
 It used each schema to validate the data passed to it according to its pre-defined schema.
-For more information, see the {url_typedoc_codec}[Lisk Codec reference^].
+For more information, see the {url_typedoc_codec}[Klayr Codec reference^].
 
 // for the xref:{url_introduction_modules_assetschema}[schema], which defines the data structure and formats of the transaction asset.
 // * modules and/or assets, to <<decoding-and-encoding-data,decode/encode>> other specific data from the database, such as blocks, transactions, account state, and chain state data.
@@ -57,7 +57,7 @@ For more information, see the {url_typedoc_codec}[Lisk Codec reference^].
 A schema always defines the data types that will be used to store specific data.
 When the data is retrieved from the data store by a module or from an external database by a plugin, it is returned as a JavaScript object or JSON (JavaScript Object Notation), depending on the context:
 
-* *JavaScript object:* These data types are used *internally* in the Lisk application to handle data from the data stores.
+* *JavaScript object:* These data types are used *internally* in the Klayr application to handle data from the data stores.
 * *JSON:* Data that is provided by *actions* and *events* is always returned in JSON format.
 
 .Data types of the different data structures
@@ -115,7 +115,7 @@ Please note the following:
 [source,js]
 ----
 export const transferParamsSchema = {
-	$id: '/lisk/transferParams',
+	$id: '/klayr/transferParams',
 	title: 'Transfer transaction params',
 	type: 'object',
 	required: ['tokenID', 'amount', 'recipientAddress', 'data'],
@@ -133,7 +133,7 @@ export const transferParamsSchema = {
 		recipientAddress: {
 			dataType: 'bytes',
 			fieldNumber: 3,
-			format: 'lisk32',
+			format: 'klayr32',
 		},
 		data: {
 			dataType: 'string',
@@ -157,12 +157,12 @@ Whilst defining IDs, adhere to the following criteria:
 * Use unique IDs across the system.
 * Use the path-like format for readability; while this may not be a necessary convention to follow, it does however aid in defining unique IDs.
 You can also create a series of unique IDs as well.
-* To avoid overlapping schemas with each other, use a fixed identifier for your app in each ID e.g. `/lisk/`, etc.
+* To avoid overlapping schemas with each other, use a fixed identifier for your app in each ID e.g. `/klayr/`, etc.
 
 .Example of $id
 [source,js]
 ----
-$id: '/lisk/transferParams'
+$id: '/klayr/transferParams'
 ----
 
 === type
@@ -228,9 +228,9 @@ default: {
 == Codec
 
 A codec is a device or computer program that encodes or decodes a data stream or signal.
-In Lisk, the codec is essential for validating, transforming, encoding, and decoding data for the Lisk protocol.
+In Klayr, the codec is essential for validating, transforming, encoding, and decoding data for the Klayr protocol.
 
-Lisk uses the `lisk-codec` package to encode, decode  and perform the aforementioned operations on different objects such as the following:
+Klayr uses the `klayr-codec` package to encode, decode  and perform the aforementioned operations on different objects such as the following:
 
 * Accounts {fn_account}
 * Transactions {fn_transaction}
@@ -241,19 +241,19 @@ Lisk uses the `lisk-codec` package to encode, decode  and perform the aforementi
 * Plugins
 * ... and many more.
 
-By default, the `lisk-codec` package can be found in the following NPM packages:
+By default, the `klayr-codec` package can be found in the following NPM packages:
 
-* `lisk-sdk`
-* `@liskhq/lisk-client`
-* `@liskhq/lisk-codec`
+* `klayr-sdk`
+* `@klayrhq/klayr-client`
+* `@klayrhq/klayr-codec`
 
-TIP: To see a complete reference of the `*lisk-codec*` package, see {url_typedoc_codec}[Lisk Codec reference^].
+TIP: To see a complete reference of the `*klayr-codec*` package, see {url_typedoc_codec}[Klayr Codec reference^].
 
-In case, it is required to install `lisk-codec`, the following command can be used:
+In case, it is required to install `klayr-codec`, the following command can be used:
 
 [source,bash]
 ----
-npm install --save @liskhq/lisk-codec
+npm install --save @klayrhq/klayr-codec
 ----
 
 TIP: To learn about how codec and schemas are used to encode and decode data, checkout out our dedicated guide: xref:{url_guides_decode}[].
@@ -268,26 +268,26 @@ TIP: To learn about how codec and schemas are used to encode and decode data, ch
 
 // // Please refer to the dedicated guide xref:{url_guides_decode}[].
 
-// === With lisk-codec
+// === With klayr-codec
 
 // To conveniently decode and encode the data structures stored on the blockchain, such as blocks, transactions, account state, and chain state, use the `codec` library.
 // The library can be imported from the following NPM packages:
 
-// * `lisk-sdk`
-// * `@liskhq/lisk-client`
-// * `@liskhq/lisk-codec`
+// * `klayr-sdk`
+// * `@klayrhq/klayr-client`
+// * `@klayrhq/klayr-codec`
 
-// .Example: Importing the codec library from the lisk-sdk package
+// .Example: Importing the codec library from the klayr-sdk package
 // [source,js]
 // ----
 // const {
 //     codec,
-// } = require('lisk-sdk');
+// } = require('klayr-sdk');
 
 // const CHAIN_STATE_KEY = "myContext:moreContext";
 
 // const schema = {
-//     $id: "lisk/myContext/moreContext",
+//     $id: "klayr/myContext/moreContext",
 //     type: "object",
 //     required: ["myCounter"],
 //     properties: {

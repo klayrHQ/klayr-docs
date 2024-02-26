@@ -3,9 +3,9 @@ Muhammad Talha <muhammad.talha@lightcurve.io>
 // Settings
 :toc: preamble
 //URLs
-:url_typedoc_random: {site-url}/lisk-sdk/v6/references/typedoc/classes/lisk_framework.RandomModule.html
+:url_typedoc_random: {site-url}/klayr-sdk/v6/references/typedoc/classes/klayr_framework.RandomModule.html
 
-:url_random: https://github.com/LiskHQ/lisk-sdk/blob/development/framework/src/modules/random/endpoint.ts
+:url_random: https://github.com/KlayrHQ/klayr-sdk/blob/development/framework/src/modules/random/endpoint.ts
 
 //Project URLs
 :url_integrate_endpoints: integrate-blockchain/connecting-endpoints.adoc
@@ -37,7 +37,7 @@ Specification::
 
 |`generatorAddress`
 |string
-|The Lisk32 address of a validator.
+|The Klayr32 address of a validator.
 |lskdwsyfmcko6mcd357446yatromr9vzgu7eb8y99
 
 |`seedReveal`
@@ -51,7 +51,7 @@ Node CLI::
 --
 [source,bash]
 ----
-lisk-core endpoint:invoke random_isSeedRevealValid '{"generatorAddress":"lskdwsyfmcko6mcd357446yatromr9vzgu7eb8y99", "seedReveal":"c0f96ff4416b6c9ff0f641527dec0a27"}' --pretty
+klayr-core endpoint:invoke random_isSeedRevealValid '{"generatorAddress":"lskdwsyfmcko6mcd357446yatromr9vzgu7eb8y99", "seedReveal":"c0f96ff4416b6c9ff0f641527dec0a27"}' --pretty
 ----
 
 --
@@ -105,7 +105,7 @@ Specification::
 
 |`address`
 |string
-|The Lisk32 address of a validator.
+|The Klayr32 address of a validator.
 |lskdwsyfmcko6mcd357446yatromr9vzgu7eb8y99
 
 |`seed`
@@ -129,7 +129,7 @@ Node CLI::
 --
 [source,bash]
 ----
-lisk-core endpoint:invoke random_setHashOnion '{"address":"lskdwsyfmcko6mcd357446yatromr9vzgu7eb8y99", "seed": "e025160dfc93688a01c96ab9f3e0a29e", "count": 1000000, "distance": 1000}' --pretty
+klayr-core endpoint:invoke random_setHashOnion '{"address":"lskdwsyfmcko6mcd357446yatromr9vzgu7eb8y99", "seed": "e025160dfc93688a01c96ab9f3e0a29e", "count": 1000000, "distance": 1000}' --pretty
 ----
 
 --
@@ -183,7 +183,7 @@ Specification::
 
 |`address`
 |string
-|The Lisk32 address of a validator.
+|The Klayr32 address of a validator.
 |lskdwsyfmcko6mcd357446yatromr9vzgu7eb8y99
 
 |===
@@ -193,7 +193,7 @@ Node CLI::
 --
 [source,bash]
 ----
-lisk-core endpoint:invoke random_getHashOnionSeeds '{"address":"lskdwsyfmcko6mcd357446yatromr9vzgu7eb8y99"}' --pretty
+klayr-core endpoint:invoke random_getHashOnionSeeds '{"address":"lskdwsyfmcko6mcd357446yatromr9vzgu7eb8y99"}' --pretty
 ----
 
 --
@@ -254,7 +254,7 @@ Specification::
 
 |`address`
 |string
-|The Lisk32 address of a validator.
+|The Klayr32 address of a validator.
 |lskdwsyfmcko6mcd357446yatromr9vzgu7eb8y99
 
 |===
@@ -264,7 +264,7 @@ Node CLI::
 --
 [source,bash]
 ----
-lisk-core endpoint:invoke random_hasHashOnion '{"address":"lskdwsyfmcko6mcd357446yatromr9vzgu7eb8y99"}' --pretty
+klayr-core endpoint:invoke random_hasHashOnion '{"address":"lskdwsyfmcko6mcd357446yatromr9vzgu7eb8y99"}' --pretty
 ----
 
 --
@@ -320,7 +320,7 @@ Specification::
 
 |`address`
 |string
-|The Lisk32 address of a validator.
+|The Klayr32 address of a validator.
 |lskdwsyfmcko6mcd357446yatromr9vzgu7eb8y99
 |===
 --
@@ -329,7 +329,7 @@ Node CLI::
 --
 [source,bash]
 ----
-lisk-core endpoint:invoke random_getHashOnionUsage '{"address":"lskdwsyfmcko6mcd357446yatromr9vzgu7eb8y99"}' --pretty
+klayr-core endpoint:invoke random_getHashOnionUsage '{"address":"lskdwsyfmcko6mcd357446yatromr9vzgu7eb8y99"}' --pretty
 ----
 
 --
@@ -390,7 +390,7 @@ Specification::
 
 |`address`
 |string
-|The Lisk32 address of a validator.
+|The Klayr32 address of a validator.
 |lskdwsyfmcko6mcd357446yatromr9vzgu7eb8y99
 
 |`usedHashOnions`
@@ -412,7 +412,7 @@ Node CLI::
 --
 [source,bash]
 ----
-lisk-core endpoint:invoke random_setHashOnionUsage '{"address":"lskdwsyfmcko6mcd357446yatromr9vzgu7eb8y99", "usedHashOnions": [{"count": 10, "height":100 }]}' --pretty
+klayr-core endpoint:invoke random_setHashOnionUsage '{"address":"lskdwsyfmcko6mcd357446yatromr9vzgu7eb8y99", "usedHashOnions": [{"count": 10, "height":100 }]}' --pretty
 ----
 
 --

@@ -1,4 +1,4 @@
-= Lisk Documentation
+= Klayr Documentation
 :hide-uri-scheme:
 :idprefix:
 :toc: preamble
@@ -7,21 +7,21 @@
 :url_antora_ui_docs: https://docs.antora.org/antora-ui-default/
 :url_antora: https://antora.org/
 :url_antora_directories: https://docs.antora.org/antora/latest/standard-directories/
-:url_docs: https://lisk.com/documentation
-:url_docs_gitpage: https://liskhq.github.io/lisk-docs
-:url_github_sdk: https://github.com/LiskHQ/lisk-sdk/tree/development/docs/antora
-:url_github_core: https://github.com/LiskHQ/lisk-core/tree/development/docs/antora
-:url_github_service: https://github.com/LiskHQ/lisk-service/tree/development/docs/antora
-:url_github_lips: https://github.com/LiskHQ/lips
+:url_docs: https://klayrhq.github.io/klayr-docs
+:url_docs_gitpage: https://klayrhq.github.io/klayr-docs
+:url_github_sdk: https://github.com/KlayrHQ/klayr-sdk/tree/development/docs
+:url_github_core: https://github.com/KlayrHQ/klayr-core/tree/development/docs/antora
+:url_github_service: https://github.com/KlayrHQ/klayr-service/tree/development/docs/antora
+:url_github_lips: https://github.com/KlayrHQ/lips
 
-The {url_docs}[Lisk documentation^] includes explanations, guides, tutorials, and references about
+The {url_docs}[Klayr documentation^] includes explanations, guides, tutorials, and references about
 
-* the {url_github_sdk}[Lisk SDK^],
-* {url_github_core}[Lisk Core^],
-* {url_github_service}[Lisk Service^],
-* and the {url_github_lips}[Lisk protocol^] in general
+* the {url_github_sdk}[Klayr SDK^],
+* {url_github_core}[Klayr Core^],
+* {url_github_service}[Klayr Service^],
+* and the {url_github_lips}[Klayr protocol^] in general
 
-The Lisk documentation uses {url_antora}[Antora^] as a documentation generator.
+The Klayr documentation uses {url_antora}[Antora^] as a documentation generator.
 
 == Repository structure
 
@@ -29,7 +29,7 @@ The internal structure of `development` and `main` branch.
 
 === The `docs/` folder
 
-The source content for the general Lisk documentation is located in the `docs/` folder.
+The source content for the general Klayr documentation is located in the `docs/` folder.
 
 The file structure follows the expected structure for Antora documentation, see: {url_antora_directories}[^].
 
@@ -43,7 +43,7 @@ The UI is based on the {url_antora_ui}[Antora default UI^] (see also {url_antora
 
 It is customized as listed in the following points below:
 
-* Updated the CSS to improve the UX and follow the Lisk brand styleguide.
+* Updated the CSS to improve the UX and follow the Klayr brand styleguide.
 * Added additional features, such as:
 ** Algolia site search
 ** Dark theme
@@ -55,9 +55,9 @@ It is customized as listed in the following points below:
 === The `build/` folder
 The `build` folder contains the following:
 
-* ...the `site.yml` file, which is used to generate the Lisk documentation using Antora.
+* ...the `site.yml` file, which is used to generate the Klayr documentation using Antora.
 * ...the `searchdocs-scraper` folder, for creating the search index.
-* ...the `lib` folder which stores the Asciidoc extensions that are used in the Lisk documentation.
+* ...the `lib` folder which stores the Asciidoc extensions that are used in the Klayr documentation.
 
 ----
 .
@@ -76,11 +76,11 @@ Results are pushed to the `git-page` branch.
 
 == Contributors
 
-https://github.com/LiskHQ/lisk-docs/graphs/contributors
+https://github.com/KlayrHQ/klayr-docs/graphs/contributors
 
 == License
 
-Copyright 2016-2023 Lisk Foundation
+Copyright 2016-2023 Klayr
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.

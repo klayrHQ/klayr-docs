@@ -3,7 +3,7 @@ Mona Bärenfänger <mona@lightcurve.io>
 // Settings
 :toc: preamble
 //URLs
-:url_typedoc_interopmc: {site-url}/lisk-sdk/v6/references/typedoc/classes/lisk_framework.MainchainInteroperabilityModule.html
+:url_typedoc_interopmc: {site-url}/klayr-sdk/v6/references/typedoc/classes/klayr_framework.MainchainInteroperabilityModule.html
 //Project URLs
 :url_integrate_endpoints: integrate-blockchain/connecting-endpoints.adoc
 :url_command_fee: understand-blockchain/blocks-txs.adoc#command-fee
@@ -31,7 +31,7 @@ Node CLI::
 --
 [source,bash]
 ----
-lisk-core endpoint:invoke interoperability_getRegistrationFee
+klayr-core endpoint:invoke interoperability_getRegistrationFee
 ----
 
 --
@@ -78,7 +78,7 @@ Node CLI::
 --
 [source,bash]
 ----
-lisk-core endpoint:invoke interoperability_getMinimumMessageFee
+klayr-core endpoint:invoke interoperability_getMinimumMessageFee
 ----
 
 --
@@ -137,7 +137,7 @@ Node CLI::
 --
 [source,bash]
 ----
-lisk-core endpoint:invoke interoperability_isChainIDAvailable '{ "chainID": "00000001" }'
+klayr-core endpoint:invoke interoperability_isChainIDAvailable '{ "chainID": "00000001" }'
 ----
 
 --
@@ -196,7 +196,7 @@ Node CLI::
 --
 [source,bash]
 ----
-lisk-core endpoint:invoke interoperability_isChainNameAvailable '{ "name": "sidechain_1" }'
+klayr-core endpoint:invoke interoperability_isChainNameAvailable '{ "name": "sidechain_1" }'
 ----
 
 --

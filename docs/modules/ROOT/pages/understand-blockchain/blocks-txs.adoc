@@ -4,34 +4,34 @@
 :idprefix:
 :idseparator: -
 // URLs
-:url_lip14_reduction: https://github.com/LiskHQ/lips/blob/main/proposals/lip-0014.md#incentivizing-lisk-bft-protocol-participation
-:url_lip42_constants: https://github.com/LiskHQ/lips/blob/main/proposals/lip-0042.md#constants
-:url_lip71_rewardcomputation: https://github.com/LiskHQ/lips/blob/main/proposals/lip-0071.md#reward-computation
-:url_lip55: https://github.com/LiskHQ/lips/blob/main/proposals/lip-0055.md
-:url_typedoc_command_registervalidator: {site-url}/lisk-sdk/v6/references/typedoc/classes/lisk_framework.ValidatorRegistrationCommand.html
-:url_typedoc_command_registersc: {site-url}/lisk-sdk/v6/references/typedoc/classes/lisk_framework.RegisterSidechainCommand.html
-:url_typedoc_command_transfer: {site-url}/lisk-sdk/v6/references/typedoc/classes/lisk_framework.TransferCommand.html
+:url_lip14_reduction: https://github.com/KlayrHQ/lips/blob/main/proposals/lip-0014.md#incentivizing-klayr-bft-protocol-participation
+:url_lip42_constants: https://github.com/KlayrHQ/lips/blob/main/proposals/lip-0042.md#constants
+:url_lip71_rewardcomputation: https://github.com/KlayrHQ/lips/blob/main/proposals/lip-0071.md#reward-computation
+:url_lip55: https://github.com/KlayrHQ/lips/blob/main/proposals/lip-0055.md
+:url_typedoc_command_registervalidator: {site-url}/klayr-sdk/v6/references/typedoc/classes/klayr_framework.ValidatorRegistrationCommand.html
+:url_typedoc_command_registersc: {site-url}/klayr-sdk/v6/references/typedoc/classes/klayr_framework.RegisterSidechainCommand.html
+:url_typedoc_command_transfer: {site-url}/klayr-sdk/v6/references/typedoc/classes/klayr_framework.TransferCommand.html
 // Project URLs
 :url_what_is_blockchain: intro/what-is-blockchain.adoc
 :url_intro_consensus: intro/how-blockchain-works.adoc#consensus-mechanisms
 :url_understand_state_machine: understand-blockchain/state-machine.adoc
 :url_understand_consensus: understand-blockchain/consensus/index.adoc
-:url_understand_network: understand-blockchain/lisk-protocol/network.adoc
+:url_understand_network: understand-blockchain/klayr-protocol/network.adoc
 :url_understand_state_machine_tree: understand-blockchain/state-machine.adoc#the-blockchain-state-as-sparse-merkle-tree
 :url_understand_sdk_commands: understand-blockchain/sdk/modules-commands.adoc#commands
 :url_understand_sdk_modules: understand-blockchain/sdk/modules-commands.adoc
 //Footnotes
 :fnlip42: footnote:lip42[To learn more about the different reasons that can lead to a reduction of block rewards, please refer to {url_lip42_constants}[LIP 0042 - Define state transitions of Reward module^] and {url_lip14_reduction}[LIP 0014 - Introduce BFT consensus protocol^].]
 :fnlip71: footnote:lip71[To see how the rewards are calculated, please refer to {url_lip71_rewardcomputation}[LIP 0071 - Introduce dynamic block rewards module^].]
-:fn_gpk: footnote:generatorPublicKey[Previously the `generatorPublicKey` property (see https://github.com/LiskHQ/lips/blob/main/proposals/lip-0055.md#change-generator-public-key-to-generator-address[LIP 0055^] for more information).]
-:fn_eventroot: footnote:eventroot[See https://github.com/LiskHQ/lips/blob/main/proposals/lip-0065.md[LIP 0065^] for the reason why it needs to be included in a block header.]
-:fn_stateroot: footnote:stateroot[See https://github.com/LiskHQ/lips/blob/main/proposals/lip-0040.md[LIP 0040^] for the reason why it needs to be included in a block header.]
-:fn_aggregate: footnote:aggregate[See https://github.com/LiskHQ/lips/blob/main/proposals/lip-0061.md[LIP 0061^] for more details.]
+:fn_gpk: footnote:generatorPublicKey[Previously the `generatorPublicKey` property (see https://github.com/KlayrHQ/lips/blob/main/proposals/lip-0055.md#change-generator-public-key-to-generator-address[LIP 0055^] for more information).]
+:fn_eventroot: footnote:eventroot[See https://github.com/KlayrHQ/lips/blob/main/proposals/lip-0065.md[LIP 0065^] for the reason why it needs to be included in a block header.]
+:fn_stateroot: footnote:stateroot[See https://github.com/KlayrHQ/lips/blob/main/proposals/lip-0040.md[LIP 0040^] for the reason why it needs to be included in a block header.]
+:fn_aggregate: footnote:aggregate[See https://github.com/KlayrHQ/lips/blob/main/proposals/lip-0061.md[LIP 0061^] for more details.]
 
 
 == Blocks
 
-Blocks following the Lisk protocol have three main properties:
+Blocks following the Klayr protocol have three main properties:
 
 . <<block-header>>: includes properties relevant to the consensus domain.
 . <<block-assets>>: an array of objects containing data injected during the block creation.
@@ -39,7 +39,7 @@ Blocks following the Lisk protocol have three main properties:
 Each block can include a maximum of 15 kB of transactions.
 
 .Anatomy of a block
-image::understand-blockchain/block.png["Anatomy of a Lisk block",300,align="center"]
+image::understand-blockchain/block.png["Anatomy of a Klayr block",300,align="center"]
 
 Detailed descriptions of the main properties of a block are provided in the following sections.
 
@@ -96,7 +96,7 @@ The most important properties of the block header are:
 * `stateRoot`: The root of the Sparse Merkle Tree that is computed from the state of the blockchain.
 The state root is the root of the Sparse Merkle Tree built from the state of the chain after the block has been processed{fn_stateroot}.
 
-Besides the above properties, each block header contains various additional properties, required for deeper technical aspects of the Lisk blockchain.
+Besides the above properties, each block header contains various additional properties, required for deeper technical aspects of the Klayr blockchain.
 Expand below boxes for a description of the additional properties, and see the JSON schema for an overview of all properties included in the header.
 Check {url_lip55}[LIP 0055^] for additional information about the block header.
 
@@ -106,11 +106,11 @@ Check {url_lip55}[LIP 0055^] for additional information about the block header.
 * `version`: The block header version must be equal the value of a block of the previous protocol plus one.
 * `assetRoot`: The root of the Merkle tree computed from the <<block-assets>> array.
 * `eventRoot`: The root of the Sparse Merkle Tree that is computed from the events emitted during the block processing{fn_eventroot}.
-//TODO: Add link to Lisk BFT explanation
-* `maxHeightPrevoted`: This property is related to the Lisk-BFT protocol and is used for the fork choice rule.
-//TODO: Add link to Lisk BFT explanation
-* `maxHeightGenerated`: This property is related to the Lisk-BFT protocol and is used to check for contradicting block headers.
-//TODO: Add link to Lisk interoperability explanation about certificates
+//TODO: Add link to Klayr BFT explanation
+* `maxHeightPrevoted`: This property is related to the Klayr-BFT protocol and is used for the fork choice rule.
+//TODO: Add link to Klayr BFT explanation
+* `maxHeightGenerated`: This property is related to the Klayr-BFT protocol and is used to check for contradicting block headers.
+//TODO: Add link to Klayr interoperability explanation about certificates
 * `validatorsHash`: This property authenticates the set of validators active from the next block onward.
 It is important for cross-chain certification and included in certificates.
 * `aggregateCommit`: This property contains the aggregate BLS signature for a certificate and the height of the certified block.
@@ -234,7 +234,7 @@ Each entry of the block assets is then inserted in a Merkle tree, whose root is 
 
 NOTE: Inserting the assets root rather than the full assets allows to bound the size of the block header to a fixed size, while still authenticating the content of the block assets.
 
-As an example, blockchains created with the Lisk SDK that implements the Random module will insert the seed reveal property in the block assets.
+As an example, blockchains created with the Klayr SDK that implements the Random module will insert the seed reveal property in the block assets.
 
 ==== JSON schema
 
@@ -282,7 +282,7 @@ The percentage can be obtained by dividing the value by 100, i.e., a value of 10
 In principle, if the percentage of rewards shared equally among the active validators is set to 0%, then it will be a proof-of-stake system where the rewards are proportional to the validator weight.
 On the other hand, if the percentage of rewards shared equally among the active validators is set to 100%, it will be the previous proof-of-stake (PoS) system where each validator received the same reward for generating a block irrespective of their weights.
 +
-For the Lisk mainchain, the factor is: 1000 (10%).
+For the Klayr mainchain, the factor is: 1000 (10%).
 
 minimumRewardActiveValidators::
 The minimum reward per round for an active validator.
@@ -293,17 +293,17 @@ factorMinRewardActiveValidators * (getDefaultRewardAtHeight(blockHeader.height))
 +
 `blockHeader.height` corresponds to the current block height and `getDefaultRewardAtHeight` returns the <<default-block-reward>> for the respective height.
 +
-For the Lisk mainchain, the minimum reward is calculated like this:
+For the Klayr mainchain, the minimum reward is calculated like this:
 +
 ----
-10^7^ Beddows or 0.1 LSK = 1000 * (100000000 / 10000) = 1000 * 10000
+10^7^ Beddows or 0.1 KLY = 1000 * (100000000 / 10000) = 1000 * 10000
 ----
 
 ==== Rewards proportional to the validators weight
 The remaining stake rewards i.e., `stakeRewardActiveValidators` are distributed proportional to the validators weight.
 It is given to the active validators (per round) after giving the <<minimum-reward-for-active-validators,minimum reward>>.
 
-For the Lisk mainchain, the total rewards are calculated like this{fnlip71}:
+For the Klayr mainchain, the total rewards are calculated like this{fnlip71}:
 
 [NOTE]
 ====
@@ -321,10 +321,10 @@ Pos.getActiveValidatorsNumber * getDefaultRewardAtHeight(blockHeader.height)
 ----
 * `Pos.getActiveValidatorsNumber` corresponds to the number of active validators in the network.
 +
-For the Lisk mainchain, the total reward per round is calculated like this:
+For the Klayr mainchain, the total reward per round is calculated like this:
 +
 ----
-101 * 10^8^ Beddows or 101 LSK = 101 * 100000000 Beddows
+101 * 10^8^ Beddows or 101 KLY = 101 * 100000000 Beddows
 ----
 
 stakeRewardActiveValidators::
@@ -334,10 +334,10 @@ The remaining rewards for active validators (per round) after giving the minimum
 totalRewardActiveValidators - Pos.getActiveValidatorsNumber * minimumRewardActiveValidators
 ----
 +
-For the Lisk mainchain, the total reward per round is calculated like this:
+For the Klayr mainchain, the total reward per round is calculated like this:
 +
 ----
-90.9 * 10^8^ Beddows or 90.9 LSK = 10100000000 - (101 * 10000000) = 101 * 10^8 - 101 * 10^7^
+90.9 * 10^8^ Beddows or 90.9 KLY = 10100000000 - (101 * 10000000) = 101 * 10^8 - 101 * 10^7^
 ----
 
 ==== Default reward for standby validators
@@ -353,45 +353,45 @@ The default reward per round for standby validators irrespective of their valida
 getDefaultRewardAtHeight(blockHeader.height)
 ----
 +
-For the Lisk mainchain, the default reward for standby validators is: 10^8^ Beddows or 1 LSK.
+For the Klayr mainchain, the default reward for standby validators is: 10^8^ Beddows or 1 KLY.
 
 ==== Default block reward
 The amount for the default block reward depends on the block height according to the table shown below:
 
-.Default block reward milestones on the Lisk Mainnet
+.Default block reward milestones on the Klayr Mainnet
 [cols="1,1",options="header",stripes="hover"]
 |===
 |Heights
 |Reward
 
 |From 1,451,520 to 4,451,519
-|5 LSK
+|5 KLY
 
 |From 4,451,520 to 7,451,519
-|4 LSK
+|4 KLY
 
 |From 7,451,520 to 10,451,519
-|3 LSK
+|3 KLY
 
 |From 10,451,520 to 13,451,519
-|2 LSK
+|2 KLY
 
 |From 13,451,520 onwards
-|1 LSK
+|1 KLY
 |===
 
 ==== Minting of the rewards
 After applying the block, a certain quantity of the native token of the blockchain is minted.
 The exact amount assigned to the block generator.
 
-Currently, in the Lisk mainchain, the inflation is limited to a maximum minting of `6 * 60 * 24 * 365 = 3153600 LSK` per year.
-Every time a validator misses their block, 1 LSK less is minted per year.
+Currently, in the Klayr mainchain, the inflation is limited to a maximum minting of `6 * 60 * 24 * 365 = 3153600 KLY` per year.
+Every time a validator misses their block, 1 KLY less is minted per year.
 
 ==== Reward for missed blocks
 Validators get rewards proportional to the validator weight.
 If a validator misses a block, then another validator will be chosen to generate the block.
 
-To respect the maximum of 3153600 newly minted LSK per year, and to ensure it will not be profitable for any validator if any other validator misses a block, validators who generate blocks for the second time in the round, get the <<minimum-reward-for-active-validators,minimumRewardActiveValidators>> for the second block.
+To respect the maximum of 3153600 newly minted KLY per year, and to ensure it will not be profitable for any validator if any other validator misses a block, validators who generate blocks for the second time in the round, get the <<minimum-reward-for-active-validators,minimumRewardActiveValidators>> for the second block.
 
 ==== Reward reduction
 The reward can be reduced for various reasons{fnlip42}, specifically for not participating in BFT block finalization or failure to properly reveal the random seed.
@@ -421,7 +421,7 @@ This is completed after all transactions in the payload have been applied.
 It should be noted that a validator cannot receive and spend the reward in the same block.
 
 === Projected token supply
-Blockchains following the Lisk protocol do not have a bounded token supply.
+Blockchains following the Klayr protocol do not have a bounded token supply.
 For every block generated, the amount of available tokens increases, as new tokens are minted for the <<block-rewards>>.
 This increase is obtained by subtracting the <<minimum-transaction-fee,burned fees>> from the block reward.
 
@@ -463,7 +463,7 @@ The answer to this question very much depends on the size of the particular tran
 As every transaction type expects a different set of params to be included in the transaction, the size of transactions can vary significantly between different transaction types.
 
 Let's make an example of simple token transfer transactions.
-If you assume all transactions are the simplest token transfers (Alice sends 5LSK to Bob etc.) then the size of each transaction is 153 Bytes.
+If you assume all transactions are the simplest token transfers (Alice sends 5KLY to Bob etc.) then the size of each transaction is 153 Bytes.
 Each block can include a maximum of 15 kB of transactions.
 This results in maximum 100 token transfer transactions per block:
 
@@ -507,7 +507,7 @@ The minimum fee for a valid transaction is in this case:
 
 The minimum fee per byte is defined in the configuration options of the Fee module.
 
-The default value for `minFeePerByte` is 1000 Beddows, or 0.00001 LSK.
+The default value for `minFeePerByte` is 1000 Beddows, or 0.00001 KLY.
 
 TIP: It is possible to configure a blockchain to have no transaction fee, by setting the `minFeePerByte` to 0 in the config.
 
@@ -517,13 +517,13 @@ Command fees, or command execution fees, are fees that need to be paid only, if 
 
 The following commands require an extra command fee:
 
-* {url_typedoc_command_registervalidator}[Validator Registration^] command: 10 LSK
-* {url_typedoc_command_registersc}[Sidechain registration^] command: 10 LSK
-* {url_typedoc_command_transfer}[Transfer^] command to a new account: 0.05 LSK
+* {url_typedoc_command_registervalidator}[Validator Registration^] command: 10 KLY
+* {url_typedoc_command_registersc}[Sidechain registration^] command: 10 KLY
+* {url_typedoc_command_transfer}[Transfer^] command to a new account: 0.05 KLY
 
 === Transaction JSON schema
 
-//TODO: Add link to https://github.com/LiskHQ/lips/pull/155/files when merged
+//TODO: Add link to https://github.com/KlayrHQ/lips/pull/155/files when merged
 
 .Transaction schema
 [%collapsible]
@@ -531,7 +531,7 @@ The following commands require an extra command fee:
 [source,js]
 ----
 transactionSchema = {
-	$id: '/lisk/transaction',
+	$id: '/klayr/transaction',
 	type: 'object',
 	required: ['module', 'command', 'nonce', 'fee', 'senderPublicKey', 'params'],
 	properties: {
@@ -711,7 +711,7 @@ The following transaction types are included in every blockchain application by 
 |===
 |Module Name|Command Name|Module ID|Command ID|Size(min)|Description
 
-|*Token*|*token transfer transaction*|2|0|153 Bytes|Transmit funds to another Lisk account.
+|*Token*|*token transfer transaction*|2|0|153 Bytes|Transmit funds to another Klayr account.
 |*Token*|*cross-chain token transfer transaction*|2|1||Transfers fungible tokens from one chain to another (e.g., mainchain to sidechain).
 
 |*Auth*|*multisignature registration transaction*|12|0|219 Bytes|Registers a multi-signature account.

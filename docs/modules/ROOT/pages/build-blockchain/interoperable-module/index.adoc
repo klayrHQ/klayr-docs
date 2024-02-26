@@ -5,7 +5,7 @@ Mona Bärenfänger <mona@lightcurve.io>
 :idseparator: -
 :sectnums:
 // URLs
-:url_github_sdk_interop: https://github.com/LiskHQ/lisk-sdk/tree/release/6.1.0/examples/interop
+:url_github_sdk_interop: https://github.com/KlayrHQ/klayr-sdk/tree/release/6.1.0/examples/interop
 :url_github_sdk_interop_cctransfer: {url_github_sdk_interop}#transfer-from-mainchain-to-sidechain-two
 :url_github_sdk_interop_sc1_passphrase: {url_github_sdk_interop}/pos-sidechain-example-one/config/default/passphrase.json
 :url_github_sdk_interop_startexample: {url_github_sdk_interop}/start_example
@@ -25,7 +25,7 @@ In this chapter, you'll learn how to:
 * [x] Test the implementation of an interoperable module by running the interop example scripts.
 ====
 
-If a Lisk app intends to interact with other blockchains in the network, it needs to provide the required cross-chain commands that create and execute the corresponding CCMs.
+If a Klayr app intends to interact with other blockchains in the network, it needs to provide the required cross-chain commands that create and execute the corresponding CCMs.
 
 NOTE: To learn more about how sidechains communicate with each other via CCM, check out the page about xref:{url_understand_interopcommunication}[].
 
@@ -60,9 +60,9 @@ To learn the details about the implementation of the required module commands, c
 
 As the interaction between two sidechains always involves three chains (sending chain, receiving chain, and mainchain), it is quite complicated to test newly implemented interoperable modules locally.
 
-To simplify the process, the `lisk-sdk` provides useful example scripts that can be easily adjusted to try out new interoperable modules.
+To simplify the process, the `klayr-sdk` provides useful example scripts that can be easily adjusted to try out new interoperable modules.
 
-=== The `interop` example of the `lisk-sdk` repository
+=== The `interop` example of the `klayr-sdk` repository
 
 [.float-group]
 --
@@ -70,7 +70,7 @@ To simplify the process, the `lisk-sdk` provides useful example scripts that can
 .The blockchain network of the interop example
 image::build-blockchain/interop-example.png[,300,role="right"]
 
-To try out the cross-chain communication of interoperable modules locally, go to the {url_github_sdk_interop}[interop/example^] in the `lisk-sdk` repository.
+To try out the cross-chain communication of interoperable modules locally, go to the {url_github_sdk_interop}[interop/example^] in the `klayr-sdk` repository.
 
 There, you find a `README.md` which describes all the required steps to set up a simple interoperability example, as illustrated in _Figure 1_.
 
@@ -362,7 +362,7 @@ To get the last sent CCM on a chain, invoke the `chainConnector_getLastSentCCM` 
 .pos-sidechain-example-two
 [source,bash]
 ----
-./bin/run endpoint:invoke chainConnector_getLastSentCCM --pretty --data-path=~/.lisk/mainchain-node-one
+./bin/run endpoint:invoke chainConnector_getLastSentCCM --pretty --data-path=~/.klayr/mainchain-node-one
 ----
 
 ==== How to authorize the chain connector plugin
@@ -373,25 +373,25 @@ Otherwise, it will not be possible to send CCUs between chains.
 .Authorize sidechain 2
 [source,bash]
 ----
-./bin/run endpoint:invoke 'chainConnector_authorize' '{"password": "lisk", "enable": true }' --data-path=~/.lisk/pos-sidechain-example-two
+./bin/run endpoint:invoke 'chainConnector_authorize' '{"password": "klayr", "enable": true }' --data-path=~/.klayr/pos-sidechain-example-two
 ----
 
 .Authorize sidechain 1
 [source,bash]
 ----
-./bin/run endpoint:invoke 'chainConnector_authorize' '{"password": "lisk", "enable": true }' --data-path=~/.lisk/pos-sidechain-example-one
+./bin/run endpoint:invoke 'chainConnector_authorize' '{"password": "klayr", "enable": true }' --data-path=~/.klayr/pos-sidechain-example-one
 ----
 
 .Authorize mainchain 1
 [source,bash]
 ----
-./bin/run endpoint:invoke 'chainConnector_authorize' '{"password": "lisk", "enable": true }' --data-path=~/.lisk/mainchain-node-one
+./bin/run endpoint:invoke 'chainConnector_authorize' '{"password": "klayr", "enable": true }' --data-path=~/.klayr/mainchain-node-one
 ----
 
 .Authorize mainchain 2
 [source,bash]
 ----
-./bin/run endpoint:invoke 'chainConnector_authorize' '{"password": "lisk", "enable": true }' --data-path=~/.lisk/mainchain-node-two
+./bin/run endpoint:invoke 'chainConnector_authorize' '{"password": "klayr", "enable": true }' --data-path=~/.klayr/mainchain-node-two
 ----
 
 ==== How to reset the interoperability example
@@ -422,7 +422,7 @@ Captured At: 12:49:26
 "sidechain_example_one" : Height: 10 | Status: 1
 "sidechain_example_two" : Height: 10 | Status: 1
 - Sidechain_1:
-"lisk_mainchain" : Height: 10 | Status: 1
+"klayr_mainchain" : Height: 10 | Status: 1
 - Sidechain 2:
-"lisk_mainchain" : Height: 10 | Status: 1
+"klayr_mainchain" : Height: 10 | Status: 1
 ----

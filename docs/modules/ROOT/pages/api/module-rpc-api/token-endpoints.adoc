@@ -3,7 +3,7 @@ Mona Bärenfänger <mona@lightcurve.io>
 // Settings
 :toc: preamble
 //URLs
-:url_typedoc_token: {site-url}/lisk-sdk/v6/references/typedoc/classes/lisk_framework.TokenModule.html
+:url_typedoc_token: {site-url}/klayr-sdk/v6/references/typedoc/classes/klayr_framework.TokenModule.html
 //Project URLs
 :url_integrate_endpoints: integrate-blockchain/connecting-endpoints.adoc
 
@@ -39,7 +39,7 @@ Node CLI::
 --
 [source,bash]
 ----
-lisk-core endpoint:invoke token_getBalances '{"address":"lsk55e8u4heymzmxgcrg4dc5xpgd5ckkyv53oxftb"}' --pretty
+klayr-core endpoint:invoke token_getBalances '{"address":"lsk55e8u4heymzmxgcrg4dc5xpgd5ckkyv53oxftb"}' --pretty
 ----
 
 --
@@ -111,7 +111,7 @@ Node CLI::
 --
 [source,bash]
 ----
-lisk-core endpoint:invoke token_getBalance '{"tokenID":"0200000000000000","address":"lsk55e8u4heymzmxgcrg4dc5xpgd5ckkyv53oxftb"}' --pretty
+klayr-core endpoint:invoke token_getBalance '{"tokenID":"0200000000000000","address":"lsk55e8u4heymzmxgcrg4dc5xpgd5ckkyv53oxftb"}' --pretty
 ----
 
 --
@@ -161,7 +161,7 @@ Node CLI::
 --
 [source,bash]
 ----
-lisk-core endpoint:invoke token_getTotalSupply --pretty
+klayr-core endpoint:invoke token_getTotalSupply --pretty
 ----
 
 --
@@ -215,7 +215,7 @@ Node CLI::
 --
 [source,bash]
 ----
-lisk-core endpoint:invoke token_getSupportedTokens --pretty
+klayr-core endpoint:invoke token_getSupportedTokens --pretty
 ----
 
 --
@@ -279,7 +279,7 @@ Node CLI::
 --
 [source,bash]
 ----
-lisk-core endpoint:invoke token_isSupported '{"tokenID":"0200000000000000"}' --pretty
+klayr-core endpoint:invoke token_isSupported '{"tokenID":"0200000000000000"}' --pretty
 ----
 
 --
@@ -328,7 +328,7 @@ Node CLI::
 --
 [source,bash]
 ----
-lisk-core endpoint:invoke token_getEscrowedAmounts --pretty
+klayr-core endpoint:invoke token_getEscrowedAmounts --pretty
 ----
 
 --
@@ -403,7 +403,7 @@ Node CLI::
 --
 [source,bash]
 ----
-lisk-core endpoint:invoke token_getInitializationFees --pretty
+klayr-core endpoint:invoke token_getInitializationFees --pretty
 ----
 
 --
@@ -470,7 +470,7 @@ Node CLI::
 --
 [source,bash]
 ----
-lisk-core endpoint:invoke token_hasUserAccount '{"tokenID":"0200000000000000","address":"lsk55e8u4heymzmxgcrg4dc5xpgd5ckkyv53oxftb"}' --pretty
+klayr-core endpoint:invoke token_hasUserAccount '{"tokenID":"0200000000000000","address":"lsk55e8u4heymzmxgcrg4dc5xpgd5ckkyv53oxftb"}' --pretty
 ----
 
 --
@@ -536,7 +536,7 @@ Node CLI::
 --
 [source,bash]
 ----
-lisk-core endpoint:invoke token_hasEscrowAccount '{"tokenID":"0200000000000000","escrowChainID":"02001337"}' --pretty
+klayr-core endpoint:invoke token_hasEscrowAccount '{"tokenID":"0200000000000000","escrowChainID":"02001337"}' --pretty
 ----
 
 --

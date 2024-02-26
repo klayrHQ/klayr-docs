@@ -5,12 +5,12 @@ Muhammad Talha <muhammad.talha@lightcurve.io>
 :toc: preamble
 
 //URLs
-:url_typedoc_chainConnector: {site-url}/lisk-sdk/v6/references/typedoc/modules/_liskhq_lisk_framework_chain_connector_plugin.html
-:url_aggregate_commit: https://github.com/LiskHQ/lips/blob/main/proposals/lip-0061.md#aggregate-commits-1
-:url_block_headers: https://github.com/LiskHQ/lips/blob/main/proposals/lip-0055.md#block-header
-:url_crossChainMessageSentSuccess: https://github.com/LiskHQ/lips/blob/main/proposals/lip-0045.md#crosschainmessagesentsuccess
-:url_crossChainMessageProcessed: https://github.com/LiskHQ/lips/blob/main/proposals/lip-0045.md#crosschainmessageprocessed
-:url_validatorsHashPreImage: https://github.com/LiskHQ/lips/blob/main/proposals/lip-0061.md#approach-1-certificate-computation-from-aggregate-commits
+:url_typedoc_chainConnector: {site-url}/klayr-sdk/v6/references/typedoc/modules/_klayrhq_klayr_framework_chain_connector_plugin.html
+:url_aggregate_commit: https://github.com/KlayrHQ/lips/blob/main/proposals/lip-0061.md#aggregate-commits-1
+:url_block_headers: https://github.com/KlayrHQ/lips/blob/main/proposals/lip-0055.md#block-header
+:url_crossChainMessageSentSuccess: https://github.com/KlayrHQ/lips/blob/main/proposals/lip-0045.md#crosschainmessagesentsuccess
+:url_crossChainMessageProcessed: https://github.com/KlayrHQ/lips/blob/main/proposals/lip-0045.md#crosschainmessageprocessed
+:url_validatorsHashPreImage: https://github.com/KlayrHQ/lips/blob/main/proposals/lip-0061.md#approach-1-certificate-computation-from-aggregate-commits
 
 //Project URLs
 :url_integrate_endpoints: integrate-blockchain/connecting-endpoints.adoc
@@ -38,7 +38,7 @@ Node CLI::
 --
 [source,bash]
 ----
-lisk-core endpoint:invoke chainConnector_getSentCCUs --pretty
+klayr-core endpoint:invoke chainConnector_getSentCCUs --pretty
 ----
 
 --
@@ -111,7 +111,7 @@ Node CLI::
 --
 [source,bash]
 ----
-lisk-core endpoint:invoke chainConnector_getAggregateCommits --pretty
+klayr-core endpoint:invoke chainConnector_getAggregateCommits --pretty
 ----
 
 --
@@ -171,7 +171,7 @@ Node CLI::
 --
 [source,bash]
 ----
-lisk-core endpoint:invoke chainConnector_getBlockHeaders --pretty
+klayr-core endpoint:invoke chainConnector_getBlockHeaders --pretty
 ----
 
 --
@@ -266,7 +266,7 @@ Node CLI::
 --
 [source,bash]
 ----
-lisk-core endpoint:invoke chainConnector_getCrossChainMessages --pretty
+klayr-core endpoint:invoke chainConnector_getCrossChainMessages --pretty
 ----
 
 --
@@ -351,7 +351,7 @@ Node CLI::
 --
 [source,bash]
 ----
-lisk-core endpoint:invoke chainConnector_getLastSentCCM --pretty
+klayr-core endpoint:invoke chainConnector_getLastSentCCM --pretty
 ----
 
 --
@@ -410,7 +410,7 @@ Node CLI::
 --
 [source,bash]
 ----
-lisk-core endpoint:invoke chainConnector_getValidatorsInfoFromPreimage --pretty
+klayr-core endpoint:invoke chainConnector_getValidatorsInfoFromPreimage --pretty
 ----
 
 --
@@ -475,7 +475,7 @@ Specification::
 |`password`
 |string
 |Password used to create the `encryptedPrivateKey` mentioned in the Chain Connector plugin's configuration.
-|lisk
+|klayr
 
 |`enable`
 |boolean
@@ -488,7 +488,7 @@ Node CLI::
 --
 [source,bash]
 ----
-lisk-core endpoint:invoke chainConnector_authorize '{"password": "lisk", "enable":true}' --pretty
+klayr-core endpoint:invoke chainConnector_authorize '{"password": "klayr", "enable":true}' --pretty
 ----
 
 --
@@ -504,7 +504,7 @@ curl --location 'http://127.0.0.1:7887/rpc' \
     "id": "1",
     "method": "chainConnector_authorize",
     "params": {
-        "password": "lisk",
+        "password": "klayr",
         "enable": true
     }
 }'

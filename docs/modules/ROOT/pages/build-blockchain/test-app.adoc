@@ -2,9 +2,9 @@
 Muhammad Talha <muhammad.talha@lightcurve.io>
 // Settings
 :toc: preamble
-:docs_sdk: lisk-sdk::
+:docs_sdk: klayr-sdk::
 // URLs
-:url_github_guides_tests: https://github.com/LiskHQ/lisk-sdk-examples/tree/development/tutorials/hello/hello_client/test/unit/modules/hello
+:url_github_guides_tests: https://github.com/KlayrHQ/klayr-sdk-examples/tree/development/tutorials/hello/hello_client/test/unit/modules/hello
 // Project URLs
 :url_reducerhandler: understand-blockchain/sdk/modules-commands.adoc#the-reducerhandler
 :url_guides_setup: build-blockchain/create-blockchain-client.adoc
@@ -13,15 +13,15 @@ Muhammad Talha <muhammad.talha@lightcurve.io>
 :url_intro_modules_statestore: understand-blockchain/sdk/modules-commands.adoc#the-state-store
 :url_tutorials_nft: tutorial/nft.adoc
 :url_reference_test_suite: {docs_sdk}references/test-utils.adoc
-:url_fee_test: https://github.com/LiskHQ/lisk-sdk/blob/v6.0.1/framework/test/unit/modules/fee/module.spec.ts
-:url_sdk_tests: https://github.com/LiskHQ/lisk-sdk/tree/v6.0.1/framework/test/unit
+:url_fee_test: https://github.com/KlayrHQ/klayr-sdk/blob/v6.0.1/framework/test/unit/modules/fee/module.spec.ts
+:url_sdk_tests: https://github.com/KlayrHQ/klayr-sdk/tree/v6.0.1/framework/test/unit
 
-How to use the test utility of the Lisk SDK to test your application.
+How to use the test utility of the Klayr SDK to test your application.
 
 .Sample code
 [NOTE]
 ====
-View the complete sample code of this guide on GitHub in the {url_github_guides_tests}[Lisk SDK examples repository^].
+View the complete sample code of this guide on GitHub in the {url_github_guides_tests}[Klayr SDK examples repository^].
 ====
 
 .Prerequisites
@@ -29,7 +29,7 @@ View the complete sample code of this guide on GitHub in the {url_github_guides_
 ====
 To use this guide, it is assumed that the following criteria have been met:
 
-* Lisk Commander is installed, and a basic blockchain application is already initialized, as explained in the guide xref:{url_guides_setup}[].
+* Klayr Commander is installed, and a basic blockchain application is already initialized, as explained in the guide xref:{url_guides_setup}[].
 * A new module has been generated as described in the guide xref:{url_guides_module}[].
 * A new command has been generated as described in the guide xref:{url_guides_command}[].
 ====
@@ -199,7 +199,7 @@ Add the following lines at the top of `create_hello_command.spec.ts` to import t
 
 [source,typescript]
 ----
-import { testing, codec, cryptography, Transaction, chain, db, VerifyStatus } from 'lisk-sdk';
+import { testing, codec, cryptography, Transaction, chain, db, VerifyStatus } from 'klayr-sdk';
 import { CreateHelloCommand } from '../../../../../src/app/modules/hello/commands/create_hello_command';
 import { CreateHelloParams, createHelloSchema } from '../../../../../src/app/modules/hello/schema';
 import { ModuleConfig } from '../../../../../src/app/modules/hello/types';
@@ -208,7 +208,7 @@ import { CounterStore, counterKey } from '../../../../../src/app/modules/hello/s
 import { MessageStore } from '../../../../../src/app/modules/hello/stores/message';
 ----
 
-NOTE: The *`testing`* package imported from Lisk SDK contains several helper functions to create contexts for *`verify()`* and *`execute()`* hooks.
+NOTE: The *`testing`* package imported from Klayr SDK contains several helper functions to create contexts for *`verify()`* and *`execute()`* hooks.
 You can also create fake block headers, etc. via the *`testing`* package and use it to write tests.
 
 ==== Testing the verify() function
@@ -245,7 +245,7 @@ To verify that the function is implemented correctly, write two tests to check i
 
 The function `createCommandVerifyContext()` is used for both tests to create a context for the `verify()` function.
 
-In the first test, where an error is expected, a context with an invalid `command` parameter with the `helloString: 'badWord2'` is created, whereas, in the second test, a valid `Hello Lisk v6` string is passed.
+In the first test, where an error is expected, a context with an invalid `command` parameter with the `helloString: 'badWord2'` is created, whereas, in the second test, a valid `Hello Klayr v6` string is passed.
 
 After the context is created, both tests will call the `verify()` function with the context, and the result is checked.
 
@@ -272,7 +272,7 @@ describe('verify', () => {
     });
 
     it('should have a legal message', async () => {
-        const legalParam = codec.encode(createHelloSchema, { 'message': "Hello Lisk v6 " })
+        const legalParam = codec.encode(createHelloSchema, { 'message': "Hello Klayr v6 " })
         const transaction = new Transaction(getSampleTransaction(legalParam));
 
         const context = testing
@@ -501,4 +501,4 @@ The implementation of the unit tests for the command `CreateHelloCommand` is now
 
 Similarly to commands, it is also possible to write test cases for modules.
 For example, consider the {url_fee_test}[fee module's test script^], where various unit tests are written for different hooks of a fee module.
-For more unit test examples, see the {url_sdk_tests}[lisk-sdk/framework/test/unit^] directory.
+For more unit test examples, see the {url_sdk_tests}[klayr-sdk/framework/test/unit^] directory.

@@ -1,17 +1,17 @@
-= Proof of Stake (PoS) & Proof of Authority (PoA) in Lisk
+= Proof of Stake (PoS) & Proof of Authority (PoA) in Klayr
 :toc: preamble
 // URLs
-:url_github_lip_22: https://github.com/LiskHQ/lips/blob/main/proposals/lip-0022.md
-:url_github_lip_23: https://github.com/LiskHQ/lips/blob/main/proposals/lip-0023.md
+:url_github_lip_22: https://github.com/KlayrHQ/lips/blob/main/proposals/lip-0022.md
+:url_github_lip_23: https://github.com/KlayrHQ/lips/blob/main/proposals/lip-0023.md
 :url_lip23_weight: {url_github_lip_23}#new-delegate-weight
-:url_github_lip_24: https://github.com/LiskHQ/lips/blob/main/proposals/lip-0024.md
-:url_github_lip_34: https://github.com/LiskHQ/lips/blob/main/proposals/lip-0034.md
-:url_github_lip_35: https://github.com/LiskHQ/lips/blob/main/proposals/lip-0035.md
-:url_github_lip_42: https://github.com/LiskHQ/lips/blob/main/proposals/lip-0042.md
-:url_github_lip_71: https://github.com/LiskHQ/lips/blob/main/proposals/lip-0071.md
+:url_github_lip_24: https://github.com/KlayrHQ/lips/blob/main/proposals/lip-0024.md
+:url_github_lip_34: https://github.com/KlayrHQ/lips/blob/main/proposals/lip-0034.md
+:url_github_lip_35: https://github.com/KlayrHQ/lips/blob/main/proposals/lip-0035.md
+:url_github_lip_42: https://github.com/KlayrHQ/lips/blob/main/proposals/lip-0042.md
+:url_github_lip_71: https://github.com/KlayrHQ/lips/blob/main/proposals/lip-0071.md
 :url_arxiv: https://arxiv.org/abs/1903.11434
 :url_github_poa: https://github.com/ethereum/guide/blob/master/poa.md
-:url_blog_poa: https://lisk.com/blog/posts/proof-authority-consensus-sidechains
+:url_blog_poa: https://klayr.com/blog/posts/proof-authority-consensus-sidechains
 //Project URLs
 :url_blocks_genesis: understand-blockchain/index.adoc#genesis-block
 :url_run_validator: run-blockchain/become-a-validator.adoc
@@ -22,13 +22,13 @@
 ====
 On this page, you'll learn about:
 
-* The main characteristics of Lisk PoS
+* The main characteristics of Klayr PoS
 ** [x] What projects should choose PoS blockchains
 ** [x] How validators are selected
 ** [x] What are active and standby validators
 ** [x] How staking works
 ** [x] Banning mechanisms for unproductive validators
-* The main characteristics of Lisk PoA
+* The main characteristics of Klayr PoA
 ** [x] What projects should choose PoA blockchains
 ** [x] How to update the list of authorities
 ====
@@ -48,7 +48,7 @@ At the same time, the maintenance effort of PoS blockchains is significantly hig
 
 === Validator selection
 
-Blocks in the Lisk PoS protocol are grouped together into batches of 103 consecutive blocks, which are referred to as a *round*.
+Blocks in the Klayr PoS protocol are grouped together into batches of 103 consecutive blocks, which are referred to as a *round*.
 
 A *validator* is any account that successfully submits a Register Validator transaction.
 
@@ -102,7 +102,7 @@ TIP: For more info on how to stake tokens, check out the corresponding guide: xr
 Every validator has an associated *validator weight*.
 A high validator weight will put a validator in an active position to generate new blocks for the blockchain.
 
-IMPORTANT: The *minimum validator weight required* to be selected as a block generator is 1000 LSK in the Lisk Mainnet.
+IMPORTANT: The *minimum validator weight required* to be selected as a block generator is 1000 KLY in the Klayr Mainnet.
 
 Formally, the validator weight is defined as the following:
 
@@ -147,7 +147,7 @@ The ban is permanent, but the validator account holder can move their funds to a
 
 == PoA
 
-PoA is an alternative consensus mechanism to PoS in the Lisk SDK.
+PoA is an alternative consensus mechanism to PoS in the Klayr SDK.
 In {url_blog_poa}[Proof-of-Authority (PoA)^] blockchains, only a pre-defined set of validators, called the *authorities*, can propose blocks.
 Authorities are selected based on off-chain information such as their reputation or identity.
 
@@ -171,9 +171,9 @@ The following values can be updated:
 
 NOTE: The maximum amount of authorities for a chain is 199.
 
-The PoA module, which must be used by PoA blockchains built with the Lisk SDK version 6, implements the following commands which facilitate the authority updates:
+The PoA module, which must be used by PoA blockchains built with the Klayr SDK version 6, implements the following commands which facilitate the authority updates:
 
-* *Authority Registration Command*: This command is similar to the validator registration command in Lisk PoS.
+* *Authority Registration Command*: This command is similar to the validator registration command in Klayr PoS.
 An account willing to become an active authority must first send an authority registration transaction.
 The registration fee for an authority registration can be defined in the PoA module configuration.
 * *Update Authority Command*: This command updates the set of active authorities as mentioned above.
@@ -197,7 +197,7 @@ However, sidechain developers may choose to have a reward system in the chain na
 In this case, the Reward module specified in {url_github_lip_42}[LIP 0042^] can be used to define block rewards for PoA blockchains.
 Note that the Dynamic block rewards module as defined in {url_github_lip_71}[LIP 0071^] depends on the PoS information to properly function and thus can not be implemented on PoA blockchains.
 
-Moreover, the banning mechanism (as defined in {url_github_lip_23}[LIP 0023^]) and the punishment of BFT violations (as defined in {url_github_lip_24}[LIP 0024^] for the Lisk-BFT protocol) are not necessary for a functional PoA blockchain.
+Moreover, the banning mechanism (as defined in {url_github_lip_23}[LIP 0023^]) and the punishment of BFT violations (as defined in {url_github_lip_24}[LIP 0024^] for the Klayr-BFT protocol) are not necessary for a functional PoA blockchain.
 
 === Migration from PoA to PoS
 At one point, there may be an interest for some projects that started as a PoA chain to migrate to PoS.

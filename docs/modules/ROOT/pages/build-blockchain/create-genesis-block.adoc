@@ -4,7 +4,7 @@ Mona Bärenfänger <mona@lightcurve.io> Muhammad Talha <muhammad.talha@lightcurv
 :toc:
 :idprefix:
 :idseparator: -
-:docs_sdk: lisk-sdk::
+:docs_sdk: klayr-sdk::
 // Project URLs
 :url_genesis_block: understand-blockchain/blocks-txs.adoc#genesis-block-execution
 :url_guides_setup: build-blockchain/create-blockchain-client.adoc
@@ -24,7 +24,7 @@ To use this guide, ensure the following criteria below have been fulfilled:
 
 Each client needs a xref:{url_genesis_block}[genesis block], which is the very first block of the blockchain.
 
-During the init process of a blockchain client, the Lisk SDK bootstraps the first genesis block, and the relevant assets required for each blockchain in the `config/default` directory of each client.
+During the init process of a blockchain client, the Klayr SDK bootstraps the first genesis block, and the relevant assets required for each blockchain in the `config/default` directory of each client.
 
 .Default genesis block and configuration files
 ----
@@ -93,7 +93,7 @@ As a result of the `genesis-block:create` command, the new genesis block files w
 2022-12-02T12:59:33.114Z INFO XYZ application 30245 Registered pos module has command stake
 2022-12-02T12:59:33.114Z INFO XYZ application 30245 Registered and initialized interoperability module
 2022-12-02T12:59:33.114Z INFO XYZ application 30245 Registered interoperability module has command mainchainRegistration
-Genesis block files saved at: /Users/XYZ/lisk/hello_client/config/default
+Genesis block files saved at: /Users/XYZ/klayr/hello_client/config/default
 ----
 
 NOTE: For more information about the `genesis-block:create` command, check the xref:{url_references_cli_genesis}[CLI command reference].

@@ -1,4 +1,4 @@
-= RPC API for Lisk nodes
+= RPC API for Klayr nodes
 Mona Bärenfänger <mona@lightcurve.io> Muhammad Talha <muhammad.talha@lightcurve.io>
 // Settings
 :toc: preamble
@@ -7,31 +7,31 @@ Mona Bärenfänger <mona@lightcurve.io> Muhammad Talha <muhammad.talha@lightcurv
 :idprefix: 0
 :idseparator: -
 // URLs
-:docs_sdk: lisk-sdk::
+:docs_sdk: klayr-sdk::
 // Project URLs
 :url_general_endpoints: understand-blockchain/sdk/rpc.adoc
 // :url_modules: {docs_sdk}modules/index.adoc
 // :url_plugins: {docs_sdk}plugins/index.adoc
 :url_subscribe_event: {url_general_endpoints}#how-to-subscribe-to-events
 :url_API_client: {url_general_endpoints}#the-api-client
-:url_lisk_codec: {site-url}/lisk-sdk/v6/references/typedoc/modules/_liskhq_lisk_codec.html
+:url_klayr_codec: {site-url}/klayr-sdk/v6/references/typedoc/modules/_klayrhq_klayr_codec.html
 
 // TODO: Update the page by uncommenting the hyperlinks once the updated pages are available. 
 
-A reference of all RPC endpoints and events provided by a blockchain client through the Lisk Framework.
+A reference of all RPC endpoints and events provided by a blockchain client through the Klayr Framework.
 
-TIP: For more information about RPC endpoints, events, and the Lisk communication architecture in general, check out the xref:{url_general_endpoints}[] page.
+TIP: For more information about RPC endpoints, events, and the Klayr communication architecture in general, check out the xref:{url_general_endpoints}[] page.
 
 == Custom RPC endpoints for Modules and Plugins
 
-Modules and plugins often expose custom endpoints for the Lisk application, which then become available as RPC endpoints.
+Modules and plugins often expose custom endpoints for the Klayr application, which then become available as RPC endpoints.
 //For details about endpoints for modules and plugins, see xref:{url_modules}[] and xref:{url_plugins}[].
 
 == Endpoints
 
 Endpoints are invoked to fetch specific data for an application.
-Lisk node endpoints are public and can be invoked via RPC.
-Lisk supports three modes of communication for invoking an endpoint as discussed in xref:{url_API_client}[The API client] section.
+Klayr node endpoints are public and can be invoked via RPC.
+Klayr supports three modes of communication for invoking an endpoint as discussed in xref:{url_API_client}[The API client] section.
 The default RPC endpoints have been categorized based on various namespaces, as follows:
 
 . <<App>>
@@ -46,7 +46,7 @@ The default RPC endpoints have been categorized based on various namespaces, as 
 
 === App
 ==== `app_getRegisteredEndpoints`
-Lists all endpoints registered to the Lisk application.
+Lists all endpoints registered to the Klayr application.
 
 Request
 [tabs]
@@ -90,7 +90,7 @@ curl --location --request POST 'http://localhost:7887/rpc' \
   "auth_getMultiSigRegMsgSchema",
   "auth_sortMultisignatureGroup",
   "auth_getMultiSigRegMsgTag",
-  "validators_validateBLSKey",
+  "validators_validateBKLYey",
   "validators_getValidator",
   "token_getBalances",
   "token_getBalance",
@@ -150,7 +150,7 @@ curl --location --request POST 'http://localhost:7887/rpc' \
 
 ==== `app_getRegisteredEvents`
 
-Lists all the events registered to the Lisk application.
+Lists all the events registered to the Klayr application.
 
 Request
 
@@ -1113,7 +1113,7 @@ curl --location --request POST 'http://localhost:7887/rpc' \
 ==== `chain_areHeadersContradicting`
 Checks, if the encoded `header` values passed to the endpoint contradict each other and returns a corresponding boolean value.
 
-TIP: A block's `header` can be encoded via {url_lisk_codec}[Lisk Codec^].
+TIP: A block's `header` can be encoded via {url_klayr_codec}[Klayr Codec^].
 
 Request
 [tabs]
@@ -1218,407 +1218,407 @@ curl --location --request POST 'http://localhost:7887/rpc' \
 {
         "list": [
             {
-                "address": "lskyom9reuu36jwfb2pt44zuxq9x2ucrfwnw9p6sc",
+                "address": "klyyom9reuu36jwfb2pt44zuxq9x2ucrfwnw9p6sc",
                 "nextAllocatedTime": 1700235510
             },
             {
-                "address": "lskyeyzemhvkgzqjr9w748753p8znv8rfn2hh6bzq",
+                "address": "klyyeyzemhvkgzqjr9w748753p8znv8rfn2hh6bzq",
                 "nextAllocatedTime": 1700235520
             },
             {
-                "address": "lsky2j2fnmhxushe5ywvdw4ouvxg8s4aeo4a7bpxb",
+                "address": "klyy2j2fnmhxushe5ywvdw4ouvxg8s4aeo4a7bpxb",
                 "nextAllocatedTime": 1700235530
             },
             {
-                "address": "lskysne3u6mn5vstch4sw3j26t5pm8rf9qrqgaxpj",
+                "address": "klyysne3u6mn5vstch4sw3j26t5pm8rf9qrqgaxpj",
                 "nextAllocatedTime": 1700235540
             },
             {
-                "address": "lskrc8oo724matqmpgv4ev22wpmd9ov6coqv9hhfk",
+                "address": "klyrc8oo724matqmpgv4ev22wpmd9ov6coqv9hhfk",
                 "nextAllocatedTime": 1700235550
             },
             {
-                "address": "lskr9x73s2gr62kqydxsj3x5vwxvey8b7ehvwy8cm",
+                "address": "klyr9x73s2gr62kqydxsj3x5vwxvey8b7ehvwy8cm",
                 "nextAllocatedTime": 1700235560
             },
             {
-                "address": "lskrrjo28kxt4b8uhutzu25qdfmk4nd36uczc2hyg",
+                "address": "klyrrjo28kxt4b8uhutzu25qdfmk4nd36uczc2hyg",
                 "nextAllocatedTime": 1700235570
             },
             {
-                "address": "lsktmjb43zp87hjsfa66a6zbynqm8939q6zt3zjsp",
+                "address": "klytmjb43zp87hjsfa66a6zbynqm8939q6zt3zjsp",
                 "nextAllocatedTime": 1700235580
             },
             {
-                "address": "lskth85yt65zs4ha29v8fp6jsfxvsq4tjnn9ot57a",
+                "address": "klyth85yt65zs4ha29v8fp6jsfxvsq4tjnn9ot57a",
                 "nextAllocatedTime": 1700235590
             },
             {
-                "address": "lskkpkwej4t6mpm97mrntp3jmvadcv6mx48643rbe",
+                "address": "klykpkwej4t6mpm97mrntp3jmvadcv6mx48643rbe",
                 "nextAllocatedTime": 1700235600
             },
             {
-                "address": "lskkkdd7j22ksbmd4gut4bucum75ffbd9xuzcca2c",
+                "address": "klykkdd7j22ksbmd4gut4bucum75ffbd9xuzcca2c",
                 "nextAllocatedTime": 1700235610
             },
             {
-                "address": "lskkq73xxzrmzxusw3ot53swq9an5qqt7orzpubku",
+                "address": "klykq73xxzrmzxusw3ot53swq9an5qqt7orzpubku",
                 "nextAllocatedTime": 1700235620
             },
             {
-                "address": "lskkq8vhux85rr4qdb7w7gjy4qz85zpg6rgry4rey",
+                "address": "klykq8vhux85rr4qdb7w7gjy4qz85zpg6rgry4rey",
                 "nextAllocatedTime": 1700235630
             },
             {
-                "address": "lskkhfznqfz6ogx6mzsknnfeudxbgy7u583avj35g",
+                "address": "klykhfznqfz6ogx6mzsknnfeudxbgy7u583avj35g",
                 "nextAllocatedTime": 1700235640
             },
             {
-                "address": "lskkfnbxv8acw8q58xrktrc8s9vavze22odh5q8dv",
+                "address": "klykfnbxv8acw8q58xrktrc8s9vavze22odh5q8dv",
                 "nextAllocatedTime": 1700235650
             },
             {
-                "address": "lskqa6rxh339da8o37hk88kqr2hpwfxa9qn99k6cm",
+                "address": "klyqa6rxh339da8o37hk88kqr2hpwfxa9qn99k6cm",
                 "nextAllocatedTime": 1700235660
             },
             {
-                "address": "lskecsmp5a53udx6tysnr9dz5r5vq3yzoupc3tyyp",
+                "address": "klyecsmp5a53udx6tysnr9dz5r5vq3yzoupc3tyyp",
                 "nextAllocatedTime": 1700235670
             },
             {
-                "address": "lskebcyj8ez5b4qj796jut9gudwnwq2amarz3zjo8",
+                "address": "klyebcyj8ez5b4qj796jut9gudwnwq2amarz3zjo8",
                 "nextAllocatedTime": 1700235680
             },
             {
-                "address": "lske4wocz5w6owv9j3fo888u99skrysqjk4uxzcyg",
+                "address": "klye4wocz5w6owv9j3fo888u99skrysqjk4uxzcyg",
                 "nextAllocatedTime": 1700235690
             },
             {
-                "address": "lskeowcdtvhh7tc5r63r2konwceuxcp8a24vb6mze",
+                "address": "klyeowcdtvhh7tc5r63r2konwceuxcp8a24vb6mze",
                 "nextAllocatedTime": 1700235700
             },
             {
-                "address": "lskedbfmy9shncpwujcmbnvkxefgbtjjt9uvq3j7d",
+                "address": "klyedbfmy9shncpwujcmbnvkxefgbtjjt9uvq3j7d",
                 "nextAllocatedTime": 1700235710
             },
             {
-                "address": "lskej3w2zmzum2zxv925zzvprzhf4u47he6cbhdj4",
+                "address": "klyej3w2zmzum2zxv925zzvprzhf4u47he6cbhdj4",
                 "nextAllocatedTime": 1700235720
             },
             {
-                "address": "lskef93upmvt4srwpdoukt3ey2db79vvdw5xngxaf",
+                "address": "klyef93upmvt4srwpdoukt3ey2db79vvdw5xngxaf",
                 "nextAllocatedTime": 1700235730
             },
             {
-                "address": "lskwcwkzwwkm6negqpyd947qt2qyw6u9xm3w2ygwn",
+                "address": "klywcwkzwwkm6negqpyd947qt2qyw6u9xm3w2ygwn",
                 "nextAllocatedTime": 1700235740
             },
             {
-                "address": "lskwuhnq3kee6rw4p3egbv9wkrmsfqwryfq8ehcwb",
+                "address": "klywuhnq3kee6rw4p3egbv9wkrmsfqwryfq8ehcwb",
                 "nextAllocatedTime": 1700235750
             },
             {
-                "address": "lskwfqjtfzx9zrpddbj656acv8wdc5fkqusb8gfvz",
+                "address": "klywfqjtfzx9zrpddbj656acv8wdc5fkqusb8gfvz",
                 "nextAllocatedTime": 1700235760
             },
             {
-                "address": "lskwgyyhr8deoaenesjjvymqzdpc6j6tymaf9rkor",
+                "address": "klywgyyhr8deoaenesjjvymqzdpc6j6tymaf9rkor",
                 "nextAllocatedTime": 1700235770
             },
             {
-                "address": "lsk27jxvsskwex44fyo63xxgrfx88pazn33yr956b",
+                "address": "kly27jxvsskwex44fyo63xxgrfx88pazn33yr956b",
                 "nextAllocatedTime": 1700235780
             },
             {
-                "address": "lsk2u579exntjdbdxsabx7e2yuh46m3fjjh4vqm9p",
+                "address": "kly2u579exntjdbdxsabx7e2yuh46m3fjjh4vqm9p",
                 "nextAllocatedTime": 1700235790
             },
             {
-                "address": "lsk2gaaodtcxqtmfwxfn474ybskevk6u6f55ae85e",
+                "address": "kly2gaaodtcxqtmfwxfn474ybskevk6u6f55ae85e",
                 "nextAllocatedTime": 1700235800
             },
             {
-                "address": "lskapnd28nsdr3e2osetb888trbw8omob9yds7etn",
+                "address": "klyapnd28nsdr3e2osetb888trbw8omob9yds7etn",
                 "nextAllocatedTime": 1700235810
             },
             {
-                "address": "lska3bv9jjzn2svwy2xbfxnw72sn6vf82h7tomvd8",
+                "address": "klya3bv9jjzn2svwy2xbfxnw72sn6vf82h7tomvd8",
                 "nextAllocatedTime": 1700235820
             },
             {
-                "address": "lskawc9v3htdo78jyksccchkd5b342jxbyk9aonkf",
+                "address": "klyawc9v3htdo78jyksccchkd5b342jxbyk9aonkf",
                 "nextAllocatedTime": 1700235830
             },
             {
-                "address": "lskdxun3ccnhcca6crh4y5zxbgzwmkz9hncckkkhx",
+                "address": "klydxun3ccnhcca6crh4y5zxbgzwmkz9hncckkkhx",
                 "nextAllocatedTime": 1700235840
             },
             {
-                "address": "lskd3h7ky7vxjdk6qpjxddjwh8hdbnw5gs9guaa73",
+                "address": "klyd3h7ky7vxjdk6qpjxddjwh8hdbnw5gs9guaa73",
                 "nextAllocatedTime": 1700235850
             },
             {
-                "address": "lskdk6v3zxhp5zkxt8c99g99ymto6kcb4kwrhymqo",
+                "address": "klydk6v3zxhp5zkxt8c99g99ymto6kcb4kwrhymqo",
                 "nextAllocatedTime": 1700235860
             },
             {
-                "address": "lsksz6heef75tcdavt8yaob47eugqphutjvhh6rrs",
+                "address": "klysz6heef75tcdavt8yaob47eugqphutjvhh6rrs",
                 "nextAllocatedTime": 1700235870
             },
             {
-                "address": "lsksocubaz3zqj4r89wgssocuja2uq6d6zvy3t53v",
+                "address": "klysocubaz3zqj4r89wgssocuja2uq6d6zvy3t53v",
                 "nextAllocatedTime": 1700235880
             },
             {
-                "address": "lskjna49xsxjxoo4on2w9anrgj6k9cf4qruwdrz8p",
+                "address": "klyjna49xsxjxoo4on2w9anrgj6k9cf4qruwdrz8p",
                 "nextAllocatedTime": 1700235890
             },
             {
-                "address": "lskjorfdztvrwd3yetfta6jw3thodxvppu7snkzqh",
+                "address": "klyjorfdztvrwd3yetfta6jw3thodxvppu7snkzqh",
                 "nextAllocatedTime": 1700235900
             },
             {
-                "address": "lskjfq5kmbgeaku6p5wrfgxz92wtow2jr7hujy6fg",
+                "address": "klyjfq5kmbgeaku6p5wrfgxz92wtow2jr7hujy6fg",
                 "nextAllocatedTime": 1700235910
             },
             {
-                "address": "lskha79xokp5cn3osg8ukgxa5589akhmdk3t9w63o",
+                "address": "klyha79xokp5cn3osg8ukgxa5589akhmdk3t9w63o",
                 "nextAllocatedTime": 1700235920
             },
             {
-                "address": "lskhd2uxmgfd7sj39n5xxkb8swzssx38ra5y8gts3",
+                "address": "klyhd2uxmgfd7sj39n5xxkb8swzssx38ra5y8gts3",
                 "nextAllocatedTime": 1700235930
             },
             {
-                "address": "lskfvoehzaptf9ycpmvmcjcsdyhz2t9npbwgxe7fd",
+                "address": "klyfvoehzaptf9ycpmvmcjcsdyhz2t9npbwgxe7fd",
                 "nextAllocatedTime": 1700235940
             },
             {
-                "address": "lskf6zam6ouusqgjmfo5n9r9xmqdxvgvf7ezea5s4",
+                "address": "klyf6zam6ouusqgjmfo5n9r9xmqdxvgvf7ezea5s4",
                 "nextAllocatedTime": 1700235950
             },
             {
-                "address": "lskfo9o6fuqua7wrkrqbnznn48yd65pub9a597ugz",
+                "address": "klyfo9o6fuqua7wrkrqbnznn48yd65pub9a597ugz",
                 "nextAllocatedTime": 1700235960
             },
             {
-                "address": "lskfsw3ycf66gsmo5xepfav4fzbx3szbxv6xng3qr",
+                "address": "klyfsw3ycf66gsmo5xepfav4fzbx3szbxv6xng3qr",
                 "nextAllocatedTime": 1700235970
             },
             {
-                "address": "lskgbmope74zdoxgf9nnufwte8upw6b773sh9afr3",
+                "address": "klygbmope74zdoxgf9nnufwte8upw6b773sh9afr3",
                 "nextAllocatedTime": 1700235980
             },
             {
-                "address": "lskgt9vfj5dg9pbc6t5dv5dg3fe48jjgos2h3p4rm",
+                "address": "klygt9vfj5dg9pbc6t5dv5dg3fe48jjgos2h3p4rm",
                 "nextAllocatedTime": 1700235990
             },
             {
-                "address": "lskgw9p4k73uyb7ekc5vhnt7j9ox6a8xqvhhj9tky",
+                "address": "klygw9p4k73uyb7ekc5vhnt7j9ox6a8xqvhhj9tky",
                 "nextAllocatedTime": 1700236000
             },
             {
-                "address": "lskg2thr7ydoygtorxdhbbhceeyntsegc4y29erhn",
+                "address": "klyg2thr7ydoygtorxdhbbhceeyntsegc4y29erhn",
                 "nextAllocatedTime": 1700236010
             },
             {
-                "address": "lskzmerda8nq9bjf8zuz3zvpdzff9j5ho6jvy3kf2",
+                "address": "klyzmerda8nq9bjf8zuz3zvpdzff9j5ho6jvy3kf2",
                 "nextAllocatedTime": 1700236020
             },
             {
-                "address": "lskzrtsu7mp8q8vzkgkh84shseew29pnm27gamtnp",
+                "address": "klyzrtsu7mp8q8vzkgkh84shseew29pnm27gamtnp",
                 "nextAllocatedTime": 1700236030
             },
             {
-                "address": "lskzw6ab9wtt7x7ggngz9v3knb37nrwteknujkmjv",
+                "address": "klyzw6ab9wtt7x7ggngz9v3knb37nrwteknujkmjv",
                 "nextAllocatedTime": 1700236040
             },
             {
-                "address": "lskzhtzv6zuff2mba7g6ejhn2vzjccotawkbjn3ap",
+                "address": "klyzhtzv6zuff2mba7g6ejhn2vzjccotawkbjn3ap",
                 "nextAllocatedTime": 1700236050
             },
             {
-                "address": "lskxz954oujpgzk7bhz4z9ogwoeujqweptubsz8ef",
+                "address": "klyxz954oujpgzk7bhz4z9ogwoeujqweptubsz8ef",
                 "nextAllocatedTime": 1700236060
             },
             {
-                "address": "lskxc23jst8fc792dgee55gv3jwyhxyjohwp8yq6r",
+                "address": "klyxc23jst8fc792dgee55gv3jwyhxyjohwp8yq6r",
                 "nextAllocatedTime": 1700236070
             },
             {
-                "address": "lskxpybeydekeheb3m5rpm939xfws8kmjqafhcsoz",
+                "address": "klyxpybeydekeheb3m5rpm939xfws8kmjqafhcsoz",
                 "nextAllocatedTime": 1700236080
             },
             {
-                "address": "lskxk3wne3kygeg9akbk73hhwrjff5suujv8sd6bj",
+                "address": "klyxk3wne3kygeg9akbk73hhwrjff5suujv8sd6bj",
                 "nextAllocatedTime": 1700236090
             },
             {
-                "address": "lskxaea6ber75rn8o282gm8hm6twn3kz4g4gwcj32",
+                "address": "klyxaea6ber75rn8o282gm8hm6twn3kz4g4gwcj32",
                 "nextAllocatedTime": 1700236100
             },
             {
-                "address": "lskvm384w7gfcxatn6qnveq7rcyhjbrcb5rmoj5yj",
+                "address": "klyvm384w7gfcxatn6qnveq7rcyhjbrcb5rmoj5yj",
                 "nextAllocatedTime": 1700236110
             },
             {
-                "address": "lskvmwmf4ye5mqefe58vchoz7dfwa52ou82dws7hb",
+                "address": "klyvmwmf4ye5mqefe58vchoz7dfwa52ou82dws7hb",
                 "nextAllocatedTime": 1700236120
             },
             {
-                "address": "lskvy2eqp2zayqfkvsa5f56y6h4zhaqfnmt9e9cxd",
+                "address": "klyvy2eqp2zayqfkvsa5f56y6h4zhaqfnmt9e9cxd",
                 "nextAllocatedTime": 1700236130
             },
             {
-                "address": "lskvrpfnvr7dcsgynuzof2tpkcf8zx8s3k9e7x52m",
+                "address": "klyvrpfnvr7dcsgynuzof2tpkcf8zx8s3k9e7x52m",
                 "nextAllocatedTime": 1700236140
             },
             {
-                "address": "lskpzf5aqnmmwymm78mqad9cr6qa5bx27tpfnpouq",
+                "address": "klypzf5aqnmmwymm78mqad9cr6qa5bx27tpfnpouq",
                 "nextAllocatedTime": 1700236150
             },
             {
-                "address": "lskpwbe3apc2oap537o57x7p8x3sdry28c7g7mzcy",
+                "address": "klypwbe3apc2oap537o57x7p8x3sdry28c7g7mzcy",
                 "nextAllocatedTime": 1700236160
             },
             {
-                "address": "lskmkbcofho9mozufk6og493359rtsvxouwwt7web",
+                "address": "klymkbcofho9mozufk6og493359rtsvxouwwt7web",
                 "nextAllocatedTime": 1700236170
             },
             {
-                "address": "lskmqj4h8svph4bm7kxukfqksn76ejqt6zpn4m663",
+                "address": "klymqj4h8svph4bm7kxukfqksn76ejqt6zpn4m663",
                 "nextAllocatedTime": 1700236180
             },
             {
-                "address": "lskmfs78yx8k7tj92hjf8emymhcgy5dpgwwv34xda",
+                "address": "klymfs78yx8k7tj92hjf8emymhcgy5dpgwwv34xda",
                 "nextAllocatedTime": 1700236190
             },
             {
-                "address": "lskbpasovox5annowfw57t6jyefqxjd2ndaqqrjtw",
+                "address": "klybpasovox5annowfw57t6jyefqxjd2ndaqqrjtw",
                 "nextAllocatedTime": 1700236200
             },
             {
-                "address": "lskbyq22zr3cdepvfggb8ass9d3u72xhkgfbzdht7",
+                "address": "klybyq22zr3cdepvfggb8ass9d3u72xhkgfbzdht7",
                 "nextAllocatedTime": 1700236210
             },
             {
-                "address": "lskbqehhh38353bqn7tk54pk8yh3ywhckx8zfe9ew",
+                "address": "klybqehhh38353bqn7tk54pk8yh3ywhckx8zfe9ew",
                 "nextAllocatedTime": 1700236220
             },
             {
-                "address": "lskbfo46ubdvzug4dn965z2kdqk7hcpmq8odnva5v",
+                "address": "klybfo46ubdvzug4dn965z2kdqk7hcpmq8odnva5v",
                 "nextAllocatedTime": 1700236230
             },
             {
-                "address": "lsknrvejnnyxfxfn6vufcm6q5338uecj2dvudsgdr",
+                "address": "klynrvejnnyxfxfn6vufcm6q5338uecj2dvudsgdr",
                 "nextAllocatedTime": 1700236240
             },
             {
-                "address": "lsknstee5e2bsw464bx2da6jf9ggwvv7zv39gojkd",
+                "address": "klynstee5e2bsw464bx2da6jf9ggwvv7zv39gojkd",
                 "nextAllocatedTime": 1700236250
             },
             {
-                "address": "lsknhjvgftqt89byh43ne325yp8fnds8dh8tsfbfv",
+                "address": "klynhjvgftqt89byh43ne325yp8fnds8dh8tsfbfv",
                 "nextAllocatedTime": 1700236260
             },
             {
-                "address": "lsk3ppm79ukg7wwnbena772teh39ob4eokutpf7ht",
+                "address": "kly3ppm79ukg7wwnbena772teh39ob4eokutpf7ht",
                 "nextAllocatedTime": 1700236270
             },
             {
-                "address": "lsk3gu5yc56m86pfs6vbru3wt856rb9uqjbbvvzob",
+                "address": "kly3gu5yc56m86pfs6vbru3wt856rb9uqjbbvvzob",
                 "nextAllocatedTime": 1700236280
             },
             {
-                "address": "lsk3ga2ywqtp8nqyb44thtu7ckvh96ybzkpo9gvj2",
+                "address": "kly3ga2ywqtp8nqyb44thtu7ckvh96ybzkpo9gvj2",
                 "nextAllocatedTime": 1700236290
             },
             {
-                "address": "lsk4xah678qvmgudpp6s4x5uwodkuxhzv7sccun2r",
+                "address": "kly4xah678qvmgudpp6s4x5uwodkuxhzv7sccun2r",
                 "nextAllocatedTime": 1700236300
             },
             {
-                "address": "lsk4vtvx9azu29snftzza2jh2fsxx4h2xe23gbc4k",
+                "address": "kly4vtvx9azu29snftzza2jh2fsxx4h2xe23gbc4k",
                 "nextAllocatedTime": 1700236310
             },
             {
-                "address": "lsk66gbmtbusrkv7tfvfvtc6xs47x55ft4ew4hahe",
+                "address": "kly66gbmtbusrkv7tfvfvtc6xs47x55ft4ew4hahe",
                 "nextAllocatedTime": 1700236320
             },
             {
-                "address": "lsk66gnuwgw3dpo8bp4o2kst4zda8bpxp8tmog7fd",
+                "address": "kly66gnuwgw3dpo8bp4o2kst4zda8bpxp8tmog7fd",
                 "nextAllocatedTime": 1700236330
             },
             {
-                "address": "lsk5cauw4jofkzx4m7carvwu23ukdbscx89oc78jd",
+                "address": "kly5cauw4jofkzx4m7carvwu23ukdbscx89oc78jd",
                 "nextAllocatedTime": 1700236340
             },
             {
-                "address": "lsk5me2jnfzqs7s792ybbvdweykrtw8g2y7qhgfdf",
+                "address": "kly5me2jnfzqs7s792ybbvdweykrtw8g2y7qhgfdf",
                 "nextAllocatedTime": 1700236350
             },
             {
-                "address": "lsk56dzs3v4kdzykwwzy9eadp2hfa279pb8r22uqc",
+                "address": "kly56dzs3v4kdzykwwzy9eadp2hfa279pb8r22uqc",
                 "nextAllocatedTime": 1700236360
             },
             {
-                "address": "lsk5ujt492uog4cgpmqsuaxpq2hy8ass4epg9tckg",
+                "address": "kly5ujt492uog4cgpmqsuaxpq2hy8ass4epg9tckg",
                 "nextAllocatedTime": 1700236370
             },
             {
-                "address": "lsk5re9x2qk2gn89y6ofp2j5fyxphfoztnb3cnhef",
+                "address": "kly5re9x2qk2gn89y6ofp2j5fyxphfoztnb3cnhef",
                 "nextAllocatedTime": 1700236380
             },
             {
-                "address": "lskosf43bo569mfw3gjf4ogurk49cq58ryf9e5f8y",
+                "address": "klyosf43bo569mfw3gjf4ogurk49cq58ryf9e5f8y",
                 "nextAllocatedTime": 1700236390
             },
             {
-                "address": "lskohc9t9mskx4gvseh9kc8v7mbfobv5rzxwna3jg",
+                "address": "klyohc9t9mskx4gvseh9kc8v7mbfobv5rzxwna3jg",
                 "nextAllocatedTime": 1700236400
             },
             {
-                "address": "lsk9xucdnd8jhtgggm23xuho8jrpjt6mpaqtrbr3u",
+                "address": "kly9xucdnd8jhtgggm23xuho8jrpjt6mpaqtrbr3u",
                 "nextAllocatedTime": 1700236410
             },
             {
-                "address": "lsk9nozqjbm4thd53w3nd3ot3bvzq86exbb83zwar",
+                "address": "kly9nozqjbm4thd53w3nd3ot3bvzq86exbb83zwar",
                 "nextAllocatedTime": 1700236420
             },
             {
-                "address": "lsk9dafmtwk89cjkhwrnc2hbtnkndkmpehy6yxvmw",
+                "address": "kly9dafmtwk89cjkhwrnc2hbtnkndkmpehy6yxvmw",
                 "nextAllocatedTime": 1700236430
             },
             {
-                "address": "lsk7p6xvvwtvxb2fkhaqwnjsr9ev7j6bh2r5r96qt",
+                "address": "kly7p6xvvwtvxb2fkhaqwnjsr9ev7j6bh2r5r96qt",
                 "nextAllocatedTime": 1700236440
             },
             {
-                "address": "lsk8ppntvggr5p3tqe7t2j6a32cced6ketocg2vdn",
+                "address": "kly8ppntvggr5p3tqe7t2j6a32cced6ketocg2vdn",
                 "nextAllocatedTime": 1700236450
             },
             {
-                "address": "lsk89mhfgeha4nwudb338trsrgpjbhw7q8qd795eu",
+                "address": "kly89mhfgeha4nwudb338trsrgpjbhw7q8qd795eu",
                 "nextAllocatedTime": 1700236460
             },
             {
-                "address": "lsk8efnksszqayf8uzokyvd9cdyboeyyw385emq4t",
+                "address": "kly8efnksszqayf8uzokyvd9cdyboeyyw385emq4t",
                 "nextAllocatedTime": 1700236470
             },
             {
-                "address": "lsk8g9qy9ppzmkk3cnpfzjx37zormqmzgvmu6hhpw",
+                "address": "kly8g9qy9ppzmkk3cnpfzjx37zormqmzgvmu6hhpw",
                 "nextAllocatedTime": 1700236480
             },
             {
-                "address": "lskucdvfc7pmgtranrrj7fcutnj9zjkzmphwvq557",
+                "address": "klyucdvfc7pmgtranrrj7fcutnj9zjkzmphwvq557",
                 "nextAllocatedTime": 1700236490
             },
             {
-                "address": "lsku4me36bspdsup22p6rmu9uvzjf55sm6k92yf7q",
+                "address": "klyu4me36bspdsup22p6rmu9uvzjf55sm6k92yf7q",
                 "nextAllocatedTime": 1700236500
             },
             {
-                "address": "lskyvfv3esyznwkpxcp4u7rnsoqwv55y82vw4yh7b",
+                "address": "klyyvfv3esyznwkpxcp4u7rnsoqwv55y82vw4yh7b",
                 "nextAllocatedTime": 1700236510
             }
         ]
@@ -2338,7 +2338,7 @@ curl --location 'http://localhost:7887/rpc' \
 {
    "keys": [
       {
-            "address": "lskzbqjmwmd32sx8ya56saa4gk7tkco953btm24t8",
+            "address": "klyzbqjmwmd32sx8ya56saa4gk7tkco953btm24t8",
             "type": "plain",
             "data": {
                "generatorKey": "3f44b319b82443eabb300eba5a2f323d72e44d9d2d5ed0b21a24051595582dd5",
@@ -2348,7 +2348,7 @@ curl --location 'http://localhost:7887/rpc' \
             }
       },
       {
-            "address": "lskzot8pzdcvjhpjwrhq3dkkbf499ok7mhwkrvsq3",
+            "address": "klyzot8pzdcvjhpjwrhq3dkkbf499ok7mhwkrvsq3",
             "type": "plain",
             "data": {
                "generatorKey": "73de0a02eee8076cb64f8bc0591326bdd7447d85a24d501307d98aa912ebc766",
@@ -2358,7 +2358,7 @@ curl --location 'http://localhost:7887/rpc' \
             }
       },
       {
-            "address": "lskz89nmk8tuwt93yzqm6wu2jxjdaftr9d5detn8v",
+            "address": "klyz89nmk8tuwt93yzqm6wu2jxjdaftr9d5detn8v",
             "type": "plain",
             "data": {
                "generatorKey": "761b647f4cb146f168e41658d1dfe0e9c01e5d64b15e5c033d230210f7e0aaa8",
@@ -2368,7 +2368,7 @@ curl --location 'http://localhost:7887/rpc' \
             }
       },
       {
-            "address": "lskx2hume2sg9grrnj94cpqkjummtz2mpcgc8dhoe",
+            "address": "klyx2hume2sg9grrnj94cpqkjummtz2mpcgc8dhoe",
             "type": "plain",
             "data": {
                "generatorKey": "f07a86182356aee3fcfb37dcedbb6712c98319dc24b7be17cb322880d755b299",
@@ -2378,7 +2378,7 @@ curl --location 'http://localhost:7887/rpc' \
             }
       },
       {
-            "address": "lskxa4895zkxjspdvu3e5eujash7okvnkkpr8xsr5",
+            "address": "klyxa4895zkxjspdvu3e5eujash7okvnkkpr8xsr5",
             "type": "plain",
             "data": {
                "generatorKey": "0cc6c469088fb2163262ac41787ea4a81da50d92fd510299ba66e5a2b02d5a05",
@@ -2388,7 +2388,7 @@ curl --location 'http://localhost:7887/rpc' \
             }
       },
       {
-            "address": "lskvcgy7ccuokarwqde8m8ztrur92cob6ju5quy4n",
+            "address": "klyvcgy7ccuokarwqde8m8ztrur92cob6ju5quy4n",
             "type": "plain",
             "data": {
                "generatorKey": "83cca7ee3c7145d8022b54fab14505f6f65ed9ac933e3591de4a45d4f2298adb",
@@ -2398,7 +2398,7 @@ curl --location 'http://localhost:7887/rpc' \
             }
       },
       {
-            "address": "lskvpnf7a2eg5wpxrx9p2tnnxm8y7a7emfj8c3gst",
+            "address": "klyvpnf7a2eg5wpxrx9p2tnnxm8y7a7emfj8c3gst",
             "type": "plain",
             "data": {
                "generatorKey": "1d224ad4cf64a3db52b2509c5b63365db970f34c8e09babf4af8135d9234f91f",
@@ -2408,7 +2408,7 @@ curl --location 'http://localhost:7887/rpc' \
             }
       },
       {
-            "address": "lskvq67zzev53sa6ozt39ft3dsmwxxztb7h29275k",
+            "address": "klyvq67zzev53sa6ozt39ft3dsmwxxztb7h29275k",
             "type": "plain",
             "data": {
                "generatorKey": "8b65dce85de8ed215a91477627b365ec017a01cd5a715337f772ba42715cc794",
@@ -2418,7 +2418,7 @@ curl --location 'http://localhost:7887/rpc' \
             }
       },
       {
-            "address": "lskvwy3xvehhpfh2aekcaro5sk36vp5z5kns2zaqt",
+            "address": "klyvwy3xvehhpfh2aekcaro5sk36vp5z5kns2zaqt",
             "type": "plain",
             "data": {
                "generatorKey": "20a50d60059dff36a6f6c922f55b018d288ba1f9df5120eeb8fa8e3745a800ec",
@@ -2428,7 +2428,7 @@ curl --location 'http://localhost:7887/rpc' \
             }
       },
       {
-            "address": "lskcuj9g99y36fc6em2f6zfrd83c6djsvcyzx9u3p",
+            "address": "klycuj9g99y36fc6em2f6zfrd83c6djsvcyzx9u3p",
             "type": "plain",
             "data": {
                "generatorKey": "80fb43e2c967cb9d050c0460d8a538f15f0ed3b16cb38e0414633f182d67a275",
@@ -2438,7 +2438,7 @@ curl --location 'http://localhost:7887/rpc' \
             }
       },
       {
-            "address": "lskc22mfaqzo722aenb6yw7awx8f22nrn54skrj8b",
+            "address": "klyc22mfaqzo722aenb6yw7awx8f22nrn54skrj8b",
             "type": "plain",
             "data": {
                "generatorKey": "671c72129793eb5801273ff580ce3d4c78d89fc8b4fb95b090a9af0a9a647a41",
@@ -2448,7 +2448,7 @@ curl --location 'http://localhost:7887/rpc' \
             }
       },
       {
-            "address": "lskchcsq6pgnq6nwttwe9hyj67rb9936cf2ccjk3b",
+            "address": "klychcsq6pgnq6nwttwe9hyj67rb9936cf2ccjk3b",
             "type": "plain",
             "data": {
                "generatorKey": "be4e49ea7e57ede752ce33cb224f50277552f9085a551005255ee12a9b4ca68d",
@@ -2458,7 +2458,7 @@ curl --location 'http://localhost:7887/rpc' \
             }
       },
       {
-            "address": "lskp2kubbnvgwhw588t3wp85wthe285r7e2m64w2d",
+            "address": "klyp2kubbnvgwhw588t3wp85wthe285r7e2m64w2d",
             "type": "plain",
             "data": {
                "generatorKey": "56d64ef16324f92efce8b0a6ee98b2925dc485d45675b2012bbf6a96d7431a36",
@@ -2468,7 +2468,7 @@ curl --location 'http://localhost:7887/rpc' \
             }
       },
       {
-            "address": "lskmc9nhajmkqczvaeob872h9mefnw63mcec84qzd",
+            "address": "klymc9nhajmkqczvaeob872h9mefnw63mcec84qzd",
             "type": "plain",
             "data": {
                "generatorKey": "b67f0a9ad61ad6867b54aaaed6036001485d7a7ba13770aed786b34241f37cda",
@@ -2478,7 +2478,7 @@ curl --location 'http://localhost:7887/rpc' \
             }
       },
       {
-            "address": "lskm8g9dshwfcmfq9ctbrjm9zvb58h5c7y9ecstky",
+            "address": "klym8g9dshwfcmfq9ctbrjm9zvb58h5c7y9ecstky",
             "type": "plain",
             "data": {
                "generatorKey": "497a5b80edc6b9b5cca4ca73fd0523dbd51e41c1af5f893e301cfa91d997573a",
@@ -2488,7 +2488,7 @@ curl --location 'http://localhost:7887/rpc' \
             }
       },
       {
-            "address": "lskmwac26bhz5s5wo7h79dpyucckxku8jw5descbg",
+            "address": "klymwac26bhz5s5wo7h79dpyucckxku8jw5descbg",
             "type": "plain",
             "data": {
                "generatorKey": "a7340ac2220b35dd5c97e6ea45c48cfdfcaccc4c59abf9b7f316df8a1bd7e8b2",
@@ -2498,7 +2498,7 @@ curl --location 'http://localhost:7887/rpc' \
             }
       },
       {
-            "address": "lskmadcfr9p3qgx8upeac6xkmk8fjss7atw8p8s2a",
+            "address": "klymadcfr9p3qgx8upeac6xkmk8fjss7atw8p8s2a",
             "type": "plain",
             "data": {
                "generatorKey": "ebeb7f828aaa40ab6040e914b66b6f5d76964a0579bd29bf98c2641547f229f6",
@@ -2508,7 +2508,7 @@ curl --location 'http://localhost:7887/rpc' \
             }
       },
       {
-            "address": "lskbm49qcdcyqvavxkm69x22btvhwx6v27kfzghu3",
+            "address": "klybm49qcdcyqvavxkm69x22btvhwx6v27kfzghu3",
             "type": "plain",
             "data": {
                "generatorKey": "4ec3ad70d3d35f0d684960e7938fab016d12c6c7cbb8312a8cff776dbaf2ca4a",
@@ -2518,7 +2518,7 @@ curl --location 'http://localhost:7887/rpc' \
             }
       },
       {
-            "address": "lskbr5cnd8rjeaot7gtfo79fsywx4nb68b29xeqrh",
+            "address": "klybr5cnd8rjeaot7gtfo79fsywx4nb68b29xeqrh",
             "type": "plain",
             "data": {
                "generatorKey": "552ea15981e9fa54f2b65c409e8d32c350435893744fb9937875b1ec0e3025eb",
@@ -2528,7 +2528,7 @@ curl --location 'http://localhost:7887/rpc' \
             }
       },
       {
-            "address": "lsknyuj2wnn95w8svk7jo38jwxhpnrx7cj3vo4vjc",
+            "address": "klynyuj2wnn95w8svk7jo38jwxhpnrx7cj3vo4vjc",
             "type": "plain",
             "data": {
                "generatorKey": "4325779e64521ded42c0e2e873c16b753433d0e7f9a1e046e27a0fae9378d9c9",
@@ -2538,7 +2538,7 @@ curl --location 'http://localhost:7887/rpc' \
             }
       },
       {
-            "address": "lsknax33n2ohy872rdkfp4ud7nsv8eamwt6utw5nb",
+            "address": "klynax33n2ohy872rdkfp4ud7nsv8eamwt6utw5nb",
             "type": "plain",
             "data": {
                "generatorKey": "473d332bb27f1dab55191233884f37aaf17545b1883554b1457b2dfac7c02b0a",
@@ -2548,7 +2548,7 @@ curl --location 'http://localhost:7887/rpc' \
             }
       },
       {
-            "address": "lsknatyy4944pxukrhe38bww4bn3myzjp2af4sqgh",
+            "address": "klynatyy4944pxukrhe38bww4bn3myzjp2af4sqgh",
             "type": "plain",
             "data": {
                "generatorKey": "f8d382ac4f19ffe2ac2fa91794b65dc4c03389cbb2ea65bab50379a12e0f98fb",
@@ -2558,7 +2558,7 @@ curl --location 'http://localhost:7887/rpc' \
             }
       },
       {
-            "address": "lsknddzdw4xxej5znssc7aapej67s7g476osk7prc",
+            "address": "klynddzdw4xxej5znssc7aapej67s7g476osk7prc",
             "type": "plain",
             "data": {
                "generatorKey": "3c19943d614f67309dd989e2e1bdeade5ea53b0522eac3d46b9e7f68604a874d",
@@ -2568,7 +2568,7 @@ curl --location 'http://localhost:7887/rpc' \
             }
       },
       {
-            "address": "lsk3oz8mycgs86jehbmpmb83n8z3ctxou47h7r9bs",
+            "address": "kly3oz8mycgs86jehbmpmb83n8z3ctxou47h7r9bs",
             "type": "plain",
             "data": {
                "generatorKey": "b9bbcd67194a7091a517faf37a7ec0fda068c4ac0dcbb8ddf526de97e67716a4",
@@ -2578,7 +2578,7 @@ curl --location 'http://localhost:7887/rpc' \
             }
       },
       {
-            "address": "lsk37kucto34knfhumezkx3qdwhmbrqfonjmck59z",
+            "address": "kly37kucto34knfhumezkx3qdwhmbrqfonjmck59z",
             "type": "plain",
             "data": {
                "generatorKey": "edec02268c216d131fa9ec045049e6ac1526f48da772a34b1536c88c5af223da",
@@ -2588,7 +2588,7 @@ curl --location 'http://localhost:7887/rpc' \
             }
       },
       {
-            "address": "lsk3dzjyndh43tdc6vugbdqhfpt3k9juethuzsmdk",
+            "address": "kly3dzjyndh43tdc6vugbdqhfpt3k9juethuzsmdk",
             "type": "plain",
             "data": {
                "generatorKey": "9f1c361befb0ae35de28e8f0e25efe75ede78aa26c703625cc17e7fe2e7208f3",
@@ -2598,7 +2598,7 @@ curl --location 'http://localhost:7887/rpc' \
             }
       },
       {
-            "address": "lsk4nst5n99meqxndr684va7hhenw7q8sxs5depnb",
+            "address": "kly4nst5n99meqxndr684va7hhenw7q8sxs5depnb",
             "type": "plain",
             "data": {
                "generatorKey": "71ce039f0e4502ff56ca8d33f7ba5ba5392dd7915516b2d87eb777edef454377",
@@ -2608,7 +2608,7 @@ curl --location 'http://localhost:7887/rpc' \
             }
       },
       {
-            "address": "lsk67y3t2sqd7kka2agtcdm68oqvmvyw94nrjqz7f",
+            "address": "kly67y3t2sqd7kka2agtcdm68oqvmvyw94nrjqz7f",
             "type": "plain",
             "data": {
                "generatorKey": "74f7ff53b55eda8fe9c11d66f7533c27714b121a5918a66c19b309e1c93dc3ed",
@@ -2618,7 +2618,7 @@ curl --location 'http://localhost:7887/rpc' \
             }
       },
       {
-            "address": "lsk6quzyfffe2xhukyq4vjwnebmnapvsgj4we7bad",
+            "address": "kly6quzyfffe2xhukyq4vjwnebmnapvsgj4we7bad",
             "type": "plain",
             "data": {
                "generatorKey": "b5308c34412c54e4b8358b5fca16396084004ee37c6824c1ad751cbe8e50e24f",
@@ -2628,7 +2628,7 @@ curl --location 'http://localhost:7887/rpc' \
             }
       },
       {
-            "address": "lsk5pmheu78re567zd5dnddzh2c3jzn7bwcrjd7dy",
+            "address": "kly5pmheu78re567zd5dnddzh2c3jzn7bwcrjd7dy",
             "type": "plain",
             "data": {
                "generatorKey": "62c37caa9ecdb3874354e7f780cb4463ad190bc31e75e552cb07b9bafc658f2c",
@@ -2638,7 +2638,7 @@ curl --location 'http://localhost:7887/rpc' \
             }
       },
       {
-            "address": "lsk56hpjtt5b8w3h2qgckr57txuw95ja29rsonweo",
+            "address": "kly56hpjtt5b8w3h2qgckr57txuw95ja29rsonweo",
             "type": "plain",
             "data": {
                "generatorKey": "d19ee9537ed38f537c2e8be0fb491331575f8e4050dc4a74ccee3244714d5969",
@@ -2648,7 +2648,7 @@ curl --location 'http://localhost:7887/rpc' \
             }
       },
       {
-            "address": "lsk5y2q2tn35xrnpdc4oag8sa3ktdacmdcahvwqot",
+            "address": "kly5y2q2tn35xrnpdc4oag8sa3ktdacmdcahvwqot",
             "type": "plain",
             "data": {
                "generatorKey": "4ae9069cbc0e2371b037342010c5ddbd9c6d4a8c8d0a9eae59bc6a3796866119",
@@ -2658,7 +2658,7 @@ curl --location 'http://localhost:7887/rpc' \
             }
       },
       {
-            "address": "lsk5rtz6s352qyt9vggx7uyo5b4p2ommfxz36w7ma",
+            "address": "kly5rtz6s352qyt9vggx7uyo5b4p2ommfxz36w7ma",
             "type": "plain",
             "data": {
                "generatorKey": "d1f10929b1eab8232be9df3b792496eb56bcb5c0a8c2fd04e3be1fab26c7980e",
@@ -2668,7 +2668,7 @@ curl --location 'http://localhost:7887/rpc' \
             }
       },
       {
-            "address": "lskoys3dpcyx5hkr7u2fenpjrbyd69tuyu5ar4dgy",
+            "address": "klyoys3dpcyx5hkr7u2fenpjrbyd69tuyu5ar4dgy",
             "type": "plain",
             "data": {
                "generatorKey": "3efa1c0a728a9741555b84ff1d80aedfcaf85370e1602890d7ba610bf33500bb",
@@ -2678,7 +2678,7 @@ curl --location 'http://localhost:7887/rpc' \
             }
       },
       {
-            "address": "lskoq2bmkpfwmmbo3c9pzdby7wmwjvokgmpgbpcj3",
+            "address": "klyoq2bmkpfwmmbo3c9pzdby7wmwjvokgmpgbpcj3",
             "type": "plain",
             "data": {
                "generatorKey": "8cda7b8df8975d781e053882a1373d190d5f8fd7c13ab528be8597b5d06ede57",
@@ -2688,7 +2688,7 @@ curl --location 'http://localhost:7887/rpc' \
             }
       },
       {
-            "address": "lskowvmbgn4oye4hae3keyjuzta4t499zqkjqydfd",
+            "address": "klyowvmbgn4oye4hae3keyjuzta4t499zqkjqydfd",
             "type": "plain",
             "data": {
                "generatorKey": "f926fbec6d2e461af7c58d87754524abd26ab1f617d73348ba1318d371f7cac0",
@@ -2698,7 +2698,7 @@ curl --location 'http://localhost:7887/rpc' \
             }
       },
       {
-            "address": "lskos7tnf5jx4e6jq4bf5z4gwo2ow5he4khn75gpo",
+            "address": "klyos7tnf5jx4e6jq4bf5z4gwo2ow5he4khn75gpo",
             "type": "plain",
             "data": {
                "generatorKey": "d5781773a9b07a569a0d87c0bf82103fd459a2185fc32f5c312a663c5bc65784",
@@ -2708,7 +2708,7 @@ curl --location 'http://localhost:7887/rpc' \
             }
       },
       {
-            "address": "lsk966m5mv2xk8hassrq5b8nz97qmy3nh348y6zf7",
+            "address": "kly966m5mv2xk8hassrq5b8nz97qmy3nh348y6zf7",
             "type": "plain",
             "data": {
                "generatorKey": "875d9a84adcf997034d5ab6189a063d9817da3a6c8599cc46c84b70b5081b18b",
@@ -2718,7 +2718,7 @@ curl --location 'http://localhost:7887/rpc' \
             }
       },
       {
-            "address": "lsk7drqfofanzn9rf7g59a2jha5ses3rswmc26hpw",
+            "address": "kly7drqfofanzn9rf7g59a2jha5ses3rswmc26hpw",
             "type": "plain",
             "data": {
                "generatorKey": "71d5b4b08ea0b7a0ff95f779aec53590a3bcb5a87fc770334f8c9ee57fdd79d9",
@@ -2728,7 +2728,7 @@ curl --location 'http://localhost:7887/rpc' \
             }
       },
       {
-            "address": "lsk8vjsq5s8jan9c8y9tmgawd6cttuszbf6jmhvj5",
+            "address": "kly8vjsq5s8jan9c8y9tmgawd6cttuszbf6jmhvj5",
             "type": "plain",
             "data": {
                "generatorKey": "00110f493d122a73628a518842e99591b91def4ef9fbd58e1b6458950da5a776",
@@ -2738,7 +2738,7 @@ curl --location 'http://localhost:7887/rpc' \
             }
       },
       {
-            "address": "lsk8netwcxgkpew8g5as2bkwbfraetf8neud25ktc",
+            "address": "kly8netwcxgkpew8g5as2bkwbfraetf8neud25ktc",
             "type": "plain",
             "data": {
                "generatorKey": "fa7af9f8623b324e6c021b7a0899d980a41dd2de86c35cab530751eaa9e55a0a",
@@ -2748,7 +2748,7 @@ curl --location 'http://localhost:7887/rpc' \
             }
       },
       {
-            "address": "lsk8kpswabbcjrnfp89demrfvryx9sgjsma87pusk",
+            "address": "kly8kpswabbcjrnfp89demrfvryx9sgjsma87pusk",
             "type": "plain",
             "data": {
                "generatorKey": "91fdf7f2a3eb93e493f736a4f9fce0e1df082836bf6d06e739bb3b0e1690fada",
@@ -2758,7 +2758,7 @@ curl --location 'http://localhost:7887/rpc' \
             }
       },
       {
-            "address": "lsk8dz47g5s7qxbyy46qvkrykfoj7wg7rb5ohy97c",
+            "address": "kly8dz47g5s7qxbyy46qvkrykfoj7wg7rb5ohy97c",
             "type": "plain",
             "data": {
                "generatorKey": "567e1e27c02293d7c190a1eb203c2daf1935a9901de66df73f8e4eeae6907d04",
@@ -2768,7 +2768,7 @@ curl --location 'http://localhost:7887/rpc' \
             }
       },
       {
-            "address": "lsk8dsngwh4n6hmf4unqb8gfqgkayabaqdvtq85ja",
+            "address": "kly8dsngwh4n6hmf4unqb8gfqgkayabaqdvtq85ja",
             "type": "plain",
             "data": {
                "generatorKey": "dd337fcb819073335382415bfdbf5e5b7e73126aafb0ac46479137328e72d438",
@@ -2778,7 +2778,7 @@ curl --location 'http://localhost:7887/rpc' \
             }
       },
       {
-            "address": "lskux8ew6zq6zddya4u32towauvxmbe3x9hxvbzv4",
+            "address": "klyux8ew6zq6zddya4u32towauvxmbe3x9hxvbzv4",
             "type": "plain",
             "data": {
                "generatorKey": "563aa06b554beea30fc4455ae51e0954051a3457315b2370fde9c22d3233b522",
@@ -2788,7 +2788,7 @@ curl --location 'http://localhost:7887/rpc' \
             }
       },
       {
-            "address": "lsku4ftwo3dvgygbnn58octduj6458h5eep2aea6e",
+            "address": "klyu4ftwo3dvgygbnn58octduj6458h5eep2aea6e",
             "type": "plain",
             "data": {
                "generatorKey": "894289ef63ad9f51868d06e700c5dc9cac7af2e6601a99449134926cfdbb4340",
@@ -2798,7 +2798,7 @@ curl --location 'http://localhost:7887/rpc' \
             }
       },
       {
-            "address": "lskuueow44w67rte7uoryn855hp5kw48szuhe5qmc",
+            "address": "klyuueow44w67rte7uoryn855hp5kw48szuhe5qmc",
             "type": "plain",
             "data": {
                "generatorKey": "ebe1d6189c7015d175414db9621a602b0912826c1eb1aab09e69bb33ca8fcda5",
@@ -2808,7 +2808,7 @@ curl --location 'http://localhost:7887/rpc' \
             }
       },
       {
-            "address": "lskym4rrvgax9ubgqz6944z9q3t6quo5ugw33j3kr",
+            "address": "klyym4rrvgax9ubgqz6944z9q3t6quo5ugw33j3kr",
             "type": "plain",
             "data": {
                "generatorKey": "4514d1723eed164b3792f1950d3b1c7a1067441ba207cce8d9bdd6f436a119fe",
@@ -2818,7 +2818,7 @@ curl --location 'http://localhost:7887/rpc' \
             }
       },
       {
-            "address": "lskyunb64dg4x72ue8mzte7cbev8j4nucf9je2sh9",
+            "address": "klyyunb64dg4x72ue8mzte7cbev8j4nucf9je2sh9",
             "type": "plain",
             "data": {
                "generatorKey": "a9b0c063fee99a903a55da57e3d16f069145e414b62e25dbbf218bd608a61f7c",
@@ -2828,7 +2828,7 @@ curl --location 'http://localhost:7887/rpc' \
             }
       },
       {
-            "address": "lskrzuuu8gkp5bxrbbz9hdjxw2yhnpxdkdz3j8rxr",
+            "address": "klyrzuuu8gkp5bxrbbz9hdjxw2yhnpxdkdz3j8rxr",
             "type": "plain",
             "data": {
                "generatorKey": "d454f04eb0e05c980f6a3427e98d73493665860ba7a29eb915cfc0b8daae2849",
@@ -2838,7 +2838,7 @@ curl --location 'http://localhost:7887/rpc' \
             }
       },
       {
-            "address": "lskrxweey4ak83ek36go6okoxr6bxrepdv3y52k3y",
+            "address": "klyrxweey4ak83ek36go6okoxr6bxrepdv3y52k3y",
             "type": "plain",
             "data": {
                "generatorKey": "21120ef22b7df438e06b3862d3f0ab99d5704b3c61c45a544c64c908da8955ad",
@@ -2848,7 +2848,7 @@ curl --location 'http://localhost:7887/rpc' \
             }
       },
       {
-            "address": "lskrccyjmc8cybh9n3kgencq8u7fh796v2zfraco9",
+            "address": "klyrccyjmc8cybh9n3kgencq8u7fh796v2zfraco9",
             "type": "plain",
             "data": {
                "generatorKey": "bf9ebe25faae5a874d97ad1772ad062ca52f63e48d806ef641e025a963224200",
@@ -2858,7 +2858,7 @@ curl --location 'http://localhost:7887/rpc' \
             }
       },
       {
-            "address": "lskr8bmeh9q5brkctg8g44j82ootju82zu8porwvq",
+            "address": "klyr8bmeh9q5brkctg8g44j82ootju82zu8porwvq",
             "type": "plain",
             "data": {
                "generatorKey": "8062134a09cc464fe9465cda959b402a3d4506a1c44b3f5cba9661d42e912421",
@@ -2868,7 +2868,7 @@ curl --location 'http://localhost:7887/rpc' \
             }
       },
       {
-            "address": "lskrskxmbv7s4czgxz5wtdqkay87ts2mfmu4ufcaw",
+            "address": "klyrskxmbv7s4czgxz5wtdqkay87ts2mfmu4ufcaw",
             "type": "plain",
             "data": {
                "generatorKey": "07614fd5036d099a3caf004d46a083d12df2024fc03ef29cec22e58d1f78531f",
@@ -2878,7 +2878,7 @@ curl --location 'http://localhost:7887/rpc' \
             }
       },
       {
-            "address": "lskrgqnuqub85jzcocgjsgb5rexrxc32s9dajhm69",
+            "address": "klyrgqnuqub85jzcocgjsgb5rexrxc32s9dajhm69",
             "type": "plain",
             "data": {
                "generatorKey": "55d4c0e745954f0fba9629b346055060418961e7edce58c77bf2bcfc7f753d42",
@@ -2888,7 +2888,7 @@ curl --location 'http://localhost:7887/rpc' \
             }
       },
       {
-            "address": "lskrga27zfbamdcntpbxxt7sezvmubyxv9vnw2upk",
+            "address": "klyrga27zfbamdcntpbxxt7sezvmubyxv9vnw2upk",
             "type": "plain",
             "data": {
                "generatorKey": "d2b31ed942359b0c9cb696cae874a2dbdd6e24915dd8a5882c7c042eac1e6831",
@@ -2898,7 +2898,7 @@ curl --location 'http://localhost:7887/rpc' \
             }
       },
       {
-            "address": "lsktn6hodzd7v4kzgpd56osqjfwnzhu4mdyokynum",
+            "address": "klytn6hodzd7v4kzgpd56osqjfwnzhu4mdyokynum",
             "type": "plain",
             "data": {
                "generatorKey": "6158b2a5b662ce05c7864dff4c2aecf6109cdea1be703a79147450b082ea242d",
@@ -2908,7 +2908,7 @@ curl --location 'http://localhost:7887/rpc' \
             }
       },
       {
-            "address": "lsktas5pgp3tofv4ke4f2kayw9uyrqpnbf55bw5hm",
+            "address": "klytas5pgp3tofv4ke4f2kayw9uyrqpnbf55bw5hm",
             "type": "plain",
             "data": {
                "generatorKey": "8307181cf9d1f621261e8a97a5b3b77d64a9a1f589a2c14e42b2380d9c2d6297",
@@ -2918,7 +2918,7 @@ curl --location 'http://localhost:7887/rpc' \
             }
       },
       {
-            "address": "lskk33a2z28ak9yy6eunbmodnynoehtyra5o4jzkn",
+            "address": "klyk33a2z28ak9yy6eunbmodnynoehtyra5o4jzkn",
             "type": "plain",
             "data": {
                "generatorKey": "689639f5e3808cc0efd5f8d48ca6ee6f9a7a1bd5f5776832cc9b448cff5d0aa9",
@@ -2928,7 +2928,7 @@ curl --location 'http://localhost:7887/rpc' \
             }
       },
       {
-            "address": "lskk8yh4h2rkp3yegr5xuea62qbos6q8xd6h3wys2",
+            "address": "klyk8yh4h2rkp3yegr5xuea62qbos6q8xd6h3wys2",
             "type": "plain",
             "data": {
                "generatorKey": "db1c7c22ee495ad3553394dca00c62b85e78b58e78ca68bfe5027b3346f6c854",
@@ -2938,7 +2938,7 @@ curl --location 'http://localhost:7887/rpc' \
             }
       },
       {
-            "address": "lskkqjdxujqmjn2woqjs6txv3trzh6s5gsr882scp",
+            "address": "klykqjdxujqmjn2woqjs6txv3trzh6s5gsr882scp",
             "type": "plain",
             "data": {
                "generatorKey": "c0aa7af3198f0e3a6bf35c5be38e0f181827735b1c3a635e8db05b80b3647054",
@@ -2948,7 +2948,7 @@ curl --location 'http://localhost:7887/rpc' \
             }
       },
       {
-            "address": "lskk2vnyd5dq3ekexog6us6zcze9r64wk456zvj9a",
+            "address": "klyk2vnyd5dq3ekexog6us6zcze9r64wk456zvj9a",
             "type": "plain",
             "data": {
                "generatorKey": "7ff8b45c5f6239306af0194ee41e047669e33338be3f8e6c786d90fb905c8b6a",
@@ -2958,7 +2958,7 @@ curl --location 'http://localhost:7887/rpc' \
             }
       },
       {
-            "address": "lskkjm548jqdrgzqrozpkew9z82kqfvtpmvavj7d6",
+            "address": "klykjm548jqdrgzqrozpkew9z82kqfvtpmvavj7d6",
             "type": "plain",
             "data": {
                "generatorKey": "b53ef930d84d3ce5b4947c2502da06bcbc0fb2c71ee96f3b3a35340516712c71",
@@ -2968,7 +2968,7 @@ curl --location 'http://localhost:7887/rpc' \
             }
       },
       {
-            "address": "lskqxjqneh4mhkvvgga8wxtrky5ztzt6bh8rcvsvg",
+            "address": "klyqxjqneh4mhkvvgga8wxtrky5ztzt6bh8rcvsvg",
             "type": "plain",
             "data": {
                "generatorKey": "a2b5e97ac5a5b3c3a7cd9b4401eca1f4e8da59fe567e229ea47e65bf40053402",
@@ -2978,7 +2978,7 @@ curl --location 'http://localhost:7887/rpc' \
             }
       },
       {
-            "address": "lskq6j6w8bv4s4to8ty6rz88y2cwcx76o4wcdnsdq",
+            "address": "klyq6j6w8bv4s4to8ty6rz88y2cwcx76o4wcdnsdq",
             "type": "plain",
             "data": {
                "generatorKey": "6c99048cae450de8735dd410a5c8b0e4655afaebcc2c155503f890af51e067c2",
@@ -2988,7 +2988,7 @@ curl --location 'http://localhost:7887/rpc' \
             }
       },
       {
-            "address": "lskq5attbvu8s55ngwr3c5cv8392mqayvy4yyhpuy",
+            "address": "klyq5attbvu8s55ngwr3c5cv8392mqayvy4yyhpuy",
             "type": "plain",
             "data": {
                "generatorKey": "1819bea0ff11aa0cde16c5b32736e7df274f9421d912a307526069fa119100ca",
@@ -2998,7 +2998,7 @@ curl --location 'http://localhost:7887/rpc' \
             }
       },
       {
-            "address": "lskqw45qy3ph9rwgow86rudqa7e3vmb93db5e4yad",
+            "address": "klyqw45qy3ph9rwgow86rudqa7e3vmb93db5e4yad",
             "type": "plain",
             "data": {
                "generatorKey": "1314b7d167d5829fb535d15dfb5216e10ad2e5b6a349ae347aec77317b6aa73f",
@@ -3008,7 +3008,7 @@ curl --location 'http://localhost:7887/rpc' \
             }
       },
       {
-            "address": "lskqg9k3joyv9ouhjfysscame66hovq42yeev7ug7",
+            "address": "klyqg9k3joyv9ouhjfysscame66hovq42yeev7ug7",
             "type": "plain",
             "data": {
                "generatorKey": "a9568912797914f590413c3156c9cff93c9c14193b01e7bf248195bbe8c1af19",
@@ -3018,7 +3018,7 @@ curl --location 'http://localhost:7887/rpc' \
             }
       },
       {
-            "address": "lskezdab747v9z78hgmcxsokeetcmbdrpj3gzrdcw",
+            "address": "klyezdab747v9z78hgmcxsokeetcmbdrpj3gzrdcw",
             "type": "plain",
             "data": {
                "generatorKey": "44de3820f1a1a7351953d2d000f29cb7bffecf30582a8b3da2cb80c83b9eceef",
@@ -3028,7 +3028,7 @@ curl --location 'http://localhost:7887/rpc' \
             }
       },
       {
-            "address": "lske5sqed53fdcs4m9et28f2k7u9fk6hno9bauday",
+            "address": "klye5sqed53fdcs4m9et28f2k7u9fk6hno9bauday",
             "type": "plain",
             "data": {
                "generatorKey": "b9e54121e5346cc04cc84bcf286d5e40d586ba5d39571daf57bd31bac3861a4a",
@@ -3038,7 +3038,7 @@ curl --location 'http://localhost:7887/rpc' \
             }
       },
       {
-            "address": "lskee8xh9oc78uhw5dhnaca9mbgmcgbwbnbarvd5d",
+            "address": "klyee8xh9oc78uhw5dhnaca9mbgmcgbwbnbarvd5d",
             "type": "plain",
             "data": {
                "generatorKey": "aed740da1a7204422b92f733212398ce881c24a4cfe40edeea6a59a0f6453743",
@@ -3048,7 +3048,7 @@ curl --location 'http://localhost:7887/rpc' \
             }
       },
       {
-            "address": "lskewnnr5x7h3ckkmys8d4orvuyyqmf8odmud6qmg",
+            "address": "klyewnnr5x7h3ckkmys8d4orvuyyqmf8odmud6qmg",
             "type": "plain",
             "data": {
                "generatorKey": "bf5f4408df7a1cde279b3cfe7ba6c2e2600a4bb90d883b98ef8048ec344221e0",
@@ -3058,7 +3058,7 @@ curl --location 'http://localhost:7887/rpc' \
             }
       },
       {
-            "address": "lskwv3bh76epo42wvj6sdq8t7dbwar7xmm7h4k92m",
+            "address": "klywv3bh76epo42wvj6sdq8t7dbwar7xmm7h4k92m",
             "type": "plain",
             "data": {
                "generatorKey": "f99c543eeba441fdb22c673fa81878269c3b69a6366d8d51fb6890f2eb3118b6",
@@ -3068,7 +3068,7 @@ curl --location 'http://localhost:7887/rpc' \
             }
       },
       {
-            "address": "lskw95u4yqs35jpeourx4jsgdur2br7b9nq88b4g2",
+            "address": "klyw95u4yqs35jpeourx4jsgdur2br7b9nq88b4g2",
             "type": "plain",
             "data": {
                "generatorKey": "e2f80871a5220be51352427077f6e93c2294d88be6b731b535d2ce9371274e7b",
@@ -3078,7 +3078,7 @@ curl --location 'http://localhost:7887/rpc' \
             }
       },
       {
-            "address": "lskwdkhf2ew9ov65v7srpq2mdq48rmrgp492z3pkn",
+            "address": "klywdkhf2ew9ov65v7srpq2mdq48rmrgp492z3pkn",
             "type": "plain",
             "data": {
                "generatorKey": "cc83f488c03e58d083927601658d234ffd12b5cb6fe3151206f699d031dc4161",
@@ -3088,7 +3088,7 @@ curl --location 'http://localhost:7887/rpc' \
             }
       },
       {
-            "address": "lskwdqjhdgvqde9yrro4pfu464cumns3t5gyzutbm",
+            "address": "klywdqjhdgvqde9yrro4pfu464cumns3t5gyzutbm",
             "type": "plain",
             "data": {
                "generatorKey": "902b7ed4708c476c7f0e96825cb06f95cbc86953130575d2c4589d8e3dc2f69c",
@@ -3098,7 +3098,7 @@ curl --location 'http://localhost:7887/rpc' \
             }
       },
       {
-            "address": "lsk2xxvfxaqpm42wr9reokucegh3quypqg9w9aqfo",
+            "address": "kly2xxvfxaqpm42wr9reokucegh3quypqg9w9aqfo",
             "type": "plain",
             "data": {
                "generatorKey": "621d52ac19aba86c4feef94c67ae62cfa3f6ac192177ae37be2e6b3205449c0a",
@@ -3108,7 +3108,7 @@ curl --location 'http://localhost:7887/rpc' \
             }
       },
       {
-            "address": "lska4qegdqzmsndn5hdn5jngy6nnt9qxjekkkd5jz",
+            "address": "klya4qegdqzmsndn5hdn5jngy6nnt9qxjekkkd5jz",
             "type": "plain",
             "data": {
                "generatorKey": "965e86fdfcdcd64879efe23705506faeb4dfc4244f93d47f4bf444966d2a0f3d",
@@ -3118,7 +3118,7 @@ curl --location 'http://localhost:7887/rpc' \
             }
       },
       {
-            "address": "lska6rtf7ndbgbx7d8puaaf3heqsqnudkdhvoabdm",
+            "address": "klya6rtf7ndbgbx7d8puaaf3heqsqnudkdhvoabdm",
             "type": "plain",
             "data": {
                "generatorKey": "f8252b40a65be6f5f6d0be446da5ab434bdc0a921fd0956b0672ea4a218d2d7a",
@@ -3128,7 +3128,7 @@ curl --location 'http://localhost:7887/rpc' \
             }
       },
       {
-            "address": "lskau7uqo6afteazgyknmtotxdjgwr3p9gfr4yzke",
+            "address": "klyau7uqo6afteazgyknmtotxdjgwr3p9gfr4yzke",
             "type": "plain",
             "data": {
                "generatorKey": "00245e599fdad13ed0b064c069c71c73caf868a4635c0143963a529807f8728c",
@@ -3138,7 +3138,7 @@ curl --location 'http://localhost:7887/rpc' \
             }
       },
       {
-            "address": "lskayo6b7wmd3prq8fauwr52tj9ordadwrvuh5hn7",
+            "address": "klyayo6b7wmd3prq8fauwr52tj9ordadwrvuh5hn7",
             "type": "plain",
             "data": {
                "generatorKey": "5ec5a5a2c91414f5cc5e3354b58671e624bc88a39fdc8f128593daa06545d6cf",
@@ -3148,7 +3148,7 @@ curl --location 'http://localhost:7887/rpc' \
             }
       },
       {
-            "address": "lskatntynnut2eee2zxrpdzokrjmok43xczp2fme7",
+            "address": "klyatntynnut2eee2zxrpdzokrjmok43xczp2fme7",
             "type": "plain",
             "data": {
                "generatorKey": "ce6bdb7380fa027c46edd15a072bbabd6b60fecb0e09589e20be560b333ca63e",
@@ -3158,7 +3158,7 @@ curl --location 'http://localhost:7887/rpc' \
             }
       },
       {
-            "address": "lskaw28kpqyffwzb8pcy47nangwwbyxjgnnvh9sfw",
+            "address": "klyaw28kpqyffwzb8pcy47nangwwbyxjgnnvh9sfw",
             "type": "plain",
             "data": {
                "generatorKey": "bfe46727c386585d8d59c02efbe48d4c1a919ff07b87267156ab96e10ac730b2",
@@ -3168,7 +3168,7 @@ curl --location 'http://localhost:7887/rpc' \
             }
       },
       {
-            "address": "lskdo2dmatrfwcnzoeohorwqbef4qngvojfdtkqpj",
+            "address": "klydo2dmatrfwcnzoeohorwqbef4qngvojfdtkqpj",
             "type": "plain",
             "data": {
                "generatorKey": "bbc7ca5acae1d53e0a44a212f4c77c7601ace0e489d936c0b6f26a9fbb03601e",
@@ -3178,7 +3178,7 @@ curl --location 'http://localhost:7887/rpc' \
             }
       },
       {
-            "address": "lskduxr23bn9pajg8antj6fzaxc7hqpdmomoyshae",
+            "address": "klyduxr23bn9pajg8antj6fzaxc7hqpdmomoyshae",
             "type": "plain",
             "data": {
                "generatorKey": "9b4db295e88468a37e49445443fdc364321d620dc57afe8a5a14f07ce0717055",
@@ -3188,7 +3188,7 @@ curl --location 'http://localhost:7887/rpc' \
             }
       },
       {
-            "address": "lsksmpgg7mo4m6ekc9tgvgjr8kh5h6wmgtqvq6776",
+            "address": "klysmpgg7mo4m6ekc9tgvgjr8kh5h6wmgtqvq6776",
             "type": "plain",
             "data": {
                "generatorKey": "f17b9b3bdee2ef63c8fb52d85ae07516133749a1d659bd032c3a078aca65ce7a",
@@ -3198,7 +3198,7 @@ curl --location 'http://localhost:7887/rpc' \
             }
       },
       {
-            "address": "lsksu2u78jmmx7jgu3k8vxcmsv48x3746cts9xejf",
+            "address": "klysu2u78jmmx7jgu3k8vxcmsv48x3746cts9xejf",
             "type": "plain",
             "data": {
                "generatorKey": "37df5572ddb12b67b9aa5191ba9baf9d76a50307fbe188924766225d86958dbd",
@@ -3208,7 +3208,7 @@ curl --location 'http://localhost:7887/rpc' \
             }
       },
       {
-            "address": "lsksy7x68enrmjxjb8copn5m8csys6rjejx56pjqt",
+            "address": "klysy7x68enrmjxjb8copn5m8csys6rjejx56pjqt",
             "type": "plain",
             "data": {
                "generatorKey": "7fb2d69906c5076fa314a4e817ce424bbd4a7a21305cec93a12d31a1589dc90c",
@@ -3218,7 +3218,7 @@ curl --location 'http://localhost:7887/rpc' \
             }
       },
       {
-            "address": "lsksdfqvkbqpc8eczj2s3dzkxnap5pguaxdw2227r",
+            "address": "klysdfqvkbqpc8eczj2s3dzkxnap5pguaxdw2227r",
             "type": "plain",
             "data": {
                "generatorKey": "21f9d60315c1baeb513b5f7324a1211723d36948b64806541b8855988f86111f",
@@ -3228,7 +3228,7 @@ curl --location 'http://localhost:7887/rpc' \
             }
       },
       {
-            "address": "lskjnr8jmvz45dj9z47jbky9sadh3us3rd8tdn7ww",
+            "address": "klyjnr8jmvz45dj9z47jbky9sadh3us3rd8tdn7ww",
             "type": "plain",
             "data": {
                "generatorKey": "25ae368be016caae7066a6ce9f2ad8e4220d328ffb860a6d275d878f4882c70c",
@@ -3238,7 +3238,7 @@ curl --location 'http://localhost:7887/rpc' \
             }
       },
       {
-            "address": "lskjtc95w5wqh5gtymqh7dqadb6kbc9x2mwr4eq8d",
+            "address": "klyjtc95w5wqh5gtymqh7dqadb6kbc9x2mwr4eq8d",
             "type": "plain",
             "data": {
                "generatorKey": "633e1696edbd9f2eb19683c4f7e0d4686fefb1a15772a1affdeb49a44d8c04f2",
@@ -3248,7 +3248,7 @@ curl --location 'http://localhost:7887/rpc' \
             }
       },
       {
-            "address": "lskjtbchucvrd2s8qjo83e7trpem5edwa6dbjfczq",
+            "address": "klyjtbchucvrd2s8qjo83e7trpem5edwa6dbjfczq",
             "type": "plain",
             "data": {
                "generatorKey": "3e63c0a5d4de4df114823934ceaa6c17a48e5a6650788cf1f63c826c984c0957",
@@ -3258,7 +3258,7 @@ curl --location 'http://localhost:7887/rpc' \
             }
       },
       {
-            "address": "lskhbcq7mps5hhea5736qaggyupdsmgdj8ufzdojp",
+            "address": "klyhbcq7mps5hhea5736qaggyupdsmgdj8ufzdojp",
             "type": "plain",
             "data": {
                "generatorKey": "29e5cf287cb9c12b2bb77ef9dc673728132f9e3affef2d0de0d7db7905937435",
@@ -3268,7 +3268,7 @@ curl --location 'http://localhost:7887/rpc' \
             }
       },
       {
-            "address": "lskhamuapyyfckyg5v8u5o4jjw9bvr5bog7rgx8an",
+            "address": "klyhamuapyyfckyg5v8u5o4jjw9bvr5bog7rgx8an",
             "type": "plain",
             "data": {
                "generatorKey": "d051790a70ffdf5bd80dc9cec003f8261128be1fc2135990accb13caeb3ed588",
@@ -3278,7 +3278,7 @@ curl --location 'http://localhost:7887/rpc' \
             }
       },
       {
-            "address": "lskfx88g3826a4qsyxm4w3fheyymfnucpsq36d326",
+            "address": "klyfx88g3826a4qsyxm4w3fheyymfnucpsq36d326",
             "type": "plain",
             "data": {
                "generatorKey": "028a30837b7eec19b02b06c3c2f4065290285e40a4870a677664fee3fe76d9be",
@@ -3288,7 +3288,7 @@ curl --location 'http://localhost:7887/rpc' \
             }
       },
       {
-            "address": "lskfmufdszf9ssqghf2yjkjeetyxy4v9wgawfv725",
+            "address": "klyfmufdszf9ssqghf2yjkjeetyxy4v9wgawfv725",
             "type": "plain",
             "data": {
                "generatorKey": "24bab6ba79973ffaa8569af2cb69b8495d20f0c7ce674814ee0615d31abe9607",
@@ -3298,7 +3298,7 @@ curl --location 'http://localhost:7887/rpc' \
             }
       },
       {
-            "address": "lskf6f3zj4o9fnpt7wd4fowafv8buyd72sgt2864b",
+            "address": "klyf6f3zj4o9fnpt7wd4fowafv8buyd72sgt2864b",
             "type": "plain",
             "data": {
                "generatorKey": "8cab5125c910702b66a83240cf836b10a0f2dc3000536799300ed8f1ed9a26ac",
@@ -3308,7 +3308,7 @@ curl --location 'http://localhost:7887/rpc' \
             }
       },
       {
-            "address": "lskf5sf93qyn28wfzqvr74eca3tywuuzq6xf32p7f",
+            "address": "klyf5sf93qyn28wfzqvr74eca3tywuuzq6xf32p7f",
             "type": "plain",
             "data": {
                "generatorKey": "d05b69bda8b5cd103c620a814cbab2f2a131dcfda6bd4cd568155ddb1afd423b",
@@ -3318,7 +3318,7 @@ curl --location 'http://localhost:7887/rpc' \
             }
       },
       {
-            "address": "lskfowbrr5mdkenm2fcg2hhu76q3vhs74k692vv28",
+            "address": "klyfowbrr5mdkenm2fcg2hhu76q3vhs74k692vv28",
             "type": "plain",
             "data": {
                "generatorKey": "5812017e0d25131165ebc256f39ccece115fb58ad5fe0766f78054f912832d6c",
@@ -3328,7 +3328,7 @@ curl --location 'http://localhost:7887/rpc' \
             }
       },
       {
-            "address": "lskf7a93qr84d9a6ga543wernvxbsrpvtp299c5mj",
+            "address": "klyf7a93qr84d9a6ga543wernvxbsrpvtp299c5mj",
             "type": "plain",
             "data": {
                "generatorKey": "ac34c0731cddab10726e634cec30294f831af045a0614733ac683ccdb6bc7eab",
@@ -3338,7 +3338,7 @@ curl --location 'http://localhost:7887/rpc' \
             }
       },
       {
-            "address": "lskfjd3ymhyzedgneudo2bujnm25u7stu4qpa3jnd",
+            "address": "klyfjd3ymhyzedgneudo2bujnm25u7stu4qpa3jnd",
             "type": "plain",
             "data": {
                "generatorKey": "326cb34aa214c4952f646d93af8cfbe58ec74db76db54484b5a23918cba8743b",
@@ -3348,7 +3348,7 @@ curl --location 'http://localhost:7887/rpc' \
             }
       },
       {
-            "address": "lskffxs3orv2au2juwa69hqtrmpcg9vq78cqbdjr4",
+            "address": "klyffxs3orv2au2juwa69hqtrmpcg9vq78cqbdjr4",
             "type": "plain",
             "data": {
                "generatorKey": "4e54056fabe183ab645962cf0b70e658d0eae506c4ade8756652ca7f76733227",
@@ -3358,7 +3358,7 @@ curl --location 'http://localhost:7887/rpc' \
             }
       },
       {
-            "address": "lskgn7m77b769frqvgq7uko74wcrroqtcjv7nhv95",
+            "address": "klygn7m77b769frqvgq7uko74wcrroqtcjv7nhv95",
             "type": "plain",
             "data": {
                "generatorKey": "0941ca2cfd9b1e0cc4bf0dbfd958d4b7d9f30af4c8626216999b88fc8a515d0a",
@@ -3835,8 +3835,8 @@ Specification::
 
 |`address`
 |string
-|Address of a generator in lisk32 format
-|lske5sqed53fdcs4m9et28f2k7u9fk6hno9bauday
+|Address of a generator in klayr32 format
+|klye5sqed53fdcs4m9et28f2k7u9fk6hno9bauday
 |===
 --
 cURL::
@@ -3851,7 +3851,7 @@ curl --location 'http://localhost:7887/rpc' \
     "id": "1",
     "method": "generator_hasKeys",
     "params": {
-        "address": "lske5sqed53fdcs4m9et28f2k7u9fk6hno9bauday"
+        "address": "klye5sqed53fdcs4m9et28f2k7u9fk6hno9bauday"
     }
 }
 ----
@@ -3888,8 +3888,8 @@ Specification::
 
 |`address`
 |string
-|Address of a validator in lisk32 format
-|lske5sqed53fdcs4m9et28f2k7u9fk6hno9bauday
+|Address of a validator in klayr32 format
+|klye5sqed53fdcs4m9et28f2k7u9fk6hno9bauday
 
 |`type`
 |const
@@ -3921,8 +3921,8 @@ OR
 
 |`address`
 |string
-|Address of a validator in lisk32 format
-|lske5sqed53fdcs4m9et28f2k7u9fk6hno9bauday
+|Address of a validator in klayr32 format
+|klye5sqed53fdcs4m9et28f2k7u9fk6hno9bauday
 
 |`type`
 |const
@@ -3968,7 +3968,7 @@ curl --location 'http://localhost:7887/rpc' \
     "id": "1",
     "method": "generator_setKeys",
     "params": {
-        "address": "lske5sqed53fdcs4m9et28f2k7u9fk6hno9bauday",
+        "address": "klye5sqed53fdcs4m9et28f2k7u9fk6hno9bauday",
         "type": "plain",
         "data": {
             "generatorKey": "b9e54121e5346cc04cc84bcf286d5e40d586ba5d39571daf57bd31bac3861a4a",
@@ -3990,7 +3990,7 @@ curl --location 'http://localhost:7887/rpc' \
     "id": "1",
     "method": "generator_setKeys",
     "params": {
-        "address": "lske5sqed53fdcs4m9et28f2k7u9fk6hno9bauday",
+        "address": "klye5sqed53fdcs4m9et28f2k7u9fk6hno9bauday",
         "type": "encrypted",
         "data": {
             "ciphertext": "4e9c24db810fb641d9ad148e0a9c461db5c52b001592c910b2b11a4f4ce9bf271d530d2bfd9a6b50c59b09a4e872ef7a0ff65802e0bde6e685dd07db6b9b4f365b24af0488a5fdb3d4688b5c5a4ffbf302573a53219a1ec120bd1b1bc602e356bdb910ab7be245e7488409fc1ea059ffcb4382cfb309d5673a258cd2cf4114a39ffbb0097f3bef6985c45ea3ffbc2f7b793a2366d9e5921d3ba8490906a17bf458a85c19100834877fde498fc3165a02f68a72e1b6e8509f",
@@ -4046,8 +4046,8 @@ Specification::
 
 |`address`
 |string
-|Address of a generator in lisk32 format
-|lske5sqed53fdcs4m9et28f2k7u9fk6hno9bauday
+|Address of a generator in klayr32 format
+|klye5sqed53fdcs4m9et28f2k7u9fk6hno9bauday
 
 |`height`
 |integer
@@ -4077,7 +4077,7 @@ curl --location 'http://localhost:7887/rpc' \
     "id": "1",
     "method": "generator_setStatus",
     "params": {
-        "address": "lske5sqed53fdcs4m9et28f2k7u9fk6hno9bauday",
+        "address": "klye5sqed53fdcs4m9et28f2k7u9fk6hno9bauday",
         "height": 243,
         "maxHeightPrevoted": 175,
         "maxHeightGenerated": 142
@@ -4121,8 +4121,8 @@ Specification::
 
 |`address`
 |string
-|Address of a generator in lisk32 format
-|lskzxxfyrxha3kxgwr8ok2grbwx3883zcx3gccf43
+|Address of a generator in klayr32 format
+|klyzxxfyrxha3kxgwr8ok2grbwx3883zcx3gccf43
 
 |`height`
 |integer
@@ -4163,7 +4163,7 @@ curl --location --request POST 'http://localhost:7887/rpc' \
     "id": "1",
     "method": "generator_updateStatus",
     "params": {
-        "address": "lskzxxfyrxha3kxgwr8ok2grbwx3883zcx3gccf43",
+        "address": "klyzxxfyrxha3kxgwr8ok2grbwx3883zcx3gccf43",
         "height": 243,
         "maxHeightPrevoted": 175,
         "maxHeightGenerated": 142,
@@ -4182,7 +4182,7 @@ curl --location --request POST 'http://localhost:7887/rpc' \
 [source,json]
 ----
 {
-   "address": "lskzxxfyrxha3kxgwr8ok2grbwx3883zcx3gccf43",
+   "address": "klyzxxfyrxha3kxgwr8ok2grbwx3883zcx3gccf43",
    "enabled": false
 }
 ----
@@ -4877,7 +4877,7 @@ curl --location --request POST 'localhost:7887/rpc' \
                "id": "00000000",
                "name": "transfer",
                "params": {
-                     "$id": "/lisk/transferParams",
+                     "$id": "/klayr/transferParams",
                      "title": "Transfer transaction params",
                      "type": "object",
                      "required": [
@@ -4916,7 +4916,7 @@ curl --location --request POST 'localhost:7887/rpc' \
                "id": "00000000",
                "name": "crossChaintransfer",
                "params": {
-                     "$id": "/lisk/ccTransferParams",
+                     "$id": "/klayr/ccTransferParams",
                      "type": "object",
                      "required": [
                         "tokenID",
@@ -5155,9 +5155,9 @@ curl --location --request POST 'localhost:7887/rpc' \
    {
          "endpoints": [
             {
-               "name": "validateBLSKey",
+               "name": "validateBKLYey",
                "request": {
-                     "$id": "/validators/validateBLSKey",
+                     "$id": "/validators/validateBKLYey",
                      "title": "Bls Key Properties",
                      "type": "object",
                      "properties": {
@@ -5176,7 +5176,7 @@ curl --location --request POST 'localhost:7887/rpc' \
                      ]
                },
                "response": {
-                     "$id": "/validators/endpoint/validateBLSKeyResponse",
+                     "$id": "/validators/endpoint/validateBKLYeyResponse",
                      "title": "Bls Key Properties",
                      "type": "object",
                      "properties": {
@@ -6010,7 +6010,7 @@ curl --location --request POST 'localhost:7887/rpc' \
 
 
 ==== `system_getSchema`
-Returns the common schema used by the Lisk blockchain.
+Returns the common schema used by the Klayr blockchain.
 
 Request
 [tabs]
@@ -6191,7 +6191,7 @@ curl --location --request POST 'localhost:7887/rpc' \
       }
    },
    "transaction": {
-      "$id": "/lisk/transaction",
+      "$id": "/klayr/transaction",
       "type": "object",
       "required": [
             "moduleID",
@@ -6817,9 +6817,9 @@ curl --location --request POST 'http://localhost:7887/rpc' \
 
 == Events
 
-Events exposed by the Lisk RPC node can be subscribed as explained in the xref:{url_subscribe_event}[subscribing to the events] section.
+Events exposed by the Klayr RPC node can be subscribed as explained in the xref:{url_subscribe_event}[subscribing to the events] section.
 To subscribe to an event, a WebSocket or Inter-Process Communication protocol must be used.
-The default events exposed by the Lisk Framework are described below:
+The default events exposed by the Klayr Framework are described below:
 
 . <<Chain>>
 . <<Network>>
