@@ -1,0 +1,5 @@
+= Testnet HTTP API (Klayr Service)
+Mona Bärenfänger <mona@lightcurve.io>
+:description: Interactive HTTP API reference of Klayr Service (Testnet).
+:page-layout: swagger
+:page-swagger-url: https://testnet-service.klayr.com/api/v3/spec

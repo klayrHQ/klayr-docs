@@ -2,7 +2,7 @@
 :toc: preamble
 
 ====
-On this page, we dive deeper into how cross-chain communication works in the Lisk ecosystem, by describing the different components and the general processes of how state changes are executed across chains in the Lisk ecosystem.
+On this page, we dive deeper into how cross-chain communication works in the Klayr ecosystem, by describing the different components and the general processes of how state changes are executed across chains in the Klayr ecosystem.
 
 Specifically, you'll learn about:
 
@@ -41,18 +41,18 @@ module & cross-chain command name:: Once the message has reached the receiving c
 The module always corresponds to the module which includes the specified cross-chain command.
 nonce:: When a cross-chain message is created and added to the partner chain outbox, the nonce of the sending chain (total number of messages that were added to outboxes so far), is added to the message in the nonce property.
 This allows all messages to be uniquely identified by the (sendingChainID, receivingChainID, nonce, status) tuple, which implies that the message ID defined below will be unique for all messages in the ecosystem.
-The uniqueness of messages in the Lisk ecosystem is important for identifying messages with message IDs and tracking them throughout the ecosystem.
+The uniqueness of messages in the Klayr ecosystem is important for identifying messages with message IDs and tracking them throughout the ecosystem.
 fee:: For all cross-chain messages, the message fee is used to account for the transaction processing in the receiving chain.
 This fee must be transferred from the sending chain account to the receiving chain account in order to maintain the correct balances on all chains in the ecosystem.
-The token ID for this fee is stored in the channel account and is by default the token ID of the LSK token.
+The token ID for this fee is stored in the channel account and is by default the token ID of the KLY token.
 As it is stored in the channel account, it does not need to be repeated in the message.
-Being the main utility token of the Lisk ecosystem, the LSK token is always the token ID for this fee for the channels between the Lisk mainchain and registered sidechains.
+Being the main utility token of the Klayr ecosystem, the KLY token is always the token ID for this fee for the channels between the Klayr mainchain and registered sidechains.
 parameters:: The `params` property of the messages is defined by each module and can follow any schema, similar to the `params` property of a transaction.
 The `params` property is not deserialized or validated by the Interoperability module.
-In the Lisk ecosystem, all cross-chain messages are routed through the mainchain.
+In the Klayr ecosystem, all cross-chain messages are routed through the mainchain.
 This means that messages should always have a sufficiently small size in order to be easily included in mainchain blocks.
 As the mainchain payload size limit is 15 KiB, and other properties in the cross-chain updates will not be larger than 4 KiB, the message size is limited to 10 KiB.
-To guarantee that all messages can be included and handled, blockchains in the Lisk ecosystem should have a payload size limit equal to or greater than 15 KiB (15 x 1024 bytes).
+To guarantee that all messages can be included and handled, blockchains in the Klayr ecosystem should have a payload size limit equal to or greater than 15 KiB (15 x 1024 bytes).
 status:: The basic error handling for routing messages to other chains is done by the mainchain.
 Information about the reason why the message failed is stored in the status property.
 For example, in the case the receiving chain does not exist, is not active or has been terminated, the mainchain will return the message to the sending chain.
@@ -67,10 +67,10 @@ Let's look at an example of a simple cross-chain transfer between Alice and Bob.
 
 image:understand-blockchain/interop/ccc-1.png[,300,role="right"]
 
-Alice has 10 LSK in her account on a chain called "Sidechain X".
+Alice has 10 KLY in her account on a chain called "Sidechain X".
 In this context, we refer to Sidechain X as the sending chain.
 
-She wants to transfer 5 LSK to Bob, who has an account on another chain, "Sidechain Y", in this context the receiving chain.
+She wants to transfer 5 KLY to Bob, who has an account on another chain, "Sidechain Y", in this context the receiving chain.
 
 Here is where *cross-chain transactions (CCTs)* come into play.
 
@@ -78,12 +78,12 @@ NOTE: A cross-chain transaction (CCT) is a transaction that, upon its execution,
 
 A cross-chain transaction will perform the following:
 
-* execute the necessary changes on the sending chain (i.e. removing 5 LSK from Alice's balance), and
-* also create CCMs to trigger the corresponding state changes in the receiving chain (i.e. add 5 LSK to Bob's balance).
+* execute the necessary changes on the sending chain (i.e. removing 5 KLY from Alice's balance), and
+* also create CCMs to trigger the corresponding state changes in the receiving chain (i.e. add 5 KLY to Bob's balance).
 
 Therefore, to initiate the cross-chain token transfer, Alice sends a corresponding cross-chain transfer transaction on the sending chain X.
 
-In the example, the CC-transfer will deduct 5 LSK from Alice's balance once the transaction is included in a block.
+In the example, the CC-transfer will deduct 5 KLY from Alice's balance once the transaction is included in a block.
 At the same time, it will create the corresponding cross-chain message, and add it to the outbox of the sending chain.
 
 == Relaying CCMs in a CCU
@@ -132,7 +132,7 @@ If the cross-chain update transaction contains an empty certificate, this proper
 
 To create a valid CCU, it is necessary to collect existing CCMs in the outbox, and certify their validity with a corresponding certificate.
 
-The Lisk consensus mechanism is designed to create and publish certificates regularly.
+The Klayr consensus mechanism is designed to create and publish certificates regularly.
 //TODO: Add link to relayer node guide
 Therefore, obtaining the information required to post a cross-chain update transaction is straightforward, and can be performed by anyone, simply by setting up a relayer node.
 
@@ -200,7 +200,7 @@ image:understand-blockchain/interop/ccc-4.png[,300,role="right"]
 
 Once the CCM is included in the inbox on the receiving chain Y, the remaining validations of the CCM are performed.
 
-If the validation is completed successfully, the cross-chain command is performing the intended state changes on the receiving chain, i.e. adding 5 LSK to Bob's account.
+If the validation is completed successfully, the cross-chain command is performing the intended state changes on the receiving chain, i.e. adding 5 KLY to Bob's account.
 --
 :!sectnums:
 
@@ -248,13 +248,13 @@ Instead, the CCM is added to the outbox of the sending chain, i.e., it will even
 
 The sending chain may then revert the state changes related to the CCM that happened on the sending chain.
 
-For example, if Alice on Sidechain X sends 5 LSK to Bob on Sidechain Y, but Sidechain Y is not registered on the mainchain, the error handling process would function as follows:
+For example, if Alice on Sidechain X sends 5 KLY to Bob on Sidechain Y, but Sidechain Y is not registered on the mainchain, the error handling process would function as follows:
 
-. Alice sends CC-Transfer: 5 LSK + Fee is deducted from Alice's balance on Sidechain X.
+. Alice sends CC-Transfer: 5 KLY + Fee is deducted from Alice's balance on Sidechain X.
 . Mainchain receives corresponding CCM & performs validations.
 . Mainchain cannot find the receiving chain: CCM status is updated to `CHANNEL UNAVAILABLE` on the mainchain.
 . Errored CCM is relayed back to the sending chain.
-. Sending chain undoes related state changes: 5 LSK are added back to Alice's account, because the cross-chain transfer was unsuccessful.
+. Sending chain undoes related state changes: 5 KLY are added back to Alice's account, because the cross-chain transfer was unsuccessful.
 
 NOTE: Alice always needs to pay the fee for the cross-chain transfer, even if it fails.
 --
@@ -280,15 +280,15 @@ Thus, the CCM will eventually be included in a new CCU and posted *back to the m
 
 Once the CCM is added to the inbox of the sending chain, it may then revert the invalid state changes.
 
-For example, if Alice on Sidechain X sends 5 LSK to Bob on Sidechain Y, but Sidechain Y does not support the token module, the error handling process would function as follows:
+For example, if Alice on Sidechain X sends 5 KLY to Bob on Sidechain Y, but Sidechain Y does not support the token module, the error handling process would function as follows:
 
-. Alice sends CC-Transfer: 5 LSK + Fee is deducted from Alice's balance on Sidechain X.
+. Alice sends CC-Transfer: 5 KLY + Fee is deducted from Alice's balance on Sidechain X.
 . Mainchain receives corresponding CCM & performs validations.
 . Mainchain relays CCM to the receiving chain via a CCU.
 . Sidechain does not support module: CCM status is updated to `MODULE NOT SUPPORTED` on the receiving chain.
 . Errored CCM is relayed back to the mainchain.
 . Errored CCM is relayed back to the sending chain.
-. Sending chain undoes related state changes: 5 LSK are added back to Alice's account, because the cross-chain transfer was unsuccessful.
+. Sending chain undoes related state changes: 5 KLY are added back to Alice's account, because the cross-chain transfer was unsuccessful.
 
 --
 

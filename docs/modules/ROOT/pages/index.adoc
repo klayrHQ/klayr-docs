@@ -1,10 +1,10 @@
-= Overview - Lisk Documentation
+= Overview - Klayr Documentation
 :url_understand: understand-blockchain/index.adoc
 :url_build: build-blockchain/index.adoc
 :url_run: run-blockchain/index.adoc
 :url_integrate: integrate-blockchain/index.adoc
 
-Welcome to the official Lisk documentation!
+Welcome to the official Klayr documentation!
 
 [.overview-banner]
 .Getting started image:bannerwhite.svg[]
@@ -22,7 +22,7 @@ Welcome to the official Lisk documentation!
 [.overview-title]
 .xref:{url_understand}[Understand Blockchain]
 *****
-Explanations & descriptions about the main concepts and components of the Lisk blockchain.
+Explanations & descriptions about the main concepts and components of the Klayr blockchain.
 *****
 ****
 |
@@ -33,7 +33,7 @@ Explanations & descriptions about the main concepts and components of the Lisk b
 .xref:{url_build}[Build Blockchain]
 *****
 Guides for sidechain developers.
-How to develop a sidechain application with the Lisk SDK, explained in different dedicated guides.
+How to develop a sidechain application with the Klayr SDK, explained in different dedicated guides.
 *****
 ****
 |

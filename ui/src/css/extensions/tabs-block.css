@@ -29,7 +29,7 @@
 
 .tabs.ulist li.is-active {
   background-color: rgba(64, 112, 244, 0.1);
-  color: var(--color-ultramarine-blue);
+  color: var(--color-azule);
 }
 
 .tabs.ulist li + li {
@@ -49,7 +49,7 @@
 }
 
 .tabset > .content {
-  border: 1px solid rgb(var(--rgb-ultramarine-blue), 0.1);
+  border: 1px solid rgb(var(--rgb-azule), 0.1);
   padding: 1.25rem;
   border-radius: 0 20px 20px 20px;
 }

@@ -9,17 +9,17 @@ Mona Bärenfänger <mona@lightcurve.io>
 :experimental:
 :idseparator: -
 :idprefix:
-:docs_sdk: lisk-sdk::
+:docs_sdk: klayr-sdk::
 // URLs
 :url_github: https://github.com/
-:url_github_corbifex: https://github.com/corbifex/lisk-genesis
-:url_github_hello_index: https://github.com/LiskHQ/lisk-sdk-examples/blob/development/hello_world/index.js
-:url_github_hello_client: https://github.com/LiskHQ/lisk-sdk-examples/tree/development/hello_world/react-client
-:url_github_hello_package: https://github.com/LiskHQ/lisk-sdk-examples/blob/development/hello_world/package.json
-:url_github_hello_transaction: https://github.com/LiskHQ/lisk-sdk-examples/tree/development/hello_world/transactions
-:url_github_sdk_configDevnet: https://github.com/LiskHQ/lisk-sdk/blob/{v_sdk}/sdk/src/samples/config_devnet.json
+:url_github_corbifex: https://github.com/corbifex/klayr-genesis
+:url_github_hello_index: https://github.com/KlayrHQ/klayr-sdk-examples/blob/development/hello_world/index.js
+:url_github_hello_client: https://github.com/KlayrHQ/klayr-sdk-examples/tree/development/hello_world/react-client
+:url_github_hello_package: https://github.com/KlayrHQ/klayr-sdk-examples/blob/development/hello_world/package.json
+:url_github_hello_transaction: https://github.com/KlayrHQ/klayr-sdk-examples/tree/development/hello_world/transactions
+:url_github_sdk_configDevnet: https://github.com/KlayrHQ/klayr-sdk/blob/{v_sdk}/sdk/src/samples/config_devnet.json
 :url_gitlab: https://about.gitlab.com/
-:url_lisk_community: https://lisk.io/community
+:url_klayr_community: https://klayr.io/community
 // Project URLs
 :url_bapps_network: understand-blockchain/index.adoc#architecture-of-blockchain-applications
 
@@ -33,7 +33,7 @@ Mona Bärenfänger <mona@lightcurve.io>
 :url_guides_genesisblock_enableforging: build-blockchain/create-genesis-block.adoc#enabling-forging-for-the-new-genesis-delegates
 :url_reference_config: {docs_sdk}config.adoc
 :url_references_cli_genesis: {docs_sdk}client-cli.adoc#genesis-blockcreate
-:url_protocol_genesis_block: understand-blockchain/lisk-protocol/blocks.adoc#_genesis_block
+:url_protocol_genesis_block: understand-blockchain/klayr-protocol/blocks.adoc#_genesis_block
 
 // TODO: Update the page by uncommenting the hyperlinks once the updated pages are available. 
 
@@ -297,7 +297,7 @@ Install the Faucet plugin:
 
 [source,bash]
 ----
-npm i @liskhq/lisk-framework-faucet-plugin
+npm i @klayrhq/klayr-framework-faucet-plugin
 ----
 
 Now open `plugins.ts`, import the Faucet plugin, and register it with the application as shown below:
@@ -306,8 +306,8 @@ Now open `plugins.ts`, import the Faucet plugin, and register it with the applic
 [source,typescript]
 ----
 /* eslint-disable @typescript-eslint/no-empty-function */
-import { Application } from 'lisk-sdk';
-import { FaucetPlugin } from "@liskhq/lisk-framework-faucet-plugin";
+import { Application } from 'klayr-sdk';
+import { FaucetPlugin } from "@klayrhq/klayr-framework-faucet-plugin";
 
 // @ts-expect-error Unused variable error happens here until at least one module is registered
 export const registerPlugins = (app: Application): void => {
@@ -342,11 +342,11 @@ To register the Faucet plugin save and close `plugins.ts` and start the blockcha
 
 Now, enable the faucet plugin by invoking the action `faucet:authorize`.
 
-Use the `apiClient` of the `lisk-client` package and write a small script to invoke the action:
+Use the `apiClient` of the `klayr-client` package and write a small script to invoke the action:
 
 [source,js]
 ----
-const { apiClient } = require('@liskhq/lisk-client');
+const { apiClient } = require('@klayrhq/klayr-client');
 let clientCache;
 
 const getClient = async () => {

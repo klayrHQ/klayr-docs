@@ -51,7 +51,7 @@ Let's assume we have sent the following transaction to the node, but it is curre
    "params":{
       "tokenID":"0400000000000000",
       "amount":"800000000",
-      "recipientAddress":"lskt8ovj2shbxrtno8xqqt7cnmzzygdkbt6brnvmj",
+      "recipientAddress":"klyt8ovj2shbxrtno8xqqt7cnmzzygdkbt6brnvmj",
       "data":"Happy birthday!"
    },
    "id":"f3f537bbd52464d2f97c02f5ef0f9a805d19ad4f8ef1c7efa1da17cef0e5036a"
@@ -72,7 +72,7 @@ TIP: Make sure to use the `--nonce` flag to specify the same nonce as in the tra
 
 [source,bash]
 ----
-lisk-core transaction:create token transfer 25000000 --nonce 4 --json ---pretty
+klayr-core transaction:create token transfer 25000000 --nonce 4 --json ---pretty
 ----
 
 .The updated transaction in JSON format
@@ -93,7 +93,7 @@ lisk-core transaction:create token transfer 25000000 --nonce 4 --json ---pretty
     "params": {
       "tokenID": "0200000000000000",
       "amount": "1",
-      "recipientAddress": "lskt8ovj2shbxrtno8xqqt7cnmzzygdkbt6brnvmj",
+      "recipientAddress": "klyt8ovj2shbxrtno8xqqt7cnmzzygdkbt6brnvmj",
       "data": "Happy birthday!"
     },
     "id": "78d041e4e9c55fb0c232fcefcb712cb2abb09101dc27281a88e6180a726486d2"
@@ -106,7 +106,7 @@ Finally, send the new transaction to the node to overwrite the original transact
 
 [source,bash]
 ----
-lisk-core transaction:send 0a05746f6b656e12087472616e73666572180420c0f0f50b2a2061d320f822fcc163489499200ae6c99a66296513b1ca1066e49a37a026434ac032330a08020000000000000010011a149bd82e637d306533b1e1ad66e19ca0047faa1a6a220f4861707079206269727468646179213a40fca7710c74b9d13ef954be1128a1069bc8b50dbb9f410ddfe62d7d580920e685cb6efbf1b801e86b11839eb5e286ef70d3b6ab725e6d521a6377b6bf5f079203
+klayr-core transaction:send 0a05746f6b656e12087472616e73666572180420c0f0f50b2a2061d320f822fcc163489499200ae6c99a66296513b1ca1066e49a37a026434ac032330a08020000000000000010011a149bd82e637d306533b1e1ad66e19ca0047faa1a6a220f4861707079206269727468646179213a40fca7710c74b9d13ef954be1128a1069bc8b50dbb9f410ddfe62d7d580920e685cb6efbf1b801e86b11839eb5e286ef70d3b6ab725e6d521a6377b6bf5f079203
 ----
 
 

@@ -7,19 +7,19 @@ Mona Bärenfänger <mona@lightcurve.io>
 :idseparator: -
 :sectnums:
 :experimental:
-:docs_sdk: lisk-sdk::
+:docs_sdk: klayr-sdk::
 // URLs
 :url_recaptcha_keys: https://developers.google.com/recaptcha/docs/faq#id-like-to-run-automated-tests-with-recaptcha.-what-should-i-do
 :url_faucet: http://localhost:4004
 :url_dashboard: http://localhost:4005
 :url_network_page: understand-blockchain/network.adoc
 :url_mainchain_page: understand-blockchain/mainchain.adoc
-:url_coreIndex_page: lisk-core::index.adoc
+:url_coreIndex_page: klayr-core::index.adoc
 // Project URLS
 
 :url_guide_dashboard: build-blockchain/using-dashboard.adoc
 :url_guide_genesisblock: build-blockchain/create-genesis-block.adoc
-:url_plugin_faucet: {site-url}/lisk-sdk/v6/references/typedoc/modules/_liskhq_lisk_framework_faucet_plugin.html
+:url_plugin_faucet: {site-url}/klayr-sdk/v6/references/typedoc/modules/_klayrhq_klayr_framework_faucet_plugin.html
 :url_guides_config: build-blockchain/configuration.adoc
 :url_guides_config_hello: {url_guides_config}#example-configuration-for-the-hello-world-client
 
@@ -38,13 +38,13 @@ To prevent the faucet from running dry, the faucet account should always have an
 
 == Installation
 
-With Lisk v6 the default plugins come pre-installed after an application is initiated. You can check the `package.json` file of the blockchain client to ensure the installation is correct.
+With Klayr v6 the default plugins come pre-installed after an application is initiated. You can check the `package.json` file of the blockchain client to ensure the installation is correct.
 
 .package.json
 [source,json]
 ----
 "dependencies": {
-	"@liskhq/lisk-framework-faucet-plugin": "0.3.0",
+	"@klayrhq/klayr-framework-faucet-plugin": "0.3.0",
 	// [...]
 },
 ----
@@ -53,7 +53,7 @@ Otherwise to register the Faucet plugin, first install it with NPM:
 
 [source,bash]
 ----
-npm i @liskhq/lisk-framework-faucet-plugin
+npm i @klayrhq/klayr-framework-faucet-plugin
 ----
 [#plugin]
 
@@ -63,8 +63,8 @@ Now open the `plugins.ts` file of the blockchain client, import the Faucet plugi
 [source,typescript]
 ----
 /* eslint-disable @typescript-eslint/no-empty-function */
-import { Application } from 'lisk-sdk';
-import { FaucetPlugin } from '@liskhq/lisk-framework-faucet-plugin';
+import { Application } from 'klayr-sdk';
+import { FaucetPlugin } from '@klayrhq/klayr-framework-faucet-plugin';
 
 // @ts-expect-error Unused variable error happens here until at least one module is registered
 export const registerPlugins = (app: Application): void => {
@@ -97,7 +97,7 @@ For example, use one of the genesis validators for the faucet account.
 ----
 [
     {
-    "address": "lske5sqed53fdcs4m9et28f2k7u9fk6hno9bauday",
+    "address": "klye5sqed53fdcs4m9et28f2k7u9fk6hno9bauday",
     "keyPath": "m/44'/134'/0'",
     "publicKey": "a3f96c50d0446220ef2f98240898515cbba8155730679ca35326d98dcfb680f0",
     "privateKey": "d0b159fe5a7cc3d5f4b39a97621b514bc55b0a0f1aca8adeed2dd1899d93f103a3f96c50d0446220ef2f98240898515cbba8155730679ca35326d98dcfb680f0",
@@ -115,12 +115,12 @@ For example, use one of the genesis validators for the faucet account.
 ]
 ----
 
-Use Lisk Commander to encrypt the `privateKey` of the account with a `password`.
+Use Klayr Commander to encrypt the `privateKey` of the account with a `password`.
 Save the `password` securely as it will be required to enable and disable the faucet later.
 
 [source,bash]
 ----
-lisk message:encrypt "d0b159fe5a7cc3d5f4b39a97621b514bc55b0a0f1aca8adeed2dd1899d93f103a3f96c50d0446220ef2f98240898515cbba8155730679ca35326d98dcfb680f0" --pretty
+klayr message:encrypt "d0b159fe5a7cc3d5f4b39a97621b514bc55b0a0f1aca8adeed2dd1899d93f103a3f96c50d0446220ef2f98240898515cbba8155730679ca35326d98dcfb680f0" --pretty
 ? Please enter password:  [hidden]
 ? Please re-enter password:  [hidden]
 {
@@ -180,7 +180,7 @@ default: {
         applicationUrl: 'ws://localhost:7887/rpc-ws',
         fee: '0.1',
         amount: '100',
-        tokenPrefix: 'lsk',
+        tokenPrefix: 'kly',
     },
 
 ----
@@ -248,11 +248,11 @@ Via the JS script::
 --
 Alternatively, choose a different method to send an RPC request to the node, for example use the `apiClient` as described below.
 
-Use the `apiClient` of the `lisk-client` package and write a small script to invoke the endpoint:
+Use the `apiClient` of the `klayr-client` package and write a small script to invoke the endpoint:
 
 [source,js]
 ----
-const { apiClient } = require('@liskhq/lisk-client');
+const { apiClient } = require('@klayrhq/klayr-client');
 let clientCache;
 const getClient = async () => {
   if (!clientCache) {
@@ -304,11 +304,11 @@ Mainchain::
 +
 --
 *Alternatively*, start the blockchain client with designated flags on a `mainchain` node.
-For more information, see xref:{url_network_page}[Networks], xref:{url_mainchain_page}[Mainchain] and the xref:{url_coreIndex_page}[Lisk Core] docs.
+For more information, see xref:{url_network_page}[Networks], xref:{url_mainchain_page}[Mainchain] and the xref:{url_coreIndex_page}[Klayr Core] docs.
 
 [source,bash]
 ----
-lisk-core start --network testnet --enable-faucet-plugin
+klayr-core start --network testnet --enable-faucet-plugin
 ----
 --
 ====

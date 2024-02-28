@@ -5,7 +5,7 @@ Muhammad Talha <muhammad.talha@lightcurve.io>
 :idseparator: -
 :sectnums:
 // URLs
-:url_github_guides_plugin: https://github.com/LiskHQ/lisk-sdk-examples/tree/development/tutorials/hello/hello_client/src/app/plugins/hello_info
+:url_github_guides_plugin: https://github.com/KlayrHQ/klayr-sdk-examples/tree/development/tutorials/hello/hello_client/src/app/plugins/hello_info
 // Project URLS
 :url_guides_module: build-blockchain/module/index.adoc
 :url_guides_module_configuration: build-blockchain/module/configuration.adoc
@@ -17,7 +17,7 @@ Muhammad Talha <muhammad.talha@lightcurve.io>
 :url_build_index: build-blockchain/index.adoc
 :url_build_index_hello: {url_build_index}#the-hello-world-client
 :url_intro_plugins: understand-blockchain/sdk/plugins.adoc
-// :url_references_commander_commands_plugin: {docs_sdk}references/lisk-commander/cli.adoc#generate
+// :url_references_commander_commands_plugin: {docs_sdk}references/klayr-commander/cli.adoc#generate
 :url_plugin: understand-blockchain/sdk/plugins.adoc#plugin-anatomy
 
 // TODO: Update the page by uncommenting the hyperlinks once the updated pages are available.
@@ -27,7 +27,7 @@ In this chapter, you'll learn how to create & customize a new xref:{url_intro_pl
 .Sample code
 [NOTE]
 ====
-View the complete sample code of this guide on GitHub in the {url_github_guides_plugin}[Lisk SDK examples repository^].
+View the complete sample code of this guide on GitHub in the {url_github_guides_plugin}[Klayr SDK examples repository^].
 ====
 
 As defined in the xref:{url_build_index_hello}[Hello World application overview], the plugin shall provide the following functionality:
@@ -45,13 +45,13 @@ As defined in the xref:{url_build_index_hello}[Hello World application overview]
 ====
 To use this guide, it is assumed that the following criteria have been met:
 
-. Lisk Commander is installed, and a basic blockchain client is already initialized, as explained in the guide xref:{url_build_client}[].
+. Klayr Commander is installed, and a basic blockchain client is already initialized, as explained in the guide xref:{url_build_client}[].
 . A new module `HelloModule` is created and contains all the functionalities as described in the guides for xref:{url_guides_module}[]
 ====
 
 == Generating the plugin's file & folder structure
 
-While in the root folder of the Hello client, generate a skeleton for the new plugin with Lisk Commander.
+While in the root folder of the Hello client, generate a skeleton for the new plugin with Klayr Commander.
 
 The command `generate:plugin` expects the following argument:
 
@@ -60,21 +60,21 @@ It needs to be a string in camelCase, and always starts with a lower case letter
 No numbers, hyphens, etc., are allowed.
 
 // TODO: Uncomment, once Commander reference is updated for v6.
-//For a complete overview of all available options of the `generate:plugin` command, visit the xref:{url_references_commander_commands_plugin}[Lisk Commander command reference].
+//For a complete overview of all available options of the `generate:plugin` command, visit the xref:{url_references_commander_commands_plugin}[Klayr Commander command reference].
 
 [[generate-plugin]]
 [source,bash]
 ----
-lisk generate:plugin helloInfo
+klayr generate:plugin helloInfo
 ----
 
 This will generate the following files:
 
 ----
-Using template "lisk-ts"
+Using template "klayr-ts"
 Generating plugin skeleton
 Registering plugin...
-identical .liskrc.json
+identical .klayrrc.json
    create src/app/plugins/hello_info/hello_info_plugin.ts
    create test/unit/plugins/hello_info/hello_info_plugin.spec.ts
 
@@ -117,7 +117,7 @@ The `hello_client` directory will update and will look like the following:
 <4> Contains the unit tests for the plugin.
 
 
-After updating the directory, the Lisk Commander will also automatically register the plugin with the client by adding it to the `plugins.ts` file.
+After updating the directory, the Klayr Commander will also automatically register the plugin with the client by adding it to the `plugins.ts` file.
 
 [IMPORTANT]
 ====
@@ -133,7 +133,7 @@ Otherwise, you will run into the following error, when trying to start the clien
 .hello_client/src/app/plugins.ts
 [source,typescript]
 ----
-import { Application } from 'lisk-sdk';
+import { Application } from 'klayr-sdk';
 import { HelloInfoPlugin } from "./plugins/hello_info/hello_info_plugin";
 
 export const registerPlugins = (app: Application): void => {
@@ -148,7 +148,7 @@ The `HelloInfoPlugin` class is defined in the `hello_info_plugin.ts` file and it
 .hello_client/src/app/plugins/hello_info/hello_info_plugin.ts
 [source,typescript]
 ----
-import { BasePlugin } from 'lisk-sdk';
+import { BasePlugin } from 'klayr-sdk';
 
 export class HelloInfoPlugin extends BasePlugin {
 	public name: 'helloInfo';
@@ -164,7 +164,7 @@ export class HelloInfoPlugin extends BasePlugin {
 }
 ----
 
-Each plugin’s class must extend from the `BasePlugin`, which is imported from the `lisk-sdk` package.
+Each plugin’s class must extend from the `BasePlugin`, which is imported from the `klayr-sdk` package.
 
 NOTE: A plugin is highly customizable and can be implemented in any way as per the business needs. 
 However, the only mandatory parts of a plugin are the `nodeModulePath()`, `load()` and `unload()` functions. 

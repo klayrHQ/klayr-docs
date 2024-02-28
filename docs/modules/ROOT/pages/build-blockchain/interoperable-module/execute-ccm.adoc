@@ -5,7 +5,7 @@ Mona Bärenfänger <mona@lightcurve.io>
 :idseparator: -
 :sectnums:
 // URLs
-:url_github_sdk_interop: https://github.com/LiskHQ/lisk-sdk/tree/release/6.0.0/examples/interop
+:url_github_sdk_interop: https://github.com/KlayrHQ/klayr-sdk/tree/release/6.0.0/examples/interop
 // Project URLs
 :url_build_interop: build-blockchain/interoperable-module/index.adoc#testing-interoperable-modules
 
@@ -18,7 +18,7 @@ Create a new file called `cc_method.ts`, and add a skeleton for potential cross-
 .hello/cc_method.ts
 [source,typescript]
 ----
-import { BaseCCMethod } from 'lisk-sdk';
+import { BaseCCMethod } from 'klayr-sdk';
 
 export class HelloInteroperableMethod extends BaseCCMethod {}
 ----
@@ -40,7 +40,7 @@ import {
     validator,
     BaseInteroperableModule,
     // ...
-} from 'lisk-sdk';
+} from 'klayr-sdk';
 // Import the newly created cc_method
 import { HelloInteroperableMethod } from './cc_method';
 
@@ -72,7 +72,7 @@ Add the schema for the parameters of the React CCM to the `schemas.ts` file insi
 // Schema for the parameters of the crossChainReact CCM
 export const CCReactMessageParamsSchema = {
     // The unique identifier of the schema.
-    $id: '/lisk/hello/ccReactMessageParams',
+    $id: '/klayr/hello/ccReactMessageParams',
     type: 'object',
     // The required parameters for the CCM.
     required: ['reactionType', 'helloMessageID', 'data'],
@@ -132,7 +132,7 @@ In this example, we store the reactions for a Hello message and the sender addre
 .hello/stores/reaction.ts
 [source,typescript]
 ----
-import { BaseStore } from 'lisk-sdk';
+import { BaseStore } from 'klayr-sdk';
 
 export interface ReactionStoreData {
     reactions: {
@@ -168,11 +168,11 @@ export class ReactionStore extends BaseStore<ReactionStoreData> {
 
 == Initialize the cc_command
 
-Initialize a new command `react` with Lisk Commander
+Initialize a new command `react` with Klayr Commander
 
 [source,bash]
 ----
-lisk generate:command hello react
+klayr generate:command hello react
 ----
 
 To indicate that this command will accept and execute a CCM, move it to a new folder `cc_commands`, and rename the file to `react_cc_command.ts`.
@@ -189,7 +189,7 @@ Now, open the file and update the following properties of the command:
 .hello/cc_commands/react_cc_command.ts
 [source,typescript]
 ----
-import { BaseCCCommand, CrossChainMessageContext, codec, cryptography, db } from 'lisk-sdk';
+import { BaseCCCommand, CrossChainMessageContext, codec, cryptography, db } from 'klayr-sdk';
 import { CCReactMessageParamsSchema, CCReactMessageParams } from '../schemas';
 import { MAX_RESERVED_ERROR_STATUS, CROSS_CHAIN_COMMAND_REACT } from '../constants';
 import { ReactionStore, ReactionStoreData } from '../stores/reaction';
@@ -228,7 +228,7 @@ public async verify(ctx: CrossChainMessageContext): Promise<void> {
         CCReactMessageParamsSchema,
         ccm.params,
     );
-    const messageCreatorAddress = cryptography.address.getAddressFromLisk32Address(
+    const messageCreatorAddress = cryptography.address.getAddressFromKlayr32Address(
         ccReactMessageParams.helloMessageID,
     );
     if (!(await this.stores.get(MessageStore).has(ctx, messageCreatorAddress))) {
@@ -265,7 +265,7 @@ public async execute(ctx: CrossChainMessageContext): Promise<void> {
     const { helloMessageID, reactionType } = ccReactMessageParams;
     const { senderAddress } = transaction;
     const reactionSubstore = this.stores.get(ReactionStore);
-    const msgCreatorAddress = cryptography.address.getAddressFromLisk32Address(helloMessageID);
+    const msgCreatorAddress = cryptography.address.getAddressFromKlayr32Address(helloMessageID);
 
     let msgReactions: ReactionStoreData;
     // Get existing reactions for a Hello message, or initialize an empty reaction object, if none exists,yet.
@@ -333,7 +333,7 @@ public async getReactions(ctx: ModuleEndpointContext): Promise<ReactionStoreData
 
     const reactions = await reactionSubStore.get(
         ctx,
-        cryptography.address.getAddressFromLisk32Address(address),
+        cryptography.address.getAddressFromKlayr32Address(address),
     );
 
     return reactions;
@@ -364,7 +364,7 @@ import {
 	utils,
 	VerificationResult,
 	VerifyStatus,
-} from 'lisk-sdk';
+} from 'klayr-sdk';
 import { CreateHelloCommand } from './commands/create_hello_command';
 import { ReactCCCommand } from './cc_commands/react_cc_command';
 import { HelloEndpoint } from './endpoint';
@@ -498,7 +498,7 @@ Because the `HelloModule` is an *interoperable module*, it is required to call `
 .app.ts
 [source,typescript]
 ----
-import { Application, PartialApplicationConfig, NFTModule } from 'lisk-sdk';
+import { Application, PartialApplicationConfig, NFTModule } from 'klayr-sdk';
 import { TestNftModule } from './modules/testNft/module';
 import { registerModules } from './modules';
 import { registerPlugins } from './plugins';

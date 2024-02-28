@@ -10,18 +10,18 @@ Muhammad Talha <muhammad.talha@lightcurve.io>
 :experimental:
 
 // External URLs
-:url_plugin_monitor: {site-url}/lisk-sdk/v6/references/typedoc/modules/_liskhq_lisk_framework_monitor_plugin.html
-:url_plugin_monitor_config: {site-url}/lisk-sdk/v6/references/typedoc/modules/_liskhq_lisk_framework_monitor_plugin.html#$config-options
+:url_plugin_monitor: {site-url}/klayr-sdk/v6/references/typedoc/modules/_klayrhq_klayr_framework_monitor_plugin.html
+:url_plugin_monitor_config: {site-url}/klayr-sdk/v6/references/typedoc/modules/_klayrhq_klayr_framework_monitor_plugin.html#$config-options
 :url_cors_intro: https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS
 :url_prometheus: https://prometheus.io/docs/introduction/overview/
-:url_monitor_endpoints: https://github.com/LiskHQ/lisk-sdk/blob/development/framework-plugins/lisk-framework-monitor-plugin/src/endpoint.ts
+:url_monitor_endpoints: https://github.com/KlayrHQ/klayr-sdk/blob/development/framework-plugins/klayr-framework-monitor-plugin/src/endpoint.ts
 :url_grafana: https://prometheus.io/docs/visualization/grafana/
 :url_prometheus_configuration: https://prometheus.io/docs/prometheus/latest/configuration/configuration/
 
 // Project URLs
 :url_guides_config: build-blockchain/configuration.adoc
 :url_guides_config_hello: {url_guides_config}#example-configuration-for-the-hello-world-client
-:url_core_index: lisk-core::index.adoc
+:url_core_index: klayr-core::index.adoc
 
 The *Monitor plugin* provides insights about a running node, for example:
 
@@ -41,10 +41,10 @@ On this page, you'll learn how to perform the following:
 * [x] Retrieve various types of data from the Monitor plugin.
 ====
 
-Using this guide, the Monitor plugin can be registered to a xref:{url_core_index}[Lisk Core] node or any Lisk-based blockchain client.
+Using this guide, the Monitor plugin can be registered to a xref:{url_core_index}[Klayr Core] node or any Klayr-based blockchain client.
 
 == Plugin registration
-With the latest version of Lisk Core v4 and Lisk SDK v6, the default plugins come pre-installed after a client is installed or initiated respectively.
+With the latest version of Klayr Core v4 and Klayr SDK v6, the default plugins come pre-installed after a client is installed or initiated respectively.
  
 You can check the `package.json` file of the blockchain client to ensure the installation has been performed correctly.
 
@@ -53,7 +53,7 @@ You can check the `package.json` file of the blockchain client to ensure the ins
 ----
 "dependencies": {
   //[...]
-	"@liskhq/lisk-framework-monitor-plugin": "0.4.1",
+	"@klayrhq/klayr-framework-monitor-plugin": "0.4.1",
 	//[...]
 },
 ----
@@ -62,7 +62,7 @@ Otherwise, you can install the Monitor plugin like this:
  
 [source,bash]
 ----
-npm install --save @liskhq/lisk-framework-monitor-plugin
+npm install --save @klayrhq/klayr-framework-monitor-plugin
 ----
 
 There are various ways to enable the Monitor plugin.
@@ -75,15 +75,15 @@ For more information, see the configurations described in the xref:{url_guides_c
 ====
 
 === Registering via source
-For blockchain clients that were initialized with Lisk Commander, it is possible to register the plugin through the `plugins.ts` file.
+For blockchain clients that were initialized with Klayr Commander, it is possible to register the plugin through the `plugins.ts` file.
 Open the `plugins.ts` file, import the Monitor plugin, and register it with the application as shown below:
 
 .src/app/plugins.ts
 [source,typescript]
 ----
 /* eslint-disable @typescript-eslint/no-empty-function */
-import { MonitorPlugin } from '@liskhq/lisk-framework-monitor-plugin';
-import { Application } from 'lisk-sdk';
+import { MonitorPlugin } from '@klayrhq/klayr-framework-monitor-plugin';
+import { Application } from 'klayr-sdk';
 
 export const registerPlugins = (app: Application): void => {
     app.registerPlugin(new MonitorPlugin ());
@@ -116,7 +116,7 @@ This can be done simply by adding the `--enable-monitor-plugin` flag to the `sta
 +
 [source,bash]
 ----
-lisk-core start --network testnet --enable-monitor-plugin
+klayr-core start --network testnet --enable-monitor-plugin
 ----
 
 .*Sidechain*
@@ -241,7 +241,7 @@ The following table briefly describes them:
 |===
 
 Once the Monitor plugin is enabled on a node, the aforementioned endpoints can be invoked to get the latest status of a node.
-For more information about each endpoint, see {url_monitor_endpoints}[lisk-framework-monitor-plugin/src/endpoint.ts^].
+For more information about each endpoint, see {url_monitor_endpoints}[klayr-framework-monitor-plugin/src/endpoint.ts^].
 
 
 === Data in Prometheus format
@@ -261,34 +261,34 @@ curl --location 'http://127.0.0.1:4003/api/prometheus/metrics'
 .Monitoring data in the Prometheus format
 [source,bash]
 ----
-# HELP lisk_avg_times_blocks_received_info Average number of times blocks received
-# TYPE lisk_avg_times_blocks_received_info gauge
-lisk_avg_times_blocks_received_info 1
+# HELP klayr_avg_times_blocks_received_info Average number of times blocks received
+# TYPE klayr_avg_times_blocks_received_info gauge
+klayr_avg_times_blocks_received_info 1
 
-# HELP lisk_avg_times_transactions_received_info Average number of times transactions received
-# TYPE lisk_avg_times_transactions_received_info gauge
-lisk_avg_times_transactions_received_info 0
+# HELP klayr_avg_times_transactions_received_info Average number of times transactions received
+# TYPE klayr_avg_times_transactions_received_info gauge
+klayr_avg_times_transactions_received_info 0
 
-# HELP lisk_node_height_total Node Height
-# TYPE lisk_node_height_total gauge
-lisk_node_height_total 17268
+# HELP klayr_node_height_total Node Height
+# TYPE klayr_node_height_total gauge
+klayr_node_height_total 17268
 
-# HELP lisk_finalized_height_total Finalized Height
-# TYPE lisk_finalized_height_total gauge
-lisk_finalized_height_total 17267
+# HELP klayr_finalized_height_total Finalized Height
+# TYPE klayr_finalized_height_total gauge
+klayr_finalized_height_total 17267
 
-# HELP lisk_unconfirmed_transactions_total Unconfirmed transactions
-# TYPE lisk_unconfirmed_transactions_total gauge
-lisk_unconfirmed_transactions_total 0
+# HELP klayr_unconfirmed_transactions_total Unconfirmed transactions
+# TYPE klayr_unconfirmed_transactions_total gauge
+klayr_unconfirmed_transactions_total 0
 
-# HELP lisk_peers_total Total number of peers
-# TYPE lisk_peers_total gauge
-lisk_peers_total{state="connected"} 0
-lisk_peers_total{state="disconnected"} 0
+# HELP klayr_peers_total Total number of peers
+# TYPE klayr_peers_total gauge
+klayr_peers_total{state="connected"} 0
+klayr_peers_total{state="disconnected"} 0
 
-# HELP lisk_fork_events_total Fork events
-# TYPE lisk_fork_events_total gauge
-lisk_fork_events_total 0
+# HELP klayr_fork_events_total Fork events
+# TYPE klayr_fork_events_total gauge
+klayr_fork_events_total 0
 ----
 
 You can configure Prometheus to automatically invoke the aforementioned endpoint after regular intervals.

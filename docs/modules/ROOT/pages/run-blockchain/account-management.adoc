@@ -10,25 +10,25 @@ Mona Bärenfänger <mona@lightcurve.io>
 :url_eip2334: https://eips.ethereum.org/EIPS/eip-2334
 :url_eip2333: https://eips.ethereum.org/EIPS/eip-2333
 :url_rfc8032: https://datatracker.ietf.org/doc/html/rfc8032#section-5.1.5
-:url_lisk_wallet: https://lisk.com/wallet
+:url_klayr_wallet: https://klayr.com/wallet
 :url_github_bip_39: https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki#generating-the-mnemonic
 :url_github_bip_173: https://github.com/bitcoin/bips/blob/master/bip-0173.mediawiki
-:url_github_lip_18: https://github.com/LiskHQ/lips/blob/main/proposals/lip-0018.md
+:url_github_lip_18: https://github.com/KlayrHQ/lips/blob/main/proposals/lip-0018.md
 :url_github_lip_18_base32: {url_github_lip_18}#step-3-base32
 :url_github_lip_18_computation: {url_github_lip_18}#address-representation-for-user-interface-level
-:url_github_lip_66_getprivatekeyfromphraseandpath: https://github.com/LiskHQ/lips/blob/main/proposals/lip-0066.md#getprivatekeyfromphraseandpath
+:url_github_lip_66_getprivatekeyfromphraseandpath: https://github.com/KlayrHQ/lips/blob/main/proposals/lip-0066.md#getprivatekeyfromphraseandpath
 :url_wallet_types: https://blockchain-council.org/blockchain/types-of-crypto-wallets-explained/
 :url_mnemonic_passphrase: https://droomdroom.com/a-guide-to-mnemonic-phrase-and-passphrase/#:~:text=Mnemonic%20phrases%20are%20words%2C%20usually,ownership%20of%20its%20crypto%20assets
 
 // Project URLs
-:url_core_cli: lisk-core::core-cli.adoc
-:url_sdk_cli: lisk-sdk::client-cli.adoc
+:url_core_cli: klayr-core::core-cli.adoc
+:url_sdk_cli: klayr-sdk::client-cli.adoc
 :url_sdk_keyscreate: {url_sdk_cli}#keyscreate
 //Footnotes
 :fn_bip173: footnote:bip173[See {url_github_bip_173}[BIP173^]]
 
 ====
-On this page, you'll learn how to manage your account directly from the command-line with the CLI of a Lisk node.
+On this page, you'll learn how to manage your account directly from the command-line with the CLI of a Klayr node.
 
 Specifically, the following topics below will be covered in detail:
 
@@ -37,10 +37,10 @@ Specifically, the following topics below will be covered in detail:
 * [x] How to create multiple accounts with a single passphrase
 * [x] How a new account is initialized on the blockchain
 * [x] Methods used for managing account credentials
-* [x] Lisk wallet passphrase and security
+* [x] Klayr wallet passphrase and security
 ====
 
-TIP: If you prefer a graphical user interface to manage your account, it is possible to use supported wallets such as {url_lisk_wallet}[Lisk Wallet^].
+TIP: If you prefer a graphical user interface to manage your account, it is possible to use supported wallets such as {url_klayr_wallet}[Klayr Wallet^].
 
 == Overview of the account credentials
 
@@ -62,11 +62,11 @@ Together with the `keyPath`, it identifies an account on the blockchain.
 |<<managing-multiple-accounts-with-a-single-passphrase,Key derivation>> allows multiple key pairs to be derived from the same passphrase.
 
 |`address`
-|lsk7dqp2w7447pqhuzmhx
+|kly7dqp2w7447pqhuzmhx
 sxr65qeoq7nbfox28wxc
 a|The address is the main public identifier of the account and the human-readable representation of the `publicKey`.
 
-Depending on the context, the address is represented in <<lisk32-address-format,different formats>>.
+Depending on the context, the address is represented in <<klayr32-address-format,different formats>>.
 
 |`publicKey`
 |0ca6a5d44cc366de186a2589e3e51849272fa0ae9c52646766ddb7820dfe770c
@@ -110,7 +110,7 @@ cc6e21c14fd02f28e7e
 
 |`blsKeyPath`
 |"m/12381/134/0/0"
-|Similarly to the specifications of {url_eip2334}[EIP 2334^], Lisk uses the path `m/12381/134/chainIDConverted/0` for the BLS key derived for a chain, where `chainIDConverted = bytesToUint(chainID)`.
+|Similarly to the specifications of {url_eip2334}[EIP 2334^], Klayr uses the path `m/12381/134/chainIDConverted/0` for the BLS key derived for a chain, where `chainIDConverted = bytesToUint(chainID)`.
 
 |`blsKey`
 |95c7a571ecf569f91fc99
@@ -121,7 +121,7 @@ c96a17317e18
 a|The public <<bls-keys,BLS key>>.
 [#bls-keys]
 An extra key pair, the BLS keys, is added to a validator account, following the key derivation method described in {url_eip2333}[EIP 2333^].
-BLS keys are used by validators to create aggregated signatures for commits in Lisk blockchains, among other functions.
+BLS keys are used by validators to create aggregated signatures for commits in Klayr blockchains, among other functions.
 
 |`blsProofOfPossession`
 |a02f2672621b3adcd2507
@@ -145,9 +145,9 @@ The proof-of-possession is important to prevent "rogue key" attacks, whereby att
 
 === Passphrases
 
-As previously discussed, Lisk accounts employ a 12-word {url_mnemonic_passphrase}[Mnemonic Passphrase^] to ensure robust security.
+As previously discussed, Klayr accounts employ a 12-word {url_mnemonic_passphrase}[Mnemonic Passphrase^] to ensure robust security.
 It is a sequence of carefully chosen words that acts as a human-readable representation of a complex cryptographic key, as in the example displayed in the <<Creating a new passphrase>> section.
-This passphrase is indispensable for accessing any Lisk wallet and conducting transactions from your account.
+This passphrase is indispensable for accessing any Klayr wallet and conducting transactions from your account.
 
 Using a 12-word seed phrase encompasses 128 bits of entropy, a metric that gauges the level of unpredictability or randomness in the data employed for generating the phrase.
 This is due to the fact that each term within the {url_github_bip_39}[BIP 39^] mnemonic phrase embodies 11 bits of entropy, resulting in a cumulative 132 bits for a 12-word sequence.
@@ -200,15 +200,15 @@ First, start the console:
 
 [tabs]
 =====
-Lisk Core::
+Klayr Core::
 +
 --
 [source,bash]
 ----
-lisk-core console
+klayr-core console
 ----
 --
-Lisk app::
+Klayr app::
 +
 --
 [source,bash]
@@ -218,10 +218,10 @@ Lisk app::
 --
 =====
 
-Generate a new mnemonic passphrase using the Lisk Passphrase library:
+Generate a new mnemonic passphrase using the Klayr Passphrase library:
 
 ----
- > lisk.passphrase.Mnemonic.generateMnemonic()
+ > klayr.passphrase.Mnemonic.generateMnemonic()
 ----
 
 This will return a randomly generated 12 word mnemonic passphrase.
@@ -239,15 +239,15 @@ To put the new account on-chain, it is necessary to <<account-initialization,ini
 
 [tabs]
 =====
-Lisk Core::
+Klayr Core::
 +
 --
 [source,bash]
 ----
-lisk-core keys:create
+klayr-core keys:create
 ----
 --
-Lisk app::
+Klayr app::
 +
 --
 [source,bash]
@@ -289,7 +289,7 @@ This will then return the credentials for the account:
 {
   "keys": [
     {
-      "address": "lskp24b6ev62w67v8qvk8wnvkhh2gv3hcoohes5z3",
+      "address": "klyp24b6ev62w67v8qvk8wnvkhh2gv3hcoohes5z3",
       "keyPath": "m/44'/134'/0'",
       "publicKey": "83eac294606806e0f4125203e2d0dac5ef1fc8730d5ec12e77e94f823f2262fa",
       "privateKey": "eafb0bc7f148e60f69fda52e0cc862071871bbfff884aad095ae84bdde8d298283eac294606806e0f4125203e2d0dac5ef1fc8730d5ec12e77e94f823f2262fa",
@@ -338,15 +338,15 @@ If you wish to start from a different key path, you can specify an `--offset`.
 
 [tabs]
 =====
-Lisk Core::
+Klayr Core::
 +
 --
 [source,bash]
 ----
-lisk-core keys:create --passphrase your-passphrase --no-encrypt --count 2 --offset 1
+klayr-core keys:create --passphrase your-passphrase --no-encrypt --count 2 --offset 1
 ----
 --
-Lisk app::
+Klayr app::
 +
 --
 [source,bash]
@@ -379,7 +379,7 @@ A new account is initialized by sending tokens to an address for the first time.
 
 When tokens are sent to a new address, it is required to pay an *account initialization fee*.
 
-In the Lisk Mainnet, the account initialization fee is 0.05 LSK.
+In the Klayr Mainnet, the account initialization fee is 0.05 KLY.
 
 NOTE: The account initialization fee has to be paid on top of the other fees for a transaction, when tokens are sent to a new address for the first time.
 
@@ -432,18 +432,18 @@ The user substore contains the following entries:
 ----
 ====
 
-== Lisk32 address format
-The *Lisk32 representation* displays addresses as a readable string with a checksum and the "lsk" prefix.
-Lisk32 addresses always have a fix length of 41 characters.
+== Klayr32 address format
+The *Klayr32 representation* displays addresses as a readable string with a checksum and the "kly" prefix.
+Klayr32 addresses always have a fix length of 41 characters.
 
 .Automatic detection of address typing errors
 NOTE: A BCH checksum is used for {url_github_lip_18}[detection of small errors^] in the address.
 Any errors in *up to 4 characters* are *guaranteed* to be detected and errors in *more than 5 characters* are *likely* to be detected.
 
-.Lisk32 address example
- lsk24cd35u4jdq8szo3pnsqe5dsxwrnazyqqqg5eu
+.Klayr32 address example
+ kly24cd35u4jdq8szo3pnsqe5dsxwrnazyqqqg5eu
 
-TIP: To learn how the Lisk32 is derived from the public key, please go to {url_github_lip_18_computation}[Address Representation for User Interface Level (LIP 0018)^].
+TIP: To learn how the Klayr32 is derived from the public key, please go to {url_github_lip_18_computation}[Address Representation for User Interface Level (LIP 0018)^].
 
 == Key Management
 There are two recommended ways to manage the account keys, depending on the use case:
@@ -463,11 +463,11 @@ It is necessary to securely store or remember a secret recovery phrase and passw
 Storing and backing up an encrypted file is necessary, but the user only needs to remember or securely store one password.
 |===
 
-== Lisk wallet passphrase and security best practices
+== Klayr wallet passphrase and security best practices
 
-Wallets play a crucial role, as they provide a secure means to store, send, and receive both LSK tokens and other tokens/coins.
+Wallets play a crucial role, as they provide a secure means to store, send, and receive both KLY tokens and other tokens/coins.
 Wallets in general come in different forms, including a variety of software wallets, such as hot wallets, custodial/non-custodial, and web wallets; hardware wallets, and even paper wallets.
-They operate using a combination of public and private keys, ensuring the safety and authenticity of transactions on the Lisk blockchain.
+They operate using a combination of public and private keys, ensuring the safety and authenticity of transactions on the Klayr blockchain.
 For a more in-depth overview regarding the wallets, see {url_wallet_types}[types of wallets^].
 
 === Security best practices
@@ -484,8 +484,8 @@ In the case whereby you suspect the security of your mnemonic phrase has been co
 Following this, take the time to assess your storage practices to prevent a recurrence of compromise.
 
 As long as you retain your passphrase, your account access remains intact.
-Furthermore, please note that your passphrase can be used interchangeably within the Lisk ecosystem.
-Hence, it is possible to utilize the same passphrase to log in to both Lisk Desktop and Lisk Mobile, granting access to your account.
+Furthermore, please note that your passphrase can be used interchangeably within the Klayr ecosystem.
+Hence, it is possible to utilize the same passphrase to log in to both Klayr Desktop and Klayr Mobile, granting access to your account.
 
 
 

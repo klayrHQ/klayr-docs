@@ -3,7 +3,7 @@ Mona Bärenfänger <mona@lightcurve.io>
 // Settings
 :toc: preamble
 //URLs
-:url_typedoc_fee: {site-url}/lisk-sdk/v6/references/typedoc/classes/lisk_framework.FeeModule.html
+:url_typedoc_fee: {site-url}/klayr-sdk/v6/references/typedoc/classes/klayr_framework.FeeModule.html
 //Project URLs
 :url_integrate_endpoints: integrate-blockchain/connecting-endpoints.adoc
 
@@ -27,7 +27,7 @@ Node CLI::
 --
 [source,bash]
 ----
-lisk-core endpoint:invoke fee_getFeeTokenID
+klayr-core endpoint:invoke fee_getFeeTokenID
 ----
 
 --
@@ -74,7 +74,7 @@ Node CLI::
 --
 [source,bash]
 ----
-lisk-core endpoint:invoke fee_getMinFeePerByte
+klayr-core endpoint:invoke fee_getMinFeePerByte
 ----
 
 --

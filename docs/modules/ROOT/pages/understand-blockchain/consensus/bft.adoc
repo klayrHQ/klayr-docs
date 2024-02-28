@@ -1,1 +1,1 @@
-= Lisk BFT
+= Klayr BFT

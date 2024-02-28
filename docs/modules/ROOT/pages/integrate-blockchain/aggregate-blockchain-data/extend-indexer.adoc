@@ -8,25 +8,25 @@ Muhammad Talha <muhammad.talha@lightcurve.io>
 :idseparator: -
 
 //External URLs
-:url_token: https://github.com/LiskHQ/lisk-service/tree/development/services/blockchain-indexer/shared/indexer/transactionProcessor/token
-:url_transfer: https://github.com/LiskHQ/lisk-service/blob/development/services/blockchain-indexer/shared/indexer/transactionProcessor/token/transfer.js
-:url_index: https://github.com/LiskHQ/lisk-service/blob/development/services/blockchain-indexer/shared/indexer/transactionProcessor/token/index.js
-:url_sharedIndexer_directory: https://github.com/LiskHQ/lisk-service/tree/development/services/blockchain-indexer/shared/indexer/transactionProcessor
-:url_auth: https://github.com/LiskHQ/lisk-service/tree/development/services/blockchain-indexer/shared/indexer/transactionProcessor/auth
-:url_interoperability: https://github.com/LiskHQ/lisk-service/tree/development/services/blockchain-indexer/shared/indexer/transactionProcessor/interoperability
-:url_legacy: https://github.com/LiskHQ/lisk-service/tree/development/services/blockchain-indexer/shared/indexer/transactionProcessor/legacy
-:url_pos: https://github.com/LiskHQ/lisk-service/tree/development/services/blockchain-indexer/shared/indexer/transactionProcessor/pos
+:url_token: https://github.com/KlayrHQ/klayr-service/tree/development/services/blockchain-indexer/shared/indexer/transactionProcessor/token
+:url_transfer: https://github.com/KlayrHQ/klayr-service/blob/development/services/blockchain-indexer/shared/indexer/transactionProcessor/token/transfer.js
+:url_index: https://github.com/KlayrHQ/klayr-service/blob/development/services/blockchain-indexer/shared/indexer/transactionProcessor/token/index.js
+:url_sharedIndexer_directory: https://github.com/KlayrHQ/klayr-service/tree/development/services/blockchain-indexer/shared/indexer/transactionProcessor
+:url_auth: https://github.com/KlayrHQ/klayr-service/tree/development/services/blockchain-indexer/shared/indexer/transactionProcessor/auth
+:url_interoperability: https://github.com/KlayrHQ/klayr-service/tree/development/services/blockchain-indexer/shared/indexer/transactionProcessor/interoperability
+:url_legacy: https://github.com/KlayrHQ/klayr-service/tree/development/services/blockchain-indexer/shared/indexer/transactionProcessor/legacy
+:url_pos: https://github.com/KlayrHQ/klayr-service/tree/development/services/blockchain-indexer/shared/indexer/transactionProcessor/pos
 
 //Internal Docs URLs
-:url_newBlock_event: api/lisk-node-rpc.adoc#chain_newblock
-:url_deleteBlock_event: api/lisk-node-rpc.adoc#chain_deleteblock
+:url_newBlock_event: api/klayr-node-rpc.adoc#chain_newblock
+:url_deleteBlock_event: api/klayr-node-rpc.adoc#chain_deleteblock
 
 The Blockchain Indexer microservice is primarily responsible for indexing all the blockchain information, based on the scheduled jobs by the Blockchain Coordinator.
 In the data service mode, it serves user request queries made via the RESTful API or the WebSocket-based RPC calls.
 It can run both the indexer and data service modes simultaneously, both enabled by default.
 
-This microservice encapsulates most of the business logic for the Lisk Service API.
-By default, it only implements the business logic for all the available commands from the Lisk SDK. The `applyTransaction` and `revertTransaction` hooks implement the indexing logic and are specific to each available command.
+This microservice encapsulates most of the business logic for the Klayr Service API.
+By default, it only implements the business logic for all the available commands from the Klayr SDK. The `applyTransaction` and `revertTransaction` hooks implement the indexing logic and are specific to each available command.
 
 Every time a new block is added to the chain, the xref:{url_newBlock_event}[chain_newBlock] event is triggered.
 When the new block contains transactions, the corresponding `applyTransaction` hook is invoked internally to process the transaction and its parameters.
@@ -43,7 +43,7 @@ It reverts the effects of the corresponding `applyTransaction` hooks, as applica
 The `applyTransaction` and `revertTransaction` hooks are arranged per command in a file and are grouped by the module that they belong to.
 All the hooks are placed under the {url_sharedIndexer_directory}[shared/indexer/transactionProcessor^] directory.
 Command-specific hooks are always implemented within a single file and are grouped by the module.
-To extend Lisk Service and implement hooks for a custom module, perform the following steps:
+To extend Klayr Service and implement hooks for a custom module, perform the following steps:
 
 . Create a sub-directory with the module name. For example: {url_token}[token^].
 . Add {url_index}[index.js^] under the above directory.
@@ -80,7 +80,7 @@ const EVENT_NAME_INITIALIZE_USER_ACCOUNT = 'initializeUserAccount';
 // [...]
 ----
 +
-. Extract the `recipientAddress` from the transaction and index it in the Lisk Indexer microservice's database via the `applyTransaction` hook.
+. Extract the `recipientAddress` from the transaction and index it in the Klayr Indexer microservice's database via the `applyTransaction` hook.
 +
 .transfer.js
 [source,js]
@@ -125,7 +125,7 @@ const applyTransaction = async (blockHeader, tx, events, dbTrx) => {
 // [...]
 ----
 +
-. In the case whereby the block is deleted, update the Lisk Indexer microservice database by deleting the corresponding `recipientAddress` through the `revertTransaction` hook.
+. In the case whereby the block is deleted, update the Klayr Indexer microservice database by deleting the corresponding `recipientAddress` through the `revertTransaction` hook.
 +
 .transfer.js
 [source,js]
@@ -146,7 +146,7 @@ module.exports = {
 };
 ----
 + 
-. Now, whenever a token transfer transaction is executed on the chain, Lisk Service's Blockchain Indexer microservice will extract the `recipientAddress` of the transaction and will index it in the list of active accounts, which can be served to applications such as Lisk Wallet upon request.
+. Now, whenever a token transfer transaction is executed on the chain, Klayr Service's Blockchain Indexer microservice will extract the `recipientAddress` of the transaction and will index it in the list of active accounts, which can be served to applications such as Klayr Wallet upon request.
 
 For more examples of extending the Indexer microservice for various modules and their commands, see the following list:
 

@@ -2,7 +2,7 @@
 /* stylelint-disable */
 /*! @docsearch/css 3.0.0-alpha.50 | MIT License | © Algolia, Inc. and contributors | https://docsearch.algolia.com */
 :root {
-  --docsearch-primary-color: #5468ff;
+  --docsearch-primary-color: var(--color-azule);
   --docsearch-text-color: #1c1e21;
   --docsearch-spacing: 12px;
   --docsearch-icon-stroke-width: 1.4;

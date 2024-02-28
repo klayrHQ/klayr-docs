@@ -5,9 +5,9 @@ Muhammad Talha <muhammad.talha@lightcurve.io>
 :idseparator: -
 :sectnums:
 // URLs
-:url_github_guides_plugin: https://github.com/LiskHQ/lisk-sdk-examples/tree/development/tutorials/hello/hello_client/src/app/plugins/hello_info
-:url_github_schemas: https://github.com/LiskHQ/lisk-sdk-examples/tree/development/tutorials/hello/hello_client/src/app/plugins/hello_info/schemas.ts
-:url_github_types: https://github.com/LiskHQ/lisk-sdk-examples/tree/development/tutorials/hello/hello_client/src/app/plugins/hello_info/types.ts
+:url_github_guides_plugin: https://github.com/KlayrHQ/klayr-sdk-examples/tree/development/tutorials/hello/hello_client/src/app/plugins/hello_info
+:url_github_schemas: https://github.com/KlayrHQ/klayr-sdk-examples/tree/development/tutorials/hello/hello_client/src/app/plugins/hello_info/schemas.ts
+:url_github_types: https://github.com/KlayrHQ/klayr-sdk-examples/tree/development/tutorials/hello/hello_client/src/app/plugins/hello_info/types.ts
 
 The `HelloInfoPlugin` will need to store data of events emitted by the `HelloModule`.
 To achieve this, first, define the desired data structures as described on this page.

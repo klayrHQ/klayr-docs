@@ -71,12 +71,12 @@ export const newHelloEventSchema = {
 };
 ----
 
-To create the event class, import the `BaseEvent` from the `lisk-sdk`.
+To create the event class, import the `BaseEvent` from the `klayr-sdk`.
 
 .hello_client/src/app/modules/hello/events/new_hello.ts
 [source,typescript]
 ----
-import { BaseEvent } from 'lisk-sdk';
+import { BaseEvent } from 'klayr-sdk';
 
 export interface NewHelloEventData {
     //...

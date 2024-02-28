@@ -13,12 +13,12 @@ Muhammad Talha <muhammad.talha@lightcurve.io>
 :url_sign_multiSig_tx: integrate-blockchain/multisignature-accounts-and-transactions.adoc#how-to-sign-a-multi-signature-transaction
 
 // URLs
-:url_multiSig_Tx: https://github.com/LiskHQ/lisk-sdk-examples/blob/development/guides/multiSigtx-creation-signing/create-multiSig-transaction.js
-:url_multiSig_tx_directory: https://github.com/LiskHQ/lisk-sdk-examples/tree/development/guides/multiSigtx-creation-signing
+:url_multiSig_Tx: https://github.com/KlayrHQ/klayr-sdk-examples/blob/development/guides/multiSigtx-creation-signing/create-multiSig-transaction.js
+:url_multiSig_tx_directory: https://github.com/KlayrHQ/klayr-sdk-examples/tree/development/guides/multiSigtx-creation-signing
 
 This guide describes different methods of creating and signing a *multi-signature* transaction *offline*.
-A user can create an offline multi-signature transaction using the CLI, or via Lisk Elements.
-The steps apply to all the blockchain clients developed with the Lisk SDK, including Lisk Core.
+A user can create an offline multi-signature transaction using the CLI, or via Klayr Elements.
+The steps apply to all the blockchain clients developed with the Klayr SDK, including Klayr Core.
 
 ====
 On this page, you'll learn:
@@ -56,7 +56,7 @@ The `--no-signature` flag ensures that the transaction is created without any si
 
 Without signatures, a transaction should be created by mentioning the sender's public key after its flag: `--sender-public-key`.
 
-The `passphrase` of an account is used by Lisk to identify the creator and signer of a transaction.
+The `passphrase` of an account is used by Klayr to identify the creator and signer of a transaction.
 
 Although, it isn't mandatory, however, to also see the decoded transaction object on creation, add the `--json` parameter.
 
@@ -77,7 +77,7 @@ Define the transaction params:
 ----
 ? Please enter: tokenID:  0000000100000000
 ? Please enter: amount:  20000000
-? Please enter: recipientAddress:  lskgmmkgyc67n5jrpf2trgtxtc4yjg7bpu992chba
+? Please enter: recipientAddress:  klygmmkgyc67n5jrpf2trgtxtc4yjg7bpu992chba
 ? Please enter: data: 
 ----
 
@@ -105,7 +105,7 @@ After all relevant information about the transaction is given, the transaction i
     "params": {
       "tokenID": "0000000100000000",
       "amount": "20000000",
-      "recipientAddress": "lskgmmkgyc67n5jrpf2trgtxtc4yjg7bpu992chba",
+      "recipientAddress": "klygmmkgyc67n5jrpf2trgtxtc4yjg7bpu992chba",
       "data": ""
     }
   }
@@ -154,7 +154,7 @@ The aforementioned `sign` transaction adds a single signature as per the lexicog
     "params": {
       "tokenID": "0000000100000000",
       "amount": "20000000",
-      "recipientAddress": "lskgmmkgyc67n5jrpf2trgtxtc4yjg7bpu992chba",
+      "recipientAddress": "klygmmkgyc67n5jrpf2trgtxtc4yjg7bpu992chba",
       "data": ""
     },
     "signatures": [
@@ -193,7 +193,7 @@ Enter the account's passphrase:
     "params": {
       "tokenID": "0000000100000000",
       "amount": "20000000",
-      "recipientAddress": "lskgmmkgyc67n5jrpf2trgtxtc4yjg7bpu992chba",
+      "recipientAddress": "klygmmkgyc67n5jrpf2trgtxtc4yjg7bpu992chba",
       "data": ""
     },
     "signatures": [
@@ -211,14 +211,14 @@ Once the transaction is executed, check the account balance of the sender (the m
 The balance of both accounts should have changed.
 
 
-== Option 2: Creating transactions offline with Lisk SDK
+== Option 2: Creating transactions offline with Klayr SDK
 
 NOTE: The {url_multiSig_Tx}[create-multiSig-transaction.js^] script can be found in the {url_multiSig_tx_directory}[multiSigtx-creation-signing
 ^] folder.
 
-The process of creating and signing a transaction with Lisk SDK has already been explained in the following guides.
+The process of creating and signing a transaction with Klayr SDK has already been explained in the following guides.
 
 * xref:{url_create_multiSig_tx}[How to create a multi-signature transaction]
 * xref:{url_sign_multiSig_tx}[How to sign a multi-signature transaction]
 
-IMPORTANT: Beware that, whilst you can create and sign a transaction using Lisk SDK, it is not possible to dry-run or post a transaction without an up-and-running node.
+IMPORTANT: Beware that, whilst you can create and sign a transaction using Klayr SDK, it is not possible to dry-run or post a transaction without an up-and-running node.

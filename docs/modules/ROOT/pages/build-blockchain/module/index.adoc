@@ -4,9 +4,9 @@ Mona Bärenfänger <mona@lightcurve.io>
 :idprefix:
 :idseparator: -
 :sectnums:
-:docs_sdk: lisk-sdk::
+:docs_sdk: klayr-sdk::
 // URLs
-:url_github_guides_module: https://github.com/LiskHQ/lisk-sdk-examples/tree/development/tutorials/hello/
+:url_github_guides_module: https://github.com/KlayrHQ/klayr-sdk-examples/tree/development/tutorials/hello/
 
 // Project URLS
 :url_build_blockchain_event: build-blockchain/module/blockchain-event.adoc
@@ -26,16 +26,16 @@ Mona Bärenfänger <mona@lightcurve.io>
 :url_intro_modules_stores: {url_intro_modules}#stores
 :url_intro_modules_methods: {url_intro_modules}#methods
 :url_intro_modules_event: {url_intro_modules}#blockchain-events
-// :url_references_commander: {docs_sdk}references/lisk-commander/cli.adoc#generate
+// :url_references_commander: {docs_sdk}references/klayr-commander/cli.adoc#generate
 
 // TODO: Update the page by uncommenting the hyperlinks once the updated pages are available.
 
-How to create a new xref:{url_intro_modules}[module] for a Lisk blockchain client.
+How to create a new xref:{url_intro_modules}[module] for a Klayr blockchain client.
 
 .Complete application code
 [TIP]
 ====
-View the complete sample code of the complete "Hello World" Lisk app on GitHub in the {url_github_guides_module}[Lisk SDK examples repository^].
+View the complete sample code of the complete "Hello World" Klayr app on GitHub in the {url_github_guides_module}[Klayr SDK examples repository^].
 ====
 
 ****
@@ -70,12 +70,12 @@ Doesn't expect any parameters.
 ====
 To use this guide, the following criteria is assumed:
 
-* Lisk Commander is installed, and a basic blockchain client is already initialized, as explained in the previous guide xref:{url_build_init}[].
+* Klayr Commander is installed, and a basic blockchain client is already initialized, as explained in the previous guide xref:{url_build_init}[].
 ====
 
-While in the root folder of the client, generate a skeleton for the new module with Lisk Commander.
+While in the root folder of the client, generate a skeleton for the new module with Klayr Commander.
 
-The command `lisk generate:module` expects one argument:
+The command `klayr generate:module` expects one argument:
 
 . The xref:{url_intro_modules_name}[module name].
 It needs to be a string in camelCase, and always starts with a lower case letter.
@@ -83,7 +83,7 @@ No numbers, hyphens, etc., are allowed.
 Needs to be unique within the client.
 
 For a complete overview of all available options of the `generate:module` command, type `generate:module --help`.
-//, or visit the xref:{url_references_commander}[Lisk Commander command reference]
+//, or visit the xref:{url_references_commander}[Klayr Commander command reference]
 
 As an example, we use the module name `hello`:
 
@@ -91,7 +91,7 @@ As an example, we use the module name `hello`:
 ./hello/hello_client/
 [source,bash]
 ----
-lisk generate:module hello
+klayr generate:module hello
 ----
 
 NOTE: The module name should contain only characters from the set `*[a-z0-9!@$&_.]*`.
@@ -142,12 +142,12 @@ For more information on how to create a module store, check out the guide: xref:
 <7> `modules.spec.ts`: Will contain unit tests for the module.
 For more information on how to write a unit test for a module, check out the xref:{url_guides_testing}[] guide.
 
-Lisk Commander will also automatically register the module to the client, by adding it to the file `src/app/modules.ts`:
+Klayr Commander will also automatically register the module to the client, by adding it to the file `src/app/modules.ts`:
 
 .hello_client/src/app/modules.ts
 [source,typescript]
 ----
-import { Application } from 'lisk-sdk';
+import { Application } from 'klayr-sdk';
 import { HelloModule } from "./modules/hello/module";
 
 export const registerModules = (app: Application): void => {
@@ -161,7 +161,7 @@ Now, let's take a look at the module skeleton:
 
 The command `generate:module` already created the class `HelloModule` which contains skeletons for the most important components of the module.
 
-The module class always extends from the `BaseModule`, which is imported from the `lisk-sdk` package.
+The module class always extends from the `BaseModule`, which is imported from the `klayr-sdk` package.
 
 However, this module is not performing any functions yet.
 To give the module a purpose, it is necessary to implement certain logic inside of the module.
@@ -193,7 +193,7 @@ import {
 	ModuleMetadata,
 	BlockExecuteContext,
 	BlockAfterExecuteContext,
-} from 'lisk-sdk';
+} from 'klayr-sdk';
 import { HelloEndpoint } from './endpoint';
 import { HelloMethod } from './method';
 
