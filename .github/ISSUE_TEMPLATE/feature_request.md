@@ -1,6 +1,6 @@
 ---
 name: Feature request
-about: Suggest an idea to improve the Lisk Documentation
+about: Suggest an idea to improve the Klayr Documentation
 title: ''
 labels: feature
 assignees: ''
