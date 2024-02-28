@@ -18,7 +18,7 @@ For more information, please see the xref:{url_guide_config}[configuration guide
     label: 'alpha-sdk-app', //<1>
     version: '0.0.0', //<2>
     protocolVersion: '1.1', //<3>
-    tempPath: '/tmp/lisk', //<4>
+    tempPath: '/tmp/klayr', //<4>
     ipc: {
         enabled: false, //<5>
     },
@@ -51,7 +51,7 @@ For more information, please see the xref:{url_guide_config}[configuration guide
         logger: {
             fileLogLevel: 'info', //<21>
             consoleLogLevel: 'none', //<22>
-            logFileName: 'logs/lisk.log', //<23>
+            logFileName: 'logs/klayr.log', //<23>
         },
         cache: {
             enabled: false, //<24>
@@ -63,15 +63,15 @@ For more information, please see the xref:{url_guide_config}[configuration guide
         storage: {
             host: 'localhost', //<29>
             port: 5432, //<30>
-            database: 'lisk_dev', //<31>
-            user: 'lisk', //<32>
+            database: 'klayr_dev', //<31>
+            user: 'klayr', //<32>
             password: 'password', //<33>
             min: 10, //<34>
             max: 25, //<35>
             poolIdleTimeout: 30000, //<36>
             reapIntervalMillis: 1000, //<37>
             logEvents: ['error'], //<38>
-            logFileName: 'logs/lisk_db.log', //<39>
+            logFileName: 'logs/klayr_db.log', //<39>
         },
     },
     modules: {
@@ -89,8 +89,8 @@ For more information, please see the xref:{url_guide_config}[configuration guide
                 options: {
                     port: 443, //<47>
                     address: '0.0.0.0', //<48>
-                    key: './ssl/lisk.key', //<49>
-                    cert: './ssl/lisk.crt', //<50>
+                    key: './ssl/klayr.key', //<49>
+                    cert: './ssl/klayr.crt', //<50>
                 },
             },
             options: {
@@ -143,7 +143,7 @@ To successfully enable forging for a delegate, the public key and the encrypted 
 <21> Minimum loglevel, that should be logged in the log file.
 <22> Minimum loglevel, that should be logged in the console when starting the node.
 <23> Define name and path of the log file.
-Default: logs/lisk.log
+Default: logs/klayr.log
 <24> If true, enables cache.
 Default: false
 <25> Redis host IP. Default: 127.0.0.1
@@ -173,10 +173,10 @@ If true, the client IP addresses are understood as the left-most entry in the X-
 <45> This parameter allows connections to the API by IP.
 Defaults to only allow local host.
 <46> Enables SSL for HTTP requests.
-<47> Port to host the Lisk Wallet on, the default is 443, however it is recommended to use a port above 1024 with IP tables.
-<48> Interface to listen on for the Lisk Wallet.
+<47> Port to host the Klayr Wallet on, the default is 443, however it is recommended to use a port above 1024 with IP tables.
+<48> Interface to listen on for the Klayr Wallet.
 <49> Required private key to decrypt and verify the SSL Certificate.
-<50> SSL certificate to use with the Lisk Wallet.
+<50> SSL certificate to use with the Klayr Wallet.
 <51> Maximum of API connections.
 <52> Minimum delay between API calls in ms.
 <53> Minimum delay after an API call in ms.

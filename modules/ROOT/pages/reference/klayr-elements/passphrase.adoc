@@ -1,16 +1,16 @@
 = Passphrase
 Mona Bärenfänger <mona@lightcurve.io>
-:description: Technical references regarding the passphrase package of Lisk elements. This consists of usage examples, available options and example responses.
+:description: Technical references regarding the passphrase package of Klayr elements. This consists of usage examples, available options and example responses.
 :toc:
 :url_npm_bip39: https://www.npmjs.com/package/bip39
 
-The Lisk elements passphrase package provides tools for generating and validating mnemonic passphrases.
+The Klayr elements passphrase package provides tools for generating and validating mnemonic passphrases.
 
 == Installation
 
 [source,bash]
 ----
-$ npm install @liskhq/lisk-passphrase
+$ npm install @klayrhq/klayr-passphrase
 ----
 
 == Upgrade
@@ -19,7 +19,7 @@ To perform an upgrade, execute the following command:
 
 [source,bash]
 ----
-npm update @liskhq/lisk-passphrase
+npm update @klayrhq/klayr-passphrase
 ----
 
 == Mnemonic
@@ -31,7 +31,7 @@ Please refer to their documentation for full usage.
 
 [source,js]
 ----
-import * as passphrase from '@liskhq/lisk-passphrase';
+import * as passphrase from '@klayrhq/klayr-passphrase';
 
 const { Mnemonic } = passphrase;
 
@@ -74,7 +74,7 @@ The array is empty if the passphrase is valid.
 
 [source,js]
 ----
-import * as passphrase from '@liskhq/lisk-passphrase';
+import * as passphrase from '@klayrhq/klayr-passphrase';
 
 const errors = passphrase.validation.getPassphraseValidationErrors('this passphrase is not    valid', Mnemonic.wordlist.english, 24);
 /* [

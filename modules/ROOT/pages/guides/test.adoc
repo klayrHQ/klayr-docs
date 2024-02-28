@@ -3,9 +3,9 @@ Mona Bärenfänger <mona@lightcurve.io>
 :description: This section covers how to write and run a test script, and furthermore test a custom transaction.
 :source-linenums-option:
 :highlightjs-theme: solarized_dark
-:url_github_hello_world: https://github.com/LiskHQ/lisk-sdk-examples/tree/development/hello_world
-:url_github_hello_world_tx: https://github.com/LiskHQ/lisk-sdk-examples/blob/development/hello_world/transactions/hello_transaction.js#L53
-:url_github_hello_world_tx_test: https://github.com/LiskHQ/lisk-sdk-examples/blob/test-for-hello-world/hello_world/transactions/test/hello_transaction.test.js
+:url_github_hello_world: https://github.com/KlayrHQ/klayr-sdk-examples/tree/development/hello_world
+:url_github_hello_world_tx: https://github.com/KlayrHQ/klayr-sdk-examples/blob/development/hello_world/transactions/hello_transaction.js#L53
+:url_github_hello_world_tx_test: https://github.com/KlayrHQ/klayr-sdk-examples/blob/test-for-hello-world/hello_world/transactions/test/hello_transaction.test.js
 :url_jest: https://jestjs.io/docs/en/getting-started
 :url_unit_tests: https://en.wikipedia.org/wiki/Unit_testing
 :url_wiki_stubs: https://en.wikipedia.org/wiki/Test_stub
@@ -64,7 +64,7 @@ To test that the `applyAsset()` function is working as expected, write a unit te
 [source,js]
 ----
 const HelloTransaction = require('../hello_transaction');
-const {TransactionError, utils} = require('@liskhq/lisk-transactions');
+const {TransactionError, utils} = require('@klayrhq/klayr-transactions');
 const { when } = require('jest-when');
 
 describe('Hello Transaction', () => {
@@ -237,5 +237,5 @@ Is writing unit tests really enough to ensure the functionality of a custom tran
 **Short answer: The unit tests are sufficient.**
 
 **Explanation:** You may wonder if it is required to write additional functional and integration tests.
-Be aware, that the correct reading and writing of the data to the database is already part of the Lisk SDK software testing and therefore it is not needed to test it again for your new custom transaction type.
+Be aware, that the correct reading and writing of the data to the database is already part of the Klayr SDK software testing and therefore it is not needed to test it again for your new custom transaction type.
 Therefore unit tests are generally sufficient to test the functionality of a custom transaction type.

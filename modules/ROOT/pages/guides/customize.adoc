@@ -1,21 +1,21 @@
 = Create a custom transaction
 Mona Bärenfänger <mona@lightcurve.io>
-:description: The Lisk customization page explains how to create custom transactions and how to register them with the blockchain application.
+:description: The Klayr customization page explains how to create custom transactions and how to register them with the blockchain application.
 :toc:
 :v_sdk: v3.0.2
 
-:url_github_base_transaction: https://github.com/LiskHQ/lisk-sdk/blob/{v_sdk}/elements/lisk-transactions/src/base_transaction.ts
-:url_github_sdk_entities_account: https://github.com/LiskHQ/lisk-sdk/blob/{v_sdk}/framework/src/components/storage/entities/account.js
-:url_github_sdk_entities_tx: https://github.com/LiskHQ/lisk-sdk/blob/{v_sdk}/framework/src/components/storage/entities/transaction.js
+:url_github_base_transaction: https://github.com/KlayrHQ/klayr-sdk/blob/{v_sdk}/elements/klayr-transactions/src/base_transaction.ts
+:url_github_sdk_entities_account: https://github.com/KlayrHQ/klayr-sdk/blob/{v_sdk}/framework/src/components/storage/entities/account.js
+:url_github_sdk_entities_tx: https://github.com/KlayrHQ/klayr-sdk/blob/{v_sdk}/framework/src/components/storage/entities/transaction.js
 
 :url_tutorials: tutorials/index.adoc
 
 == Custom transactions
 
-Transactions are an essential part of blockchain applications that are created using the Lisk SDK, as they define the set of actions that can be performed by users in the network.
+Transactions are an essential part of blockchain applications that are created using the Klayr SDK, as they define the set of actions that can be performed by users in the network.
 Each transaction belongs to a specific *transaction type* that is registered in the network.
 
-The Lisk SDK provides a <<interface,BaseTransaction interface>> from which developers can extend from, to create custom transactions.
+The Klayr SDK provides a <<interface,BaseTransaction interface>> from which developers can extend from, to create custom transactions.
 
 [[hello_transaction]]
 == Example of a custom transaction type: The `HelloTransaction`
@@ -26,7 +26,7 @@ The Lisk SDK provides a <<interface,BaseTransaction interface>> from which devel
 const {
     BaseTransaction,
     TransactionError
-} = require('@liskhq/lisk-transactions');
+} = require('@klayrhq/klayr-transactions');
 
 class HelloTransaction extends BaseTransaction {
 
@@ -39,11 +39,11 @@ class HelloTransaction extends BaseTransaction {
     }
 
     /**
-    * Set the `HelloTransaction` transaction FEE to 1 LSK.
+    * Set the `HelloTransaction` transaction FEE to 1 KLY.
     * Every time a user posts a transaction to the network, the transaction fee is paid to the delegate who includes the transaction into the block that the delegate forges.
     */
     static get FEE () {
-        return `${10 ** 8}`; // (= 1 LSK)
+        return `${10 ** 8}`; // (= 1 KLY)
     };
 
     /**
@@ -124,11 +124,11 @@ Add a custom transaction type to a blockchain application by registering it to t
 .Contents of index.js
 [source,js]
 ----
-const { Application, genesisBlockDevnet, configDevnet} = require('lisk-sdk');
+const { Application, genesisBlockDevnet, configDevnet} = require('klayr-sdk');
 const HelloTransaction = require('./hello_transaction'); <1>
 
 configDevnet.app.label = 'hello-world-blockchain-app';
-//configDevnet.components.storage.user = 'lisk';
+//configDevnet.components.storage.user = 'klayr';
 //configDevnet.components.storage.password = 'password';
 
 const app = new Application(genesisBlockDevnet, configDevnet);
@@ -152,20 +152,20 @@ TIP: For more information on creating your own custom transaction types, please 
 
 [IMPORTANT]
 ====
-Transaction types 0-12 are reserved for the Lisk protocol.
+Transaction types 0-12 are reserved for the Klayr protocol.
 Do not use these to register custom transactions.
 ====
 
-Each default transaction type implements a different use case of the Lisk network.
+Each default transaction type implements a different use case of the Klayr network.
 
-TIP: For a complete list of all default transaction types, please see the section Lisk transactions of the Lisk Protocol.
+TIP: For a complete list of all default transaction types, please see the section Klayr transactions of the Klayr Protocol.
 
 [[interface]]
 == The BaseTransaction interface
 
-The BaseTransaction class is the interface that all other transaction types - including the <<default_transactions,default transaction types>> - need to inherit from, in order to be compatible with the Lisk SDK.
+The BaseTransaction class is the interface that all other transaction types - including the <<default_transactions,default transaction types>> - need to inherit from, in order to be compatible with the Klayr SDK.
 
-TIP: See the {url_github_base_transaction}[BaseTransaction^] in the `lisk-sdk` repository on Github.
+TIP: See the {url_github_base_transaction}[BaseTransaction^] in the `klayr-sdk` repository on Github.
 
 === Required properties
 
@@ -247,7 +247,7 @@ To avoid the possibility of incompatibilities, always extend from the `BaseTrans
 const {
     BaseTransaction,
     TransactionError
-} = require('@liskhq/lisk-transactions');
+} = require('@klayrhq/klayr-transactions');
 
 class HelloTransaction extends BaseTransaction {
 [...]
@@ -428,11 +428,11 @@ store.account.set(sender.address, newObj);
 
 == What is the lifecycle of a transaction?
 
-The lifecycle of a general transaction using the Lisk SDK can be summarized in 7 steps:
+The lifecycle of a general transaction using the Klayr SDK can be summarized in 7 steps:
 
 . *A transaction is created and signed, (off-chain).* The script to execute this is as follows: `src/create_and_sign.ts`.
 . *The transaction is sent to a network.* This can be done by a third party tool, (such as `curl` or `Postman`).
-However this can also be achieved by using Lisk Commander, Lisk Desktop or Mobile.
+However this can also be achieved by using Klayr Commander, Klayr Desktop or Mobile.
 All of the tools need to be authorized to access an HTTP API of a network node.
 . *A network node receives the transaction* and after a lightweight schema validation, adds it to a transaction pool.
 . *In the transaction pool, the transactions are firstly `validated`.* In this step, only static checks are performed, which include schema validation and signature validation.

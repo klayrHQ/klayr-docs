@@ -3,21 +3,21 @@
 :toc:
 :v_core: 3.0.0
 
-:url_core_api: {v_core}@lisk-core::reference/api.adoc
-:url_core_intro: {v_core}@lisk-core::index.adoc#networks
+:url_core_api: {v_core}@klayr-core::reference/api.adoc
+:url_core_intro: {v_core}@klayr-core::index.adoc#networks
 
-TIP: Check the xref:{url_core_api}[Lisk Core API^] to make live API requests to the Lisk xref:{url_core_intro}[public networks^].
+TIP: Check the xref:{url_core_api}[Klayr Core API^] to make live API requests to the Klayr xref:{url_core_intro}[public networks^].
 
 [[_overview]]
 == Access restrictions
 
 The API endpoints are by default restricted to a whitelist of IPs that can be found under `modules.http_api.access.whiteList` in the config.
 If it is required for your API to be accessible by the public, this can be achieved by changing `modules.http_api.access.public` to `true`.
-This will allow anyone to make requests to your Lisk Core node.
+This will allow anyone to make requests to your Klayr Core node.
 However some endpoints will stay private, hence this means that only a list of whitelisted IPs can successfully make API calls to that particular endpoint;
 this includes all forging related API calls.
 By default, only the nodes' local IP is also included in the whitelist, nevertheless it is possible to change the setting in `config` under `modules.http_api.forging.access.whiteList`.
-For more details, see the https://lisk.io/documentation/lisk-core/3.0.0/management/[Lisk Core management docs] or the descriptions at the respective endpoint below.
+For more details, see the https://klayr.io/documentation/klayr-core/3.0.0/management/[Klayr Core management docs] or the descriptions at the respective endpoint below.
 
 == Requests
 
@@ -41,9 +41,9 @@ The responses for each API request have a common basic structure as shown below:
 
 == Date formats
 
-Most of the timestamp parameters are in the Lisk timestamp format, which is similar to the Unix timestamp format.
-The *Lisk timestamp* is the number of seconds that have elapsed since the Lisk epoch time (2016-05-24T17:00:00.000Z), not counting leap seconds.
-The *Lisk epoch time* is returned in the https://en.wikipedia.org/wiki/ISO_8601[ISO8601] format, combined with the date and time: `YYYY-MM-DDThh:mm:ssZ`.
+Most of the timestamp parameters are in the Klayr timestamp format, which is similar to the Unix timestamp format.
+The *Klayr timestamp* is the number of seconds that have elapsed since the Klayr epoch time (2016-05-24T17:00:00.000Z), not counting leap seconds.
+The *Klayr epoch time* is returned in the https://en.wikipedia.org/wiki/ISO_8601[ISO8601] format, combined with the date and time: `YYYY-MM-DDThh:mm:ssZ`.
 For details, see the descriptions and examples at the respective endpoint.
 
 == Pagination
@@ -54,7 +54,7 @@ If no limit and offset are provided they are set to 10 and 0 by default, which i
 
 == List of endpoints
 
-All possible API endpoints for Lisk Core are listed below.
+All possible API endpoints for Klayr Core are listed below.
 Click on an endpoint to show the descriptions, details and examples.
 
 
@@ -65,7 +65,7 @@ __Version__ : 1.0.32
 
 === Contact information
 [%hardbreaks]
-__Contact Email__ : admin@lisk.io
+__Contact Email__ : admin@klayr.io
 
 
 === License information
@@ -366,7 +366,7 @@ GET /delegates/{address}/forging_statistics
 
 ==== Description
 By passing an existing delegate address and the desired unix timestamps, it is possible to acquire the forging statistics within the specified timespan.
-If no timestamps are provided, the timestamps from Lisk epoch to the current date will be used.
+If no timestamps are provided, the timestamps from Klayr epoch to the current date will be used.
 
 
 ==== Parameters
@@ -375,7 +375,7 @@ If no timestamps are provided, the timestamps from Lisk epoch to the current dat
 |===
 |Type|Name|Description|Schema
 |**Path**|**address** +
-__required__|Lisk address of a delegate.|string (address)
+__required__|Klayr address of a delegate.|string (address)
 |**Query**|**fromTimestamp** +
 __optional__|Starting unix timestamp.|integer
 |**Query**|**toTimestamp** +
@@ -413,7 +413,7 @@ GET /node/constants
 
 
 ==== Description
-Returns all current constants data on the system, e.g. Lisk epoch time and version.
+Returns all current constants data on the system, e.g. Klayr epoch time and version.
 
 
 ==== Responses
@@ -528,7 +528,7 @@ PUT /node/status/forging
 *Attention! This is a *private endpoint only authorized to whitelisted IPs.*
 To edit the whitelist, please edit the `modules.http_api.forging.access.whiteList` section in the config. *<br>
 Upon passing the correct password and publicKey, forging will be enabled or disabled for the delegate of this particular node.
-The password can be generated locally by encrypting your passphrase, either by using Lisk Commander or with Lisk Elements.
+The password can be generated locally by encrypting your passphrase, either by using Klayr Commander or with Klayr Elements.
 
 
 ==== Parameters
@@ -613,7 +613,7 @@ __optional__|Limit applied to results.|integer (int32)|`10`
 |**Query**|**offset** +
 __optional__|Offset value for results.|integer (int32)|`0`
 |**Query**|**senderId** +
-__optional__|Senders Lisk address.|string (address)|
+__optional__|Senders Klayr address.|string (address)|
 |**Query**|**senderPublicKey** +
 __optional__|Senders public key.|string (publicKey)|
 |**Query**|**sort** +
@@ -680,7 +680,7 @@ __optional__|Fields to sort results by.|enum (height:asc, height:desc, version:a
 |**Query**|**state** +
 __optional__|Current state of the network.|enum (connected, disconnected)|
 |**Query**|**version** +
-__optional__|Lisk version of the node.|string (version)|
+__optional__|Klayr version of the node.|string (version)|
 |**Query**|**wsPort** +
 __optional__|Web socket port for the node or delegate.|integer (int32)|
 |===
@@ -717,7 +717,7 @@ POST /transactions
 
 ==== Description
 Submits signed transaction object for processing by the transaction pool.
-Transaction objects can be generated locally either by using Lisk Commander or with Lisk Elements.
+Transaction objects can be generated locally either by using Klayr Commander or with Klayr Elements.
 
 
 ==== Parameters
@@ -790,11 +790,11 @@ __optional__|Minimum transaction amount in Beddows.|integer|
 |**Query**|**offset** +
 __optional__|Offset value for results.|integer (int32)|`0`
 |**Query**|**recipientId** +
-__optional__|Recipients Lisk address.|string (address)|
+__optional__|Recipients Klayr address.|string (address)|
 |**Query**|**senderId** +
-__optional__|Senders Lisk address.|string (address)|
+__optional__|Senders Klayr address.|string (address)|
 |**Query**|**senderIdOrRecipientId** +
-__optional__|Lisk address.|string (address)|
+__optional__|Klayr address.|string (address)|
 |**Query**|**senderPublicKey** +
 __optional__|Senders public key.|string (publicKey)|
 |**Query**|**sort** +
@@ -958,7 +958,7 @@ __required__|Error message containing details of the error. +
 |===
 |Name|Description|Schema
 |**address** +
-__required__|The Lisk address is the human readable representation of the accounts owners public key.
+__required__|The Klayr address is the human readable representation of the accounts owners public key.
 It consists of 21 numbers followed by a capital 'L' at the end. +
 **Example** : `"12668885769632475474L"`|string (address)
 |**asset** +
@@ -998,7 +998,7 @@ __optional__|Total sum of block rewards that the delegate has forged. +
 **Example** : `"510000000"`|string
 |**totalVotesReceived** +
 __optional__|The total votes received by the delegate.
-Represents the total amount of Lisk (in Beddows), that the delegates voters voted for this delegate. +
+Represents the total amount of Klayr (in Beddows), that the delegates voters voted for this delegate. +
 **Example** : `"1081560729258"`|string
 |**unlocking** +
 __required__||< <<_unlocking,Unlocking>> > array
@@ -1017,7 +1017,7 @@ __required__||< <<_vote,Vote>> > array
 |===
 |Name|Description|Schema
 |**address** +
-__required__|The Lisk address of the queried account. +
+__required__|The Klayr address of the queried account. +
 **Example** : `"12668885769632475474L"`|string (address)
 |**balance** +
 __required__|The balance of the queried account. +
@@ -1067,7 +1067,7 @@ __optional__|Number of times that this block has been confirmed by the network.
 By forging a new block on a chain, all former blocks in the chain are then confirmed by the forging delegate. +
 **Example** : `200`|integer
 |**generatorAddress** +
-__optional__|Lisk address of the delegate who forged the block. +
+__optional__|Klayr address of the delegate who forged the block. +
 **Example** : `"12668885769632475474L"`|string (address)
 |**generatorPublicKey** +
 __required__|Public key of the delegate who forged the block. +
@@ -1084,12 +1084,12 @@ Derived from the block signature. +
 **Length** : `1 - 20` +
 **Example** : `"6258354802676165798"`|string (id)
 |**maxHeightPreviouslyForged** +
-__optional__|Largest height of any block previously forged by the generatorPublicKey as defined in the Lisk BFT Protocol.
-See https://github.com/LiskHQ/lips/blob/master/proposals/lip-0014.md +
+__optional__|Largest height of any block previously forged by the generatorPublicKey as defined in the Klayr BFT Protocol.
+See https://github.com/KlayrHQ/lips/blob/master/proposals/lip-0014.md +
 **Example** : `123`|integer
 |**maxHeightPrevoted** +
-__optional__|Largest height of an ancestor block with at least 68 prevotes as defined in the Lisk BFT Protocol.
-See https://github.com/LiskHQ/lips/blob/master/proposals/lip-0014.md +
+__optional__|Largest height of an ancestor block with at least 68 prevotes as defined in the Klayr BFT Protocol.
+See https://github.com/KlayrHQ/lips/blob/master/proposals/lip-0014.md +
 **Example** : `123`|integer
 |**numberOfTransactions** +
 __required__|The number of transactions processed in the block. +
@@ -1107,23 +1107,23 @@ __optional__|Bytesize of the payload hash. +
 __optional__|The ID of the previous block of the chain. +
 **Example** : `"15918760246746894806"`|string (id)
 |**reward** +
-__required__|The Lisk reward for the delegate. +
+__required__|The Klayr reward for the delegate. +
 **Example** : `"50000000"`|string
 |**timestamp** +
 __required__|Unix timestamp. +
 **Example** : `28227090`|integer
 |**totalAmount** +
-__required__|The total amount of Lisk transferred. +
+__required__|The total amount of Klayr transferred. +
 **Example** : `"150000000"`|string
 |**totalFee** +
 __required__|The total amount of fees associated with the block. +
 **Example** : `"15000000"`|string
 |**totalForged** +
-__required__|Total amount of LSK that has been forged in this block.
+__required__|Total amount of KLY that has been forged in this block.
 Consists of fees and the reward. +
 **Example** : `"65000000"`|string
 |**version** +
-__optional__|Versioning for future upgrades of the Lisk protocol. +
+__optional__|Versioning for future upgrades of the Klayr protocol. +
 **Minimum value** : `0` +
 **Example** : `0`|integer
 |===
@@ -1205,7 +1205,7 @@ __required__|<<_meta,Meta>>
 |===
 |Name|Description|Schema
 |**approval** +
-__optional__|Percentage of the voters weight that the delegate owns in relation to the total supply of Lisk. +
+__optional__|Percentage of the voters weight that the delegate owns in relation to the total supply of Klayr. +
 **Example** : `14.22`|number
 |**consecutiveMissedBlocks** +
 __optional__|Number of blocks that the delegate missed consecutively. +
@@ -1228,18 +1228,18 @@ __optional__|Height of blocks where the delegate has been reported for misbehavi
 |===
 |Name|Description|Schema
 |**address** +
-__required__|The Lisk address of a delegate. +
+__required__|The Klayr address of a delegate. +
 **Example** : `"12668885769632475474L"`|string (address)
 |**balance** +
 __required__|Account balance.
-Amount of Lisk the delegate account owns. +
+Amount of Klayr the delegate account owns. +
 **Example** : `"1081560729258"`|string
 |**publicKey** +
 __optional__|The public key of the delegate. +
 **Example** : `"968ba2fa993ea9dc27ed740da0daf49eddd740dbd7cb1cb4fc5db3a20baf341b"`|string (publicKey)
 |**username** +
 __required__|The delegates username.
-A delegate chooses the username by registering a delegate on the Lisk network.
+A delegate chooses the username by registering a delegate on the Klayr network.
 It is unique and cannot be changed later. +
 **Example** : `"isabella"`|string (username)
 |**voters** +
@@ -1285,13 +1285,13 @@ __required__||<<_offset,Offset>>
 |===
 |Name|Description|Schema
 |**address** +
-__required__|The Lisk address is the human readable representation of the accounts owners public key.
+__required__|The Klayr address is the human readable representation of the accounts owners public key.
 It consists of 21 numbers followed by a capital 'L' at the end. +
 **Example** : `"6251001604903637008L"`|string (address)
 |**nextSlot** +
 __required__|Returns the slot number in which the forger will be able to forge the next block.
 Each slot has a timespan of 10 seconds.
-The first slot began directly after the Lisk epoch time. +
+The first slot began directly after the Klayr epoch time. +
 **Example** : `4368793.0`|number
 |**publicKey** +
 __required__|The public key is derived from the private key of the owner of the account.
@@ -1299,7 +1299,7 @@ It can be used to validate that the private key belongs to the owner, but not pr
 **Example** : `"2ca9a7143fc721fdc540fef893b27e8d648d2288efa61e56264edf01a2c23079"`|string (publicKey)
 |**username** +
 __required__|The delegates username.
-A delegate chooses the username by registering a delegate on the Lisk network.
+A delegate chooses the username by registering a delegate on the Klayr network.
 It is unique and cannot be changed later. +
 **Example** : `"isabella"`|string (username)
 |===
@@ -1356,7 +1356,7 @@ __required__|Amount of blocks that the delegate has forged during the timespan. 
 __required__|Amount of fees that the delegate earned during the timespan. +
 **Example** : `"15000000"`|string
 |**forged** +
-__required__|Amount of Lisk that has been transferred inside the forged blocks of a delegate, during the timespan. +
+__required__|Amount of Klayr that has been transferred inside the forged blocks of a delegate, during the timespan. +
 **Example** : `"65000000"`|string
 |**rewards** +
 __required__|Amount of rewards that the delegate earned during the timespan. +
@@ -1520,17 +1520,17 @@ __required__|Unique identifier for the network.
 The networkId that the node is connecting to, see LIP-0009 for more details. +
 **Example** : `"ed14889723f24ecc54871d058d98ce91ff2f973192075c0155ba2b7b70ad2511"`|string
 |**protocolVersion** +
-__optional__|The Lisk Core protocol version that the node is running on. +
+__optional__|The Klayr Core protocol version that the node is running on. +
 **Example** : `"1.0"`|string (protocolVersion)
 |**reward** +
 __required__|The reward a delegate will receive for forging a block.
 Depends on the slot height. +
 **Example** : `"500000000"`|string
 |**supply** +
-__required__|Total supply of LSK in the network. +
+__required__|Total supply of KLY in the network. +
 **Example** : `"10575384500000000"`|string
 |**version** +
-__required__|The Lisk Core version that the node is running on. +
+__required__|The Klayr Core version that the node is running on. +
 **Example** : `"v0.8.0"`|string (version)
 |===
 
@@ -1558,7 +1558,7 @@ __required__|object
 |Name|Description|Schema
 |**chainMaxHeightFinalized** +
 __required__|The largest height with precommits by at least 68 delegates.
-See https://github.com/LiskHQ/lips/blob/master/proposals/lip-0014.md +
+See https://github.com/KlayrHQ/lips/blob/master/proposals/lip-0014.md +
 **Example** : `123`|integer
 |**currentTime** +
 __required__|Current time of the node in milliseconds (Unix timestamp). +
@@ -1569,7 +1569,7 @@ Represents the current number of blocks in the chain on the node. +
 **Minimum value** : `1` +
 **Example** : `123`|integer
 |**secondsSinceEpoch** +
-__required__|Number of seconds that have elapsed since the Lisk epoch time (Lisk timestamp). +
+__required__|Number of seconds that have elapsed since the Klayr epoch time (Klayr timestamp). +
 **Example** : `1533558858`|integer
 |**syncing** +
 __required__|True if the node is syncing with other peers. +
@@ -1702,13 +1702,13 @@ __optional__|The network identifier as per LIP-0009. +
 __optional__|The operating system that the peer node runs on. +
 **Example** : `"debian"`|string
 |**protocolVersion** +
-__optional__|The protocol version of Lisk Core that the peer node runs on. +
+__optional__|The protocol version of Klayr Core that the peer node runs on. +
 **Example** : `"1.0"`|string (protocolVersion)
 |**state** +
 __required__|The state of the peer. +
 **Example** : `"connected"`|enum (connected, disconnected)
 |**version** +
-__optional__|The version of Lisk Core that the peer node runs on. +
+__optional__|The version of Klayr Core that the peer node runs on. +
 **Example** : `"v0.8.0"`|string (version)
 |**wsPort** +
 __required__|The port the peer node uses for websocket connections, e.g. P2P broadcasts. +
@@ -1815,7 +1815,7 @@ True, if the minimum amount of signatures has been reached. +
 |**receivedAt** +
 __optional__|The timestamp of the exact point in time where a node discovered a transaction for the first time.|string (date-time)
 |**senderId** +
-__optional__|Lisk Address of the Senders account. +
+__optional__|Klayr Address of the Senders account. +
 **Example** : `"12668885769632475474L"`|string (address)
 |**senderPublicKey** +
 __required__|The public key of the Senders account. +
@@ -1878,10 +1878,10 @@ __required__|Describes the Transaction type. +
 |===
 |Name|Description|Schema
 |**amount** +
-__optional__|Amount of Lisk to be transferred in this transaction. +
+__optional__|Amount of Klayr to be transferred in this transaction. +
 **Example** : `"150000000"`|string
 |**recipientId** +
-__optional__|Lisk address of the recipients account. +
+__optional__|Klayr address of the recipients account. +
 **Example** : `"12668885769632475474L"`|string (address)
 |===
 
@@ -1937,10 +1937,10 @@ __required__|Error message containing details of the error. +
 |===
 |Name|Description|Schema
 |**amount** +
-__required__|Amount the account voted the delegate for in multiples of 10 Lisk. +
+__required__|Amount the account voted the delegate for in multiples of 10 Klayr. +
 **Example** : `"1000000000000"`|string
 |**delegateAddress** +
-__required__|Lisk address of the delegate the queried account unvoted. +
+__required__|Klayr address of the delegate the queried account unvoted. +
 **Example** : `"12668885769632475474L"`|string (address)
 |**unvoteHeight** +
 __required__|Height at which the unvote should be valid. +
@@ -1955,10 +1955,10 @@ __required__|Height at which the unvote should be valid. +
 |===
 |Name|Description|Schema
 |**amount** +
-__required__|Amount the account voted the delegate for in multiples of 10 Lisk. +
+__required__|Amount the account voted the delegate for in multiples of 10 Klayr. +
 **Example** : `"1000000000000"`|string
 |**delegateAddress** +
-__required__|Lisk address of the delegate the queried account voted for. +
+__required__|Klayr address of the delegate the queried account voted for. +
 **Example** : `"12668885769632475474L"`|string (address)
 |===
 
@@ -1970,12 +1970,12 @@ __required__|Lisk address of the delegate the queried account voted for. +
 |===
 |Name|Description|Schema
 |**amount** +
-__required__|Amount the account voted the delegate for in multiples of 10 Lisk. +
+__required__|Amount the account voted the delegate for in multiples of 10 Klayr. +
 **Example** : `"1000000000000"`|string
 |**delegate** +
 __required__|Delegate properties of the delegate for this vote.|object
 |**delegateAddress** +
-__required__|Lisk address of the delegate the queried account voted for. +
+__required__|Klayr address of the delegate the queried account voted for. +
 **Example** : `"12668885769632475474L"`|string (address)
 |===
 
@@ -1987,7 +1987,7 @@ __required__|Lisk address of the delegate the queried account voted for. +
 |===
 |Name|Description|Schema
 |**address** +
-__required__|The Lisk address of the account that voted for the queried delegate. +
+__required__|The Klayr address of the account that voted for the queried delegate. +
 **Example** : `"12668885769632475474L"`|string (address)
 |**publicKey** +
 __required__|Public key of the account that voted for the queried delegate. +

@@ -1,12 +1,12 @@
 = Connect a frontend
 Mona Bärenfänger <mona@lightcurve.io>
-:description: This guide covers how to create a frontend or client app that interacts with a Lisk blockchain network.
+:description: This guide covers how to create a frontend or client app that interacts with a Klayr blockchain network.
 :toc:
 :imagesdir: ../../assets/images
 :url_angular: https://angular.io/
-:url_github_hello: https://github.com/LiskHQ/lisk-sdk-examples/tree/development/hello_world
-:url_github_sdk: https://github.com/LiskHQ/lisk-sdk
-:url_github_sdk_examples: https://github.com/LiskHQ/lisk-sdk-examples
+:url_github_hello: https://github.com/KlayrHQ/klayr-sdk-examples/tree/development/hello_world
+:url_github_sdk: https://github.com/KlayrHQ/klayr-sdk
+:url_github_sdk_examples: https://github.com/KlayrHQ/klayr-sdk-examples
 :url_medium_functional_vs_class: https://medium.com/@Zwenza/functional-vs-class-components-in-react-231e3fbd7108
 :url_react: https://reactjs.org/
 :url_react_app: https://create-react-app.dev/docs/getting-started/
@@ -16,15 +16,15 @@ Mona Bärenfänger <mona@lightcurve.io>
 :url_setup: setup.adoc
 
 
-This guide describes how to create a frontend or client app that interacts with a Lisk blockchain network.
+This guide describes how to create a frontend or client app that interacts with a Klayr blockchain network.
 
-NOTE: A **Lisk blockchain network** is a network of nodes that are built with the {url_github_sdk}[Lisk SDK^].
+NOTE: A **Klayr blockchain network** is a network of nodes that are built with the {url_github_sdk}[Klayr SDK^].
 
 == Choose a framework
 
 Choose a framework based on personal preference.
 
-NOTE: Lisk uses React.js as a framework of choice for the examples provided in the documentation.
+NOTE: Klayr uses React.js as a framework of choice for the examples provided in the documentation.
 
 
 Some popular framework examples for developing apps are listed below:
@@ -90,17 +90,17 @@ $ tree -I 'node_modules|client/node_modules|react-client/node_modules'
 
 ==== Install
 
-Firstly, please  ensure you have all xref:{url_setup}[Lisk SDK dependencies] installed, and have a fresh database `lisk_dev`.
+Firstly, please  ensure you have all xref:{url_setup}[Klayr SDK dependencies] installed, and have a fresh database `klayr_dev`.
 
 include::partial$dependencies.adoc[]
 
-Clone the {url_github_sdk_examples}[lisk-sdk-examples in GitHub^] and navigate into `hello_world` folder.
+Clone the {url_github_sdk_examples}[klayr-sdk-examples in GitHub^] and navigate into `hello_world` folder.
 
 .Install backend dependencies
 [source,bash]
 ----
-git clone https://github.com/LiskHQ/lisk-sdk-examples.git
-cd lisk-sdk-examples/hello_world
+git clone https://github.com/KlayrHQ/klayr-sdk-examples.git
+cd klayr-sdk-examples/hello_world
 npm i
 ----
 
@@ -335,8 +335,8 @@ export default function App() {
 function Home() {
     return (
         <div>
-            <h2>Hello Lisk!</h2>
-            <p>A simple frontend for blockchain applications built with the Lisk SDK.</p>
+            <h2>Hello Klayr!</h2>
+            <p>A simple frontend for blockchain applications built with the Klayr SDK.</p>
         </div>
     );
 }
@@ -362,7 +362,7 @@ If the API url changes in the future, it is only required to update the `API_BAS
 .react-client/src/api.js
 [source,js]
 ----
-import { APIClient } from '@liskhq/lisk-api-client';
+import { APIClient } from '@klayrhq/klayr-api-client';
 
 const API_BASEURL = 'http://localhost:4000';
 
@@ -386,8 +386,8 @@ image:hello-new_account.png[]
 [source,jsx]
 ----
 import React, { Component } from 'react';
-import * as cryptography from '@liskhq/lisk-cryptography';
-import { Mnemonic } from '@liskhq/lisk-passphrase';
+import * as cryptography from '@klayrhq/klayr-cryptography';
+import { Mnemonic } from '@klayrhq/klayr-passphrase';
 
 const newCredentials = () => {
     const passphrase = Mnemonic.generateMnemonic();
@@ -440,12 +440,12 @@ image:hello-faucet.png[]
 import React, { Component } from 'react';
 import { api } from '../api.js';
 import accounts from '../accounts.json';
-import{ TransferTransaction, utils } from '@liskhq/lisk-transactions';
-import * as cryptography from '@liskhq/lisk-cryptography';
+import{ TransferTransaction, utils } from '@klayrhq/klayr-transactions';
+import * as cryptography from '@klayrhq/klayr-cryptography';
 
 const networkIdentifier = cryptography.getNetworkIdentifier(
     "23ce0366ef0a14a91e5fd4b1591fc880ffbef9d988ff8bebf8f3666b0c09597d",
-    "Lisk",
+    "Klayr",
 );
 
 class Faucet extends Component {
@@ -473,7 +473,7 @@ class Faucet extends Component {
         const fundTransaction = new TransferTransaction({
             asset: {
                 recipientId: this.state.address,
-                amount: utils.convertLSKToBeddows(this.state.amount),
+                amount: utils.convertKLYToBeddows(this.state.amount),
             },
             networkIdentifier: networkIdentifier,
             timestamp: utils.getTimeFromBlockchainEpoch(new Date()),
@@ -531,12 +531,12 @@ image:hello-transfer.png[]
 ----
 import React, { Component } from 'react';
 import { api } from '../api.js';
-import{ TransferTransaction, utils } from '@liskhq/lisk-transactions';
-import * as cryptography from '@liskhq/lisk-cryptography';
+import{ TransferTransaction, utils } from '@klayrhq/klayr-transactions';
+import * as cryptography from '@klayrhq/klayr-cryptography';
 
 const networkIdentifier = cryptography.getNetworkIdentifier(
     "23ce0366ef0a14a91e5fd4b1591fc880ffbef9d988ff8bebf8f3666b0c09597d",
-    "Lisk",
+    "Klayr",
 );
 
 class Transfer extends Component {
@@ -565,10 +565,10 @@ class Transfer extends Component {
         const transferTransaction = new TransferTransaction({
             asset: {
                 recipientId: this.state.address,
-                amount: utils.convertLSKToBeddows(this.state.amount),
+                amount: utils.convertKLYToBeddows(this.state.amount),
             },
             networkIdentifier: networkIdentifier,
-            //timestamp: dateToLiskEpochTimestamp(new Date()),
+            //timestamp: dateToKlayrEpochTimestamp(new Date()),
             timestamp: utils.getTimeFromBlockchainEpoch(new Date()),
         });
 
@@ -628,14 +628,14 @@ image:hello-hello.png[]
 import React, { Component } from 'react';
 import {
     HelloTransaction,
-} from 'lisk-hello-transactions';
+} from 'klayr-hello-transactions';
 import { api } from '../api.js';
-import * as cryptography from '@liskhq/lisk-cryptography';
-import {utils} from "@liskhq/lisk-transactions";
+import * as cryptography from '@klayrhq/klayr-cryptography';
+import {utils} from "@klayrhq/klayr-transactions";
 
 const networkIdentifier = cryptography.getNetworkIdentifier(
     "23ce0366ef0a14a91e5fd4b1591fc880ffbef9d988ff8bebf8f3666b0c09597d",
-    "Lisk",
+    "Klayr",
 );
 
 class Hello extends Component {
@@ -897,7 +897,7 @@ import React, { Component } from 'react';
 import { api } from '../api.js';
 import {
     HelloTransaction,
-} from 'lisk-hello-transactions';
+} from 'klayr-hello-transactions';
 
 class HelloTransactions extends Component {
 

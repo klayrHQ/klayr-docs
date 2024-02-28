@@ -1,21 +1,21 @@
 = Cryptography
 Mona Bärenfänger <mona@lightcurve.io>
-:description: Technical references regarding the cryptography packages of Lisk elements. This consists of usage examples, available options and example responses.
+:description: Technical references regarding the cryptography packages of Klayr elements. This consists of usage examples, available options and example responses.
 :toc:
 :url_github_tweetnacl: https://github.com/dchest/tweetnacl-js
 :url_github_sodium: https://github.com/sodium-friends/sodium-native
 
 :url_guides_forging: guides/forging.adoc
 
-The Lisk elements cryptography module provides all the cryptographic functionality necessary when interacting with the Lisk ecosystem.
+The Klayr elements cryptography module provides all the cryptographic functionality necessary when interacting with the Klayr ecosystem.
 
 == Installation
 
-This adds the Lisk client as a dependency of your project:
+This adds the Klayr client as a dependency of your project:
 
 [source,bash]
 ----
-npm install @liskhq/lisk-cryptography
+npm install @klayrhq/klayr-cryptography
 ----
 
 == Upgrade
@@ -24,14 +24,14 @@ To perform an upgrade, execute the following command:
 
 [source,bash]
 ----
-npm update @liskhq/lisk-cryptography
+npm update @klayrhq/klayr-cryptography
 ----
 
 == Usage
 
-The `lisk-cryptography` package can be used on both server-side and client-side code.
+The `klayr-cryptography` package can be used on both server-side and client-side code.
 
-In case the `lisk-cryptography` is used server-side, it is beneficial to speed up the application by using the {url_github_sodium}[sodium-native^] library.
+In case the `klayr-cryptography` is used server-side, it is beneficial to speed up the application by using the {url_github_sodium}[sodium-native^] library.
 
 To perform this, expose `NACL_FAST=enable` as the environment variable as shown below:
 
@@ -62,7 +62,7 @@ Cryptography-specific constants are available via the `cryptography` key as can 
 
 [source,js]
 ----
-import * as cryptography from '@liskhq/lisk-cryptography';
+import * as cryptography from '@klayrhq/klayr-cryptography';
 
 cryptography.constants.SIGNED_MESSAGE_PREFIX; <1>
 ----
@@ -96,7 +96,7 @@ bufferToHex(buffer)
 
 [source,js]
 ----
-import * as cryptography from '@liskhq/lisk-cryptography';
+import * as cryptography from '@klayrhq/klayr-cryptography';
 
 const buffer = Buffer.from([0xab, 0xcd, 0x12, 0x34]);
 cryptography.bufferToHex(buffer); // 'abcd1234'
@@ -104,7 +104,7 @@ cryptography.bufferToHex(buffer); // 'abcd1234'
 
 === getAddressFromPublicKey
 
-This converts a public key into a Lisk address.
+This converts a public key into a Klayr address.
 
 ==== Syntax
 
@@ -119,7 +119,7 @@ getAddressFromPublicKey(publicKey)
 
 ==== Return value
 
-`string`: This is the Lisk address for the public key.
+`string`: This is the Klayr address for the public key.
 
 ==== Examples
 
@@ -315,7 +315,7 @@ const decryptedMessage = cryptography.decryptMessageWithPassphrase(
     '5c29c9df3f041529a5f9ba07c444a86cbafbfd21413ec3a7',
     'robust swift grocery peasant forget share enable convince deputy road keep cheap',
     '9d3058175acab969f41ad9b86f7a2926c74258670fe56b37c429c01fca9f2f0f'
-); // 'Hello Lisk!'
+); // 'Hello Klayr!'
 ----
 
 === decryptPassphraseWithPassword
@@ -386,7 +386,7 @@ This contains the  `nonce` and `encryptedMessage`, both in hex string format.
 [source,js]
 ----
 const encryptedMessage = cryptography.encryptMessageWithPassphrase(
-    'Hello Lisk!',
+    'Hello Klayr!',
     'robust swift grocery peasant forget share enable convince deputy road keep cheap',
     '9d3058175acab969f41ad9b86f7a2926c74258670fe56b37c429c01fca9f2f0f'
 );
@@ -464,7 +464,7 @@ getNetworkIdentifier(genesisBlockPayloadHash, communityIdentifier)
 ----
 const networkIdentifier = getNetworkIdentifier(
     "23ce0366ef0a14a91e5fd4b1591fc880ffbef9d988ff8bebf8f3666b0c09597d",
-    "Lisk",
+    "Klayr",
 ); // '7158c297294a540bc9ac6e474529c3da38d03ece056e3fa2d98141e6ec54132d'
 ----
 
@@ -699,7 +699,7 @@ cryptography.getAddressAndPublicKeyFromPassphrase(
 
 === getAddressFromPassphrase
 
-This returns the Lisk address for a provided passphrase.
+This returns the Klayr address for a provided passphrase.
 
 ==== Syntax
 
@@ -819,19 +819,19 @@ printSignedMessage(signedMessageObject)
 [source,js]
 ----
 const stringToPrint = cryptography.printSignedMessage({
-    message: 'Hello Lisk!',
+    message: 'Hello Klayr!',
     publicKey: '9d3058175acab969f41ad9b86f7a2926c74258670fe56b37c429c01fca9f2f0f',
     signature: '125febe625b2d62381ff836c020de0b00297f7d2493fe6404bc6109fd70a55348555b7a66a35ac657d338d7fe329efd203da1602f4c88cc21934605676558401',
 });
 console.log(stringToPrint);
-//-----BEGIN LISK SIGNED MESSAGE-----
+//-----BEGIN KLAYR SIGNED MESSAGE-----
 //-----MESSAGE-----
-//Hello Lisk!
+//Hello Klayr!
 //-----PUBLIC KEY-----
 //9d3058175acab969f41ad9b86f7a2926c74258670fe56b37c429c01fca9f2f0f
 //-----SIGNATURE-----
 //125febe625b2d62381ff836c020de0b00297f7d2493fe6404bc6109fd70a55348555b7a66a35ac657d338d7fe329efd203da1602f4c88cc21934605676558401
-//-----END LISK SIGNED MESSAGE-----
+//-----END KLAYR SIGNED MESSAGE-----
 ----
 
 === signAndPrintMessage
@@ -861,16 +861,16 @@ signAndPrintMessage(message, passphrase, [secondPassphrase])
 
 [source,js]
 ----
-const stringToPrint = cryptography.signAndPrintMessage('Hello Lisk!',  'robust swift grocery peasant forget share enable convince deputy road keep cheap');
+const stringToPrint = cryptography.signAndPrintMessage('Hello Klayr!',  'robust swift grocery peasant forget share enable convince deputy road keep cheap');
 console.log(stringToPrint);
-// -----BEGIN LISK SIGNED MESSAGE-----
+// -----BEGIN KLAYR SIGNED MESSAGE-----
 //-----MESSAGE-----
-//Hello Lisk!
+//Hello Klayr!
 //-----PUBLIC KEY-----
 //9d3058175acab969f41ad9b86f7a2926c74258670fe56b37c429c01fca9f2f0f
 //-----SIGNATURE-----
 //125febe625b2d62381ff836c020de0b00297f7d2493fe6404bc6109fd70a55348555b7a66a35ac657d338d7fe329efd203da1602f4c88cc21934605676558401
-//-----END LISK SIGNED MESSAGE-----
+//-----END KLAYR SIGNED MESSAGE-----
 ----
 
 === signMessageWithPassphrase
@@ -898,9 +898,9 @@ signMessageWithPassphrase(message, passphrase)
 
 [source,js]
 ----
-cryptography.signMessageWithPassphrase('Hello Lisk!',  'robust swift grocery peasant forget share enable convince deputy road keep cheap');
+cryptography.signMessageWithPassphrase('Hello Klayr!',  'robust swift grocery peasant forget share enable convince deputy road keep cheap');
 /* {
-    message: 'Hello Lisk!',
+    message: 'Hello Klayr!',
     publicKey: '9d3058175acab969f41ad9b86f7a2926c74258670fe56b37c429c01fca9f2f0f',
     signature: '125febe625b2d62381ff836c020de0b00297f7d2493fe6404bc6109fd70a55348555b7a66a35ac657d338d7fe329efd203da1602f4c88cc21934605676558401',
 } */
@@ -930,7 +930,7 @@ verifyMessageWithPublicKey(signedMessageObject)
 [source,js]
 ----
 cryptography.verifyMessageWithPublicKey({
-    message: 'Hello Lisk!',
+    message: 'Hello Klayr!',
     publicKey: '9d3058175acab969f41ad9b86f7a2926c74258670fe56b37c429c01fca9f2f0f',
     signature: '125febe625b2d62381ff836c020de0b00297f7d2493fe6404bc6109fd70a55348555b7a66a35ac657d338d7fe329efd203da1602f4c88cc21934605676558401',
 }); // true
@@ -960,7 +960,7 @@ verifyMessageWithTwoPublicKeys(signedMessageObject)
 [source,js]
 ----
 cryptography.verifyMessageWithTwoPublicKeys({
-    message: 'Hello Lisk!',
+    message: 'Hello Klayr!',
     publicKey: '9d3058175acab969f41ad9b86f7a2926c74258670fe56b37c429c01fca9f2f0f',
     secondPublicKey: '141b16ac8d5bd150f16b1caa08f689057ca4c4434445e56661831f4e671b7c0a',
     signature: '125febe625b2d62381ff836c020de0b00297f7d2493fe6404bc6109fd70a55348555b7a66a35ac657d338d7fe329efd203da1602f4c88cc21934605676558401',

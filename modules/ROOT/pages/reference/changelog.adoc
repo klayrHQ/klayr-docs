@@ -5,8 +5,8 @@ Mona Bärenfänger <mona@lightcurve.io>
 :imagesdir: ../../assets/images
 :v_sdk: v3.0.2
 
-:url_github_devnet_genesis_payload: https://github.com/LiskHQ/lisk-sdk/blob/{v_sdk}/sdk/src/samples/genesis_block_devnet.json#L11
-:url_github_devnet_genesis_comid: https://github.com/LiskHQ/lisk-sdk/blob/{v_sdk}/sdk/src/samples/genesis_block_devnet.json#L9
+:url_github_devnet_genesis_payload: https://github.com/KlayrHQ/klayr-sdk/blob/{v_sdk}/sdk/src/samples/genesis_block_devnet.json#L11
+:url_github_devnet_genesis_comid: https://github.com/KlayrHQ/klayr-sdk/blob/{v_sdk}/sdk/src/samples/genesis_block_devnet.json#L9
 
 :url_config_reference: reference/config.adoc
 
@@ -44,7 +44,7 @@ Types
 
 == The networkIdentifier parameter
 
-The new parameter `networkIdentifier` is introduced with Lisk SDK version 3.x.
+The new parameter `networkIdentifier` is introduced with Klayr SDK version 3.x.
 
 It is now required to provide the `networkIdentifier` of the specific network when creating a transaction.
 This eliminates the possibility of transaction replays on different networks.
@@ -59,12 +59,12 @@ The network identifier is a hash value based on the following parameters:
 [source,js]
 ----
 const HelloTransaction = require('../hello_transaction');
-const { EPOCH_TIME } = require('@liskhq/lisk-constants');
-const {getNetworkIdentifier} = require('@liskhq/lisk-cryptography');
+const { EPOCH_TIME } = require('@klayrhq/klayr-constants');
+const {getNetworkIdentifier} = require('@klayrhq/klayr-cryptography');
 
 const networkIdentifier = getNetworkIdentifier(
     "23ce0366ef0a14a91e5fd4b1591fc880ffbef9d988ff8bebf8f3666b0c09597d",
-    "Lisk",
+    "Klayr",
 );
 
 const getTimestamp = () => {
@@ -90,11 +90,11 @@ process.exit(0);
 
 == Updated genesis block for devnet
 
-Due to the changes that have been introduced for the structure of transaction objects, the genesis block and it's transactions were created new for Lisk SDK version 3.0.
+Due to the changes that have been introduced for the structure of transaction objects, the genesis block and it's transactions were created new for Klayr SDK version 3.0.
 
-See the new genesis block on Github: https://github.com/LiskHQ/lisk-sdk/blob/v3.0.2/sdk/src/samples/genesis_block_devnet.json
+See the new genesis block on Github: https://github.com/KlayrHQ/klayr-sdk/blob/v3.0.2/sdk/src/samples/genesis_block_devnet.json
 
-See the new devnet config: https://github.com/LiskHQ/lisk-sdk/blob/v3.0.2/sdk/src/samples/config_devnet.json
+See the new devnet config: https://github.com/KlayrHQ/klayr-sdk/blob/v3.0.2/sdk/src/samples/config_devnet.json
 
 === New genesis account
 
@@ -115,7 +115,7 @@ It is utilized to vote for the forging genesis delegates in a convenient way dur
 
 == Database changes
 
-To see what has changed in the database layer of Lisk SDK 3.x, compare the 2 figures `Database layer SDK 2.x`
+To see what has changed in the database layer of Klayr SDK 3.x, compare the 2 figures `Database layer SDK 2.x`
  and `Database layer SDK 3.x`
 
 .Database layer SDK 2.x
@@ -128,18 +128,18 @@ image::db-sdk-3.png[Database layer SDK 3.x]
 
 [NOTE]
 ====
-The list of API changes only comprises of the parts of the API that changed from Lisk SDK 2.x to 3.x.
+The list of API changes only comprises of the parts of the API that changed from Klayr SDK 2.x to 3.x.
 
-To see the complete API specification for Lisk SDK 3.x, please refer to the xref:{url_config_reference}[Config reference].
+To see the complete API specification for Klayr SDK 3.x, please refer to the xref:{url_config_reference}[Config reference].
 ====
 
-Changes are grouped by the different API endpoints for the Lisk SDK.
+Changes are grouped by the different API endpoints for the Klayr SDK.
 
 === Color legend
 [cols=""]
 |===
-|{set:cellbgcolor:red}RED = Removed in Lisk SDK 3.x
-|{set:cellbgcolor:green}GREEN = Added in Lisk SDK 3.x
+|{set:cellbgcolor:red}RED = Removed in Klayr SDK 3.x
+|{set:cellbgcolor:green}GREEN = Added in Klayr SDK 3.x
 |===
 {set:cellbgcolor!}
 
@@ -196,7 +196,7 @@ __optional__|Current state of the network
 |
 
 |**version** +
-__optional__|Lisk version of the node|string (version)|
+__optional__|Klayr version of the node|string (version)|
 |**wsPort** +
 __optional__|Web socket port for the node or delegate|integer (int32)|
 |===
@@ -237,7 +237,7 @@ __optional__|The network identifier as per LIP-0009 +
 __optional__|The Operating system, that the peer node runs on. +
 **Example** : `"debian"`|string
 |**protocolVersion** +
-__optional__|The protocol version of Lisk Core that the peer node runs on. +
+__optional__|The protocol version of Klayr Core that the peer node runs on. +
 **Example** : `"1.0"`|string (protocolVersion)
 |**state** +
 __required__|The state of the Peer. +
@@ -258,7 +258,7 @@ __required__|The state of the Peer. +
 !===
 
 |**version** +
-__optional__|The version of Lisk Core that the peer node runs on. +
+__optional__|The version of Klayr Core that the peer node runs on. +
 **Example** : `"v0.8.0"`|string (version)
 |**wsPort** +
 __required__|The port the peer node uses for websocket connections, e.g. P2P broadcasts. +
@@ -284,7 +284,7 @@ __optional__|Number of times that this Block has been confirmed by the network.
 By forging a new block on a chain, all former blocks in the chain get confirmed by the forging delegate. +
 **Example** : `200`|integer
 |**generatorAddress** +
-__optional__|Lisk address of the delegate who forged the block. +
+__optional__|Klayr address of the delegate who forged the block. +
 **Example** : `"12668885769632475474L"`|string (address)
 |**generatorPublicKey** +
 __required__|Public key of the delegate who forged the block. +
@@ -301,12 +301,12 @@ Derived from the block signature. +
 **Length** : `1 - 20` +
 **Example** : `"6258354802676165798"`|string (id)
 |{set:cellbgcolor:green} **maxHeightPreviouslyForged** +
-__optional__|Largest height of any block previously forged by the generatorPublicKey as defined in the Lisk BFT Protocol.
-See https://github.com/LiskHQ/lips/blob/master/proposals/lip-0014.md +
+__optional__|Largest height of any block previously forged by the generatorPublicKey as defined in the Klayr BFT Protocol.
+See https://github.com/KlayrHQ/lips/blob/master/proposals/lip-0014.md +
 **Example** : `123`|integer
 |**maxHeightPrevoted** +
-__optional__|Largest height of an ancestor block with at least 68 prevotes as defined in the Lisk BFT Protocol.
-See https://github.com/LiskHQ/lips/blob/master/proposals/lip-0014.md +
+__optional__|Largest height of an ancestor block with at least 68 prevotes as defined in the Klayr BFT Protocol.
+See https://github.com/KlayrHQ/lips/blob/master/proposals/lip-0014.md +
 **Example** : `123`|integer
 |{set:cellbgcolor!}
 **numberOfTransactions** +
@@ -325,23 +325,23 @@ __optional__|Bytesize of the payload hash. +
 __optional__|The id of the previous block of the chain. +
 **Example** : `"15918760246746894806"`|string (id)
 |**reward** +
-__required__|The Lisk reward for the delegate. +
+__required__|The Klayr reward for the delegate. +
 **Example** : `"50000000"`|string
 |**timestamp** +
 __required__|Unix timestamp +
 **Example** : `28227090`|integer
 |**totalAmount** +
-__required__|The total amount of Lisk transferred. +
+__required__|The total amount of Klayr transferred. +
 **Example** : `"150000000"`|string
 |**totalFee** +
 __required__|The total amount of fees associated with the block. +
 **Example** : `"15000000"`|string
 |**totalForged** +
-__required__|Total amount of LSK that have been forged in this Block.
+__required__|Total amount of KLY that have been forged in this Block.
 Consists of fees and the reward. +
 **Example** : `"65000000"`|string
 |**version** +
-__optional__|Versioning for future upgrades of the lisk protocol. +
+__optional__|Versioning for future upgrades of the klayr protocol. +
 **Minimum value** : `0` +
 **Example** : `0`|integer
 |===
@@ -413,7 +413,7 @@ __optional__|Delegate username to query|string (username)|
 |===
 |Name|Description|Schema
 |**approval** +
-__optional__|Percentage of the voters weight, that the delegate owns in relation to the total supply of Lisk. +
+__optional__|Percentage of the voters weight, that the delegate owns in relation to the total supply of Klayr. +
 **Example** : `14.22`|number
 |**missedBlocks** +
 __optional__|Total number of blocks the delegate has missed. +
@@ -430,17 +430,17 @@ __optional__|Total sum of block rewards that the delegate has forged. +
 **Example** : `"510000000"`|string
 |**username** +
 __required__|The delegates' username.
-A delegate chooses the username by registering a delegate on the Lisk network.
+A delegate chooses the username by registering a delegate on the Klayr network.
 It is unique and cannot be changed later. +
 **Example** : `"isabella"`|string (username)
 |{set:cellbgcolor:green} **voteWeight** +
 __required__|The voters weight of the delegate.
-Represents the total amount of Lisk (in Beddows) that the delegates' voters own.
+Represents the total amount of Klayr (in Beddows) that the delegates' voters own.
 The voters weight decides which rank the delegate gets in relation to the other delegates and their voters weights. +
 **Example** : `"1081560729258"`|string
 |{set:cellbgcolor:red} **vote** +
 __required__|The voters weight of the delegate.
-Represents the total amount of Lisk (in Beddows) that the delegates' voters own.
+Represents the total amount of Klayr (in Beddows) that the delegates' voters own.
 The voters weight decides which rank the delegate gets in relation to the other delegates and their voters weights. +
 **Example** : `"1081560729258"`|string
 |**rank** +
@@ -461,7 +461,7 @@ The rank is defined by the voters weight/ approval of a delegates, in relation t
 |**account** +
 __required__||<<_account,Account>>
 |**approval** +
-__optional__|Percentage of the voters weight, that the delegate owns in relation to the total supply of Lisk. +
+__optional__|Percentage of the voters weight, that the delegate owns in relation to the total supply of Klayr. +
 **Example** : `14.22`|number
 |**missedBlocks** +
 __optional__|Total number of blocks the delegate has missed. +
@@ -478,17 +478,17 @@ __optional__|Total sum of block rewards that the delegate has forged. +
 **Example** : `"510000000"`|string
 |**username** +
 __required__|The delegates' username.
-A delegate chooses the username by registering a delegate on the Lisk network.
+A delegate chooses the username by registering a delegate on the Klayr network.
 It is unique and cannot be changed later. +
 **Example** : `"isabella"`|string (username)
 |{set:cellbgcolor:green} **voteWeight** +
 __required__|The voters weight of the delegate.
-Represents the total amount of Lisk (in Beddows) that the delegates' voters own.
+Represents the total amount of Klayr (in Beddows) that the delegates' voters own.
 The voters weight decides which rank the delegate gets in relation to the other delegates and their voters weights. +
 **Example** : `"1081560729258"`|string
 |{set:cellbgcolor:red} **vote** +
 __required__|The voters weight of the delegate.
-Represents the total amount of Lisk (in Beddows) that the delegates' voters own.
+Represents the total amount of Klayr (in Beddows) that the delegates' voters own.
 The voters weight decides which rank the delegate gets in relation to the other delegates and their voters weights. +
 **Example** : `"1081560729258"`|string
 |**rank** +
@@ -539,12 +539,12 @@ __optional__|Limit applied to results|integer (int32)|`10`
 |**Query**|**offset** +
 __optional__|Offset value for results|integer (int32)|`0`
 |**Query**|**recipientId** +
-__optional__|Recipient's Lisk address|string (address)|
+__optional__|Recipient's Klayr address|string (address)|
 |{set:cellbgcolor:red}**Query**|**recipientPublicKey** +
 __optional__|Recipient's public key|string (publicKey)|
 |{set:cellbgcolor!}
 **Query**|**senderId** +
-__optional__|Sender's Lisk address|string (address)|
+__optional__|Sender's Klayr address|string (address)|
 |**Query**|**senderPublicKey** +
 __optional__|Sender's public key|string (publicKey)|
 |**Query**|**sort** +
@@ -587,17 +587,17 @@ The networkId that the node is connecting to, see LIP-0009 for more details. +
 **Example** : `"ed14889723f24ecc54871d058d98ce91ff2f973192075c0155ba2b7b70ad2511"`|string
 |{set:cellbgcolor!}
 **protocolVersion** +
-__optional__|The Lisk Core protocol version, that the node is running on. +
+__optional__|The Klayr Core protocol version, that the node is running on. +
 **Example** : `"1.0"`|string (protocolVersion)
 |**reward** +
 __required__|The reward a delegate will get for forging a block.
 Dependant on the slot height. +
 **Example** : `"500000000"`|string
 |**supply** +
-__required__|Total supply of LSK in the network. +
+__required__|Total supply of KLY in the network. +
 **Example** : `"10575384500000000"`|string
 |**version** +
-__required__|The Lisk Core version, that the node is running on. +
+__required__|The Klayr Core version, that the node is running on. +
 **Example** : `"v0.8.0"`|string (version)
 |===
 
@@ -609,11 +609,11 @@ __required__|The Lisk Core version, that the node is running on. +
 |Name|Description|Schema
 |{set:cellbgcolor:green}**chainMaxHeightFinalized** +
 __required__|The largest height with precommits by at least 68 delegates.
-See https://github.com/LiskHQ/lips/blob/master/proposals/lip-0014.md +
+See https://github.com/KlayrHQ/lips/blob/master/proposals/lip-0014.md +
 **Example** : `123`|integer
 |{set:cellbgcolor:red}**broadhash** +
 __required__|Broadhash is established as an aggregated rolling hash of the past five blocks present in the database.
-Broadhash consensus serves a vital function for the Lisk network in order to prevent forks.
+Broadhash consensus serves a vital function for the Klayr network in order to prevent forks.
 It ensures that a majority of available peers agree that it is acceptable to forge. +
 minLength: 64, maxLength: 64 +
 **Example** : `258974416d58533227c6a3da1b6333f0541b06c65b41e45cf31926847a3db1ea`|string
@@ -639,7 +639,7 @@ Represents the current number of blocks in the chain on the node. +
 **Minimum value** : `1` +
 **Example** : `123`|integer
 |**secondsSinceEpoch** +
-__required__|Number of seconds that have elapsed since the Lisk epoch time, (Lisk timestamp). +
+__required__|Number of seconds that have elapsed since the Klayr epoch time, (Klayr timestamp). +
 **Example** : `1533558858`|integer
 |**syncing** +
 __required__|True if the node syncing with other peers. +
@@ -677,14 +677,14 @@ __optional__|Minimum transaction amount in Beddows|integer|
 |**Query**|**offset** +
 __optional__|Offset value for results|integer (int32)|`0`
 |**Query**|**recipientId** +
-__optional__|Recipient's Lisk address|string (address)|
+__optional__|Recipient's Klayr address|string (address)|
 |{set:cellbgcolor:red}**Query**|**recipientPublicKey** +
 __optional__|Recipient's public key|string (publicKey)|
 |{set:cellbgcolor!}
 **Query**|**senderId** +
-__optional__|Sender's Lisk address|string (address)|
+__optional__|Sender's Klayr address|string (address)|
 |**Query**|**senderIdOrRecipientId** +
-__optional__|Lisk address|string (address)|
+__optional__|Klayr address|string (address)|
 |**Query**|**senderPublicKey** +
 __optional__|Sender's public key|string (publicKey)|
 |**Query**|**sort** +
@@ -704,11 +704,11 @@ __optional__|Transaction type (0-*)|integer|
 __required__|Displays additional transaction data.
 For example, this can include the vote data or delegate username.|<<transactionrequest_asset,asset>>
 |{set:cellbgcolor:red} **amount** +
-__required__| Amount of Lisk to be transferred in this transaction.| string
+__required__| Amount of Klayr to be transferred in this transaction.| string
 |**fee** +
 __required__|Transaction fee associated with this transaction.| string
 |**recipientId** +
-__required__|Lisk Address of the Recipients' account.| string (address)
+__required__|Klayr Address of the Recipients' account.| string (address)
 |{set:cellbgcolor!}
 **id** +
 __required__|Unique identifier of the transaction.
@@ -743,10 +743,10 @@ __required__|Describes the transaction type. +
 |===
 |Name|Description|Schema
 | {set:cellbgcolor:green} **amount** +
-__optional__|Amount of Lisk to be transferred in this transaction. +
+__optional__|Amount of Klayr to be transferred in this transaction. +
 **Example** : `"150000000"`|string
 |**recipientId** +
-__optional__|Lisk address of the Recipients' account. +
+__optional__|Klayr address of the Recipients' account. +
 **Example** : `"12668885769632475474L"`|string (address)
 |===
 {set:cellbgcolor!}
@@ -760,9 +760,9 @@ __optional__|Lisk address of the Recipients' account. +
 |**asset** +
 __required__||object
 |{set:cellbgcolor:red} **amount** +
-__required__| Amount of Lisk to be transferred in this transaction.| string
+__required__| Amount of Klayr to be transferred in this transaction.| string
 |**recipientId** +
-__required__|Lisk Address of the Recipients' account.| string (address)
+__required__|Klayr Address of the Recipients' account.| string (address)
 |{set:cellbgcolor!}
 **blockId** +
 __optional__|The Id of the block, this transaction is included in. +
@@ -791,7 +791,7 @@ True, if the minimum amount of signatures has been reached. +
 |**receivedAt** +
 __optional__|The timestamp of the moment, where a node discovered a transaction for the first time.|string (date-time)
 |**senderId** +
-__optional__|Lisk Address of the Senders' account. +
+__optional__|Klayr Address of the Senders' account. +
 **Example** : `"12668885769632475474L"`|string (address)
 |{set:cellbgcolor!}
 **senderPublicKey** +

@@ -3,7 +3,7 @@ Mona Bärenfänger <mona@lightcurve.io>
 :description: This section provides an overview of the main guides in chronological order, together with an example using the 'Hello World' App.
 :toc:
 :imagesdir: ../../assets/images
-:url_github_hello: https://github.com/LiskHQ/lisk-sdk-examples/tree/development/hello_world
+:url_github_hello: https://github.com/KlayrHQ/klayr-sdk-examples/tree/development/hello_world
 :url_react: https://reactjs.org/
 
 :url_config: guides/configuration.adoc
@@ -15,7 +15,7 @@ Mona Bärenfänger <mona@lightcurve.io>
 
 This section consists of concise, goal-oriented how-to guides that are designed in a manner to help the user solve specific issues.
 
-The guides are listed in chronological order, walking the user through the basic steps of developing a blockchain application with the Lisk SDK.
+The guides are listed in chronological order, walking the user through the basic steps of developing a blockchain application with the Klayr SDK.
 
 == Main Guides
 
@@ -42,13 +42,13 @@ To set up the Hello World app, first install the xref:{url_setup}[prerequisites]
 .In the terminal
 [source,bash]
 ----
-git clone https://github.com/LiskHQ/lisk-sdk-examples.git
-cd lisk-sdk-examples/hello_world
+git clone https://github.com/KlayrHQ/klayr-sdk-examples.git
+cd klayr-sdk-examples/hello_world
 ----
 
 Now install all required node modules for the node application by executing the following command below:
 
-.lisk-sdk-examples/hello_world
+.klayr-sdk-examples/hello_world
 [source,bash]
 ----
 npm install
@@ -56,7 +56,7 @@ npm install
 
 The next step is to spin up the devnet node by executing the following command:
 
-.lisk-sdk-examples/hello_world
+.klayr-sdk-examples/hello_world
 [source,bash]
 ----
 node index.js | npx bunyan -o short
@@ -69,4 +69,4 @@ The delegates will then add a new block to the blockchain, which will also be vi
 
 image::run_a_blockchain_10_secs.gif[Logs of a node]
 
-All remaining topics of the Hello World application are explained further in the dedicated Lisk SDK guides.
+All remaining topics of the Hello World application are explained further in the dedicated Klayr SDK guides.

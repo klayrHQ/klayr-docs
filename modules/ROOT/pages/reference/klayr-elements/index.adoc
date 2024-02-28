@@ -1,0 +1,248 @@
+= Klayr Elements
+Mona Bärenfänger <mona@lightcurve.io>
+:description: The Klayr Elements overview provides an introduction to the Klayr Elements library and the different sub-packages. The overall basic usage and how to upgrade with NPM is described here.
+:toc: preamble
+:imagesdir: ../../../assets/images
+:page-previous: /klayr-sdk/reference/klayr-commander/index.html
+:page-previous-title: Klayr Commander
+:title-logo-image: image:test-logo.png[]
+
+:url_nodejs: https://nodejs.org/
+:url_nodejs_download: https://nodejs.org/en/download/
+:url_npm_klayr_api: https://www.npmjs.com/package/@klayrhq/klayr-api-client
+:url_npm_klayr_bft: https://www.npmjs.com/package/@klayrhq/klayr-bft
+:url_npm_klayr_chain: https://www.npmjs.com/package/@klayrhq/klayr-chain
+:url_npm_klayr_client: https://www.npmjs.com/package/@klayrhq/klayr-client
+:url_npm_klayr_constants: https://www.npmjs.com/package/@klayrhq/klayr-constants
+:url_npm_klayr_cryptography: https://www.npmjs.com/package/@klayrhq/klayr-cryptography
+:url_npm_klayr_dpos: https://www.npmjs.com/package/@klayrhq/klayr-dpos
+:url_npm_klayr_p2p: https://www.npmjs.com/package/@klayrhq/klayr-p2p
+:url_npm_klayr_passphrase: https://www.npmjs.com/package/@klayrhq/klayr-passphrase
+:url_npm_klayr_transaction_pool: https://www.npmjs.com/package/@klayrhq/klayr-transaction-pool
+:url_npm_klayr_transactions: https://www.npmjs.com/package/@klayrhq/klayr-transactions
+:url_npm_klayr_validator: https://www.npmjs.com/package/@klayrhq/klayr-validator
+
+:url_npm_klayr_api_docs: reference/klayr-elements/api-client.adoc
+:url_npm_klayr_bft_docs: reference/klayr-elements/bft.adoc
+:url_npm_klayr_chain_docs: reference/klayr-elements/chain.adoc
+:url_npm_klayr_client_docs: reference/klayr-elements/client.adoc
+:url_npm_klayr_constants_docs: reference/klayr-elements/constants.adoc
+:url_npm_klayr_cryptography_docs: reference/klayr-elements/cryptography.adoc
+:url_npm_klayr_dpos_docs: reference/klayr-elements/dpos.adoc
+:url_npm_klayr_p2p_docs: reference/klayr-elements/p2p.adoc
+:url_npm_klayr_passphrase_docs: reference/klayr-elements/passphrase.adoc
+:url_npm_klayr_transaction_pool_docs: reference/klayr-elements/transaction-pool.adoc
+:url_npm_klayr_transactions_docs: reference/klayr-elements/transactions.adoc
+:url_npm_klayr_validator_docs: reference/klayr-elements/validator.adoc
+
+image:banner_elements.png[Logo]
+
+Klayr Elements is a JavaScript library containing several separately installable npm packages, each encompassing predominant components of Klayr-related functionalities.
+
+[[packages]]
+== Package list
+
+[options=header]
+|===
+|Name | NPM | Specification
+
+| API client
+| {url_npm_klayr_api}[@klayrhq/klayr-api-client^]
+| xref:{url_npm_klayr_api_docs}[klayr-api-client]
+
+| BFT
+| {url_npm_klayr_bft}[@klayrhq/klayr-bft^]
+| xref:{url_npm_klayr_bft_docs}[klayr-bft]
+
+| Chain
+| {url_npm_klayr_chain}[@klayrhq/klayr-chain^]
+| xref:{url_npm_klayr_chain_docs}[klayr-chain]
+
+| Client
+| {url_npm_klayr_client}[@klayrhq/klayr-client^]
+| xref:{url_npm_klayr_client_docs}[klayr-client]
+
+| Constants
+| {url_npm_klayr_constants}[@klayrhq/klayr-constants^]
+| xref:{url_npm_klayr_constants_docs}[klayr-constants]
+
+| Cryptography
+| {url_npm_klayr_cryptography}[@klayrhq/klayr-cryptography^]
+| xref:{url_npm_klayr_cryptography_docs}[klayr-cryptography]
+
+| DPoS
+| {url_npm_klayr_dpos}[@klayrhq/klayr-dpos^]
+| xref:{url_npm_klayr_dpos_docs}[klayr-dpos]
+
+| P2P
+| {url_npm_klayr_p2p}[@klayrhq/klayr-p2p^]
+| xref:{url_npm_klayr_p2p_docs}[klayr-p2p]
+
+| Passphrase
+| {url_npm_klayr_passphrase}[@klayrhq/klayr-passphrase^]
+| xref:{url_npm_klayr_passphrase_docs}[klayr-passphrase]
+
+| Transaction pool
+| {url_npm_klayr_transaction_pool}[@klayrhq/klayr-transaction-pool^]
+| xref:{url_npm_klayr_transaction_pool_docs}[klayr-transaction-pool]
+
+| Transactions
+| {url_npm_klayr_transactions}[@klayrhq/klayr-transactions^]
+| xref:{url_npm_klayr_transactions_docs}[klayr-transactions]
+
+| Validator
+| {url_npm_klayr_validator}[@klayrhq/klayr-validator^]
+| xref:{url_npm_klayr_validator_docs}[klayr-validator]
+|===
+
+== Setup
+
+=== Supported platforms
+
+* Platforms with Node.js version 12.15.0 and above.
+
+=== Pre-installation
+
+Klayr Elements requires {url_nodejs}[Node.js^] as the underlying engine for code execution.
+This document describes how to install Node.js and NPM for installation via NPM.
+
+==== Install node
+
+Follow the instructions for your operating system on the {url_nodejs_download}[Node.js downloads page^].
+
+NOTE: NPM is automatically installed along with Node.js.
+
+==== Verify installation
+
+Confirm that Node.js and NPM have been successfully installed by running the following commands:
+
+[source,bash]
+----
+node --version
+npm --version
+----
+
+=== Installation
+
+This section details how to install Klayr Elements for a given distribution.
+
+NOTE: As all packages in Klayr Elements are independent from each other, they can be installed seperately.
+
+==== Installation via NPM
+
+To install the latest version of Klayr Elements for use as a dependency in a Node.js project, please proceed with the following:
+
+*Complete library*
+
+[source,bash]
+----
+npm install klayr-elements
+----
+
+*Specific package*
+
+[source,bash]
+----
+npm install @klayrhq/<package-name> <1>
+----
+
+<1> `<package-name>` can be any of the <<packages,packages>> in Klayr Elements.
+
+Upon successful completion, NPM will add the Klayr Elements package to your `package.json` file.
+
+==== Load via CDN
+
+Include the script below using the following HTML. The `klayr` variable will be exposed.
+
+*Client library*
+
+[source,html]
+----
+<script src="https://js.klayr.io/klayr-client-4.0.0.js"></script>
+----
+
+Or minified:
+
+[source,html]
+----
+<script src="https://js.klayr.io/klayr-client-4.0.0.min.js"></script>
+----
+
+To include other packages of Klayr Elements, replace `klayr-client` with any of the <<packages,packages>> of Klayr Elements.
+
+== Usage
+
+=== Node.js
+
+Simply import, (or require) the package and access its functionality according to the relevant namespace.
+
+*Example with the client package:*
+
+[source,js]
+----
+import klayr from '@klayrhq/klayr-client';
+//or
+const klayr = require('@klayrhq/klayr-client');
+const transaction = new klayr.transaction.TransferTransaction({
+    asset: {
+        amount: '100000000',
+        recipientId: '15434119221255134066L',
+    },
+    fee: '25000000',
+    nonce: 3
+});
+----
+
+*Example with the sub packages:*
+
+[source,js]
+----
+const transactions = require('@klayrhq/klayr-transactions');
+
+const tx = new transactions.TransferTransaction({
+    asset: {
+        amount: '1',
+        recipientId: '1L',
+    },
+    fee: '25000000',
+    nonce: 3
+});
+----
+
+=== Browser
+
+Load the Klayr Elements script via the CDN.
+For example, to load the minified version 3.0.2 of Klayr Elements, include the following script which will then expose the `klayr` variable:
+
+[source,html]
+----
+<script src="https://js.klayr.io/klayr-client-4.0.0.min.js"></script>
+<script>
+    const transaction = klayr.transaction.transfer({
+        asset:{
+            amount: '100000000',
+            recipientId: '15434119221255134066L'
+
+        },
+        networkIdentifier: '11a254dc30db5eb1ce4001acde35fd5a14d62584f886d30df161e4e883220eb7',
+    });
+</script>
+----
+
+== Update
+
+To update your installation to the latest version of Klayr Elements, simply run the following command:
+
+*Complete library*
+
+[source,bash]
+----
+npm update klayr-elements
+----
+
+*Specific package*
+
+[source,bash]
+----
+npm update @klayrhq/<package-name> <1>
+----

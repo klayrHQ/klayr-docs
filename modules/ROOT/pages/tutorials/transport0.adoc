@@ -1,11 +1,11 @@
 = Part 0: Installation & setup
-:description: Part 0 of the Lisk supply chain tutorial describes how to prepare your computer and the raspberry pi for the tutorial.
+:description: Part 0 of the Klayr supply chain tutorial describes how to prepare your computer and the raspberry pi for the tutorial.
 :toc: preamble
 :imagesdir: ../../assets/images
 :experimental:
 :v_core: 3.0.0
 :url_etcher: https://www.balena.io/etcher/
-:url_github_transport_docker: https://github.com/LiskHQ/lisk-sdk-examples/blob/development/transport/DOCKER.md
+:url_github_transport_docker: https://github.com/KlayrHQ/klayr-sdk-examples/blob/development/transport/DOCKER.md
 :url_medium_pi_backup: https://medium.com/@ccarnino/backup-raspberry-pi-sd-card-on-macos-the-2019-simple-way-to-clone-1517af972ca5
 :url_tutorial_pi: https://core-electronics.com.au/tutorials/raspberry-pi-zerow-headless-wifi-setup.html
 :url_pi_ssh_over_usb: https://desertbot.io/blog/ssh-into-pi-zero-over-usb
@@ -29,7 +29,7 @@ This document will explain how to prepare your computer for the workshop.
 
 === Software pre-requisites
 
-Basic requirements for all machines, (xref:{url_setup}[Installation guide by Lisk]):
+Basic requirements for all machines, (xref:{url_setup}[Installation guide by Klayr]):
 
 * A code editor such as Visual Studio Code.
 * Git.
@@ -46,18 +46,18 @@ Set up the applicable software and hardware and the installation of the dependen
 The following steps listed below describe how to create the initial files for this tutorial:
 
 ["loweralpha"]
-. Clone the Lisk-SDK-examples repository locally by executing the following commands:
+. Clone the Klayr-SDK-examples repository locally by executing the following commands:
 +
 [source,bash]
 ----
-git clone https://github.com/LiskHQ/lisk-sdk-examples.git
-cd lisk-sdk-examples
+git clone https://github.com/KlayrHQ/klayr-sdk-examples.git
+cd klayr-sdk-examples
 cd transport
 ----
 +
 The basic file structure is listed below:
 +
-.Contents of `lisk-sdk-examples/transport`
+.Contents of `klayr-sdk-examples/transport`
 ----
 .
 ├── README.adoc
@@ -98,7 +98,7 @@ npm install
 ----
 
 . Setup the database as listed below:
-.. If a previous database was created then it will be necessary to delete it and re-create a new one using the following command: `dropdb lisk_dev && createdb lisk_dev --owner lisk`.
+.. If a previous database was created then it will be necessary to delete it and re-create a new one using the following command: `dropdb klayr_dev && createdb klayr_dev --owner klayr`.
 . To verify if the setup is correct, try to run the application with the following command:
 +
 [source,bash]
@@ -121,7 +121,7 @@ If the instructions in this guide are followed correctly, the remainder of this 
 [%collapsible]
 ====
 Sensor wiring::
-image:lisk_rpi_ldr_and_temperature_sensors_wiring.png[RPI Wiring,title="RPI Wiring"]
+image:klayr_rpi_ldr_and_temperature_sensors_wiring.png[RPI Wiring,title="RPI Wiring"]
 
 Preparing the Operating System::
 The operating system for the Raspberry needs to be copied from a computer into an SD card for this we recommend using {url_etcher}[etcher^] (good tutorial at {url_medium_pi_backup}[medium^])

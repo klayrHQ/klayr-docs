@@ -2,13 +2,13 @@
 :description: This section covers the installation, updates and constants for the Transaction pool library.
 :toc:
 
-Transaction pool package for use with Lisk-related software.
+Transaction pool package for use with Klayr-related software.
 
 == Installation
 
 [source,bash]
 ----
-npm install @liskhq/lisk-transaction-pool
+npm install @klayrhq/klayr-transaction-pool
 ----
 
 == Update
@@ -17,7 +17,7 @@ To perform an upgrade, execute the following command:
 
 [source,bash]
 ----
-npm update @liskhq/lisk-transaction-pool
+npm update @klayrhq/klayr-transaction-pool
 ----
 
 == Constants
@@ -28,7 +28,7 @@ Transaction-pool-specific constants include names as shown below:
 
 [source,js]
 ----
-const transactionPool = require('@liskhq/lisk-transaction-pool')
+const transactionPool = require('@klayrhq/klayr-transaction-pool')
 
 transactionPool.EVENT_ADDED_TRANSACTIONS; // 'transactionsAdded'
 transactionPool.EVENT_REMOVED_TRANSACTIONS; // 'transactionsRemoved'

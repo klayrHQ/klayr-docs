@@ -1,30 +1,30 @@
-= Lisk Framework
+= Klayr Framework
 Mona Bärenfänger <mona@lightcurve.io>
-:description: The Lisk Framework overview provides a high-level synopsis of the Lisk Framework architecture, including its modules and components, how they communicate, and also how to change the default configuration.
+:description: The Klayr Framework overview provides a high-level synopsis of the Klayr Framework architecture, including its modules and components, how they communicate, and also how to change the default configuration.
 :toc: preamble
 :imagesdir: ../../assets/images
 :page-no-next: true
-:page-previous: /lisk-sdk/reference/lisk-elements/index.html
-:page-previous-title: Lisk Elements
+:page-previous: /klayr-sdk/reference/klayr-elements/index.html
+:page-previous-title: Klayr Elements
 
-:url_github_lip05: https://github.com/LiskHQ/lips/blob/master/proposals/lip-0005.md
-:url_github_lip11: https://github.com/LiskHQ/lips/blob/master/proposals/lip-0011.md
+:url_github_lip05: https://github.com/KlayrHQ/lips/blob/master/proposals/lip-0005.md
+:url_github_lip11: https://github.com/KlayrHQ/lips/blob/master/proposals/lip-0011.md
 
 :url_reference_config: reference/config.adoc
 :url_guides_config: guides/configuration.adoc
 
 image:banner_framework.png[Logo]
 
-== What is the Lisk Framework?
+== What is the Klayr Framework?
 
-The Lisk Framework is an application framework responsible for establishing and maintaining the interactions between the modules of a Lisk blockchain application.
+The Klayr Framework is an application framework responsible for establishing and maintaining the interactions between the modules of a Klayr blockchain application.
 
-The Lisk Framework aims to provide a consistent and intuitive interface between each module and component.
-Currently the Lisk framework contains `chain`, `api` and `network` modules.
+The Klayr Framework aims to provide a consistent and intuitive interface between each module and component.
+Currently the Klayr framework contains `chain`, `api` and `network` modules.
 
 === Architecture overview
 
-The architecture of the Lisk Framework follows the research documented in {url_github_lip05}[LIP0005^].
+The architecture of the Klayr Framework follows the research documented in {url_github_lip05}[LIP0005^].
 The diagram shown below provides a high-level overview of the architecture:
 
 image:diagram_framework.png[Logo]
@@ -33,33 +33,33 @@ image:diagram_framework.png[Logo]
 
 The `application` folder contains all blockchain related logic, that cannot be replaced by modules.
 
-The application logic can be configured as desired in the xref:{url_reference_config}[Lisk SDK configuration], see also <<configuration, Configuration of the Lisk Framework".
+The application logic can be configured as desired in the xref:{url_reference_config}[Klayr SDK configuration], see also <<configuration, Configuration of the Klayr Framework".
 
 [[modules]]
 === Modules
 
 Modules are located in the `modules` folder.
-They are individual building blocks for the Lisk SDK.
+They are individual building blocks for the Klayr SDK.
 
 ==== Default modules
 
-The default modules are shipped along with the Lisk SDK itself.
-These modules constitute the minimum requirements to run a blockchain with the Lisk SDK.
+The default modules are shipped along with the Klayr SDK itself.
+These modules constitute the minimum requirements to run a blockchain with the Klayr SDK.
 
 ===== List of default modules
 
-* *API module:* This provides HTTP API endpoints, that enable users and other programs to interact with the Lisk blockchain through the API.
+* *API module:* This provides HTTP API endpoints, that enable users and other programs to interact with the Klayr blockchain through the API.
 
 ==== Custom modules
 
 NOTE: The implementation of each module is the responsibility of the user, however it must be inherited from the `BaseModule` to implement its methods.
 
-Custom modules can be plugged into the Lisk SDK and may offer new features/capabilities for the application, and replace the default modules functionalities where necessary.
+Custom modules can be plugged into the Klayr SDK and may offer new features/capabilities for the application, and replace the default modules functionalities where necessary.
 They extend the existing instance with a specific, (and circumscribed) set of features.
 
 [source,js]
 ----
-const BaseModule = require('lisk-framework/src/modules/base_module')
+const BaseModule = require('klayr-framework/src/modules/base_module')
 
 // Exported as main file to javascript package
 export default class MyModule extends BaseModule {
@@ -128,7 +128,7 @@ Package meta information.
 <4> Required.
 Method which will be invoked by the controller to load the module.
 Ensure all loading logic is completed during the life cycle of load.
-The controller emits an event, `lisk:ready` which can be used to perform certain activities, which may be required to be performed when all the other modules are loaded.
+The controller emits an event, `klayr:ready` which can be used to perform certain activities, which may be required to be performed when all the other modules are loaded.
 <5> Supported configurations for the module with default values.
 <6> List of valid events which this module wants to register with the controller.
 Each event name will be prefixed by a module alias, e.g. moduleName:event1. Listing an event means to register the event in the application.
@@ -143,11 +143,11 @@ Modules communicate with each other through event-based <<channels,channels>>.
 Modules running in different processes communicate with each other over IPC channels.
 
 By default, modules will run in the same process as the controller, which loads the module.
-To load a module in a child process, ensure the `ipc` is enabled in the xref:{url_reference_config}[config] and set the environment variable `LISK_CHILD_PROCESS_MODULES` with the module alias.
+To load a module in a child process, ensure the `ipc` is enabled in the xref:{url_reference_config}[config] and set the environment variable `KLAYR_CHILD_PROCESS_MODULES` with the module alias.
 
 TIP: If the respective module is using a high amount of CPU power, loading a module in a child process can prevent CPU usage bottlenecks.
 
-Multiple modules can be defined by using commas, as shown below: `LISK_CHILD_PROCESS_MODULES=httpApi,chain`.
+Multiple modules can be defined by using commas, as shown below: `KLAYR_CHILD_PROCESS_MODULES=httpApi,chain`.
 
 ==== Module life cycle
 
@@ -267,7 +267,7 @@ The following events and actions are available for all enabled modules, and are 
 [NOTE]
 ====
 Each module can also define its own custom events or actions and will register that list with the controller at the time of initialization.
-The controller contains a complete list of events, which may occur in the modules of the Lisk SDK at any given time.
+The controller contains a complete list of events, which may occur in the modules of the Klayr SDK at any given time.
 ====
 
 [width="100%",cols="11%,89%",options="header",]
@@ -290,7 +290,7 @@ Hence, when this event is triggered, this ensures the controller has whitelisted
 
 |moduleAlias:unloading:finished |Triggered just after the module’s `unload` method has completed execution.
 
-|lisk:ready |Triggered when the controller has finished initializing the modules, and each module has been successfully loaded.
+|klayr:ready |Triggered when the controller has finished initializing the modules, and each module has been successfully loaded.
 |===
 
 ==== Actions
@@ -299,7 +299,7 @@ Hence, when this event is triggered, this ensures the controller has whitelisted
 |===
 |Action |Description
 
-|lisk:getComponentConfig |A controller action to get the configuration of any component defined in the controller space.
+|klayr:getComponentConfig |A controller action to get the configuration of any component defined in the controller space.
 |===
 
 === Components
@@ -325,7 +325,7 @@ It exposes an interface with specific features for getting or setting particular
 Further details about the storage component can be found in the dedicated {url_github_lip11}[LIP 11^].
 
 [[configuration]]
-== Configuration of the Lisk Framework
+== Configuration of the Klayr Framework
 
 Configuration options are located in
 

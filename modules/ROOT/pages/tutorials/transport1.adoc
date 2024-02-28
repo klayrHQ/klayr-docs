@@ -1,12 +1,12 @@
 = Part 1: Track a packet on the blockchain
-:description: Part 1 of the Lisk supply chain tutorial describes how to implement a blockchain application that tracks sensor data on the blockchain. To accomplish this, a raspberry pi is used as the IoT device that collects the sensor data and communicates with the blockchain network.
+:description: Part 1 of the Klayr supply chain tutorial describes how to implement a blockchain application that tracks sensor data on the blockchain. To accomplish this, a raspberry pi is used as the IoT device that collects the sensor data and communicates with the blockchain network.
 :toc: preamble
 :imagesdir: ../../assets/images
 :experimental:
 :v_core: 3.0.0
-:url_github_transport_alarmtx_solution: https://github.com/LiskHQ/lisk-sdk-examples/blob/development/transport/transactions/solutions/light-alarm.js
-:url_github_transport_alarmtx31: https://github.com/LiskHQ/lisk-sdk-examples/blob/development/transport/transactions/light-alarm.js#L31
-:url_github_transport_index25: https://github.com/LiskHQ/lisk-sdk-examples/blob/development/transport/iot/light_alarm/index.js#L25
+:url_github_transport_alarmtx_solution: https://github.com/KlayrHQ/klayr-sdk-examples/blob/development/transport/transactions/solutions/light-alarm.js
+:url_github_transport_alarmtx31: https://github.com/KlayrHQ/klayr-sdk-examples/blob/development/transport/transactions/light-alarm.js#L31
+:url_github_transport_index25: https://github.com/KlayrHQ/klayr-sdk-examples/blob/development/transport/iot/light_alarm/index.js#L25
 
 :url_customize_interface: guides/customize.adoc#interface
 :url_tutorials_hello_step3: tutorials/hello-world.adoc#step3
@@ -68,7 +68,7 @@ This application will track that the packet is not manipulated during the delive
 In order to achieve this, certain sensors will be connected that track information, such as light, temperature and/or humidity inside of the packet.
 If something unexpected is detected by the IoT app, it will create a transaction object, sign it, and send it to the network.
 
-The basic file structure can be seen below: (contents of `lisk-sdk-examples/transport`):
+The basic file structure can be seen below: (contents of `klayr-sdk-examples/transport`):
 
 ----
 .
@@ -82,7 +82,7 @@ The basic file structure can be seen below: (contents of `lisk-sdk-examples/tran
 │   └── views
 ├── iot                                             <2>
 │   ├── README.md
-│   ├── lisk_rpi_ldr_and_temperature_sensors_wiring.png
+│   ├── klayr_rpi_ldr_and_temperature_sensors_wiring.png
 │   ├── light_alarm
 │   │   ├── package.json
 │   │   └── index.js
@@ -117,7 +117,7 @@ Implementation of the  `validateAsset()` function can easily be achieved using t
 const {
     BaseTransaction,
     TransactionError,
-} = require('@liskhq/lisk-transactions');
+} = require('@klayrhq/klayr-transactions');
 
 /**
  * Send light alarm transaction when the packet has been opened (accepts timestamp).
@@ -178,7 +178,7 @@ class LightAlarmTransaction extends BaseTransaction {
 module.exports = LightAlarmTransaction;
 ----
 
-TIP: Please see the Lisk documentation for an xref:{url_customize_interface}[overview about the required methods for custom transactions]
+TIP: Please see the Klayr documentation for an xref:{url_customize_interface}[overview about the required methods for custom transactions]
 
 [[task111]]
 === 1.1.1 Task: Implement `validateAsset()`
@@ -207,8 +207,8 @@ new TransactionError(
 )
 ----
 
-TIP: If further information is required regarding implementing the `validateAsset()` function, check out the other examples such as `hello_world` inside of the `lisk-sdk-examples` repository.
-Alternatively, please see the xref:{url_tutorials_hello_step3}[tutorials] in the Lisk documentation.
+TIP: If further information is required regarding implementing the `validateAsset()` function, check out the other examples such as `hello_world` inside of the `klayr-sdk-examples` repository.
+Alternatively, please see the xref:{url_tutorials_hello_step3}[tutorials] in the Klayr documentation.
 
 IMPORTANT: To verify the implementation of `validateAsset()`, please compare it with the {url_github_transport_alarmtx_solution}[solution].
 
@@ -260,10 +260,10 @@ Without this step the nodes will not have the logic to validate a `LightAlarmTra
 .Please see the code at `node/index.js` which registers the LightAlarmTransaction to the blockchain application as shown below:
 [source,js]
 ----
-const { Application, genesisBlockDevnet, configDevnet } = require('lisk-sdk');
+const { Application, genesisBlockDevnet, configDevnet } = require('klayr-sdk');
 const LightAlarmTransaction = require('../transactions/light-alarm');           <1>
 
-configDevnet.app.label = 'lisk-transport';
+configDevnet.app.label = 'klayr-transport';
 
 const app = new Application(genesisBlockDevnet, configDevnet);
 
@@ -344,7 +344,7 @@ Execute the commands listed below in order to create the tracking script:
 mkdir light_alarm #Create a folder to hold the tracking script.
 cd light_alarm
 npm init --yes #Creates the `package.json` file.
-npm i @liskhq/lisk-transactions @liskhq/lisk-api-client @liskhq/lisk-constants rpi-pins #Install dependencies.
+npm i @klayrhq/klayr-transactions @klayrhq/klayr-api-client @klayrhq/klayr-constants rpi-pins #Install dependencies.
 ----
 
 Now, create a new file called `light-alarm.js`.
@@ -390,18 +390,18 @@ const GPIO = new PIN.GPIO();
 // Rpi-pins uses the WiringPi pin numbering system (check https://pinout.xyz/pinout/pin16_gpio23).
 GPIO.setPin(4, PIN.MODE.INPUT);
 const LightAlarmTransaction = require('./light-alarm');
-const { APIClient } = require('@liskhq/lisk-api-client');
-const {getNetworkIdentifier} = require('@liskhq/lisk-cryptography');
+const { APIClient } = require('@klayrhq/klayr-api-client');
+const {getNetworkIdentifier} = require('@klayrhq/klayr-cryptography');
 const networkIdentifier = getNetworkIdentifier(
     "23ce0366ef0a14a91e5fd4b1591fc880ffbef9d988ff8bebf8f3666b0c09597d",
-    "Lisk",
+    "Klayr",
 );
 
 // Replace `localhost` with the IP of the required node to reach for the API requests.
 const api = new APIClient(['http://localhost:4000']);
 
 // Check config file or visit localhost:4000/api/node/constants to verify your epoc time, (OK when using /transport/node/index.js).
-const dateToLiskEpochTimestamp = date => (
+const dateToKlayrEpochTimestamp = date => (
     Math.floor(new Date(date).getTime() / 1000) - Math.floor(new Date(Date.UTC(2016, 4, 24, 17, 0, 0, 0)).getTime() / 1000)
 );
 
@@ -411,13 +411,13 @@ const packetCredentials = { /* Insert the credentials of the packet here in step
 setInterval(() => {
 	let state = GPIO.read(4);
     if(state === 0) {
-        console.log('Package has been opened! Send lisk transaction!');
+        console.log('Package has been opened! Send klayr transaction!');
 
         // Uncomment the below code in step 1.3 of the workshop
         /*
         let tx = new LightAlarmTransaction({
             networkIdentifier: networkIdentifier,
-            timestamp: dateToLiskEpochTimestamp(new Date())
+            timestamp: dateToKlayrEpochTimestamp(new Date())
         });
 
         tx.sign(packetCredentials.networkIdentifier, packetCredentials.passphrase);
@@ -459,7 +459,7 @@ Alles gut
 However, if light has been detected, then the following output will be displayed:
 
 ```
-Package has been opened! Send lisk transaction!
+Package has been opened! Send klayr transaction!
 ```
 
 The code will also try to send the `LightAlarmTransaction` in the case whereby light has been detected.

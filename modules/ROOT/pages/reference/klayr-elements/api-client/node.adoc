@@ -1,17 +1,17 @@
 = Node
 Mona Bärenfänger <mona@lightcurve.io>
-:description: Technical references regarding the Nodes endpoints of the API client package of Lisk Elements. This consists of usage examples, available parameters and example responses.
+:description: Technical references regarding the Nodes endpoints of the API client package of Klayr Elements. This consists of usage examples, available parameters and example responses.
 :toc:
 :v_core: 3.0.0
-:url_lisk_core_api: {v_core}@lisk-core::reference/api.adoc
+:url_klayr_core_api: {v_core}@klayr-core::reference/api.adoc
 
-This is a resource for interacting with the `node` endpoint provided by the Lisk public API.
+This is a resource for interacting with the `node` endpoint provided by the Klayr public API.
 Each of the following methods can be accessed via the `node` property of an `APIClient` instance.
 
 == getConstants
 
 This returns all current constants data on the system.
-For example, the Lisk epoch time and version.
+For example, the Klayr epoch time and version.
 
 === Syntax
 
@@ -22,7 +22,7 @@ getConstants([options])
 
 === Parameters
 
-`options`: Please see the options in the following link: xref:{url_lisk_core_api}[Core API documentation^].
+`options`: Please see the options in the following link: xref:{url_klayr_core_api}[Core API documentation^].
 
 === Return value
 
@@ -51,7 +51,7 @@ getStatus([options])
 
 === Parameters
 
-`options`: Please see the options in the following link: xref:{url_lisk_core_api}[Core API documentation^].
+`options`: Please see the options in the following link: xref:{url_klayr_core_api}[Core API documentation^].
 
 === Return value
 
@@ -82,7 +82,7 @@ getForgingStatus([options])
 
 === Parameters
 
-`options`: Please see the options in the following link: xref:{url_lisk_core_api}[Core API documentation^].
+`options`: Please see the options in the following link: xref:{url_klayr_core_api}[Core API documentation^].
 
 === Return value
 
@@ -103,7 +103,7 @@ client.node.getForgingStatus()
 IMPORTANT: *Please take note: This is a private endpoint ONLY authorized to whitelisted IPs*.
 
 After inputting the correct password and publicKey, forging will be enabled or disabled for the delegate of this particular node.
-The password can be generated locally by encrypting your passphrase, either by using Lisk Commander or with Lisk Elements.
+The password can be generated locally by encrypting your passphrase, either by using Klayr Commander or with Klayr Elements.
 
 === Syntax
 
@@ -114,7 +114,7 @@ updateForgingStatus([options])
 
 === Parameters
 
-`options`: Please see the options in the following link: xref:{url_lisk_core_api}[Core API documentation^].
+`options`: Please see the options in the following link: xref:{url_klayr_core_api}[Core API documentation^].
 
 === Return value
 
@@ -149,7 +149,7 @@ getTransactions(state, [options])
 
 `state`: One of `unprocessed`, `unconfirmed` or `unsigned`.
 
-`options`: Please see the options in the following link: xref:{url_lisk_core_api}[Core API documentation^].
+`options`: Please see the options in the following link: xref:{url_klayr_core_api}[Core API documentation^].
 
 === Return value
 

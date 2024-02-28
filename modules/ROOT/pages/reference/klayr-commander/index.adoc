@@ -1,25 +1,25 @@
-= Lisk Commander
+= Klayr Commander
 Mona Bärenfänger <mona@lightcurve.io>
-:description: The Lisk Commander overview provides an introduction to the Lisk Commander CLI tool and its setup and usage.
+:description: The Klayr Commander overview provides an introduction to the Klayr Commander CLI tool and its setup and usage.
 :toc: preamble
 :imagesdir: ../../../assets/images
 :url_nodejs_download: https://nodejs.org/en/download/
 :url_nodejs: https://nodejs.org/
 
-:url_commander_commands: reference/lisk-commander/commands.adoc
-:url_commander_config: reference/lisk-commander/commands.adoc#config
+:url_commander_commands: reference/klayr-commander/commands.adoc
+:url_commander_config: reference/klayr-commander/commands.adoc#config
 
 image:banner_commander.png[Logo]
 
-Lisk Commander is a command line interface tool designed to be a low entry point, and also the most convenient tool for developers who are looking for an efficient way of coding.
+Klayr Commander is a command line interface tool designed to be a low entry point, and also the most convenient tool for developers who are looking for an efficient way of coding.
 
-Lisk Commander allows communication from the command line with a remote or local node in order to access and utilise Lisk-related functionalities.
+Klayr Commander allows communication from the command line with a remote or local node in order to access and utilise Klayr-related functionalities.
 
-*What can be achieved with Lisk Commander?*
+*What can be achieved with Klayr Commander?*
 
 * Creating transactions.
 * Decrypting/encrypting passphrases or messages.
-* Installing and managing a Lisk Core node.
+* Installing and managing a Klayr Core node.
 * Creating new accounts.
 * Viewing the details of a delegate.
 * And much more...
@@ -31,13 +31,13 @@ NOTE: Supported platforms: Platforms with Node.js versions 8.3 and above.
 
 === Pre-installation
 
-Lisk Commander requires {url_nodejs}[Node.js^] as the underlying engine for code execution.
+Klayr Commander requires {url_nodejs}[Node.js^] as the underlying engine for code execution.
 
 ==== Install Node.js
 
 Node.js is supported on most operating systems.
 Follow the instructions for your operating system on the {url_nodejs_download}[Node.js downloads page^].
-Lisk Commander requires Node.js versions 8.3 or above.
+Klayr Commander requires Node.js versions 8.3 or above.
 
 NPM is automatically installed along with Node.js.
 
@@ -53,14 +53,14 @@ npm --version
 
 === Installation
 
-To install the latest version of Lisk Commander as a global command, install the NPM package as shown below:
+To install the latest version of Klayr Commander as a global command, install the NPM package as shown below:
 
 [source,bash]
 ----
-npm install --global --production lisk-commander
+npm install --global --production klayr-commander
 ----
 
-Upon successful completion, NPM will add the Lisk Commander executable to your PATH.
+Upon successful completion, NPM will add the Klayr Commander executable to your PATH.
 
 == Usage
 
@@ -70,26 +70,26 @@ Pass arguments and options directly from the command line, as shown in the examp
 
 [source,sh-session]
 ----
-$ lisk (-v|--version|version) # returns the current version of Lisk Commander.
-$ lisk [COMMAND]:[ACTION] # to run a command. Available actions depend on the command.
-$ lisk [COMMAND] # displays help for a specific command.
-$ lisk # displays general help and the command list.
+$ klayr (-v|--version|version) # returns the current version of Klayr Commander.
+$ klayr [COMMAND]:[ACTION] # to run a command. Available actions depend on the command.
+$ klayr [COMMAND] # displays help for a specific command.
+$ klayr # displays general help and the command list.
 ----
 
 [source,sh-session]
 ----
 COMMANDS
-  account               Commands relating to Lisk accounts.
-  block                 Commands relating to Lisk blocks.
-  config                Manages Lisk Commander configuration.
+  account               Commands relating to Klayr accounts.
+  block                 Commands relating to Klayr blocks.
+  config                Manages Klayr Commander configuration.
   copyright             Displays copyright notice.
-  delegate              Commands relating to Lisk delegates.
+  delegate              Commands relating to Klayr delegates.
   help                  Displays help.
   message               Commands relating to user messages.
   network-identifier    Commands relating to the network identifier.
-  node                  Commands relating to Lisk node.
-  passphrase            Commands relating to Lisk passphrases.
-  transaction           Commands relating to Lisk transactions.
+  node                  Commands relating to Klayr node.
+  passphrase            Commands relating to Klayr passphrases.
+  transaction           Commands relating to Klayr transactions.
   warranty              Displays warranty notice.
 ----
 
@@ -97,11 +97,11 @@ See concrete examples on the xref:{url_commander_commands}[Commands page].
 
 == Configuration
 
-Show the Lisk Commander config:
+Show the Klayr Commander config:
 
 [source,bash]
 ----
-lisk config:show
+klayr config:show
 ----
 
 [source,js]
@@ -125,30 +125,30 @@ lisk config:show
 
 [source,bash]
 ----
-lisk config:set api.network <NETWORK>
+klayr config:set api.network <NETWORK>
 ----
 
 Possible values for `<NETWORK>` are, `test` for Testnet, `main` for Mainnet and `beta` for Betanet.
 
-TIP: If specific nodes were not specified for Lisk Commander, it will connect to pre-defined public nodes of the Lisk Mainnet or Testnet.
+TIP: If specific nodes were not specified for Klayr Commander, it will connect to pre-defined public nodes of the Klayr Mainnet or Testnet.
 
 === Configure specific nodes
 
-Specify the node which will communicate with Lisk Commander.
+Specify the node which will communicate with Klayr Commander.
 
 In the case whereby more than one node is specified, it will use the first node as default, and the other nodes as a fallback if the first node does not respond.
 
 [source,bash]
 ----
-lisk config:set api.nodes https://127.0.0.1:4000,http://mynode.com:7000
+klayr config:set api.nodes https://127.0.0.1:4000,http://mynode.com:7000
 ----
 
 See more examples with the xref:{url_commander_config}[`config` command] on the Commands page.
 
 === How to use a custom config file
 
-The configuration file `config.json` is located in `lisk-sdk/commander/src/config.json`.
-In order to store this file elsewhere, run Lisk Commander with the environmental variable `LISK_COMMANDER_CONFIG_DIR` set to the path of your choice.
+The configuration file `config.json` is located in `klayr-sdk/commander/src/config.json`.
+In order to store this file elsewhere, run Klayr Commander with the environmental variable `KLAYR_COMMANDER_CONFIG_DIR` set to the path of your choice.
 
 === Override config options
 
@@ -167,9 +167,9 @@ See concrete examples on the xref:{url_commander_commands}[Commands page].
 
 == Upgrade
 
-To update your global installation to the latest version of Lisk Commander, simply execute the following command:
+To update your global installation to the latest version of Klayr Commander, simply execute the following command:
 
 [source,bash]
 ----
-npm update --global lisk-commander
+npm update --global klayr-commander
 ----

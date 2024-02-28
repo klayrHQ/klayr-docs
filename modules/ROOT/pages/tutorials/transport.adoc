@@ -1,6 +1,6 @@
 = Supply Chain
 Mona Bärenfänger <mona@lightcurve.io>
-:description: The Lisk Supply Chain tutorial teaches the user how to build a blockchain application with IoT devices which can communicate with the network. It uses a raspberry pi with a light sensor to track the transport of a packet on the blockchain as part of a supply chain tracking system. It further details how to implement a simple trust system, and how to finally publish the application.
+:description: The Klayr Supply Chain tutorial teaches the user how to build a blockchain application with IoT devices which can communicate with the network. It uses a raspberry pi with a light sensor to track the transport of a packet on the blockchain as part of a supply chain tracking system. It further details how to implement a simple trust system, and how to finally publish the application.
 :toc:
 :imagesdir: ../../assets/images
 :experimental:
@@ -27,14 +27,14 @@ This is done to ensure that it has not been manipulated during the transport.
 
 The carrier will be rewarded upon the successful transportation, and penalized if the transportation has failed for some reason.
 
-For convenient usage of the system, a client application called Lisk Transport will be provided that visualizes all relevant information regarding the supply chain tracking system. In turn the Lisk Transport application enables the users to interact with the system by posting custom transactions.
+For convenient usage of the system, a client application called Klayr Transport will be provided that visualizes all relevant information regarding the supply chain tracking system. In turn the Klayr Transport application enables the users to interact with the system by posting custom transactions.
 
 [[procedure]]
 == General procedure
 
 The diagram shown below describes the general workflow and description of each step of the supply chain tracking system:
 
-image::transport-uml.svg[Flow chart of Lisk Transport]
+image::transport-uml.svg[Flow chart of Klayr Transport]
 
 === Initialize packet account
 

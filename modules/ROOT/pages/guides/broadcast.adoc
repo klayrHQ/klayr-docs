@@ -3,20 +3,20 @@ Mona Bärenfänger <mona@lightcurve.io>
 :description: This guide covers how to create a transaction object and broadcast it to the network.
 :toc:
 :sectnums:
-:url_lisk_wallet: https://lisk.io/wallet
+:url_klayr_wallet: https://klayr.io/wallet
 
 :url_api: reference/api.adoc
 :url_guides_hello: guides/index.adoc#hello_world_app
-:url_elements_packages: reference/lisk-elements/index.adoc
-:url_commander_commands_tx_create: reference/lisk-commander/commands.adoc#create-tx
-:url_commander_commands_tx_broadcast: reference/lisk-commander/commands.adoc#broadcast-tx
+:url_elements_packages: reference/klayr-elements/index.adoc
+:url_commander_commands_tx_create: reference/klayr-commander/commands.adoc#create-tx
+:url_commander_commands_tx_broadcast: reference/klayr-commander/commands.adoc#broadcast-tx
 
 
 This guide explains how to create a transaction object of a specific transaction type, and how to broadcast it to the network.
 
-To achieve this a small script in Javascript needs to be written, that utilizes xref:{url_elements_packages}[Lisk Elements packages] to create the transaction object, sign it, and send it to the network.
+To achieve this a small script in Javascript needs to be written, that utilizes xref:{url_elements_packages}[Klayr Elements packages] to create the transaction object, sign it, and send it to the network.
 
-TIP: For the default transaction types, it is also possible to use Lisk Commander to xref:{url_commander_commands_tx_create}[create] and xref:{url_commander_commands_tx_broadcast}[broadcast transactions from the command-line] or {url_lisk_wallet}[Lisk Desktop^] to send a transaction via a user-friendly UI.
+TIP: For the default transaction types, it is also possible to use Klayr Commander to xref:{url_commander_commands_tx_create}[create] and xref:{url_commander_commands_tx_broadcast}[broadcast transactions from the command-line] or {url_klayr_wallet}[Klayr Desktop^] to send a transaction via a user-friendly UI.
 
 Ensure that Node.js is the latest LTS (version 12 or higher), and create a Node.js project by creating a `package.json` file inside of your current folder.
 
@@ -28,9 +28,9 @@ cd create-tx
 node --version
 # v12.15.0
 npm init --yes
-npm i @liskhq/lisk-transactions
-npm i @liskhq/lisk-cryptography
-npm i @liskhq/lisk-api-client
+npm i @klayrhq/klayr-transactions
+npm i @klayrhq/klayr-cryptography
+npm i @klayrhq/klayr-api-client
 ----
 
 Now, create a new file `index.js` that will contain the script to generate a transaction, sign it and posts it to the network.
@@ -44,15 +44,15 @@ See the full script at <<post, 3. Broadcast a transaction>>.
 Default transaction::
 +
 --
-.How to create a tx object with Lisk Elements
+.How to create a tx object with Klayr Elements
 [source,js]
 ----
-const transactions = require('@liskhq/lisk-transactions');
-const {getNetworkIdentifier} = require('@liskhq/lisk-cryptography');
+const transactions = require('@klayrhq/klayr-transactions');
+const {getNetworkIdentifier} = require('@klayrhq/klayr-cryptography');
 
 const networkIdentifier = getNetworkIdentifier(
     "23ce0366ef0a14a91e5fd4b1591fc880ffbef9d988ff8bebf8f3666b0c09597d",
-    "Lisk",
+    "Klayr",
 );
 
 const tx = new transactions.TransferTransaction({
@@ -90,15 +90,15 @@ Custom transaction::
 --
 The `HelloTransaction` from the xref:{url_guides_hello}[Hello World app] is used as an example here.
 
-.How to create a custom tx object with Lisk Elements
+.How to create a custom tx object with Klayr Elements
 [source,js]
 ----
 const HelloTransaction = require('../hello_transaction');
-const {getNetworkIdentifier} = require('@liskhq/lisk-cryptography');
+const {getNetworkIdentifier} = require('@klayrhq/klayr-cryptography');
 
 const networkIdentifier = getNetworkIdentifier(
     "23ce0366ef0a14a91e5fd4b1591fc880ffbef9d988ff8bebf8f3666b0c09597d",
-    "Lisk",
+    "Klayr",
 );
 
 const tx = new HelloTransaction({
@@ -136,15 +136,15 @@ console.log(tx.stringify());
 Default transaction::
 +
 --
-.How to sign tx object with Lisk Elements
+.How to sign tx object with Klayr Elements
 [source,js]
 ----
-const transactions = require('@liskhq/lisk-transactions');
-const {getNetworkIdentifier} = require('@liskhq/lisk-cryptography');
+const transactions = require('@klayrhq/klayr-transactions');
+const {getNetworkIdentifier} = require('@klayrhq/klayr-cryptography');
 
 const networkIdentifier = getNetworkIdentifier(
     "23ce0366ef0a14a91e5fd4b1591fc880ffbef9d988ff8bebf8f3666b0c09597d",
-    "Lisk",
+    "Klayr",
 );
 
 const tx = new transactions.TransferTransaction({
@@ -185,15 +185,15 @@ Custom transaction::
 --
 The `HelloTransaction` from the xref:{url_guides_hello}[Hello World app] is used as an example here.
 
-.How to sign a custom tx object with Lisk Elements
+.How to sign a custom tx object with Klayr Elements
 [source,js]
 ----
 const HelloTransaction = require('../hello_transaction');
-const {getNetworkIdentifier} = require('@liskhq/lisk-cryptography');
+const {getNetworkIdentifier} = require('@klayrhq/klayr-cryptography');
 
 const networkIdentifier = getNetworkIdentifier(
     "23ce0366ef0a14a91e5fd4b1591fc880ffbef9d988ff8bebf8f3666b0c09597d",
-    "Lisk",
+    "Klayr",
 );
 
 const tx = new HelloTransaction({
@@ -239,15 +239,15 @@ Default transaction::
 .How to create, sign and post an transaction
 [source,js]
 ----
-const transactions = require('@liskhq/lisk-transactions');
-const {getNetworkIdentifier} = require('@liskhq/lisk-cryptography');
-const { APIClient } = require('@liskhq/lisk-api-client');
+const transactions = require('@klayrhq/klayr-transactions');
+const {getNetworkIdentifier} = require('@klayrhq/klayr-cryptography');
+const { APIClient } = require('@klayrhq/klayr-api-client');
 
 // Constants
 const API_BASEURL = 'http://localhost:4000'; <1>
 const networkIdentifier = getNetworkIdentifier(
     "23ce0366ef0a14a91e5fd4b1591fc880ffbef9d988ff8bebf8f3666b0c09597d",
-    "Lisk",
+    "Klayr",
 );
 
 // Initialize
@@ -309,14 +309,14 @@ The `HelloTransaction` from the xref:{url_guides_hello}[Hello World app] is used
 [source,js]
 ----
 const HelloTransaction = require('./hello');
-const {getNetworkIdentifier} = require('@liskhq/lisk-cryptography');
-const { APIClient } = require('@liskhq/lisk-api-client');
+const {getNetworkIdentifier} = require('@klayrhq/klayr-cryptography');
+const { APIClient } = require('@klayrhq/klayr-api-client');
 
 // Constants
 const API_BASEURL = 'http://localhost:4000';
 const networkIdentifier = getNetworkIdentifier(
     "23ce0366ef0a14a91e5fd4b1591fc880ffbef9d988ff8bebf8f3666b0c09597d",
-    "Lisk",
+    "Klayr",
 );
 
 // Initialize

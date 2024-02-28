@@ -1,0 +1,22 @@
+= Chain
+Mona Bärenfänger <mona@lightcurve.io>
+:description: Technical references regarding the chain package of Klayr Elements.
+:toc:
+
+@klayrhq/klayr-chain implements blocks and state management that are used for block processing according to the Klayr protocol.
+
+== Installation
+
+[source,bash]
+----
+npm install @klayrhq/klayr-chain
+----
+
+== Update
+
+To perform an upgrade, execute the following command:
+
+[source,bash]
+----
+npm update @klayrhq/klayr-chain
+----

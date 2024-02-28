@@ -1,11 +1,11 @@
 = Delegates
 Mona Bärenfänger <mona@lightcurve.io>
-:description: Technical references regarding the Delegate endpoints of the API client package of Lisk Elements. This consists of usage examples, available parameters and example responses.
+:description: Technical references regarding the Delegate endpoints of the API client package of Klayr Elements. This consists of usage examples, available parameters and example responses.
 :toc:
 :v_core: 3.0.0
-:url_lisk_core_api: {v_core}@lisk-core::reference/api.adoc
+:url_klayr_core_api: {v_core}@klayr-core::reference/api.adoc
 
-This is a resource for interacting with the `delegates` endpoint provided by the Lisk public API.
+This is a resource for interacting with the `delegates` endpoint provided by the Klayr public API.
 Each of the following methods can be accessed via the `delegates` property of an `APIClient` instance.
 
 == get
@@ -21,7 +21,7 @@ get([options])
 
 === Parameters
 
-`options`: Please see the options in the following link: xref:{url_lisk_core_api}[Core API documentation^].
+`options`: Please see the options in the following link: xref:{url_klayr_core_api}[Core API documentation^].
 
 === Return value
 
@@ -50,7 +50,7 @@ getStandby([options])
 
 === Parameters
 
-`options`: Please see the options in the following link: xref:{url_lisk_core_api}[Core API documentation^].
+`options`: Please see the options in the following link: xref:{url_klayr_core_api}[Core API documentation^].
 
 === Return value
 
@@ -79,7 +79,7 @@ getForgers([options])
 
 === Parameters
 
-`options`: Please see the options in the following link: xref:{url_lisk_core_api}[Core API documentation^].
+`options`: Please see the options in the following link: xref:{url_klayr_core_api}[Core API documentation^].
 
 === Return value
 
@@ -98,7 +98,7 @@ client.delegates.getForgers()
 == getForgingStatistics
 
 By viewing an existing delegate address and the desired unix timestamps, it is possible to acquire their forging statistics within the specified timespan.
-If no timestamps are provided, it will use the timestamps from the Lisk epoch to the current date.
+If no timestamps are provided, it will use the timestamps from the Klayr epoch to the current date.
 
 === Syntax
 
@@ -111,7 +111,7 @@ getForgingStatistics(address, [options])
 
 `address`: Address of the delegate to query.
 
-`options`: Please see the options in the following link: xref:{url_lisk_core_api}[Core API documentation^].
+`options`: Please see the options in the following link: xref:{url_klayr_core_api}[Core API documentation^].
 
 === Return value
 

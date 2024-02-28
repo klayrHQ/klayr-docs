@@ -1,15 +1,15 @@
 = Transactions
 Mona Bärenfänger <mona@lightcurve.io>
-:description: Technical references regarding the transactions packages of Lisk elements. This consists of usage examples, available options and example responses.
+:description: Technical references regarding the transactions packages of Klayr elements. This consists of usage examples, available options and example responses.
 :toc:
 
-The Lisk Elements transactions packages provides functions for creating transactions of every type, including a set of utility functions.
+The Klayr Elements transactions packages provides functions for creating transactions of every type, including a set of utility functions.
 
 == Installation
 
 [source,bash]
 ----
-$ npm install @liskhq/lisk-transactions
+$ npm install @klayrhq/klayr-transactions
 ----
 
 == Upgrade
@@ -18,7 +18,7 @@ To perform an upgrade, execute the following command:
 
 [source,bash]
 ----
-npm update @liskhq/lisk-transactions
+npm update @klayrhq/klayr-transactions
 ----
 
 == Usage
@@ -26,14 +26,14 @@ npm update @liskhq/lisk-transactions
 .Example of creating a transfer transaction
 [source,js]
 ----
-const transactions = require('@liskhq/lisk-transactions');
+const transactions = require('@klayrhq/klayr-transactions');
 
 // 1. Create the transaction object
 const tx = new transactions.TransferTransaction({
     asset:{
         amount: '15000000',
         recipientId: '123L',
-        data: 'Hello Lisk!'
+        data: 'Hello Klayr!'
     }
 });
 
@@ -109,7 +109,7 @@ const tx = new transactions.TransferTransaction({
     asset:{
         amount: '15000000',
         recipientId: '123L',
-        data: 'Hello Lisk!'
+        data: 'Hello Klayr!'
     }
 });
 /*
@@ -124,7 +124,7 @@ TransferTransaction {
   blockId: undefined,
   height: undefined,
   receivedAt: undefined,
-  asset: { data: 'Hello Lisk!', recipientId: '123L', amount: 15000000n }
+  asset: { data: 'Hello Klayr!', recipientId: '123L', amount: 15000000n }
 }
 */
 ----
@@ -502,7 +502,7 @@ TransferTransaction {
   blockId: undefined,
   height: undefined,
   receivedAt: undefined,
-  asset: { data: 'Hello Lisk!', recipientId: '123L', amount: 15000000n }
+  asset: { data: 'Hello Klayr!', recipientId: '123L', amount: 15000000n }
 }
  */
 ----
@@ -524,15 +524,15 @@ tx.minFee
 
 == Utility methods
 
-=== convertBeddowsToLSK
+=== convertBeddowsToKLY
 
-This converts amounts in Beddows, (the smallest denomination) to the amounts in one LSK.
+This converts amounts in Beddows, (the smallest denomination) to the amounts in one KLY.
 
 ==== Syntax
 
 [source,js]
 ----
-convertBeddowsToLSK(amount)
+convertBeddowsToKLY(amount)
 ----
 
 ==== Parameters
@@ -541,24 +541,24 @@ convertBeddowsToLSK(amount)
 
 ==== Return value
 
-`string`: Amount in LSK.
+`string`: Amount in KLY.
 
 ==== Examples
 
 [source,js]
 ----
-transactions.utils.convertBeddowsToLSK('100000'); // '0.001'
+transactions.utils.convertBeddowsToKLY('100000'); // '0.001'
 ----
 
-=== convertLSKToBeddows
+=== convertKLYToBeddows
 
-This converts the amounts in LSK to the amounts in Beddows, (the smallest denomination).
+This converts the amounts in KLY to the amounts in Beddows, (the smallest denomination).
 
 ==== Syntax
 
 [source,js]
 ----
-convertLSKToBeddows(amount)
+convertKLYToBeddows(amount)
 ----
 
 ==== Parameters
@@ -573,7 +573,7 @@ convertLSKToBeddows(amount)
 
 [source,js]
 ----
-transactions.utils.convertLSKToBeddows('0.001'); // '100000'
+transactions.utils.convertKLYToBeddows('0.001'); // '100000'
 ----
 
 === getId

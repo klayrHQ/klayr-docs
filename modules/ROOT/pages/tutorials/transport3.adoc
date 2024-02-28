@@ -1,5 +1,5 @@
 = Part 3: How to publish the application
-:description: Part 3 of the Lisk supply chain tutorial describes how to publish the blockchain application, how to replace the genesis delegates with real ones, and how to connect more nodes to the network.
+:description: Part 3 of the Klayr supply chain tutorial describes how to publish the blockchain application, how to replace the genesis delegates with real ones, and how to connect more nodes to the network.
 :toc: preamble
 :toc-title: Part 3 includes:
 :imagesdir: ../../assets/images
@@ -10,16 +10,16 @@
 :sectnumlevels: 3
 
 :url_github: https://github.com/
-:url_github_sdk_config: https://github.com/LiskHQ/lisk-sdk/blob/{v_sdk}/sdk/src/samples/config_devnet.json
-:url_github_transport_app: https://github.com/LiskHQ/lisk-sdk-examples/blob/development/transport/client/app.js#L14
-:url_github_transport_node_index: https://github.com/LiskHQ/lisk-sdk-examples/blob/development/transport/node/index.js
-:url_github_transport_node_packagejson: https://github.com/LiskHQ/lisk-sdk-examples/blob/development/transport/node/package.json
-:url_github_transport_transactions: https://github.com/LiskHQ/lisk-sdk-examples/tree/development/transport/transactions
+:url_github_sdk_config: https://github.com/KlayrHQ/klayr-sdk/blob/{v_sdk}/sdk/src/samples/config_devnet.json
+:url_github_transport_app: https://github.com/KlayrHQ/klayr-sdk-examples/blob/development/transport/client/app.js#L14
+:url_github_transport_node_index: https://github.com/KlayrHQ/klayr-sdk-examples/blob/development/transport/node/index.js
+:url_github_transport_node_packagejson: https://github.com/KlayrHQ/klayr-sdk-examples/blob/development/transport/node/package.json
+:url_github_transport_transactions: https://github.com/KlayrHQ/klayr-sdk-examples/tree/development/transport/transactions
 :url_gitlab: https://about.gitlab.com/
 
-:url_commander_commands_createaccount: reference/lisk-commander/commands.adoc#create_account
-:url_commander_commands_delegateregistration: reference/lisk-commander/commands.adoc#delegate_registration
-:url_core_config_forging_enable: {v_core}@lisk-core::management/forging.adoc#forging_enable_disable
+:url_commander_commands_createaccount: reference/klayr-commander/commands.adoc#create_account
+:url_commander_commands_delegateregistration: reference/klayr-commander/commands.adoc#delegate_registration
+:url_core_config_forging_enable: {v_core}@klayr-core::management/forging.adoc#forging_enable_disable
 :url_setup_ports: setup.adoc#ports
 :url_tutorials_transport_2: tutorials/transport2.adoc
 
@@ -95,9 +95,9 @@ Exchange the `configDevnet` object that was passed to the node during the develo
 ====
 It is recommended to create a config object with all the options that are different to the default config options.
 To check the default config options, go to the xref:configuration.adoc[configuration page] or check it directly in the code listed below: +
-`lisk-framework/src/modules/MODULE_NAME/defaults/config.js`. +
+`klayr-framework/src/modules/MODULE_NAME/defaults/config.js`. +
 The same for the components as shown below: +
-`lisk-framework/src/components/COMPONENT_NAME/defaults/config.js`.
+`klayr-framework/src/components/COMPONENT_NAME/defaults/config.js`.
 ====
 
 Most of the configurations can stay the same to what is defined in the default config options.
@@ -135,7 +135,7 @@ This provides everyone the opportunity to download the application and deploy it
 The code should include at least the following files listed below:
 
 * {url_github_transport_node_index}[index.js^] : The code that initializes and starts the node application.
-* {url_github_transport_node_packagejson}[package.json^]: A project file that lists all needed dependencies, (this should include `lisk-sdk` as a dependency).
+* {url_github_transport_node_packagejson}[package.json^]: A project file that lists all needed dependencies, (this should include `klayr-sdk` as a dependency).
 * {url_github_transport_transactions}[transactions/^]: A folder containing all required custom transactions.
 * `README` : A Readme file which describes the most important steps to setup the node.
 
@@ -202,7 +202,7 @@ During the sync process the missing blocks are received from the peers and added
 [[replace_delegates]]
 == Replace genesis delegates with real ones
 
-During development of the Lisk Transport application, one node was enabled for forging for all 101 genesis delegates.
+During development of the Klayr Transport application, one node was enabled for forging for all 101 genesis delegates.
 
 After the release of the first version of the blockchain application, it is necessary that real delegates take the forging slots of the genesis delegates.
 The network will become stable and decentralized for the first time when at least 51 real delegates are actively forging in the network.
@@ -219,12 +219,12 @@ To join the network as a new delegate, follow the steps listed below:
 [source,bash]
 ----
 export SECRET_PASSPHRASE=123456 <1>
-lisk transaction:create:delegate lightcurve -p=env:SECRET_PASSPHRASE | tee >(curl -X POST -H "Content-Type: application/json" -d @- 1.2.3.4:4000/api/transactions) <2>
+klayr transaction:create:delegate lightcurve -p=env:SECRET_PASSPHRASE | tee >(curl -X POST -H "Content-Type: application/json" -d @- 1.2.3.4:4000/api/transactions) <2>
 ----
 <1> Replace `123456` with the secret passphrase.
 <2> Replace `1.2.3.4` with the IP of a node with a public API.
 +
-. Set up a node: Follow the steps in the `README` file of the application, (alternatively read the Lisk tutorials, as this process is basically identical).
+. Set up a node: Follow the steps in the `README` file of the application, (alternatively read the Klayr tutorials, as this process is basically identical).
 . xref:{url_core_config_forging_enable}[Enable forging for the newly created delegate on the node]
 . People become convinced to vote for a delegate in the network, if the delegate has the following attributes:
 ** Is helpful.
@@ -269,10 +269,10 @@ To test if the transaction is undone correctly write a unit test as shown below:
 [source,js]
 ----
 const RegisterPacketTransaction = require('../register-packet');
-const transactions = require('@liskhq/lisk-transactions');
+const transactions = require('@klayrhq/klayr-transactions');
 const { when } = require('jest-when');
 
-const dateToLiskEpochTimestamp = date => (
+const dateToKlayrEpochTimestamp = date => (
     Math.floor(new Date(date).getTime() / 1000) - Math.floor(new Date(Date.UTC(2016, 4, 24, 17, 0, 0, 0)).getTime() / 1000)
 );
 
@@ -291,9 +291,9 @@ describe('RegisterPacket Transaction', () => {
         // Arrange
         const senderId = 'senderXYZ';
         const asset = {
-            security: transactions.utils.convertLSKToBeddows('10'),
+            security: transactions.utils.convertKLYToBeddows('10'),
             minTrust: 0,
-            postage: transactions.utils.convertLSKToBeddows('10'),
+            postage: transactions.utils.convertKLYToBeddows('10'),
             packetId: 'not important',
         };
 
@@ -302,7 +302,7 @@ describe('RegisterPacket Transaction', () => {
         };
         const mockedSenderAccount = {
             address: 'abc123',
-            balance: '10000000000', // 100 LSK
+            balance: '10000000000', // 100 KLY
         };
 
         when(storeStub.account.get)
@@ -318,7 +318,7 @@ describe('RegisterPacket Transaction', () => {
             senderId,
             asset,
             recipientId: 'xyzL',
-            timestamp: dateToLiskEpochTimestamp(new Date()),
+            timestamp: dateToKlayrEpochTimestamp(new Date()),
         });
         tx.undoAsset(storeStub);
 
@@ -351,7 +351,7 @@ What else needs to be tested?::
 Is writing unit tests really enough to ensure the functionality of a custom transaction type? +
 **Short answer: The unit tests are sufficient.** +
 **Explanation:** You may wonder if it is required to write additional functional and integration tests.
-Be aware, that the correct reading and writing of the data to the database is already part of the Lisk SDK software testing and therefore it is not needed to test it again for your new custom transaction type.
+Be aware, that the correct reading and writing of the data to the database is already part of the Klayr SDK software testing and therefore it is not needed to test it again for your new custom transaction type.
 Therefore unit tests are generally sufficient to test the functionality of a custom transaction type.
 
 == Further improvements

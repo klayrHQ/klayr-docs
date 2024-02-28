@@ -1,0 +1,22 @@
+= DPoS
+Mona Bärenfänger <mona@lightcurve.io>
+:description: Technical references regarding the DPoS package of Klayr Elements.
+:toc:
+
+@klayrhq/klayr-dpos is DPoS consensus algorithm implementation according to the Klayr protocol.
+
+== Installation
+
+[source,bash]
+----
+npm install @klayrhq/klayr-dpos
+----
+
+== Update
+
+To perform an upgrade, execute the following command:
+
+[source,bash]
+----
+npm update @klayrhq/klayr-dpos
+----

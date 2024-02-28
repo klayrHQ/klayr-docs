@@ -1,18 +1,18 @@
 = Hello world
 Mona Bärenfänger <mona@lightcurve.io>
-:description: The Lisk Hello world tutorial teaches the user how to create a custom transaction type based on the BaseTransaction interface, and how to register it with the node application. It further details how to initially set up the Lisk SDK and how to send the newly created transaction type to the network.
+:description: The Klayr Hello world tutorial teaches the user how to create a custom transaction type based on the BaseTransaction interface, and how to register it with the node application. It further details how to initially set up the Klayr SDK and how to send the newly created transaction type to the network.
 :toc:
 :imagesdir: ../../assets/images
 :experimental:
 :v_core: 3.0.0
 :v_sdk: v3.0.2
 
-:url_explorer: https://explorer.lisk.io/
-:url_github_hello: https://github.com/LiskHQ/lisk-sdk-examples/tree/development/hello_world
-:url_github_hello_client: https://github.com/LiskHQ/lisk-sdk-examples/blob/development/hello_world/client/print_sendable_hello-world.js
-:url_github_hello_index: https://github.com/LiskHQ/lisk-sdk-examples/tree/development/hello_world/index.js
-:url_github_hello_tx: https://github.com/LiskHQ/lisk-sdk-examples/blob/development/hello_world/hello_transaction.js
-:url_github_sdk_config: https://github.com/LiskHQ/lisk-sdk/blob/{v_sdk}/sdk/src/samples/config_devnet.json
+:url_explorer: https://explorer.klayr.io/
+:url_github_hello: https://github.com/KlayrHQ/klayr-sdk-examples/tree/development/hello_world
+:url_github_hello_client: https://github.com/KlayrHQ/klayr-sdk-examples/blob/development/hello_world/client/print_sendable_hello-world.js
+:url_github_hello_index: https://github.com/KlayrHQ/klayr-sdk-examples/tree/development/hello_world/index.js
+:url_github_hello_tx: https://github.com/KlayrHQ/klayr-sdk-examples/blob/development/hello_world/hello_transaction.js
+:url_github_sdk_config: https://github.com/KlayrHQ/klayr-sdk/blob/{v_sdk}/sdk/src/samples/config_devnet.json
 
 :url_core_network: guides/interact.adoc
 :url_customize: guides/customize.adoc
@@ -22,10 +22,10 @@ Mona Bärenfänger <mona@lightcurve.io>
 :url_setup_postgresql: setup.adoc#postgresql
 :url_setup_preinstall: setup.adoc#pre_install
 
-Welcome to the step-by-step guide of creating the Hello world application with the Lisk SDK.
+Welcome to the step-by-step guide of creating the Hello world application with the Klayr SDK.
 The Hello world application is a simple blockchain app that showcases a minimal setup of a blockchain application with 1 xref:{url_customize}[custom transaction] type: the "Hello" transaction.
 
-The purpose of the Hello world application is to explain both how to implement and use custom transactions with the Lisk SDK.
+The purpose of the Hello world application is to explain both how to implement and use custom transactions with the Klayr SDK.
 This custom transaction will extract the "hello" key value from the transaction asset property, and save it to the sender's account.
 
 The Hello world implementation steps are listed below:
@@ -51,7 +51,7 @@ npm init --yes <3>
 <2> Navigate into the root folder.
 <3> Initialize the manifest file of the project.
 
-The next step is to install the `lisk-sdk` package and add it to the project's dependencies.
+The next step is to install the `klayr-sdk` package and add it to the project's dependencies.
 
 IMPORTANT: Please ensure that the SDK preinstall preparation steps have been completed.
 
@@ -75,19 +75,19 @@ IMPORTANT: Please ensure that the SDK preinstall preparation steps have been com
 
 [source,bash]
 ----
-npm install lisk-sdk <1>
-npm install @liskhq/lisk-validator @liskhq/lisk-cryptography @liskhq/lisk-transactions @liskhq/lisk-constants <2>
+npm install klayr-sdk <1>
+npm install @klayrhq/klayr-validator @klayrhq/klayr-cryptography @klayrhq/klayr-transactions @klayrhq/klayr-constants <2>
 ----
 
-<1> Install the Lisk SDK as dependency for the node side.
-<2> Install Lisk Elements dependencies for the client side scripts.
+<1> Install the Klayr SDK as dependency for the node side.
+<2> Install Klayr Elements dependencies for the client side scripts.
 
 [IMPORTANT]
 ====
 If a database has not previously been created then it is necessary to create one.
-The default database name is `lisk_dev` The following command,  `createdb lisk_dev --owner lisk` should be used.
-The default database user and password are `lisk` and `password`.
-Both the user and password can be changed in the configuration of the Lisk SDK.
+The default database name is `klayr_dev` The following command,  `createdb klayr_dev --owner klayr` should be used.
+The default database user and password are `klayr` and `password`.
+Both the user and password can be changed in the configuration of the Klayr SDK.
 ====
 
 Ensure to start with a fresh database.
@@ -101,8 +101,8 @@ For the *system-wide Postgres* installation:
 
 [source,bash]
 ----
-psql -c "DROP DATABASE lisk_dev"
-psql -c "CREATE DATABASE lisk_dev OWNER lisk"
+psql -c "DROP DATABASE klayr_dev"
+psql -c "CREATE DATABASE klayr_dev OWNER klayr"
 ----
 --
 Postgres with Docker::
@@ -112,8 +112,8 @@ If you have installed xref:{url_setup_postgresql}[Postgres with Docker], it is n
 
 [source,bash]
 ----
-docker exec -ti lisk_sdk_db psql -h localhost -U lisk -d postgres -c "DROP DATABASE lisk_dev"
-docker exec -ti lisk_sdk_db psql -h localhost -U lisk -d postgres -c "CREATE DATABASE lisk_dev OWNER lisk"
+docker exec -ti klayr_sdk_db psql -h localhost -U klayr -d postgres -c "DROP DATABASE klayr_dev"
+docker exec -ti klayr_sdk_db psql -h localhost -U klayr -d postgres -c "CREATE DATABASE klayr_dev OWNER klayr"
 ----
 --
 ====
@@ -136,7 +136,7 @@ Now open the file `index.js` that was created with the previous step, and insert
 .Contents of index.js
 [source,js]
 ----
-const { Application, genesisBlockDevnet, configDevnet } = require('lisk-sdk'); <1>
+const { Application, genesisBlockDevnet, configDevnet } = require('klayr-sdk'); <1>
 
 configDevnet.app.label = 'hello-world-blockchain-app'; <2>
 //configDevnet.components.storage.user = '<username>'; <3>
@@ -156,17 +156,17 @@ app <6>
 TIP: See the file on GitHub: {url_github_hello_index}[hello_world/index.js^].
 
 <1> Require application class, the default genesis block and the default config for the application.
-The necessary dependencies are required from the `lisk-sdk` package.
+The necessary dependencies are required from the `klayr-sdk` package.
 The most important one is the `Application` class, which is used in <5> to create the application instance.
 The application instance will start the whole application at the bottom of `index.js`.
 <2> Set the name of the blockchain application.
-<3> In the case whereby a different user other than 'lisk' was given for access to the database lisk_dev, it will be necessary to update the username in the config.
+<3> In the case whereby a different user other than 'klayr' was given for access to the database klayr_dev, it will be necessary to update the username in the config.
 <4> Uncomment this and replace `password` with the password for your database user.
 <5> Create the application instance.
 By sending the parameters for the xref:{url_guides_congig_genesis_block}[genesis block] and the {url_github_sdk_config}[configuration template^], the application is now configured with most basic configurations to start the network.
 <6> The code block below starts the application and does not need to be changed.
 
-TIP: In the case whereby the user wishes to change any of the values for `configDevnet`, please see the xref:{url_reference_config}[full list of configurations] for Lisk SDK and overwrite them as described in <<step7,paragraph 7>>.
+TIP: In the case whereby the user wishes to change any of the values for `configDevnet`, please see the xref:{url_reference_config}[full list of configurations] for Klayr SDK and overwrite them as described in <<step7,paragraph 7>>.
 
 After the code block above has been added, save and close `index.js`.
 At this point, the node and the network can now be started in order to verify that the setup was successful by executing the following command below:
@@ -183,26 +183,26 @@ If everything is functioning correctly, the following logs listed below will be 
 
 ....
 $ node index.js | npx bunyan -o short
-14:01:39.384Z  INFO lisk-framework: Booting the application with Lisk Framework(0.1.0)
-14:01:39.391Z  INFO lisk-framework: Starting the app - helloWorld-blockchain-app
-14:01:39.392Z  INFO lisk-framework: Initializing controller
-14:01:39.392Z  INFO lisk-framework: Loading controller
-14:01:39.451Z  INFO lisk-framework: Old PID: 7707
-14:01:39.452Z  INFO lisk-framework: Current PID: 7732
-14:01:39.467Z  INFO lisk-framework: Loading module lisk-framework-chain:0.1.0 with alias "chain"
-14:01:39.613Z  INFO lisk-framework: Event network:bootstrap was subscribed but not registered to the bus yet.
-14:01:39.617Z  INFO lisk-framework: Event network:bootstrap was subscribed but not registered to the bus yet.
-14:01:39.682Z  INFO lisk-framework: Modules ready and launched
-14:01:39.683Z  INFO lisk-framework: Event network:event was subscribed but not registered to the bus yet.
-14:01:39.684Z  INFO lisk-framework: Module ready with alias: chain(lisk-framework-chain:0.1.0)
-14:01:39.684Z  INFO lisk-framework: Loading module lisk-framework-network:0.1.0 with alias "network"
-14:01:39.726Z  INFO lisk-framework: Blocks 1886
-14:01:39.727Z  INFO lisk-framework: Genesis block matched with database
-14:01:39.791Z ERROR lisk-framework: Error occurred while fetching information from 127.0.0.1:5000
-14:01:39.794Z  INFO lisk-framework: Module ready with alias: network(lisk-framework-network:0.1.0)
-14:01:39.795Z  INFO lisk-framework: Loading module lisk-framework-http-api:0.1.0 with alias "http_api"
-14:01:39.796Z  INFO lisk-framework: Module ready with alias: http_api(lisk-framework-http-api:0.1.0)
-14:01:39.797Z  INFO lisk-framework:
+14:01:39.384Z  INFO klayr-framework: Booting the application with Klayr Framework(0.1.0)
+14:01:39.391Z  INFO klayr-framework: Starting the app - helloWorld-blockchain-app
+14:01:39.392Z  INFO klayr-framework: Initializing controller
+14:01:39.392Z  INFO klayr-framework: Loading controller
+14:01:39.451Z  INFO klayr-framework: Old PID: 7707
+14:01:39.452Z  INFO klayr-framework: Current PID: 7732
+14:01:39.467Z  INFO klayr-framework: Loading module klayr-framework-chain:0.1.0 with alias "chain"
+14:01:39.613Z  INFO klayr-framework: Event network:bootstrap was subscribed but not registered to the bus yet.
+14:01:39.617Z  INFO klayr-framework: Event network:bootstrap was subscribed but not registered to the bus yet.
+14:01:39.682Z  INFO klayr-framework: Modules ready and launched
+14:01:39.683Z  INFO klayr-framework: Event network:event was subscribed but not registered to the bus yet.
+14:01:39.684Z  INFO klayr-framework: Module ready with alias: chain(klayr-framework-chain:0.1.0)
+14:01:39.684Z  INFO klayr-framework: Loading module klayr-framework-network:0.1.0 with alias "network"
+14:01:39.726Z  INFO klayr-framework: Blocks 1886
+14:01:39.727Z  INFO klayr-framework: Genesis block matched with database
+14:01:39.791Z ERROR klayr-framework: Error occurred while fetching information from 127.0.0.1:5000
+14:01:39.794Z  INFO klayr-framework: Module ready with alias: network(klayr-framework-network:0.1.0)
+14:01:39.795Z  INFO klayr-framework: Loading module klayr-framework-http-api:0.1.0 with alias "http_api"
+14:01:39.796Z  INFO klayr-framework: Module ready with alias: http_api(klayr-framework-http-api:0.1.0)
+14:01:39.797Z  INFO klayr-framework:
   Bus listening to events [ 'app:ready',
     'app:state:updated',
     'chain:bootstrap',
@@ -226,7 +226,7 @@ $ node index.js | npx bunyan -o short
     'http_api:registeredToBus',
     'http_api:loading:started',
     'http_api:loading:finished' ]
-14:01:39.799Z  INFO lisk-framework:
+14:01:39.799Z  INFO klayr-framework:
   Bus ready for actions [ 'app:getComponentConfig',
     'app:getApplicationState',
     'app:updateApplicationState',
@@ -252,19 +252,19 @@ $ node index.js | npx bunyan -o short
     'network:getNetworkStatus',
     'network:getPeers',
     'network:getPeersCountByFilter' ]
-14:01:39.800Z  INFO lisk-framework: App started...
-14:01:39.818Z  INFO lisk-framework: Validating current block with height 1886
-14:01:39.819Z  INFO lisk-framework: Loader->validateBlock Validating block 10258884836986606075 at height 1886
-14:01:40.594Z  INFO lisk-framework: Lisk started: 0.0.0.0:4000
-14:01:40.600Z  INFO lisk-framework: Verify->verifyBlock succeeded for block 10258884836986606075 at height 1886.
-14:01:40.600Z  INFO lisk-framework: Loader->validateBlock Validating block succeed for 10258884836986606075 at height 1886.
-14:01:40.600Z  INFO lisk-framework: Finished validating the chain. You are at height 1886.
-14:01:40.601Z  INFO lisk-framework: Blockchain ready
-14:01:40.602Z  INFO lisk-framework: Loading 101 delegates using encrypted passphrases from config
-14:01:40.618Z  INFO lisk-framework: Forging enabled on account: 8273455169423958419L
-14:01:40.621Z  INFO lisk-framework: Forging enabled on account: 12254605294831056546L
-14:01:40.624Z  INFO lisk-framework: Forging enabled on account: 14018336151296112016L
-14:01:40.627Z  INFO lisk-framework: Forging enabled on account: 2003981962043442425L
+14:01:39.800Z  INFO klayr-framework: App started...
+14:01:39.818Z  INFO klayr-framework: Validating current block with height 1886
+14:01:39.819Z  INFO klayr-framework: Loader->validateBlock Validating block 10258884836986606075 at height 1886
+14:01:40.594Z  INFO klayr-framework: Klayr started: 0.0.0.0:4000
+14:01:40.600Z  INFO klayr-framework: Verify->verifyBlock succeeded for block 10258884836986606075 at height 1886.
+14:01:40.600Z  INFO klayr-framework: Loader->validateBlock Validating block succeed for 10258884836986606075 at height 1886.
+14:01:40.600Z  INFO klayr-framework: Finished validating the chain. You are at height 1886.
+14:01:40.601Z  INFO klayr-framework: Blockchain ready
+14:01:40.602Z  INFO klayr-framework: Loading 101 delegates using encrypted passphrases from config
+14:01:40.618Z  INFO klayr-framework: Forging enabled on account: 8273455169423958419L
+14:01:40.621Z  INFO klayr-framework: Forging enabled on account: 12254605294831056546L
+14:01:40.624Z  INFO klayr-framework: Forging enabled on account: 14018336151296112016L
+14:01:40.627Z  INFO klayr-framework: Forging enabled on account: 2003981962043442425L
 [...]
 ....
 
@@ -274,7 +274,7 @@ To stop the blockchain process, press kbd:[CTRL+C].
 == 3. Create a new transaction type
 
 For the Hello world App, it is necessary to create a xref:customize.adoc[custom transaction type] `HelloTransaction`: +
-If the account contains an adequate enough balance to process the `HelloTransaction` transaction, (the fee is set to 1 LSK by default), the new "hello" property will appear into the account’s asset field.
+If the account contains an adequate enough balance to process the `HelloTransaction` transaction, (the fee is set to 1 KLY by default), the new "hello" property will appear into the account’s asset field.
 For example, after sending a valid sender id type transaction, `{"type": 10, "senderId": "16313739661670634666L", ... "asset": { "hello": "world" } }`, the sender’s account will change from: +
 `{ address: "16313739661670634666L", ..., asset: null }`, to +
 `{ "address": "16313739661670634666L", ..., "asset": {"hello": "world"}} }`.
@@ -289,25 +289,25 @@ Next, create and open the file `hello_transaction.js` and insert the following c
 const {
     BaseTransaction,
     TransactionError
-} = require('@liskhq/lisk-transactions');
+} = require('@klayrhq/klayr-transactions');
 
 class HelloTransaction extends BaseTransaction {
 
     /**
     * Set the `HelloTransaction` transaction TYPE to `10`.
     * Every time a transaction is received, it is differentiated by the type.
-    * The first 10 types, from 0-9 is reserved for the default Lisk network functions.
+    * The first 10 types, from 0-9 is reserved for the default Klayr network functions.
     */
     static get TYPE () {
         return 20;
     }
 
     /**
-    * Set the `HelloTransaction` transaction FEE to 1 LSK.
+    * Set the `HelloTransaction` transaction FEE to 1 KLY.
     * Every time a user posts a transaction to the network, the transaction fee is paid to the delegate who includes the transaction into the block that the delegate forges.
     */
     static get FEE () {
-        // return `${10 ** 8}`; // (= 1 LSK)
+        // return `${10 ** 8}`; // (= 1 KLY)
         return `0`;
     };
 
@@ -410,7 +410,7 @@ NOTE: It is only required to add 2 new lines, (number <2> and <7>) as shown belo
 .Contents of index.js
 [source,js]
 ----
-const { Application, genesisBlockDevnet, configDevnet} = require('lisk-sdk'); <1>
+const { Application, genesisBlockDevnet, configDevnet} = require('klayr-sdk'); <1>
 const HelloTransaction = require('./hello_transaction'); <2>
 
 configDevnet.app.label = 'hello-world-blockchain-app'; <3>
@@ -434,7 +434,7 @@ TIP: Please see the file on Github: {url_github_hello_index}[hello_world/index.j
 <1> Require application class, the default genesis block and the default config for the application.
 <2> *New line*: Require the newly created transaction type 'HelloTransaction'.
 <3> Change the label of the app.
-<4> If a different user other than 'lisk' was given for access to the database lisk_dev, then it is necessary to update the username in the config.
+<4> If a different user other than 'klayr' was given for access to the database klayr_dev, then it is necessary to update the username in the config.
 <5> Replace password with the password for your database user.
 <6> Create the application instance.
 <7> *New line*: Register the 'HelloTransaction'.
@@ -502,12 +502,12 @@ Open the file `print_sendable_hello-world.js` and insert the following code:
 [source,js]
 ----
 const HelloTransaction = require('../hello_transaction');
-const { EPOCH_TIME } = require('@liskhq/lisk-constants');
-const {getNetworkIdentifier} = require('@liskhq/lisk-cryptography');
+const { EPOCH_TIME } = require('@klayrhq/klayr-constants');
+const {getNetworkIdentifier} = require('@klayrhq/klayr-cryptography');
 
 const networkIdentifier = getNetworkIdentifier(
     "23ce0366ef0a14a91e5fd4b1591fc880ffbef9d988ff8bebf8f3666b0c09597d",
-    "Lisk",
+    "Klayr",
 );
 
 const getTimestamp = () => {
@@ -700,11 +700,11 @@ hello_world
 
 To run the script remotely change the configuration before creating the `Application` instance, in order to make the API accessible as shown below:
 
-TIP: For more configuration options, please see the xref:{url_reference_config}[full list of configurations] for Lisk SDK.
+TIP: For more configuration options, please see the xref:{url_reference_config}[full list of configurations] for Klayr SDK.
 
 [source,js]
 ----
-const { Application, genesisBlockDevnet, configDevnet} = require('lisk-sdk'); <1>
+const { Application, genesisBlockDevnet, configDevnet} = require('klayr-sdk'); <1>
 const HelloTransaction = require('./hello_transaction'); <2>
 
 configDevnet.app.label = 'hello-world-blockchain-app'; <3>
@@ -730,7 +730,7 @@ app <10>
 <1> Require application class, the default genesis block and the default config for the application.
 <2> Require the newly created transaction type 'HelloTransaction'.
 <3> Set the name of your blockchain application.
-<4> In the case whereby a different user than 'lisk' was given, to access to the database lisk_dev, it is necessary to update the username in the config.
+<4> In the case whereby a different user than 'klayr' was given, to access to the database klayr_dev, it is necessary to update the username in the config.
 <5> Uncomment this and replace `password` with the password for your database user.
 <6> Make the API accessible from everywhere.
 <7> Example how to make the API accessible for specific IP addresses: add 1.2.3.4 IP address as whitelisted.
@@ -753,6 +753,6 @@ configDevnet.components.logger.consoleLogLevel = "none"; <2>
 <2> No logs will be visible in the console.
 ====
 
-If so required, a frontend application can be designed such as the {url_explorer}[Lisk Explorer^], which displays the user's assets inside of their account page.
+If so required, a frontend application can be designed such as the {url_explorer}[Klayr Explorer^], which displays the user's assets inside of their account page.
 
 Please also see the following guide: xref:{url_core_network}[Interact with the API].

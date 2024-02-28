@@ -1,0 +1,22 @@
+= Validator
+:description: This section contains the installation and updates for the Klayr validator.
+:toc:
+
+@klayrhq/klayr-validator is a wrapper of validation packages.
+It includes custom validations utilities related to the Klayr protocol.
+
+== Installation
+
+[source,bash]
+----
+npm install @klayrhq/klayr-validator
+----
+
+== Update
+
+To perform an upgrade, execute the following command:
+
+[source,bash]
+----
+npm update @klayrhq/klayr-validator
+----
