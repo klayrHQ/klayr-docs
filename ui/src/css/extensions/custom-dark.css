@@ -20,7 +20,7 @@
 }
 
 .navbar {
-  background: var(--color-zodiac-blue);
+  background: var(--color-dark-blue);
 }
 
 .navbar-end .navbar-item.has-dropdown:hover .navbar-link {
@@ -38,7 +38,7 @@
 }
 
 .klayr-logo {
-  background-image: url(../img/klayr-logo-white.svg);
+  background-image: url(../img/klayr-symbol.svg);
 }
 
 .docs-logo {
@@ -46,14 +46,14 @@
 }
 
 .toolbar {
-  background-color: var(--color-zodiac-blue);
+  background-color: var(--color-dark-blue);
   border-top: 1px solid var(--color-second-blue);
 }
 
 .theme-toggle {
   background-image: url(../img/moon-outlined-grey.svg);
   fill: var(--color-athens-white);
-  background-color: var(--color-zodiac-blue);
+  background-color: var(--color-dark-blue);
 }
 
 .navbar-end .navbar-item .navbar-dropdown {
@@ -103,8 +103,8 @@
 }
 
 .nav-panel-explore .context:hover {
-  color: var(--color-ultramarine-blue);
-  background-color: var(--color-zodiac-blue);
+  color: var(--color-azule);
+  background-color: var(--color-dark-blue);
 }
 
 .doc h3:not(.discrete),
@@ -144,7 +144,7 @@ footer.footer {
 }
 
 .footerdiv {
-  background-color: rgba(255, 255, 255, 0.06);
+  background-color: var(--footer-background);
 }
 
 .doc details {
@@ -195,7 +195,7 @@ footer.footer {
 }
 
 .medium-zoom-overlay {
-  background: var(--color-zodiac-blue) !important;
+  background: var(--color-dark-blue) !important;
 }
 
 .navbar-link::after {
