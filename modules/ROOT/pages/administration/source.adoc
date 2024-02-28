@@ -1,71 +1,71 @@
-= Lisk Core Source Administration
+= Klayr Core Source Administration
 Mona Bärenfänger <mona@lightcurve.io>
-:description: The Lisk Core Source Administration describes all relevant commands to manage Lisk Core with pm2.
+:description: The Klayr Core Source Administration describes all relevant commands to manage Klayr Core with pm2.
 :toc:
 
-This section covers how to manage a Source installation of Lisk Core.
+This section covers how to manage a Source installation of Klayr Core.
 
 == Basic Commands
 
 === Status
 
-Check the status of the Lisk Core Node.
+Check the status of the Klayr Core Node.
 
 [source,bash]
 ----
-pm2 status lisk
+pm2 status klayr
 ----
 
 === Start
 
-Start Lisk Core.
+Start Klayr Core.
 
 [source,bash]
 ----
-pm2 start lisk
+pm2 start klayr
 ----
 
 === Stop
 
-Stop Lisk Core.
+Stop Klayr Core.
 
 [source,bash]
 ----
-pm2 stop lisk
+pm2 stop klayr
 ----
 
 === Restart
 
-Restart Lisk Core.
+Restart Klayr Core.
 
 [source,bash]
 ----
-pm2 restart lisk
+pm2 restart klayr
 ----
 
 === Delete
 
-Remove Lisk Core process from pm2 list.
+Remove Klayr Core process from pm2 list.
 
 [source,bash]
 ----
-pm2 delete lisk
+pm2 delete klayr
 ----
 
 === Add
 
-In case this was not completed during the installation process, add your Lisk Core process to pm2 under the name `lisk`.
+In case this was not completed during the installation process, add your Klayr Core process to pm2 under the name `klayr`.
 
 [source,bash]
 ----
-pm2 start --name lisk dist/index.js -- --network [network]
+pm2 start --name klayr dist/index.js -- --network [network]
 ----
 
 It is possible to choose the `devnet` (default), `alphanet`, `betanet`, `testnet` or `mainnet` for the `[network]` option.
 
 === Logs
 
-Display Lisk Core logs in streaming.
+Display Klayr Core logs in streaming.
 
 [source,bash]
 ----
@@ -74,7 +74,7 @@ pm2 logs
 
 == Utility scripts
 
-There are some command line scripts available that will assist the Lisk user, by performing certain helpful and convenient operations.
+There are some command line scripts available that will assist the Klayr user, by performing certain helpful and convenient operations.
 
 All scripts are located under `./scripts/` directory and can be executed directly by `node scripts/<file_name>`.
 
@@ -91,15 +91,15 @@ Options:
 -h, --help               output usage information
 -V, --version            output the version number
 -c, --config [config]    custom config file
--n, --network [network]  specify the network or use LISK_NETWORK
+-n, --network [network]  specify the network or use KLAYR_NETWORK
 ----
 
 Argument `network` is required, and it may be either `devnet`, `testnet`, `mainnet` or any other network folder available under `./config` directory.
 
 === Update Config
 
-This next script is designed to keep track of all changes introduced in Lisk over time in different versions.
-If you have one config file existing in any specific version, and you wish to make it compatible with other versions of the Lisk, then execute this update config script shown below:
+This next script is designed to keep track of all changes introduced in Klayr over time in different versions.
+If you have one config file existing in any specific version, and you wish to make it compatible with other versions of the Klayr, then execute this update config script shown below:
 
 [source,bash]
 ----
@@ -109,48 +109,48 @@ Options:
 
 -h, --help               output usage information
 -V, --version            output the version number
--n, --network [network]  specify the network or use LISK_NETWORK
+-n, --network [network]  specify the network or use KLAYR_NETWORK
 -o, --output [output]    output file path
 ----
 
 As can be seen from the usage guide, `input_file` and `from_version` are required.
-If you skip `to_version` argument changes in `config.json` will be applied up to the latest version of Lisk Core.
+If you skip `to_version` argument changes in `config.json` will be applied up to the latest version of Klayr Core.
 If you do not specify `--output` path the final `config.json` will be printed to stdout.
-If you do not specify `--network` argument, it will have to be loaded from `LISK_NETWORK` env variable.
+If you do not specify `--network` argument, it will have to be loaded from `KLAYR_NETWORK` env variable.
 
 == Creating snapshots
 
 [TIP]
 ====
-For creating xref:index.adoc#_snapshots[snapshots] in the most convenient manner, it is recommended to use Lisk Core from the xref:binary.adoc#_create_snapshot[binary distribution].
-Execute the script `lisk-snapshot.sh`, which will then perform all the necessary steps to create a snapshot of the blockchain.
+For creating xref:index.adoc#_snapshots[snapshots] in the most convenient manner, it is recommended to use Klayr Core from the xref:binary.adoc#_create_snapshot[binary distribution].
+Execute the script `klayr-snapshot.sh`, which will then perform all the necessary steps to create a snapshot of the blockchain.
 ====
 
 To create a snapshot manually, perform the following steps:
 
-*Example:* Creating a snapshot for Lisk Mainnet.
+*Example:* Creating a snapshot for Klayr Mainnet.
 
 [TIP]
 ====
-The template database to be used should be the actual database defined in the `components.storage.database` in the `config.json` file of Lisk Core.
+The template database to be used should be the actual database defined in the `components.storage.database` in the `config.json` file of Klayr Core.
 Its recommended to document the current block height of the snapshot and to include it in the snapshots’ filename.
 ====
 
 [source,bash]
 ----
-pm2 stop lisk <1>
-createdb --template="lisk_main" lisk_snapshot <2>
-pm2 start lisk <3>
-psql --dbname=lisk_snapshot --command='TRUNCATE peers, mem_accounts2u_delegates, mem_accounts2u_multisignatures;' <4>
-psql --dbname=lisk_snapshot --tuples-only --command='SELECT height FROM blocks ORDER BY height DESC LIMIT 1;' | xargs <5>
-pg_dump --no-owner lisk_snapshot |gzip -9 > snapshot-lisk_mainnet-<current-block-height>.gz <6>
-dropdb lisk_snapshot <7>
+pm2 stop klayr <1>
+createdb --template="klayr_main" klayr_snapshot <2>
+pm2 start klayr <3>
+psql --dbname=klayr_snapshot --command='TRUNCATE peers, mem_accounts2u_delegates, mem_accounts2u_multisignatures;' <4>
+psql --dbname=klayr_snapshot --tuples-only --command='SELECT height FROM blocks ORDER BY height DESC LIMIT 1;' | xargs <5>
+pg_dump --no-owner klayr_snapshot |gzip -9 > snapshot-klayr_mainnet-<current-block-height>.gz <6>
+dropdb klayr_snapshot <7>
 ----
 
-<1> Stops the Lisk Core node.
-<2> Copies the Lisk Mainnet database to a new database `lisk_snapshot`.
-During this process, no open connections are allowed to `lisk_main` or it will fail.
-<3> Restarts the Lisk Core node again.
+<1> Stops the Klayr Core node.
+<2> Copies the Klayr Mainnet database to a new database `klayr_snapshot`.
+During this process, no open connections are allowed to `klayr_main` or it will fail.
+<3> Restarts the Klayr Core node again.
 <4> Remove the redundant data.
 <5> Executes this SQL query to acquire the last block height of the snapshot.
 <6> Dumps the database and compresses it.
@@ -170,20 +170,20 @@ Mainnet::
 --
 [source,bash]
 ----
-pm2 stop lisk <1>
-dropdb lisk_main <2>
-wget https://downloads.lisk.io/lisk/main/blockchain.db.gz <3>
-createdb lisk_main <4>
-gunzip -fcq blockchain.db.gz | psql -d lisk_main <5>
-pm2 start lisk <6>
+pm2 stop klayr <1>
+dropdb klayr_main <2>
+wget https://downloads.klayr.io/klayr/main/blockchain.db.gz <3>
+createdb klayr_main <4>
+gunzip -fcq blockchain.db.gz | psql -d klayr_main <5>
+pm2 start klayr <6>
 ----
 
-<1> Stops the Lisk Core node.
-<2> Deletes the Lisk Mainnet database.
-<3> Downloads the Lisk snapshot.
-<4> Creates a fresh Lisk Mainnet database.
+<1> Stops the Klayr Core node.
+<2> Deletes the Klayr Mainnet database.
+<3> Downloads the Klayr snapshot.
+<4> Creates a fresh Klayr Mainnet database.
 <5> Imports the downloaded snapshot into the new database.
-<6> Restarts the Lisk Core node again.
+<6> Restarts the Klayr Core node again.
 
 --
 Testnet::
@@ -191,19 +191,19 @@ Testnet::
 --
 [source,bash]
 ----
-pm2 stop lisk <1>
-dropdb lisk_test <2>
-wget https://downloads.lisk.io/lisk/test/blockchain.db.gz <3>
-createdb lisk_test <4>
-gunzip -fcq blockchain.db.gz | psql -d lisk_test <5>
-pm2 start lisk <6>
+pm2 stop klayr <1>
+dropdb klayr_test <2>
+wget https://downloads.klayr.io/klayr/test/blockchain.db.gz <3>
+createdb klayr_test <4>
+gunzip -fcq blockchain.db.gz | psql -d klayr_test <5>
+pm2 start klayr <6>
 ----
 
-<1> Stops the Lisk Core node.
-<2> Deletes the Lisk Testnet database.
-<3> Downloads the Lisk snapshot.
-<4> Creates a fresh Lisk Testnet database.
+<1> Stops the Klayr Core node.
+<2> Deletes the Klayr Testnet database.
+<3> Downloads the Klayr snapshot.
+<4> Creates a fresh Klayr Testnet database.
 <5> Imports the downloaded snapshot into the new database.
-<6> Restarts the Lisk Core node again.
+<6> Restarts the Klayr Core node again.
 --
 ====

@@ -1,17 +1,17 @@
-= Lisk Core Binary Setup
+= Klayr Core Binary Setup
 Mona Bärenfänger <mona@lightcurve.io>
-:description: The Lisk Core Binary Setup describes all necessary steps and requirements to install the Lisk SDK.
+:description: The Klayr Core Binary Setup describes all necessary steps and requirements to install the Klayr SDK.
 :toc:
 :v_sdk: master
 
-This document details how to setup Lisk Core Binary distribution on a system.
+This document details how to setup Klayr Core Binary distribution on a system.
 
 == Pre-Install
 
 To complete the installation some prerequisites need to be fulfilled.
 If you have already performed these, please proceed to the <<_installation, Installation>> chapter.
 
-=== Determine if your platform can run Lisk Core
+=== Determine if your platform can run Klayr Core
 
 ==== Supported Platforms
 
@@ -33,23 +33,23 @@ include::partial$create-a-new-user.adoc[]
 
 == Installation
 
-This section details how to install Lisk Core using pre-built binary packages.
-Once completed, you will have a functioning node on the Lisk Network.
-If you are looking to upgrade your current Lisk Core installation, please see the xref:upgrade/binary.adoc[Upgrade Binary] section.
+This section details how to install Klayr Core using pre-built binary packages.
+Once completed, you will have a functioning node on the Klayr Network.
+If you are looking to upgrade your current Klayr Core installation, please see the xref:upgrade/binary.adoc[Upgrade Binary] section.
 
-=== Login to the Lisk user
+=== Login to the Klayr user
 
 The user was created in the <<pre-install,Binary - Prerequisites Section>>.
 If you are already logged in to this user, please skip this step.
 
 [source,bash]
 ----
-sudo -u lisk -i
+sudo -u klayr -i
 ----
 
 === Execute the installation script
 
-This will configure the environment, download and install Lisk Core.
+This will configure the environment, download and install Klayr Core.
 Before proceeding, determine whether you wish to connect your node to the Testnet (Test Network) or the Mainnet (Main Network).
 
 [tabs]
@@ -57,35 +57,35 @@ Before proceeding, determine whether you wish to connect your node to the Testne
 Mainnet::
 +
 --
-Download Lisk Core:
+Download Klayr Core:
 
 [source,bash]
 ----
-wget https://downloads.lisk.io/lisk/main/installLisk.sh
+wget https://downloads.klayr.io/klayr/main/installKlayr.sh
 ----
 
 To connect your node to the Mainnet, run:
 
 [source,bash]
 ----
-bash installLisk.sh install -r main
+bash installKlayr.sh install -r main
 ----
 --
 Testnet::
 +
 --
-Download Lisk Core:
+Download Klayr Core:
 
 [source,bash]
 ----
-wget https://downloads.lisk.io/lisk/test/installLisk.sh
+wget https://downloads.klayr.io/klayr/test/installKlayr.sh
 ----
 
 To connect your node to the Testnet, run:
 
 [source,bash]
 ----
-bash installLisk.sh install -r test
+bash installKlayr.sh install -r test
 ----
 --
 ====
@@ -103,17 +103,17 @@ If you recognize an error, try to resolve it by analyzing the error output, othe
 
 === Verify successful installation
 
-When the installation script has finished, navigate inside of the newly created folder `lisk-main`(for Mainnet) or `lisk-test`(for Testnet).
-You can verify that your Lisk node is up and running, by running the following command:
+When the installation script has finished, navigate inside of the newly created folder `klayr-main`(for Mainnet) or `klayr-test`(for Testnet).
+You can verify that your Klayr node is up and running, by running the following command:
 
 [source,bash]
 ----
-bash lisk.sh status
+bash klayr.sh status
 ----
 
-For further information and how to administer your Lisk node, please have a look at our xref:administration/binary.adoc[Administration Section].
+For further information and how to administer your Klayr node, please have a look at our xref:administration/binary.adoc[Administration Section].
 
-If you are not running Lisk locally, you will need to follow the xref:configuration.adoc#_api_access_control[Configuration - API] document to enable access.
+If you are not running Klayr locally, you will need to follow the xref:configuration.adoc#_api_access_control[Configuration - API] document to enable access.
 
 With all of the above steps complete you are ready to move on to the configuration documentation if you wish to enable forging or SSL, please see xref:configuration.adoc[General Configuration].
 

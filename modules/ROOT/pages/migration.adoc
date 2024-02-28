@@ -1,18 +1,18 @@
-= Lisk Core Migration
+= Klayr Core Migration
 Mona Bärenfänger <mona@lightcurve.io>
-:description: The Lisk Core Migration page describes how to migrate the node, if a new update introduces a hard fork in the network. In addition, it also provides background information about all actions occurring during a migration.
+:description: The Klayr Core Migration page describes how to migrate the node, if a new update introduces a hard fork in the network. In addition, it also provides background information about all actions occurring during a migration.
 :toc:
 
 [IMPORTANT]
 ====
-Migration of a Lisk Node is only necessary during a hard fork.
+Migration of a Klayr Node is only necessary during a hard fork.
 For normal software updates that don’t invoke a hard fork, please perform a normal upgrade, see xref:index.adoc#_upgrade_vs_migration[Upgrade vs Migration].
 ====
 
 == What happens during migration
 
-The migration is a special case of upgrading your Lisk Core node.
-A migration is needed if the new version of the software is not compatible with older Lisk Core versions.
+The migration is a special case of upgrading your Klayr Core node.
+A migration is needed if the new version of the software is not compatible with older Klayr Core versions.
 
 As a consequence, the majority of the network needs to do this software update simultaneously to stabilize the forked chain and as a result, make it grow faster as the outdated version of the chain.
 
@@ -20,18 +20,18 @@ To achieve this, a height is picked to proceed with a simultaneous global upgrad
 When the blockheight of the network reaches the predefined height, it will invoke the update on all nodes in the network at the same time.
 This way the probabilities of creating forks are lower.
 
-Besides the normal update script, the *Lisk Bridge* script might include additional scripts.
+Besides the normal update script, the *Klayr Bridge* script might include additional scripts.
 E.g. if the new update includes changes in the structure of the configuration file, the script would try to reorganize your existing config to the new structure and then run the normal update script afterward.
 If you don’t want to use the automated script, you can read a detailed explanatio of <<_migrate_manually, how to migrate manually>> below.
 
-The following section describes how to use the automated migration script for binary distributions of Lisk Core, to make your migration as seamless as possible.
+The following section describes how to use the automated migration script for binary distributions of Klayr Core, to make your migration as seamless as possible.
 Additionally, you can find information below on how to perform the migration process manually.
 
 == Automated Migration
 
 === Prepare your workspace
 
-We assume that you have already installed Lisk Core and are familiar with the application.
+We assume that you have already installed Klayr Core and are familiar with the application.
 Nevertheless, we want to highlight a couple of things to double-check:
 
 * Revisit the xref:index.adoc#_distributions[setup] steps before continuing.
@@ -48,45 +48,45 @@ Nevertheless, we want to highlight a couple of things to double-check:
 At the end of this tutorial, we include some advanced cases to guide you.
 * The next section introduces a tool we have implemented to make a gapless migration.
 
-=== Lisk Bridge: Automated Lisk Core Migration
+=== Klayr Bridge: Automated Klayr Core Migration
 
-We introduced a tool to perform the migration called *Lisk Bridge*, available at https://downloads.lisk.io/lisk/[downloads.lisk.io].
+We introduced a tool to perform the migration called *Klayr Bridge*, available at https://downloads.klayr.io/klayr/[downloads.klayr.io].
 Here are the direct download links depending on the network your node is connected to:
 
-* https://downloads.lisk.io/lisk/test/lisk_bridge.sh[Lisk Bridge for Testnet]
-* https://downloads.lisk.io/lisk/main/lisk_bridge.sh[Lisk Bridge for Mainnet]
+* https://downloads.klayr.io/klayr/test/klayr_bridge.sh[Klayr Bridge for Testnet]
+* https://downloads.klayr.io/klayr/main/klayr_bridge.sh[Klayr Bridge for Mainnet]
 
-It’s a wrapper script that invokes `installLisk.sh upgrade` at a specific block height - and thus is intended for users using the xref:setup/binary.adoc[Binary installation].
+It’s a wrapper script that invokes `installKlayr.sh upgrade` at a specific block height - and thus is intended for users using the xref:setup/binary.adoc[Binary installation].
 
-To upgrade your node on a specific network height, you should download `lisk_bridge.sh` to where you would normally download and run installLisk.sh.
-In other words, it should be 1 directory up from where the lisk application is stored.
-For example, if you’re currently running `Lisk Core 0.9.16` as a user called `lisk`, `Lisk Core 0.9.16` is most likely installed in `/home/lisk/lisk-main` and `installLisk.sh` is stored in `/home/lisk`, the lisk user’s home directory.
-As the lisk user then, you could run the following:
+To upgrade your node on a specific network height, you should download `klayr_bridge.sh` to where you would normally download and run installKlayr.sh.
+In other words, it should be 1 directory up from where the klayr application is stored.
+For example, if you’re currently running `Klayr Core 0.9.16` as a user called `klayr`, `Klayr Core 0.9.16` is most likely installed in `/home/klayr/klayr-main` and `installKlayr.sh` is stored in `/home/klayr`, the klayr user’s home directory.
+As the klayr user then, you could run the following:
 
 [source,bash]
 ----
-su - lisk <1>
-rm -f lisk_bridge.sh <2>
-wget https://downloads.lisk.io/lisk/<network>/lisk_bridge.sh <3>
+su - klayr <1>
+rm -f klayr_bridge.sh <2>
+wget https://downloads.klayr.io/klayr/<network>/klayr_bridge.sh <3>
 ----
 
-<1> change to lisk user
-<2> remove old versions of lisk_bridge.sh
+<1> change to klayr user
+<2> remove old versions of klayr_bridge.sh
 <3> `<network>` can either be `main` for Mainnet or `test` for Testnet.
 
 Then run the script with the desired parameters:
 
 [source,bash]
 ----
-bash lisk_bridge.sh -n <network> -h <blockheight>
+bash klayr_bridge.sh -n <network> -h <blockheight>
 ----
 
 Where `<network>` can either be `main` for Mainnet or `test` for Testnet.
 `<blockheight>` is the before announced blockheight, when the hard fork is going to happen.
 
-The bridge script will run and wait for the specified height of the network and upon reaching this height, will invoke `installLisk.sh` to update the code, migrate the database to the new model and update the config files.
+The bridge script will run and wait for the specified height of the network and upon reaching this height, will invoke `installKlayr.sh` to update the code, migrate the database to the new model and update the config files.
 
-If you’re doing a fully automated migration, you could run `lisk_bridge.sh` inside of tmux, screen, byobu or another terminal multiplexer and detach your session even days ahead of time, though you’d want to minimize this lead time if you’re exporting `LISK_MASTER_PASSWORD`.
+If you’re doing a fully automated migration, you could run `klayr_bridge.sh` inside of tmux, screen, byobu or another terminal multiplexer and detach your session even days ahead of time, though you’d want to minimize this lead time if you’re exporting `KLAYR_MASTER_PASSWORD`.
 
 [IMPORTANT]
 ====
@@ -98,60 +98,60 @@ You can watch it to verify your migration was completed as expected:
 
 video::Zy9gyH-toBM[youtube,width=66%,height=100%]
 
-=== Lisk Bridge Command Reference
+=== Klayr Bridge Command Reference
 
-For reference, here is the lisk_bridge.sh usage help:
+For reference, here is the klayr_bridge.sh usage help:
 
 [source,bash]
 ----
-Usage: bash lisk_bridge.sh <-h <BLOCKHEIGHT>> [-s <DIRECTORY>] [-n <NETWORK>]
+Usage: bash klayr_bridge.sh <-h <BLOCKHEIGHT>> [-s <DIRECTORY>] [-n <NETWORK>]
 -h <BLOCKHEIGHT> -- specify blockheight at which bridging will be initiated
 -f <TARBALL>     -- specify path to local tarball containing the target release
--s <DIRECTORY>   -- Lisk home directory
+-s <DIRECTORY>   -- Klayr home directory
 -n <NETWORK>     -- choose main or test
 
-Example: bash lisk_bridge.sh -h 50000000 -n test -s /home/lisk/lisk-test
-Set the LISK_MASTER_PASSWORD environment variable if you want to do secrets migration in non-interactive mode
+Example: bash klayr_bridge.sh -h 50000000 -n test -s /home/klayr/klayr-test
+Set the KLAYR_MASTER_PASSWORD environment variable if you want to do secrets migration in non-interactive mode
 ----
 
-=== What if I miss the block height or if Lisk Bridge script fails?
+=== What if I miss the block height or if Klayr Bridge script fails?
 
 Don’t panic! Counting from the migration height, you have 2 full forging rounds time to upgrade your node manually by following the steps described in <<_migrate-manually, Migrate manually>>.
 If 2 full forging rounds have already passed since migration, your Node will be probably on a fork after the upgrade.
 To resolve this, rebuild your version of the blockchain xref:index.adoc#_snapshots[from snaphot] or xref:administration/binary.adoc#_rebuild_from_the_genesis_block[from genesis block].
 
-=== Migration Notes Lisk Core 0.9 to 1.0
+=== Migration Notes Klayr Core 0.9 to 1.0
 
 ==== Neccessary utility scripts
 
-The following utility scripts are run by `lisk_bridge.sh` :
+The following utility scripts are run by `klayr_bridge.sh` :
 
 * <<_update_config,update_config.js>>: migrates config to new structure
 
-During the execution of `lisk_bridge.sh`, it will prompt you asking for a password in the case where it finds a passphrase.
+During the execution of `klayr_bridge.sh`, it will prompt you asking for a password in the case where it finds a passphrase.
 It will encrypt and migrate that passphrase to the new format.
 If you want to avoid this prompt and make a full-automated migration, add the next environment variable to your system:
 
 [source,bash]
 ----
-export LISK_MASTER_PASSWORD=XXXXXXXX
+export KLAYR_MASTER_PASSWORD=XXXXXXXX
 ----
 
 == Migrate manually
 
-To migrate a Lisk node manually, do the following steps:
+To migrate a Klayr node manually, do the following steps:
 
 . Backup your data.
 . Run the necessary <<_utility_scripts, utility scripts>>.
-These scripts prepare the Lisk node for the migration and are required before the upgrade script can run successfully.
+These scripts prepare the Klayr node for the migration and are required before the upgrade script can run successfully.
 The utility scripts that need to be run can vary depending on the migration.
 . Go through the default xref:index.adoc#_upgrade_vs_migration[upgrade process].
 
 === Utility Scripts
 
-You don’t need to run these script if you have run `lisk_bridge.sh` before as it is automatically executed there.
+You don’t need to run these script if you have run `klayr_bridge.sh` before as it is automatically executed there.
 
-There are a couple of command line scripts that facilitate users of lisk to perform handy operations.
+There are a couple of command line scripts that facilitate users of klayr to perform handy operations.
 
 All scripts are located under `./scripts/` directory and can be executed directly by `node scripts/<file_name>`.
 
@@ -169,15 +169,15 @@ Options:
 -h, --help               output usage information
 -V, --version            output the version number
 -c, --config [config]    custom config file
--n, --network [network]  specify the network or use LISK_NETWORK
+-n, --network [network]  specify the network or use KLAYR_NETWORK
 ----
 
 Argument `network` is required and can by `devnet`, `testnet`, `mainnet` or any other network folder available under `./config` directory.
 
 ==== Update Config
 
-This script keeps track of all changes introduced in Lisk over time in different versions.
-If you have one config file in any of specific version and you want to make it compatible with other versions of the Lisk, this scripts will do it for you.
+This script keeps track of all changes introduced in Klayr over time in different versions.
+If you have one config file in any of specific version and you want to make it compatible with other versions of the Klayr, this scripts will do it for you.
 
 [source,bash]
 ----
@@ -187,11 +187,11 @@ Options:
 
 -h, --help               output usage information
 -V, --version            output the version number
--n, --network [network]  specify the network or use LISK_NETWORK
+-n, --network [network]  specify the network or use KLAYR_NETWORK
 -o, --output [output]    output file path
 ----
 
 As you can see from the usage guide, `input_file` and `from_version` are required.
-If you skip `to_version` argument changes in config.json will be applied up to the latest version of Lisk Core.
+If you skip `to_version` argument changes in config.json will be applied up to the latest version of Klayr Core.
 If you do not specify `--output` path the final config.json will be printed to stdout.
-If you do not specify `--network` argument you will have to load it from `LISK_NETWORK` env variable.
+If you do not specify `--network` argument you will have to load it from `KLAYR_NETWORK` env variable.

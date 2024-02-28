@@ -1,67 +1,67 @@
-= Lisk Core Binary Administration
+= Klayr Core Binary Administration
 Mona Bärenfänger <mona@lightcurve.io>
-:description: The Lisk Core Binary Administration describes all relevant commands to manage Lisk Core through the Command-line.
+:description: The Klayr Core Binary Administration describes all relevant commands to manage Klayr Core through the Command-line.
 :toc:
 
-This section covers how to work with a Binary installation of Lisk Core.
+This section covers how to work with a Binary installation of Klayr Core.
 Further information can be found by referring to the following commands reference list.
 
 == Basic Commands
 
-The available basic commands which can be used to manage your Lisk node are displayed here below:
+The available basic commands which can be used to manage your Klayr node are displayed here below:
 
 === Status
 
-Check the status of the Lisk Core Node.
+Check the status of the Klayr Core Node.
 
 [source,bash]
 ----
-bash lisk.sh status
+bash klayr.sh status
 ----
 
 === Start
 
-Start Lisk Core and PostgreSQL.
+Start Klayr Core and PostgreSQL.
 
 [source,bash]
 ----
-bash lisk.sh start
+bash klayr.sh start
 ----
 
 === Stop
 
-Stop Lisk Core and PostgreSQL.
+Stop Klayr Core and PostgreSQL.
 
 [source,bash]
 ----
-bash lisk.sh stop
+bash klayr.sh stop
 ----
 
 === Reload
 
-Reload Lisk Core and pick up changes to config.json.
+Reload Klayr Core and pick up changes to config.json.
 
 [source,bash]
 ----
-bash lisk.sh reload
+bash klayr.sh reload
 ----
 
 === Reset / Coldstart
 
-Initializes the PostgreSQL database and starts Lisk Core.
+Initializes the PostgreSQL database and starts Klayr Core.
 
 [source,bash]
 ----
-bash lisk.sh coldstart
+bash klayr.sh coldstart
 ----
 
 === Logs
 
-Monitor,(tail) the log file of Lisk.
+Monitor,(tail) the log file of Klayr.
 
 [source,bash]
 ----
-bash lisk.sh logs
+bash klayr.sh logs
 ----
 
 === Help
@@ -70,14 +70,14 @@ Display all available commands.
 
 [source,bash]
 ----
-bash lisk.sh help
+bash klayr.sh help
 ----
 
 == Management Tools
 
 === Update PATH environment variable
 
-If Lisk Core has been installed with the Binary package and you wish to use additional tools such as `pm2` and `psql`, the corresponding PATH variables need to be set by typing the following command:
+If Klayr Core has been installed with the Binary package and you wish to use additional tools such as `pm2` and `psql`, the corresponding PATH variables need to be set by typing the following command:
 
 [source,bash]
 ----
@@ -86,18 +86,18 @@ source env.sh
 
 === pm2
 
-PM2 is bundled with the Lisk Core Binary distribution and will be available after <<_update_path_environment_variable, Updating the PATH>>
+PM2 is bundled with the Klayr Core Binary distribution and will be available after <<_update_path_environment_variable, Updating the PATH>>
 environment].
 For more information, how to manage your Node with PM2, please see the xref:administration/source.adoc[Source Administration] page.
 
 === psql
 
-The interactive terminal for postgreSQL is bundled with the Lisk Core Binary distribution and will be available after <<_update_path_environment_variable, Updating the PATH environment>>.
+The interactive terminal for postgreSQL is bundled with the Klayr Core Binary distribution and will be available after <<_update_path_environment_variable, Updating the PATH environment>>.
 For more information regarding the available commands, see the official https://www.postgresql.org/docs/10/static/app-psql.html[PostgreSQL Documentation]
 
 == Utility scripts
 
-There are some command line scripts available that will assist the Lisk user, by performing certain helpful and convenient operations.
+There are some command line scripts available that will assist the Klayr user, by performing certain helpful and convenient operations.
 
 All of the scripts are located under `./scripts/` directory and can be executed directly by `node scripts/<file_name>`.
 
@@ -114,15 +114,15 @@ Options:
 -h, --help               output usage information
 -V, --version            output the version number
 -c, --config [config]    custom config file
--n, --network [network]  specify the network or use LISK_NETWORK
+-n, --network [network]  specify the network or use KLAYR_NETWORK
 ----
 
 Argument `network` is required and can by `devnet`, `testnet`, `mainnet` or any other network folder available under `./config` directory.
 
 === Update Config
 
-This next script is designed to keep track of all changes introduced in Lisk over time in different versions.
-If you have one config file existing in any specific version, and you wish to make it compatible with other versions of the Lisk, then execute this update config script shown below:
+This next script is designed to keep track of all changes introduced in Klayr over time in different versions.
+If you have one config file existing in any specific version, and you wish to make it compatible with other versions of the Klayr, then execute this update config script shown below:
 
 [source,bash]
 ----
@@ -132,28 +132,28 @@ Options:
 
 -h, --help               output usage information
 -V, --version            output the version number
--n, --network [network]  specify the network or use LISK_NETWORK
+-n, --network [network]  specify the network or use KLAYR_NETWORK
 -o, --output [output]    output file path
 ----
 
 As can be seen from the usage guide, `input_file` and `from_version` are required.
-If you skip `to_version` argument changes in `config.json` will be applied up to the latest version of Lisk Core.
+If you skip `to_version` argument changes in `config.json` will be applied up to the latest version of Klayr Core.
 If you do not specify `--output` path, the final `config.json` will be printed to stdout.
-If you do not specify `--network` argument it will have to be loaded from `LISK_NETWORK` env variable.
+If you do not specify `--network` argument it will have to be loaded from `KLAYR_NETWORK` env variable.
 
 == Advanced Commands
 
-The advanced commands which can be used to manage your Lisk node, can be seen in the commands reference list below:
+The advanced commands which can be used to manage your Klayr node, can be seen in the commands reference list below:
 
 === Create Snapshot
 
 The snapshot script is used to take a backup of the whole blockchain.
 A snapshot can be used to speed up the sync process, instead of having to validate all of the transactions starting from block height 0 to the current block height.
-Lisk provides official snapshots of the blockchain, which can be seen here: http://snapshots.lisk.io.
+Klayr provides official snapshots of the blockchain, which can be seen here: http://snapshots.klayr.io.
 
 In case you wish to create your own snapshot, the following script listed below can be executed which will perform the following:
 
-. The creation of a full database dump of the Lisk Blockchain.
+. The creation of a full database dump of the Klayr Blockchain.
 . The validation of the correctness of the blockchain.
 . Finally, the results will be compressed and saved.
 
@@ -161,23 +161,23 @@ NOTE: This process may take a long time depending on the size of the snapshot.
 
 [source,bash]
 ----
-bash lisk_snapshot.sh
+bash klayr_snapshot.sh
 ----
 
 === Rebuild from Snapshot
 
-To replace the blockchain with a new snapshot from the Lisk Foundation, execute the following:
+To replace the blockchain with a new snapshot from the Klayr Foundation, execute the following:
 
 [source,bash]
 ----
-bash lisk.sh rebuild
+bash klayr.sh rebuild
 ----
 
 ==== Rebuild from a local snapshot
 
 [source,bash]
 ----
-bash lisk.sh rebuild -f blockchain.db.gz
+bash klayr.sh rebuild -f blockchain.db.gz
 ----
 
 ==== Rebuild from a remote hosts snapshot
@@ -186,58 +186,58 @@ If the file is named `blockchain.db.gz`, please execute the following command:
 
 [source,bash]
 ----
-bash lisk.sh rebuild -u https://hostname/
+bash klayr.sh rebuild -u https://hostname/
 ----
 
 To use a remote host snapshot with a different name, execute the following command instead:
 
 [source,bash]
 ----
-bash lisk.sh rebuild -u https://hostname/ -f filename.db.gz
+bash klayr.sh rebuild -u https://hostname/ -f filename.db.gz
 ----
 
 ==== Rebuild from the genesis block
 
 [source,bash]
 ----
-bash lisk.sh rebuild -0
+bash klayr.sh rebuild -0
 ----
 
 === Start node only
 
 This command is used to start individual Node.JS processes apart from the database.
-It is designed to be used with customized `config.json` files to manage vertically stacked Lisk processes on one node.
+It is designed to be used with customized `config.json` files to manage vertically stacked Klayr processes on one node.
 
 [source,bash]
 ----
-bash lisk.sh start_node -c <config.json>
+bash klayr.sh start_node -c <config.json>
 ----
 
 === Stop node only
 
 This command is used to stop individual Node.JS processes apart from the database.
-It is designed to be used with customized `config.json` files to manage vertically stacked Lisk processes on one node.
+It is designed to be used with customized `config.json` files to manage vertically stacked Klayr processes on one node.
 
 [source,bash]
 ----
-bash lisk.sh stop_node -c <config.json>
+bash klayr.sh stop_node -c <config.json>
 ----
 
 === Start database
 
-This command is used to start database instances apart from the Lisk process.
+This command is used to start database instances apart from the Klayr process.
 It is designed to be used with customized `config.json` files to target specific instances.
 
 [source,bash]
 ----
-bash lisk.sh start_db -c <config.json>
+bash klayr.sh start_db -c <config.json>
 ----
 
 === Stop database only
 
-This command is used to stop all database instances apart from the Lisk process.
+This command is used to stop all database instances apart from the Klayr process.
 
 [source,bash]
 ----
-bash lisk.sh stop_db
+bash klayr.sh stop_db
 ----

@@ -25,21 +25,21 @@
     "components": { <16>
         "logger": { <17>
             "fileLogLevel": "debug", <18>
-            "logFileName": "logs/devnet/lisk.log", <19>
+            "logFileName": "logs/devnet/klayr.log", <19>
             "consoleLogLevel": "info" <20>
         },
         "storage": { <21>
-            "database": "lisk_dev", <22>
+            "database": "klayr_dev", <22>
             "host": "localhost", <23>
             "port": 5432, <24>
-            "user": "lisk", <25>
+            "user": "klayr", <25>
             "password": "password", <26>
             "min": 10, <27>
             "max": 95, <28>
             "poolIdleTimeout": 30000, <29>
             "reapIntervalMillis": 1000, <30>
             "logEvents": ["error"], <31>
-            "logFileName": "logs/lisk_db.log" <32>
+            "logFileName": "logs/klayr_db.log" <32>
         },
         "cache": { <33>
             "db": 0, <34>
@@ -63,8 +63,8 @@
                 "options": {
                     "port": 443, <49>
                     "address": "0.0.0.0", <50>
-                    "key": "./ssl/lisk.key", <51>
-                    "cert": "./ssl/lisk.crt" <52>
+                    "key": "./ssl/klayr.key", <51>
+                    "cert": "./ssl/klayr.crt" <52>
                 }
             },
             "options": {
@@ -190,7 +190,7 @@
 <18> Minimum loglevel, that should be logged in the log file.
 Available values: trace, debug, log, info(default), warn, error, fatal, none.
 <19> Define name and path of the log file.
-Default: logs/lisk.log.
+Default: logs/klayr.log.
 <20> Minimum loglevel, that should be logged in the console when starting the node.
 Available values: trace, debug, log, info, warn, error, fatal, none(default).
 <21> Contains options for the storage component.
@@ -224,12 +224,12 @@ If true, client IP addresses are understood as the left-most entry in the X-Forw
 <44> Contains API access options.
 <45> If true, the API endpoints of the node are available to public.
 <46> This parameter allows connections to the API by IP. Defaults to only allow local host.
-<47> Options for enabling SSL with Lisk Core, (alternative to enabling SSL through a Webserver).
+<47> Options for enabling SSL with Klayr Core, (alternative to enabling SSL through a Webserver).
 <48> Enables SSL for HTTP requests - Default is false.
-<49> Port to host the Lisk Wallet on, default is 443 but is recommended to use a port above 1024 with iptables.
-<50> Interface to listen on for the Lisk Wallet.
+<49> Port to host the Klayr Wallet on, default is 443 but is recommended to use a port above 1024 with iptables.
+<50> Interface to listen on for the Klayr Wallet.
 <51> Required private key to decrypt and verify the SSL Certificate.
-<52> SSL certificate to use with the Lisk Wallet.
+<52> SSL certificate to use with the Klayr Wallet.
 <53> Limits for API connections.
 <54> Maximum of API connections.
 <55> Minimum delay between API calls in ms.
@@ -263,7 +263,7 @@ To successfully enable forging for a delegate, the publickey and the encrypted p
 If this value is defined, the node will start and rebuild up to the defined round, (set to 0 to rebuild until current round).
 Otherwise, the application continues normal execution.
 <80> Define network specific exceptions.
-More details about exceptions: https://github.com/LiskHQ/lisk-core/blob/v2.1.0/EXCEPTIONS.md
+More details about exceptions: https://github.com/KlayrHQ/klayr-core/blob/v2.1.0/EXCEPTIONS.md
 <81> Contains network options for the node.
 <82> Websocket port of the node.
 <83> The host IP which the P2P server should listen on for inbound connections.

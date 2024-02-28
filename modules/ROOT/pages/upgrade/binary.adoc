@@ -1,29 +1,29 @@
-= Lisk Core Binary Upgrade
+= Klayr Core Binary Upgrade
 Mona Bärenfänger <mona@lightcurve.io>
-:description: The Lisk Core Binary Upgrade page describes how to upgrade Lisk Core to the latest version.
+:description: The Klayr Core Binary Upgrade page describes how to upgrade Klayr Core to the latest version.
 :toc:
 :experimental:
 :v_sdk: master
 
-To upgrade Lisk Core from Binary please follow the instructions below.
+To upgrade Klayr Core from Binary please follow the instructions below.
 Please choose the instructions specific to the network (Mainnet or Testnet) your node is connected to.
 
-== Upgrade with Lisk Commander
+== Upgrade with Klayr Commander
 
-IMPORTANT: The `core:upgrade` command is only supported for Lisk Core versions > `2.0.0` and will only work, if Lisk Core has been installed with Lisk Commander before.
+IMPORTANT: The `core:upgrade` command is only supported for Klayr Core versions > `2.0.0` and will only work, if Klayr Core has been installed with Klayr Commander before.
 
-First, go into the directory, where your Lisk Core installation is located.
+First, go into the directory, where your Klayr Core installation is located.
 
-Then, run the following command to upgrade Lisk Core:
+Then, run the following command to upgrade Klayr Core:
 
 [source,bash]
 ----
-lisk core:upgrade <location>
+klayr core:upgrade <location>
 ----
 
-Where `<location>` should be the root folder of your Lisk Core installation.
+Where `<location>` should be the root folder of your Klayr Core installation.
 
-See for all available options the Lisk Commander xref:{v_sdk}@lisk-sdk::lisk-commander/user-guide/lisk-core.adoc[Command reference for Lisk Core] as well as the xref:{v_sdk}@lisk-sdk::lisk-commander/user-guide/commands.adoc[general Command reference] .
+See for all available options the Klayr Commander xref:{v_sdk}@klayr-sdk::klayr-commander/user-guide/klayr-core.adoc[Command reference for Klayr Core] as well as the xref:{v_sdk}@klayr-sdk::klayr-commander/user-guide/commands.adoc[general Command reference] .
 
 == Upgrade with bash script
 
@@ -32,9 +32,9 @@ See for all available options the Lisk Commander xref:{v_sdk}@lisk-sdk::lisk-com
 [source,bash]
 ----
 cd ~
-rm -f installLisk.sh
-wget https://downloads.lisk.io/lisk/main/installLisk.sh
-bash installLisk.sh upgrade -r main
+rm -f installKlayr.sh
+wget https://downloads.klayr.io/klayr/main/installKlayr.sh
+bash installKlayr.sh upgrade -r main
 ----
 
 === Testnet
@@ -42,12 +42,12 @@ bash installLisk.sh upgrade -r main
 [source,bash]
 ----
 cd ~
-rm -f installLisk.sh
-wget https://downloads.lisk.io/lisk/test/installLisk.sh
-bash installLisk.sh upgrade -r test
+rm -f installKlayr.sh
+wget https://downloads.klayr.io/klayr/test/installKlayr.sh
+bash installKlayr.sh upgrade -r test
 ----
 
-After running the above script manually or through `lisk_bridge.sh`, you will be prompted to pick from a few options.
+After running the above script manually or through `klayr_bridge.sh`, you will be prompted to pick from a few options.
 Please read these thoroughly and follow the steps.
 
 [NOTE]
@@ -56,9 +56,9 @@ You have to enable forging manually after the upgrade.
 Please follow this guide to xref:configuration.adoc#_forging[enable forging on your delegate node] for further details.
 ====
 
-== Manual Upgrade Lisk Core
+== Manual Upgrade Klayr Core
 
-Switch to your Lisk folder and stop Lisk processes:
+Switch to your Klayr folder and stop Klayr processes:
 
 [tabs]
 ====
@@ -68,8 +68,8 @@ Mainnet::
 [source,bash]
 ----
 cd ~
-cd lisk-main
-bash lisk.sh stop
+cd klayr-main
+bash klayr.sh stop
 ----
 --
 Testnet::
@@ -78,8 +78,8 @@ Testnet::
 [source,bash]
 ----
 cd ~
-cd lisk-test
-bash lisk.sh stop
+cd klayr-test
+bash klayr.sh stop
 ----
 --
 ====
@@ -93,7 +93,7 @@ cp -f ./ssl/* ~/backup/
 cp -f ./config.json ~/backup/
 ----
 
-Remove your old Lisk folder and install script:
+Remove your old Klayr folder and install script:
 
 [tabs]
 ====
@@ -103,8 +103,8 @@ Mainnet::
 [source,bash]
 ----
 cd ~
-rm -rf ~/lisk-main
-rm -rf installLisk.sh
+rm -rf ~/klayr-main
+rm -rf installKlayr.sh
 ----
 --
 Testnet::
@@ -113,8 +113,8 @@ Testnet::
 [source,bash]
 ----
 cd ~
-rm -rf ~/lisk-test
-rm -rf installLisk.sh
+rm -rf ~/klayr-test
+rm -rf installKlayr.sh
 ----
 --
 ====
@@ -128,7 +128,7 @@ Mainnet::
 --
 [source,bash]
 ----
-wget https://downloads.lisk.io/lisk/main/installLisk.sh
+wget https://downloads.klayr.io/klayr/main/installKlayr.sh
 ----
 --
 Testnet::
@@ -136,12 +136,12 @@ Testnet::
 --
 [source,bash]
 ----
-wget https://downloads.lisk.io/lisk/test/installLisk.sh
+wget https://downloads.klayr.io/klayr/test/installKlayr.sh
 ----
 --
 ====
 
-Install the latest version of Lisk:
+Install the latest version of Klayr:
 
 [tabs]
 ====
@@ -150,7 +150,7 @@ Mainnet::
 --
 [source,bash]
 ----
-bash installLisk.sh install -r main
+bash installKlayr.sh install -r main
 ----
 --
 Testnet::
@@ -158,7 +158,7 @@ Testnet::
 --
 [source,bash]
 ----
-bash installLisk.sh install -r test
+bash installKlayr.sh install -r test
 ----
 --
 ====

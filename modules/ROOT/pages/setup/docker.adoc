@@ -1,12 +1,12 @@
-= Lisk Core Docker Setup
+= Klayr Core Docker Setup
 Mona Bärenfänger <mona@lightcurve.io>
-:description: The Lisk Core Docker Setup describes all necessary steps and requirements to install the Lisk SDK with Docker.
+:description: The Klayr Core Docker Setup describes all necessary steps and requirements to install the Klayr SDK with Docker.
 :toc:
 
 == Pre-install
 
-This document will detail how to prepare a system to run Lisk Core as a Docker-based container.
-To run Lisk in Docker a user must first install the Docker Engine.
+This document will detail how to prepare a system to run Klayr Core as a Docker-based container.
+To run Klayr in Docker a user must first install the Docker Engine.
 Additionally, it is recommended to install Docker Compose for convenience.
 
 Determine if your platform can run Docker.
@@ -59,20 +59,20 @@ include::partial$create-a-new-user.adoc[]
 
 === Get configuration and Makefile
 
-Clone the https://github.com/LiskHQ/lisk-core[Lisk Core Repository].
+Clone the https://github.com/KlayrHQ/klayr-core[Klayr Core Repository].
 
 [source,bash]
 ----
-sudo -u lisk -i                                    <1>
-git clone https://github.com/LiskHQ/lisk-core.git  <2>
-cd lisk-core/docker                                <3>
+sudo -u klayr -i                                    <1>
+git clone https://github.com/KlayrHQ/klayr-core.git  <2>
+cd klayr-core/docker                                <3>
 git checkout master                                <4>
 ----
 
-<1> switch to lisk user
+<1> switch to klayr user
 <2> clone the repository
 <3> navigate into docker directory
-<4> checkout master branch for last stable version of Lisk Core
+<4> checkout master branch for last stable version of Klayr Core
 
 It contains a directory `docker` with the following files:
 
@@ -80,7 +80,7 @@ It contains a directory `docker` with the following files:
 * `.env.mainnet`
 * `.env.testnet`
 * `docker-compose.make.yml`: used by `make coldstart`.
-* `docker-compose.override.yml`: use this file to overwrite `LISK_` variables (empty by default).
+* `docker-compose.override.yml`: use this file to overwrite `KLAYR_` variables (empty by default).
 * `docker-compose.redis.yml`: enable cache (optional).
 * `docker-compose.yml`
 * `Makefile`
@@ -89,13 +89,13 @@ The `.env`-files are templates with network specific environment variables.
 
 === Set environment variables
 
-To connect to the Lisk network, the environment variables need to be set accordingly.
+To connect to the Klayr network, the environment variables need to be set accordingly.
 
 Before setting the variables, you may want to edit them in the respective `.env.<network>` file.
 
-It is recommended to change the password for the database, which is stored in `ENV_LISK_DB_PASSWORD`.
+It is recommended to change the password for the database, which is stored in `ENV_KLAYR_DB_PASSWORD`.
 
-To install a specific version of Lisk Core, set the `ENV_LISK_VERSION` to the respective version.
+To install a specific version of Klayr Core, set the `ENV_KLAYR_VERSION` to the respective version.
 
 After adjusting them, copy the environment variables to a file called `.env`:
 
@@ -104,7 +104,7 @@ After adjusting them, copy the environment variables to a file called `.env`:
 cp .env.<network> .env
 ----
 
-Where `<network>` stands for the Lisk network you want to connect to.
+Where `<network>` stands for the Klayr network you want to connect to.
 
 === Coldstart application
 
@@ -141,8 +141,8 @@ docker-compose ps    <2>
 docker-compose logs  <3>
 ----
 
-<1> initialize Lisk Core
-<2> see the status of Lisk Core
+<1> initialize Klayr Core
+<2> see the status of Klayr Core
 <3> see logs
 
 === Verify
@@ -151,7 +151,7 @@ As final step, verify your node is connected and in sync with the network, e.g.�
 
 [source,bash]
 ----
-docker-compose exec lisk curl http://localhost:<PORT>/api/node/status --header "accept: application/json"
+docker-compose exec klayr curl http://localhost:<PORT>/api/node/status --header "accept: application/json"
 ----
 
 Where `<PORT>` is the network specific `httpPort` of your node.
@@ -185,7 +185,7 @@ The result should look like this:
 
 When your node is synced, the values of `networkHeight` and `height` should be (nearly) equal.
 
-To fully verify that your node is in sync with the network, go to the https://explorer.lisk.io/[Lisk Explorer(Mainnet)] or https://testnet-explorer.lisk.io/[Lisk Explorer(Testnet)] and compare the Network height in the explorer with the height of your node.
+To fully verify that your node is in sync with the network, go to the https://explorer.klayr.io/[Klayr Explorer(Mainnet)] or https://testnet-explorer.klayr.io/[Klayr Explorer(Testnet)] and compare the Network height in the explorer with the height of your node.
 Again, they should be (nearly) equal.
 
 If needed, use the different Explorer tools for further verification, like comparing the last forged blocks on the chain.
@@ -198,11 +198,11 @@ As next step, check out xref:administration/docker.adoc[Docker Administration] t
 
 === Ubuntu
 
-You may want to set up a service for Lisk Core, that takes care of
+You may want to set up a service for Klayr Core, that takes care of
 restarting it automatically after server restarts:
 
 ....
-# /etc/systemd/system/docker-compose-lisk.service
+# /etc/systemd/system/docker-compose-klayr.service
 
 [Unit]
 Description=Docker Compose Application Service
@@ -210,7 +210,7 @@ Requires=docker.service
 After=docker.service
 
 [Service]
-WorkingDirectory=/home/lisk/lisk-core/docker/testnet/
+WorkingDirectory=/home/klayr/klayr-core/docker/testnet/
 ExecStart=/usr/local/bin/docker-compose up
 TimeoutStartSec=0
 Restart=on-failure
@@ -224,22 +224,22 @@ WantedBy=multi-user.target
 [NOTE]
 ====
 *For delegates:* You still need to enable forging manually after a
-restart of Lisk Core.
+restart of Klayr Core.
 ====
 
 To enable the service, run:
 
 [source,bash]
 ----
-systemctl enable docker-compose-lisk
+systemctl enable docker-compose-klayr
 ----
 
 Check the service by running:
 
 [source,bash]
 ----
-systemctl status docker-compose-lisk.service <1>
-sudo journalctl -u docker-compose-lisk.service <2>
+systemctl status docker-compose-klayr.service <1>
+sudo journalctl -u docker-compose-klayr.service <2>
 ----
 
 <1> display the status of the service

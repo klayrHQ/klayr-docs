@@ -1,15 +1,15 @@
-= Lisk Core Docker Administration
+= Klayr Core Docker Administration
 Mona Bärenfänger <mona@lightcurve.io>
-:description: The Lisk Core Docker Administration describes all relevant commands to manage Lisk Core with Docker.
+:description: The Klayr Core Docker Administration describes all relevant commands to manage Klayr Core with Docker.
 :toc:
 
-This section details how to work with a Docker-based Lisk Core installation, and covers the available basic commands which can be used to manage your Docker-based Lisk node.
+This section details how to work with a Docker-based Klayr Core installation, and covers the available basic commands which can be used to manage your Docker-based Klayr node.
 For more details, please see all the command references listed below.
 In addition, a summary of all commands and associated flags is also provided here for advanced users.
 
 == Basic Commands
 
-IMPORTANT: The following commands listed below must be executed inside the `docker` directory of your Lisk Core installation:
+IMPORTANT: The following commands listed below must be executed inside the `docker` directory of your Klayr Core installation:
 
 === Status
 
@@ -22,21 +22,21 @@ docker-compose ps
 
 [source,bash]
 ----
-docker-compose start lisk
+docker-compose start klayr
 ----
 
 === Stop
 
 [source,bash]
 ----
-docker-compose stop lisk
+docker-compose stop klayr
 ----
 
 === Restart
 
 [source,bash]
 ----
-docker-compose restart lisk
+docker-compose restart klayr
 ----
 
 === Reset / Coldstart
@@ -55,18 +55,18 @@ docker-compose logs
 
 === Run a command
 
-To run a command in the container where your Lisk Core node is running, please use the following: https://docs.docker.com/compose/reference/exec/[docker-compose exec].
+To run a command in the container where your Klayr Core node is running, please use the following: https://docs.docker.com/compose/reference/exec/[docker-compose exec].
 
 [source,bash]
 ----
-docker-compose exec lisk curl "http://localhost:7000/api/node/status" --header "accept: application/json" <1>
+docker-compose exec klayr curl "http://localhost:7000/api/node/status" --header "accept: application/json" <1>
 ----
 
 <1> Example: How to make an API request to your node.
 
 == Configuration
 
-Lisk Core normally gets configured by providing a suited xref:configuration.adoc[configuration file].
+Klayr Core normally gets configured by providing a suited xref:configuration.adoc[configuration file].
 However it should be noted that this is not convenient in a Docker installation.
 Instead, environment variables can be used to change values in the configuration.
 To perform this, open the `.env` file, that was created during the xref:setup/docker.adoc#_installation[docker installation], and adjust the values to your requirements.
@@ -75,12 +75,12 @@ All names of the environment variables start with `ENV_` prefix.
 == Advanced configuration
 
 For advanced configuration, please open the following: `docker/docker-compose.override.yml`.
-Configuration variables always start with `LISK_` and are mapped to their path in `+config.json+`.
+Configuration variables always start with `KLAYR_` and are mapped to their path in `+config.json+`.
 These can be changed directly in the file if necessary.
-For example, the value of `+redis.db.host+` can be changed by setting the `LISK_REDIS_DB_HOST` environment variable.
+For example, the value of `+redis.db.host+` can be changed by setting the `KLAYR_REDIS_DB_HOST` environment variable.
 If you are unsure what variable name to use, refer to the xref:configuration.adoc#_command_line_options[list of command line options].
 
-After editing the variables, re-initialize Lisk Core.
+After editing the variables, re-initialize Klayr Core.
 It will read both the `docker-compose.yml` and your customized `docker-compose.override.yml` file:
 
 [source,bash]
@@ -113,10 +113,10 @@ In addition, please note that the variables inside `docker-compose.redis.yml` ca
 version: "3"
 services:
 
-  lisk:
+  klayr:
     ports:
-      - ${ENV_LISK_HTTP_PORT}
-      - ${ENV_LISK_WS_PORT}
+      - ${ENV_KLAYR_HTTP_PORT}
+      - ${ENV_KLAYR_WS_PORT}
 ....
 
 ==== Increase log level to debug, enable public API:
@@ -127,10 +127,10 @@ services:
 version: "3"
 services:
 
-  lisk:
+  klayr:
     environment:
-      - LISK_CONSOLE_LOG_LEVEL=debug
-      - LISK_API_PUBLIC=true
+      - KLAYR_CONSOLE_LOG_LEVEL=debug
+      - KLAYR_API_PUBLIC=true
 ....
 
 ==== Add forging delegates and whitelist IPs:
@@ -141,11 +141,11 @@ services:
 version: "3"
 services:
 
-  lisk:
+  klayr:
     environment:
-      - LISK_FORGING_DELEGATES=publicKey1|encryptedPassphrase1,publicKey2|encryptedPassphrase2
-      - LISK_API_WHITELIST=127.0.0.1,172.17.0.1
-      - LISK_FORGING_WHITELIST=127.0.0.1,172.17.0.1
+      - KLAYR_FORGING_DELEGATES=publicKey1|encryptedPassphrase1,publicKey2|encryptedPassphrase2
+      - KLAYR_API_WHITELIST=127.0.0.1,172.17.0.1
+      - KLAYR_FORGING_WHITELIST=127.0.0.1,172.17.0.1
 ....
 
 == Sync from a snapshot
@@ -157,7 +157,7 @@ While syncing from a snapshot, your node will only validate the blocks with a hi
 
 [NOTE]
 ====
-Lisk provides https://downloads.lisk.io/lisk/[official snapshots] that will be used during the automated synching process.
+Klayr provides https://downloads.klayr.io/klayr/[official snapshots] that will be used during the automated synching process.
 If you wish to use third-party snapshots, please ensure they are from a reliable source.
 ====
 
@@ -165,7 +165,7 @@ If you wish to use third-party snapshots, please ensure they are from a reliable
 
 [source,bash]
 ----
-cd lisk/docker  <1>
+cd klayr/docker  <1>
 make coldstart  <2>
 ----
 
@@ -181,28 +181,28 @@ The URL can be substituted for another `blockchain.db.gz` snapshot file if so de
 
 In this following example it is expected that the environment variables will equal the following values listed below:
 
-* `ENV_LISK_NETWORK=mainnet`
-* `ENV_LISK_DB_DATABASE=lisk`
+* `ENV_KLAYR_NETWORK=mainnet`
+* `ENV_KLAYR_DB_DATABASE=klayr`
 
 [source,bash]
 ----
-cd lisk/docker            <1>
-curl --output main_blockchain.db.gz https://downloads.lisk.io/lisk/main/blockchain.db.gz  <2>
+cd klayr/docker            <1>
+curl --output main_blockchain.db.gz https://downloads.klayr.io/klayr/main/blockchain.db.gz  <2>
 docker-compose up -d      <3>
-docker-compose stop lisk  <4>
+docker-compose stop klayr  <4>
 docker-compose start db   <5>
-docker-compose -f docker-compose.yml -f docker-compose.make.yml run --rm db-task dropdb --if-exists lisk <6>
-docker-compose -f docker-compose.yml -f docker-compose.make.yml run --rm db-task createdb lisk           <7>
+docker-compose -f docker-compose.yml -f docker-compose.make.yml run --rm db-task dropdb --if-exists klayr <6>
+docker-compose -f docker-compose.yml -f docker-compose.make.yml run --rm db-task createdb klayr           <7>
 gzip --decompress --to-stdout main_blockchain.db.gz | docker-compose -f docker-compose.yml -f docker-compose.make.yml run --rm db-task psql >/dev/null <8>
-docker-compose start lisk <9>
+docker-compose start klayr <9>
 ----
 
 <1> Navigates into the docker directory.
 <2> Downloads and saves the blockchain snapshot.
-<3> Initializes Lisk and postgreSQL.
-<4> Stops Lisk Core.
+<3> Initializes Klayr and postgreSQL.
+<4> Stops Klayr Core.
 <5> Starts postgreSQL.
 <6> Drops the old database.
 <7> Creates a fresh database.
 <8> Imports a snapshot into the database.
-<9> Starts the Lisk container.
+<9> Starts the Klayr container.

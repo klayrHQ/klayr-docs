@@ -1,18 +1,18 @@
-= Lisk Core with Lisk Commander Administration
+= Klayr Core with Klayr Commander Administration
 Mona Bärenfänger <mona@lightcurve.io>
-:description: The Lisk Core Commander Administration describes all relevant commands to manage Lisk Core through the Command-line with Lisk Commander.
+:description: The Klayr Core Commander Administration describes all relevant commands to manage Klayr Core through the Command-line with Klayr Commander.
 :toc:
 
-This section covers how to work with a Binary installation of Lisk Core.
+This section covers how to work with a Binary installation of Klayr Core.
 Further information can be found by referring to the following commands reference list.
 
 == Basic Commands
 
-The available basic commands which can be used to manage your Lisk node are displayed here below:
+The available basic commands which can be used to manage your Klayr node are displayed here below:
 
 === Install
 
-NOTE: For more information, please see the xref:setup/commander.adoc[Setup page of Lisk Core with Lisk Commander].
+NOTE: For more information, please see the xref:setup/commander.adoc[Setup page of Klayr Core with Klayr Commander].
 
 [tabs]
 ====
@@ -21,7 +21,7 @@ Mainnet::
 --
 [source,bash]
 ----
-lisk core:install lisk-mainnet
+klayr core:install klayr-mainnet
 ----
 --
 Testnet::
@@ -29,7 +29,7 @@ Testnet::
 --
 [source,bash]
 ----
-lisk core:install --network=testnet lisk-testnet
+klayr core:install --network=testnet klayr-testnet
 ----
 --
 ====
@@ -43,7 +43,7 @@ Mainnet::
 --
 [source,bash]
 ----
-lisk core:uninstall lisk-mainnet
+klayr core:uninstall klayr-mainnet
 ----
 --
 Testnet::
@@ -51,14 +51,14 @@ Testnet::
 --
 [source,bash]
 ----
-lisk core:uninstall lisk-testnet
+klayr core:uninstall klayr-testnet
 ----
 --
 ====
 
 === Status
 
-Check the status of the Lisk Core Node.
+Check the status of the Klayr Core Node.
 
 [tabs]
 ====
@@ -67,7 +67,7 @@ Mainnet::
 --
 [source,bash]
 ----
-lisk core:status lisk-mainnet
+klayr core:status klayr-mainnet
 ----
 --
 Testnet::
@@ -75,14 +75,14 @@ Testnet::
 --
 [source,bash]
 ----
-lisk core:status lisk-testnet
+klayr core:status klayr-testnet
 ----
 --
 ====
 
 === Upgrade
 
-NOTE: For more information, please see the xref:upgrade/commander.adoc[Upgrade page of Lisk Core with Lisk Commander].
+NOTE: For more information, please see the xref:upgrade/commander.adoc[Upgrade page of Klayr Core with Klayr Commander].
 
 [tabs]
 ====
@@ -91,7 +91,7 @@ Mainnet::
 --
 [source,bash]
 ----
-lisk core:upgrade lisk-mainnet
+klayr core:upgrade klayr-mainnet
 ----
 --
 Testnet::
@@ -99,14 +99,14 @@ Testnet::
 --
 [source,bash]
 ----
-lisk core:upgrade lisk-testnet
+klayr core:upgrade klayr-testnet
 ----
 --
 ====
 
 === Start
 
-Start Lisk Core and PostgreSQL.
+Start Klayr Core and PostgreSQL.
 
 [tabs]
 ====
@@ -115,7 +115,7 @@ Mainnet::
 --
 [source,bash]
 ----
-lisk core:start lisk-mainnet
+klayr core:start klayr-mainnet
 ----
 --
 Testnet::
@@ -123,14 +123,14 @@ Testnet::
 --
 [source,bash]
 ----
-lisk core:start lisk-testnet
+klayr core:start klayr-testnet
 ----
 --
 ====
 
 === Stop
 
-Stop Lisk Core and PostgreSQL.
+Stop Klayr Core and PostgreSQL.
 
 [tabs]
 ====
@@ -139,7 +139,7 @@ Mainnet::
 --
 [source,bash]
 ----
-lisk core:stop lisk-mainnet
+klayr core:stop klayr-mainnet
 ----
 --
 Testnet::
@@ -147,14 +147,14 @@ Testnet::
 --
 [source,bash]
 ----
-lisk core:stop lisk-testnet
+klayr core:stop klayr-testnet
 ----
 --
 ====
 
 === Restart
 
-Reload Lisk Core and pick up changes to config.json.
+Reload Klayr Core and pick up changes to config.json.
 
 [tabs]
 ====
@@ -163,7 +163,7 @@ Mainnet::
 --
 [source,bash]
 ----
-lisk core:restart lisk-mainnet
+klayr core:restart klayr-mainnet
 ----
 --
 Testnet::
@@ -171,14 +171,14 @@ Testnet::
 --
 [source,bash]
 ----
-lisk core:restart lisk-testnet
+klayr core:restart klayr-testnet
 ----
 --
 ====
 
 === Logs
 
-Monitor,(tail) the log file of Lisk.
+Monitor,(tail) the log file of Klayr.
 
 [tabs]
 ====
@@ -187,7 +187,7 @@ Mainnet::
 --
 [source,bash]
 ----
-lisk core:logs lisk-mainnet
+klayr core:logs klayr-mainnet
 ----
 --
 Testnet::
@@ -195,7 +195,7 @@ Testnet::
 --
 [source,bash]
 ----
-lisk core:logs lisk-testnet
+klayr core:logs klayr-testnet
 ----
 --
 ====
@@ -206,16 +206,16 @@ To access the Help menu please execute the following command listed below:
 
 [source,bash]
 ----
-lisk core
+klayr core
 ----
 
 == Advanced Commands
 
-The advanced commands which can be used to manage your Lisk node, can be seen in the commands reference list below:
+The advanced commands which can be used to manage your Klayr node, can be seen in the commands reference list below:
 
 === Start database only
 
-This command is used to start database instances apart from the Lisk process.
+This command is used to start database instances apart from the Klayr process.
 
 [tabs]
 ====
@@ -224,7 +224,7 @@ Mainnet::
 --
 [source,bash]
 ----
-lisk core:start:database lisk-mainnet
+klayr core:start:database klayr-mainnet
 ----
 --
 Testnet::
@@ -232,14 +232,14 @@ Testnet::
 --
 [source,bash]
 ----
-lisk core:start:database lisk-testnet
+klayr core:start:database klayr-testnet
 ----
 --
 ====
 
 === Stop database only
 
-This command is used to stop all database instances apart from the Lisk process.
+This command is used to stop all database instances apart from the Klayr process.
 
 [tabs]
 ====
@@ -248,7 +248,7 @@ Mainnet::
 --
 [source,bash]
 ----
-lisk core:stop:database lisk-mainnet
+klayr core:stop:database klayr-mainnet
 ----
 --
 Testnet::
@@ -256,14 +256,14 @@ Testnet::
 --
 [source,bash]
 ----
-lisk core:stop:database lisk-testnet
+klayr core:stop:database klayr-testnet
 ----
 --
 ====
 
 === Start cache only
 
-This command is used to start caching apart from the Lisk process.
+This command is used to start caching apart from the Klayr process.
 
 [tabs]
 ====
@@ -272,7 +272,7 @@ Mainnet::
 --
 [source,bash]
 ----
-lisk core:start:cache lisk-mainnet
+klayr core:start:cache klayr-mainnet
 ----
 --
 Testnet::
@@ -280,14 +280,14 @@ Testnet::
 --
 [source,bash]
 ----
-lisk core:start:cache lisk-testnet
+klayr core:start:cache klayr-testnet
 ----
 --
 ====
 
 === Stop cache only
 
-This command is used to stop all caching apart from the Lisk process.
+This command is used to stop all caching apart from the Klayr process.
 
 [tabs]
 ====
@@ -296,7 +296,7 @@ Mainnet::
 --
 [source,bash]
 ----
-lisk core:stop:cache lisk-mainnet
+klayr core:stop:cache klayr-mainnet
 ----
 --
 Testnet::
@@ -304,7 +304,7 @@ Testnet::
 --
 [source,bash]
 ----
-lisk core:stop:cache lisk-testnet
+klayr core:stop:cache klayr-testnet
 ----
 --
 ====

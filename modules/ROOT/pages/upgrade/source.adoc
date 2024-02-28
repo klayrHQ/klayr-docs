@@ -1,23 +1,23 @@
-= Lisk Core Source Upgrade
+= Klayr Core Source Upgrade
 Mona Bärenfänger <mona@lightcurve.io>
-:description: The Lisk Core Source Upgrade page describes how to upgrade Lisk Core to the latest version from source.
+:description: The Klayr Core Source Upgrade page describes how to upgrade Klayr Core to the latest version from source.
 :toc:
 
-This section details how to upgrade Lisk Core from source.
+This section details how to upgrade Klayr Core from source.
 
 . Stop the node:
 
 [source,bash]
 ----
-pm2 stop lisk
+pm2 stop klayr
 ----
 
 [start=2]
-. Pull the latest https://github.com/LiskHQ/lisk-core/releases[tagged release] using Git and install node modules.
+. Pull the latest https://github.com/KlayrHQ/klayr-core/releases[tagged release] using Git and install node modules.
 
 [source,bash]
 ----
-cd lisk <1>
+cd klayr <1>
 git fetch <2>
 git checkout vX.Y.Z -b vX.Y.Z <3>
 rm -rf node_modules <4>
@@ -25,9 +25,9 @@ npm ci <5>
 npm run build <6>
 ----
 
-<1> navigate into the root directory of Lisk Core
+<1> navigate into the root directory of Klayr Core
 <2> fetch newest releases
-<3> check out latest release tag, see https://github.com/LiskHQ/lisk-core/releases
+<3> check out latest release tag, see https://github.com/KlayrHQ/klayr-core/releases
 <4> remove old node modules
 <5> install node modules
 <6> compile packages
@@ -37,7 +37,7 @@ npm run build <6>
 
 [source,bash]
 ----
-pm2 start lisk
+pm2 start klayr
 ----
 
-NOTE: For delegates: You need to xref:configuration.adoc#_forging[enable forging] again after upgrading Lisk Core.
+NOTE: For delegates: You need to xref:configuration.adoc#_forging[enable forging] again after upgrading Klayr Core.

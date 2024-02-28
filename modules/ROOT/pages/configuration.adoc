@@ -1,19 +1,19 @@
-= Lisk Core Configuration
+= Klayr Core Configuration
 Mona Bärenfänger <mona@lightcurve.io>
-:description: This explains how to configure Lisk Core. All available command line and configuration options are listed, and also how to manage forging and logging of Lisk Core are clarified.
+:description: This explains how to configure Klayr Core. All available command line and configuration options are listed, and also how to manage forging and logging of Klayr Core are clarified.
 :toc:
 :source-highlighter: coderay
 :v_sdk: master
 
 [IMPORTANT]
 ====
-If you are using the Docker distribution, Lisk Core is configured in a slightly different manner.
-Please go to the xref:administration/docker.adoc#_configuration[Docker Administration] page to find out more about the docker-specific configuration of the Lisk Core.
+If you are using the Docker distribution, Klayr Core is configured in a slightly different manner.
+Please go to the xref:administration/docker.adoc#_configuration[Docker Administration] page to find out more about the docker-specific configuration of the Klayr Core.
 ====
 
 == Command Line Options
 
-Please note, there are numerous options available that can be deployed to override the configuration on the runtime whilst starting the Lisk Core.
+Please note, there are numerous options available that can be deployed to override the configuration on the runtime whilst starting the Klayr Core.
 
 To overwrite config options from the Command Line, execute the following commands below:
 
@@ -25,7 +25,7 @@ Pass options as ENV variables::
 
 [source,bash]
 ----
-LISK_NETWORK=[network] LISK_CONFIG_FILE=[config-path] LISK_ADDRESS=[address] LISK_WS_PORT=[port] pm2 start lisk
+KLAYR_NETWORK=[network] KLAYR_CONFIG_FILE=[config-path] KLAYR_ADDRESS=[address] KLAYR_WS_PORT=[port] pm2 start klayr
 ----
 
 --
@@ -51,7 +51,7 @@ TIP: All `ENV` variables are restricted with a operating system constraint of `E
 [NOTE]
 ====
 Comma-separated lists will replace the original config values.
-For example, If `LISK_PEERS` is specified, the original `peers.list` specific to the network will be replaced completely.
+For example, If `KLAYR_PEERS` is specified, the original `peers.list` specific to the network will be replaced completely.
 ====
 
 Each of these options listed below can be appended in the command line:
@@ -62,88 +62,88 @@ Each of these options listed below can be appended in the command line:
 
 | `--network` +
  `-n`
-| `LISK_NETWORK`
+| `KLAYR_NETWORK`
 |
 Any of these options can be used `devnet`, `alphanet`, `betanet`, `testnet` and `mainnet`.
 The default value is `devnet`.
 
 | `--config` +
 `-c`
-| `LISK_CONFIG_FILE`
+| `KLAYR_CONFIG_FILE`
 |Pass the custom configuration file, which will override values of the following: `config/default/config.json`.
 
 | `--port` +
 `-p`
-| `LISK_WS_PORT`
+| `KLAYR_WS_PORT`
 | TCP port for P2P layer
 
 | `--http-port` +
 `-h`
-| `LISK_HTTP_PORT`
+| `KLAYR_HTTP_PORT`
 | TCP port for HTTP API
 
 | `--address` +
 `-a`
-| `LISK_ADDRESS`
+| `KLAYR_ADDRESS`
 | Listening host name or IP
 
 | `--log` +
 `-l`
-| `LISK_FILE_LOG_LEVEL`
+| `KLAYR_FILE_LOG_LEVEL`
 | Log level for file output
 
-| | `LISK_CONSOLE_LOG_LEVEL`
+| | `KLAYR_CONSOLE_LOG_LEVEL`
 | Log level for console output
 
-| | `LISK_CACHE_ENABLED`
+| | `KLAYR_CACHE_ENABLED`
 | Enable or disable cache. Must be set to true/false
 
 | `--database` +
 `-d`
-| `LISK_DB_NAME`
+| `KLAYR_DB_NAME`
 | PostgreSQL database name to connect to
 
-| | `LISK_DB_HOST`
+| | `KLAYR_DB_HOST`
 | PostgreSQL database host name
 
-| | `LISK_DB_PORT`
+| | `KLAYR_DB_PORT`
 | PostgreSQL database port
 
-| | `LISK_DB_USER`
+| | `KLAYR_DB_USER`
 | PostgreSQL database username to connect to
 
-| | `LISK_DB_PASSWORD`
+| | `KLAYR_DB_PASSWORD`
 | PostgreSQL database password to connect to
 
 | `--redis` +
 `-r`
-| `LISK_REDIS_HOST`
+| `KLAYR_REDIS_HOST`
 | Redis host name
 
-| | `LISK_REDIS_PORT`
+| | `KLAYR_REDIS_PORT`
 | Redis port
 
-| | `LISK_REDIS_DB_NAME`
+| | `KLAYR_REDIS_DB_NAME`
 | Redis database name to connect to
 
-| | `LISK_REDIS_DB_PASSWORD`
+| | `KLAYR_REDIS_DB_PASSWORD`
 | Redis database password to connect to
 
 | `--peers` +
 `-p`
-| `LISK_PEERS`
+| `KLAYR_PEERS`
 | Comma separated list of peers to connect to in the following format `192.168.99.100:5000,172.169.99.77:5000`
 
-| | `LISK_API_PUBLIC`
+| | `KLAYR_API_PUBLIC`
 | Enable or disable public access of http API. Must be set to true/false
 
-| | `LISK_API_WHITELIST`
+| | `KLAYR_API_WHITELIST`
 | Comma separated list of IPs to enable API access. Format `192.168.99.100,172.169.99.77`
 
-| | `LISK_FORGING_DELEGATES`
+| | `KLAYR_FORGING_DELEGATES`
 | Comma separated list of delegates to load in the format `publicKey\|encryptedPassphrase,publicKey2\|encryptedPassphrase2`
 
-| | `LISK_FORGING_WHITELIST`
+| | `KLAYR_FORGING_WHITELIST`
 | Comma separated list of IPs to enable access to forging endpoints. Format `192.168.99.100,172.169.99.77`
 
 | `--rebuild` +
@@ -152,7 +152,7 @@ The default value is `devnet`.
 Must be followed by an integer, that specifies the last delegate round that should be part of the rebuild.
 If 0 is specified, all rounds are rebuilt.
 
-| | `LISK_CHILD_PROCESS_MODULES`
+| | `KLAYR_CHILD_PROCESS_MODULES`
 | Comma separated list of modules, that shall be loaded in a separate process.
 To enable inter process communication, set `ipc.enabled` to `true` inside the `config.json` file.
 |===
@@ -161,7 +161,7 @@ To enable inter process communication, set `ipc.enabled` to `true` inside the `c
 
 The root folder for all configurations is `config/`.
 The *default* network is `devnet`.
-To connect to another network, specify the `network` when starting the Lisk Core, as described in <<_command_line_options,Source Administration>>.
+To connect to another network, specify the `network` when starting the Klayr Core, as described in <<_command_line_options,Source Administration>>.
 The *network specific configurations* can be found under `config/<network>/config.json`, whereby `<network>` can be any of these values listed below:
 
 * `devnet`
@@ -172,7 +172,7 @@ The *network specific configurations* can be found under `config/<network>/confi
 
 [IMPORTANT]
 ====
-Do not override any value in the files mentioned above, as the changes will be overwritten everytime the Lisk Core is upgraded.
+Do not override any value in the files mentioned above, as the changes will be overwritten everytime the Klayr Core is upgraded.
 If a custom configuration is required, use the environment variables or alternatively create your own `.json` file and pass it as <<_command_line_options,command line option>>.
 ====
 
@@ -195,23 +195,23 @@ For *Source* distributions, the config file needs to be created seperately and n
 Binary::
 +
 --
-The binary script provides a custom `config.json` which is stored in the root folder of your Lisk Core installation by default.
+The binary script provides a custom `config.json` which is stored in the root folder of your Klayr Core installation by default.
 
-For example, Lisk Core for Mainnet is installed under `~/lisk-main`, and the config is stored directly in `~/lisk-main/config.json`
+For example, Klayr Core for Mainnet is installed under `~/klayr-main`, and the config is stored directly in `~/klayr-main/config.json`
 
 The config.json will be used automatically when reloading the node with the following command:
 
 [source,bash]
 ----
-bash lisk.sh reload
+bash klayr.sh reload
 ----
 --
 Commander::
 +
 --
-Lisk Commander provides a custom `config.json` which is stored in the root folder of your Lisk Core instance by default.
+Klayr Commander provides a custom `config.json` which is stored in the root folder of your Klayr Core instance by default.
 
-For example, Lisk Core for Mainnet is installed under `~/.lisk/instances/lisk-mainnet`, and the config is stored directly in `~/.lisk/instances/lisk-main/config.json`
+For example, Klayr Core for Mainnet is installed under `~/.klayr/instances/klayr-mainnet`, and the config is stored directly in `~/.klayr/instances/klayr-main/config.json`
 
 The config.json will be used automatically when reloading the node with the following command:
 --
@@ -220,10 +220,10 @@ Source::
 --
 [source,bash]
 ----
-pm2 stop lisk <1>
-LISK_CONFIG_FILE=<CONFIG_PATH> pm2 start lisk <2>
+pm2 stop klayr <1>
+KLAYR_CONFIG_FILE=<CONFIG_PATH> pm2 start klayr <2>
 ----
-<1> Stop Lisk Core in the case whereby it is running.
+<1> Stop Klayr Core in the case whereby it is running.
 <2> Replace `<CONFIG_PATH>` with the path to your custom config file.
 --
 =====
@@ -233,13 +233,13 @@ LISK_CONFIG_FILE=<CONFIG_PATH> pm2 start lisk <2>
 Configurations will be loaded in the following order listed below.
 Each configuration will override the previous one:
 
-. Default configuration values of modules and components of the xref:{v_sdk}@lisk-sdk::lisk-framework/index.adoc[Lisk Framework]
+. Default configuration values of modules and components of the xref:{v_sdk}@klayr-sdk::klayr-framework/index.adoc[Klayr Framework]
 . <<_network_specific_config_files, Network specific configuration file>>
 . A <<_command_line_options,custom configuration file>> (if specified by the user)
 . <<_command_line_options,Command line configurations>>, specified as command-line flags or `ENV` variables.
 
 For development purposes, use `devnet` as the network option.
-Other networks are specific to public Lisk networks.
+Other networks are specific to public Klayr networks.
 
 The `config.json` file and a description of each configurable parameter.
 
@@ -290,17 +290,17 @@ NOTE: This last configuration may prevent monitoring scripts from functioning.
 To enable your node to forge, firstly it is required to insert some encrypted data into the config file under the `chain.forging.delegates` array.
 To encrypt your passphrase, it is recommended to use one of the following alternatives listed below:
 
-* xref:{v_sdk}@lisk-sdk::lisk-commander/user-guide/commands.adoc[Lisk Commander] via `encrypt passphrase` command.
-* xref:{v_sdk}@lisk-sdk::lisk-elements/packages/cryptography.adoc[Cryptography module of Lisk Elements]
+* xref:{v_sdk}@klayr-sdk::klayr-commander/user-guide/commands.adoc[Klayr Commander] via `encrypt passphrase` command.
+* xref:{v_sdk}@klayr-sdk::klayr-elements/packages/cryptography.adoc[Cryptography module of Klayr Elements]
 
-The first alternative with the Lisk Commander is described in detail below.
-Please ensure the Lisk Commander is installed in a secure environment.
+The first alternative with the Klayr Commander is described in detail below.
+Please ensure the Klayr Commander is installed in a secure environment.
 Upon completion, please follow these commands to generate the encrypted passphrase:
 
 [source,bash]
 ----
-$ lisk
-lisk passphrase:encrypt --output-public-key
+$ klayr
+klayr passphrase:encrypt --output-public-key
 Please enter your secret passphrase: *****
 Please re-enter your secret passphrase: *****
 Please enter your password: ***
@@ -351,8 +351,8 @@ To successfully enable forging for a delegate, the public key and the encrypted 
 <6> Replace with the IP which will be used to access your node
 
 [arabic,start=4]
-. Reload your Lisk Core process to make the changes in the config effective.
-For example, for Binary install, run the following command: `bash lisk.sh reload`
+. Reload your Klayr Core process to make the changes in the config effective.
+For example, for Binary install, run the following command: `bash klayr.sh reload`
 
 === Check Forging
 
@@ -384,7 +384,7 @@ The result should appear as shown below in the following code snippet:
 
 === Enable/Disable Forging
 
-IMPORTANT: Remember that after restarting your Lisk node, it is necessary to re-enable forging again.
+IMPORTANT: Remember that after restarting your Klayr node, it is necessary to re-enable forging again.
 
 [TIP]
 ====
@@ -393,7 +393,7 @@ The endpoint to perform this action is *idempotent*.
 This means that the results are identical, regardless of how many times the query is executed.
 ====
 
-If your Lisk Node is running on a local machine, it is possible to enable forging through the API client, without any further interruption.
+If your Klayr Node is running on a local machine, it is possible to enable forging through the API client, without any further interruption.
 
 Use the following curl command to *enable the forging* for your delegate as shown below:
 
@@ -434,14 +434,14 @@ curl -X PUT \
 
 [TIP]
 ====
-It is recommended to use a webserver such as https://www.nginx.com/[NGINX] or https://httpd.apache.org/[Apache] to set up the SSL for the Lisk Core.
-If that opportunity is not available then it is also possible to configure the Lisk Core to handle SSL connections as described below:
+It is recommended to use a webserver such as https://www.nginx.com/[NGINX] or https://httpd.apache.org/[Apache] to set up the SSL for the Klayr Core.
+If that opportunity is not available then it is also possible to configure the Klayr Core to handle SSL connections as described below:
 ====
 
 [NOTE]
 ====
 This step requires a signed certificate, (from a CA, such as https://letsencrypt.org[Let’s Encrypt]) or a self-signed certificate.
-Both the private and public keys will be needed in a location that is accessible to Lisk Core.
+Both the private and public keys will be needed in a location that is accessible to Klayr Core.
 ====
 
 The following code snippet listed below displays the essential parameters required to enable SSL security on your node’s connections:
@@ -475,7 +475,7 @@ The following code snippet listed below displays the essential parameters requir
 
 WARNING: If the SSL Port configured above in `http_api.ssl.options.port` is a privileged port, (below 1024), then either the node must be allowed to use the specified port with `setcap`, or the configuration must be changed in order to to use a port outside of that range.
 
-*Setcap:* This is only required to grant Lisk access to port 443.
+*Setcap:* This is only required to grant Klayr access to port 443.
 
 [source,bash]
 ----
@@ -487,7 +487,7 @@ A secure SSL connection should now be visible.
 
 == Logging
 
-For monitoring or debugging your node, Lisk Core tracks all activities that occur within the node by creating applicable log messages.
+For monitoring or debugging your node, Klayr Core tracks all activities that occur within the node by creating applicable log messages.
 
 These log messages are grouped in different log levels.
 Hence, this makes it easy to define the level of the log details.
@@ -526,8 +526,8 @@ Each output source can be configured independently inside of `config.json` under
 
 ==== Console log stream
 
-The console log level displays the logs directly to the console from where the Lisk Core process is started.
-It is useful for quick debugging or verifying that Lisk Core starts correctly.
+The console log level displays the logs directly to the console from where the Klayr Core process is started.
+It is useful for quick debugging or verifying that Klayr Core starts correctly.
 Default log level for the console log stream is `none`.
 
 *An example command displaying the console log stream can be seen below:*
@@ -544,14 +544,14 @@ For more information regarding the Bunyan CLI tool, please refer to the official
 ==== File log stream
 
 All logs that have equal or higher log levels than the in `config.json` specified file log level are saved in a `.log`-file for further analysis.
-By default, the generated log files are saved inside of the `logs` folder of Lisk Core.
+By default, the generated log files are saved inside of the `logs` folder of Klayr Core.
 Default log level for the file log stream is `info`.
 
 The file log stream can be used to xref:monitoring.adoc#_log_monitoring[monitor the node via logs].
 
 === Logrotation
 
-It is recommended to set up some form of log rotation for the log files of Lisk Core.
+It is recommended to set up some form of log rotation for the log files of Klayr Core.
 If log rotation is not initiated, then the log files may grow very large over time, (depending on the specified file log level), and hence will eventually exceed the server's disk space limits.
 
 For example, Ubuntu systems  provide a service called `logrotate` specifically for this purpose.
@@ -562,12 +562,12 @@ Please ensure Logrotate is installed on your system as shown below:
 logrotate --version
 ----
 
-Now go to the logrotate config directory and create a new logrotate file for Lisk Core as shown below:
+Now go to the logrotate config directory and create a new logrotate file for Klayr Core as shown below:
 
 [source,bash]
 ----
 cd /etc/logrotate.d
-touch lisk
+touch klayr
 ----
 
 Inside this file, define the parameters for the log rotation.
@@ -576,7 +576,7 @@ Example values can be seen below:
 
 [source,bash]
 ----
-/path/to/lisk/logs/mainnet/*.log {
+/path/to/klayr/logs/mainnet/*.log {
         daily                   <1>
         rotate 5                <2>
         maxage 14               <3>
