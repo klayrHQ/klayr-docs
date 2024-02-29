@@ -1,5 +1,5 @@
-name: lisk-service
-title: Lisk Service
+name: klayr-service
+title: Klayr Service
 version: 'v0.6'
 display_version: '0.6'
 start_page: ROOT:index.adoc

@@ -1,13 +1,13 @@
 = Installation with Docker
 Mona Bärenfänger <mona@lightcurve.io>
-:description: Describes all necessary steps and requirements to install Lisk Service with Docker.
+:description: Describes all necessary steps and requirements to install Klayr Service with Docker.
 :toc:
 :experimental:
-:page-next: /lisk-service/configuration/docker.html
+:page-next: /klayr-service/configuration/docker.html
 :page-next-title: Configuration with Docker
 :sectnums:
 
-:url_github_service: https://github.com/LiskHQ/lisk-service
+:url_github_service: https://github.com/KlayrHQ/klayr-service
 :url_docker_hub: https://hub.docker.com/
 :url_docker_install_linux: https://docs.docker.com/engine/install
 :url_docker_install_linux_compose: https://docs.docker.com/compose/install/
@@ -18,57 +18,57 @@ Mona Bärenfänger <mona@lightcurve.io>
 
 :url_index_usage: index.adoc#usage
 :url_setup: setup/index.adoc
-:url_core_setup_npm: v3@lisk-core::setup/npm.adoc
+:url_core_setup_npm: v3@klayr-core::setup/npm.adoc
 :url_config: configuration/docker.adoc
 :url_management: management/docker.adoc
 :url_references_config: reference/configuration.adoc
 
-:url_core_setup_binary: v3@lisk-core::setup/binary.adoc
+:url_core_setup_binary: v3@klayr-core::setup/binary.adoc
 
-How to set up Lisk Service and connect it to a local Lisk Core node.
+How to set up Klayr Service and connect it to a local Klayr Core node.
 
-== Setting up Lisk Core
+== Setting up Klayr Core
 
-Lisk Service is installed in addition to a Lisk blockchain application such as Lisk Core, in order to provide enriched network data for third-party services.
+Klayr Service is installed in addition to a Klayr blockchain application such as Klayr Core, in order to provide enriched network data for third-party services.
 
-The first step is therefore to install Lisk Core.
+The first step is therefore to install Klayr Core.
 
-It is recommended to use NPM to conveniently install Lisk Core through the command line:
+It is recommended to use NPM to conveniently install Klayr Core through the command line:
 
 [source,bash]
 ----
-npm install --global --production lisk-core
+npm install --global --production klayr-core
 ----
 
-Check out the xref:{url_core_setup_npm}[Lisk Core NPM setup] guide for more information on how to install Lisk Core on your machine.
+Check out the xref:{url_core_setup_npm}[Klayr Core NPM setup] guide for more information on how to install Klayr Core on your machine.
 
-== Configuring Lisk Core
+== Configuring Klayr Core
 
-Use the Lisk Core CLI to start Lisk Core with the desired configurations.
+Use the Klayr Core CLI to start Klayr Core with the desired configurations.
 
-* The `--network` flag determines the blockchain network Lisk Core connects to.
+* The `--network` flag determines the blockchain network Klayr Core connects to.
 * `--api-ws` enables the WebSocket API of the node, if not already enabled within the config.json file.
-* `--api-ws-host=0.0.0.0` allows remote servers to connect to the Lisk Core WS API.
+* `--api-ws-host=0.0.0.0` allows remote servers to connect to the Klayr Core WS API.
 If this option is not set, it defaults to `127.0.0.1`.
 * `--api-ws-port=8080` the port for the WebSocket API.
 
 [source,bash]
 ----
-lisk-core start --network mainnet --api-ws --api-ws-host=0.0.0.0 --api-ws-port=8080
+klayr-core start --network mainnet --api-ws --api-ws-host=0.0.0.0 --api-ws-port=8080
 ----
 
 To connect to a different network, replace `mainnet` with either `testnet` or `devnet`.
 
-== Setting up Lisk Service
+== Setting up Klayr Service
 
 [IMPORTANT]
 ====
-It is strongly recommended to synchronize your Lisk Core node with the network **before** starting the Lisk Service.
+It is strongly recommended to synchronize your Klayr Core node with the network **before** starting the Klayr Service.
 ====
 
 === Prerequisites
 
-The following dependencies are required to install and run Lisk Service with Docker.
+The following dependencies are required to install and run Klayr Service with Docker.
 
 ==== Development tools
 
@@ -134,7 +134,7 @@ MacOS::
 
 ==== Open necessary ports
 
-Ensure the port which allows external services communication with the Lisk Service APIs is open.
+Ensure the port which allows external services communication with the Klayr Service APIs is open.
 
 - 9901: Default API port (HTTP & WebSocket)
 
@@ -144,33 +144,33 @@ Ensure the port which allows external services communication with the Lisk Servi
 sudo ufw allow 9901
 ----
 
-=== Installation of Lisk Service
+=== Installation of Klayr Service
 
-Clone the {url_github_service}[lisk-service^] GitHub repository and then navigate into the project folder.
+Clone the {url_github_service}[klayr-service^] GitHub repository and then navigate into the project folder.
 
-.In the directory where you want to store Lisk Service
+.In the directory where you want to store Klayr Service
 [source,bash]
 ----
-git clone https://github.com/LiskHQ/lisk-service.git
-cd lisk-service
+git clone https://github.com/KlayrHQ/klayr-service.git
+cd klayr-service
 git checkout v0.6.6
 ----
 
-== Build Lisk Service
+== Build Klayr Service
 
-Build Lisk Service from local files:
+Build Klayr Service from local files:
 
-./lisk-service/
+./klayr-service/
 [source,bash]
 ----
 make build
 ----
 
-Lisk Service is now ready to use on your machine.
+Klayr Service is now ready to use on your machine.
 
 TIP: If you skipped the step to configure Docker to run without `sudo` rights, you need to prepend `sudo`: `sudo make build`
 
-== Connecting Lisk Service to Lisk Core
+== Connecting Klayr Service to Klayr Core
 
 Before running the application copy the default docker-compose environment file:
 
@@ -190,32 +190,32 @@ vim .env
 ..env
 [source,bash]
 ----
-# Lisk ecosystem configuration
-LISK_CORE_WS=ws://host.docker.internal:8080 #<1>
+# Klayr ecosystem configuration
+KLAYR_CORE_WS=ws://host.docker.internal:8080 #<1>
 ----
 
-<1> The example assumes that the Lisk Core node is running on the host machine, and not inside of a Docker container.
-When running Lisk Core inside of a Docker container, the variable needs to refer to the container: `LISK_CORE_WS="ws://<your_docker_container>:8080"`.
+<1> The example assumes that the Klayr Core node is running on the host machine, and not inside of a Docker container.
+When running Klayr Core inside of a Docker container, the variable needs to refer to the container: `KLAYR_CORE_WS="ws://<your_docker_container>:8080"`.
 
 TIP: For a complete list of supported environment variables check the xref:{url_references_config}[].
 
-== Starting Lisk Service
+== Starting Klayr Service
 
-Run the following command to start Lisk Service:
+Run the following command to start Klayr Service:
 
 [source,bash]
 ----
 make up
 ----
 
-== Stopping Lisk Service
-You can stop Lisk Service again with the following command:
+== Stopping Klayr Service
+You can stop Klayr Service again with the following command:
 
 [source,bash]
 ----
 make down
 ----
 
-More commands about how to manage Lisk Service are described on the xref:{url_management}[Docker commands] page.
+More commands about how to manage Klayr Service are described on the xref:{url_management}[Docker commands] page.
 
-TIP: Check the xref:{url_index_usage}[Usage] section for examples of how to use and interact with Lisk Service.
+TIP: Check the xref:{url_index_usage}[Usage] section for examples of how to use and interact with Klayr Service.

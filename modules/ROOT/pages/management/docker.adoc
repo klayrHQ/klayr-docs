@@ -1,6 +1,6 @@
 = Docker commands
 Mona Bärenfänger <mona@lightcurve.io>
-:description: Describes how to manage Lisk Service with Docker.
+:description: Describes how to manage Klayr Service with Docker.
 :toc:
 :idseparator: -
 :idprefix:
@@ -11,25 +11,25 @@ Mona Bärenfänger <mona@lightcurve.io>
 
 == Start
 
-.Inside of the `lisk-service` root folder
+.Inside of the `klayr-service` root folder
 [source,bash]
 ----
 make up
 ----
 
-This will start Lisk Service with the default configuration, which in turn will connect to a Lisk Core Mainnet node.
+This will start Klayr Service with the default configuration, which in turn will connect to a Klayr Core Mainnet node.
 
-In case a different node or network shall be used, xref:{url_config}[configure] Lisk Service accordingly.
+In case a different node or network shall be used, xref:{url_config}[configure] Klayr Service accordingly.
 
 == Stop
 
-.Inside of the `lisk-service` root folder
+.Inside of the `klayr-service` root folder
 [source,bash]
 ----
 make down
 ----
 
-This will stop Lisk Service.
+This will stop Klayr Service.
 
 == Show status of Docker containers
 
@@ -38,11 +38,11 @@ This will stop Lisk Service.
 docker ps
 ----
 
-== Reset Lisk Service database
+== Reset Klayr Service database
 
-To reset the database of Lisk Service, drop the respective MYSQL and Redis databases.
+To reset the database of Klayr Service, drop the respective MYSQL and Redis databases.
 
-Before resetting the database, stop Lisk Service:
+Before resetting the database, stop Klayr Service:
 
  make down
 
@@ -50,7 +50,7 @@ Now connect to the Docker container in which you wish to reset the database. If 
 
 [source,bash]
 ----
-$ docker exec -it lisk-service_mysql_core_1 bash # <1>
+$ docker exec -it klayr-service_mysql_core_1 bash # <1>
 ----
 
 <1> Connect to the interactive shell of the MYSQL Docker container in which you wish to reset the MYSQL database.
@@ -59,7 +59,7 @@ $ docker exec -it lisk-service_mysql_core_1 bash # <1>
 
 [source,bash]
 ----
-root@f1413b535254:/# mysql -u lisk -ppassword # <1>
+root@f1413b535254:/# mysql -u klayr -ppassword # <1>
 mysql: [Warning] Using a password on the command line interface can be insecure.
 Welcome to the MySQL monitor.  Commands end with ; or \g.
 Your MySQL connection id is 2044
@@ -72,15 +72,15 @@ affiliates. Other names may be trademarks of their respective
 owners.
 
 Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
-mysql> drop database lisk; # <2>
-mysql> create database lisk; # <3>
+mysql> drop database klayr; # <2>
+mysql> create database klayr; # <3>
 mysql> quit; # <4>
 ----
 
 
-<1> Login to MYSQL with the `lisk` user.
-<2> Drop the `lisk` database.
-<3> Create a fresh database `lisk`.
+<1> Login to MYSQL with the `klayr` user.
+<2> Drop the `klayr` database.
+<3> Create a fresh database `klayr`.
 <4> Log out from MYSQL by typing `quit;`. Log out of the docker container by pressing kbd:[CRTL] + kbd:[D].
 
 === Flush Redis DB
@@ -89,7 +89,7 @@ Reset the databases for Redis after dropping the MYSQL database:
 
 [source,bash]
 ----
-sudo docker exec -it lisk-service_redis_core_persistent_1 /bin/sh
+sudo docker exec -it klayr-service_redis_core_persistent_1 /bin/sh
 redis-cli flushall
 ----
 
@@ -109,21 +109,21 @@ To flush only a particular DB in Redis, execute the following command instead:
 ----
 ====
 
-=== Start Lisk Service
+=== Start Klayr Service
 
-After the databases are reset, start Lisk Service again as usual:
+After the databases are reset, start Klayr Service again as usual:
 
  make up
 
-NOTE: When Lisk Service is started again after a database reset, then the process to reindex all the data is initiated. This can be quite time-consuming and may take up to 2 hours.
+NOTE: When Klayr Service is started again after a database reset, then the process to reindex all the data is initiated. This can be quite time-consuming and may take up to 2 hours.
 
 == Logging
 
-To check the logs for the different microservices of Lisk Service, use the command `docker container logs CONTAINER`, where `CONTAINER` is the respective Docker container that holds the logs you wish to view.
+To check the logs for the different microservices of Klayr Service, use the command `docker container logs CONTAINER`, where `CONTAINER` is the respective Docker container that holds the logs you wish to view.
 
 For example, to see the logs for the Gateway microservice, execute:
 
 [source,bash]
 ----
-docker container logs lisk-service_gateway_1
+docker container logs klayr-service_gateway_1
 ----

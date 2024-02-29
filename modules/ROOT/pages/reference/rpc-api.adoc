@@ -5,11 +5,11 @@
 The RPC WebSocket API can be accessed by the `ws://localhost:9901/rpc-v2`.
 
 === Access paths and compatibility
-The WebSocket API can be accessed by the `wss://service.lisk.com/rpc-v2`.
+The WebSocket API can be accessed by the `wss://service.klayr.com/rpc-v2`.
 
-The testnet network can also be accessed by `wss://testnet-service.lisk.com/rpc-v2`.
+The testnet network can also be accessed by `wss://testnet-service.klayr.com/rpc-v2`.
 
-The Lisk Service WebSocket API uses the `socket.io` library and is compatible with the JSON-RPC 2.0 standard.
+The Klayr Service WebSocket API uses the `socket.io` library and is compatible with the JSON-RPC 2.0 standard.
 The specification below contains numerous examples how to use the API in practice.
 
 === Endpoint logic
@@ -31,7 +31,7 @@ const request = async (endpoint, method, params) => new Promise(resolve => {
 });
 
 const wsRequest = async () => {
-  return await request('ws://localhost:9901/rpc', 'get.accounts', { "address": "lskzkfw7ofgp3uusknbetemrey4aeatgf2ntbhcds" });
+  return await request('ws://localhost:9901/rpc', 'get.accounts', { "address": "klyzkfw7ofgp3uusknbetemrey4aeatgf2ntbhcds" });
 };
 
 wsRequest().then(response => {
@@ -57,7 +57,7 @@ Each API response has the following structure:
 ----
 
 == Date Format
-In the contrary to the original Lisk Core API, all timestamps used by the Lisk Service are in the UNIX timestamp format.
+In the contrary to the original Klayr Core API, all timestamps used by the Klayr Service are in the UNIX timestamp format.
 The blockchain dates are always expressed as integers and the epoch date is equal to the number of seconds since 1970-01-01 00:00:00.
 
 == Multi-Requests
@@ -68,7 +68,7 @@ A request can consist of an array of multiple responses.
 [
     { "jsonrpc": "2.0", "id": 1, "method": "get.blocks", "params": {} },
     { "jsonrpc": "2.0", "id": 2, "method": "get.transactions", "params": { "height": "123" } },
-    { "jsonrpc": "2.0", "id": 3, "method": "get.accounts", "params": { "address": "lskzkfw7ofgp3uusknbetemrey4aeatgf2ntbhcds"} }
+    { "jsonrpc": "2.0", "id": 3, "method": "get.accounts", "params": { "address": "klyzkfw7ofgp3uusknbetemrey4aeatgf2ntbhcds"} }
 ]
 ----
 
@@ -109,7 +109,7 @@ Response
 ]
 ----
 
-== Lisk Blockchain-related Endpoints
+== Klayr Blockchain-related Endpoints
 
 === Accounts
 
@@ -125,7 +125,7 @@ Supports pagination.
 
 |`address`
 |String
-|`/^lsk[a-hjkm-z2-9]&#123;38&#125;$//^[1-9]\d&#123;0,19&#125;[L&#124;l]$/`
+|`/^kly[a-hjkm-z2-9]&#123;38&#125;$//^[1-9]\d&#123;0,19&#125;[L&#124;l]$/`
 |(empty)
 |Resolves new and old address system.
 
@@ -184,7 +184,7 @@ Supports pagination.
 {
   "data": {
     "summary": {
-      "address": "lsk24cd35u4jdq8szo3pnsqe5dsxwrnazyqqqg5eu",
+      "address": "kly24cd35u4jdq8szo3pnsqe5dsxwrnazyqqqg5eu",
       "legacyAddress": "2841524825665420181L",
       "balance": "151146419900",
       "username": "liberspirita",
@@ -209,14 +209,14 @@ Supports pagination.
       "optionalKeys": [],
       "members": [
         {
-          "address": "lsk24cd35u4jdq8szo3pnsqe5dsxwrnazyqqqg5eu",
+          "address": "kly24cd35u4jdq8szo3pnsqe5dsxwrnazyqqqg5eu",
           "publicKey": "968ba2fa993ea9dc27ed740da0daf49eddd740dbd7cb1cb4fc5db3a20baf341b",
           "isMandatory": true,
         }
       ],
       "memberships": [
         {
-          "address": "lsk24cd35u4jdq8szo3pnsqe5dsxwrnazyqqqg5eu",
+          "address": "kly24cd35u4jdq8szo3pnsqe5dsxwrnazyqqqg5eu",
           "publicKey": "968ba2fa993ea9dc27ed740da0daf49eddd740dbd7cb1cb4fc5db3a20baf341b",
           "username": "genesis_51",
         }
@@ -236,17 +236,17 @@ Supports pagination.
       },
       "sentVotes": [
         {
-          "delegateAddress": "lsk24cd35u4jdq8szo3pnsqe5dsxwrnazyqqqg5eu",
+          "delegateAddress": "kly24cd35u4jdq8szo3pnsqe5dsxwrnazyqqqg5eu",
           "amount": "102000000000"
         },
         {
-          "delegateAddress": "lsk24cd35u4jdq8szo3pnsqe5dsxwrnazyqqqg5eu",
+          "delegateAddress": "kly24cd35u4jdq8szo3pnsqe5dsxwrnazyqqqg5eu",
           "amount": "95000000000"
         }
       ],
       "unlocking": [
         {
-          "delegateAddress": "lskdwsyfmcko6mcd357446yatromr9vzgu7eb8y99",
+          "delegateAddress": "klydwsyfmcko6mcd357446yatromr9vzgu7eb8y99",
           "amount": "150000000",
           "height": {
             "start": "10",
@@ -268,14 +268,14 @@ Supports pagination.
 }
 ----
 
-.Example: Get account with a specific Lisk account ID
+.Example: Get account with a specific Klayr account ID
 [source,json]
 ----
 {
     "jsonrpc": "2.0",
     "method": "get.accounts",
     "params": {
-        "address": "lskzkfw7ofgp3uusknbetemrey4aeatgf2ntbhcds"
+        "address": "klyzkfw7ofgp3uusknbetemrey4aeatgf2ntbhcds"
     }
 }
 ----
@@ -292,7 +292,7 @@ Supports pagination.
 
 |`address`
 |String
-|`/^lsk[a-hjkm-z2-9]&#123;38&#125;$//^[1-9]\d&#123;0,19&#125;[L&#124;l]$/`
+|`/^kly[a-hjkm-z2-9]&#123;38&#125;$//^[1-9]\d&#123;0,19&#125;[L&#124;l]$/`
 |(empty)
 |Resolves only new address system
 
@@ -316,15 +316,15 @@ Supports pagination.
 {
   "data": {
     "account": {
-      "address": "lsk24cd35u4jdq8szo3pnsqe5dsxwrnazyqqqg5eu",
+      "address": "kly24cd35u4jdq8szo3pnsqe5dsxwrnazyqqqg5eu",
       "username": "genesis_56",
       "votesUsed": 10
     },
     "votes": [
       {
-        "address": "lsk24cd35u4jdq8szo3pnsqe5dsxwrnazyqqqg5eu",
+        "address": "kly24cd35u4jdq8szo3pnsqe5dsxwrnazyqqqg5eu",
         "amount": 1081560729258, // = voteWeight
-        "username": "liskhq"
+        "username": "klayrhq"
       }
     ]
   },
@@ -343,7 +343,7 @@ Supports pagination.
 {
     "method": "get.votes_sent",
     "params": {
-        "address": "lsk24cd35u4jdq8szo3pnsqe5dsxwrnazyqqqg5eu"
+        "address": "kly24cd35u4jdq8szo3pnsqe5dsxwrnazyqqqg5eu"
     }
 }
 ----
@@ -360,7 +360,7 @@ Supports pagination.
 
 |`address`
 |String
-|`/^lsk[a-hjkm-z2-9]&#123;38&#125;$//^[1-9]\d&#123;0,19&#125;[L&#124;l]$/`
+|`/^kly[a-hjkm-z2-9]&#123;38&#125;$//^[1-9]\d&#123;0,19&#125;[L&#124;l]$/`
 |(empty)
 |Resolves only new address system
 
@@ -396,15 +396,15 @@ Supports pagination.
 {
   "data": {
     "account": {
-      "address": "lsk24cd35u4jdq8szo3pnsqe5dsxwrnazyqqqg5eu",
+      "address": "kly24cd35u4jdq8szo3pnsqe5dsxwrnazyqqqg5eu",
       "username": "genesis_56",
       "votesUsed": 10
     },
     "votes": [
       {
-        "address": "lsk24cd35u4jdq8szo3pnsqe5dsxwrnazyqqqg5eu",
+        "address": "kly24cd35u4jdq8szo3pnsqe5dsxwrnazyqqqg5eu",
         "amount": 1081560729258, // = voteWeight
-        "username": "liskhq"
+        "username": "klayrhq"
       }
     ]
   },
@@ -423,7 +423,7 @@ Supports pagination.
     "jsonrpc": "2.0",
     "method": "get.votes_received",
     "params": {
-        "address": "lsk24cd35u4jdq8szo3pnsqe5dsxwrnazyqqqg5eu"
+        "address": "kly24cd35u4jdq8szo3pnsqe5dsxwrnazyqqqg5eu"
     }
 }
 ----
@@ -453,7 +453,7 @@ Supports pagination.
 
 |`generatorAddress`
 |String
-|`/^lsk[a-hjkm-z2-9]&#123;38&#125;$/ and /^[1-9]\d&#123;0,19&#125;[L&#124;l]$/`
+|`/^kly[a-hjkm-z2-9]&#123;38&#125;$/ and /^[1-9]\d&#123;0,19&#125;[L&#124;l]$/`
 |(empty)
 |Resolves new and old address system.
 
@@ -498,7 +498,7 @@ Supports pagination.
       "height": 8344448,
       "version": 0,
       "timestamp": 85944650,
-      "generatorAddress": "lsk24cd35u4jdq8szo3pnsqe5dsxwrnazyqqqg5eu",
+      "generatorAddress": "kly24cd35u4jdq8szo3pnsqe5dsxwrnazyqqqg5eu",
       "generatorPublicKey": "6e904b2f678eb3b6c3042acb188a607d903d441d61508d047fe36b3c982995c8",
       "generatorUsername": "genesis_13",
       "transactionRoot": "4e4d91be041e09a2e54bb7dd38f1f2a02ee7432ec9f169ba63cd1f193a733dd2",
@@ -615,7 +615,7 @@ Supports pagination.
 
 |`senderAddress`
 |String
-|`/^lsk[a-hjkm-z2-9]&#123;38&#125;$//^[1-9]\d&#123;0,19&#125;[L&#124;l]$/`
+|`/^kly[a-hjkm-z2-9]&#123;38&#125;$//^[1-9]\d&#123;0,19&#125;[L&#124;l]$/`
 |(empty)
 |
 
@@ -633,7 +633,7 @@ Supports pagination.
 
 |`recipientAddress`
 |String
-|`/^lsk[a-hjkm-z2-9]&#123;38&#125;$//^[1-9]\d&#123;0,19&#125;[L&#124;l]$/`
+|`/^kly[a-hjkm-z2-9]&#123;38&#125;$//^[1-9]\d&#123;0,19&#125;[L&#124;l]$/`
 |(empty)
 |
 
@@ -734,7 +734,7 @@ Supports pagination.
         "timestamp": 28227090,
       },
       "sender": {
-        "address": "lsk24cd35u4jdq8szo3pnsqe5dsxwrnazyqqqg5eu",
+        "address": "kly24cd35u4jdq8szo3pnsqe5dsxwrnazyqqqg5eu",
         "publicKey": "2ca9a7...c23079",
         "username": "genesis_51",
       },
@@ -743,7 +743,7 @@ Supports pagination.
       "asset": {     // Depends on operation
         "amount": "150000000",
         "recipient": {
-          "address": "lsk24cd35u4jdq8szo3pnsqe5dsxwrnazyqqqg5eu",
+          "address": "kly24cd35u4jdq8szo3pnsqe5dsxwrnazyqqqg5eu",
           "publicKey": "2ca9a7...c23079",
           "username": "genesis_49",
         },
@@ -779,7 +779,7 @@ Supports pagination.
     "jsonrpc": "2.0",
     "method": "get.transactions",
     "params": {
-        "address": "lsk24cd35u4jdq8szo3pnsqe5dsxwrnazyqqqg5eu",
+        "address": "kly24cd35u4jdq8szo3pnsqe5dsxwrnazyqqqg5eu",
         "limit": "25"
     }
 }
@@ -1091,7 +1091,7 @@ No parameters.
       ...
     ],
     "blockTime": 10,
-    "communityIdentifier": "Lisk",
+    "communityIdentifier": "Klayr",
     "maxPayloadLength": 15360,
   },
   "meta": {
@@ -1197,7 +1197,7 @@ Retrieves current market prices.
 
 === News Feed Aggregator
 
-Retrieves recent blogposts from Lisk Blog and Twitter.
+Retrieves recent blogposts from Klayr Blog and Twitter.
 
 _Supports pagination._
 
@@ -1209,7 +1209,7 @@ _Supports pagination._
 ==== Request parameters
 
 [cols="1,1,2", options="header"]
-.The Lisk Service microservices
+.The Klayr Service microservices
 |===
 |Parameter |Type |Validation
 
@@ -1237,17 +1237,17 @@ Retrieves all sources by default.
 {
   "data": [
     {
-      "author": "Lisk",
-      "content": "On Wednesday, March 3rd, Max Kordek, CEO and Co-founder at Lisk, hosted a live\nmonthly AMA (Ask Max Anything) on Lisk.chat. He answered questions regarding the\nupcoming milestones for Lisk, Lisk.js 2021, marketing plans for this year, and\nmuch more.\n\nThis blog post includes a recap of the live AMA session and features the\nquestions asked by community members, as well as Max’s answers.",
-      "image_url": "https://lisk.com/sites/default/files/styles/blog_main_image_xl_retina/public/images/2021-04/montly-ama-ask-max-anything-recap-MAIN-V1%402x_0.png?itok=_0lipXxp",
-      "imageUrl": "https://lisk.com/sites/default/files/styles/blog_main_image_xl_retina/public/images/2021-04/montly-ama-ask-max-anything-recap-MAIN-V1%402x_0.png?itok=_0lipXxp",
-      "source": "drupal_lisk_general",
+      "author": "Klayr",
+      "content": "On Wednesday, March 3rd, Max Kordek, CEO and Co-founder at Klayr, hosted a live\nmonthly AMA (Ask Max Anything) on Klayr.chat. He answered questions regarding the\nupcoming milestones for Klayr, Klayr.js 2021, marketing plans for this year, and\nmuch more.\n\nThis blog post includes a recap of the live AMA session and features the\nquestions asked by community members, as well as Max’s answers.",
+      "image_url": "https://klayr.com/sites/default/files/styles/blog_main_image_xl_retina/public/images/2021-04/montly-ama-ask-max-anything-recap-MAIN-V1%402x_0.png?itok=_0lipXxp",
+      "imageUrl": "https://klayr.com/sites/default/files/styles/blog_main_image_xl_retina/public/images/2021-04/montly-ama-ask-max-anything-recap-MAIN-V1%402x_0.png?itok=_0lipXxp",
+      "source": "drupal_klayr_general",
       "sourceId": "1001",
       "timestamp": 1614854580,
       "createdAt": 1614854580,
       "modifiedAt": 1614854580,
       "title": "AMA Recap: Ask Max Anything in March 2021",
-      "url": "https://lisk.com/blog/events/ama-recap-ask-max-anything-march-2021"
+      "url": "https://klayr.com/blog/events/ama-recap-ask-max-anything-march-2021"
     }
   ],
   "meta": {
