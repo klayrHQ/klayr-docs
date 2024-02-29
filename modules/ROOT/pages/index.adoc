@@ -1,24 +1,24 @@
-= Lisk Core
+= Klayr Core
 Mona Bärenfänger <mona@lightcurve.io>
 // Settings
-:description: References and guides how to setup, update and manage a Lisk Core node.
+:description: References and guides how to setup, update and manage a Klayr Core node.
 :toc: preamble
 :page-no-previous: true
 :docs_general: ROOT::
-:docs_sdk: v5@lisk-sdk::
+:docs_sdk: v5@klayr-sdk::
 :page-aliases: monitoring.adoc
 :imagesdir: ../assets/images
 // External URLs
-:url_faucet_testnet: https://testnet-faucet.lisk.com/
-:url_lisk_blog_betanet5: https://lisk.com/blog/development/launch-betanet-v5
-:url_lisk_desktop: https://lisk.com/wallet
+:url_faucet_testnet: https://testnet-faucet.klayr.com/
+:url_klayr_blog_betanet5: https://klayr.com/blog/development/launch-betanet-v5
+:url_klayr_desktop: https://klayr.com/wallet
 :url_nodejs: https://nodejs.org
 :url_postgresql: https://www.postgresql.org
 :url_redis: https://redis.io
 :url_semver: https://semver.org/
 :url_swagger: https://swagger.io
-:url_observer: https://lisk.observer/
-:url_observer_testnet: https://testnet.lisk.observer/
+:url_observer: https://klayr.observer/
+:url_observer_testnet: https://testnet.klayr.observer/
 :url_liskscan: https://liskscan.com/
 :url_liskscan_testnet: https://testnet.liskscan.com/
 // Project URLs
@@ -36,7 +36,7 @@ Mona Bärenfänger <mona@lightcurve.io>
 :url_upgrade_commander: update/commander.adoc
 :url_upgrade_docker: update/docker.adoc
 :url_upgrade_source: update/source.adoc
-:url_ref_rpc: {docs_general}api/lisk-node-rpc.adoc
+:url_ref_rpc: {docs_general}api/klayr-node-rpc.adoc
 :url_configure_rpc: {docs_sdk}/config.adoc#rpc
 :url_sdk_plugin_httpapi: {docs_sdk}plugins/http-api-plugin.adoc
 
@@ -44,7 +44,7 @@ image:banner_core.png[Core]
 
 ifeval::[{page-component-version} !== master]
 
-IMPORTANT: To access the latest Lisk Core version, please xref:master@{page-component-name}::{page-relative}[click here].
+IMPORTANT: To access the latest Klayr Core version, please xref:master@{page-component-name}::{page-relative}[click here].
 endif::[]
 
 == Getting started
@@ -52,12 +52,12 @@ endif::[]
 [[node]]
 === What is a node?
 
-The Lisk blockchain is a decentralized network that consists of many different servers, (or nodes).
-Node operators are required to set up Lisk Core on a server, and then connect it to the desired network.
+The Klayr blockchain is a decentralized network that consists of many different servers, (or nodes).
+Node operators are required to set up Klayr Core on a server, and then connect it to the desired network.
 
 There are over 600 nodes around the world that are maintained by individuals, and these nodes communicate with the network.
 For example, by broadcasting and receiving blocks or transactions from their peers.
-In addition, Lisk nodes are also required to forge/add new blocks to the blockchain.
+In addition, Klayr nodes are also required to forge/add new blocks to the blockchain.
 
 === Who should operate a node?
 
@@ -70,7 +70,7 @@ If you fall under one of the following categories listed below, then it is recom
 === Why operate a node?
 
 - To have a private entry point to communicate with the network.
-This is especially important when running an exchange and implementing LSK tokens.
+This is especially important when running an exchange and implementing KLY tokens.
 - To create your own snapshots of the blockchain.
 - To create transactions and send them to the network.
 - To have the option to xref:{url_config_forging}[forge] new blocks, (assuming you are an active delegate).
@@ -81,11 +81,11 @@ NOTE: To learn how to set up a node, please see the xref:{url_getting_started}[N
 [[networks]]
 == Networks
 
-The Lisk Core can be connected to different networks.
+The Klayr Core can be connected to different networks.
 Please be aware that there are two key accessible public networks existing which are entirely independent of each other.
 These networks are described below.
 
-.Public networks of Lisk
+.Public networks of Klayr
 [cols="1h,1m,1m",options="header"]
 |===
 | Network | Port (default) | Network Identifier
@@ -102,8 +102,8 @@ These networks are described below.
 
 === Mainnet
 
-The Mainnet is where the true Lisk economy exists.
-Within this network the Lisk users can transfer LSK tokens from one account to another, register accounts as delegates; and vote for other delegates.
+The Mainnet is where the true Klayr economy exists.
+Within this network the Klayr users can transfer KLY tokens from one account to another, register accounts as delegates; and vote for other delegates.
 
 ==== Mainnet blockchain explorer
 
@@ -112,12 +112,12 @@ Within this network the Lisk users can transfer LSK tokens from one account to a
 
 === Testnet
 
-The Testnet is an independent replica of the Lisk Mainnet, whose main function is to test the upgrades first before they are run on the Lisk Mainnet.
-Subsequently, this is where new/updated versions and fixes of the Lisk Core are tested.
+The Testnet is an independent replica of the Klayr Mainnet, whose main function is to test the upgrades first before they are run on the Klayr Mainnet.
+Subsequently, this is where new/updated versions and fixes of the Klayr Core are tested.
 
-To start using the Testnet, please download your free LSK Testnet from the {url_faucet_testnet}[Testnet faucet^].
+To start using the Testnet, please download your free KLY Testnet from the {url_faucet_testnet}[Testnet faucet^].
 
-To connect to the Testnet via {url_lisk_desktop}[Lisk Desktop^], simply enable the "Network Switcher" in the settings and then use it to switch the network to `Testnet`.
+To connect to the Testnet via {url_klayr_desktop}[Klayr Desktop^], simply enable the "Network Switcher" in the settings and then use it to switch the network to `Testnet`.
 
 ==== Testnet blockchain explorer
 
@@ -126,7 +126,7 @@ To connect to the Testnet via {url_lisk_desktop}[Lisk Desktop^], simply enable t
 
 == APIs
 
-.Available APIs for Lisk nodes
+.Available APIs for Klayr nodes
 [cols="1,1,1,1,1,",options="header"]
 |===
 
@@ -143,14 +143,14 @@ To connect to the Testnet via {url_lisk_desktop}[Lisk Desktop^], simply enable t
 
 == Token
 
-The native token for the Lisk Mainnet is the *LSK*.
-Each LSK is further subdivided into 10^8^ *Beddows*.
+The native token for the Klayr Mainnet is the *KLY*.
+Each KLY is further subdivided into 10^8^ *Beddows*.
 
 == Custom modules
 
-Lisk Core includes the `legacyAccount` module which contains the following transaction.
+Klayr Core includes the `legacyAccount` module which contains the following transaction.
 
-=== LSK Reclaim
+=== KLY Reclaim
 
 This transaction allows to access the balance that was sent to a legacy address without any associated public key.
 Legacy addresses, generated from the first eight bytes of the public key, were used in older versions of the protocol.

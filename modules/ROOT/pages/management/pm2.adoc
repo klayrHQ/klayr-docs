@@ -3,8 +3,8 @@ Mona Bärenfänger <mona@lightcurve.io>
 // External URLs
 :url_pm2_docs: https://pm2.keymetrics.io/docs/usage/pm2-doc-single-page/
 
-It is recommended to set up additional process management with the new Lisk Core CLI.
-Any process management tool can be used to manage the Lisk Core node.
+It is recommended to set up additional process management with the new Klayr Core CLI.
+Any process management tool can be used to manage the Klayr Core node.
 We recommend using PM2 to manage the instance.
 
 == Setup
@@ -24,16 +24,16 @@ Create a pm2 config, for example as shown below:
 [source,json]
 ----
 {
-  "name": "lisk-core",
-  "script": "lisk-core start --overwrite-config",
+  "name": "klayr-core",
+  "script": "klayr-core start --overwrite-config",
   "env": {
-    "LISK_NETWORK": "testnet",
-    "LISK_CONFIG_FILE": "/home/lisk/lisk-core/custom-config.json"
+    "KLAYR_NETWORK": "testnet",
+    "KLAYR_CONFIG_FILE": "/home/klayr/klayr-core/custom-config.json"
   }
 }
 ----
 
-TIP: All available options for `scripts` and `env` can be found in `lisk-core start --help`.
+TIP: All available options for `scripts` and `env` can be found in `klayr-core start --help`.
 
 To add the process to PM2 and start it directly, execute the following command:
 
@@ -44,7 +44,7 @@ pm2 start pm2.conf.json
 
 == Show status
 
-View the status of Lisk Core in the list of running PM2 processes:
+View the status of Klayr Core in the list of running PM2 processes:
 
 [source,bash]
 ----
@@ -55,22 +55,22 @@ pm2 ls
 ┌────┬────────────────────┬──────────┬──────┬───────────┬──────────┬──────────┐
 │ id │ name               │ mode     │ ↺    │ status    │ cpu      │ memory   │
 ├────┼────────────────────┼──────────┼──────┼───────────┼──────────┼──────────┤
-│ 0  │ lisk-core          │ fork     │ 0    │ online    │ 0%       │ 3.1mb    │
+│ 0  │ klayr-core          │ fork     │ 0    │ online    │ 0%       │ 3.1mb    │
 └────┴────────────────────┴──────────┴──────┴───────────┴──────────┴──────────┘
 ----
 
-== Starting Lisk Core with PM2
+== Starting Klayr Core with PM2
 
-Execute the following command to start Lisk Core:
+Execute the following command to start Klayr Core:
 
 [source,bash]
 ----
-pm2 start lisk-core
+pm2 start klayr-core
 ----
 
 == Saving the app list to be restored at reboot
 
-Once Lisk Core is started, it is convenient to save the app list so it will respawn after rebooting:
+Once Klayr Core is started, it is convenient to save the app list so it will respawn after rebooting:
 
 [source,bash]
 ----
@@ -79,21 +79,21 @@ pm2 save
 
 For more information, please refer to {url_pm2_docs}[^]
 
-== Stopping Lisk Core
+== Stopping Klayr Core
 
-To stop Lisk Core, simply stop the PM2 Lisk Core process:
-
-[source,bash]
-----
-pm2 stop lisk-core
-----
-
-== Refreshing / restarting Lisk Core
-
-To refresh Lisk Core after changing the configuration, delete the existing `lisk-core` process with pm2, and then use the pm2 config file to restart the process.
+To stop Klayr Core, simply stop the PM2 Klayr Core process:
 
 [source,bash]
 ----
-pm2 delete lisk-core
+pm2 stop klayr-core
+----
+
+== Refreshing / restarting Klayr Core
+
+To refresh Klayr Core after changing the configuration, delete the existing `klayr-core` process with pm2, and then use the pm2 config file to restart the process.
+
+[source,bash]
+----
+pm2 delete klayr-core
 pm2 start pm2.conf.json
 ----

@@ -1,80 +1,80 @@
 = Command line interface
 Mona Bärenfänger <mona@lightcurve.io>
-:description: All available CLI commands and topics for Lisk Core including the config file structure are covered here.
+:description: All available CLI commands and topics for Klayr Core including the config file structure are covered here.
 :toc:
 :page-no-next: true
 
-:url_sdk_references_config: v5@lisk-sdk::references/config.adoc
+:url_sdk_references_config: v5@klayr-sdk::references/config.adoc
 
 [[clo]]
 == Commands
 
 === help
 
-Displays a summary of all available CLI commands of Lisk Core.
+Displays a summary of all available CLI commands of Klayr Core.
 
 [source,bash]
 ----
-Lisk blockchain application platform
+Klayr blockchain application platform
 
 VERSION
-  lisk-core/3.1.1 darwin-x64 node-v18
+  klayr-core/3.1.1 darwin-x64 node-v18
 
 USAGE
-  $ lisk-core [COMMAND]
+  $ klayr-core [COMMAND]
 
 TOPICS
-  account      Commands relating to Lisk Core accounts.
-  block        Commands relating to Lisk Core blocks.
-  blockchain   Commands relating to Lisk Core blockchain data.
-  config       Commands relating to Lisk Core node configuration.
-  forger-info  Commands relating to Lisk Core forger-info data.
-  forging      Commands relating to Lisk Core forging.
-  node         Commands relating to Lisk Core node.
-  passphrase   Commands relating to Lisk Core passphrases.
-  sdk          Commands relating to Lisk SDK development.
-  transaction  Commands relating to Lisk Core transactions.
+  account      Commands relating to Klayr Core accounts.
+  block        Commands relating to Klayr Core blocks.
+  blockchain   Commands relating to Klayr Core blockchain data.
+  config       Commands relating to Klayr Core node configuration.
+  forger-info  Commands relating to Klayr Core forger-info data.
+  forging      Commands relating to Klayr Core forging.
+  node         Commands relating to Klayr Core node.
+  passphrase   Commands relating to Klayr Core passphrases.
+  sdk          Commands relating to Klayr SDK development.
+  transaction  Commands relating to Klayr Core transactions.
 
 COMMANDS
   hash-onion  Create hash onions to be used by the forger.
-  help        display help for lisk-core
-  start       Start Lisk Core Node.
+  help        display help for klayr-core
+  start       Start Klayr Core Node.
 
 ----
 
 === start
 
-Starts the Lisk Core node.
+Starts the Klayr Core node.
 
 [source,bash]
 ----
 USAGE
-  $ lisk-core start
+  $ klayr-core start
 
 OPTIONS
-  -c, --config=config                                    File path to a custom config. Environment variable "LISK_CONFIG_FILE" can also be used.
-  -d, --data-path=data-path                              Directory path to specify where node data is stored. Environment variable "LISK_DATA_PATH" can also be used.
-  -l, --log=trace|debug|info|warn|error|fatal            File log level. Environment variable "LISK_FILE_LOG_LEVEL" can also be used.
-  -n, --network=network                                  [default: mainnet] Default network config to use. Environment variable "LISK_NETWORK" can also be used.
-  -p, --port=port                                        Open port for the peer to peer incoming connections. Environment variable "LISK_PORT" can also be used.
+  -c, --config=config                                    File path to a custom config. Environment variable "KLAYR_CONFIG_FILE" can also be used.
+  -d, --data-path=data-path                              Directory path to specify where node data is stored. Environment variable "KLAYR_DATA_PATH" can also be used.
+  -l, --log=trace|debug|info|warn|error|fatal            File log level. Environment variable "KLAYR_FILE_LOG_LEVEL" can also be used.
+  -n, --network=network                                  [default: mainnet] Default network config to use. Environment variable "KLAYR_NETWORK" can also be used.
+  -p, --port=port                                        Open port for the peer to peer incoming connections. Environment variable "KLAYR_PORT" can also be used.
   --api-ipc                                              Enable IPC communication. This will also load up plugins in child process and communicate over IPC.
   --api-ws                                               Enable websocket communication for api-client.
   --api-ws-host=api-ws-host                              Host to be used for api-client websocket.
   --api-ws-port=api-ws-port                              Port to be used for api-client websocket.
-  --console-log=trace|debug|info|warn|error|fatal        Console log level. Environment variable "LISK_CONSOLE_LOG_LEVEL" can also be used.
-  --enable-forger-plugin                                 Enable Forger Plugin. Environment variable "LISK_ENABLE_FORGER_PLUGIN" can also be used.
-  --enable-http-api-plugin                               Enable HTTP API Plugin. Environment variable "LISK_ENABLE_HTTP_API_PLUGIN" can also be used.
-  --enable-monitor-plugin                                Enable Monitor Plugin. Environment variable "LISK_ENABLE_MONITOR_PLUGIN" can also be used.
-  --enable-report-misbehavior-plugin                     Enable ReportMisbehavior Plugin. Environment variable "LISK_ENABLE_REPORT_MISBEHAVIOR_PLUGIN" can also be used.
-  --http-api-plugin-host=http-api-plugin-host            Host to be used for HTTP API Plugin. Environment variable "LISK_HTTP_API_PLUGIN_HOST" can also be used.
-  --http-api-plugin-port=http-api-plugin-port            Port to be used for HTTP API Plugin. Environment variable "LISK_HTTP_API_PLUGIN_PORT" can also be used.
-  --http-api-plugin-whitelist=http-api-plugin-whitelist  List of IPs in comma separated value to allow the connection. Environment variable "LISK_HTTP_API_PLUGIN_WHITELIST" can also be used.
-  --monitor-plugin-host=monitor-plugin-host              Host to be used for Monitor Plugin. Environment variable "LISK_MONITOR_PLUGIN_HOST" can also be used.
-  --monitor-plugin-port=monitor-plugin-port              Port to be used for Monitor Plugin. Environment variable "LISK_MONITOR_PLUGIN_PORT" can also be used.
-  --monitor-plugin-whitelist=monitor-plugin-whitelist    List of IPs in comma separated value to allow the connection. Environment variable "LISK_MONITOR_PLUGIN_WHITELIST" can also be used.
+  --console-log=trace|debug|info|warn|error|fatal        Console log level. Environment variable "KLAYR_CONSOLE_LOG_LEVEL" can also be used.
+  --enable-forger-plugin                                 Enable Forger Plugin. Environment variable "KLAYR_ENABLE_FORGER_PLUGIN" can also be used.
+  --enable-http-api-plugin                               Enable HTTP API Plugin. Environment variable "KLAYR_ENABLE_HTTP_API_PLUGIN" can also be used.
+  --enable-monitor-plugin                                Enable Monitor Plugin. Environment variable "KLAYR_ENABLE_MONITOR_PLUGIN" can also be used.
+  --enable-report-misbehavior-plugin                     Enable ReportMisbehavior Plugin. Environment variable "KLAYR_ENABLE_REPORT_MISBEHAVIOR_PLUGIN" can also be used.
+  --http-api-plugin-host=http-api-plugin-host            Host to be used for HTTP API Plugin. Environment variable "KLAYR_HTTP_API_PLUGIN_HOST" can also be used.
+  --http-api-plugin-port=http-api-plugin-port            Port to be used for HTTP API Plugin. Environment variable "KLAYR_HTTP_API_PLUGIN_PORT" can also be used.
+  --http-api-plugin-whitelist=http-api-plugin-whitelist  List of IPs in comma separated value to allow the connection. Environment variable "KLAYR_HTTP_API_PLUGIN_WHITELIST" can also be used.
+  --monitor-plugin-host=monitor-plugin-host              Host to be used for Monitor Plugin. Environment variable "KLAYR_MONITOR_PLUGIN_HOST" can also be used.
+  --monitor-plugin-port=monitor-plugin-port              Port to be used for Monitor Plugin. Environment variable "KLAYR_MONITOR_PLUGIN_PORT" can also be used.
+  --monitor-plugin-whitelist=monitor-plugin-whitelist    List of IPs in comma separated value to allow the connection. Environment variable "KLAYR_MONITOR_PLUGIN_WHITELIST" can also be used.
   --overwrite-config                                     Overwrite network configs if they exist already
 
-  --seed-peers=seed-peers                                Seed peers to initially connect to in format of comma separated "ip:port". IP can be DNS name or IPV4 format. Environment variable "LISK_SEED_PEERS" can also be
+  --seed-peers=seed-peers                                Seed peers to initially connect to in format of comma separated "ip:port". IP can be DNS name or IPV4 format. Environment variable "KLAYR_SEED_PEERS" can also be
                                                          used.
 
 EXAMPLES
@@ -95,7 +95,7 @@ Creates hash onions to be used by a delegate.
 [source,bash]
 ----
 USAGE
-  $ lisk-core hash-onion
+  $ klayr-core hash-onion
 
 OPTIONS
   -c, --count=count        [default: 1000000] Total number of hashes to produce
@@ -112,13 +112,13 @@ EXAMPLE
 
 [source,bash]
 ----
-Commands relating to Lisk Core accounts.
+Commands relating to Klayr Core accounts.
 
 USAGE
-  $ lisk-core account:COMMAND
+  $ klayr-core account:COMMAND
 
 COMMANDS
-  account:create    Return randomly-generated mnemonic passphrase with its corresponding public/private key pair and Lisk address.
+  account:create    Return randomly-generated mnemonic passphrase with its corresponding public/private key pair and Klayr address.
   account:get       Get account information for a given address.
   account:show      Show account information for a given passphrase.
   account:validate  Validate base32 address.
@@ -128,10 +128,10 @@ COMMANDS
 
 [source,bash]
 ----
-Commands relating to Lisk Core blocks.
+Commands relating to Klayr Core blocks.
 
 USAGE
-  $ lisk-core block:COMMAND
+  $ klayr-core block:COMMAND
 
 COMMANDS
   block:get  Get block information for a given id or height.
@@ -141,10 +141,10 @@ COMMANDS
 
 [source,bash]
 ----
-Commands relating to Lisk Core blockchain data.
+Commands relating to Klayr Core blockchain data.
 
 USAGE
-  $ lisk-core blockchain:COMMAND
+  $ klayr-core blockchain:COMMAND
 
 COMMANDS
   blockchain:download  Download snapshot from <URL>.
@@ -158,10 +158,10 @@ COMMANDS
 
 [source,bash]
 ----
-Commands relating to Lisk Core node configuration.
+Commands relating to Klayr Core node configuration.
 
 USAGE
-  $ lisk-core config:COMMAND
+  $ klayr-core config:COMMAND
 
 COMMANDS
   config:show  Show application config.
@@ -171,10 +171,10 @@ COMMANDS
 
 [source,bash]
 ----
-Commands relating to Lisk Core forger-info data.
+Commands relating to Klayr Core forger-info data.
 
 USAGE
-  $ lisk-core forger-info:COMMAND
+  $ klayr-core forger-info:COMMAND
 
 COMMANDS
   forger-info:export  Export to <FILE>.
@@ -185,10 +185,10 @@ COMMANDS
 
 [source,bash]
 ----
-Commands relating to Lisk Core forging.
+Commands relating to Klayr Core forging.
 
 USAGE
-  $ lisk-core forging:COMMAND
+  $ klayr-core forging:COMMAND
 
 COMMANDS
   forging:disable  Disable forging for given delegate address.
@@ -201,11 +201,11 @@ COMMANDS
 
 [source,bash]
 ----
-lisk-core forging:config --help
+klayr-core forging:config --help
 Generate delegate forging config for given passphrase and password.
 
 USAGE
-  $ lisk-core forging:config
+  $ klayr-core forging:config
 
 OPTIONS
   -c, --count=count            [default: 1000000] Total number of hashes to produce
@@ -234,32 +234,32 @@ EXAMPLES
 [source,bash]
 ----
 USAGE
-  $ lisk-core genesis-block:download
+  $ klayr-core genesis-block:download
 
 OPTIONS
-  -d, --data-path=data-path  Directory path to specify where node data is stored. Environment variable "LISK_DATA_PATH"
+  -d, --data-path=data-path  Directory path to specify where node data is stored. Environment variable "KLAYR_DATA_PATH"
                              can also be used.
 
   -f, --force                Delete and overwrite existing blockchain data
 
-  -n, --network=network      Default network config to use. Environment variable "LISK_NETWORK" can also be used.
+  -n, --network=network      Default network config to use. Environment variable "KLAYR_NETWORK" can also be used.
 
   -u, --url=url              The url to the genesis block.
 
 EXAMPLES
   genesis-block:download --network mainnet -f
-  genesis-block:download --network --data-path ./lisk/
-  genesis-block:download --url http://mydomain.com/genesis_block.json.gz --data-path ./lisk/ --force
+  genesis-block:download --network --data-path ./klayr/
+  genesis-block:download --url http://mydomain.com/genesis_block.json.gz --data-path ./klayr/ --force
 ----
 
 === node
 
 [source,bash]
 ----
-Commands relating to Lisk Core node.
+Commands relating to Klayr Core node.
 
 USAGE
-  $ lisk-core node:COMMAND
+  $ klayr-core node:COMMAND
 
 COMMANDS
   node:info  Get node information from a running application.
@@ -269,10 +269,10 @@ COMMANDS
 
 [source,bash]
 ----
-Commands relating to Lisk Core passphrases.
+Commands relating to Klayr Core passphrases.
 
 USAGE
-  $ lisk-core passphrase:COMMAND
+  $ klayr-core passphrase:COMMAND
 
 COMMANDS
   passphrase:decrypt  Decrypt secret passphrase using the password provided at the time of encryption.
@@ -283,10 +283,10 @@ COMMANDS
 
 [source,bash]
 ----
-Commands relating to Lisk SDK development.
+Commands relating to Klayr SDK development.
 
 USAGE
-  $ lisk-core sdk:COMMAND
+  $ klayr-core sdk:COMMAND
 
 COMMANDS
   sdk:link  Symlink specific SDK folder during development.
@@ -296,10 +296,10 @@ COMMANDS
 
 [source,bash]
 ----
-Commands relating to Lisk Core transactions.
+Commands relating to Klayr Core transactions.
 
 USAGE
-  $ lisk-core transaction:COMMAND
+  $ klayr-core transaction:COMMAND
 
 COMMANDS
   transaction:create  Create transaction which can be broadcasted to the network. Note: fee and amount should be in Beddows!!
@@ -311,10 +311,10 @@ COMMANDS
 [[structure]]
 == Config file structure
 
-The configuration for Lisk Core is stored in `~/.lisk/lisk-core/config` footnote:snap_footnote[Snap versions of Lisk Core store everything in `~/snap/lisk-core/current/.lisk/lisk-core` instead of `~/.lisk/lisk-core`].
+The configuration for Klayr Core is stored in `~/.klayr/klayr-core/config` footnote:snap_footnote[Snap versions of Klayr Core store everything in `~/snap/klayr-core/current/.klayr/klayr-core` instead of `~/.klayr/klayr-core`].
 Each network uses a separate configuration.
 
-.~/.lisk/lisk-core/config/devnet/config.json footnote:snap_footnote[]
+.~/.klayr/klayr-core/config/devnet/config.json footnote:snap_footnote[]
 [source,json]
 ----
 {
@@ -327,7 +327,7 @@ Each network uses a separate configuration.
     "label": "devnet",
     "genesisConfig": {
         "blockTime": 10,
-        "communityIdentifier": "Lisk",
+        "communityIdentifier": "Klayr",
         "maxPayloadLength": 15360,
         "bftThreshold": 68,
         "minFeePerByte": 1000,

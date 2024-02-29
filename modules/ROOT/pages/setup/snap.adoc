@@ -1,6 +1,6 @@
 = Snap setup
 Mona Bärenfänger <mona@lightcurve.io>
-:description: How to install a Lisk Core node via Snap.
+:description: How to install a Klayr Core node via Snap.
 // Settings
 // External URLs
 :url_snapcraft: https://snapcraft.io/
@@ -8,7 +8,7 @@ Mona Bärenfänger <mona@lightcurve.io>
 // Project URLs
 :url_run_logging: ROOT::run-blockchain/logging.adoc
 
-How to set up a Lisk Core node via Snap.
+How to set up a Klayr Core node via Snap.
 
 == Pre-installation
 
@@ -28,11 +28,11 @@ include::partial$create-a-new-user.adoc[]
 
 == Installation
 
-Install Lisk Core as a snap:
+Install Klayr Core as a snap:
 
 [source,bash]
 ----
-snap install lisk-core
+snap install klayr-core
 ----
 
 == Start
@@ -46,7 +46,7 @@ Mainnet::
 --
 [source,bash]
 ----
-lisk-core start --network mainnet
+klayr-core start --network mainnet
 ----
 
 [NOTE]
@@ -69,7 +69,7 @@ Alternatively, start the node with the following flag:
 
 [source,bash]
 ----
-lisk-core start --network mainnet --console-log=info
+klayr-core start --network mainnet --console-log=info
 ----
 
 See the xref:{url_run_logging}[] guide for more information about logging.
@@ -80,7 +80,7 @@ Testnet::
 --
 [source,bash]
 ----
-lisk-core start --network testnet
+klayr-core start --network testnet
 ----
 --
 ====

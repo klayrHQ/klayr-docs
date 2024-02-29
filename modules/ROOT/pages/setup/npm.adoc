@@ -1,6 +1,6 @@
 = NPM setup
 Mona Bärenfänger <mona@lightcurve.io>
-:description: How to install and setup up a Lisk Core node with NPM.
+:description: How to install and setup up a Klayr Core node with NPM.
 // Settings
 :toc: preamble
 // External URLs
@@ -13,7 +13,7 @@ Mona Bärenfänger <mona@lightcurve.io>
 // Project URLs
 :url_run_logging: ROOT::run-blockchain/logging.adoc
 
-How to set up a Lisk Core node with NPM.
+How to set up a Klayr Core node with NPM.
 
 == Pre-installation
 
@@ -126,18 +126,18 @@ More information can be found under {url_node_permission_errors}[^]
 
 == Installation
 
-Install the latest version of Lisk Core v3 with NPM:
+Install the latest version of Klayr Core v3 with NPM:
 
 [source,bash]
 ----
-npm install --global lisk-core@^3
+npm install --global klayr-core@^3
 ----
 
 === Location
 
-Lisk Core will be installed under the installation path of NPM.
+Klayr Core will be installed under the installation path of NPM.
 
-To check the location where Lisk Core was installed, execute the following:
+To check the location where Klayr Core was installed, execute the following:
 
 [source,bash]
 ----
@@ -155,7 +155,7 @@ Mainnet::
 --
 [source,bash]
 ----
-lisk-core start --network mainnet
+klayr-core start --network mainnet
 ----
 
 [NOTE]
@@ -178,7 +178,7 @@ Alternatively, start the node with the following flag:
 
 [source,bash]
 ----
-lisk-core start --network mainnet --console-log=info
+klayr-core start --network mainnet --console-log=info
 ----
 
 See the xref:{url_run_logging}[] guide for more information about logging.
@@ -189,7 +189,7 @@ Testnet::
 --
 [source,bash]
 ----
-lisk-core start --network testnet
+klayr-core start --network testnet
 ----
 --
 ====

@@ -5,7 +5,7 @@ Mona Bärenfänger <mona@lightcurve.io>
 :sectnums:
 // External URLs
 // Project URLs
-:url_plugin_report_misbehavior: v5@lisk-sdk::plugins/report-misbehavior-plugin.adoc
+:url_plugin_report_misbehavior: v5@klayr-sdk::plugins/report-misbehavior-plugin.adoc
 
 The xref:{url_plugin_report_misbehavior}["Report Misbehavior" plugin] provides automatic detection of delegate misbehavior and sends a `reportDelegateMisbehavior` transaction to the running node.
 
@@ -22,7 +22,7 @@ Encrypt the passphrase of the sender account before adding it to the configurati
 
 [source,bash]
 ----
-$ lisk-core passphrase:encrypt
+$ klayr-core passphrase:encrypt
 ? Please enter passphrase:  [hidden]
 ? Please re-enter passphrase:  [hidden]
 ? Please enter password:  [hidden]
@@ -48,18 +48,18 @@ TIP: See more available configuration options at the xref:{url_plugin_report_mis
 
 == PM2 configuration
 
-Add the environment variable `LISK_ENABLE_REPORT_MISBEHAVIOR_PLUGIN` to the pm2 config for Lisk Core:
+Add the environment variable `KLAYR_ENABLE_REPORT_MISBEHAVIOR_PLUGIN` to the pm2 config for Klayr Core:
 
 .pm2.conf.json
 [source,json]
 ----
 {
-  "name": "lisk-core",
-  "script": "lisk-core start --overwrite-config",
+  "name": "klayr-core",
+  "script": "klayr-core start --overwrite-config",
   "env": {
-    "LISK_NETWORK": "testnet",
-    "LISK_CONFIG_FILE": "/home/lisk/lisk-core/custom-config.json",
-    "LISK_ENABLE_REPORT_MISBEHAVIOR_PLUGIN": true
+    "KLAYR_NETWORK": "testnet",
+    "KLAYR_CONFIG_FILE": "/home/klayr/klayr-core/custom-config.json",
+    "KLAYR_ENABLE_REPORT_MISBEHAVIOR_PLUGIN": true
   }
 }
 ----
@@ -75,13 +75,13 @@ pm2 start pm2.conf.json
 
 The "Report Misbehavior" plugin provides a dedicated action to enable and disable the plugin on the node.
 
-For example use the `lisk-client` package and write a small script which invokes the `reportMisbehavior:authorize` action on the node.
+For example use the `klayr-client` package and write a small script which invokes the `reportMisbehavior:authorize` action on the node.
 
-Install the `lisk-client` package:
+Install the `klayr-client` package:
 
 [source,bash]
 ----
-npm i @liskhq/lisk-client
+npm i @klayrhq/klayr-client
 ----
 
 Write a small script to enable the plugin on the node:
@@ -89,7 +89,7 @@ Write a small script to enable the plugin on the node:
 .authorize-plugin.js
 [source,js]
 ----
-const { apiClient } = require('@liskhq/lisk-client');
+const { apiClient } = require('@klayrhq/klayr-client');
 let clientCache;
 
 const getClient = async () => {
