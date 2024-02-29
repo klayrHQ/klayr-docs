@@ -1,11 +1,11 @@
 = Framework class interfaces
 Mona Bärenfänger <mona@lightcurve.io>
-:description: Covers references of the Lisk Framework, like the BaseModule, the BaseAsset and the BasePlugin.
+:description: Covers references of the Klayr Framework, like the BaseModule, the BaseAsset and the BasePlugin.
 :toc: preamble
 :imagesdir: ../../assets/images
 :page-no-next: true
-:page-previous: /lisk-sdk/references/lisk-elements/index.html
-:page-previous-title: Lisk Elements
+:page-previous: /klayr-sdk/references/klayr-elements/index.html
+:page-previous-title: Klayr Elements
 
 image:banner_framework.png[Logo]
 
@@ -43,7 +43,7 @@ interface Application {
 <4> Shutdown stops the application with a given code and message.
 <5> NetworkIdentifer used to sign block and transactions.
 <6> getSchema returns all schema definitions that are registered to the application.
-Schema is a type defined by codec, which is a Lisk JSON schema.
+Schema is a type defined by codec, which is a Klayr JSON schema.
 
 == The BaseModule
 

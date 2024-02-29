@@ -1,7 +1,7 @@
 = Command-Line-Interface
 Mona Bärenfänger <mona@lightcurve.io>
 // Settings
-:description: All available commands of Lisk Commander consisting of all available options, a usage example, and an example response are covered here.
+:description: All available commands of Klayr Commander consisting of all available options, a usage example, and an example response are covered here.
 :toc:
 :idseparator: -
 :idprefix:
@@ -17,62 +17,62 @@ Displays command reference.
 
 [source,bash]
 ----
-A command line interface for Lisk
+A command line interface for Klayr
 
 VERSION
-  lisk-commander/5.1.10 darwin-x64 node-v18.16.0
+  klayr-commander/5.1.10 darwin-x64 node-v18.16.0
 
 USAGE
-  $ lisk [COMMAND]
+  $ klayr [COMMAND]
 
 TOPICS
-  account     Commands relating to Lisk accounts.
-  generate    Commands relating to Lisk generator.
+  account     Commands relating to Klayr accounts.
+  generate    Commands relating to Klayr generator.
   message     Commands relating to user messages.
-  passphrase  Commands relating to Lisk passphrases.
+  passphrase  Commands relating to Klayr passphrases.
 
 COMMANDS
   autocomplete        Display autocomplete installation instructions.
-  console             Lisk interactive REPL (Read-eval-print loop), session to run commands.
+  console             Klayr interactive REPL (Read-eval-print loop), session to run commands.
   hash-onion          Create hash onions to be used by the forger.
-  help                Display help for lisk.
-  init                Bootstrap a blockchain client using Lisk SDK.
+  help                Display help for klayr.
+  init                Bootstrap a blockchain client using Klayr SDK.
   network-identifier  Creates Network identifier for the given genesis block id and community identifier.
 ----
 
 === Init
 
-Bootstrap a blockchain client using the Lisk SDK.
+Bootstrap a blockchain client using the Klayr SDK.
 
 [source,bash]
 ----
 USAGE
-  $ lisk init [PROJECTPATH]
+  $ klayr init [PROJECTPATH]
 
 ARGUMENTS
   PROJECTPATH  [default: process.cwd] Path to create the project.
 
 OPTIONS
-  -t, --template=template  Template to bootstrap the application. It will read from `.liskrc.json` or use `lisk-ts` if not found.
+  -t, --template=template  Template to bootstrap the application. It will read from `.klayrrc.json` or use `klayr-ts` if not found.
   --registry=registry      URL of a registry to download dependencies from.
 
 EXAMPLES
   init
-  init --template lisk-ts
+  init --template klayr-ts
   init --template @some-global-npm-package
   init /project/path
-  init /project/path --template lisk-ts
+  init /project/path --template klayr-ts
 
 ----
 
 === Console
 
-Lisk interactive REPL session to run commands.
+Klayr interactive REPL session to run commands.
 
 [source,bash]
 ----
 USAGE
-  $ lisk console
+  $ klayr console
 
 OPTIONS
   --api-ipc=api-ipc  Enable api-client with IPC communication.
@@ -93,7 +93,7 @@ Creates a hash onion output to be used by a forger.
 Create hash onions to be used by the forger.
 
 USAGE
-  $ lisk hash-onion
+  $ klayr hash-onion
 
 OPTIONS
   -c, --count=count        [default: 1000000] Total number of hashes to produce.
@@ -114,7 +114,7 @@ The Network identifier needs to be provided everytime a transaction is signed, w
 [source,bash]
 ----
 USAGE
-  $ lisk network-identifier GENESISBLOCKID
+  $ klayr network-identifier GENESISBLOCKID
 
 ARGUMENTS
   GENESISBLOCKID  ID of genesis block from the network.
@@ -123,7 +123,7 @@ OPTIONS
   -j, --[no-]json                              Prints output in JSON format. You can change the default behavior in your
                                                config.json file.
 
-  --community-identifier=community-identifier  [default: Lisk] Unique community identifier for network.
+  --community-identifier=community-identifier  [default: Klayr] Unique community identifier for network.
 
   --[no-]pretty                                Prints JSON in pretty format rather than condensed. Has no effect if the output is
                                                set to table. You can change the default behavior in your config.json file.
@@ -144,12 +144,12 @@ EXAMPLE
 
 === Autocomplete
 
-Display instructions how to enable auto-completion for Lisk Commander commmands.
+Display instructions how to enable auto-completion for Klayr Commander commmands.
 
 [source,bash]
 ----
 USAGE
-  $ lisk autocomplete [SHELL]
+  $ klayr autocomplete [SHELL]
 
 ARGUMENTS
   SHELL  shell type
@@ -158,35 +158,35 @@ OPTIONS
   -r, --refresh-cache  Refresh cache (ignores displaying instructions)
 
 EXAMPLES
-  $ lisk autocomplete
-  $ lisk autocomplete bash
-  $ lisk autocomplete zsh
-  $ lisk autocomplete --refresh-cache
+  $ klayr autocomplete
+  $ klayr autocomplete bash
+  $ klayr autocomplete zsh
+  $ klayr autocomplete --refresh-cache
 ----
 
 == Account
 
-Commands relating to Lisk accounts.
+Commands relating to Klayr accounts.
 
 [source,bash]
 ----
 USAGE
-  $ lisk account:COMMAND
+  $ klayr account:COMMAND
 
 COMMANDS
-  account:create  Return randomly-generated mnemonic passphrase with its corresponding public/private key pair and Lisk address.
+  account:create  Return randomly-generated mnemonic passphrase with its corresponding public/private key pair and Klayr address.
   account:show    Show account information for a given passphrase.
 ----
 
 [[create_account]]
 === Create account
 
-This returns a randomly-generated mnemonic passphrase with its corresponding public/private key pair and Lisk address.
+This returns a randomly-generated mnemonic passphrase with its corresponding public/private key pair and Klayr address.
 
 [source,bash]
 ----
 USAGE
-  $ lisk account:create
+  $ klayr account:create
 
 OPTIONS
   -c, --count=count  [default: 1] Number of accounts to create.
@@ -206,7 +206,7 @@ EXAMPLES
   "privateKey": "a00c8107d40a8a678b5e9f4533bd4e740c446a1967300139b16fd62b0184cad51dc86a88278ee6db12ff671318677ec23b9ee6231cfca71a2c99c2ab78338cb1",
   "publicKey": "1dc86a88278ee6db12ff671318677ec23b9ee6231cfca71a2c99c2ab78338cb1",
   "binaryAddress": "3e565c6f2d22e0a3c1e4717672ec8ac61c2660f2",
-  "address": "lskna5m2sa9p5u6nu8p7msnmsp6227vo2nrzvczsq"
+  "address": "klyna5m2sa9p5u6nu8p7msnmsp6227vo2nrzvczsq"
  }
 ]
 ----
@@ -214,12 +214,12 @@ EXAMPLES
 === Show account
 
 Shows account information for a given passphrase.
-It displays the Lisk address, the address as hexadecimal string, the publickey and the privatekey that belong to the entered passphrase:
+It displays the Klayr address, the address as hexadecimal string, the publickey and the privatekey that belong to the entered passphrase:
 
 [source,bash]
 ----
 USAGE
-  $ lisk account:show
+  $ klayr account:show
 
 OPTIONS
   -p, --passphrase=passphrase  Specifies a source for your secret passphrase.
@@ -238,7 +238,7 @@ EXAMPLE
 {
  "privateKey": "a00c8107d40a8a678b5e9f4533bd4e740c446a1967300139b16fd62b0184cad51dc86a88278ee6db12ff671318677ec23b9ee6231cfca71a2c99c2ab78338cb1",
  "publicKey": "1dc86a88278ee6db12ff671318677ec23b9ee6231cfca71a2c99c2ab78338cb1",
- "address": "lskna5m2sa9p5u6nu8p7msnmsp6227vo2nrzvczsq",
+ "address": "klyna5m2sa9p5u6nu8p7msnmsp6227vo2nrzvczsq",
  "binaryAddress": "3e565c6f2d22e0a3c1e4717672ec8ac61c2660f2"
 }
 ----
@@ -250,7 +250,7 @@ Commands to auto-generate different components  of a blockchain client.
 [source,bash]
 ----
 USAGE
-  $ lisk generate:COMMAND
+  $ klayr generate:COMMAND
 
 COMMANDS
   generate:asset   Creates an asset skeleton for the given module name, name and id.
@@ -265,7 +265,7 @@ Creates an asset skeleton for the given module name, asset name, and ID.
 [source,bash]
 ----
 USAGE
-  $ lisk generate:asset MODULENAME ASSETNAME ASSETID
+  $ klayr generate:asset MODULENAME ASSETNAME ASSETID
 
 ARGUMENTS
   MODULENAME  Module name.
@@ -273,7 +273,7 @@ ARGUMENTS
   ASSETID     Asset Id.
 
 OPTIONS
-  -t, --template=template  Template to bootstrap the application. It will read from `.liskrc.json` or use `lisk-ts` if not found.
+  -t, --template=template  Template to bootstrap the application. It will read from `.klayrrc.json` or use `klayr-ts` if not found.
 
 EXAMPLES
   generate:asset moduleName assetName assetID
@@ -288,14 +288,14 @@ Creates a module skeleton for the given name and ID.
 ----
 
 USAGE
-  $ lisk generate:module MODULENAME MODULEID
+  $ klayr generate:module MODULENAME MODULEID
 
 ARGUMENTS
   MODULENAME  Module name.
   MODULEID    Module Id, should be atleast 1000 or more
 
 OPTIONS
-  -t, --template=template  Template to bootstrap the application. It will read from `.liskrc.json` or use `lisk-ts` if not found.
+  -t, --template=template  Template to bootstrap the application. It will read from `.klayrrc.json` or use `klayr-ts` if not found.
 
 EXAMPLE
   generate:module nft 5000
@@ -308,14 +308,14 @@ Creates a custom plugin for the given alias.
 [source,bash]
 ----
 USAGE
-  $ lisk generate:plugin ALIAS
+  $ klayr generate:plugin ALIAS
 
 ARGUMENTS
   ALIAS  Alias of the plugin.
 
 OPTIONS
   -o, --output=output      Path to create the plugin.
-  -t, --template=template  Template to bootstrap the application. It will read from `.liskrc.json` or use `lisk-ts` if not found.
+  -t, --template=template  Template to bootstrap the application. It will read from `.klayrrc.json` or use `klayr-ts` if not found.
   --registry=registry      URL of a registry to download dependencies from.
   --standalone             Create a standalone plugin package.
 
@@ -331,7 +331,7 @@ Commands relating to user messages.
 [source,bash]
 ----
 USAGE
-  $ lisk message:COMMAND
+  $ klayr message:COMMAND
 
 COMMANDS
   message:decrypt
@@ -349,7 +349,7 @@ include::partial$sensitive-inputs-warning.adoc[]
 [source,bash]
 ----
 USAGE
-  $ lisk message:decrypt SENDERPUBLICKEY NONCE [MESSAGE]
+  $ klayr message:decrypt SENDERPUBLICKEY NONCE [MESSAGE]
 
 ARGUMENTS
   SENDERPUBLICKEY  Public key of the sender of the message.
@@ -398,7 +398,7 @@ EXAMPLE
 
 This encrypts a message for a given recipient public key using your secret passphrase.
 
-This command uses the Lisk Elements passphrase module to encrypt a message you provide for a given public key using a randomly generated nonce.
+This command uses the Klayr Elements passphrase module to encrypt a message you provide for a given public key using a randomly generated nonce.
 In order to decrypt the encrypted message later the recipient will need your public key, (in order to verify that the message came from you), including the nonce and the secret passphrase which matches the specified public key.
 
 include::partial$sensitive-inputs-warning.adoc[]
@@ -406,7 +406,7 @@ include::partial$sensitive-inputs-warning.adoc[]
 [source,bash]
 ----
 USAGE
-  $ lisk message:encrypt RECIPIENTPUBLICKEY [MESSAGE]
+  $ klayr message:encrypt RECIPIENTPUBLICKEY [MESSAGE]
 
 ARGUMENTS
   RECIPIENTPUBLICKEY  Public key of the recipient of the message.
@@ -464,7 +464,7 @@ include::partial$sensitive-inputs-warning.adoc[]
 [source,bash]
 ----
 USAGE
-  $ lisk message:sign [MESSAGE]
+  $ klayr message:sign [MESSAGE]
 
 ARGUMENTS
   MESSAGE  Message to sign.
@@ -519,7 +519,7 @@ The public key, signature and message are required.
 [source,bash]
 ----
 USAGE
-  $ lisk message:verify PUBLICKEY SIGNATURE [MESSAGE]
+  $ klayr message:verify PUBLICKEY SIGNATURE [MESSAGE]
 
 ARGUMENTS
   PUBLICKEY  Public key of the signer of the message.
@@ -559,12 +559,12 @@ EXAMPLE
 
 == Passphrase
 
-Commands relating to Lisk passphrases.
+Commands relating to Klayr passphrases.
 
 [source,bash]
 ----
 USAGE
-  $ lisk passphrase:COMMAND
+  $ klayr passphrase:COMMAND
 
 COMMANDS
   passphrase:decrypt  Decrypt secret passphrase using the password provided at the time of encryption.
@@ -583,7 +583,7 @@ include::partial$sensitive-inputs-warning.adoc[]
 [source,bash]
 ----
 USAGE
-  $ lisk passphrase:decrypt ENCRYPTEDPASSPHRASE
+  $ klayr passphrase:decrypt ENCRYPTEDPASSPHRASE
 
 ARGUMENTS
   ENCRYPTEDPASSPHRASE  Encrypted passphrase to decrypt.
@@ -621,7 +621,7 @@ include::partial$sensitive-inputs-warning.adoc[]
 [source,bash]
 ----
 USAGE
-  $ lisk passphrase:encrypt
+  $ klayr passphrase:encrypt
 
 OPTIONS
   -p, --passphrase=passphrase  Specifies a source for your secret passphrase. Command will prompt you for input if this option is not set.

@@ -9,13 +9,13 @@ Mona Bärenfänger <mona@lightcurve.io> Muhammad Talha <muhammad.talha@lightcurv
 :idseparator: -
 :v_sdk: development
 // URLs
-:url_github_sdk_configschema: https://github.com/LiskHQ/lisk-sdk/blob/{v_sdk}/framework/src/schema/application_config_schema.ts
-:url_github_config_example: https://github.com/LiskHQ/lisk-sdk/blob/development/commander/src/utils/config.ts
-:lisk_ID_system: https://lisk.com/blog/research/new-lisk-id-system
-:url_plain_object_schema: https://github.com/LiskHQ/lisk-sdk/blob/238ed3166fe04856e855ff8d2dd328ae414666f7/framework/src/engine/generator/schemas.ts#L429
-:url_encrypted_object_schema: https://github.com/LiskHQ/lisk-sdk/blob/238ed3166fe04856e855ff8d2dd328ae414666f7/framework/src/engine/generator/schemas.ts#L376
-:url_key_derivation_lip66: https://github.com/LiskHQ/lips/blob/main/proposals/lip-0066.md
-:keys_fixture: https://github.com/LiskHQ/lisk-sdk/blob/development/framework/src/testing/fixtures/keys_fixture.json
+:url_github_sdk_configschema: https://github.com/KlayrHQ/klayr-sdk/blob/{v_sdk}/framework/src/schema/application_config_schema.ts
+:url_github_config_example: https://github.com/KlayrHQ/klayr-sdk/blob/development/commander/src/utils/config.ts
+:klayr_ID_system: https://klayr.com/blog/research/new-klayr-id-system
+:url_plain_object_schema: https://github.com/KlayrHQ/klayr-sdk/blob/238ed3166fe04856e855ff8d2dd328ae414666f7/framework/src/engine/generator/schemas.ts#L429
+:url_encrypted_object_schema: https://github.com/KlayrHQ/klayr-sdk/blob/238ed3166fe04856e855ff8d2dd328ae414666f7/framework/src/engine/generator/schemas.ts#L376
+:url_key_derivation_lip66: https://github.com/KlayrHQ/lips/blob/main/proposals/lip-0066.md
+:keys_fixture: https://github.com/KlayrHQ/klayr-sdk/blob/development/framework/src/testing/fixtures/keys_fixture.json
 :url_mozilla_acao: https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Allow-Origin
 // Project URLs
 :url_configure_app_guide: ROOT::build-blockchain/configuration.adoc
@@ -27,7 +27,7 @@ A complete reference of the client configurations is described on this page.
 TIP: For more information on how to create and use a *custom configuration* for the client, please check out the guide xref:{url_configure_app_guide}[].
 
 == Default Configuration
-The default configuration used to initialize new blockchain clients with Lisk Commander can be found here: {url_github_config_example}[config.ts^]
+The default configuration used to initialize new blockchain clients with Klayr Commander can be found here: {url_github_config_example}[config.ts^]
 
 The configuration schema can be found at {url_github_sdk_configschema}[client config schema^]
 
@@ -68,7 +68,7 @@ a|[source,js]
 | chainID
 | string
 | mandatory
-| Represents a 4-byte hex string that identifies each chain in the Lisk ecosystem. The length of the hex string should be 8 characters.
+| Represents a 4-byte hex string that identifies each chain in the Klayr ecosystem. The length of the hex string should be 8 characters.
 | 00000000
 
 | maxTransactionsSize
@@ -268,7 +268,7 @@ WARNING: The connectivity of the node might be negatively impacted if the `*fixe
 Beware of declaring only trustworthy peers in `*whitelistedPeers*` as these could attack a node with a denial-of-service attack because the banning mechanism is deactivated.
 
 === rpc
-Apps on Lisk can communicate with a node via the `rpc` communication protocol.
+Apps on Klayr can communicate with a node via the `rpc` communication protocol.
 
 [tabs]
 =====
@@ -286,7 +286,7 @@ Properties::
 | modes
 | array
 | mandatory
-| Modes of communication between lisk node and external services.
+| Modes of communication between klayr node and external services.
 | IPC, WS, HTTP
 
 | port
@@ -362,7 +362,7 @@ Properties::
 | string
 | mandatory
 | DataPath defines the folder path for the client application data.
-| ~/.lisk/beta-sdk-app
+| ~/.klayr/beta-sdk-app
 
 | keepEventsForHeights
 | number
@@ -398,7 +398,7 @@ const customConfig =
 	// Other types of configurations.
 	"system": {
 		"version": "1.0",
-		"dataPath": "~/.lisk/beta-sdk-app",
+		"dataPath": "~/.klayr/beta-sdk-app",
 		"keepEventsForHeights": 300,
 		"logLevel": "info",
 	},
@@ -498,7 +498,7 @@ Properties::
 | array
 | mandatory
 | Brackets specify the blocks of previous legacy blockchains.
-For example, in Lisk Core v4, it will store the height from Core v3 where it starts from, and where it ended.
+For example, in Klayr Core v4, it will store the height from Core v3 where it starts from, and where it ended.
 a|
 [source,json]
 ----
