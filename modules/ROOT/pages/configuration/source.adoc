@@ -1,11 +1,11 @@
 = Configuration with PM2
 Mona Bärenfänger <mona@lightcurve.io>
-:description: Describes how to configure Lisk Service with PM2.
+:description: Describes how to configure Klayr Service with PM2.
 :toc:
 :imagesdir: ../assets/images
-:page-previous: /lisk-service/setup/source.html
+:page-previous: /klayr-service/setup/source.html
 :page-previous-title: Installation from source code
-:page-next: /lisk-service/management/source.html
+:page-next: /klayr-service/management/source.html
 :page-next-title: PM2 commands
 
 :url_pm2: https://pm2.keymetrics.io/
@@ -16,11 +16,11 @@ Mona Bärenfänger <mona@lightcurve.io>
 
 == Default configuration
 
-The {url_pm2_ecosystem_file}[PM2 ecosystem file^] provides the possibility to configure behavior, options, environment variables, and the log files of Lisk Service with PM2.
-The default configuration file is `ecosystem.core3.config.js`, and is located in the root folder of `lisk-service`:
-It contains a configuration to connect to a local Lisk Core node.
+The {url_pm2_ecosystem_file}[PM2 ecosystem file^] provides the possibility to configure behavior, options, environment variables, and the log files of Klayr Service with PM2.
+The default configuration file is `ecosystem.core3.config.js`, and is located in the root folder of `klayr-service`:
+It contains a configuration to connect to a local Klayr Core node.
 
-This config will be used by default when starting Lisk Service with the following:
+This config will be used by default when starting Klayr Service with the following:
 
 [source,bash]
 ----
@@ -33,7 +33,7 @@ pm2 start ecosystem.core3.config.js
 module.exports = {
 	apps: [
 		{
-			name: 'lisk-service-gateway',
+			name: 'klayr-service-gateway',
 			script: 'app.js',
 			cwd: './services/gateway',
 			pid_file: './pids/service_gateway.pid',
@@ -61,7 +61,7 @@ module.exports = {
 			},
 		},
 		{
-			name: 'lisk-service-core',
+			name: 'klayr-service-core',
 			script: 'app.js',
 			cwd: './services/core',
 			pid_file: './pids/service_core.pid',
@@ -75,11 +75,11 @@ module.exports = {
 			env: {
 				// --- Remember to set the properties below
 				SERVICE_BROKER: 'redis://localhost:6379/0',
-				LISK_CORE_WS: 'ws://localhost:8080',
+				KLAYR_CORE_WS: 'ws://localhost:8080',
 				SERVICE_CORE_REDIS: 'redis://localhost:6379/1',
 				SERVICE_CORE_REDIS_VOLATILE: 'redis://localhost:6379/8',
-				SERVICE_CORE_MYSQL: 'mysql://root:password@localhost:3306/lisk',
-				LISK_STATIC: 'https://static-data.lisk.com',
+				SERVICE_CORE_MYSQL: 'mysql://root:password@localhost:3306/klayr',
+				KLAYR_STATIC: 'https://static-data.klayr.com',
 				GEOIP_JSON: '',
 				INDEX_N_BLOCKS: '0',
 				ENABLE_TRANSACTION_STATS: 'true',
@@ -92,7 +92,7 @@ module.exports = {
 			},
 		},
 		{
-			name: 'lisk-service-market',
+			name: 'klayr-service-market',
 			script: 'app.js',
 			cwd: './services/market',
 			pid_file: './pids/service_market.pid',
@@ -108,12 +108,12 @@ module.exports = {
 				SERVICE_BROKER: 'redis://localhost:6379/0',
 				SERVICE_MARKET_REDIS: 'redis://localhost:6379/2',
 				// SERVICE_MARKET_FIAT_CURRENCIES: 'EUR,USD,CHF,GBP,RUB',
-				// SERVICE_MARKET_TARGET_PAIRS: 'LSK_BTC,LSK_EUR,LSK_USD,LSK_CHF,BTC_EUR,BTC_USD,BTC_CHF',
+				// SERVICE_MARKET_TARGET_PAIRS: 'KLY_BTC,KLY_EUR,KLY_USD,KLY_CHF,BTC_EUR,BTC_USD,BTC_CHF',
 				// EXCHANGERATESAPI_IO_API_KEY: ''
 			},
 		},
 		{
-			name: 'lisk-service-newsfeed',
+			name: 'klayr-service-newsfeed',
 			script: 'app.js',
 			cwd: './services/newsfeed',
 			pid_file: './pids/service_newsfeed.pid',
@@ -126,7 +126,7 @@ module.exports = {
 			autorestart: true,
 			env: {
 				SERVICE_BROKER: 'redis://localhost:6379/0',
-				SERVICE_NEWSFEED_MYSQL: 'mysql://lisk:password@localhost:3306/lisk?charset=utf8mb4',
+				SERVICE_NEWSFEED_MYSQL: 'mysql://klayr:password@localhost:3306/klayr?charset=utf8mb4',
 			},
 		},
 	],
@@ -146,18 +146,18 @@ cp ecosystem.core3.config.js ecosystem.custom.config.js #<1>
 
 Now it is possible to open the new file `ecosystem.custom.config.js` and adjust it as desired.
 
-Lisk Service can be configured in various ways by setting environment variables.
+Klayr Service can be configured in various ways by setting environment variables.
 
 TIP: All available configuration options are described in the xref:{url_references_config}[Configuration reference].
 
-To start Lisk Service with the custom ecosystem file, execute the following command:
+To start Klayr Service with the custom ecosystem file, execute the following command:
 
 [source,bash]
 ----
 pm2 start ecosystem.custom.config.js
 ----
 
-Finally, if you want to use `npm start` and `npm stop` to start and stop Lisk Service with the custom configuration, don't forget to update the scripts in `package.json`:
+Finally, if you want to use `npm start` and `npm stop` to start and stop Klayr Service with the custom configuration, don't forget to update the scripts in `package.json`:
 
 [source,json]
 ----
@@ -171,4 +171,4 @@ Finally, if you want to use `npm start` and `npm stop` to start and stop Lisk Se
 }
 ----
 
-Additional commands for managing Lisk Service with PM2 are described on the xref:{url_management_pm2}[PM2 commands] page.
+Additional commands for managing Klayr Service with PM2 are described on the xref:{url_management_pm2}[PM2 commands] page.

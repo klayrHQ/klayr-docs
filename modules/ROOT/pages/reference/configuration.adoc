@@ -1,10 +1,10 @@
-= Lisk Service Configuration Reference
+= Klayr Service Configuration Reference
 :toc:
 
 
 == Common settings
 
-These options are available for all micro-services provided by Lisk Service.
+These options are available for all micro-services provided by Klayr Service.
 
 === Service broker
 
@@ -32,7 +32,7 @@ SERVICE_LOG_GELF=false    # GELF output for remote logging ex. Graylog localhost
 
 [source,bash]
 ----
-# Port that provides the possibility to connect with Lisk Service
+# Port that provides the possibility to connect with Klayr Service
 # For HTTP and WebSocket
 PORT=9901
 HOST=0.0.0.0   # or 127.0.0.1 for localhost
@@ -106,21 +106,21 @@ HTTP_RATE_LIMIT_CONNECTIONS=200 # Max number of requests during window. Defaults
 JSON_RPC_STRICT_MODE=false
 ----
 
-== Lisk settings
+== Klayr settings
 
 === Node settings
 
 [source,bash]
 ----
-LISK_CORE_WS=ws://localhost:8080       # Lisk Core WebSocket RPC API
-# Use host.docker.internal instead of localhost, if Lisk Service runs in Docker
-# LISK_CORE_WS=ws://host.docker.internal:8080
-LISK_CORE_CLIENT_TIMEOUT=30            # Lisk Core client timeout (in seconds)
+KLAYR_CORE_WS=ws://localhost:8080       # Klayr Core WebSocket RPC API
+# Use host.docker.internal instead of localhost, if Klayr Service runs in Docker
+# KLAYR_CORE_WS=ws://host.docker.internal:8080
+KLAYR_CORE_CLIENT_TIMEOUT=30            # Klayr Core client timeout (in seconds)
 ----
 
 === MySQL Snapshot settings
 
-Configurations to sync Lisk Service from an existing snapshot, to speed up the sync process.
+Configurations to sync Klayr Service from an existing snapshot, to speed up the sync process.
 
 [source,bash]
 ----
@@ -128,11 +128,11 @@ Configurations to sync Lisk Service from an existing snapshot, to speed up the s
 ENABLE_APPLY_SNAPSHOT=true
 
 # Custom snapshot url (Expected to end with sql.gz)
-INDEX_SNAPSHOT_URL='https://snapshots.lisk.io/mainnet/service.sql.gz'
+INDEX_SNAPSHOT_URL='https://snapshots.klayr.io/mainnet/service.sql.gz'
 
 # When the MySQL is hosted as a docker-compose service, set the following environment variables:
 # Set docker-compose file path (use absolute path)
-DOCKER_COMPOSE_FILEPATH='/Users/lisk/lisk-service/jenkins/mysql/docker-compose.yml'
+DOCKER_COMPOSE_FILEPATH='/Users/klayr/klayr-service/jenkins/mysql/docker-compose.yml'
 
 # Set MySQL service name as defined in the above docker-compose file
 DOCKER_MYSQL_SERVICE_NAME=mysql
@@ -153,12 +153,12 @@ SERVICE_CORE_REDIS=redis://localhost:6379/1
 SERVICE_CORE_REDIS_VOLATILE=redis://localhost:6379/2
 
 # MySQL settings
-SERVICE_CORE_MYSQL=mysql://lisk:password@localhost:3306/lisk_service_core
+SERVICE_CORE_MYSQL=mysql://klayr:password@localhost:3306/klayr_service_core
 
 # MySQL install (for local Docker container)
 MYSQL_ROOT_PASSWORD=password
-MYSQL_DATABASE=lisk
-MYSQL_USER=lisk
+MYSQL_DATABASE=klayr
+MYSQL_USER=klayr
 MYSQL_PASSWORD=password
 ----
 
@@ -169,11 +169,11 @@ It is recommended to use alphanumeric characters and the commonly accepted speci
 
 [source,bash]
 ----
-# Lisk static assets, i.e. known account lists
-LISK_STATIC=https://static-data.lisk.com
+# Klayr static assets, i.e. known account lists
+KLAYR_STATIC=https://static-data.klayr.com
 
-# Lisk Service geolocation backend
-GEOIP_JSON=https://geoip.lisk.com/json
+# Klayr Service geolocation backend
+GEOIP_JSON=https://geoip.klayr.com/json
 ----
 
 === Indexing
@@ -240,15 +240,15 @@ FEE_EST_WAVG_DECAY_PERCENTAGE=10
 SERVICE_MARKET_FIAT_CURRENCIES=EUR,USD,CHF,GBP,RUB
 
 # Exchange rates exposed to the Gateway, listed by a comma
-SERVICE_MARKET_TARGET_PAIRS=LSK_BTC,LSK_EUR,BTC_CHF
+SERVICE_MARKET_TARGET_PAIRS=KLY_BTC,KLY_EUR,BTC_CHF
 
 # Optional API key for https://exchangeratesapi.io/
 # /market/prices endpoint will respond with additional data, specifically the exchange rates for various cryptocurrencies in other fiat currencies.
-# The free plan would suffice for the purpose of Lisk Service.
+# The free plan would suffice for the purpose of Klayr Service.
 EXCHANGERATESAPI_IO_API_KEY=EXCHANGERATESAPI_IO_API_KEY
 
 # Local Redis cache for the Market microservice
-# Required, if Lisk Service is not running in Docker
+# Required, if Klayr Service is not running in Docker
 SERVICE_MARKET_REDIS=redis://localhost:6379/2
 ----
 
@@ -257,5 +257,5 @@ SERVICE_MARKET_REDIS=redis://localhost:6379/2
 [source,bash]
 ----
 # This setting is required only for SDK version 4 or lower.
-LISK_CORE_HTTP=https://mainnet.lisk.com # Lisk Core HTTP URL
+KLAYR_CORE_HTTP=https://mainnet.klayr.com # Klayr Core HTTP URL
 ----

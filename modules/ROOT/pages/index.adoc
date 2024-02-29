@@ -1,40 +1,40 @@
-= Lisk Service
+= Klayr Service
 Mona Bärenfänger <mona@lightcurve.io>
-:description: Describes the general purpose, architecture and usage of Lisk Service.
+:description: Describes the general purpose, architecture and usage of Klayr Service.
 :toc:
 :idseparator: -
 :idprefix:
 :imagesdir: ../assets/images
 :page-no-previous: true
 
-:url_api_mainnet: https://service.lisk.com/api/v2
-:url_api_testnet: https://testnet-service.lisk.com/api/v2
-:url_rpc_api_mainnet: wss://service.lisk.com/rpc-v2
-:url_rpc_api_testnet: wss://testnet-service.lisk.com/rpc-v2
-:url_subscribe_api_mainnet: wss://testnet-service.lisk.com/blockchain
-:url_subscribe_api_testnet: wss://testnet-service.lisk.com/blockchain
+:url_api_mainnet: https://service.klayr.com/api/v2
+:url_api_testnet: https://testnet-service.klayr.com/api/v2
+:url_rpc_api_mainnet: wss://service.klayr.com/rpc-v2
+:url_rpc_api_testnet: wss://testnet-service.klayr.com/rpc-v2
+:url_subscribe_api_mainnet: wss://testnet-service.klayr.com/blockchain
+:url_subscribe_api_testnet: wss://testnet-service.klayr.com/blockchain
 :url_bitcoin: https://en.bitcoin.it/wiki/Protocol_documentation
 :url_electrumx_docs: https://electrumx.readthedocs.io/en/latest/
-:url_github_lisk_explorer: https://github.com/LiskHQ/lisk-explorer
-:url_github_lisk_service: https://github.com/LiskHQ/lisk-service
+:url_github_klayr_explorer: https://github.com/KlayrHQ/klayr-explorer
+:url_github_klayr_service: https://github.com/KlayrHQ/klayr-service
 :url_github_leveldb: https://github.com/google/leveldb
-:url_lisk_wallet: https://lisk.com/wallet
+:url_klayr_wallet: https://klayr.com/wallet
 :url_moleculer: https://moleculer.services/
 :url_nats: http://nats.io/
 :url_npm_socketio_client: https://www.npmjs.com/package/socket.io-client
 
-:url_api_http_testnet:  lisk-v3@ROOT::api/lisk-service-http-testnet.adoc
-:url_api_http:  lisk-v3@ROOT::api/lisk-service-http.adoc
-:url_api_rpc:  lisk-v3@ROOT::api/lisk-service-rpc.adoc
-:url_api_subscribe:  lisk-v3@ROOT::api/lisk-service-pubsub.adoc
+:url_api_http_testnet:  klayr-v3@ROOT::api/klayr-service-http-testnet.adoc
+:url_api_http:  klayr-v3@ROOT::api/klayr-service-http.adoc
+:url_api_rpc:  klayr-v3@ROOT::api/klayr-service-rpc.adoc
+:url_api_subscribe:  klayr-v3@ROOT::api/klayr-service-pubsub.adoc
 :url_config:  configuration/docker.adoc
-:url_protocol: lisk-v3@ROOT::understand-blockchain/lisk-protocol/index.adoc
+:url_protocol: klayr-v3@ROOT::understand-blockchain/klayr-protocol/index.adoc
 :url_setup:  setup/docker.adoc
 
-{url_github_lisk_service}[Lisk Service^] is a web application that allows interaction with various blockchain networks based on xref:{url_protocol}[Lisk] and {url_bitcoin}[Bitcoin] protocols.
+{url_github_klayr_service}[Klayr Service^] is a web application that allows interaction with various blockchain networks based on xref:{url_protocol}[Klayr] and {url_bitcoin}[Bitcoin] protocols.
 
-The main focus of Lisk Service is to provide data to the UI clients such as {url_lisk_wallet}[Lisk Desktop] and {url_lisk_wallet}[Lisk Mobile].
-Lisk Service makes it possible to access all blockchain live data in a similar way to the regular Lisk SDK API, and in addition provides users with much more details and endpoints, such as geolocation and various statistics about network usage.
+The main focus of Klayr Service is to provide data to the UI clients such as {url_klayr_wallet}[Klayr Desktop] and {url_klayr_wallet}[Klayr Mobile].
+Klayr Service makes it possible to access all blockchain live data in a similar way to the regular Klayr SDK API, and in addition provides users with much more details and endpoints, such as geolocation and various statistics about network usage.
 
 The project implementation is based on <<microservices>>.
 The technical stack is designed to deliver several microservices, and each of them provides one particular functionality.
@@ -50,30 +50,30 @@ image::architecture.png[Architecture]
 //TODO:Update components list
 
 [cols="1,3", options="header"]
-.The Lisk Service microservices
+.The Klayr Service microservices
 |===
 |Microservice |Description
 
 |*Gateway*
-|The Gateway component provides a RESTful xref:{url_api_http}[HTTP API], which all users of Lisk Service can access and use.
-Its main purpose is to proxy API requests from users to other components provided by Lisk Service.
+|The Gateway component provides a RESTful xref:{url_api_http}[HTTP API], which all users of Klayr Service can access and use.
+Its main purpose is to proxy API requests from users to other components provided by Klayr Service.
 It also maintains backwards compatibility when its public API is changed or replaced by a new version.
 This provides users with a **central point of data access** that never breaks existing application compatibility.
 
-|*Lisk*
-|The REST client component acts as a bridge between the Lisk SDK and the <<gateway,Lisk Service Gateway>>.
-Its main purpose is to provide enriched data from the Lisk SDK API.
-This component is designed to provide high availability, together with efficient and reliable access to the Lisk SDK API.
+|*Klayr*
+|The REST client component acts as a bridge between the Klayr SDK and the <<gateway,Klayr Service Gateway>>.
+Its main purpose is to provide enriched data from the Klayr SDK API.
+This component is designed to provide high availability, together with efficient and reliable access to the Klayr SDK API.
 
 |*Market*
 |The Market service allows price data retrieval.
-It supports multiple sources to maintain the current up-to-date Lisk token price, and ensures this is available to the clients in real time.
+It supports multiple sources to maintain the current up-to-date Klayr token price, and ensures this is available to the clients in real time.
 
 |*Newsfeed*
-|The Newsfeed service is a single-purpose microservice that aggregates content sharing platforms and shares collected data with UI clients such as Lisk Desktop.
+|The Newsfeed service is a single-purpose microservice that aggregates content sharing platforms and shares collected data with UI clients such as Klayr Desktop.
 
 |*Template*
-|The Template service is an abstract service whereby all of the services from Lisk Service are inherited from.
+|The Template service is an abstract service whereby all of the services from Klayr Service are inherited from.
 It allows all services to share a similar interface and design pattern.
 The purpose here is to reduce code duplication and increase consistency between each service, hence simplifying code maintenance and testing.
 |===
@@ -81,27 +81,27 @@ The purpose here is to reduce code duplication and increase consistency between 
 [[usage]]
 == APIs & Usage
 
-Once Lisk Service is xref:{url_setup}[set up], xref:{url_config}[configured] and started, it is possible to retrieve data from the blockchain network.
+Once Klayr Service is xref:{url_setup}[set up], xref:{url_config}[configured] and started, it is possible to retrieve data from the blockchain network.
 
-Lisk Service provides the data through several alternative APIs:
+Klayr Service provides the data through several alternative APIs:
 
 === The HTTP API
 
-The xref:{url_api_http}[HTTP API] offers a RESTful API with various additional endpoints as compared to the HTTP API of a normal Lisk node.
+The xref:{url_api_http}[HTTP API] offers a RESTful API with various additional endpoints as compared to the HTTP API of a normal Klayr node.
 
-This API can be utilized to build powerful wallets and user interfaces for blockchain applications which are built with the Lisk SDK.
+This API can be utilized to build powerful wallets and user interfaces for blockchain applications which are built with the Klayr SDK.
 
-==== Public Lisk Service APIs
+==== Public Klayr Service APIs
 
-There is a public HTTP API for every public Lisk blockchain network, which can be used to query the desired information from the network.
+There is a public HTTP API for every public Klayr blockchain network, which can be used to query the desired information from the network.
 
-Lisk Mainnet::
+Klayr Mainnet::
 * Public API base URL: `{url_api_mainnet}`
-* API specification: xref:{url_api_http}[Lisk Service HTTP API reference (Mainnet)]
+* API specification: xref:{url_api_http}[Klayr Service HTTP API reference (Mainnet)]
 
-Lisk Testnet::
+Klayr Testnet::
 * Public API base URL: `{url_api_testnet}`
-* API specification: xref:{url_api_http_testnet}[Lisk Service HTTP API reference (Testnet)]
+* API specification: xref:{url_api_http_testnet}[Klayr Service HTTP API reference (Testnet)]
 
 [NOTE]
 ====
@@ -109,8 +109,8 @@ In the Public API base URLs listed above, in order to fetch the required entitie
 
 For example:
 
-* https://service.lisk.com/api/v2/transactions
-* https://testnet-service.lisk.com/api/v2/transactions
+* https://service.klayr.com/api/v2/transactions
+* https://testnet-service.klayr.com/api/v2/transactions
 ====
 
 ==== Example: Request data with curl
@@ -129,7 +129,7 @@ curl -X GET "http://localhost:9901/api/v2/forgers" -H  "accept: application/json
     {
       "username": "spaceone_pool",
       "totalVotesReceived": "24200000000000",
-      "address": "lsk52ox9f8t7oghqtbtytvpkqzv4wf2srjsvoaff7",
+      "address": "kly52ox9f8t7oghqtbtytvpkqzv4wf2srjsvoaff7",
       "minActiveHeight": 16357328,
       "isConsensusParticipant": true,
       "nextForgingTime": 1635159800
@@ -137,7 +137,7 @@ curl -X GET "http://localhost:9901/api/v2/forgers" -H  "accept: application/json
     {
       "username": "btf",
       "totalVotesReceived": "17250000000000",
-      "address": "lsk49cfgah7bz84ncoqkhsvg5o2bsmj23x3vqo9y5",
+      "address": "kly49cfgah7bz84ncoqkhsvg5o2bsmj23x3vqo9y5",
       "minActiveHeight": 16486490,
       "isConsensusParticipant": true,
       "nextForgingTime": 1635159810
@@ -146,7 +146,7 @@ curl -X GET "http://localhost:9901/api/v2/forgers" -H  "accept: application/json
     {
       "username": "gregoryh",
       "totalVotesReceived": "21998000000000",
-      "address": "lskfkvo54opxs7cn6aefjhuupbr6zv7yegyow9sb4",
+      "address": "klyfkvo54opxs7cn6aefjhuupbr6zv7yegyow9sb4",
       "minActiveHeight": 16467538,
       "isConsensusParticipant": true,
       "nextForgingTime": 1635160820
@@ -167,10 +167,10 @@ The API uses the `socket.io` library and it is compatible with JSON-RPC 2.0 stan
 
 Check out the xref:{url_api_rpc}[] reference for an overview of all available RPC requests.
 
-Lisk Mainnet::
+Klayr Mainnet::
 * Public API: `{url_rpc_api_mainnet}`
 
-Lisk Testnet::
+Klayr Testnet::
 * Public API: `{url_rpc_api_testnet}`
 
 ==== Example: Emit to remote-procedure calls with socket.io
@@ -198,9 +198,9 @@ jsome.params.colored = true;
 // Use local Service node
 const WS_RPC_ENDPOINT = 'ws://localhost:9901/rpc-v2';
 //Use public Service node
-//const WS_RPC_ENDPOINT = "wss://service.lisk.com/rpc-v2";
+//const WS_RPC_ENDPOINT = "wss://service.klayr.com/rpc-v2";
 
-// 2. Connect to Lisk Service via WebSockets
+// 2. Connect to Klayr Service via WebSockets
 const socket = io(WS_RPC_ENDPOINT, {
   forceNew: true,
   transports: ['websocket']
@@ -231,10 +231,10 @@ The Subscribe API, or sometimes called the Publish/Subscribe or Event-Driven API
 
 NOTE: Check out the xref:{url_api_subscribe}[] reference for an overview of all available RPC requests.
 
-Lisk Mainnet::
+Klayr Mainnet::
 * Public API: `{url_subscribe_api_mainnet}`
 
-Lisk Testnet::
+Klayr Testnet::
 * Public API: `{url_subscribe_api_testnet}`
 
 ==== Example: Subscribe to events with socket.io
@@ -257,7 +257,7 @@ jsome.params.colored = true;
 // Uses local Service node
 const WS_SUBSCRIBE_ENDPOINT = 'ws://localhost:9901/blockchain';
 // Uses public Service node
-//const WS_SUBSCRIBE_ENDPOINT = "wss://service.lisk.com/blockchain";
+//const WS_SUBSCRIBE_ENDPOINT = "wss://service.klayr.com/blockchain";
 
 const socket = io(WS_SUBSCRIBE_ENDPOINT, {
 	forceNew: true,

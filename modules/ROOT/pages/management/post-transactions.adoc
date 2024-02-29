@@ -1,11 +1,11 @@
-= Posting transactions with Lisk Service
+= Posting transactions with Klayr Service
 :toc:
 
-How to send transactions to a blockchain node via Lisk Service.
+How to send transactions to a blockchain node via Klayr Service.
 
 == Prepare the transaction object
 
-To prepare the transaction, create the desired transaction object. This is made possible by using either the Lisk Core CLI, or alternatively using the API client:
+To prepare the transaction, create the desired transaction object. This is made possible by using either the Klayr Core CLI, or alternatively using the API client:
 
 === Via CLI
 
@@ -13,7 +13,7 @@ Any node which is connected to the respective blockchain network can be used to 
 
 [source,bash]
 ----
-$ lisk-core transaction:create 2 0 100000000
+$ klayr-core transaction:create 2 0 100000000
 ? Please enter: amount:  1000000000
 ? Please enter: recipientAddress:  ab0041a7d3f7b2c290b5b834d46bdc7b7eb85815
 ? Please enter: data:  send tokens
@@ -33,7 +33,7 @@ To also see the decoded transaction object on creation, add the `--json` paramet
 
 [source,bash]
 ----
-$ lisk-core transaction:create 2 0 100000000 --json --pretty
+$ klayr-core transaction:create 2 0 100000000 --json --pretty
 ? Please enter: amount:  1000000000
 ? Please enter: recipientAddress:  ab0041a7d3f7b2c290b5b834d46bdc7b7eb85815
 ? Please enter: data:  send tokens
@@ -65,19 +65,19 @@ $ lisk-core transaction:create 2 0 100000000 --json --pretty
 === Via API client
 
 The API client allows to connect to a particular node API, and enables to get and post data to the node.
-It is part of the `lisk-api-client` package and is also included in the `lisk-client` and `lisk-sdk` packages.
+It is part of the `klayr-api-client` package and is also included in the `klayr-client` and `klayr-sdk` packages.
 
 An example script how to create a transaction object is described in the code snippet below:
 
 [source,js]
 ----
-const { apiClient, cryptography, transactions } = require('@liskhq/lisk-client');
+const { apiClient, cryptography, transactions } = require('@klayrhq/klayr-client');
 const RPC_ENDPOINT = 'ws://localhost:8080/ws';
 
 let clientCache;
 
 // Replace with the sender address
-const senderAddress = "lskt8ovj2shbxrtno8xqqt7cnmzzygdkbt6brnvmj";
+const senderAddress = "klyt8ovj2shbxrtno8xqqt7cnmzzygdkbt6brnvmj";
 // Replace with the sender passphrase
 const passphrase = "The 12 word mnemonic passphrase of the sender account"
 
@@ -93,9 +93,9 @@ const address = cryptography.getAddressFromBase32Address(senderAddress);
 const tx = await client.transaction.create({
     moduleID: 2,
     assetID: 0,
-    fee: BigInt(transactions.convertLSKToBeddows('0.01')),
+    fee: BigInt(transactions.convertKLYToBeddows('0.01')),
     asset: {
-        amount: BigInt(transactions.convertLSKToBeddows(8)),
+        amount: BigInt(transactions.convertKLYToBeddows(8)),
         recipientAddress: address,
         data: 'Happy birthday!'
     }
@@ -106,11 +106,11 @@ console.log(tx);
 
 == Sending the transaction
 
-An existing transaction object in its binary encoded format can be posted to Lisk Core via the Lisk Service either by using its HTTP or WebSocket APIs.
+An existing transaction object in its binary encoded format can be posted to Klayr Core via the Klayr Service either by using its HTTP or WebSocket APIs.
 
 === Via HTTP API
 
-cURL is one of the tools that can be used to send HTTP API requests to Lisk Service:
+cURL is one of the tools that can be used to send HTTP API requests to Klayr Service:
 
 [source,bash]
 ----
@@ -125,7 +125,7 @@ The following response will be displayed, if the transaction was posted successf
 
 === Via WebSocket API
 
-If you prefer to use the RPC WebSocket API of Lisk Service to post transactions, this can be achieved for example by writing a small JS script, and using the API client of the `socket.io-client` package:
+If you prefer to use the RPC WebSocket API of Klayr Service to post transactions, this can be achieved for example by writing a small JS script, and using the API client of the `socket.io-client` package:
 
 [source,js]
 ----
@@ -138,9 +138,9 @@ jsome.params.colored = true;
 // Use local Service node
 const WS_RPC_ENDPOINT = 'ws://localhost:9901/rpc-v2';
 //Use public Service node
-//const WS_RPC_ENDPOINT = "wss://service.lisk.com/rpc-v2";
+//const WS_RPC_ENDPOINT = "wss://service.klayr.com/rpc-v2";
 
-// 2. Connect to Lisk Service via WebSockets
+// 2. Connect to Klayr Service via WebSockets
 const socket = io(WS_RPC_ENDPOINT, {
   forceNew: true,
   transports: ['websocket']
@@ -164,7 +164,7 @@ socket.emit('request', {
 
 [source,bash]
 ----
-$ lisk-core transaction:send 0802100018022080c2d72f2a20e03c09bdc8c023d94cf66a5d352e6258380210d97d545abbf75668ea3736e3123229088094ebdc031214ab0041a7d3f7b2c290b5b834d46bdc7b7eb858151a0b73656e6420746f6b656e733a40faa2626d7306506b1999f48aa2f4b1ffdee01e641fa76d37a9d1d6fd8c225a81065c856ea625c52d138a7e3ba86b62913dc8e5aef8b5e307641ab66e0277a60b
+$ klayr-core transaction:send 0802100018022080c2d72f2a20e03c09bdc8c023d94cf66a5d352e6258380210d97d545abbf75668ea3736e3123229088094ebdc031214ab0041a7d3f7b2c290b5b834d46bdc7b7eb858151a0b73656e6420746f6b656e733a40faa2626d7306506b1999f48aa2f4b1ffdee01e641fa76d37a9d1d6fd8c225a81065c856ea625c52d138a7e3ba86b62913dc8e5aef8b5e307641ab66e0277a60b
 ----
 
 === Via API client

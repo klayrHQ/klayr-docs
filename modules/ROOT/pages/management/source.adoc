@@ -1,6 +1,6 @@
 = PM2 commands
 Mona Bärenfänger <mona@lightcurve.io>
-:description: Describes how to manage Lisk Service with PM2.
+:description: Describes how to manage Klayr Service with PM2.
 :toc:
 :idseparator: -
 :idprefix:
@@ -56,26 +56,26 @@ npm stop
 make clean
 ----
 
-== Reset the Lisk Service database
+== Reset the Klayr Service database
 
-To reset the database of Lisk Service, drop the respective MYSQL and Redis databases.
+To reset the database of Klayr Service, drop the respective MYSQL and Redis databases.
 
 === Drop the MYSQL database
 
 [source,bash]
 ----
-# Stop Lisk Service
+# Stop Klayr Service
 $ npm stop
-# Login to MYSQL with the lisk user
-$ mysql -u lisk -ppassword
+# Login to MYSQL with the klayr user
+$ mysql -u klayr -ppassword
 # Drop the database
-mysql> drop database lisk;
+mysql> drop database klayr;
 # Create fresh database
-mysql> create database lisk;
+mysql> create database klayr;
 mysql> quit; # Quit MYSQL
 ----
 
-NOTE: When Lisk Service is started again after a database reset, then the process to reindex all the data is initiated. This can be quite time-consuming and may take up to 2 hours.
+NOTE: When Klayr Service is started again after a database reset, then the process to reindex all the data is initiated. This can be quite time-consuming and may take up to 2 hours.
 
 === Flush Redis DB
 
@@ -100,21 +100,21 @@ To flush only a particular DB in Redis, execute the following command instead:
 ----
 ====
 
-=== Start Lisk Service
+=== Start Klayr Service
 
 [source,bash]
 ----
-# Start Lisk Service
+# Start Klayr Service
 $ npm start
 ----
 
 == Logging
 
-To check the logs for the different microservices of Lisk Service, use the command `pm2 logs PROCESS_NAME`, where `PROCESS_NAME` is the respective PM2 managed process that contains the logs you wish to view.
+To check the logs for the different microservices of Klayr Service, use the command `pm2 logs PROCESS_NAME`, where `PROCESS_NAME` is the respective PM2 managed process that contains the logs you wish to view.
 
 For example, to see the logs for the Gateway microservice, execute:
 
 [source,bash]
 ----
-pm2 logs lisk-service-gateway
+pm2 logs klayr-service-gateway
 ----
