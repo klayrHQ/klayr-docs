@@ -4,8 +4,8 @@
 :toc: preamble
 :hide-uri-scheme:
 // Project URLs:
-:url-project: https://github.com/LiskHQ/lisk-docs/
-:url-preview: https://liskhq.github.io/lisk-docs
+:url-project: https://github.com/KlayrHQ/klayr-docs/
+:url-preview: https://klayrhq.github.io/klayr-docs
 // External URLs:
 :url-antora: https://antora.org
 :url-antora-docs: https://docs.antora.org
@@ -18,10 +18,10 @@
 :url-nvm-install: {url-nvm}#installation
 :url-source-maps: https://developer.mozilla.org/en-US/docs/Tools/Debugger/How_to/Use_a_source_map
 
-The Lisk Docs UI is a customized fork of the Antora Default UI.
+The Klayr Docs UI is a customized fork of the Antora Default UI.
 The Antora Default UI is an archetype that demonstrates how to produce a UI bundle that can be used by {url-antora}[Antora] to generate a documentation site.
 
-A preview of the Lisk Docs UI can be seen at {url-preview}.
+A preview of the Klayr Docs UI can be seen at {url-preview}.
 
 == Use the Default UI
 
@@ -118,9 +118,9 @@ Clone the default UI project using git:
 
 [subs=attributes+]
 $ git clone {url-project} &&
-cd lisk-docs/ui
+cd klayr-docs/ui
 
-The example above clones the Lisk Docs UI project and then switches to the UI folder on your filesystem.
+The example above clones the Klayr Docs UI project and then switches to the UI folder on your filesystem.
 Stay in this project folder when executing all subsequent commands.
 
 Use npm to install the project's dependencies inside the project.

@@ -1,8 +1,8 @@
 = Releasing new documentation versions
 :imagesdir: ../assets/images
 
-:url_github_sdk_examples: https://github.com/LiskHQ/lisk-sdk-examples/tree/development
-:url_staging: https://liskhq.github.io/lisk-docs
+:url_github_sdk_examples: https://github.com/KlayrHQ/klayr-sdk-examples/tree/development
+:url_staging: https://klayrhq.github.io/klayr-docs
 
 :url_contributing: contributing.adoc
 :url_search: search.adoc
@@ -13,7 +13,7 @@ The steps that are both necessary and recommended for updating the documentation
 == Explaining by example: Releasing the SDK 4.0.0 docs
 
 This guide uses the release of the SDK version 4.0.0 docs as an example to illustrate the general steps that need to be implemented for a new release on a practical level.
-Lisk SDK version 3.0.2 is the previous latest version in this example.
+Klayr SDK version 3.0.2 is the previous latest version in this example.
 
 :sectnums:
 :sectnumlevels: 2
@@ -27,18 +27,18 @@ Examples of how to acquire further knowledge about the new release:
 * Get onboarded internally (if provided)
 ** via internal changelog
 ** via STMs
-* Get onboarded on GitHub in the project description: https://github.com/LiskHQ/lisk-sdk/projects
+* Get onboarded on GitHub in the project description: https://github.com/KlayrHQ/klayr-sdk/projects
 ** Read all LIPs carefully, which are linked in the project description
 +
 image:project-changelog.png[]
-* Check the corresponding GitHub project: https://github.com/LiskHQ/lisk-sdk/projects/76
+* Check the corresponding GitHub project: https://github.com/KlayrHQ/klayr-sdk/projects/76
 ** Look at the epic issues
 ** Navigate into the child issues and PRs of certain epics if necessary
 
-=== Setting up a new project in the lisk-docs repository
+=== Setting up a new project in the klayr-docs repository
 
-. Create a new project on lisk-docs for the new version: https://github.com/LiskHQ/lisk-docs/projects
-* title: "Lisk SDK 4.0.0"
+. Create a new project on klayr-docs for the new version: https://github.com/KlayrHQ/klayr-docs/projects
+* title: "Klayr SDK 4.0.0"
 * description: follow the existing examples
 . xref:{url_contributing}[Create issues] for all upcoming content changes in the docs and add them to the project.
 New issues can still be added later, if necessary.
@@ -61,7 +61,7 @@ git push origin docs-sdk-3.0.2 <2>
 git checkout docs-sdk <3>
 ----
 <1> Switch to a new base branch for the SDK v3 docs.
-<2> Push the new content branch to the lisk-docs repository.
+<2> Push the new content branch to the klayr-docs repository.
 <3> Go back to the `docs-sdk` branch.
 
 The branch `docs-sdk` will be used as base for the new documentation.
@@ -72,8 +72,8 @@ To do so, bump the `version` in `antora.yml`:
 .On branch `docs-sdk`
 [source,yaml]
 ----
-name: lisk-sdk
-title: Lisk SDK
+name: klayr-sdk
+title: Klayr SDK
 version: 'v4' <1>
 display_version: '4.0.0' <2>
 start_page: ROOT:index.adoc
@@ -101,19 +101,19 @@ This will help you to get an overview about the upcoming changes, and to create 
 +
 [source,bash]
 ----
-cd framework-plugins/lisk-framework-http-api-plugin
+cd framework-plugins/klayr-framework-http-api-plugin
 swagger2markup convert -i ./swagger.yml -d ~/swagger-spec
 ----
 +
 Then copy the content of the generated files and remove outdated links from the description.
-.. Update Lisk Commander reference
-.. Update Lisk Elements reference
-.. Update Lisk Framework reference
+.. Update Klayr Commander reference
+.. Update Klayr Elements reference
+.. Update Klayr Framework reference
 .. Update Config reference
 . Explanations
 . Example applications
 +
-NOTE: These updates need to be done in the {url_github_sdk_examples}[lisk-sdk-examples^] repository.
+NOTE: These updates need to be done in the {url_github_sdk_examples}[klayr-sdk-examples^] repository.
 . Tutorials
 . Guides
 . Changelog
@@ -150,28 +150,28 @@ Do not forget to check if it is necessary to perform any updates in other compon
 
 [source,bash]
 ----
-npm i lisk-sdk # before
+npm i klayr-sdk # before
 ----
 
 [source,bash]
 ----
-npm i lisk-sdk@3.0.2 # after
+npm i klayr-sdk@3.0.2 # after
 ----
 
-Perform this for all Lisk Elements packages and also Lisk Commander.
+Perform this for all Klayr Elements packages and also Klayr Commander.
 
 ==== Update links to the SDK example apps
 
 [source,asciidoc]
 ----
 //before
-:url_github_hello: https://github.com/LiskHQ/lisk-sdk-examples/tree/development/hello_world
+:url_github_hello: https://github.com/KlayrHQ/klayr-sdk-examples/tree/development/hello_world
 ----
 
 [source,asciidoc]
 ----
 //after
-:url_github_hello: https://github.com/LiskHQ/lisk-sdk-examples/tree/development/archive/3.x/hello_world
+:url_github_hello: https://github.com/KlayrHQ/klayr-sdk-examples/tree/development/archive/3.x/hello_world
 ----
 
 === Updates on `docs-sdk`
@@ -198,7 +198,7 @@ This is the case in particular, if pages have been moved or removed in the lates
 ----
 content:
   sources:
-  - url: https://github.com/LiskHQ/lisk-docs.git
+  - url: https://github.com/KlayrHQ/klayr-docs.git
     branches: [docs-core, docs-service, docs-protocol, docs-sdk-2.3.8, docs-sdk-3.0.2, docs-core-2.1.6]
 ----
 
@@ -207,7 +207,7 @@ content:
 ----
 content:
   sources:
-  - url: https://github.com/LiskHQ/lisk-docs.git
+  - url: https://github.com/KlayrHQ/klayr-docs.git
     branches: [docs-core, docs-sdk, docs-service, docs-protocol, docs-sdk-2.3.8, docs-sdk-3.0.2, docs-core-2.1.6]
 ----
 
@@ -225,7 +225,7 @@ git commit -m "Update docs"
 git push origin live
 ----
 
-At this point, it is necessary to ask the Devops team to update the documentation on lisk.io.
+At this point, it is necessary to ask the Devops team to update the documentation on klayr.io.
 They will then deploy the new content and flush the cache.
 
 === Updating the search index

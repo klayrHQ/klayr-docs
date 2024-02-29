@@ -4,7 +4,7 @@
 :idprefix:
 :idseparator: -
 // Project URLs:
-:url-repo: https://gitlab.com/liskhq/lisk-docs
+:url-repo: https://gitlab.com/klayrhq/klayr-docs
 // External URLs:
 :url-algolia: https://www.algolia.com/doc/guides/getting-started/what-is-algolia/
 :url-docsearch-scraper-repo: https://github.com/algolia/docsearch-scraper
@@ -13,13 +13,13 @@
 :url-doc-susemanager: https://github.com/SUSE/doc-susemanager/wiki/Setup-Algolia-Search-with-Antora
 :url-antora-search: https://gitlab.com/antora/antora-ui-default/issues/44
 
-This guide contains information on how to manage the search index for the Lisk documentation site.
+This guide contains information on how to manage the search index for the Klayr documentation site.
 It documents where the search index is located and how to update it.
 
 == Overview
 
 The search index for the documentation is hosted by {url-algolia}[Algolia].
-The name of the index is `lisk-docs-search`.
+The name of the index is `klayr-docs-search`.
 The index is populated by the {url-docsearch-scraper-repo}[docsearch scraper] (aka crawler).
 
 The sections below documents the prerequisites for running the docsearch scraper and how to run it to update the index.
@@ -37,7 +37,7 @@ To begin, clone the {url-repo} repository using git and switch to it:
 [subs=attributes+]
 ....
 $ git clone {url-repo} &&
-cd lisk-docs/build/searchdocs-scraper
+cd klayr-docs/build/searchdocs-scraper
 ....
 
 Remain in the `searchdocs-scraper` folder, and also clone the {url-docsearch-scraper-repo} repository using git:

@@ -5,9 +5,9 @@
 :idprefix:
 :toc:
 // External URLs:
-:url_gh_projects: https://github.com/LiskHQ/lisk-docs/projects?type=beta
-:url_docs_staging: https://liskhq.github.io/lisk-docs
-:url_github_issues: https://github.com/LiskHQ/lisk-docs/issues
+:url_gh_projects: https://github.com/KlayrHQ/klayr-docs/projects?type=beta
+:url_docs_staging: https://klayrhq.github.io/klayr-docs
+:url_github_issues: https://github.com/KlayrHQ/klayr-docs/issues
 // Project URLs:
 :url_releases: releases.adoc
 :url_local: local.adoc
@@ -29,7 +29,7 @@ This will also close the corresponding issue automatically.
 
 ==== Creating issues
 
-Please create new issues concerning the Lisk documentation at {url_github_issues}.
+Please create new issues concerning the Klayr documentation at {url_github_issues}.
 
 IMPORTANT: Avoid posting redundant issues: Check before, if someone has already opened an issue concerning the topic.
 
@@ -58,7 +58,7 @@ Affected branch: `docs-sdk` <1>
 
 
 //TODO: Update image
-//image:issue-templates.png[Lisk docs issue templates]
+//image:issue-templates.png[Klayr docs issue templates]
 
 [[epic]]
 ==== Epics and child issues
@@ -76,7 +76,7 @@ Furthermore, some of the required content is outdated or not existent yet.
 
 ### Describe the solution you would prefer to see 
 A new documentation component `docs-manual` should be created. This component will contain 2 new modules:
-- A new documentation module `styleguide` should contain all guidelines and best practices regarding the style of writing in the Lisk documentation.
+- A new documentation module `styleguide` should contain all guidelines and best practices regarding the style of writing in the Klayr documentation.
 - A new documentation module `build` should contain all steps and guidelines about how the content of the docs is structured, and prepared for production.
 
 - [ ] Add new documentation module `styleguide` //<1>
@@ -89,7 +89,7 @@ A new documentation component `docs-manual` should be created. This component wi
 ==== Working on an issue
 
 . Communicate to the team that you want to work on a specific issue in the Sprint planning meeting.
-Alternatively, announce you will work on an unplanned issue in the daily standup or in the `lisk-docs` channel on Slack.
+Alternatively, announce you will work on an unplanned issue in the daily standup or in the `klayr-docs` channel on Slack.
 . To start work on an issue, assign yourself to it.
 . Then check out the base branch, here `development`, and create a new branch named after the issue you are working on:
 +
@@ -101,7 +101,7 @@ git checkout -b 123-issue-title
 +
 where `123` should be the corresponding issue number.
 . Start to make your changes and commit them.
-. Then push them back to the `lisk-docs` repository on GitHub:
+. Then push them back to the `klayr-docs` repository on GitHub:
 +
 [source,bash]
 ----

@@ -1,24 +1,24 @@
 = Resources
 
-General resources to educate oneself about the Lisk protocol and code base.
+General resources to educate oneself about the Klayr protocol and code base.
 
 == LIPs
 
-* https://github.com/LiskHQ/lips
-* https://github.com/LiskHQ/lips-staging
+* https://github.com/KlayrHQ/lips
+* https://github.com/KlayrHQ/lips-staging
 
 == Blog posts
 
-* https://lisk.com/blog[Lisk Blog^]
+* https://klayr.com/blog[Klayr Blog^]
 
 == Videos
 
-* https://www.youtube.com/c/LiskHQ/videos[Lisk Youtube^]
+* https://www.youtube.com/c/KlayrHQ/videos[Klayr Youtube^]
 
 == Forums
 
-* https://dev.lisk.com/[Developer Forum^]
-* https://research.lisk.com/[Research Forum^]
+* https://dev.klayr.com/[Developer Forum^]
+* https://research.klayr.com/[Research Forum^]
 
 == Documentation resources
 
@@ -28,6 +28,6 @@ General resources to educate oneself about the Lisk protocol and code base.
 
 * https://drive.google.com/drive/folders/1cfBjqjpjMmiGLLZQlNGqycuHvc3NxnnW[SDK v6 planning documents^]
 * https://dev-wiki.lightcurve.io/[Developers Wiki^]
-* https://github.com/LiskHQ/discussions/discussions/categories/research-development[Dev Discussions^]
-* https://github.com/LiskHQ[Lisk GitHub^]
-* https://npm.lisk.com/[Lisk NPM registry]
+* https://github.com/KlayrHQ/discussions/discussions/categories/research-development[Dev Discussions^]
+* https://github.com/KlayrHQ[Klayr GitHub^]
+* https://npm.klayr.com/[Klayr NPM registry]

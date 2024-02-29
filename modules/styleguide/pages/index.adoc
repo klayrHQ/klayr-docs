@@ -9,13 +9,13 @@
 :url_google_cross_references: https://developers.google.com/style/cross-references
 :url_google_link_text: https://developers.google.com/style/link-text
 
-The style guide provides best practices and guidelines, how to write helpful content in the Lisk documentation.
+The style guide provides best practices and guidelines, how to write helpful content in the Klayr documentation.
 
 //TODO: each here section should be a separate page
 == Best practices
 
 === Grammar & punctuation
-The Lisk documentation is following the Tips on Grammar, Punctuation and Style from the {url_harvard_writingcenter}[Harvard College Writing Center^].
+The Klayr documentation is following the Tips on Grammar, Punctuation and Style from the {url_harvard_writingcenter}[Harvard College Writing Center^].
 
 === Tone of voice
 The following guidelines should be followed:
@@ -26,7 +26,7 @@ The following guidelines should be followed:
 * {url_google_inclusive}[Writing inclusive documentation^]
 
 === Scannability
-The Lisk documentation is also following the scannable content guide from the {url_microsoft_guide}[Microsoft documentation^].
+The Klayr documentation is also following the scannable content guide from the {url_microsoft_guide}[Microsoft documentation^].
 
 === Links
 The following guidelines should be followed:

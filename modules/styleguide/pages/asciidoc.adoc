@@ -37,13 +37,13 @@ Mona Bärenfänger <mona@lightcurve.io> <2>
 :toc:
 :imagesdir: ../../assets/images
 // External URLs <4>
-:url_github_sdk_5_modules: https://github.com/LiskHQ/lisk-sdk/tree/v5.0.0/framework/src/modules
+:url_github_sdk_5_modules: https://github.com/KlayrHQ/klayr-sdk/tree/v5.0.0/framework/src/modules
 :url_github_dpos: {url_github_sdk_5_modules}/dpos
 :url_github_keys: {url_github_sdk_5_modules}/keys
 :url_github_sequence: {url_github_sdk_5_modules}/sequence
 :url_github_token: {url_github_sdk_5_modules}/token
 // Project URLs <5>
-:url_framework_reference: references/lisk-framework/index.adoc
+:url_framework_reference: references/klayr-framework/index.adoc
 :url_explanations_communication: architecture/communication-architecture.adoc
 :url_references_framework_baseasset: {url_framework_reference}#the-baseasset
 :url_references_framework_basemodule: {url_framework_reference}#the-basemodule
@@ -75,14 +75,14 @@ Naming convention for link attributes:
 .Examples:
 [source,asciidoc]
 ----
-:url_github_core: https://github.com/LiskHQ/lisk-core
+:url_github_core: https://github.com/KlayrHQ/klayr-core
 
-:url_guides_config_default_values: lisk-sdk/guides/configuration.html#modify_default_values
+:url_guides_config_default_values: klayr-sdk/guides/configuration.html#modify_default_values
 ----
 
 For more information, see the {url_antora_link_syntax}[Navigation Link Syntax, Content, and Styles^] chapter of the Antora documentation.
 
-Please also refer to the xref:{url_index_links}[Lisk docs link styleguide].
+Please also refer to the xref:{url_index_links}[Klayr docs link styleguide].
 
 === Internal links
 Internal links are relative links starting from the `pages` folder of a `module`.
@@ -210,10 +210,10 @@ Set custom Next and Previous links to the end of a page:
 
 [source,asciidoc]
 ----
-:page-previous: /lisk-sdk/index.html
+:page-previous: /klayr-sdk/index.html
 :page-previous-title: Overview
 :page-next-title: Getting Started
-:page-next: /lisk-sdk/getting-started.html
+:page-next: /klayr-sdk/getting-started.html
 ----
 
 Don’t show Next or Previous links at the end of a page.
@@ -228,7 +228,7 @@ Don’t show Next or Previous links at the end of a page.
 
 If the page doesn't provide an adequate introduction sentence, add this attribute to provide web crawlers with an HTML meta description for this page.
 
- :description: The Lisk SDK Setup page describes...
+ :description: The Klayr SDK Setup page describes...
 
 == Line breaks
 For every new sentence, use a new line.

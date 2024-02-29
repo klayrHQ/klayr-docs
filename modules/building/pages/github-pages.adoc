@@ -1,11 +1,11 @@
 = Deploying the documentation on GitHub Pages
 :toc:
 // External URLs
-:url_docs_staging: https://liskhq.github.io/lisk-docs
+:url_docs_staging: https://klayrhq.github.io/klayr-docs
 // Project URLs
 :url_structure: structure.adoc
 
-== Updating Lisk docs on GitHub pages
+== Updating Klayr docs on GitHub pages
 
 .In the `build` directory
 [source,bash]
@@ -27,9 +27,9 @@ Once pushed to `git-page`, the content will be automatically applied under {url_
 [source,yaml]
 ----
 site:
-  title: Lisk documentation
+  title: Klayr documentation
   # the 404 page and sitemap files are only generated when the url property is set
-  url: https://lisk.com/documentation
+  url: https://klayr.com/documentation
   start_page: ROOT::index.adoc
 asciidoc:
   attributes:
@@ -42,14 +42,14 @@ asciidoc:
   - ./lib/tabs-block/extension.js
 content:
   sources: #<1>
-  - url: https://github.com/LiskHQ/lisk-docs.git
+  - url: https://github.com/KlayrHQ/klayr-docs.git
     branches: [1417-overview-pages, 1417-move-apis, docs-core, docs-sdk-4.0.0, docs-sdk-3.0.2, docs-core-v2, docs-manual]
-  - url: https://github.com/LiskHQ/lisk-docs.git
+  - url: https://github.com/KlayrHQ/klayr-docs.git
     branches: [ 1364-landing-page ]
     start_path: docs
 ui: <2>
   bundle:
-#    url: https://github.com/LiskHQ/lisk-docs/raw/dev-antora/build/ui-bundle.zip
+#    url: https://github.com/KlayrHQ/klayr-docs/raw/dev-antora/build/ui-bundle.zip
    url: ../ui/build/ui-bundle.zip
    snapshot: true
 output: #<3>
