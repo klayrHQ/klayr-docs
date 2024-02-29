@@ -8,24 +8,24 @@ Mona Bärenfänger <mona@lightcurve.io>
 :url_reference_config: reference/cli.adoc
 :url_management_cli: reference/cli.adoc#topics
 
-The most convenient way to manage your account, is a user interface such as Lisk Desktop.
-However, it is possible to manage your account directly from the xref:{url_management_cli}[command-line] with Lisk Core.
+The most convenient way to manage your account, is a user interface such as Klayr Desktop.
+However, it is possible to manage your account directly from the xref:{url_management_cli}[command-line] with Klayr Core.
 
 The most important interactions are described below.
-For more information about the available Lisk Core commands, check the xref:{url_reference_config}[CLI reference].
+For more information about the available Klayr Core commands, check the xref:{url_reference_config}[CLI reference].
 
 == Creating a new account
 
 [source,bash]
 ----
-$ lisk-core account:create
+$ klayr-core account:create
 # [
 #  {
 #   "passphrase": "meadow lesson tomato satisfy shield number zone symptom sad equip faculty piece",
 #   "privateKey": "9f6014a246cb91abeaec400e77a79c6ec29898c85bf934c2d176c13df58e1ef34c5b08a8eec74c79a6c6ec66ce229c03afdcb50ccd6e5c43e916875fb03b4948",
 #   "publicKey": "4c5b08a8eec74c79a6c6ec66ce229c03afdcb50ccd6e5c43e916875fb03b4948",
 #   "binaryAddress": "3fb0d5fb064d3ad6f09263eaae04e666ae4a0e52",
-#   "address": "lsknf295f2b4kh99jpro8q6jxnbodwpkcrrw4nwwa"
+#   "address": "klynf295f2b4kh99jpro8q6jxnbodwpkcrrw4nwwa"
 #  }
 # ]
 ----
@@ -33,10 +33,10 @@ $ lisk-core account:create
 .account:create
 [source,bash]
 ----
-Return randomly-generated mnemonic passphrase with its corresponding public/private key pair and Lisk address
+Return randomly-generated mnemonic passphrase with its corresponding public/private key pair and Klayr address
 
 USAGE
-  $ lisk-core account:create
+  $ klayr-core account:create
 
 OPTIONS
   -c, --count=count  [default: 1] Number of accounts to create
@@ -50,7 +50,7 @@ EXAMPLES
 
 [NOTE]
 ====
-The Lisk Core node needs to run in order to sign transactions.
+The Klayr Core node needs to run in order to sign transactions.
 
 If you wish to create transactions without having the node running, use the `--offline` flag.
 These transactions need to be signed later with `transaction:sign`.
@@ -58,10 +58,10 @@ These transactions need to be signed later with `transaction:sign`.
 For more information on this topic, check out this guide, xref:{url_sdk_guide_txoffline}[Creating transactions and signing them offline].
 ====
 
-.Start Lisk Core, if it is not running already
+.Start Klayr Core, if it is not running already
 [source,bash]
 ----
-$ lisk-core start
+$ klayr-core start
 ----
 
 Transactions can be created by using the `transaction:create` command:
@@ -72,7 +72,7 @@ Transactions can be created by using the `transaction:create` command:
 Create transaction which can be broadcasted to the network. Note: fee and amount should be in Beddows!!
 
 USAGE
-  $ lisk-core transaction:create MODULEID ASSETID FEE
+  $ klayr-core transaction:create MODULEID ASSETID FEE
 
 ARGUMENTS
   MODULEID  Registered transaction module id.
@@ -81,9 +81,9 @@ ARGUMENTS
 
 OPTIONS
   -a, --asset=asset                          Creates transaction with specific asset information.
-  -d, --data-path=data-path                  Directory path to specify where node data is stored. Environment variable "LISK_DATA_PATH" can also be used.
+  -d, --data-path=data-path                  Directory path to specify where node data is stored. Environment variable "KLAYR_DATA_PATH" can also be used.
   -j, --json                                 Print the transaction in JSON format
-  -n, --network=network                      [default: mainnet] Default network config to use. Environment variable "LISK_NETWORK" can also be used.
+  -n, --network=network                      [default: mainnet] Default network config to use. Environment variable "KLAYR_NETWORK" can also be used.
 
   -p, --passphrase=passphrase                Specifies a source for your secret passphrase. Command will prompt you for input if this option is not set.
                                              	Examples:
@@ -91,7 +91,7 @@ OPTIONS
 
   -s, --sender-public-key=sender-public-key  Creates the transaction with provided sender publickey, when passphrase is not provided.
 
-  --network-identifier=network-identifier    Network identifier defined for the network or main | test for the Lisk Network.
+  --network-identifier=network-identifier    Network identifier defined for the network or main | test for the Klayr Network.
 
   --no-signature                             Creates the transaction without a signature. Your passphrase will therefore not be required.
 
@@ -112,7 +112,7 @@ EXAMPLES
 
 [source,bash]
 ----
-$ lisk-core transaction:create 2 0 100000000 --asset='{"amount":100000000,"recipientAddress":"86555265f0110b4ed5a8cb95dbc732e77732c474","data":"send token"}'
+$ klayr-core transaction:create 2 0 100000000 --asset='{"amount":100000000,"recipientAddress":"86555265f0110b4ed5a8cb95dbc732e77732c474","data":"send token"}'
 ? Please enter passphrase:  [hidden]
 ? Please re-enter passphrase:  [hidden]
 {"transaction":"0802100018002080c2d72f2a200fe9a3f1a21b5530f27f87a414b549e79a940bf24fdf2b2f05e7f22aeeecc86a32270880c2d72f121486555265f0110b4ed5a8cb95dbc732e77732c4741a0a73656e6420746f6b656e3a40c442cd1311808974d5f41a69dd25b2e3a516e463445a4c5eb292f0c7b7de0b33627a729da7969875d0f659fbe56f3e2ca947bc02873f8ac5a1753ac90fb15605"}
@@ -122,7 +122,7 @@ $ lisk-core transaction:create 2 0 100000000 --asset='{"amount":100000000,"recip
 
 [source,bash]
 ----
-$ lisk-core transaction:create 5 0 1000130000 --asset='{"username":"lightcurve"}'
+$ klayr-core transaction:create 5 0 1000130000 --asset='{"username":"lightcurve"}'
 ? Please enter passphrase:  [hidden]
 ? Please re-enter passphrase:  [hidden]
 {"transaction":"08051000180020d08bf3dc032a20ae3aa408b5f95d9bb6d304de8f437faf77f8346e948020a10e52ded45a75067d320c0a0a6c6967687463757276653a403bcdbf92d0a138c3baebd2c71b4a4fa0e16e7dd58d99853bcf49e8900f244a6893c701f5366fe8f4b360e64f9ae7267053e1f38f6c18c07cc2e6064bcdf75204"}
@@ -142,17 +142,17 @@ Up to 20 votes and unvotes can be included in a single vote transaction.
 
 [source,bash]
 ----
-$ lisk-core transaction:create 5 1 100000000 --asset='{"votes":[{"delegateAddress":"86555265f0110b4ed5a8cb95dbc732e77732c474","amount":1000000000}]}'
+$ klayr-core transaction:create 5 1 100000000 --asset='{"votes":[{"delegateAddress":"86555265f0110b4ed5a8cb95dbc732e77732c474","amount":1000000000}]}'
 ? Please enter passphrase:  [hidden]
 ? Please re-enter passphrase:  [hidden]
 {"transaction":"0805100118022080c2d72f2a200fe9a3f1a21b5530f27f87a414b549e79a940bf24fdf2b2f05e7f22aeeecc86a321e0a1c0a1486555265f0110b4ed5a8cb95dbc732e77732c4741080a8d6b9073a40d8c0cec4ce780af8bb5a883236e6826dbc0b5748f0bde07607a8de508e15b8bda3e15f942b10e034fbdacebd2b4fb035462bd0845f8616a965962c1184729a0e"}
 ----
 
-=== Sending transactions to Lisk Core
+=== Sending transactions to Klayr Core
 
 [source,bash]
 ----
-$ lisk-core transaction:send 0802100018002080c2d72f2a200fe9a3f1a21b5530f27f87a414b549e79a940bf24fdf2b2f05e7f22aeeecc86a32270880c2d72f121486555265f0110b4ed5a8cb95dbc732e77732c4741a0a73656e6420746f6b656e3a40c442cd1311808974d5f41a69dd25b2e3a516e463445a4c5eb292f0c7b7de0b33627a729da7969875d0f659fbe56f3e2ca947bc02873f8ac5a1753ac90fb15605
+$ klayr-core transaction:send 0802100018002080c2d72f2a200fe9a3f1a21b5530f27f87a414b549e79a940bf24fdf2b2f05e7f22aeeecc86a32270880c2d72f121486555265f0110b4ed5a8cb95dbc732e77732c4741a0a73656e6420746f6b656e3a40c442cd1311808974d5f41a69dd25b2e3a516e463445a4c5eb292f0c7b7de0b33627a729da7969875d0f659fbe56f3e2ca947bc02873f8ac5a1753ac90fb15605
 #Transaction with id: '793446f5a5dbd9fbb9b73a7855706193504f08e50eb9d955133682282321a0b0' received by node
 ----
 
@@ -161,13 +161,13 @@ $ lisk-core transaction:send 0802100018002080c2d72f2a200fe9a3f1a21b5530f27f87a41
 Send transaction to the local node.
 
 USAGE
-  $ lisk-core transaction:send TRANSACTION
+  $ klayr-core transaction:send TRANSACTION
 
 ARGUMENTS
   TRANSACTION  A transaction to be sent to the node encoded as hex string
 
 OPTIONS
-  -d, --data-path=data-path  Directory path to specify where node data is stored. Environment variable "LISK_DATA_PATH" can also be used.
+  -d, --data-path=data-path  Directory path to specify where node data is stored. Environment variable "KLAYR_DATA_PATH" can also be used.
   --pretty                   Prints JSON in pretty format rather than condensed.
 
 EXAMPLE

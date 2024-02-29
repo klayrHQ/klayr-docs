@@ -6,15 +6,15 @@
 
 == Post-installation (optional)
 
-=== Use pm2 to run Lisk Core in the background
+=== Use pm2 to run Klayr Core in the background
 
-It is recommended to use a process manager such as {url_pm2}[PM2^] to run Lisk Core in the background.
+It is recommended to use a process manager such as {url_pm2}[PM2^] to run Klayr Core in the background.
 
 Check the guide xref:{url_mgmt_pm2}[] for more information.
 
 === Enable IPC in the config
 
-To make use of all the Lisk Core commands xref:{url_ref_cli}[], enable IPC in the config.
+To make use of all the Klayr Core commands xref:{url_ref_cli}[], enable IPC in the config.
 
 .Example: Enable IPC via config.json
 [source,json]
@@ -31,16 +31,16 @@ To make use of all the Lisk Core commands xref:{url_ref_cli}[], enable IPC in th
 },
 ----
 
-Alternatively, start Lisk Core with the flag `--api-ipc` to enable ipc:
+Alternatively, start Klayr Core with the flag `--api-ipc` to enable ipc:
 
 .Example: Enable IPC via flag
 [source,bash]
 ----
-lisk-core start --api-ipc
+klayr-core start --api-ipc
 ----
 
 === Log rotation
 
-It is recommended to set up a log rotation, as the log of the Lisk Core files can grow very large over time.
+It is recommended to set up a log rotation, as the log of the Klayr Core files can grow very large over time.
 
 Check the guide xref:{url_config_logrotation}[Managing logs] in the SDK docs for more information.

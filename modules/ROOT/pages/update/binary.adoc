@@ -1,17 +1,17 @@
-= Update Lisk Core (Binary)
+= Update Klayr Core (Binary)
 Mona Bärenfänger <mona@lightcurve.io>
-:description: How to update Lisk Core to the latest version (Binary).
+:description: How to update Klayr Core to the latest version (Binary).
 :toc:
 :sectnums:
 :experimental:
 // Project URLs
 :url_enable_forging: management/forging.adoc
 
-How to update the Lisk Core binary distribution to a new version.
+How to update the Klayr Core binary distribution to a new version.
 
-== Download the new Lisk Core version
+== Download the new Klayr Core version
 
-Download the new Lisk Core version inside of your user home directory.
+Download the new Klayr Core version inside of your user home directory.
 
 [tabs]
 ====
@@ -22,16 +22,16 @@ Mainnet::
 
 [source,bash]
 ----
-wget https://downloads.lisk.io/lisk/main/3.1.1/lisk-core-v3.1.1-linux-x64.tar.gz
-wget https://downloads.lisk.io/lisk/main/3.1.1/lisk-core-v3.1.1-linux-x64.tar.gz.SHA256
+wget https://downloads.klayr.io/klayr/main/3.1.1/klayr-core-v3.1.1-linux-x64.tar.gz
+wget https://downloads.klayr.io/klayr/main/3.1.1/klayr-core-v3.1.1-linux-x64.tar.gz.SHA256
 ----
 
 *MacOS:*
 
 [source,bash]
 ----
-wget https://downloads.lisk.io/lisk/main/3.1.1/lisk-core-v3.1.1-darwin-x64.tar.gz
-wget https://downloads.lisk.io/lisk/main/3.1.1/lisk-core-v3.1.1-darwin-x64.tar.gz.SHA256
+wget https://downloads.klayr.io/klayr/main/3.1.1/klayr-core-v3.1.1-darwin-x64.tar.gz
+wget https://downloads.klayr.io/klayr/main/3.1.1/klayr-core-v3.1.1-darwin-x64.tar.gz.SHA256
 ----
 --
 Testnet::
@@ -41,16 +41,16 @@ Testnet::
 
 [source,bash]
 ----
-wget https://downloads.lisk.io/lisk/test/3.1.1/lisk-core-v3.1.1-linux-x64.tar.gz
-wget https://downloads.lisk.io/lisk/test/3.1.1/lisk-core-v3.1.1-linux-x64.tar.gz.SHA256
+wget https://downloads.klayr.io/klayr/test/3.1.1/klayr-core-v3.1.1-linux-x64.tar.gz
+wget https://downloads.klayr.io/klayr/test/3.1.1/klayr-core-v3.1.1-linux-x64.tar.gz.SHA256
 ----
 
 *MacOS:*
 
 [source,bash]
 ----
-wget https://downloads.lisk.io/lisk/test/3.1.1/lisk-core-v3.1.1-darwin-x64.tar.gz
-wget https://downloads.lisk.io/lisk/test/3.1.1/lisk-core-v3.1.1-darwin-x64.tar.gz.SHA256
+wget https://downloads.klayr.io/klayr/test/3.1.1/klayr-core-v3.1.1-darwin-x64.tar.gz
+wget https://downloads.klayr.io/klayr/test/3.1.1/klayr-core-v3.1.1-darwin-x64.tar.gz.SHA256
 ----
 --
 ====
@@ -64,8 +64,8 @@ Linux::
 --
 [source,bash]
 ----
-sha256sum -c lisk-core-v3.1.1-linux-x64.tar.gz.SHA256
-# lisk-core-v3.1.0-linux-x64.tar.gz: OK
+sha256sum -c klayr-core-v3.1.1-linux-x64.tar.gz.SHA256
+# klayr-core-v3.1.0-linux-x64.tar.gz: OK
 ----
 --
 MacOS::
@@ -73,37 +73,37 @@ MacOS::
 --
 [source,bash]
 ----
-sha256sum -c lisk-core-v3.1.1-darwin-x64.tar.gz.SHA256
+sha256sum -c klayr-core-v3.1.1-darwin-x64.tar.gz.SHA256
 ----
 --
 ====
 
-== Stop Lisk Core
+== Stop Klayr Core
 
 [source,bash]
 ----
-pm2 delete lisk-core
+pm2 delete klayr-core
 ----
 
-== Backup Lisk Core
+== Backup Klayr Core
 === Backup your custom configs
 
-In case you created custom configurations inside the `lisk-core/` folder, make sure to copy or move them out of the `lisk-core/` folder before removing them in the next step.
+In case you created custom configurations inside the `klayr-core/` folder, make sure to copy or move them out of the `klayr-core/` folder before removing them in the next step.
 
-* `custom-config.json`: backup the custom configuration for Lisk Core.
+* `custom-config.json`: backup the custom configuration for Klayr Core.
 * `pm2.conf.json`: backup the pm2 config file.
 
 === Backup the application data
 [source,bash]
 ----
-tar czf ~/backup_lisk.tar.gz ~/.lisk/
+tar czf ~/backup_klayr.tar.gz ~/.klayr/
 ----
 
 == Remove the old version
 
 [source,bash]
 ----
-rm -rf ~/lisk-core/
+rm -rf ~/klayr-core/
 ----
 
 == Extract the new version
@@ -115,7 +115,7 @@ Linux::
 --
 [source,bash]
 ----
-tar xzf ~/lisk-core-v3.1.1-linux-x64.tar.gz -C ~/
+tar xzf ~/klayr-core-v3.1.1-linux-x64.tar.gz -C ~/
 ----
 --
 MacOS::
@@ -123,12 +123,12 @@ MacOS::
 --
 [source,bash]
 ----
-tar xzf ~/lisk-core-v3.1.1-darwin-x64.tar.gz -C ~/
+tar xzf ~/klayr-core-v3.1.1-darwin-x64.tar.gz -C ~/
 ----
 --
 ====
 
-== Start Lisk Core
+== Start Klayr Core
 
 Note: If you have configured your `pm2.config.json`, please use that configuration.
 
@@ -143,8 +143,8 @@ Verify the correct version.
 
 [source,bash]
 ----
-lisk-core --version
-#lisk-core/3.1.1 linux-x64 node-v18
+klayr-core --version
+#klayr-core/3.1.1 linux-x64 node-v18
 ----
 
 Check if the new `transferFixHeight, serializationFixHeight` is correctly set:
@@ -155,7 +155,7 @@ Check if the new `transferFixHeight, serializationFixHeight` is correctly set:
 .Example: Checking transferFixHeight, serializationFixHeight for Testnet
 [source,bash]
 ----
-lisk-core node:info --pretty | grep "serializationFixHeight\|transferFixHeight"
+klayr-core node:info --pretty | grep "serializationFixHeight\|transferFixHeight"
 "transferFixHeight, serializationFixHeight": 15466999
 ----
 

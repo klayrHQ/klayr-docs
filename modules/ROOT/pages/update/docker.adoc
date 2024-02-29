@@ -1,22 +1,22 @@
 = Docker image
 Mona Bärenfänger <mona@lightcurve.io>
-:description: How to upgrade Lisk Core with Docker.
+:description: How to upgrade Klayr Core with Docker.
 :toc:
 
-:url_core_repository: https://github.com/LiskHQ/lisk-core
-:url_current_version: https://github.com/LiskHQ/lisk-core/tree/development/docker
-:url_version_tag: https://github.com/LiskHQ/lisk-core/tags
+:url_core_repository: https://github.com/KlayrHQ/klayr-core
+:url_current_version: https://github.com/KlayrHQ/klayr-core/tree/development/docker
+:url_version_tag: https://github.com/KlayrHQ/klayr-core/tags
 
 [[minor-version]]
 == Upgrade minor versions
 
-To update a Lisk installation using Docker Compose it is only required to export the new version number in `ENV_LISK_VERSION`.
+To update a Klayr installation using Docker Compose it is only required to export the new version number in `ENV_KLAYR_VERSION`.
 
-Example: Update from Lisk Core by executing the following commands:
+Example: Update from Klayr Core by executing the following commands:
 
 [source,bash]
 ----
-export ENV_LISK_VERSION=3.1.1
+export ENV_KLAYR_VERSION=3.1.1
 docker-compose up -d
 ----
 
@@ -24,7 +24,7 @@ docker-compose up -d
 
 For major version updates there may be additional changes in `docker-compose.yml`.
 
-In this case Lisk Core provides an updated version of `docker-compose.yml` in the {url_core_repository}[Lisk Core repository^] on Github, inside the `docker` folder: {url_current_version}[current version^].
+In this case Klayr Core provides an updated version of `docker-compose.yml` in the {url_core_repository}[Klayr Core repository^] on Github, inside the `docker` folder: {url_current_version}[current version^].
 
 (Where the `<CURRENT_VERSION>` is the {url_version_tag}[version tag^] of the update version you wish to use.)
 

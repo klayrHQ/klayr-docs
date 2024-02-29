@@ -3,28 +3,28 @@
 :experimental:
 :idprefix:
 :idseparator: -
-:lisk-migrator: lisk-migrator-v1.0.2-linux-x64.tar.gz
+:klayr-migrator: klayr-migrator-v1.0.2-linux-x64.tar.gz
 // External URLs
-:url_lisk_migrator: https://downloads.lisk.com/lisk-migrator/{lisk-migrator}
-:url_wallet: https://lisk.com/wallet
-:url_lisk_blog_migration: https://lisk.com/blog/development/announcing-lisk-testnet-v3-migration
-:url_lisk_blog_migration_mainnet: https://lisk.com/blog/development/announcing-lisk-mainnet-v3-migration
+:url_klayr_migrator: https://downloads.klayr.com/klayr-migrator/{klayr-migrator}
+:url_wallet: https://klayr.com/wallet
+:url_klayr_blog_migration: https://klayr.com/blog/development/announcing-klayr-testnet-v3-migration
+:url_klayr_blog_migration_mainnet: https://klayr.com/blog/development/announcing-klayr-mainnet-v3-migration
 // Project URLs
 :url_core_install: setup/binary.adoc
-:url_sdk_protocol_voteweight: lisk-v3@ROOT::understand-blockchain/lisk-protocol/consensus-algorithm.adoc#voting_and_weight
+:url_sdk_protocol_voteweight: klayr-v3@ROOT::understand-blockchain/klayr-protocol/consensus-algorithm.adoc#voting_and_weight
 
-This guide explains how to migrate a Lisk Core v2.1.7 node to Lisk Core v3.x using the Lisk migrator.
+This guide explains how to migrate a Klayr Core v2.1.7 node to Klayr Core v3.x using the Klayr migrator.
 
-The Lisk migrator CLI will generate a new genesis block for Lisk Core v3.
-The new genesis block is created based on a snapshot of the old blockchain (running on Lisk Core v2.1.7) at a given height.
-The Lisk migrator will not install Lisk Core v3, nor will it uninstall Lisk Core v2.1.7, these are steps that need to be done manually as described below.
+The Klayr migrator CLI will generate a new genesis block for Klayr Core v3.
+The new genesis block is created based on a snapshot of the old blockchain (running on Klayr Core v2.1.7) at a given height.
+The Klayr migrator will not install Klayr Core v3, nor will it uninstall Klayr Core v2.1.7, these are steps that need to be done manually as described below.
 
 [IMPORTANT]
 
 ====
-All actively forging delegates on the Lisk Mainnet and the Lisk Testnet need to follow this guide to correctly migrate their nodes to the new network, in order to not miss any blocks after the network hard fork.
+All actively forging delegates on the Klayr Mainnet and the Klayr Testnet need to follow this guide to correctly migrate their nodes to the new network, in order to not miss any blocks after the network hard fork.
 
-Optionally, anyone running a Lisk Core v2.1.7 who is not an actively forging delegate can participate in the migration process.
+Optionally, anyone running a Klayr Core v2.1.7 who is not an actively forging delegate can participate in the migration process.
 In this case, the following steps 1.4, 2.7, 2.8, and 2.9 in this guide can be skipped, as they are only relevant for delegates.
 ====
 
@@ -49,18 +49,18 @@ OS::
 If you have Node.js installed ensure to use version 18.
 ====
 
-=== Preparing Lisk Core v2.1.7
+=== Preparing Klayr Core v2.1.7
 
-==== Ensure you are running the binary distribution of Lisk Core
-If you are using a different distribution of Lisk Core v2.1.7, such as Docker, Commander or Source, it will be necessary to install the application/binary distribution.
+==== Ensure you are running the binary distribution of Klayr Core
+If you are using a different distribution of Klayr Core v2.1.7, such as Docker, Commander or Source, it will be necessary to install the application/binary distribution.
 
-==== Ensure you are running version 2.1.7 of Lisk Core
-Ensure you are running version 2.1.7 of Lisk Core to be able to seamlessly migrate to Lisk Core 3.0.0.
+==== Ensure you are running version 2.1.7 of Klayr Core
+Ensure you are running version 2.1.7 of Klayr Core to be able to seamlessly migrate to Klayr Core 3.0.0.
 
-Open `package.json` to check the `version` of your Lisk Core node.
-If your version is lower than 2.1.7, ensure to update Lisk Core before proceeding with the migration.
+Open `package.json` to check the `version` of your Klayr Core node.
+If your version is lower than 2.1.7, ensure to update Klayr Core before proceeding with the migration.
 
-=== Setting up the Lisk migrator
+=== Setting up the Klayr migrator
 
 ==== Download the migration script
 Download the migration script by running the following command in the terminal:
@@ -68,18 +68,18 @@ Download the migration script by running the following command in the terminal:
 [subs=attributes+]
 [source,bash]
 ----
-curl -o {lisk-migrator} {url_lisk_migrator}
+curl -o {klayr-migrator} {url_klayr_migrator}
 ----
 
 ==== Download checksum and verify
-Download the checksum and verify the successful download of lisk-migrator.
+Download the checksum and verify the successful download of klayr-migrator.
 
 {counter:seq3:A}) Download the checksum.
 
 [subs=attributes+]
 [source,bash]
 ----
-curl -o {lisk-migrator}.SHA256 {url_lisk_migrator}.SHA256
+curl -o {klayr-migrator}.SHA256 {url_klayr_migrator}.SHA256
 ----
 
 {counter:seq3}) Run the following command in the terminal and ensure the output is `sha256sum: <file name>: OK`
@@ -87,7 +87,7 @@ curl -o {lisk-migrator}.SHA256 {url_lisk_migrator}.SHA256
 [subs=attributes+]
 [source,bash]
 ----
-sha256sum -c {lisk-migrator}.SHA256
+sha256sum -c {klayr-migrator}.SHA256
 ----
 
 ==== Extract and add to PATH
@@ -97,23 +97,23 @@ Unpack it, and then add it to the system path, in order to use it in the termina
 [subs=attributes+]
 [source,bash]
 ----
-tar -xf ./{lisk-migrator}
+tar -xf ./{klayr-migrator}
 ----
 
-Make the `lisk-migrator` command available in the PATH, e.g. by executing the following command:
+Make the `klayr-migrator` command available in the PATH, e.g. by executing the following command:
 
 [source,bash]
 ----
-export PATH="$PATH:$HOME/lisk-migrator/bin" <1>
+export PATH="$PATH:$HOME/klayr-migrator/bin" <1>
 ----
 
-<1> Replace `$HOME` with the absolute path of where the `lisk-migrator` folder is located, in case it was extracted somewhere else other than in your home directory.
+<1> Replace `$HOME` with the absolute path of where the `klayr-migrator` folder is located, in case it was extracted somewhere else other than in your home directory.
 
-=== Setting up Lisk Core v3
+=== Setting up Klayr Core v3
 
-Follow the guide how to xref:{url_core_install}[setup Lisk Core v3] for the binary distribution.
+Follow the guide how to xref:{url_core_install}[setup Klayr Core v3] for the binary distribution.
 
-IMPORTANT: Don't start Lisk Core v3 yet.
+IMPORTANT: Don't start Klayr Core v3 yet.
 
 === Create a custom config with your delegate information
 
@@ -126,7 +126,7 @@ Mainnet::
 --
 [source,bash]
 ----
-cp ~/lisk-core/config/mainnet/config.json ~/lisk-core/config/mainnet/custom-config.json <1>
+cp ~/klayr-core/config/mainnet/config.json ~/klayr-core/config/mainnet/custom-config.json <1>
 ----
 --
 Testnet::
@@ -134,16 +134,16 @@ Testnet::
 --
 [source,bash]
 ----
-cp ~/lisk-core/config/testnet/config.json ~/lisk-core/config/testnet/custom-config.json <1>
+cp ~/klayr-core/config/testnet/config.json ~/klayr-core/config/testnet/custom-config.json <1>
 ----
 --
 ====
 
-Next, use the CLI of Lisk Core v3 to generate the delegate configuration data.
+Next, use the CLI of Klayr Core v3 to generate the delegate configuration data.
 
 [source,bash]
 ----
-lisk-core forging:config --output custom-forging.json
+klayr-core forging:config --output custom-forging.json
 ----
 
 After running the command, you will be prompted for your delegate passphrase and for the password that will be used to encrypt the passphrase, so it can be stored securely in the delegate configuration data.
@@ -198,8 +198,8 @@ Mainnet::
 [source,bash]
 ----
 TEMP_FILE=$( mktemp )
-jq --slurp '.[0] * .[1]' ~/lisk-core/config/mainnet/custom-config.json ./custom-forging.json >$TEMP_FILE
-mv $TEMP_FILE ~/lisk-core/config/mainnet/custom-config.json
+jq --slurp '.[0] * .[1]' ~/klayr-core/config/mainnet/custom-config.json ./custom-forging.json >$TEMP_FILE
+mv $TEMP_FILE ~/klayr-core/config/mainnet/custom-config.json
 ----
 --
 Testnet::
@@ -208,8 +208,8 @@ Testnet::
 [source,bash]
 ----
 TEMP_FILE=$( mktemp )
-jq --slurp '.[0] * .[1]' ~/lisk-core/config/testnet/custom-config.json ./custom-forging.json >$TEMP_FILE
-mv $TEMP_FILE ~/lisk-core/config/testnet/custom-config.json
+jq --slurp '.[0] * .[1]' ~/klayr-core/config/testnet/custom-config.json ./custom-forging.json >$TEMP_FILE
+mv $TEMP_FILE ~/klayr-core/config/testnet/custom-config.json
 ----
 --
 ====
@@ -219,14 +219,14 @@ mv $TEMP_FILE ~/lisk-core/config/testnet/custom-config.json
 === Check the announced snapshot height
 
 * For Mainnet: `16270292` +
-For more information check the {url_lisk_blog_migration_mainnet}[Mainnet migration announcement^].
+For more information check the {url_klayr_blog_migration_mainnet}[Mainnet migration announcement^].
 * For Testnet: `14075259` +
-For more information check the {url_lisk_blog_migration}[Testnet migration announcement^].
+For more information check the {url_klayr_blog_migration}[Testnet migration announcement^].
 
-The height is needed by `lisk-migrator` in the next step.
+The height is needed by `klayr-migrator` in the next step.
 A snapshot of the blockchain will be created at this particular height, which will then be used to create the genesis block for the new blockchain.
 
-=== Ensure Lisk Core v2.1.7 is fully synced with the network
+=== Ensure Klayr Core v2.1.7 is fully synced with the network
 Check the current block height of your node directly in the terminal by running the following command:
 
 [tabs]
@@ -234,44 +234,44 @@ Check the current block height of your node directly in the terminal by running 
 Mainnet::
 +
 --
-./home/lisk/lisk-main
+./home/klayr/klayr-main
 [source,bash]
 ----
-$ bash lisk.sh status
-Lisk configured for mainnet
-[+] Lisk is running as PID: 24468
+$ bash klayr.sh status
+Klayr configured for mainnet
+[+] Klayr is running as PID: 24468
 Current Block Height:   14992772
 ----
 --
 Testnet::
 +
 --
-./home/lisk/lisk-test
+./home/klayr/klayr-test
 [source,bash]
 ----
-$ bash lisk.sh status
-Lisk configured for testnet
-[+] Lisk is running as PID: 24751
+$ bash klayr.sh status
+Klayr configured for testnet
+[+] Klayr is running as PID: 24751
 Current Block Height:  13279765
 ----
 --
 ====
 
-Compare the current height of your node to the network height in {url_wallet}[Lisk Desktop^], which is shown on the kbd:[Network] or kbd:[Blocks] pages.
+Compare the current height of your node to the network height in {url_wallet}[Klayr Desktop^], which is shown on the kbd:[Network] or kbd:[Blocks] pages.
 
 If both heights are equal, it is verified that your node is fully synched with the network.
 
-NOTE: To view the current height of the Lisk Testnet, use the network switcher of Lisk Desktop, which can be enabled in the settings.
+NOTE: To view the current height of the Klayr Testnet, use the network switcher of Klayr Desktop, which can be enabled in the settings.
 
-=== Run lisk migrator
+=== Run klayr migrator
 
 [IMPORTANT]
 ====
 .When to start the migrator script?
-`lisk-migrator` can be started any time before the announced snapshot height.
+`klayr-migrator` can be started any time before the announced snapshot height.
 ====
 
-If you have added `lisk-migrator` to the PATH as described in the section <<setting-up-the-lisk-migrator>>, you can start the migration script by running the following command footnote:snap_footnote[Snap versions of Lisk Core store everything in `~/snap/lisk-core/current/.lisk/lisk-core` instead of `~/.lisk/lisk-core`] in the terminal:
+If you have added `klayr-migrator` to the PATH as described in the section <<setting-up-the-klayr-migrator>>, you can start the migration script by running the following command footnote:snap_footnote[Snap versions of Klayr Core store everything in `~/snap/klayr-core/current/.klayr/klayr-core` instead of `~/.klayr/klayr-core`] in the terminal:
 
 [tabs]
 ====
@@ -280,7 +280,7 @@ Mainnet::
 --
 [source,bash]
 ----
-lisk-migrator --snapshot-height ${snapshotHeight} --output ~/.lisk/lisk-core/config/mainnet/genesis_block.json --lisk-core-path ~/lisk-main
+klayr-migrator --snapshot-height ${snapshotHeight} --output ~/.klayr/klayr-core/config/mainnet/genesis_block.json --klayr-core-path ~/klayr-main
 ----
 --
 Testnet::
@@ -288,7 +288,7 @@ Testnet::
 --
 [source,bash]
 ----
-lisk-migrator --snapshot-height ${snapshotHeight} --output ~/.lisk/lisk-core/config/testnet/genesis_block.json --lisk-core-path ~/lisk-test
+klayr-migrator --snapshot-height ${snapshotHeight} --output ~/.klayr/klayr-core/config/testnet/genesis_block.json --klayr-core-path ~/klayr-test
 ----
 --
 ====
@@ -298,20 +298,20 @@ The height on which the blockchain snapshot will be performed.
 The snapshot height will be announced separately.
 * `--output`:
 The absolute path to the directory, where the newly generated genesis block should be saved.
-* `--lisk-core-path`:
-The absolute path to the directory, where the Lisk Core v2.1.7 node is located.
+* `--klayr-core-path`:
+The absolute path to the directory, where the Klayr Core v2.1.7 node is located.
 
 [TIP]
 
 ====
-It is possible to use tools such as `screen` to run the Lisk migrator in the background.
+It is possible to use tools such as `screen` to run the Klayr migrator in the background.
 
 With `screen` you can detach the current terminal window into the background:
 
 .Example (Mainnet) footnote:snap_footnote[]
 [source,bash]
 ----
-screen -dmSL migration lisk-migrator --snapshot-height ${snapshotHeight} --output ~/.lisk/lisk-core/config/mainnet/genesis_block.json --lisk-core-path ~/lisk-main
+screen -dmSL migration klayr-migrator --snapshot-height ${snapshotHeight} --output ~/.klayr/klayr-core/config/mainnet/genesis_block.json --klayr-core-path ~/klayr-main
 ----
 
 Shortly before the migration occurs, it is possible to reattach to it in order to check if everything is working correctly.
@@ -328,7 +328,7 @@ This returns a list of all detached screens with `screen`:
 ----
 There is a screen on:
 	1842.migration	(05/07/2021 12:35:59 PM)	(Detached)
-1 Socket in /run/screen/S-lisk.
+1 Socket in /run/screen/S-klayr.
 ----
 
 Use `screen -r` and the name of the detached screen you want to connect to
@@ -341,18 +341,18 @@ screen -r 1842.migration
 
 === Wait until the network reaches the snapshot height
 
-Observe if `lisk-migrator` finishes successfully, (this takes about 30-60 minutes from the snapshot height).
+Observe if `klayr-migrator` finishes successfully, (this takes about 30-60 minutes from the snapshot height).
 
-After the snapshot height is reached, delegates have approximately 2 hours time to start their Lisk Core v3 and enable forging, to ensure they will not miss any blocks after the hardfork.
+After the snapshot height is reached, delegates have approximately 2 hours time to start their Klayr Core v3 and enable forging, to ensure they will not miss any blocks after the hardfork.
 
 If the node is started at a later point in time, it will simply sync to the current network height.
 For delegates, this might result in them missing a block, for everyone else it will not have any impact.
 
-=== Stop Lisk Core v2.1.7
+=== Stop Klayr Core v2.1.7
 
-After the `lisk-migrator` script has finished and the announced snapshot height has passed, there is no reason to continue running Lisk Core v2.1.7 and therefore it is recommended to stop it.
+After the `klayr-migrator` script has finished and the announced snapshot height has passed, there is no reason to continue running Klayr Core v2.1.7 and therefore it is recommended to stop it.
 
-First ensure, that Lisk Core will not start again by removing the existing cronjob:
+First ensure, that Klayr Core will not start again by removing the existing cronjob:
 
 [source,bash]
 ----
@@ -361,18 +361,18 @@ crontab -e
 
 Choose your favorite editor to open the `crontab` file and remove the following line:
 
- @reboot /bin/bash /home/lisk/lisk-test/lisk.sh start > /home/lisk/lisk-test/cron.log 2>&1
+ @reboot /bin/bash /home/klayr/klayr-test/klayr.sh start > /home/klayr/klayr-test/cron.log 2>&1
 
 Save and close the `crontab` file again.
 
-Navigate into the root folder of your Lisk Core v2.1.7 installation and run the following command to stop the old Lisk Core version:
+Navigate into the root folder of your Klayr Core v2.1.7 installation and run the following command to stop the old Klayr Core version:
 
 [source,bash]
 ----
-bash lisk.sh stop
+bash klayr.sh stop
 ----
 
-Last but not least, remove the folder with Lisk Core v2.1.7, e.g. by executing the following:
+Last but not least, remove the folder with Klayr Core v2.1.7, e.g. by executing the following:
 
 [tabs]
 ====
@@ -381,7 +381,7 @@ Mainnet::
 --
 [source,bash]
 ----
-rm -r lisk-main
+rm -r klayr-main
 ----
 --
 Testnet::
@@ -389,15 +389,15 @@ Testnet::
 --
 [source,bash]
 ----
-rm -r lisk-test
+rm -r klayr-test
 ----
 --
 ====
 
-=== Start Lisk Core v3
-Use the Lisk Core CLI to start Lisk Core v3.
+=== Start Klayr Core v3
+Use the Klayr Core CLI to start Klayr Core v3.
 
-Run the following command in the terminal and check the logs in the console to verify that Lisk Core starts successfully:
+Run the following command in the terminal and check the logs in the console to verify that Klayr Core starts successfully:
 
 [tabs]
 ====
@@ -406,7 +406,7 @@ Mainnet::
 --
 [source,bash]
 ----
-lisk-core start --network mainnet --api-ipc --config=/home/lisk/lisk-core/config/mainnet/custom-config.json
+klayr-core start --network mainnet --api-ipc --config=/home/klayr/klayr-core/config/mainnet/custom-config.json
 ----
 --
 Testnet::
@@ -414,14 +414,14 @@ Testnet::
 --
 [source,bash]
 ----
-lisk-core start --network testnet --api-ipc --config=/home/lisk/lisk-core/config/testnet/custom-config.json
+klayr-core start --network testnet --api-ipc --config=/home/klayr/klayr-core/config/testnet/custom-config.json
 ----
 --
 ====
 
 Press kbd:[CTRL] + kbd:[C] to stop the process again.
 
-Install PM2 to run Lisk Core in the background:
+Install PM2 to run Klayr Core in the background:
 
 [source,bash]
 ----
@@ -435,15 +435,15 @@ Create a pm2 config as shown in the example below:
 Mainnet::
 +
 --
-.~/lisk-core/pm2.conf.json
+.~/klayr-core/pm2.conf.json
 [source,json]
 ----
 {
-  "name": "lisk-core",
-  "script": "lisk-core start --api-ipc",
+  "name": "klayr-core",
+  "script": "klayr-core start --api-ipc",
   "env": {
-    "LISK_NETWORK": "mainnet",
-    "LISK_CONFIG_FILE": "/home/lisk/lisk-core/config/mainnet/custom-config.json"
+    "KLAYR_NETWORK": "mainnet",
+    "KLAYR_CONFIG_FILE": "/home/klayr/klayr-core/config/mainnet/custom-config.json"
   }
 }
 ----
@@ -451,46 +451,46 @@ Mainnet::
 Testnet::
 +
 --
-.~/lisk-core/pm2.conf.json
+.~/klayr-core/pm2.conf.json
 [source,json]
 ----
 {
-  "name": "lisk-core",
-  "script": "lisk-core start --api-ipc",
+  "name": "klayr-core",
+  "script": "klayr-core start --api-ipc",
   "env": {
-    "LISK_NETWORK": "testnet",
-    "LISK_CONFIG_FILE": "/home/lisk/lisk-core/config/testnet/custom-config.json"
+    "KLAYR_NETWORK": "testnet",
+    "KLAYR_CONFIG_FILE": "/home/klayr/klayr-core/config/testnet/custom-config.json"
   }
 }
 ----
 --
 ====
 
-TIP: All available options for `scripts` and `env` can be found in `lisk-core start --help`.
+TIP: All available options for `scripts` and `env` can be found in `klayr-core start --help`.
 
 After creating the config, start it with the following command:
 
-./home/lisk/lisk-core/
+./home/klayr/klayr-core/
 [source,bash]
 ----
 pm2 start pm2.conf.json
 ----
 
-This will start Lisk Core in the background.
+This will start Klayr Core in the background.
 
 You can verify that the node is running correctly by executing the following command:
 
 [source,bash]
 ----
-lisk-core node:info
+klayr-core node:info
 ----
 
 This will return certain general node information, for example as shown below:
 ----
-{"version":"3.0.0.5e1a7cf","networkVersion":"2.0","networkIdentifier":"01e47ba4e3e57981642150f4b45f64c2160c10bac9434339888210a4fa5df097","lastBlockID":"a98f7027ee16c8f8169ba676a72679dd8e6f56d83e93fec813b8f3041fb9c03d","height":670287,"finalizedHeight":670148,"syncing":false,"unconfirmedTransactions":0,"genesisConfig":{"blockTime":10,"communityIdentifier":"Lisk","maxPayloadLength":15360,"bftThreshold":68,"minFeePerByte":1000,"baseFees":[{"moduleID":5,"assetID":0,"baseFee":"1000000000"}],"rewards":{"milestones":["500000000","400000000","300000000","200000000","100000000"],"offset":2160,"distance":3000000},"minRemainingBalance":"5000000","activeDelegates":101,"standbyDelegates":2,"delegateListRoundOffset":2},"registeredModules":[{"id":2,"name":"token","actions":[],"events":[],"reducers":["token:credit","token:debit","token:getBalance","token:getMinRemainingBalance"],"transactionAssets":[{"id":0,"name":"transfer"}]},{"id":3,"name":"sequence","actions":[],"events":[],"reducers":[],"transactionAssets":[]},{"id":4,"name":"keys","actions":[],"events":[],"reducers":[],"transactionAssets":[{"id":0,"name":"registerMultisignatureGroup"}]},{"id":5,"name":"dpos","actions":["dpos:getAllDelegates","dpos:getUnlockings"],"events":[],"reducers":[],"transactionAssets":[{"id":0,"name":"registerDelegate"},{"id":1,"name":"voteDelegate"},{"id":2,"name":"unlockToken"},{"id":3,"name":"reportDelegateMisbehavior"}]},{"id":1000,"name":"legacyAccount","actions":["legacyAccount:getUnregisteredAccount"],"events":[],"reducers":[],"transactionAssets":[{"id":0,"name":"reclaimLSK"}]}]}
+{"version":"3.0.0.5e1a7cf","networkVersion":"2.0","networkIdentifier":"01e47ba4e3e57981642150f4b45f64c2160c10bac9434339888210a4fa5df097","lastBlockID":"a98f7027ee16c8f8169ba676a72679dd8e6f56d83e93fec813b8f3041fb9c03d","height":670287,"finalizedHeight":670148,"syncing":false,"unconfirmedTransactions":0,"genesisConfig":{"blockTime":10,"communityIdentifier":"Klayr","maxPayloadLength":15360,"bftThreshold":68,"minFeePerByte":1000,"baseFees":[{"moduleID":5,"assetID":0,"baseFee":"1000000000"}],"rewards":{"milestones":["500000000","400000000","300000000","200000000","100000000"],"offset":2160,"distance":3000000},"minRemainingBalance":"5000000","activeDelegates":101,"standbyDelegates":2,"delegateListRoundOffset":2},"registeredModules":[{"id":2,"name":"token","actions":[],"events":[],"reducers":["token:credit","token:debit","token:getBalance","token:getMinRemainingBalance"],"transactionAssets":[{"id":0,"name":"transfer"}]},{"id":3,"name":"sequence","actions":[],"events":[],"reducers":[],"transactionAssets":[]},{"id":4,"name":"keys","actions":[],"events":[],"reducers":[],"transactionAssets":[{"id":0,"name":"registerMultisignatureGroup"}]},{"id":5,"name":"dpos","actions":["dpos:getAllDelegates","dpos:getUnlockings"],"events":[],"reducers":[],"transactionAssets":[{"id":0,"name":"registerDelegate"},{"id":1,"name":"voteDelegate"},{"id":2,"name":"unlockToken"},{"id":3,"name":"reportDelegateMisbehavior"}]},{"id":1000,"name":"legacyAccount","actions":["legacyAccount:getUnregisteredAccount"],"events":[],"reducers":[],"transactionAssets":[{"id":0,"name":"reclaimKLY"}]}]}
 ----
 
-TIP: Use the `--pretty` flag to return the response in formatted JSON: `lisk-core node:info --pretty`.
+TIP: Use the `--pretty` flag to return the response in formatted JSON: `klayr-core node:info --pretty`.
 
 === Check new account address
 
@@ -501,7 +501,7 @@ You will be prompted for your passphrase from which the other account details wi
 
 [source,bash]
 ----
-lisk-core account:show
+klayr-core account:show
 ----
 
 After running the above command, you will be prompted for your delegate passphrase.
@@ -519,51 +519,51 @@ The value under `binaryAddress` is used to self-vote for the delegate account an
 
 In the new DPoS rules, delegates need to self-vote with a significant amount of tokens to be able to reach forging positions.
 
-For more information how self-voting affects the vote weight, see xref:{url_sdk_protocol_voteweight}[Delegates, voting, and delegate weight, (Lisk Protocol)].
+For more information how self-voting affects the vote weight, see xref:{url_sdk_protocol_voteweight}[Delegates, voting, and delegate weight, (Klayr Protocol)].
 
-==== Voting with Lisk Desktop
+==== Voting with Klayr Desktop
 
-Use Lisk Desktop to cast the self-vote conveniently from a user interface.
+Use Klayr Desktop to cast the self-vote conveniently from a user interface.
 
-Just login with your passphrase, after updating Lisk Desktop to the latest 2.x version.
+Just login with your passphrase, after updating Klayr Desktop to the latest 2.x version.
 
-See the two example videos below, which show how to vote with Lisk Desktop v2:
+See the two example videos below, which show how to vote with Klayr Desktop v2:
 
 video::CKwf2u-QfuU[youtube]
 
 video::KAPor0lMz5U[youtube]
 
-==== Voting via Lisk Core CLI
+==== Voting via Klayr Core CLI
 
-Use the Lisk Core CLI to cast the self-vote with the desired amount of tokens from the command line.
+Use the Klayr Core CLI to cast the self-vote with the desired amount of tokens from the command line.
 
 [source,bash]
 ----
-$ lisk-core transaction:create 5 1 100000000
+$ klayr-core transaction:create 5 1 100000000
 ? Please enter: votes(delegateAddress, amount):  89aa5fc8861d392f60662f76a379cc348fe97d28, 148000000000
 ? Want to enter another votes(delegateAddress, amount) No
 ? Please enter passphrase:  [hidden]
 ? Please re-enter passphrase:  [hidden]
 {"transaction":"0805100118012080c2d72f2a2024350a05e078b181fa8f3c273ca9882a8f5ed6efbaf3d1537665f9480635273f321f0a1d0a1489aa5fc8861d392f60662f76a379cc348fe97d281080a0e6d7ce083a403aef0012b05f3d962e3bc4b1ba70d6cc4fea783e24c02c36bc644e283ef2dd7618ec072594505c7ab8ce2a1e22dda5e90c51be79d06ac4871daf8430ff6a330b"}
-$ lisk-core transaction:send 0805100118012080c2d72f2a2024350a05e078b181fa8f3c273ca9882a8f5ed6efbaf3d1537665f9480635273f321f0a1d0a1489aa5fc8861d392f60662f76a379cc348fe97d281080a0e6d7ce083a403aef0012b05f3d962e3bc4b1ba70d6cc4fea783e24c02c36bc644e283ef2dd7618ec072594505c7ab8ce2a1e22dda5e90c51be79d06ac4871daf8430ff6a330b
+$ klayr-core transaction:send 0805100118012080c2d72f2a2024350a05e078b181fa8f3c273ca9882a8f5ed6efbaf3d1537665f9480635273f321f0a1d0a1489aa5fc8861d392f60662f76a379cc348fe97d281080a0e6d7ce083a403aef0012b05f3d962e3bc4b1ba70d6cc4fea783e24c02c36bc644e283ef2dd7618ec072594505c7ab8ce2a1e22dda5e90c51be79d06ac4871daf8430ff6a330b
 Transaction with id: '6a6121adf6a73a857bef92eaec9c29545f53c9196a16faa1eafdf58012f5a2e5' received by node.
 ----
 
 ==== Voting with a multisignature account
 
-All accounts which had a second passphrase registered in Lisk Core v2 are converted to multisignature accounts which need 2 mandatory signatures.
+All accounts which had a second passphrase registered in Klayr Core v2 are converted to multisignature accounts which need 2 mandatory signatures.
 The voting process therefore works a little different for accounts with a second passphrase:
 
 [source,bash]
 ----
-$ lisk-core transaction:create 5 1 100000000
+$ klayr-core transaction:create 5 1 100000000
 ? Please enter: votes(delegateAddress, amount):  331e287263c8166febde9d77a5f333df75056c74, 5555000000000
 ? Want to enter another votes(delegateAddress, amount) No
 ? Please enter passphrase:  [hidden] # <1>
 ? Please re-enter passphrase:  [hidden]
 {"transaction":"0805100118002080c2d72f2a2030c07dbb72b41e3fda9f29e1a4fc0fce893bb00788515a5e6f50b80312e2f48332200a1e0a14331e287263c8166febde9d77a5f333df75056c741080f8e9fcabc3023a4072b159f5a7d2934b1a5131b36f711e9ca8fcd2cce68c607eb468cb1926b84fa33205fd294df23cd02e5b2107849b651e5a9b8e064c59ca16eb1f72e90065330f"}
 # Use the transaction hex output from above in the command below
-$ lisk-core transaction:sign 0805100118002080c2d72f2a2030c07dbb72b41e3fda9f29e1a4fc0fce893bb00788515a5e6f50b80312e2f48332200a1e0a14331e287263c8166febde9d77a5f333df75056c741080f8e9fcabc3023a4072b159f5a7d2934b1a5131b36f711e9ca8fcd2cce68c607eb468cb1926b84fa33205fd294df23cd02e5b2107849b651e5a9b8e064c59ca16eb1f72e90065330f \
+$ klayr-core transaction:sign 0805100118002080c2d72f2a2030c07dbb72b41e3fda9f29e1a4fc0fce893bb00788515a5e6f50b80312e2f48332200a1e0a14331e287263c8166febde9d77a5f333df75056c741080f8e9fcabc3023a4072b159f5a7d2934b1a5131b36f711e9ca8fcd2cce68c607eb468cb1926b84fa33205fd294df23cd02e5b2107849b651e5a9b8e064c59ca16eb1f72e90065330f \
 --mandatory-keys="30c07dbb72b41e3fda9f29e1a4fc0fce893bb00788515a5e6f50b80312e2f483" \ # <2>
 --mandatory-keys="f7a16edaf7995d522d5e6ac69d7325df76f5883dd084409eb13df8d61c33abfb" \ # <3>
 --sender-public-key="30c07dbb72b41e3fda9f29e1a4fc0fce893bb00788515a5e6f50b80312e2f483" # <4>
@@ -571,7 +571,7 @@ $ lisk-core transaction:sign 0805100118002080c2d72f2a2030c07dbb72b41e3fda9f29e1a
 ? Please re-enter passphrase:  [hidden]
 {"transaction":"0805100118002080c2d72f2a2030c07dbb72b41e3fda9f29e1a4fc0fce893bb00788515a5e6f50b80312e2f48332200a1e0a14331e287263c8166febde9d77a5f333df75056c741080f8e9fcabc3023a4072b159f5a7d2934b1a5131b36f711e9ca8fcd2cce68c607eb468cb1926b84fa33205fd294df23cd02e5b2107849b651e5a9b8e064c59ca16eb1f72e90065330f3a00"}
 # Use the transaction hex output from above in the command below
-$ lisk-core transaction:sign 0805100118002080c2d72f2a2030c07dbb72b41e3fda9f29e1a4fc0fce893bb00788515a5e6f50b80312e2f48332200a1e0a14331e287263c8166febde9d77a5f333df75056c741080f8e9fcabc3023a4072b159f5a7d2934b1a5131b36f711e9ca8fcd2cce68c607eb468cb1926b84fa33205fd294df23cd02e5b2107849b651e5a9b8e064c59ca16eb1f72e90065330f \
+$ klayr-core transaction:sign 0805100118002080c2d72f2a2030c07dbb72b41e3fda9f29e1a4fc0fce893bb00788515a5e6f50b80312e2f48332200a1e0a14331e287263c8166febde9d77a5f333df75056c741080f8e9fcabc3023a4072b159f5a7d2934b1a5131b36f711e9ca8fcd2cce68c607eb468cb1926b84fa33205fd294df23cd02e5b2107849b651e5a9b8e064c59ca16eb1f72e90065330f \
 --mandatory-keys="30c07dbb72b41e3fda9f29e1a4fc0fce893bb00788515a5e6f50b80312e2f483" \
 --mandatory-keys="f7a16edaf7995d522d5e6ac69d7325df76f5883dd084409eb13df8d61c33abfb" \
 --sender-public-key="30c07dbb72b41e3fda9f29e1a4fc0fce893bb00788515a5e6f50b80312e2f483"
@@ -579,7 +579,7 @@ $ lisk-core transaction:sign 0805100118002080c2d72f2a2030c07dbb72b41e3fda9f29e1a
 ? Please re-enter passphrase:  [hidden]
 {"transaction":"0805100118002080c2d72f2a2030c07dbb72b41e3fda9f29e1a4fc0fce893bb00788515a5e6f50b80312e2f48332200a1e0a14331e287263c8166febde9d77a5f333df75056c741080f8e9fcabc3023a4072b159f5a7d2934b1a5131b36f711e9ca8fcd2cce68c607eb468cb1926b84fa33205fd294df23cd02e5b2107849b651e5a9b8e064c59ca16eb1f72e90065330f3a401c644e345238bc27f0f6af84ed8be2c8f3b70d30d91b3af45da511cb0da61f80061fbb05bab09e0606a3f9d715176d49cdf5400dd299bd2e04bd8573a6933d04"}
 # Use the transaction hex output from above in the command below
-$ lisk-core transaction:send 0805100118002080c2d72f2a2030c07dbb72b41e3fda9f29e1a4fc0fce893bb00788515a5e6f50b80312e2f48332200a1e0a14331e287263c8166febde9d77a5f333df75056c741080f8e9fcabc3023a4072b159f5a7d2934b1a5131b36f711e9ca8fcd2cce68c607eb468cb1926b84fa33205fd294df23cd02e5b2107849b651e5a9b8e064c59ca16eb1f72e90065330f3a401c644e345238bc27f0f6af84ed8be2c8f3b70d30d91b3af45da511cb0da61f80061fbb05bab09e0606a3f9d715176d49cdf5400dd299bd2e04bd8573a6933d04
+$ klayr-core transaction:send 0805100118002080c2d72f2a2030c07dbb72b41e3fda9f29e1a4fc0fce893bb00788515a5e6f50b80312e2f48332200a1e0a14331e287263c8166febde9d77a5f333df75056c741080f8e9fcabc3023a4072b159f5a7d2934b1a5131b36f711e9ca8fcd2cce68c607eb468cb1926b84fa33205fd294df23cd02e5b2107849b651e5a9b8e064c59ca16eb1f72e90065330f3a401c644e345238bc27f0f6af84ed8be2c8f3b70d30d91b3af45da511cb0da61f80061fbb05bab09e0606a3f9d715176d49cdf5400dd299bd2e04bd8573a6933d04
 Transaction with id: 'cf1e7af1b385a630c893ac45c9a4cdf5536769ba6e678a9779ff9af135ee5ec9' received by node.
 ----
 
@@ -594,12 +594,12 @@ Transaction with id: 'cf1e7af1b385a630c893ac45c9a4cdf5536769ba6e678a9779ff9af135
 
 The final step is to enable forging on the node for your delegate.
 
-Again, this can be done by using the Lisk Core CLI.
+Again, this can be done by using the Klayr Core CLI.
 Just use it with your own delegate address.
 
 [source,bash]
 ----
-lisk-core forging:enable 89aa5fc8861d392f60662f76a379cc348fe97d28 0 0 0 <1>
+klayr-core forging:enable 89aa5fc8861d392f60662f76a379cc348fe97d28 0 0 0 <1>
 ----
 
 <1> Replace the address with your delegate address in hexadecimal representation.
@@ -616,7 +616,7 @@ These values can be checked by running the following command:
 
 [source,bash]
 ----
-lisk-core forging:status
+klayr-core forging:status
 [{"address":"89aa5fc8861d392f60662f76a379cc348fe97d28","forging":true,"height":670237,"maxHeightPrevoted":670159,"maxHeightPreviouslyForged":670187}]
 ----
 ====
