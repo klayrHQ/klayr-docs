@@ -1,17 +1,17 @@
 = Transactions
 Mona Bärenfänger <mona@lightcurve.io>
 :description: Technical references regarding the transactions package consisting of usage examples, available options and example responses.
-:page-aliases: lisk-elements/packages/transactions.adoc, reference/lisk-elements/packages/transactions.adoc
+:page-aliases: klayr-elements/packages/transactions.adoc, reference/klayr-elements/packages/transactions.adoc
 :toc:
 
-Transaction utility functions are defined in `@liskhq/lisk-transactions`.
-The functionalities can be accessed through package `@liskhq/lisk-transactions`, `@liskhq/lisk-client` or `lisk-sdk`.
+Transaction utility functions are defined in `@klayrhq/klayr-transactions`.
+The functionalities can be accessed through package `@klayrhq/klayr-transactions`, `@klayrhq/klayr-client` or `klayr-sdk`.
 
 == Installation
 
 [source,bash]
 ----
-$ npm install @liskhq/lisk-transactions
+$ npm install @klayrhq/klayr-transactions
 ----
 
 == Upgrade
@@ -20,7 +20,7 @@ To perform an upgrade, execute the following command:
 
 [source,bash]
 ----
-npm update @liskhq/lisk-transactions
+npm update @klayrhq/klayr-transactions
 ----
 
 == Signing transactions
@@ -97,15 +97,15 @@ getSigningBytes (
 
 == Changing between formats
 
-=== convertBeddowsToLSK
+=== convertBeddowsToKLY
 
-This converts amounts in Beddows (the smallest denomination), to the amounts in one LSK.
+This converts amounts in Beddows (the smallest denomination), to the amounts in one KLY.
 
 ==== Syntax
 
 [source,js]
 ----
-convertBeddowsToLSK(amount)
+convertBeddowsToKLY(amount)
 ----
 
 ==== Parameters
@@ -114,24 +114,24 @@ convertBeddowsToLSK(amount)
 
 ==== Return value
 
-`string`: Amount in LSK.
+`string`: Amount in KLY.
 
 ==== Examples
 
 [source,js]
 ----
-transactions.convertBeddowsToLSK('100000'); // '0.001'
+transactions.convertBeddowsToKLY('100000'); // '0.001'
 ----
 
-=== convertLSKToBeddows
+=== convertKLYToBeddows
 
-This converts the amounts in LSK to the amounts in Beddows, (the smallest denomination).
+This converts the amounts in KLY to the amounts in Beddows, (the smallest denomination).
 
 ==== Syntax
 
 [source,js]
 ----
-convertLSKToBeddows(amount)
+convertKLYToBeddows(amount)
 ----
 
 ==== Parameters
@@ -146,7 +146,7 @@ convertLSKToBeddows(amount)
 
 [source,js]
 ----
-transactions.convertLSKToBeddows('0.001'); // '100000'
+transactions.convertKLYToBeddows('0.001'); // '100000'
 ----
 
 == Validating transactions
@@ -162,7 +162,7 @@ validateTransaction(
   assetSchema: Schema,
   // transaction object in JavaScript object format
   transactionObject: Record<string, unknown>,
-): LiskValidationError | Error | undefined;
+): KlayrValidationError | Error | undefined;
 ----
 
 == Calculating the minimum fee for a transaction

@@ -1,0 +1,125 @@
+= What is Klayr Commander?
+Mona Bärenfänger <mona@lightcurve.io>
+// Settings
+:page-aliases: klayr-commander/index.adoc, klayr-commander/user-guide.adoc, reference/klayr-commander/user-guide.adoc
+:toc: preamble
+:imagesdir: ../../../assets/images
+// URLs
+:url_nodejs_download: https://nodejs.org/en/download/
+:url_nodejs: https://nodejs.org/
+// Project URLs
+:url_commander_commands: references/klayr-commander/commands.adoc
+:url_commander_config: references/klayr-commander/commands.adoc#config
+:url_npm_glossary: klayr-v3@ROOT::glossary.adoc#npm-node-package-manager
+
+image:banner_commander.png[Logo]
+
+Klayr Commander is a command line interface tool designed to be a low entry point, coupled with being the most convenient and user-friendly tool for developers who are looking for an efficient way of coding.
+
+Klayr Commander allows communication from the command line with a remote or local node in order to access and utilise Klayr-related functionalities.
+
+*What can be achieved with Klayr Commander?*
+
+* Bootstrapping a blockchain application.
+* Decrypting/encrypting passphrases or messages.
+* Creating new accounts.
+* And much more...
+For further details please see the xref:{url_commander_commands}[command reference].
+
+---
+
+== Setup
+
+NOTE: Supported platforms: Platforms with Node.js versions 8.3 and above.
+
+=== Dependencies
+
+The following dependencies need to be installed to run the Klayr SDK:
+
+[options="header",]
+|===
+|Dependencies |Version
+|Node.js | v16.15.0
+|===
+
+=== Pre-installation
+
+==== Install Node.js
+
+Node.js is supported on most operating systems.
+Follow the instructions for your operating system on the {url_nodejs_download}[Node.js downloads page^].
+Klayr Commander requires Node.js versions 8.3 or above.
+
+xref:{url_npm_glossary}[NPM] is automatically installed along with Node.js.
+
+===== Verify Node.js installation
+
+Confirm that Node.js and NPM have been successfully installed by executing the following command:
+
+[source,bash]
+----
+node --version
+npm --version
+----
+
+=== Installation
+
+To install the latest version of Klayr Commander as a global command, install the NPM package as shown below:
+
+[source,bash]
+----
+npm install --global klayr-commander
+----
+
+Upon successful completion, NPM will add the Klayr Commander executable to your PATH.
+
+== Usage
+
+TIP: For a full list of all commands and their available options, see the xref:{url_commander_commands][Command reference]
+
+Pass arguments and options directly from the command line, as shown in the example below:
+
+[source,sh-session]
+----
+$ klayr (-v|--version|version) # returns the current version of Klayr Commander.
+$ klayr [TOPIC]:[ACTION] # to run a command. Available actions depend on the command.
+$ klayr [TOPIC] # displays help for a specific command.
+$ klayr # displays general help and the command list.
+----
+
+[source,sh-session]
+----
+$ klayr
+A command line interface for Klayr
+
+VERSION
+  klayr-commander/5.1.10 darwin-x64 node-v16.15.0
+
+USAGE
+  $ klayr [COMMAND]
+
+TOPICS
+  account     Commands relating to Klayr accounts.
+  generate    Commands relating to Klayr generator.
+  message     Commands relating to user messages.
+  passphrase  Commands relating to Klayr passphrases.
+
+COMMANDS
+  autocomplete        display autocomplete installation instructions
+  console             Klayr interactive REPL (Read-eval-print loop), session to run commands.
+  hash-onion          Create hash onions to be used by the forger.
+  help                display help for klayr
+  init                Bootstrap a blockchain application using Klayr SDK.
+  network-identifier
+----
+
+See concrete examples on the xref:{url_commander_commands}[Commands page].
+
+== Upgrade
+
+To update your global installation to the latest version of Klayr Commander, simply execute the following command:
+
+[source,bash]
+----
+npm update --global klayr-commander
+----

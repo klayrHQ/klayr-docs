@@ -3,22 +3,22 @@
 :toc:
 :imagesdir: ../../assets/images
 
-:url_examples: https://github.com/LiskHQ/lisk-sdk/tree/development/elements/lisk-p2p/examples
-:url_echo_example: https://github.com/LiskHQ/lisk-sdk/tree/development/elements/lisk-p2p/examples/echo
-:url_find_city: https://github.com/LiskHQ/lisk-sdk/tree/development/elements/lisk-p2p/examples/find-city-game
-:url_connect_lisk: https://github.com/LiskHQ/lisk-sdk/tree/development/elements/lisk-p2p/examples/lisk-network
+:url_examples: https://github.com/KlayrHQ/klayr-sdk/tree/development/elements/klayr-p2p/examples
+:url_echo_example: https://github.com/KlayrHQ/klayr-sdk/tree/development/elements/klayr-p2p/examples/echo
+:url_find_city: https://github.com/KlayrHQ/klayr-sdk/tree/development/elements/klayr-p2p/examples/find-city-game
+:url_connect_klayr: https://github.com/KlayrHQ/klayr-sdk/tree/development/elements/klayr-p2p/examples/klayr-network
 
-:url_lip: https://github.com/LiskHQ/lips/blob/master/proposals/lip-0004.md
+:url_lip: https://github.com/KlayrHQ/lips/blob/master/proposals/lip-0004.md
 
-@liskhq/lisk-p2p is a package for creating unstructured P2P networks.
+@klayrhq/klayr-p2p is a package for creating unstructured P2P networks.
 The package in abstraction enables peer discovery, network security, and reliability.
-A developer can leverage all the underlying specifications proposed in https://github.com/LiskHQ/lips/blob/master/proposals/lip-0004.md[LIP: 0004: Introduce robust peer selection and banning mechanism] and use the package for building P2P use cases.
+A developer can leverage all the underlying specifications proposed in https://github.com/KlayrHQ/lips/blob/master/proposals/lip-0004.md[LIP: 0004: Introduce robust peer selection and banning mechanism] and use the package for building P2P use cases.
 
 == Installation
 
 [source,bash]
 ----
-npm install --save @liskhq/lisk-p2p
+npm install --save @klayrhq/klayr-p2p
 ----
 
 == Update
@@ -27,7 +27,7 @@ To perform an upgrade, execute the following command:
 
 [source,bash]
 ----
-npm update @liskhq/lisk-p2p
+npm update @klayrhq/klayr-p2p
 ----
 
 == Usage
@@ -36,7 +36,7 @@ To run a P2P node.
 
 [source,js]
 ----
-const { P2P } = require('@liskhq/lisk-p2p');
+const { P2P } = require('@klayrhq/klayr-p2p');
 
 const p2p = new P2P({
 	nodeInfo: {
@@ -68,7 +68,7 @@ P2P node has started!
 
 == Architecture
 
-The architecture of the Lisk P2P library is divided into multiple parts (components or classes).
+The architecture of the Klayr P2P library is divided into multiple parts (components or classes).
 The main parts of the P2P library are as follows:
 
 * P2P
@@ -79,7 +79,7 @@ The main parts of the P2P library are as follows:
 
 The responsibilities and interactions of these parts (components or classes) are summarized by the following diagram:
 
-image::p2p.png[Lisk-P2P Architecture]
+image::p2p.png[Klayr-P2P Architecture]
 
 Before explaining the individual modules, it is helpful to become familiar with the following terminology:
 
@@ -244,4 +244,4 @@ Check the {url_examples}[examples^] folder for a few examples to demonstrate P2P
 
 - This particular {url_echo_example}[example^] will run 3 nodes that will connect to each other and will then say "`hi`" to each other, they will then receive a response back from their peers when they receive it.
 - The {url_find_city}[find city game example^] will run 3 nodes that will change their city randomly and also inform the other nodes in which city they are located, if they find out that they are in the same city then they stop changing their city. The app will stop when all 3 nodes are in the same city.
-- Finally, the {url_connect_lisk}[connect to Lisk networks example^] shows how to create a lightweight P2P client that can connect to Lisk networks such as the testnet, mainnet, and the devnet and listen to various events and request data on connection events.
+- Finally, the {url_connect_klayr}[connect to Klayr networks example^] shows how to create a lightweight P2P client that can connect to Klayr networks such as the testnet, mainnet, and the devnet and listen to various events and request data on connection events.

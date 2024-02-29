@@ -1,10 +1,10 @@
 = Cryptography
 Mona Bärenfänger <mona@lightcurve.io>
 :description: Technical references regarding the cryptography packages, including upgrade & usage examples, constants, available options, & example responses.
-:page-aliases: lisk-elements/packages/cryptography.adoc, reference/lisk-elements/packages/cryptography.adoc
+:page-aliases: klayr-elements/packages/cryptography.adoc, reference/klayr-elements/packages/cryptography.adoc
 :toc:
 :toclevels: 2
-:docs_general: lisk-v3@ROOT::
+:docs_general: klayr-v3@ROOT::
 
 :url_github_tweetnacl: https://github.com/dchest/tweetnacl-js
 :url_github_sodium: https://github.com/sodium-friends/sodium-native
@@ -14,15 +14,15 @@ Mona Bärenfänger <mona@lightcurve.io>
 :url_pbk_glossary: {docs_general}glossary.adoc#pbkdf2-password-based-key-derivation-function-2
 
 
-The @liskhq/lisk-cryptography package provides all the cryptographic functionality necessary when interacting with the Lisk ecosystem.
+The @klayrhq/klayr-cryptography package provides all the cryptographic functionality necessary when interacting with the Klayr ecosystem.
 
 == Installation
 
-This adds the Lisk client as a dependency of your project:
+This adds the Klayr client as a dependency of your project:
 
 [source,bash]
 ----
-npm install @liskhq/lisk-cryptography
+npm install @klayrhq/klayr-cryptography
 ----
 
 == Upgrade
@@ -31,14 +31,14 @@ To perform an upgrade, execute the following command:
 
 [source,bash]
 ----
-npm update @liskhq/lisk-cryptography
+npm update @klayrhq/klayr-cryptography
 ----
 
 == Usage
 
-The `lisk-cryptography` package can be used on both server-side and client-side code.
+The `klayr-cryptography` package can be used on both server-side and client-side code.
 
-In case the `lisk-cryptography` is used server-side, it is beneficial to speed up the application by using the {url_github_sodium}[sodium-native^] library.
+In case the `klayr-cryptography` is used server-side, it is beneficial to speed up the application by using the {url_github_sodium}[sodium-native^] library.
 
 To perform this, expose `NACL_FAST=enable` as the environment variable as shown below:
 
@@ -70,10 +70,10 @@ Cryptography-specific constants are available via the `cryptography.constants` k
 [source,js]
 ----
 {
-  SIGNED_MESSAGE_PREFIX: 'Lisk Signed Message:\n',
+  SIGNED_MESSAGE_PREFIX: 'Klayr Signed Message:\n',
   BINARY_ADDRESS_LENGTH: 20,
-  DEFAULT_LISK32_ADDRESS_PREFIX: 'lsk',
-  DEFAULT_BASE32_ADDRESS_PREFIX: 'lsk'
+  DEFAULT_KLAYR32_ADDRESS_PREFIX: 'kly',
+  DEFAULT_BASE32_ADDRESS_PREFIX: 'kly'
 }
 ----
 
@@ -81,7 +81,7 @@ Cryptography-specific constants are available via the `cryptography.constants` k
 
 [source,js]
 ----
-import * as cryptography from '@liskhq/lisk-cryptography';
+import * as cryptography from '@klayrhq/klayr-cryptography';
 
 cryptography.constants.SIGNED_MESSAGE_PREFIX;
 ----
@@ -267,7 +267,7 @@ const decryptedMessage = cryptography.decryptMessageWithPassphrase(
   'cd9aecb885fb9b89d2b3bdda26773ae7f93d852f9c56ddb1',
   'robust swift grocery peasant forget share enable convince deputy road keep cheap',
   '9d3058175acab969f41ad9b86f7a2926c74258670fe56b37c429c01fca9f2f0f'
-); // 'Hello Lisk!'
+); // 'Hello Klayr!'
 ----
 
 === decryptPassphraseWithPassword
@@ -336,7 +336,7 @@ This contains the  `nonce` and `encryptedMessage`, both in hex string format.
 [source,js]
 ----
 const encryptedMessage = cryptography.encryptMessageWithPassphrase(
-    'Hello Lisk!',
+    'Hello Klayr!',
     'robust swift grocery peasant forget share enable convince deputy road keep cheap',
     '9d3058175acab969f41ad9b86f7a2926c74258670fe56b37c429c01fca9f2f0f'
 );
@@ -418,9 +418,9 @@ getNetworkIdentifier(genesisBlockPayloadHash, communityIdentifier)
 
 [source,js]
 ----
-const networkIdentifier = lisk.cryptography.getNetworkIdentifier(
-  lisk.cryptography.hexToBuffer("23ce0366ef0a14a91e5fd4b1591fc880ffbef9d988ff8bebf8f3666b0c09597d"),
-  "Lisk",
+const networkIdentifier = klayr.cryptography.getNetworkIdentifier(
+  klayr.cryptography.hexToBuffer("23ce0366ef0a14a91e5fd4b1591fc880ffbef9d988ff8bebf8f3666b0c09597d"),
+  "Klayr",
 ); // <Buffer 47 b2 e0 50 a5 72 2e b5 2e a8 32 d5 0e be 20 09 c7 e4 ab e8 ca 1c 0a d1 a7 19 9e 8e bf 13 7e 24>
 ----
 
@@ -668,7 +668,7 @@ cryptography.getAddressAndPublicKeyFromPassphrase(
 
 === getAddressFromPassphrase
 
-This returns the Lisk address for a provided passphrase.
+This returns the Klayr address for a provided passphrase.
 
 ==== Syntax
 
@@ -696,7 +696,7 @@ cryptography.getAddressFromPassphrase(
 
 === getAddressFromPublicKey
 
-This converts a public key into a Lisk address.
+This converts a public key into a Klayr address.
 
 ==== Syntax
 
@@ -711,7 +711,7 @@ getAddressFromPublicKey(publicKey)
 
 ==== Return value
 
-`Buffer`: This is the Lisk address for the public key.
+`Buffer`: This is the Klayr address for the public key.
 
 ==== Examples
 
@@ -753,7 +753,7 @@ cryptography.getPrivateAndPublicKeyFromPassphrase(
 ----
 
 === verifyChecksum
-To verify the checksum of Lisk32 addresses.
+To verify the checksum of Klayr32 addresses.
 
 ==== Syntax
 
@@ -770,104 +770,104 @@ verifyChecksum(integerSequence)
 
 `boolean`: `true` if the checksum is valid, `false` otherwise.
 
-=== getLisk32AddressFromPublicKey
+=== getKlayr32AddressFromPublicKey
 
-Converts the public key input to a Lisk32 address.
+Converts the public key input to a Klayr32 address.
 
 ==== Syntax
 
 [source,js]
 ----
-getLisk32AddressFromPublicKey(publicKey, prefix)
+getKlayr32AddressFromPublicKey(publicKey, prefix)
 ----
 
 ==== Parameters
 
-. `publicKey`(Buffer): The public key which is used to retrieve the Lisk32 address.
+. `publicKey`(Buffer): The public key which is used to retrieve the Klayr32 address.
 . `prefix`(string)(optional): Prefix for account addresses.
-Default value: `lsk`.
+Default value: `kly`.
 
 ==== Return value
 
-`string`: The corresponding address in Lisk32 format.
+`string`: The corresponding address in Klayr32 format.
 
-=== getLisk32AddressFromPassphrase
+=== getKlayr32AddressFromPassphrase
 
-Converts the passphrase input to a Lisk32 address.
+Converts the passphrase input to a Klayr32 address.
 
 ==== Syntax
 
 [source,js]
 ----
-getLisk32AddressFromPassphrase(passphrase, prefix)
+getKlayr32AddressFromPassphrase(passphrase, prefix)
 ----
 
 ==== Parameters
 
-. `passphrase`(string): The passphrase which is used to retrieve the Lisk32 address.
+. `passphrase`(string): The passphrase which is used to retrieve the Klayr32 address.
 . `prefix`(string)(optional): Prefix for account addresses.
-Default value: `lsk`.
+Default value: `kly`.
 
 ==== Return value
 
-`string`: The corresponding address in Lisk32 format.
+`string`: The corresponding address in Klayr32 format.
 
-=== getAddressFromLisk32Address
-Returns an account address as a Buffer for a given Lisk32 address.
+=== getAddressFromKlayr32Address
+Returns an account address as a Buffer for a given Klayr32 address.
 
 ==== Syntax
 
 [source,js]
 ----
-getAddressFromLisk32Address(Lisk32Address,prefix)
+getAddressFromKlayr32Address(Klayr32Address,prefix)
 ----
 
 ==== Parameters
 
-. `Lisk32Address`(string): A Lisk32 address.
+. `Klayr32Address`(string): A Klayr32 address.
 . `prefix`(string)(optional): Prefix for account addresses.
-Default value: `lsk`.
+Default value: `kly`.
 
 ==== Return value
 
 `Buffer`: The account address as a Buffer.
 
-=== getLisk32AddressFromAddress
-Returns an account address as a Buffer for a given Lisk32 address.
+=== getKlayr32AddressFromAddress
+Returns an account address as a Buffer for a given Klayr32 address.
 
 ==== Syntax
 
 [source,js]
 ----
-getLisk32AddressFromAddress(address,prefix)
+getKlayr32AddressFromAddress(address,prefix)
 ----
 
 ==== Parameters
 
 . `address`(Buffer): An account address as a Buffer.
 . `prefix`(string)(optional): Prefix for account addresses.
-Default value: `lsk`.
+Default value: `kly`.
 
 ==== Return value
 
-`string`: The corresponding Lisk32 address.
+`string`: The corresponding Klayr32 address.
 
-=== validateLisk32Address
+=== validateKlayr32Address
 
-Validates if the input address is a correct Lisk32 address or not.
+Validates if the input address is a correct Klayr32 address or not.
 
 ==== Syntax
 
 [source,js]
 ----
-validateLisk32Address(address, prefix)
+validateKlayr32Address(address, prefix)
 ----
 
 ==== Parameters
 
-. `address`(string): An account address in Lisk32 format.
+. `address`(string): An account address in Klayr32 format.
 . `prefix`(string)(optional): Prefix for account addresses.
-Default value: `lsk`.
+Default value: `kly`.
 
 ==== Return value
 
@@ -1018,19 +1018,19 @@ printSignedMessage(signedMessageObject)
 [source,js]
 ----
 const stringToPrint = cryptography.printSignedMessage({
-    message: 'Hello Lisk!',
+    message: 'Hello Klayr!',
     publicKey: '9d3058175acab969f41ad9b86f7a2926c74258670fe56b37c429c01fca9f2f0f',
     signature: '125febe625b2d62381ff836c020de0b00297f7d2493fe6404bc6109fd70a55348555b7a66a35ac657d338d7fe329efd203da1602f4c88cc21934605676558401',
 });
 console.log(stringToPrint);
-//-----BEGIN LISK SIGNED MESSAGE-----
+//-----BEGIN KLAYR SIGNED MESSAGE-----
 //-----MESSAGE-----
-//Hello Lisk!
+//Hello Klayr!
 //-----PUBLIC KEY-----
 //9d3058175acab969f41ad9b86f7a2926c74258670fe56b37c429c01fca9f2f0f
 //-----SIGNATURE-----
 //125febe625b2d62381ff836c020de0b00297f7d2493fe6404bc6109fd70a55348555b7a66a35ac657d338d7fe329efd203da1602f4c88cc21934605676558401
-//-----END LISK SIGNED MESSAGE-----
+//-----END KLAYR SIGNED MESSAGE-----
 ----
 
 === signAndPrintMessage
@@ -1057,16 +1057,16 @@ signAndPrintMessage(message, passphrase)
 
 [source,js]
 ----
-const stringToPrint = cryptography.signAndPrintMessage('Hello Lisk!',  'robust swift grocery peasant forget share enable convince deputy road keep cheap');
+const stringToPrint = cryptography.signAndPrintMessage('Hello Klayr!',  'robust swift grocery peasant forget share enable convince deputy road keep cheap');
 console.log(stringToPrint);
-// -----BEGIN LISK SIGNED MESSAGE-----
+// -----BEGIN KLAYR SIGNED MESSAGE-----
 //-----MESSAGE-----
-//Hello Lisk!
+//Hello Klayr!
 //-----PUBLIC KEY-----
 //9d3058175acab969f41ad9b86f7a2926c74258670fe56b37c429c01fca9f2f0f
 //-----SIGNATURE-----
 //125febe625b2d62381ff836c020de0b00297f7d2493fe6404bc6109fd70a55348555b7a66a35ac657d338d7fe329efd203da1602f4c88cc21934605676558401
-//-----END LISK SIGNED MESSAGE-----
+//-----END KLAYR SIGNED MESSAGE-----
 ----
 
 === signMessageWithPassphrase
@@ -1094,9 +1094,9 @@ signMessageWithPassphrase(message, passphrase)
 
 [source,js]
 ----
-cryptography.signMessageWithPassphrase('Hello Lisk!',  'robust swift grocery peasant forget share enable convince deputy road keep cheap');
+cryptography.signMessageWithPassphrase('Hello Klayr!',  'robust swift grocery peasant forget share enable convince deputy road keep cheap');
 /* {
-  message: 'Hello Lisk!',
+  message: 'Hello Klayr!',
   publicKey: <Buffer 9d 30 58 17 5a ca b9 69 f4 1a d9 b8 6f 7a 29 26 c7 42 58 67 0f e5 6b 37 c4 29 c0 1f ca 9f 2f 0f>,
   signature: <Buffer 12 5f eb e6 25 b2 d6 23 81 ff 83 6c 02 0d e0 b0 02 97 f7 d2 49 3f e6 40 4b c6 10 9f d7 0a 55 34 85 55 b7 a6 6a 35 ac 65 7d 33 8d 7f e3 29 ef d2 03 da ... 14 more bytes>
 } */
@@ -1125,7 +1125,7 @@ verifyMessageWithPublicKey(signedMessageObject)
 
 [source,js]
 ----
-const msg = cryptography.signMessageWithPassphrase('Hello Lisk!',  'robust swift grocery peasant forget share enable convince deputy road keep cheap');
+const msg = cryptography.signMessageWithPassphrase('Hello Klayr!',  'robust swift grocery peasant forget share enable convince deputy road keep cheap');
 
 cryptography.verifyMessageWithPublicKey(msg); // true
 ----

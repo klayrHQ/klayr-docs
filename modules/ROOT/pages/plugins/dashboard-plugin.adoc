@@ -1,9 +1,9 @@
 = Dashboard plugin
 :toc: preamble
 
-:url_lisk_framework: lisk-v3@ROOT::glossary.adoc#lisk-framework
+:url_klayr_framework: klayr-v3@ROOT::glossary.adoc#klayr-framework
 
-`@liskhq/lisk-framework-dashboard-plugin` is a plugin for the xref:{url_lisk_framework}[Lisk Framework] that provides a user interface which enables developers to conveniently view and communicate with the blockchain application during the development.
+`@klayrhq/klayr-framework-dashboard-plugin` is a plugin for the xref:{url_klayr_framework}[Klayr Framework] that provides a user interface which enables developers to conveniently view and communicate with the blockchain application during the development.
 
 The dashboard plugin includes the following features:
 
@@ -34,8 +34,8 @@ How to register the dashboard plugin with the blockchain application.
 
 [source,js]
 ----
-const { Application, genesisBlockDevnet, configDevnet } = require('lisk-sdk');
-const { DashboardPlugin } = require('@liskhq/lisk-framework-dashboard-plugin');
+const { Application, genesisBlockDevnet, configDevnet } = require('klayr-sdk');
+const { DashboardPlugin } = require('@klayrhq/klayr-framework-dashboard-plugin');
 
 const app = Application.defaultApplication(genesisBlockDevnet, configDevnet);
 
@@ -59,8 +59,8 @@ NOTE: The application will use the default values in the case whereby there is n
 .Dashboard options in the configuration
 [source,js]
 ----
-const { Application, genesisBlockDevnet, configDevnet } = require('lisk-sdk');
-const { DashboardPlugin } = require('@liskhq/lisk-framework-dashboard-plugin');
+const { Application, genesisBlockDevnet, configDevnet } = require('klayr-sdk');
+const { DashboardPlugin } = require('@klayrhq/klayr-framework-dashboard-plugin');
 
 const appConfig = utils.objects.mergeDeep({}, configDevnet, {
     plugins: {
@@ -68,7 +68,7 @@ const appConfig = utils.objects.mergeDeep({}, configDevnet, {
             applicationUrl: 'ws://localhost:8080/ws',
             port: 4005,
             host: '127.0.0.1',
-            applicationName: 'Lisk',
+            applicationName: 'Klayr',
         }
     }
 });

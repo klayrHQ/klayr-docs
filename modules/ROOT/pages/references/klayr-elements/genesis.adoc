@@ -1,15 +1,15 @@
 = Genesis
 Mona Bärenfänger <mona@lightcurve.io>
-:description: Technical references regarding the genesis package of Lisk Elements.
+:description: Technical references regarding the genesis package of Klayr Elements.
 :toc:
 
-`@liskhq/lisk-genesis` is a package which contains genesis block creation functions in accordance with the Lisk protocol.
+`@klayrhq/klayr-genesis` is a package which contains genesis block creation functions in accordance with the Klayr protocol.
 
 == Installation
 
 [source,bash]
 ----
-npm install @liskhq/lisk-genesis
+npm install @klayrhq/klayr-genesis
 ----
 
 == Update
@@ -18,14 +18,14 @@ To perform an upgrade, execute the following command:
 
 [source,bash]
 ----
-npm update @liskhq/lisk-genesis
+npm update @klayrhq/klayr-genesis
 ----
 
 == Usage
 
 [source,js]
 ----
-const { TokenModule, DPoSModule, genesis, configDevnet } = require('lisk-sdk');
+const { TokenModule, DPoSModule, genesis, configDevnet } = require('klayr-sdk');
 
 // Get account schemas of the modules which are registered with the application
 const token = new TokenModule(configDevnet.genesisConfig).accountSchema;

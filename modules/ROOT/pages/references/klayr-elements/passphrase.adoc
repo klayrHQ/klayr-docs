@@ -1,17 +1,17 @@
 = Passphrase
 Mona Bärenfänger <mona@lightcurve.io>
 :description: Technical references regarding the passphrase package consisting of usage examples, available options, validation methods, and example responses.
-:page-aliases: lisk-elements/packages/passphrase.adoc, reference/lisk-elements/packages/passphrase.adoc
+:page-aliases: klayr-elements/packages/passphrase.adoc, reference/klayr-elements/packages/passphrase.adoc
 :toc:
 :url_npm_bip39: https://www.npmjs.com/package/bip39
 
-@liskhq/lisk-passphrase is a package which provides tools for generating and validating mnemonic passphrases.
+@klayrhq/klayr-passphrase is a package which provides tools for generating and validating mnemonic passphrases.
 
 == Installation
 
 [source,bash]
 ----
-$ npm install @liskhq/lisk-passphrase
+$ npm install @klayrhq/klayr-passphrase
 ----
 
 == Upgrade
@@ -20,7 +20,7 @@ To perform an upgrade, execute the following command:
 
 [source,bash]
 ----
-npm update @liskhq/lisk-passphrase
+npm update @klayrhq/klayr-passphrase
 ----
 
 == Mnemonic
@@ -32,7 +32,7 @@ Please refer to their documentation for full usage.
 
 [source,js]
 ----
-import * as passphrase from '@liskhq/lisk-passphrase';
+import * as passphrase from '@klayrhq/klayr-passphrase';
 
 const { Mnemonic } = passphrase;
 
@@ -75,7 +75,7 @@ The array is empty if the passphrase is valid.
 
 [source,js]
 ----
-import * as passphrase from '@liskhq/lisk-passphrase';
+import * as passphrase from '@klayrhq/klayr-passphrase';
 
 const errors = passphrase.validation.getPassphraseValidationErrors('this passphrase is not    valid', Mnemonic.wordlist.english, 24);
 /* [

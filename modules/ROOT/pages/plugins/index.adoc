@@ -1,5 +1,5 @@
 = Plugins overview
-:url_protocol: lisk-v3@ROOT::understand-blockchain/lisk-protocol/
+:url_protocol: klayr-v3@ROOT::understand-blockchain/klayr-protocol/
 :url_plugin_dashboard: plugins/dashboard-plugin.adoc
 :url_plugin_faucet: plugins/faucet-plugin.adoc
 :url_plugin_forger: plugins/forger-plugin.adoc
@@ -8,12 +8,12 @@
 :url_plugin_report: plugins/report-misbehavior-plugin.adoc
 :url_tx_pom: {url_protocol}transactions.adoc#delegate-misbehavior-report
 
-An overview of all available plugins for the Lisk SDK.
+An overview of all available plugins for the Klayr SDK.
 
 [cols="1,1,2",options="header",stripes="hover"]
 |===
 |Name
-|Included in the Lisk SDK by default?
+|Included in the Klayr SDK by default?
 |Description
 
 | xref:{url_plugin_dashboard}[]

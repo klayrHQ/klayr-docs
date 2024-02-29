@@ -1,12 +1,12 @@
 = Modules overview
-:url_protocol: lisk-v3@ROOT::understand-blockchain/lisk-protocol/
+:url_protocol: klayr-v3@ROOT::understand-blockchain/klayr-protocol/
 :url_module_dpos: modules/dpos-module.adoc
 :url_module_keys: modules/keys-module.adoc
 :url_module_sequence: modules/sequence-module.adoc
 :url_module_token: modules/token-module.adoc
 :url_tx_pom: {url_protocol}transactions.adoc#delegate-misbehavior-report
 
-An overview of all available modules for the Lisk SDK.
+An overview of all available modules for the Klayr SDK.
 
 [cols="1,1,3",options="header",stripes="hover"]
 |===

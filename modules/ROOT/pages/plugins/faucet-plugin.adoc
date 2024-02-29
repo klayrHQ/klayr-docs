@@ -7,9 +7,9 @@
 :url_recaptcha_test_keys: https://developers.google.com/recaptcha/docs/faq#id-like-to-run-automated-tests-with-recaptcha.-what-should-i-do
 :url_recaptcha: https://developers.google.com/recaptcha/intro
 // Project URLs
-:url_cryptography_encrypt_pw: references/lisk-elements/cryptography.adoc#encryptpassphrasewithpassword
+:url_cryptography_encrypt_pw: references/klayr-elements/cryptography.adoc#encryptpassphrasewithpassword
 
-`@liskhq/lisk-framework-faucet-plugin` is a plugin for the Lisk Framework that provides a user interface to receive an certain amount of tokens on request.
+`@klayrhq/klayr-framework-faucet-plugin` is a plugin for the Klayr Framework that provides a user interface to receive an certain amount of tokens on request.
 The faucet plugin is a useful tool during development and also in testing networks.
 
 The faucet plugin includes the following features:
@@ -38,8 +38,8 @@ How to register the faucet plugin with the blockchain application.
 
 [source,js]
 ----
-const { Application, genesisBlockDevnet, configDevnet } = require('lisk-sdk');
-const { FaucetPlugin } = require('@liskhq/lisk-framework-faucet-plugin');
+const { Application, genesisBlockDevnet, configDevnet } = require('klayr-sdk');
+const { FaucetPlugin } = require('@klayrhq/klayr-framework-faucet-plugin');
 
 const app = Application.defaultApplication(genesisBlockDevnet, configDevnet);
 
@@ -71,8 +71,8 @@ There are three required config options that need to be defined in order for the
 .Faucet options in the configuration
 [source,js]
 ----
-const { Application, genesisBlockDevnet, configDevnet } = require('lisk-sdk');
-const { FaucetPlugin } = require('@liskhq/lisk-framework-faucet-plugin');
+const { Application, genesisBlockDevnet, configDevnet } = require('klayr-sdk');
+const { FaucetPlugin } = require('@klayrhq/klayr-framework-faucet-plugin');
 
 const appConfig = utils.objects.mergeDeep({}, configDevnet, {
     plugins: {
@@ -85,7 +85,7 @@ const appConfig = utils.objects.mergeDeep({}, configDevnet, {
             applicationUrl: 'ws://localhost:8080/ws',
             fee: '0.1',
             amount: '100',
-            tokenPrefix: 'lsk',
+            tokenPrefix: 'kly',
         }
     }
 });
@@ -166,7 +166,7 @@ Enables and disables the faucet.
 
 [source,js]
 ----
-const { apiClient } = require('lisk-sdk');
+const { apiClient } = require('klayr-sdk');
 
 let clientCache;
 
@@ -216,7 +216,7 @@ useClient().then((val) => {
 
 [source,js]
 ----
-const { apiClient } = require('lisk-sdk');
+const { apiClient } = require('klayr-sdk');
 
 let clientCache;
 

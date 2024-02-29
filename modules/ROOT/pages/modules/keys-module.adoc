@@ -82,7 +82,7 @@ Allows to send a `registerMultisignatureGroup` transaction, which creates a mult
 [source,typescript]
 ----
 {
-	$id: 'lisk/keys/register',
+	$id: 'klayr/keys/register',
 	type: 'object',
 	required: ['numberOfSignatures', 'optionalKeys', 'mandatoryKeys'],
 	properties: {
