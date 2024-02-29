@@ -1,4 +1,4 @@
-= What is Lisk Commander?
+= What is Klayr Commander?
 Mona Bärenfänger <mona@lightcurve.io>
 // Settings
 :toc: preamble
@@ -6,15 +6,15 @@ Mona Bärenfänger <mona@lightcurve.io>
 // URLs
 :url_nodejs_download: https://nodejs.org/en/download/
 // Project URLs
-:url_commander_cli: references/lisk-commander/cli.adoc
+:url_commander_cli: references/klayr-commander/cli.adoc
 
 image:banner_commander.png[Logo]
 
-Lisk Commander is a command line interface tool designed to be a low entry point, coupled with being the most convenient and user-friendly tool for developers who are looking for an efficient way of coding.
+Klayr Commander is a command line interface tool designed to be a low entry point, coupled with being the most convenient and user-friendly tool for developers who are looking for an efficient way of coding.
 
-Lisk Commander allows communication from the command line with a remote or local node in order to access and utilise Lisk-related functionalities.
+Klayr Commander allows communication from the command line with a remote or local node in order to access and utilise Klayr-related functionalities.
 
-*What can be achieved with Lisk Commander?*
+*What can be achieved with Klayr Commander?*
 
 * Bootstrapping a blockchain client.
 * Decrypting/encrypting passphrases or messages.
@@ -29,7 +29,7 @@ For further details please see the xref:{url_commander_cli}[].
 
 === Dependencies
 
-The following dependencies need to be installed to run the Lisk SDK:
+The following dependencies need to be installed to run the Klayr SDK:
 
 [options="header",]
 |===
@@ -63,14 +63,14 @@ npm --version
 
 === Installation
 
-To install the latest version of Lisk Commander as a global command, install the NPM package as shown below:
+To install the latest version of Klayr Commander as a global command, install the NPM package as shown below:
 
 [source,bash]
 ----
-npm install --global lisk-commander
+npm install --global klayr-commander
 ----
 
-Upon successful completion, NPM will add the Lisk Commander executable to your PATH.
+Upon successful completion, NPM will add the Klayr Commander executable to your PATH.
 
 == Usage
 
@@ -78,45 +78,45 @@ TIP: For a full list of all commands and their available options, see the xref:{
 
 [source,sh-session]
 ----
-lisk
+klayr
 ----
 
-NOTE: Use `npx lisk` in case you installed Lisk Commander locally.
+NOTE: Use `npx klayr` in case you installed Klayr Commander locally.
 
-Type `lisk` in the command-line to display the command list and general help:
+Type `klayr` in the command-line to display the command list and general help:
 
-.Lisk Commander general help
+.Klayr Commander general help
 [source,sh-session]
 ----
-A command line interface for Lisk
+A command line interface for Klayr
 
 VERSION
-  lisk-commander/6.0.0 darwin-x64 node-v18.16.0
+  klayr-commander/6.0.0 darwin-x64 node-v18.16.0
 
 USAGE
-  $ lisk [COMMAND]
+  $ klayr [COMMAND]
 
 TOPICS
   endpoint    Invokes the provided endpoint.
-  generate    Commands relating to the Lisk generator.
+  generate    Commands relating to the Klayr generator.
   keys        Return keys corresponding to the given passphrase.
   message     Commands relating to user messages.
-  passphrase  Commands relating to Lisk passphrases.
+  passphrase  Commands relating to Klayr passphrases.
 
 COMMANDS
   autocomplete  Display autocomplete installation instructions.
-  console       Lisk interactive REPL session to run commands.
+  console       Klayr interactive REPL session to run commands.
   hash-onion    Create hash onions to be used by the forger.
-  help          Display help for lisk.
-  init          Bootstrap a blockchain client using the Lisk SDK.
+  help          Display help for klayr.
+  init          Bootstrap a blockchain client using the Klayr SDK.
   version
 ----
 
 == Upgrade
 
-To update your global installation to the latest version of Lisk Commander, simply execute the following command:
+To update your global installation to the latest version of Klayr Commander, simply execute the following command:
 
 [source,bash]
 ----
-npm update --global lisk-commander
+npm update --global klayr-commander
 ----

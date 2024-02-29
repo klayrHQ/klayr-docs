@@ -5,16 +5,16 @@ Mona Bärenfänger <mona@lightcurve.io>
 :idprefix:
 :idseparator: -
 :docs-general: ROOT::
-:docs-lisk-v5: v5@lisk-sdk::
+:docs-klayr-v5: v5@klayr-sdk::
 :docs-understand-modules: {docs-general}understand-blockchain/sdk/modules-commands.adoc
 :sectnums:
 // URLs
 :url_ethereum_events: https://medium.com/mycrypto/understanding-event-logs-on-the-ethereum-blockchain-f4ae7ba50378
 :url_wiki_pubsub: https://en.wikipedia.org/wiki/Publish%E2%80%93subscribe_pattern
-:url_lip_37: https://github.com/LiskHQ/lips/blob/main/proposals/lip-0037.md
+:url_lip_37: https://github.com/KlayrHQ/lips/blob/main/proposals/lip-0037.md
 // Project URLs
-:url_sdkv5_rpc_events: {docs-lisk-v5}events.adoc
-:url_api_rpc_getEvents: {docs-general}api/lisk-node-rpc.adoc
+:url_sdkv5_rpc_events: {docs-klayr-v5}events.adoc
+:url_api_rpc_getEvents: {docs-general}api/klayr-node-rpc.adoc
 :url_standardevent: {docs-understand-modules}#standard-event
 :url_methods: {docs-understand-modules}#methods
 :url_endpoints: {docs-understand-modules}#endpoints
@@ -23,9 +23,9 @@ Mona Bärenfänger <mona@lightcurve.io>
 :url_understand_txs: {docs-general}understand-blockchain/blocks-txs.adoc#successful-vs-failed-transactions
 :url_build_module_event: {docs-general}build-blockchain/module/blockchain-event.adoc
 
-The Lisk SDK v6 introduces many breaking changes and essential improvements to the Lisk Protocol and the Lisk Framework.
+The Klayr SDK v6 introduces many breaking changes and essential improvements to the Klayr Protocol and the Klayr Framework.
 
-This migration guide summarizes the most important changes from Lisk SDK v5 to Lisk SDK v6, and explains why the changes are introduced.
+This migration guide summarizes the most important changes from Klayr SDK v5 to Klayr SDK v6, and explains why the changes are introduced.
 
 == Terminology changes
 
@@ -42,7 +42,7 @@ An overview of the most important terminology updates is summarized in the table
 
 |Block generation
 |Forging
-|The process of creating a new block in the Lisk ecosystem.
+|The process of creating a new block in the Klayr ecosystem.
 
 |Chain ID
 |Network ID
@@ -59,13 +59,13 @@ It is used when sending tokens to a specific chain and is also prepended for sig
 
 |PoS
 |DPoS
-|The validator selection algorithm of the Lisk Mainchain.
-In fact, the algorithm used by Lisk can be considered as a combination of DPoS and PoS.
+|The validator selection algorithm of the Klayr Mainchain.
+In fact, the algorithm used by Klayr can be considered as a combination of DPoS and PoS.
 As the similarities with PoS (Proof of Stake) are quite big, it was decided to rename the DPoS module to PoS and to replace DPoS-specific terminology with more general terms.
 
 |RPC event
 |Application event
-|Events that are natively included in the Lisk Framework and follow the publish/subscribe pattern.
+|Events that are natively included in the Klayr Framework and follow the publish/subscribe pattern.
 
 |RPC node
 |Non-forging node
@@ -76,14 +76,14 @@ As the similarities with PoS (Proof of Stake) are quite big, it was decided to r
 |An application that utilizes blockchain technology.
 The application typically includes business logic running on blockchain clients (modules or smart contracts), middleware and UI.
 
-|Lisk app, app on Lisk
+|Klayr app, app on Klayr
 |Blockchain application
-|A Web3 app built on Lisk.
+|A Web3 app built on Klayr.
 
 |Blockchain client
 |
 |A client is an implementation of the blockchain protocol that verifies data (blocks and transactions) against the protocol rules and keeps the network secure.
-In Lisk, Lisk Core is the client for the Lisk Mainchain and clients for other blockchains in the Lisk ecosystem can be built using the Lisk SDK.
+In Klayr, Klayr Core is the client for the Klayr Mainchain and clients for other blockchains in the Klayr ecosystem can be built using the Klayr SDK.
 
 |Blockchain node
 |
@@ -93,11 +93,11 @@ In Lisk, Lisk Core is the client for the Lisk Mainchain and clients for other bl
 |
 |A separate, independent blockchain that runs in parallel to a main blockchain.
 It is typically interoperable with the main blockchain.
-In Lisk, a sidechain is a blockchain registered on the Lisk mainchain following the Lisk Interoperability Protocol.
+In Klayr, a sidechain is a blockchain registered on the Klayr mainchain following the Klayr Interoperability Protocol.
 
 |Staker
 |Voter
-|A user staking LSK to "vote"/increase the delegate weight of their favourite validator(s).
+|A user staking KLY to "vote"/increase the delegate weight of their favourite validator(s).
 
 |Staking
 |Voting
@@ -115,8 +115,8 @@ In Lisk, a sidechain is a blockchain registered on the Lisk mainchain following 
 == Failed transactions are included in blocks
 
 In the event of a failed execution of a transaction's business logic, the transaction will be assigned the status of `fail`.
-In Lisk SDK v5, transactions were only included in a block, if they could be executed successfully.
-In Lisk SDK v6, this changes now: xref:{url_understand_txs}[Failed transactions] *are included in blocks* as well.
+In Klayr SDK v5, transactions were only included in a block, if they could be executed successfully.
+In Klayr SDK v6, this changes now: xref:{url_understand_txs}[Failed transactions] *are included in blocks* as well.
 
 As you know, the transaction fee is paid for every transaction included in a block.
 This has the following consequence:
@@ -131,11 +131,11 @@ Increased security::
 Additionally, it mitigates the danger of DDoSing blockchain networks by spamming transactions that will fail, because the transaction fee has to be paid in any case.
 ====
 
-To verify, if a transaction that is included in a block was executed successfully, Lisk SDK v6 introduces the <<addition-of-blockchain-events>>.
+To verify, if a transaction that is included in a block was executed successfully, Klayr SDK v6 introduces the <<addition-of-blockchain-events>>.
 
 == Addition of blockchain events
 
-**Blockchain events** are **newly introduced**, and **Module pub/sub events** are **completely removed** in Lisk SDK v6.
+**Blockchain events** are **newly introduced**, and **Module pub/sub events** are **completely removed** in Klayr SDK v6.
 
 Although similar in name, Blockchain events follow a completely different approach.
 To avoid confusion between the two events, please read the summary below, which is comparing the new and old events inside modules.
@@ -168,14 +168,14 @@ Blockchain events - SDKv6::
 [cols="1h,6"]
 |===
 |Description
-|Blockchain events are introduced newly in Lisk SDK v6.
+|Blockchain events are introduced newly in Klayr SDK v6.
 Blockchain events are still defined and emitted inside the module, but it is not possible to subscribe to them via the RPC API of a node.
 
 Instead, blockchain events are **logged per block**, i.e. directly included in the block header and can be queried through the RPC API of a node by requesting the RPC endpoint `chain_getEvents`.
 
-*Blockchain events in Lisk SDK v6 are following a concept comparable to the {url_ethereum_events}[Ethereum event log^].*
+*Blockchain events in Klayr SDK v6 are following a concept comparable to the {url_ethereum_events}[Ethereum event log^].*
 
-Besides the newly introduced blockchain events, there is still a couple of xref:{url_understand_rpc_events}[RPC events] included in the Lisk Framework, which can be retrieved via public-subscribe, as in v5.
+Besides the newly introduced blockchain events, there is still a couple of xref:{url_understand_rpc_events}[RPC events] included in the Klayr Framework, which can be retrieved via public-subscribe, as in v5.
 
 The blockchain developer can define new blockchain events per module as desired, but the RPC events are not customizable any more.
 Only new blockchain events can be included in the blockchain client by the developer.
@@ -212,7 +212,7 @@ newHelloEvent.add(context, {
 ----
 |Retrieving
 a|
-In Lisk SDK v6, events are requested per block height after an event is emitted.
+In Klayr SDK v6, events are requested per block height after an event is emitted.
 
 Retrieving events from a node:
 
@@ -230,7 +230,7 @@ curl --location --request POST 'http://localhost:7887/rpc' \
 }'
 ----
 ////
-Lisk Service now offers additional endpoints to query for events more conveniently.
+Klayr Service now offers additional endpoints to query for events more conveniently.
 ////
 |===
 --
@@ -244,7 +244,7 @@ Module events - SDKv5::
 
 An event informs services that subscribed to it, if a certain event happened (e.g. a transaction was executed), and often contain additional data, providing more information or context about the event.
 
-*Module events in Lisk SDK v5 follow the {url_wiki_pubsub}[publish-subscribe-pattern^].*
+*Module events in Klayr SDK v5 follow the {url_wiki_pubsub}[publish-subscribe-pattern^].*
 
 |Purpose
 |Events are used to communicate about certain events in real time, and to prevent reoccuring RPC request, just to check if there are any changes.
@@ -270,7 +270,7 @@ this._channel.publish('hello:newHello', {
 
 |Retrieving
 a|
-In Lisk SDK v5, events could be subscribed directly via the API client.
+In Klayr SDK v5, events could be subscribed directly via the API client.
 
 If an event was missed, there was no way of retrieving the event, after it was emitted by a node.
 
@@ -286,16 +286,16 @@ client.subscribe('app:block:new', ( data ) => {
 
 == Chain ID replaces network ID
 
-Chain identifiers (or chain IDs) for transaction signatures and block signatures were already introduced in Lisk SDK v5 as "network identifiers" to prevent replay attacks on other chains.
-In Lisk SDK v6, the chain ID is now additionally used to identify chains for making cross chain transactions in the Lisk ecosystem.
+Chain identifiers (or chain IDs) for transaction signatures and block signatures were already introduced in Klayr SDK v5 as "network identifiers" to prevent replay attacks on other chains.
+In Klayr SDK v6, the chain ID is now additionally used to identify chains for making cross chain transactions in the Klayr ecosystem.
 
 Besides getting a more descriptive name, the chain ID is also constructed differently now:
 
 [cols="1h,4,4"]
 |===
 |
-|Chain ID (Lisk SDK v6)
-|Network ID (Lisk SDK v5)
+|Chain ID (Klayr SDK v6)
+|Network ID (Klayr SDK v5)
 
 |Description
 |Unique identifier of a blockchain network for transactions and blocks to prevent replay attacks on other chains.
@@ -329,7 +329,7 @@ Network ID example::
 =====
 
 Chain identifiers are 4-byte values that follow a specific format:
-the first byte is used to identify the network in which the chain is running (either the Lisk Mainnet, Lisk Testnet, or any other test network);
+the first byte is used to identify the network in which the chain is running (either the Klayr Mainnet, Klayr Testnet, or any other test network);
 the other 3 bytes identify the blockchain within the network.
 
 NOTE: The network-specific prefix is included explicitly to ensure that a chain does not use the same chain identifier in the test network as in the mainnet.
@@ -345,7 +345,7 @@ Improved user experience::
 
 == Module & command IDs are removed
 
-The module and command IDs are removed completely in Lisk SDKv6.
+The module and command IDs are removed completely in Klayr SDKv6.
 
 Instead of IDs, the name of a module and the name of a command are now used as unique identifiers for modules and commands, respectively.
 
@@ -360,7 +360,7 @@ Reduces the number of required properties and uses strings which are more descri
 
 The module reducers are renamed to xref:{url_methods}[methods].
 
-Methods in Lisk SDK v6 still have the same purpose as reducers in v5, but besides the name change, they are also defined a bit differently, as summarized below:
+Methods in Klayr SDK v6 still have the same purpose as reducers in v5, but besides the name change, they are also defined a bit differently, as summarized below:
 
 .Main benefits of this change
 [%collapsible]
@@ -390,7 +390,7 @@ a|
 +
 [source,typescript]
 ----
-import { BaseMethod, ImmutableMethodContext } from 'lisk-sdk';
+import { BaseMethod, ImmutableMethodContext } from 'klayr-sdk';
 import { MessageStore, MessageStoreData } from './stores/message';
 
 export class HelloMethod extends BaseMethod {
@@ -443,7 +443,7 @@ export class SidechainRegistrationCommand extends BaseInteroperabilityCommand {
 		const availableBalance = await this._tokenMethod.getAvailableBalance(
 			context.getMethodContext(),
 			senderAddress,
-			TOKEN_ID_LSK,
+			TOKEN_ID_KLY,
 		);
 		if (availableBalance < REGISTRATION_FEE) {
             // ...
@@ -513,7 +513,7 @@ await reducerHandler.invoke("token:debit", {
 
 The module actions are renamed to xref:{url_endpoints}[endpoints].
 
-Endpoints in Lisk SDK v6 still have the same purpose as actions in v5, but besides the name change, they are also defined a bit differently, as summarized below:
+Endpoints in Klayr SDK v6 still have the same purpose as actions in v5, but besides the name change, they are also defined a bit differently, as summarized below:
 
 .Main benefits of this change
 [%collapsible]
@@ -537,7 +537,7 @@ Endpoints - SDKv6::
 a|
 [source,typescript]
 ----
-import { BaseEndpoint, ModuleEndpointContext, cryptography } from 'lisk-sdk';
+import { BaseEndpoint, ModuleEndpointContext, cryptography } from 'klayr-sdk';
 import { MessageStore, MessageStoreData } from './stores/message';
 
 export class HelloEndpoint extends BaseEndpoint {
@@ -550,11 +550,11 @@ export class HelloEndpoint extends BaseEndpoint {
         if (typeof address !== 'string') {
             throw new Error('Parameter address must be a string.');
         }
-        cryptography.address.validateLisk32Address(address);
+        cryptography.address.validateKlayr32Address(address);
         // 4. Get the Hello message for the address from the message store
         const helloMessage = await messageSubStore.get(
             ctx,
-            cryptography.address.getAddressFromLisk32Address(address),
+            cryptography.address.getAddressFromKlayr32Address(address),
         );
         // 5. Return the Hello message
         return helloMessage;
@@ -572,7 +572,7 @@ curl --location --request GET 'http://localhost:7887/rpc' \
     "id": "1",
     "method": "hello_getHello",
     "params": {
-        "address": "lskuz5p98kz3mqzxnu68qdrjxtvdvr2o7pprtj4yv"
+        "address": "klyuz5p98kz3mqzxnu68qdrjxtvdvr2o7pprtj4yv"
     }
 }'
 ----
@@ -631,21 +631,21 @@ const data = await client.invoke('app:actionName', input);
 
 A store, aka key-value store is a special kind of database that follows a data storage paradigm designed for storing, retrieving, and managing associative arrays.
 
-In the Lisk SDK, stores are used to store the on-chain and off-chain related data of a node.
+In the Klayr SDK, stores are used to store the on-chain and off-chain related data of a node.
 Each module has its own dedicated store, which only the module itself can access.
 ////
 A module can only access its' own store, and never the stores of other modules directly.
 If a module requires data from other module stores, it can use the dedicated <<methods-replace-reducers,module methods>> to do so.
 ////
 
-In Lisk SDK v5, this principle was not followed consistently: There were the chain store and the account store, and the account store was accessible by every module.
+In Klayr SDK v5, this principle was not followed consistently: There were the chain store and the account store, and the account store was accessible by every module.
 
-In Lisk SDK v6, *the account store is removed completely*, and integrated into the respective module stores.
+In Klayr SDK v6, *the account store is removed completely*, and integrated into the respective module stores.
 Additionally, the *implementation of stores into modules is improved*, to store any key-value pair in the database consistently.
 ////
 Each module store needs a unique key under which it is added to the Merkle tree, which defines the overall state of the blockchain.
-In Lisk SDK v5, this key was derived from the module ID.
-In Lisk SDK v6, the module ID was removed, as described in <<module-command-ids-are-removed>>.
+In Klayr SDK v5, this key was derived from the module ID.
+In Klayr SDK v6, the module ID was removed, as described in <<module-command-ids-are-removed>>.
 Therefore, the store ID is now derived from the module name.
 ////
 .Main benefits of this change
@@ -657,7 +657,7 @@ Improved modularity::
 * Confines data per module
 ====
 
-.Stores in Lisk SDK v6
+.Stores in Klayr SDK v6
 [cols="1h,6"]
 |===
 |Definition
@@ -665,7 +665,7 @@ a|
 .How to define a new module store
 [source,typescript]
 ----
-import { BaseStore } from 'lisk-sdk';
+import { BaseStore } from 'klayr-sdk';
 
 export interface MessageStoreData {
 	message: String;
@@ -713,7 +713,7 @@ a|
 .Example: How to get data from the store
 [source,typescript]
 ----
-import { BaseEndpoint, ModuleEndpointContext, cryptography } from 'lisk-sdk';
+import { BaseEndpoint, ModuleEndpointContext, cryptography } from 'klayr-sdk';
 import { MessageStore, MessageStoreData } from './stores/message';
 
 export class HelloEndpoint extends BaseEndpoint {
@@ -726,11 +726,11 @@ export class HelloEndpoint extends BaseEndpoint {
         if (typeof address !== 'string') {
             throw new Error('Parameter address must be a string.');
         }
-        cryptography.address.validateLisk32Address(address);
+        cryptography.address.validateKlayr32Address(address);
         // 4. Get the Hello message for the address from the message store
         const helloMessage = await messageSubStore.get(
             ctx,
-            cryptography.address.getAddressFromLisk32Address(address),
+            cryptography.address.getAddressFromKlayr32Address(address),
         );
         // 5. Return the Hello message
         return helloMessage;
@@ -742,7 +742,7 @@ export class HelloEndpoint extends BaseEndpoint {
 
 == Addition of metadata
 
-Lisk SDK v6 introduces a new RPC endpoint to get all existing metadata related to a node.
+Klayr SDK v6 introduces a new RPC endpoint to get all existing metadata related to a node.
 This includes metadata of all the modules which are registered on the node.
 
 The module developer can now easily define which data should be returned by the endpoint for the particular module by adjusting the newly introduced xref:{url_metadata}[metadata] method.
@@ -802,7 +802,7 @@ curl --location --request POST 'localhost:7887/rpc' \
 
 NOTE: The following changes were introduced to complement the improvements made in the module structure, see <<methods-replace-reducers>>, <<addition-of-blockchain-events>>, and <<migration-of-store-from-v5-to-v6>>.
 
-In Lisk SDK v6, module dependencies can be registered in the following methods:
+In Klayr SDK v6, module dependencies can be registered in the following methods:
 
 * <<init>>
 * <<adddependencies>>

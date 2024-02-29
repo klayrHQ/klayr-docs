@@ -1,31 +1,31 @@
 = Modules overview
-:url_module_base: {site-url}/lisk-sdk/references/typedoc/classes/lisk_framework.BaseModule.html
-:url_module_auth: {site-url}/lisk-sdk/references/typedoc/classes/lisk_framework.AuthModule.html
-:url_module_fee: {site-url}/lisk-sdk/references/typedoc/classes/lisk_framework.FeeModule.html
-:url_module_mci: {site-url}/lisk-sdk/references/typedoc/classes/lisk_framework.MainchainInteroperabilityModule.html
-:url_module_pos: {site-url}/lisk-sdk/references/typedoc/classes/lisk_framework.PoSModule.html
-:url_module_sci: {site-url}/lisk-sdk/references/typedoc/classes/lisk_framework.SidechainInteroperabilityModule.html
-:url_module_random: {site-url}/lisk-sdk/references/typedoc/classes/lisk_framework.RandomModule.html
-:url_module_reward: {site-url}/lisk-sdk/references/typedoc/classes/lisk_framework.RewardModule.html
-:url_module_token: {site-url}/lisk-sdk/references/typedoc/classes/lisk_framework.TokenModule.html
-:url_module_validators: {site-url}/lisk-sdk/references/typedoc/classes/lisk_framework.ValidatorsModule.html
+:url_module_base: {site-url}/klayr-sdk/references/typedoc/classes/klayr_framework.BaseModule.html
+:url_module_auth: {site-url}/klayr-sdk/references/typedoc/classes/klayr_framework.AuthModule.html
+:url_module_fee: {site-url}/klayr-sdk/references/typedoc/classes/klayr_framework.FeeModule.html
+:url_module_mci: {site-url}/klayr-sdk/references/typedoc/classes/klayr_framework.MainchainInteroperabilityModule.html
+:url_module_pos: {site-url}/klayr-sdk/references/typedoc/classes/klayr_framework.PoSModule.html
+:url_module_sci: {site-url}/klayr-sdk/references/typedoc/classes/klayr_framework.SidechainInteroperabilityModule.html
+:url_module_random: {site-url}/klayr-sdk/references/typedoc/classes/klayr_framework.RandomModule.html
+:url_module_reward: {site-url}/klayr-sdk/references/typedoc/classes/klayr_framework.RewardModule.html
+:url_module_token: {site-url}/klayr-sdk/references/typedoc/classes/klayr_framework.TokenModule.html
+:url_module_validators: {site-url}/klayr-sdk/references/typedoc/classes/klayr_framework.ValidatorsModule.html
 
 // Lips
-:url_lip50: https://github.com/LiskHQ/lips/blob/main/proposals/lip-0050.md
-:url_lip46: https://github.com/LiskHQ/lips/blob/main/proposals/lip-0046.md
-:url_lip45: https://github.com/LiskHQ/lips/blob/main/proposals/lip-0045.md
-:url_lip48: https://github.com/LiskHQ/lips/blob/main/proposals/lip-0048.md
-:url_lip44: https://github.com/LiskHQ/lips/blob/main/proposals/lip-0044.md
-:url_lip41: https://github.com/LiskHQ/lips/blob/main/proposals/lip-0041.md
-:url_lip71: https://github.com/LiskHQ/lips/blob/main/proposals/lip-0071.md
-:url_lip40: https://github.com/LiskHQ/lips/blob/main/proposals/lip-0040.md
-:url_lip39: https://github.com/LiskHQ/lips/blob/main/proposals/lip-0039.md
-:url_lip37: https://github.com/LiskHQ/lips/blob/main/proposals/lip-0037.md#chain-identifiers-1
-:url_lip51: https://github.com/LiskHQ/lips/blob/main/proposals/lip-0051.md
-:url_lip70: https://github.com/LiskHQ/lips/blob/main/proposals/lip-0070.md
-:url_lip57: https://github.com/LiskHQ/lips/blob/main/proposals/lip-0057.md
+:url_lip50: https://github.com/KlayrHQ/lips/blob/main/proposals/lip-0050.md
+:url_lip46: https://github.com/KlayrHQ/lips/blob/main/proposals/lip-0046.md
+:url_lip45: https://github.com/KlayrHQ/lips/blob/main/proposals/lip-0045.md
+:url_lip48: https://github.com/KlayrHQ/lips/blob/main/proposals/lip-0048.md
+:url_lip44: https://github.com/KlayrHQ/lips/blob/main/proposals/lip-0044.md
+:url_lip41: https://github.com/KlayrHQ/lips/blob/main/proposals/lip-0041.md
+:url_lip71: https://github.com/KlayrHQ/lips/blob/main/proposals/lip-0071.md
+:url_lip40: https://github.com/KlayrHQ/lips/blob/main/proposals/lip-0040.md
+:url_lip39: https://github.com/KlayrHQ/lips/blob/main/proposals/lip-0039.md
+:url_lip37: https://github.com/KlayrHQ/lips/blob/main/proposals/lip-0037.md#chain-identifiers-1
+:url_lip51: https://github.com/KlayrHQ/lips/blob/main/proposals/lip-0051.md
+:url_lip70: https://github.com/KlayrHQ/lips/blob/main/proposals/lip-0070.md
+:url_lip57: https://github.com/KlayrHQ/lips/blob/main/proposals/lip-0057.md
 
-Overview of all available modules for the Lisk SDK.
+Overview of all available modules for the Klayr SDK.
 
 [cols="1,3",options="header",stripes="hover"]
 |===
@@ -45,7 +45,7 @@ It allows chains to choose the token used to pay the fee and to define a minimum
 For more information, see: {url_lip48}[LIP 48^].
 
 | {url_module_mci}[Mainchain Interoperability module]
-|Provides basic functionalities for the mainchain to transmit information between interoperable chains in the Lisk ecosystem using cross-chain messages.
+|Provides basic functionalities for the mainchain to transmit information between interoperable chains in the Klayr ecosystem using cross-chain messages.
 For more information, see: {url_lip45}[LIP 45^].
 
 | {url_module_pos}[PoS module]
@@ -53,19 +53,19 @@ For more information, see: {url_lip45}[LIP 45^].
 For more information, see: {url_lip57}[LIP 57^].
 
 | {url_module_sci}[Sidechain Interoperability module]
-|Provides basic functionalities for a sidechain to transmit information between interoperable chains in the Lisk ecosystem using cross-chain messages.
+|Provides basic functionalities for a sidechain to transmit information between interoperable chains in the Klayr ecosystem using cross-chain messages.
 For more information, see: {url_lip45}[LIP 45^].
 
 | {url_module_random}[Random module]
-a|Handles the validation of the inputs and computation of outputs for the commit and reveal process of a Lisk blockchain.
+a|Handles the validation of the inputs and computation of outputs for the commit and reveal process of a Klayr blockchain.
 For more information, see: {url_lip46}[LIP 46^].
 
 | {url_module_reward}[Reward module]
-a|Provides the base reward system for a blockchain developed with the Lisk SDK.
+a|Provides the base reward system for a blockchain developed with the Klayr SDK.
 For more information, see: {url_lip70}[LIP 70^].
 
 | {url_module_token}[Token module]
-|Handles minting, burning, and transferring tokens inside the Lisk ecosystem.
+|Handles minting, burning, and transferring tokens inside the Klayr ecosystem.
 For more information, see: {url_lip51}[LIP 51^].
 
 | {url_module_validators}[Validators module]
