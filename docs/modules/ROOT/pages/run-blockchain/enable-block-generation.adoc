@@ -2,7 +2,7 @@
 :toc: preamble
 :idprefix:
 :idseparator: -
-:docs_sdk: lisk-sdk::
+:docs_sdk: klayr-sdk::
 // URLs
 :url_sdk_cli_generatorenable: {docs_sdk}client-cli.adoc#generatorenable
 :url_sdk_cli_generatordisable: {docs_sdk}client-cli.adoc#generatordisable
@@ -16,7 +16,7 @@
 
 
 ====
-On this page, you'll learn how to enable and disable block generation for a validator on a blockchain that uses the Lisk PoS module, like the Lisk Mainnet.
+On this page, you'll learn how to enable and disable block generation for a validator on a blockchain that uses the Klayr PoS module, like the Klayr Mainnet.
 
 This includes how to:
 
@@ -59,12 +59,12 @@ See xref:{url_run_validator_init_info}[Initial validator info] for more informat
 
 [tabs]
 =====
-Lisk Core::
+Klayr Core::
 +
 --
 [source,bash]
 ----
-lisk-core generator:status --pretty
+klayr-core generator:status --pretty
 ----
 --
 Sidechain node::
@@ -79,7 +79,7 @@ Sidechain node::
 
 This will return the following information for a validator who imported her/his keys to the node:
 
-* `address`: The Lisk32 address of the validator.
+* `address`: The Klayr32 address of the validator.
 * `enabled`: `true`, if the validator has block generation enabled, `false` if not.
 * The <<validator-info-data>>.
 
@@ -90,7 +90,7 @@ This will return the following information for a validator who imported her/his 
   "info": {
     "status":
     [{
-        "address": "lskzpvesvp7p9odszcp3s4dffnj4ozqz7b79tonqp",
+        "address": "klyzpvesvp7p9odszcp3s4dffnj4ozqz7b79tonqp",
         "height": 574,
         "maxHeightPrevoted": 487,
         "maxHeightGenerated": 459,
@@ -106,14 +106,14 @@ Use the xref:{url_sdk_cli_generatorenable}[generator:enable] command to enable b
 
 [tabs]
 =====
-Lisk Core::
+Klayr Core::
 +
 --
-//TODO: Verify Lisk Core command
+//TODO: Verify Klayr Core command
 .Enable block generation
 [source,bash]
 ----
-lisk-core generator:enable lskqaxxmj78frvgpjgwvf4yqjjkcrr9yhn2sxxwm3 --height=123 --max-height-generated=101 --max-height-prevoted=101
+klayr-core generator:enable klyqaxxmj78frvgpjgwvf4yqjjkcrr9yhn2sxxwm3 --height=123 --max-height-generated=101 --max-height-prevoted=101
 ----
 --
 Sidechain node::
@@ -122,12 +122,12 @@ Sidechain node::
 .Enable block generation
 [source,bash]
 ----
-./bin/run generator:enable lskqaxxmj78frvgpjgwvf4yqjjkcrr9yhn2sxxwm3 --height=123 --max-height-generated=101 --max-height-prevoted=101
+./bin/run generator:enable klyqaxxmj78frvgpjgwvf4yqjjkcrr9yhn2sxxwm3 --height=123 --max-height-generated=101 --max-height-prevoted=101
 ----
 --
 =====
 
-Replace `lskqaxxmj78frvgpjgwvf4yqjjkcrr9yhn2sxxwm3` with your validator address.
+Replace `klyqaxxmj78frvgpjgwvf4yqjjkcrr9yhn2sxxwm3` with your validator address.
 
 Verify the correctness of the values: `height`, `max-height-prevoted`, and `max-height-generated` by answering `yes`, and use your password created in step xref:{url_run_validator_validator_keys}[Creating the validator keys] to enable block generation.
 
@@ -137,13 +137,13 @@ To prefill the validator info data as stored on the node, automatically, add the
 
 [source,bash]
 ----
-lisk-core generator:enable lskqaxxmj78frvgpjgwvf4yqjjkcrr9yhn2sxxwm3 --use-status-value
+klayr-core generator:enable klyqaxxmj78frvgpjgwvf4yqjjkcrr9yhn2sxxwm3 --use-status-value
 ----
 
 //TODO: Verify correctness of snippet
 [source,bash]
 ----
- Current block generation status for validator account lskqaxxmj78frvgpjgwvf4yqjjkcrr9yhn2sxxwm3 is:
+ Current block generation status for validator account klyqaxxmj78frvgpjgwvf4yqjjkcrr9yhn2sxxwm3 is:
 {"height":14814092,"maxHeightPrevoted":14814017,"maxHeightGenerated":14814025}
 ? Do you want to use the above values to enable block generation? yes
 ? Enter password to decrypt the encrypted passphrase:  ********
@@ -153,7 +153,7 @@ The node will then enable block generation for the validator and respond with th
 
 ----
 Updated block generation status:
-{"address":"lskqaxxmj78frvgpjgwvf4yqjjkcrr9yhn2sxxwm3","enabled":true}
+{"address":"klyqaxxmj78frvgpjgwvf4yqjjkcrr9yhn2sxxwm3","enabled":true}
 ----
 ====
 
@@ -170,14 +170,14 @@ Use the xref:{url_sdk_cli_generatordisable}[generator:disable] command to disabl
 
 [tabs]
 =====
-Lisk Core::
+Klayr Core::
 +
 --
-//TODO: Verify Lisk Core command
+//TODO: Verify Klayr Core command
 .Disable block generation
 [source,bash]
 ----
-lisk-core generator:disable lskqaxxmj78frvgpjgwvf4yqjjkcrr9yhn2sxxwm3
+klayr-core generator:disable klyqaxxmj78frvgpjgwvf4yqjjkcrr9yhn2sxxwm3
 ----
 --
 Sidechain node::
@@ -186,12 +186,12 @@ Sidechain node::
 .Disable block generation
 [source,bash]
 ----
-./bin/run generator:disable lskqaxxmj78frvgpjgwvf4yqjjkcrr9yhn2sxxwm3
+./bin/run generator:disable klyqaxxmj78frvgpjgwvf4yqjjkcrr9yhn2sxxwm3
 ----
 --
 =====
 
-Replace `lskqaxxmj78frvgpjgwvf4yqjjkcrr9yhn2sxxwm3` with the address of your validator.
+Replace `klyqaxxmj78frvgpjgwvf4yqjjkcrr9yhn2sxxwm3` with the address of your validator.
 
 When prompted for a password, use the password that you defined while xref:{url_run_validator_validator_keys}[creating the validator keys].
 
@@ -202,7 +202,7 @@ When prompted for a password, use the password that you defined while xref:{url_
 The node will then disable block generation for the validator and respond with the following message:
 
 ----
-Disabled block generation for lskqaxxmj78frvgpjgwvf4yqjjkcrr9yhn2sxxwm3
+Disabled block generation for klyqaxxmj78frvgpjgwvf4yqjjkcrr9yhn2sxxwm3
 ----
 
 == Safely enabling block generation on another node
@@ -222,14 +222,14 @@ If available, it is recommended to synchronize from a snapshot, to speed up the 
 +
 [source,bash]
 ----
-lisk-core generator:export --output genInfo.json
+klayr-core generator:export --output genInfo.json
 ----
 . Login to the server with the new node.
 . Restore the validator info data.
 +
 [source,bash]
 ----
-lisk-core generator:import ./genInfo.json
+klayr-core generator:import ./genInfo.json
 ----
 . xref:{url_run_validator_import}[Import the validator keys].
 . xref:{url_run_validator_set_hashonion}[Import the hash onion seed] used by the validator.
@@ -239,7 +239,7 @@ After sync, the height of the newer node should be equal to the current network 
 +
 [source,bash]
 ----
-lisk-core node:info
+klayr-core node:info
 ----
 . <<get-the-validator-info-data>> to fetch the validator info data.
 . <<how-to-enable-block-generation-on-a-node,Enable block generation>>.
@@ -259,11 +259,11 @@ The only input required is the `timeShutdown`, which is a Unix timestamp of the 
 .Never underestimate the shutdown time
 [WARNING]
 ====
-Underestimating the `timeShutdown` value will violate the Lisk BFT protocol if this info data is used to enable block generation.
+Underestimating the `timeShutdown` value will violate the Klayr BFT protocol if this info data is used to enable block generation.
 The validator will be punished by the network as a consequence.
 
 To avoid this, if you are unsure about the exact shutdown time, *always overestimate*, to be on the safe side.
-If you overestimate, you will never break the Lisk BFT protocol -  in the worst case, you will lose a few block rewards.
+If you overestimate, you will never break the Klayr BFT protocol -  in the worst case, you will lose a few block rewards.
 ====
 
 [source,bash]
@@ -295,13 +295,13 @@ Required Delegate Input::
 
 Configurable Constants::
 
-* `BLOCK_TIME = 10`: The block time of the considered blockchain in seconds, i.e., 10 for Lisk Mainnet.
+* `BLOCK_TIME = 10`: The block time of the considered blockchain in seconds, i.e., 10 for Klayr Mainnet.
 * `MAX_FORK_DEPTH = 8640`: An upper boundary on the largest chain of off-chain blocks for which the validator generated a block, i.e., for every block at height `h` generated by the validator, the parent block at height `h - MAX_FORK_DEPTH` must be contained in the canonical chain that is eventually finalized.
 It is recommended to use `MAX_FORK_DEPTH` = 8640 = 24*60 *6 (number of blocks generated in 24 h).
 
 Instructions::
 . Start a new node with block generation disabled.
-. Synchronize with the Lisk blockchain until there is a finalized block: `finalizedBlock` with a block header timestamp greater than the last active height: `finalizedBlock.header.timestamp > timeShutdown`.
+. Synchronize with the Klayr blockchain until there is a finalized block: `finalizedBlock` with a block header timestamp greater than the last active height: `finalizedBlock.header.timestamp > timeShutdown`.
 . Obtain a block `parentBlock` which is a parent block of `finalizedBlock` at height `finalizedBlock.header.height - MAX_FORK_DEPTH`.
 
  parentBlock.header.height = finalizedBlock.header.height - MAX_FORK_DEPTH

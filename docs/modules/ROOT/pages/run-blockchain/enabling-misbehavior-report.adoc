@@ -10,11 +10,11 @@ Mona Bärenfänger <mona@lightcurve.io> Muhammad Talha <muhammad.talha@lightcurv
 :experimental:
 
 // External URLs
-:url_plugin_report_misbehavior: {site-url}/lisk-sdk/v6/references/typedoc/modules/_liskhq_lisk_framework_report_misbehavior_plugin.html
-:url_plugin_report_misbehavior_config: {site-url}/lisk-sdk/v6/references/typedoc/modules/_liskhq_lisk_framework_report_misbehavior_plugin.html#$config-options
-:url_consensus_bft: https://github.com/LiskHQ/lips/blob/main/proposals/lip-0014.md
-:url_consensus_bft_punishment: https://github.com/LiskHQ/lips/blob/main/proposals/lip-0024.md
-:url_rep_mis_transaction: https://github.com/LiskHQ/lips/blob/main/proposals/lip-0057.md#report-misbehavior
+:url_plugin_report_misbehavior: {site-url}/klayr-sdk/v6/references/typedoc/modules/_klayrhq_klayr_framework_report_misbehavior_plugin.html
+:url_plugin_report_misbehavior_config: {site-url}/klayr-sdk/v6/references/typedoc/modules/_klayrhq_klayr_framework_report_misbehavior_plugin.html#$config-options
+:url_consensus_bft: https://github.com/KlayrHQ/lips/blob/main/proposals/lip-0014.md
+:url_consensus_bft_punishment: https://github.com/KlayrHQ/lips/blob/main/proposals/lip-0024.md
+:url_rep_mis_transaction: https://github.com/KlayrHQ/lips/blob/main/proposals/lip-0057.md#report-misbehavior
 
 // Project URLs
 :url_guides_setup: build-blockchain/create-blockchain-client.adoc
@@ -22,13 +22,13 @@ Mona Bärenfänger <mona@lightcurve.io> Muhammad Talha <muhammad.talha@lightcurv
 :url_guides_config_hello: {url_guides_config}#example-configuration-for-the-hello-world-client
 :url_cli_globally: build-blockchain/create-blockchain-client.adoc#using-the-client-cli-globally
 :url_pm2_conf: run-blockchain/process-management.adoc#using-a-json-config-file
-:url_core_index: lisk-core::index.adoc
+:url_core_index: klayr-core::index.adoc
 :url_blocks_header: understand-blockchain/blocks-txs.adoc#block-header
 
 :fn_lip24: footnote:witness[The LIP: {url_consensus_bft_punishment}[Punish BFT violations^] provides the details regarding the implications of {url_rep_mis_transaction}[Report Misbehavior^] transaction.]
 
 The {url_plugin_report_misbehavior}[Report Misbehavior plugin^] provides automatic detection of a validator's misbehavior and sends the `reportMisbehavior` transaction to the running node.
-This transaction contains two xref:{url_blocks_header}[block headers] that are necessary to prove that the validator who generated the blocks has violated the {url_consensus_bft}[Lisk-BFT consensus protocol^] and is deemed to be punished{fn_lip24} once proven guilty.
+This transaction contains two xref:{url_blocks_header}[block headers] that are necessary to prove that the validator who generated the blocks has violated the {url_consensus_bft}[Klayr-BFT consensus protocol^] and is deemed to be punished{fn_lip24} once proven guilty.
 //TODO: Replace the BFT LIP reference with Docs BFT consensus page, when ready.
 
 ====
@@ -38,10 +38,10 @@ On this page, you'll learn:
 * [x] Authorizing an account to report misbehavior on the network.
 ====
 
-Using this guide, the Report Misbehavior plugin can be registered to a xref:{url_core_index}[Lisk Core] node or any Lisk-based blockchain client.
+Using this guide, the Report Misbehavior plugin can be registered to a xref:{url_core_index}[Klayr Core] node or any Klayr-based blockchain client.
 
 == Plugin registration
-With the latest version of Lisk Core v4 and Lisk SDK v6, the default plugins come pre-installed after a client is installed or initiated, respectively.
+With the latest version of Klayr Core v4 and Klayr SDK v6, the default plugins come pre-installed after a client is installed or initiated, respectively.
 
 You can check the `package.json` file of the blockchain client to ensure the installation.
 
@@ -50,7 +50,7 @@ You can check the `package.json` file of the blockchain client to ensure the ins
 ----
 "dependencies": {
   //[...]
-	"@liskhq/lisk-framework-report-misbehavior-plugin": "0.3.0",
+	"@klayrhq/klayr-framework-report-misbehavior-plugin": "0.3.0",
 	//[...]
 },
 ----
@@ -59,7 +59,7 @@ Otherwise, you can install the Report Misbehavior plugin like this:
  
 [source,bash]
 ----
-npm install --save @liskhq/lisk-framework-report-misbehavior-plugin
+npm install --save @klayrhq/klayr-framework-report-misbehavior-plugin
 ----
 
 There are various ways to enable the Report Misbehavior plugin.
@@ -72,15 +72,15 @@ For more information, see the configurations described in the xref:{url_guides_c
 ====
 
 === Registering via source
-For blockchain clients that were initialized with Lisk Commander, it is possible to register the plugin through the `plugins.ts` file.
+For blockchain clients that were initialized with Klayr Commander, it is possible to register the plugin through the `plugins.ts` file.
 Open the `plugins.ts` file, import the Report Misbehavior plugin, and register it with the application as shown below:
 
 .src/app/plugins.ts
 [source,typescript]
 ----
 /* eslint-disable @typescript-eslint/no-empty-function */
-import { ReportMisbehaviorPlugin } from '@liskhq/lisk-framework-report-misbehavior-plugin';
-import { Application } from 'lisk-sdk';
+import { ReportMisbehaviorPlugin } from '@klayrhq/klayr-framework-report-misbehavior-plugin';
+import { Application } from 'klayr-sdk';
 
 export const registerPlugins = (app: Application): void => {
     app.registerPlugin(new ReportMisbehaviorPlugin());
@@ -98,7 +98,7 @@ npm run build
 ----
 
 === Enabling via environment variable
-Add the environment variable `LISK_ENABLE_REPORT_MISBEHAVIOR_PLUGIN` to the PM2 configuration for the blockchain client:
+Add the environment variable `KLAYR_ENABLE_REPORT_MISBEHAVIOR_PLUGIN` to the PM2 configuration for the blockchain client:
 
 [tabs]
 =====
@@ -109,12 +109,12 @@ Mainchain node::
 [source,json]
 ----
 {
-  "name": "lisk-core",
-  "script": "lisk-core start --overwrite-config",
+  "name": "klayr-core",
+  "script": "klayr-core start --overwrite-config",
   "env": {
-    "LISK_NETWORK": "testnet",
-    "LISK_CONFIG_FILE": "/home/lisk/lisk-core/custom-config.json",
-    "LISK_ENABLE_REPORT_MISBEHAVIOR_PLUGIN": true
+    "KLAYR_NETWORK": "testnet",
+    "KLAYR_CONFIG_FILE": "/home/klayr/klayr-core/custom-config.json",
+    "KLAYR_ENABLE_REPORT_MISBEHAVIOR_PLUGIN": true
   }
 }
 ----
@@ -129,7 +129,7 @@ Sidechain node::
   "name": "hello_client",
   "script": "/bin/run start --config=config/custom_config.json",
   "env": {
-    "LISK_ENABLE_REPORT_MISBEHAVIOR_PLUGIN": true
+    "KLAYR_ENABLE_REPORT_MISBEHAVIOR_PLUGIN": true
   }
 }
 ----
@@ -153,7 +153,7 @@ This can be done simply by adding the `--enable-report-misbehavior-plugin` flag 
 +
 [source,bash]
 ----
-lisk-core start --network testnet --enable-report-misbehavior-plugin
+klayr-core start --network testnet --enable-report-misbehavior-plugin
 ----
 
 .*Sidechain*
@@ -208,7 +208,7 @@ Mainchain node::
 --
 [source,bash]
 ----
-lisk-core message:encrypt "d0b159fe5a7cc3d5f4b39a97621b514bc55b0a0f1aca8adeed2dd1899d93f103a3f96c50d0446220ef2f98240898515cbba8155730679ca35326d98dcfb680f0" -stringify
+klayr-core message:encrypt "d0b159fe5a7cc3d5f4b39a97621b514bc55b0a0f1aca8adeed2dd1899d93f103a3f96c50d0446220ef2f98240898515cbba8155730679ca35326d98dcfb680f0" -stringify
 ----
 --
 Sidechain Node::
@@ -245,7 +245,7 @@ Add the encrypted private key retrieved above under `plugins.reportMisbehavior.e
 Mainchain node::
 +
 --
-.lisk-core/config/testnet/config.json
+.klayr-core/config/testnet/config.json
 [source,json]
 ----
 "plugins": {
@@ -285,7 +285,7 @@ Mainchain node::
 --
 [source,bash]
 ----
-lisk-core endpoint:invoke reportMisbehavior_authorize '{"password": "CorrectPassword", "enable":true}' --pretty
+klayr-core endpoint:invoke reportMisbehavior_authorize '{"password": "CorrectPassword", "enable":true}' --pretty
 ----
 
 --

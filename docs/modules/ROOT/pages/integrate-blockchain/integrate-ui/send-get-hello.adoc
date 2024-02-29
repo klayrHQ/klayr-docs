@@ -8,9 +8,9 @@ Muhammad Talha <muhammad.talha@lightcurve.io>
 :idseparator: -
 :imagesdir: ../../assets/images
 // External URLs
-:url_sendHello: https://github.com/LiskHQ/lisk-sdk-examples/blob/development/tutorials/hello/hello_frontend/src/components/sendHello.js
-:url_getHello: https://github.com/LiskHQ/lisk-sdk-examples/blob/development/tutorials/hello/hello_frontend/src/components/getHello.js
-:url_messsageTimeline: https://github.com/LiskHQ/lisk-sdk-examples/blob/development/tutorials/hello/hello_frontend/src/components/messageTimeline.js
+:url_sendHello: https://github.com/KlayrHQ/klayr-sdk-examples/blob/development/tutorials/hello/hello_frontend/src/components/sendHello.js
+:url_getHello: https://github.com/KlayrHQ/klayr-sdk-examples/blob/development/tutorials/hello/hello_frontend/src/components/getHello.js
+:url_messsageTimeline: https://github.com/KlayrHQ/klayr-sdk-examples/blob/development/tutorials/hello/hello_frontend/src/components/messageTimeline.js
 // Project URLs
 :url_getLatestHello: integrate-blockchain/integrate-ui/create-get-account.adoc#getting-account-details
 :url_helloClient_overview: build-blockchain/index.adoc#the-hello-world-client
@@ -44,8 +44,8 @@ Firstly, define the necessary variables and the `handleChange` event.
 // [...]
 // UI libraries import
 import React, { useState } from "react";
-// Lisk libraries import
-import { cryptography, transactions } from '@liskhq/lisk-client/browser';
+// Klayr libraries import
+import { cryptography, transactions } from '@klayrhq/klayr-client/browser';
 import * as api from '../api';
 
 function SendHello() {
@@ -101,7 +101,7 @@ function SendHello() {
         const signedTx = await client.transaction.create({
             module: 'hello',
             command: 'createHello',
-            fee: BigInt(transactions.convertLSKToBeddows(state.fee)),
+            fee: BigInt(transactions.convertKLYToBeddows(state.fee)),
             params: {
                 "message": state.hello,
             },

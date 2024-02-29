@@ -3,7 +3,7 @@ Mona Bärenfänger <mona@lightcurve.io>
 // Settings
 :toc: preamble
 //URLs
-:url_typedoc_interopmc: {site-url}/lisk-sdk/v6/references/typedoc/classes/lisk_framework.SidechainInteroperabilityModule.html
+:url_typedoc_interopmc: {site-url}/klayr-sdk/v6/references/typedoc/classes/klayr_framework.SidechainInteroperabilityModule.html
 //Project URLs
 :url_integrate_endpoints: integrate-blockchain/connecting-endpoints.adoc
 :url_command_fee: understand-blockchain/blocks-txs.adoc#command-fee
@@ -47,7 +47,7 @@ Node CLI::
 --
 [source,bash]
 ----
-lisk-core endpoint:invoke interoperability_getChainAccount '{ "chainID": "00000001" }' --pretty
+klayr-core endpoint:invoke interoperability_getChainAccount '{ "chainID": "00000001" }' --pretty
 ----
 
 --
@@ -115,7 +115,7 @@ Node CLI::
 --
 [source,bash]
 ----
-lisk-core endpoint:invoke interoperability_getAllChainAccounts '{ "chainID": "00000001" }' --pretty
+klayr-core endpoint:invoke interoperability_getAllChainAccounts '{ "chainID": "00000001" }' --pretty
 ----
 
 --
@@ -227,7 +227,7 @@ Node CLI::
 --
 [source,bash]
 ----
-lisk-core endpoint:invoke interoperability_getChannel '{ "chainID": "00000001" }' --pretty
+klayr-core endpoint:invoke interoperability_getChannel '{ "chainID": "00000001" }' --pretty
 ----
 
 --
@@ -290,7 +290,7 @@ Node CLI::
 --
 [source,bash]
 ----
-lisk-core endpoint:invoke interoperability_getOwnChainAccount
+klayr-core endpoint:invoke interoperability_getOwnChainAccount
 ----
 
 --
@@ -319,7 +319,7 @@ curl --location --request POST 'http://localhost:7887/rpc' \
 ----
 {
   "chainID": "01000000",
-  "name": "lisk_mainchain",
+  "name": "klayr_mainchain",
   "nonce": "5"
 }
 ----
@@ -353,7 +353,7 @@ Node CLI::
 --
 [source,bash]
 ----
-lisk-core endpoint:invoke interoperability_getTerminatedStateAccount '{ "chainID": "00000001" }' --pretty
+klayr-core endpoint:invoke interoperability_getTerminatedStateAccount '{ "chainID": "00000001" }' --pretty
 ----
 
 --
@@ -416,7 +416,7 @@ Node CLI::
 --
 [source,bash]
 ----
-lisk-core endpoint:invoke interoperability_getTerminatedOutboxAccount '{ "chainID": "00000001" }' --pretty
+klayr-core endpoint:invoke interoperability_getTerminatedOutboxAccount '{ "chainID": "00000001" }' --pretty
 ----
 
 --
@@ -479,7 +479,7 @@ Node CLI::
 --
 [source,bash]
 ----
-lisk-core endpoint:invoke interoperability_getChainValidators '{ "chainID": "02100000" }' --pretty
+klayr-core endpoint:invoke interoperability_getChainValidators '{ "chainID": "02100000" }' --pretty
 ----
 
 --

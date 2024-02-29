@@ -5,8 +5,8 @@ Muhammad Talha <muhammad.talha@lightcurve.io>
 :idseparator: -
 :sectnums:
 // URLs
-:url_github_endpoint: https://github.com/LiskHQ/lisk-sdk-examples/tree/development/tutorials/hello/hello_client/src/app/plugins/hello_info/endpoint.ts
-:url_github_hello_info_plugin: https://github.com/LiskHQ/lisk-sdk-examples/tree/development/tutorials/hello/hello_client/src/app/plugins/hello_info/hello_info_plugin.ts
+:url_github_endpoint: https://github.com/KlayrHQ/klayr-sdk-examples/tree/development/tutorials/hello/hello_client/src/app/plugins/hello_info/endpoint.ts
+:url_github_hello_info_plugin: https://github.com/KlayrHQ/klayr-sdk-examples/tree/development/tutorials/hello/hello_client/src/app/plugins/hello_info/hello_info_plugin.ts
 
 :url_rocks_db: https://rocksdb.org/
 :url_send_transaction: build-blockchain/module/command.adoc#try-the-new-command-out
@@ -33,7 +33,7 @@ So, let's create an `endpoint.ts` file in the `hello_info` directory.
 
 This file will contain the `Endpoint` class and an endpoint `getMessageList()`.
 
-The `Endpoint` class is based on the `BasePluginEndpoint` class, which is available in the `lisk-sdk` package.
+The `Endpoint` class is based on the `BasePluginEndpoint` class, which is available in the `klayr-sdk` package.
 
 .hello_client/src/app/plugins/hello_info/endpoint.ts
 [source,typescript]
@@ -41,18 +41,18 @@ The `Endpoint` class is based on the `BasePluginEndpoint` class, which is availa
 import {
     BasePluginEndpoint,
     PluginEndpointContext,
-    db as liskDB,
+    db as klayrDB,
     cryptography,
-} from 'lisk-sdk';
+} from 'klayr-sdk';
 import {
     getEventHelloInfo,
 } from './db';
 
 export class Endpoint extends BasePluginEndpoint {
-    private _pluginDB!: liskDB.Database;
+    private _pluginDB!: klayrDB.Database;
 
     // Initialize the database instance here
-    public init(db: liskDB.Database) {
+    public init(db: klayrDB.Database) {
         this._pluginDB = db;
     }
 
@@ -115,7 +115,7 @@ export class Endpoint extends BasePluginEndpoint {
         for (const helloMessage of messageList) {
             data.push({
                 ID: helloMessage.id.readUInt32BE(0),
-                senderAddress: cryptography.address.getLisk32AddressFromAddress(helloMessage['senderAddress']),
+                senderAddress: cryptography.address.getKlayr32AddressFromAddress(helloMessage['senderAddress']),
                 message: helloMessage['message'],
                 blockHeight: helloMessage['height'],
             })
@@ -131,7 +131,7 @@ Once received, the endpoint will push each event's data into an array of objects
 [TIP]
 ====
 It is worth mentioning that an endpoint can also have various input arguments. 
-These arguments are passed via the `PluginEndpointContext` class available in `lisk-sdk`. If the endpoint doesn't require any arguments then, the request `"params": {}` property can be left empty.
+These arguments are passed via the `PluginEndpointContext` class available in `klayr-sdk`. If the endpoint doesn't require any arguments then, the request `"params": {}` property can be left empty.
 The arguments passed can be accessed via `_context.ARGUMENT_EXAMPLE`, etc.
 ====
 
@@ -188,13 +188,13 @@ When the request is successful, the node will reply with something similar to th
 [
     {
         "ID": 1,
-        "senderAddress": "lsko5v2u2wjswjogxgxdr79c45kewprypouyaky76",
-        "message": "Hello from Lisk.",
+        "senderAddress": "klyo5v2u2wjswjogxgxdr79c45kewprypouyaky76",
+        "message": "Hello from Klayr.",
         "blockHeight": 22
     },
     {
         "ID": 2,
-        "senderAddress": "lsko5v2u2wjswjogxgxdr79c45kewprypouyaky76",
+        "senderAddress": "klyo5v2u2wjswjogxgxdr79c45kewprypouyaky76",
         "message": "Hello from Lightcurve.",
         "blockHeight": 54
     }

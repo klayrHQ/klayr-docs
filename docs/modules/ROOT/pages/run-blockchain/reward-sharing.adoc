@@ -9,23 +9,23 @@ Muhammad Talha <muhammad.talha@lightcurve.io>
 
 :url_staking_guide: run-blockchain/staking.adoc
 :url_getStaker: api/module-rpc-api/pos-endpoints.adoc#pos_getstaker
-:url_chain_getGeneratorList: api/lisk-node-rpc.adoc#chain_getgeneratorlist
+:url_chain_getGeneratorList: api/klayr-node-rpc.adoc#chain_getgeneratorlist
 :url_getexpectedvalidatorrewards: api/module-rpc-api/dynamic-reward-endpoints.adoc#dynamicreward_getexpectedvalidatorrewards
 :url_getvalidator: api/module-rpc-api/pos-endpoints.adoc#pos_getvalidator
 :url_getclaimablerewards: api/module-rpc-api/pos-endpoints.adoc#pos_getclaimablerewards
 :url_getbalance: api/module-rpc-api/token-endpoints.adoc#token_getbalance
 :url_posting_transaction: integrate-blockchain/posting-transactions.adoc#posting-transaction-with-the-node-cli
 
-:url_lip_70: https://github.com/LiskHQ/lips/blob/350d08a90bdbedb3485363a40dd34f3ccadf0b7d/proposals/lip-0070.md
-:url_constraints-on-commission-increase: https://github.com/LiskHQ/lips/blob/main/proposals/lip-0070.md#constraints-on-commission-increase
-:url_reward_distribution: https://github.com/LiskHQ/lips/blob/main/proposals/lip-0070.md#distribution-of-rewards
+:url_lip_70: https://github.com/KlayrHQ/lips/blob/350d08a90bdbedb3485363a40dd34f3ccadf0b7d/proposals/lip-0070.md
+:url_constraints-on-commission-increase: https://github.com/KlayrHQ/lips/blob/main/proposals/lip-0070.md#constraints-on-commission-increase
+:url_reward_distribution: https://github.com/KlayrHQ/lips/blob/main/proposals/lip-0070.md#distribution-of-rewards
 
 
 On this page, we'll talk about how a validator can enable reward sharing with their stakers and how the shared rewards can be later claimed by the stakers.
 
 == What is reward sharing?
 
-In the Lisk protocol, validators receive rewards for generating blocks.
+In the Klayr protocol, validators receive rewards for generating blocks.
 Rewards are distributed between validators and their stakers as follows: a certain part of the rewards is awarded directly to the validator as a commission.
 Each validator chooses the precise percentage of the commission; then, the remaining rewards are shared among the stakers of the validator. Since a validator also self-stakes, they earn rewards along with other stakers, in proportion to their staked amounts.
 
@@ -34,7 +34,7 @@ As a result, validators receive additional rewards as per their self-stake, just
 For example, consider an active validator has 0% commission, and at the same time, no other accounts are staking for the validator.
 In this case, the validator would still receive 100% of the block rewards.
 
-The reward-sharing mechanism is part of the PoS module. To learn more about how reward sharing works in Lisk Protocol, see {url_lip_70}[LIP 70^].
+The reward-sharing mechanism is part of the PoS module. To learn more about how reward sharing works in Klayr Protocol, see {url_lip_70}[LIP 70^].
 
 The commission values can range between *0* and *10000* (both inclusive), corresponding to percentages with two decimal places, which can be obtained by dividing the value by *100*. For example, a commission value of *1000*, corresponds to a *10%* commission.
 
@@ -47,7 +47,7 @@ For more information, see {url_constraints-on-commission-increase}[Constraints o
 
 == Prerequisites and Background
 
-* To earn rewards, a *staker* must stake LSKs for an active block-generating validator.
+* To earn rewards, a *staker* must stake KLYs for an active block-generating validator.
 To learn more about staking, see xref:{url_staking_guide}[].
 
 Once you successfully stake for a validator, you can see your stakes by invoking the xref:{url_getStaker}[pos_getStaker] endpoint.
@@ -60,8 +60,8 @@ The estimated rewards for a validator can be checked via the xref:{url_getexpect
 :sectnums:
 == Sharing rewards
 // TODO: Change Commission value to 25 in case the following screenshots are updated.
-=== Sharing via Lisk Desktop
-To share rewards via Lisk Desktop, the validator should be logged in to their account and then perform the following steps:
+=== Sharing via Klayr Desktop
+To share rewards via Klayr Desktop, the validator should be logged in to their account and then perform the following steps:
 
 . Go to *My validator profile*, and click on the edit icon right next to the current `Commission` value:
 +
@@ -72,7 +72,7 @@ In this example, the validator is set to keep *25%* of the rewards as a commissi
 +
 image:run-blockchain/reward-sharing/share-reward-01.png["Edit Commission",300]
 +
-. Lisk Desktop will display the *Transaction summary* including the existing and new value of commission.
+. Klayr Desktop will display the *Transaction summary* including the existing and new value of commission.
 If everything looks correct, click on the *Confirm* button.
 +
 image:run-blockchain/reward-sharing/share-reward-02.png["Transaction summary",300]
@@ -80,7 +80,7 @@ image:run-blockchain/reward-sharing/share-reward-02.png["Transaction summary",30
 . Finally, enter the password to authenticate the change commission request, and then click on the *Confirm and sign* button.
 +
 image:run-blockchain/reward-sharing/share-reward-03.png["Authenticate",300]
-. Lisk Desktop will display an *Edit commission successful* message after submitting the request successfully.
+. Klayr Desktop will display an *Edit commission successful* message after submitting the request successfully.
 +
 image:run-blockchain/reward-sharing/share-reward-04.png["Edit commission successful",300]
 . Once the transaction is executed and the block is finalized, the updated commission value will be shown on the *My validator profile*.
@@ -100,7 +100,7 @@ Mainchain node::
 --
 [source,bash]
 ----
-lisk-core transaction:create pos changeCommission 134000 --json --pretty --send
+klayr-core transaction:create pos changeCommission 134000 --json --pretty --send
 ----
 --
 Sidechain Node::
@@ -169,7 +169,7 @@ To check the updated values, invoke the xref:{url_getvalidator}[pos_getValidator
             "coefficient": "0b67f3fb9ef253f78c1b2c"
         }
     ],
-    "address": "lskm87us5hykopm2f2nxa92z5ftbr9r52kg5b45e6",
+    "address": "klym87us5hykopm2f2nxa92z5ftbr9r52kg5b45e6",
     "punishmentPeriods": []
 }
 ----
@@ -177,18 +177,18 @@ To check the updated values, invoke the xref:{url_getvalidator}[pos_getValidator
 == Claiming rewards
 After each block is generated, both the block generator and the staker(s) supporting them will earn a set percentage of rewards.
 
-The part of rewards that is attributed to the validator that generated the block is automatically assigned to them by the Lisk Protocol.
+The part of rewards that is attributed to the validator that generated the block is automatically assigned to them by the Klayr Protocol.
 This is done by incrementing the `availableBalance` of the validator's account by the amount of rewards corresponding to the commission and self-stake.
 
-On the other hand, stakers need to manually claim their rewards, and that can be done via both Lisk Desktop and CLI.
+On the other hand, stakers need to manually claim their rewards, and that can be done via both Klayr Desktop and CLI.
 The part of rewards belonging to stakers, gets locked in the validator's account, by the PoS module, (by increasing its `lockedBalance`) until each staker claims their rewards.
 
 For more information, see {url_reward_distribution}[Distribution of Rewards^].
 
 === Claiming via Desktop
-To claim rewards via Lisk Desktop, a staker must log in to their account on Lisk Desktop and perform the following steps to collect earned rewards:
+To claim rewards via Klayr Desktop, a staker must log in to their account on Klayr Desktop and perform the following steps to collect earned rewards:
 
-. As soon as the staker earns a reward, they will be notified about it by Lisk Desktop.
+. As soon as the staker earns a reward, they will be notified about it by Klayr Desktop.
 The *Claim rewards* option will be available in the pop-up notification and also in the *Stakes* page of the staker's account. 
 +
 NOTE: You can click directly on the *Claim rewards* option available on the pop-up notification to proceed with claiming rewards.
@@ -206,7 +206,7 @@ image:run-blockchain/reward-sharing/claim-rewards-01.png["Click on Claim Rewards
 +
 image:run-blockchain/reward-sharing/claim-rewards-02.png["Claim reward summary",300]
 +
-. Lisk Desktop will display a *Transaction summary* to the staker.
+. Klayr Desktop will display a *Transaction summary* to the staker.
 If everything looks correct, click on the *Confirm* button.
 +
 image:run-blockchain/reward-sharing/claim-rewards-03.png["Transaction Summary",300]
@@ -215,7 +215,7 @@ image:run-blockchain/reward-sharing/claim-rewards-03.png["Transaction Summary",3
 +
 image:run-blockchain/reward-sharing/claim-rewards-04.png["Claim reward successful",300]
 +
-. Upon successful request submission, Lisk Desktop will display a *Transaction submitted* successfully message.
+. Upon successful request submission, Klayr Desktop will display a *Transaction submitted* successfully message.
 +
 image:run-blockchain/reward-sharing/claim-rewards-05.png["Updated balance",300]
 . Once the transaction is executed, the staker's account balance will increase as per the earned reward, and the corresponding amount will be reduced from the validator's locked balance.
@@ -246,7 +246,7 @@ Mainchain node::
 --
 [source,bash]
 ----
-lisk-core transaction:create pos claimRewards 127000 --json --pretty --send
+klayr-core transaction:create pos claimRewards 127000 --json --pretty --send
 ----
 --
 Sidechain Node::

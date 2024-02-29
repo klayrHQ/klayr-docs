@@ -42,7 +42,7 @@ Initially, the modules don't include any endpoints:
 .hello_client/src/app/modules/hello/endpoint.ts
 [source,typescript]
 ----
-import { BaseEndpoint } from 'lisk-sdk';
+import { BaseEndpoint } from 'klayr-sdk';
 
 export class HelloEndpoint extends BaseEndpoint {
 
@@ -60,7 +60,7 @@ To create the endpoint for getting a Hello message by address, import the follow
 .hello_client/src/app/modules/hello/endpoint.ts
 [source,typescript]
 ----
-import { BaseEndpoint, ModuleEndpointContext, cryptography } from 'lisk-sdk';
+import { BaseEndpoint, ModuleEndpointContext, cryptography } from 'klayr-sdk';
 import { MessageStore, MessageStoreData } from './stores/message';
 
 export class HelloEndpoint extends BaseEndpoint {
@@ -73,11 +73,11 @@ export class HelloEndpoint extends BaseEndpoint {
         if (typeof address !== 'string') {
             throw new Error('Parameter address must be a string.');
         }
-        cryptography.address.validateLisk32Address(address);
+        cryptography.address.validateKlayr32Address(address);
         // 4. Get the Hello message for the address from the message store
         const helloMessage = await messageSubStore.get(
             ctx,
-            cryptography.address.getAddressFromLisk32Address(address),
+            cryptography.address.getAddressFromKlayr32Address(address),
         );
         // 5. Return the Hello message
         return helloMessage;
@@ -94,7 +94,7 @@ To create the endpoint for getting the Hello counter, import the following:
 .hello_client/src/app/modules/hello/endpoint.ts
 [source,typescript]
 ----
-import { BaseEndpoint, ModuleEndpointContext, cryptography } from 'lisk-sdk';
+import { BaseEndpoint, ModuleEndpointContext, cryptography } from 'klayr-sdk';
 import { MessageStore, MessageStoreData } from './stores/message';
 import { counterKey, CounterStore, CounterStoreData } from './stores/counter';
 
@@ -128,7 +128,7 @@ Initially, the modules don't include any methods:
 .hello_client/src/app/modules/hello/method.ts
 [source,typescript]
 ----
-import { BaseMethod } from 'lisk-sdk';
+import { BaseMethod } from 'klayr-sdk';
 
 export class HelloMethod extends BaseMethod {
 
@@ -140,12 +140,12 @@ export class HelloMethod extends BaseMethod {
 To create the endpoint for getting a Hello message by address, import the following:
 
 * `MessageStore` & `MessageStoreData`: The message store which was created in the xref:{url_build_module_stores}[] guide.
-* `ImmutableMethodContext` from the `lisk-sdk` package.
+* `ImmutableMethodContext` from the `klayr-sdk` package.
 
 .hello_client/src/app/modules/hello/method.ts
 [source,typescript]
 ----
-import { BaseMethod, ImmutableMethodContext } from 'lisk-sdk';
+import { BaseMethod, ImmutableMethodContext } from 'klayr-sdk';
 import { MessageStore, MessageStoreData } from './stores/message';
 
 export class HelloMethod extends BaseMethod {
@@ -166,7 +166,7 @@ export class HelloMethod extends BaseMethod {
 
 == Add endpoint schemas to the module metadata
 Don't forget to update the module metadata with information about the newly created module endpoints.
-This information will be used by Lisk Service and similar software, to fetch information about the available API endpoints of the blockchain client.
+This information will be used by Klayr Service and similar software, to fetch information about the available API endpoints of the blockchain client.
 
 First, import the related schemas into `module.ts`:
 
@@ -233,14 +233,14 @@ npm run build
 +
 [source,bash]
 ----
-./bin/run endpoint:invoke hello_getHello '{"address": "lskuz5p98kz3mqzxnu68qdrjxtvdvr2o7pprtj4yv"}'
+./bin/run endpoint:invoke hello_getHello '{"address": "klyuz5p98kz3mqzxnu68qdrjxtvdvr2o7pprtj4yv"}'
 ----
 +
 When the request is successful, the node will reply with the following:
 +
 [source,json]
 ----
-{"message": "Hello Lisk SDKv6!"}
+{"message": "Hello Klayr SDKv6!"}
 ----
 
 .. `hello_getHelloCounter`

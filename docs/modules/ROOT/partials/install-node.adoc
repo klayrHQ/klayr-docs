@@ -7,11 +7,11 @@ It is recommended to use one of the following two listed below:
 
 [IMPORTANT]
 ====
-Change to the `lisk` user to install Node.js by executing the following command:
+Change to the `klayr` user to install Node.js by executing the following command:
 
 [source,bash]
 ----
-sudo -u lisk -i
+sudo -u klayr -i
 ----
 ====
 

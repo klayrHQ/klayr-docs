@@ -3,29 +3,29 @@
 :toclevels: 3
 :idprefix:
 :idseparator: -
-:sdk_docs: lisk-sdk::
-:docs_core: lisk-core::
-:url_sdk_client: lisk-sdk::references/lisk-elements/client.adoc
+:sdk_docs: klayr-sdk::
+:docs_core: klayr-core::
+:url_sdk_client: klayr-sdk::references/klayr-elements/client.adoc
 :url_integrate_tx_offline: integrate-blockchain/create-tx-offline.adoc
 :url_protocol_txs: understand-blockchain/blocks-txs.adoc#transactions
-//:url_sdk_cli: lisk-sdk::client-cli.adoc
-//:url_sdk_httpapi: lisk-sdk::plugins/http-api-plugin.adoc
-//:url_core_cli: lisk-core::reference/cli.adoc
+//:url_sdk_cli: klayr-sdk::client-cli.adoc
+//:url_sdk_httpapi: klayr-sdk::plugins/http-api-plugin.adoc
+//:url_core_cli: klayr-core::reference/cli.adoc
 //:url_transaction_send: integrate-blockchain/integrate-ui/faucet-transfer.adoc#transfer-tokens
 :url_integrate_decoding: integrate-blockchain/encode-decode.adoc
-:url_api_node_rpc: api/lisk-node-rpc.adoc
-:url_api_service_http: api/lisk-service-http.adoc
-:url_api_service_rpc: api/lisk-service-rpc.adoc
+:url_api_node_rpc: api/klayr-node-rpc.adoc
+:url_api_service_http: api/klayr-service-http.adoc
+:url_api_service_rpc: api/klayr-service-rpc.adoc
 :url_migration_guide: {sdk_docs}references/migration.adoc
-:url_protocol_transactions: understand-blockchain/lisk-protocol/transactions.adoc#types
+:url_protocol_transactions: understand-blockchain/klayr-protocol/transactions.adoc#types
 :url_modules: {sdk_docs}modules/index.adoc
 :url_api_client: understand-blockchain/sdk/rpc.adoc#the-api-client
-:url_references_elements: {sdk_docs}references/lisk-elements/index.adoc
-:url_lisk_node: understand-blockchain/sdk/rpc.adoc
+:url_references_elements: {sdk_docs}references/klayr-elements/index.adoc
+:url_klayr_node: understand-blockchain/sdk/rpc.adoc
 
 This guide describes different methods of creating and signing transactions.
-The steps apply to all the blockchain clients developed with the Lisk SDK, including Lisk Core.
-// [v6](https://www.npmjs.com/package/lisk-sdk/v/latest), including the Lisk Core.
+The steps apply to all the blockchain clients developed with the Klayr SDK, including Klayr Core.
+// [v6](https://www.npmjs.com/package/klayr-sdk/v/latest), including the Klayr Core.
 
 //TODO: Update the default transactions
 // == Default transactions
@@ -76,7 +76,7 @@ It is sometimes used as an input or output format in the CLI when sending or cre
 
 The decoded transaction object.
 
-Used as an input/output format for functions in xref:{url_references_elements}[Lisk Elements], for example for the API client.
+Used as an input/output format for functions in xref:{url_references_elements}[Klayr Elements], for example for the API client.
 
 [source,bash]
 ----
@@ -87,7 +87,7 @@ Used as an input/output format for functions in xref:{url_references_elements}[L
   params: {
     tokenID: <Buffer 04 00 00 00 00 00 00 00>,
     amount: 800000000n,
-    recipientAddress: 'lskt8ovj2shbxrtno8xqqt7cnmzzygdkbt6brnvmj',
+    recipientAddress: 'klyt8ovj2shbxrtno8xqqt7cnmzzygdkbt6brnvmj',
     data: 'Happy birthday!'
   },
   nonce: 0n,
@@ -114,7 +114,7 @@ For example, this is used for displaying the details of a transaction in the UI 
   params: {
     tokenID: '0400000000000000',
     amount: '800000000',
-    recipientAddress: 'lskt8ovj2shbxrtno8xqqt7cnmzzygdkbt6brnvmj',
+    recipientAddress: 'klyt8ovj2shbxrtno8xqqt7cnmzzygdkbt6brnvmj',
     data: 'Happy birthday!'
   },
   nonce: '0',
@@ -142,12 +142,12 @@ The properties of a transaction are described in detail on the xref:{url_protoco
 === via API client
 
 // The API client allows connecting to a particular node API, and enables to get and post data to the node.
-// It is part of the `lisk-api-client` package and is also included in the `lisk-client` and `lisk-sdk` packages.
+// It is part of the `klayr-api-client` package and is also included in the `klayr-client` and `klayr-sdk` packages.
 // An example script how to create a transaction object via the API client is described in the code snippet below:
 
 The API client allows external services and applications to connect and interact with a particular blockchain node.
 
-The API client is part of the `@liskhq/lisk-api-client` package, and is also included in the `@liskhq/lisk-client` and `lisk-sdk` packages.
+The API client is part of the `@klayrhq/klayr-api-client` package, and is also included in the `@klayrhq/klayr-client` and `klayr-sdk` packages.
 
 [NOTE]
 ====
@@ -161,15 +161,15 @@ An example script depicting how to create a transaction object via the API clien
 
 [source,js]
 ----
-const { apiClient, cryptography, transactions } = require('@liskhq/lisk-client');
+const { apiClient, cryptography, transactions } = require('@klayrhq/klayr-client');
 
 // For the apiClient to work in the WebSocket mode, the node must have the WebSocket mode enabled. This is true for IPC mode as well.
 const RPC_ENDPOINT = 'ws://localhost:7887/rpc-ws';
-// const IPC_ENDPOINT = '~/.lisk/lisk-core';`
+// const IPC_ENDPOINT = '~/.klayr/klayr-core';`
 let clientCache;
 
 // Replace with the recipient address
-const recipientAddress = 'lskt8ovj2shbxrtno8xqqt7cnmzzygdkbt6brnvmj';
+const recipientAddress = 'klyt8ovj2shbxrtno8xqqt7cnmzzygdkbt6brnvmj';
 
 // Replace with the sender passphrase
 const passphrase = 'attract squeeze option inflict dynamic end evoke love proof among random blanket table pumpkin general impose access toast undo extend fun employ agree dash';
@@ -187,10 +187,10 @@ getClient().then(async (apiClient) => {
     constTx = await apiClient.transaction.create({
         module: 'token',
         command: 'transfer',
-        fee: BigInt(transactions.convertLSKToBeddows('0.01')),
+        fee: BigInt(transactions.convertKLYToBeddows('0.01')),
         params: {
             tokenID: '0400000000000000',
-            amount: transactions.convertLSKToBeddows('8'),
+            amount: transactions.convertKLYToBeddows('8'),
             recipientAddress,
             data: 'Happy birthday!'
         }
@@ -214,7 +214,7 @@ Signed transaction object: {
   params: {
       tokenID: '0400000000000000',
       amount: '800000000',
-      recipientAddress: 'lskt8ovj2shbxrtno8xqqt7cnmzzygdkbt6brnvmj',
+      recipientAddress: 'klyt8ovj2shbxrtno8xqqt7cnmzzygdkbt6brnvmj',
       data: 'Happy birthday!'
   },
   nonce: '0',
@@ -230,23 +230,23 @@ Signed transaction object: {
 === via CLI
 
 The node CLI can be used to create a sendable transaction object to any running node.
-An example of creating and sending a transfer transaction with the Lisk Core CLI is displayed below:
+An example of creating and sending a transfer transaction with the Klayr Core CLI is displayed below:
 
 IMPORTANT: When using the CLI please ensure that the API is enabled over IPC.
 
 [source,bash]
 ----
-lisk-core transaction:create token transfer 100000000
+klayr-core transaction:create token transfer 100000000
 ? Please enter passphrase:  [hidden]
 Warning: Passphrase contains 24 words instead of expected 12. Passphrase contains 23 whitespaces instead of expected 11.
 ? Please enter: tokenID:  0400000000000000
 ? Please enter: amount:  800000000
-? Please enter: recipientAddress:  lskt8ovj2shbxrtno8xqqt7cnmzzygdkbt6brnvmj
+? Please enter: recipientAddress:  klyt8ovj2shbxrtno8xqqt7cnmzzygdkbt6brnvmj
 ? Please enter: data:  Happy birthday!
 ----
 
 NOTE: When creating the transaction against a sidechain node, the same command (`transaction:create`) can be used.
-Please replace `lisk-core` with the corresponding application's CLI tool or use `./bin/run` as the CLI tool, when building the application binary from the source code.
+Please replace `klayr-core` with the corresponding application's CLI tool or use `./bin/run` as the CLI tool, when building the application binary from the source code.
 
 After entering all relevant information for the required transaction, the encoded transaction is then returned:
 
@@ -266,15 +266,15 @@ To also see the decoded transaction object on creation, add the `--json` paramet
 .Transaction in binary and JSON format
 [source,bash]
 ----
-$ lisk-core transaction:create token transfer 100000000 --json
+$ klayr-core transaction:create token transfer 100000000 --json
 ? Please enter passphrase:  [hidden]
 Warning: Passphrase contains 24 words instead of expected 12. Passphrase contains 23 whitespaces instead of expected 11.
 ? Please enter: tokenID:  0400000000000000
 ? Please enter: amount:  800000000
-? Please enter: recipientAddress:  lskt8ovj2shbxrtno8xqqt7cnmzzygdkbt6brnvmj
+? Please enter: recipientAddress:  klyt8ovj2shbxrtno8xqqt7cnmzzygdkbt6brnvmj
 ? Please enter: data:  Happy birthday!
 {"transaction":"0a05746f6b656e12087472616e7366657218042080c2d72f2a203972849f2ab66376a68671c10a00e8b8b67d880434cc65b04c6ed886dfa91c2c32370a080400000000000000108090bcfd021a149bd82e637d306533b1e1ad66e19ca0047faa1a6a220f4861707079206269727468646179213a40c06cd0ef375911528d491971296532dbd58725f0fccc0f23e6c0656c43e75ecd12635616117e64d005f1c9f2a55de7cf2d8f5cb961927d839d141a18faa80e08"}
-{"transaction":{"module":"token","command":"transfer","fee":"100000000","nonce":"4","senderPublicKey":"3972849f2ab66376a68671c10a00e8b8b67d880434cc65b04c6ed886dfa91c2c","signatures":["c06cd0ef375911528d491971296532dbd58725f0fccc0f23e6c0656c43e75ecd12635616117e64d005f1c9f2a55de7cf2d8f5cb961927d839d141a18faa80e08"],"params":{"tokenID":"0400000000000000","amount":"800000000","recipientAddress":"lskt8ovj2shbxrtno8xqqt7cnmzzygdkbt6brnvmj","data":"Happy birthday!"},"id":"f3f537bbd52464d2f97c02f5ef0f9a805d19ad4f8ef1c7efa1da17cef0e5036a"}}
+{"transaction":{"module":"token","command":"transfer","fee":"100000000","nonce":"4","senderPublicKey":"3972849f2ab66376a68671c10a00e8b8b67d880434cc65b04c6ed886dfa91c2c","signatures":["c06cd0ef375911528d491971296532dbd58725f0fccc0f23e6c0656c43e75ecd12635616117e64d005f1c9f2a55de7cf2d8f5cb961927d839d141a18faa80e08"],"params":{"tokenID":"0400000000000000","amount":"800000000","recipientAddress":"klyt8ovj2shbxrtno8xqqt7cnmzzygdkbt6brnvmj","data":"Happy birthday!"},"id":"f3f537bbd52464d2f97c02f5ef0f9a805d19ad4f8ef1c7efa1da17cef0e5036a"}}
 ----
 ====
 

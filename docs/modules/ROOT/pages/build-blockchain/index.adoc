@@ -1,11 +1,11 @@
-= Building a sidechain with the Lisk SDK
+= Building a sidechain with the Klayr SDK
 Mona Bärenfänger <mona@lightcurve.io>
 :toc:
 :idprefix:
 :idseparator: -
 :toc: preamble
 // URLs
-:url_github_tutorials_hello: https://github.com/LiskHQ/lisk-sdk-examples/tree/development/tutorials/hello/
+:url_github_tutorials_hello: https://github.com/KlayrHQ/klayr-sdk-examples/tree/development/tutorials/hello/
 // Project URLs
 :url_guide_app: build-blockchain/create-blockchain-client.adoc
 :url_guide_config: build-blockchain/configuration.adoc
@@ -14,7 +14,7 @@ Mona Bärenfänger <mona@lightcurve.io>
 :url_guide_command: build-blockchain/module/command.adoc
 :url_guide_plugin: build-blockchain/plugin/index.adoc
 
-The "Build Blockchain" category contains all the guides related to the development of a blockchain client with the Lisk SDK.
+The "Build Blockchain" category contains all the guides related to the development of a blockchain client with the Klayr SDK.
 
 == The "Hello World" client
 
@@ -41,7 +41,7 @@ In the example, the "Create Hello" command saves Hello messages of accounts, if 
 .Complete application code
 [TIP]
 ====
-View the complete sample code of the complete "Hello World" Lisk app on GitHub in the {url_github_tutorials_hello}[Lisk SDK examples repository^].
+View the complete sample code of the complete "Hello World" Klayr app on GitHub in the {url_github_tutorials_hello}[Klayr SDK examples repository^].
 ====
 
 The following image provides an overview of the "Hello" client:

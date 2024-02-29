@@ -26,12 +26,12 @@ If a different port has been configured, then replace it with `8080` as shown in
 
 [source,bash]
 ----
-frontend f_lisk
+frontend f_klayr
         mode http
         bind :80 <1>
-        use_backend b_lisk_ws <2>
-backend b_lisk_ws
-        server lisk_ws 127.0.0.1:8080 <3>
+        use_backend b_klayr_ws <2>
+backend b_klayr_ws
+        server klayr_ws 127.0.0.1:8080 <3>
 ----
 
 <1> A new `bind` line is added, and creates a listener on port 80.
@@ -45,13 +45,13 @@ it is possible to add SSL termination by telling it to listen on port 443, and s
 
 [source,bash]
 ----
-frontend f_lisk
+frontend f_klayr
         mode http
         bind [::]:443 ssl crt /etc/haproxy/ssl/cert.pem alpn h2,http/1.1 <1>
         bind [::]:80 <2>
         http-response set-header Strict-Transport-Security max-age=15768000 <3>
         redirect scheme https code 301 <4>
-        use_backend b_lisk_ws
+        use_backend b_klayr_ws
 ----
 
 <1> A new `bind` line is added, which performs the following:
@@ -77,7 +77,7 @@ Recommended additional reading:
 
 [source,bash]
 ----
-frontend f_lisk
+frontend f_klayr
         mode http
         bind [::]:443 ssl crt /etc/haproxy/ssl/cert.pem alpn h2,http/1.1
         bind [::]:80
@@ -85,17 +85,17 @@ frontend f_lisk
         redirect scheme https code 301
         rate-limit sessions 500 <1>
         stick-table type ipv6 size 200k expire 10m store gpc0 <2>
-        acl repeat_abuses src_get_gpc0(f_lisk) gt 2 <3>
+        acl repeat_abuses src_get_gpc0(f_klayr) gt 2 <3>
         tcp-request content track-sc0 src <4>
         tcp-request content reject if repeat_abuses <5>
-        use_backend b_lisk_ws
-backend b_lisk_ws
+        use_backend b_klayr_ws
+backend b_klayr_ws
         stick-table type ipv6 size 200k expire 2m store conn_rate(10s) <6>
         tcp-request content track-sc1 src <7>
         acl exceeds_conn_rate sc1_conn_rate gt 50 <8>
         acl mark_repeat_abuses sc0_inc_gpc0 gt 0 <9>
         http-request deny deny_status 429 if exceeds_conn_rate mark_repeat_abuses <10>
-        server lisk_ws 127.0.0.1:8080
+        server klayr_ws 127.0.0.1:8080
 ----
 
 This is somewhat of a 3-pronged approach to rate limiting.
@@ -107,8 +107,8 @@ If the connection rate of an IP exceeds 50 connections per 10 seconds, a 429 res
 If an IP exceeds this threshold more than twice in a 10 minute period, new connections from that IP will be silently dropped.
 
 === Multiple Backends
-So far, the examples have been just for proxying the Lisk WebSocket RPC (Remote-Procedure-Call), endpoint.
-The example below will proxy both the WebSocket RPC endpoint and the HTTP API endpoint by hostname (`http.lisk.example` is a placeholder for whatever your domain is).
+So far, the examples have been just for proxying the Klayr WebSocket RPC (Remote-Procedure-Call), endpoint.
+The example below will proxy both the WebSocket RPC endpoint and the HTTP API endpoint by hostname (`http.klayr.example` is a placeholder for whatever your domain is).
 
 [NOTE]
 ====
@@ -123,7 +123,7 @@ This can be performed as shown below:
 
 [source,bash]
 ----
-frontend f_lisk
+frontend f_klayr
         mode http
         bind [::]:443 ssl crt /etc/haproxy/ssl/cert.pem alpn h2,http/1.1
         bind [::]:80
@@ -131,26 +131,26 @@ frontend f_lisk
         redirect scheme https code 301
         rate-limit sessions 500
         stick-table type ipv6 size 200k expire 10m store gpc0
-        acl repeat_abuses src_get_gpc0(f_lisk) gt 2
+        acl repeat_abuses src_get_gpc0(f_klayr) gt 2
         tcp-request content track-sc0 src
         tcp-request content reject if repeat_abuses
-        acl host_http hdr(host) http.lisk.example
-        use_backend b_lisk_http if host_http
-    default_backend b_lisk_ws
-backend b_lisk_ws
+        acl host_http hdr(host) http.klayr.example
+        use_backend b_klayr_http if host_http
+    default_backend b_klayr_ws
+backend b_klayr_ws
         stick-table type ipv6 size 200k expire 2m store conn_rate(10s)
         tcp-request content track-sc1 src
         acl exceeds_conn_rate sc1_conn_rate gt 50
         acl mark_repeat_abuses sc0_inc_gpc0 gt 0
         http-request deny deny_status 429 if exceeds_conn_rate mark_repeat_abuses
-        server lisk_ws 127.0.0.1:8080
-backend b_lisk_http
+        server klayr_ws 127.0.0.1:8080
+backend b_klayr_http
         stick-table type ipv6 size 200k expire 2m store conn_rate(10s)
         tcp-request content track-sc2 src
         acl exceeds_conn_rate sc2_conn_rate gt 50
         acl mark_repeat_abuses sc0_inc_gpc0 gt 0
         http-request deny deny_status 429 if exceeds_conn_rate mark_repeat_abuses
-        server lisk_http 127.0.0.1:4000
+        server klayr_http 127.0.0.1:4000
 ----
 
 TIP: If multiple domains are used with SSL termination, your certificate will either have to be for those multiple domains or you will need to have multiple certificates, which can be specified with `crt-list` instead of `crt` (https://www.haproxy.com/documentation/aloh

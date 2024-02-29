@@ -24,15 +24,15 @@ Mona Bärenfänger <mona@lightcurve.io>
 :url_build_plugin_event: build-blockchain/plugin/plugin-class.adoc#sync-and-store-new-event
 // Footnotes
 :fn_jsonschema: footnote:jsonSchema[See the {url_json_schema}[^] for more information about the JSON schema.]
-:fn_random: footnote:randomModule[See LIP 0046 https://github.com/LiskHQ/lips/blob/main/proposals/lip-0046.md[Define state and state transitions of Random module^] for more information about the Random module.]
+:fn_random: footnote:randomModule[See LIP 0046 https://github.com/KlayrHQ/lips/blob/main/proposals/lip-0046.md[Define state and state transitions of Random module^] for more information about the Random module.]
 
 A module is a discrete component that contains blockchain-related business logic.
-This logic can be related to a specific domain or a topic of a Lisk blockchain client.
+This logic can be related to a specific domain or a topic of a Klayr blockchain client.
 
 Modules can be added by registering them to the blockchain client.
 For successful registration, each module needs to follow the expected module structure, which is described on this page.
 
-All modules collectively define the *on-chain logic* of a Lisk application.
+All modules collectively define the *on-chain logic* of a Klayr application.
 
 Modules perform state changes on the blockchain by::
 * Defining logic that is executed per block.
@@ -40,7 +40,7 @@ Modules perform state changes on the blockchain by::
 
 [IMPORTANT]
 ====
-Modules are a central part of the on-chain logic of a Lisk application, and any code changes inside of a module which is registered in a running blockchain client, will most likely result in a hardfork of the network.
+Modules are a central part of the on-chain logic of a Klayr application, and any code changes inside of a module which is registered in a running blockchain client, will most likely result in a hardfork of the network.
 
 Therefore, changing the module logic of a running client should always be done in consensus and coordination of the majority of active validators of the blockchain, if it is required.
 ====
@@ -110,7 +110,7 @@ The default file structure for modules looks as follows:
 └── plugins.ts
 ----
 
-TIP: The default file structure of a module is automatically created for the developer, if the module is generated using Lisk Commander.
+TIP: The default file structure of a module is automatically created for the developer, if the module is generated using Klayr Commander.
 
 For a more detailed description of the different folders and files of a module, please check out the corresponding guides xref:{url_build_app}[] and xref:{url_build_module}[].
 
@@ -167,7 +167,7 @@ In case it is desired to choose a different name for the module, a custom module
 .Example: Choosing a custom module name
 [source,js]
 ----
-import { BaseModule } from 'lisk-sdk';
+import { BaseModule } from 'klayr-sdk';
 
 class HelloModule extends BaseModule {
     // ...
@@ -185,7 +185,7 @@ class HelloModule extends BaseModule {
 .Example: Module constructor, registering stores and events to the module
 [source,typescript]
 ----
-import { BaseModule } from 'lisk-sdk';
+import { BaseModule } from 'klayr-sdk';
 
 export class HelloModule extends BaseModule {
     // ...
@@ -225,7 +225,7 @@ export class ReactModule extends BaseInteroperableModule {
 .app.ts
 [source,typescript]
 ----
-import { Application, PartialApplicationConfig } from 'lisk-sdk';
+import { Application, PartialApplicationConfig } from 'klayr-sdk';
 import { registerModules } from './modules';
 import { registerPlugins } from './plugins';
 import { ReactModule } from './modules/react/module';
@@ -354,7 +354,7 @@ The module metadata follows the format of the <<interface-metadata,module metada
 ====
 [source,typescript]
 ----
-const { BaseModule } = require('lisk-sdk');
+const { BaseModule } = require('klayr-sdk');
 
 class HelloModule extends BaseModule {
     // ...
@@ -644,7 +644,7 @@ For more information on how to configure a module, read the guide xref:{url_buil
 == Endpoints
 
 An endpoint is an *interface between a module and an external system.*
-Lisk endpoints support RPC communication.
+Klayr endpoints support RPC communication.
 The module-specific RPC endpoints can be invoked by external services, like UIs, to get relevant data from the application.
 
 The endpoints are defined individually for each module, depending on the module's purpose.
@@ -675,7 +675,7 @@ The module endpoints are usually defined in a file called `endpoint.ts` inside o
 ====
 [source,typescript]
 ----
-import { BaseEndpoint, ModuleEndpointContext, cryptography } from 'lisk-sdk';
+import { BaseEndpoint, ModuleEndpointContext, cryptography } from 'klayr-sdk';
 import { CounterStore, CounterStoreData } from './stores/counter';
 import { MessageStore, MessageStoreData } from './stores/message';
 
@@ -699,10 +699,10 @@ export class HelloEndpoint extends BaseEndpoint {
 		if (typeof address !== 'string') {
 			throw new Error('Parameter address must be a string.');
 		}
-		cryptography.address.validateLisk32Address(address);
+		cryptography.address.validateKlayr32Address(address);
 		const helloMessage = await messageSubStore.get(
 			ctx,
-			cryptography.address.getAddressFromLisk32Address(address),
+			cryptography.address.getAddressFromKlayr32Address(address),
 		);
 		return helloMessage;
 	}
@@ -748,7 +748,7 @@ export class HelloModule extends BaseModule {
 To call an endpoint of a module, simply send the respective RPC request.
 
 A convenient way to send RPC requests to the node is the *API client*.
-See section xref:{url_understand_rpc_request}[How to invoke endpoints] of the page "Communicating to a Lisk node via RPC".
+See section xref:{url_understand_rpc_request}[How to invoke endpoints] of the page "Communicating to a Klayr node via RPC".
 
 == Methods
 
@@ -779,7 +779,7 @@ The module methods are usually defined in a file called `methods.ts` inside of t
 ====
 [source,typescript]
 ----
-import { BaseMethod, ImmutableMethodContext } from 'lisk-sdk';
+import { BaseMethod, ImmutableMethodContext } from 'klayr-sdk';
 import { MessageStore, MessageStoreData } from './stores/message';
 
 export class HelloMethod extends BaseMethod {
@@ -993,7 +993,7 @@ In case it is desired to choose a different name for the command, a custom comma
 .Example: Choosing a custom command name
 [source,typescript]
 ----
-import { BaseCommand } from 'lisk-sdk';
+import { BaseCommand } from 'klayr-sdk';
 
 export class TransferCommand extends BaseCommand {
     // ...
@@ -1046,7 +1046,7 @@ It also defines their data type, order, and additional properties like min and m
 export class TransferCommand extends BaseCommand {
     // ...
     public schema = {
-        $id: '/lisk/transferParams',
+        $id: '/klayr/transferParams',
         title: 'Transfer transaction params',
         type: 'object',
         required: ['tokenID', 'amount', 'recipientAddress', 'data'],
@@ -1086,7 +1086,7 @@ Each command has the following <<lifecycle-hooks>>, which are executed separatel
 
 ==== Command initialization
 
-The `init()` hook of a command is called by the Lisk Framework when the node starts.
+The `init()` hook of a command is called by the Klayr Framework when the node starts.
 
 Here, you can validate and cache the module config or do initializations which should only happen once per node starts.
 
@@ -1238,9 +1238,9 @@ The module hooks are called in a specific order during block creation and execut
 
 More information can be found regarding the block lifecycle in the following sections:
 
-. xref:{url_understand_genesis_block_execution}[Lisk key concepts > Genesis block execution]
-. xref:{url_understand_block_generation}[Lisk key concepts > Block generation]
-. xref:{url_understand_block_execution}[Lisk key concepts > Block processing]
+. xref:{url_understand_genesis_block_execution}[Klayr key concepts > Genesis block execution]
+. xref:{url_understand_block_generation}[Klayr key concepts > Block generation]
+. xref:{url_understand_block_execution}[Klayr key concepts > Block processing]
 
 IMPORTANT: Never include external dynamic data to state changes in the lifecycle hooks.
 It will create inconsistencies/forks for nodes when syncing to the current height.

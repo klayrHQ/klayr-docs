@@ -2,18 +2,18 @@
 :toc: preamble
 :idprefix:
 :idseparator: -
-:docs_sdk: lisk-sdk::
+:docs_sdk: klayr-sdk::
 // URLs
-:url_lisk_wallet: https://lisk.com/wallet
+:url_klayr_wallet: https://klayr.com/wallet
 
 // Project URLs
-:url_sdk_elements: {docs_sdk}references/lisk-elements/index.adoc
+:url_sdk_elements: {docs_sdk}references/klayr-elements/index.adoc
 :url_sdk_cli_txsend: {docs_sdk}client-cli.adoc#transactionsend
 :url_run_validator_details: run-blockchain/become-a-validator.adoc#check-validator-details
 :url_validator_weight: understand-blockchain/consensus/pos-poa.adoc#validator-weight
 
 ====
-On this page, you'll learn how to stake and un-stake tokens for a validator on a blockchain that uses the Lisk PoS module, like the Lisk Mainnet.
+On this page, you'll learn how to stake and un-stake tokens for a validator on a blockchain that uses the Klayr PoS module, like the Klayr Mainnet.
 
 This includes, how to...
 
@@ -45,7 +45,7 @@ curl --location --request POST 'http://localhost:7887/rpc' \
     "id": "1",
     "method": "pos_getStaker",
     "params": {
-         "address": "lskrkhrkm25u5vqxayy3nu9ommt693vwrb546vefj"
+         "address": "klyrkhrkm25u5vqxayy3nu9ommt693vwrb546vefj"
     }
 }'
 ----
@@ -66,7 +66,7 @@ This includes:
     "result": {
         "stakes": [
             {
-                "validatorAddress": "lsk9grkenp3hw8y7hyf3nzbs2r2fuqmbno8duy9m6",
+                "validatorAddress": "kly9grkenp3hw8y7hyf3nzbs2r2fuqmbno8duy9m6",
                 "amount": "1000000000",
                 "sharingCoefficients": []
             }
@@ -88,7 +88,7 @@ To verify the concrete weight of your validator account or any other validator, 
 Create a transaction to stake tokens for one or multiple validators.
 
 * Up to *20 stakes and/or un-stakes* can be included in a single Stake transaction.
-* Staking must be done in a *multiple of 10 LSK*.
+* Staking must be done in a *multiple of 10 KLY*.
 
 The following parameter is required:
 
@@ -98,20 +98,20 @@ The following parameter is required:
 
 === Create a Stake transaction
 
-There are various services and tools to stake tokens, for example, {url_lisk_wallet}[Lisk Desktop^], xref:{url_sdk_elements}[Lisk Elements], or the node CLI.
+There are various services and tools to stake tokens, for example, {url_klayr_wallet}[Klayr Desktop^], xref:{url_sdk_elements}[Klayr Elements], or the node CLI.
 
 In the following examples, the node CLI is used to create and send the respective Stake transaction.
 
 .Performing a token stake
 [tabs]
 =====
-Lisk Core::
+Klayr Core::
 +
 --
-//TODO: Verify Lisk Core command
+//TODO: Verify Klayr Core command
 [source,bash]
 ----
-lisk-core transaction:create pos stake 100000000 --pretty --json --params='{"stakes":[{"validatorAddress":"lskqaxxmj78frvgpjgwvf4yqjjkcrr9yhn2sxxwm3","amount":15000000000}]}'
+klayr-core transaction:create pos stake 100000000 --pretty --json --params='{"stakes":[{"validatorAddress":"klyqaxxmj78frvgpjgwvf4yqjjkcrr9yhn2sxxwm3","amount":15000000000}]}'
 ----
 --
 Sidechain node::
@@ -119,7 +119,7 @@ Sidechain node::
 --
 [source,bash]
 ----
-./bin/run transaction:create pos stake 100000000 --pretty --json --params='{"stakes":[{"validatorAddress":"lskqaxxmj78frvgpjgwvf4yqjjkcrr9yhn2sxxwm3","amount":15000000000}]}'
+./bin/run transaction:create pos stake 100000000 --pretty --json --params='{"stakes":[{"validatorAddress":"klyqaxxmj78frvgpjgwvf4yqjjkcrr9yhn2sxxwm3","amount":15000000000}]}'
 ----
 --
 =====
@@ -157,11 +157,11 @@ TIP: To return the transaction in JSON format as well, add the flags `--json` an
     "params": {
       "stakes": [
         {
-          "validatorAddress": "lskqaxxmj78frvgpjgwvf4yqjjkcrr9yhn2sxxwm3",
+          "validatorAddress": "klyqaxxmj78frvgpjgwvf4yqjjkcrr9yhn2sxxwm3",
           "amount": "15000000000"
         },
         {
-          "validatorAddress": "lske5sqed53fdcs4m9et28f2k7u9fk6hno9bauday",
+          "validatorAddress": "klye5sqed53fdcs4m9et28f2k7u9fk6hno9bauday",
           "amount": "-5000000000"
         }
       ]
@@ -177,13 +177,13 @@ Use the xref:{url_sdk_cli_txsend}[transaction:send] command to send the transact
 
 [tabs]
 =====
-Lisk Core::
+Klayr Core::
 +
 --
-//TODO: Verify Lisk Core command
+//TODO: Verify Klayr Core command
 [source,bash]
 ----
-lisk-core transaction:send 0a03706f7312057374616b6518002080c2d72f2a206290c8b58de8b71fedb7e3cb9a6ee9426aa3e7ac0141f278526375d46705b546323c0a1c0a14ae4212f1cff485f273f717931af3941ca4d8f4f81080d88ee16f0a1c0a14b2f75b6968f687b495b69e1fec51d06fa8ae9d8d10ffc7afa0253a404874cf879737b25f0bab462ccbfd08f0a7add0cc1d70c422a62b8d701f45036be5dd50f5e616725729ce2bc95b8f8c9095040086dc6136d26c8daf1d8a40020a
+klayr-core transaction:send 0a03706f7312057374616b6518002080c2d72f2a206290c8b58de8b71fedb7e3cb9a6ee9426aa3e7ac0141f278526375d46705b546323c0a1c0a14ae4212f1cff485f273f717931af3941ca4d8f4f81080d88ee16f0a1c0a14b2f75b6968f687b495b69e1fec51d06fa8ae9d8d10ffc7afa0253a404874cf879737b25f0bab462ccbfd08f0a7add0cc1d70c422a62b8d701f45036be5dd50f5e616725729ce2bc95b8f8c9095040086dc6136d26c8daf1d8a40020a
 ----
 --
 Sidechain node::
@@ -215,13 +215,13 @@ TIP: It is possible to perform stakes and un-stakes for validators in a single S
 .Performing a token un-stake
 [tabs]
 =====
-Lisk Core::
+Klayr Core::
 +
 --
-//TODO: Verify Lisk Core command
+//TODO: Verify Klayr Core command
 [source,bash]
 ----
-lisk-core transaction:create pos stake 100000000 --pretty --json --params='{"stakes":[{"validatorAddress":"lske5sqed53fdcs4m9et28f2k7u9fk6hno9bauday","amount":-5000000000}]}'
+klayr-core transaction:create pos stake 100000000 --pretty --json --params='{"stakes":[{"validatorAddress":"klye5sqed53fdcs4m9et28f2k7u9fk6hno9bauday","amount":-5000000000}]}'
 ----
 --
 Sidechain node::
@@ -229,7 +229,7 @@ Sidechain node::
 --
 [source,bash]
 ----
-./bin/run transaction:create pos stake 100000000 --pretty --json --params='{"stakes":[{"validatorAddress":"lske5sqed53fdcs4m9et28f2k7u9fk6hno9bauday","amount":-5000000000}]}'
+./bin/run transaction:create pos stake 100000000 --pretty --json --params='{"stakes":[{"validatorAddress":"klye5sqed53fdcs4m9et28f2k7u9fk6hno9bauday","amount":-5000000000}]}'
 ----
 --
 =====
@@ -255,13 +255,13 @@ If you wish to check the `amount` of tokens that are ready to be unlocked in an 
 
 [tabs]
 =====
-Lisk Core::
+Klayr Core::
 +
 --
-//TODO: Verify Lisk Core command
+//TODO: Verify Klayr Core command
 [source,bash]
 ----
-lisk-core endpoint:invoke pos_getPendingUnlocks '{ "address":"lskqaxxmj78frvgpjgwvf4yqjjkcrr9yhn2sxxwm3"}' --pretty
+klayr-core endpoint:invoke pos_getPendingUnlocks '{ "address":"klyqaxxmj78frvgpjgwvf4yqjjkcrr9yhn2sxxwm3"}' --pretty
 ----
 --
 Sidechain node::
@@ -269,7 +269,7 @@ Sidechain node::
 --
 [source,bash]
 ----
-./bin/run endpoint:invoke pos_getPendingUnlocks '{ "address":"lskqaxxmj78frvgpjgwvf4yqjjkcrr9yhn2sxxwm3"}' --pretty
+./bin/run endpoint:invoke pos_getPendingUnlocks '{ "address":"klyqaxxmj78frvgpjgwvf4yqjjkcrr9yhn2sxxwm3"}' --pretty
 ----
 --
 =====
@@ -281,7 +281,7 @@ This will return the total amount of pending tokens:
 {
   "pendingUnlocks": [
     {
-      "validatorAddress": "lskqaxxmj78frvgpjgwvf4yqjjkcrr9yhn2sxxwm3",
+      "validatorAddress": "klyqaxxmj78frvgpjgwvf4yqjjkcrr9yhn2sxxwm3",
       "amount": "1000000000",
       "unstakeHeight": 348,
       "unlockable": false,
@@ -313,13 +313,13 @@ Create an Unlock transaction with the following command:
 //TODO: Test this when bug is fixed
 [tabs]
 =====
-Lisk Core::
+Klayr Core::
 +
 --
-//TODO: Verify Lisk Core command
+//TODO: Verify Klayr Core command
 [source,bash]
 ----
-lisk-core transaction:create pos unlock 100000000 --pretty --json
+klayr-core transaction:create pos unlock 100000000 --pretty --json
 ----
 --
 Sidechain node::
@@ -348,12 +348,12 @@ Next, post the transaction to the node, e.g. by using the node CLI as explained 
 
 [tabs]
 =====
-Lisk Core::
+Klayr Core::
 +
 --
 [source,bash]
 ----
-lisk-core transaction:send 0805100018032080d6c28c042a20bad983c72bed43fd274f852658c298b74c71ab6fc50508879fef309e3836384b32080a066d796e616d653a4045afdd04d0c0bc6e548c0915d5fabef1311b1b75b1eb919a43b88dab539e7b6a99b9075f5d6382ec3bbebfca3301651a15d8af3f999d5b6fa7873b3969cd3d0c
+klayr-core transaction:send 0805100018032080d6c28c042a20bad983c72bed43fd274f852658c298b74c71ab6fc50508879fef309e3836384b32080a066d796e616d653a4045afdd04d0c0bc6e548c0915d5fabef1311b1b75b1eb919a43b88dab539e7b6a99b9075f5d6382ec3bbebfca3301651a15d8af3f999d5b6fa7873b3969cd3d0c
 ----
 --
 Sidechain node::

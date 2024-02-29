@@ -2,10 +2,10 @@
 ** xref:intro/what-is-blockchain.adoc[]
 ** xref:intro/how-blockchain-works.adoc[]
 ** xref:intro/blockchain-scalability.adoc[]
-** xref:intro/lisk-products.adoc[]
+** xref:intro/klayr-products.adoc[]
 ** xref:intro/blockchain-interoperability.adoc[]
 
-* xref:understand-blockchain/index.adoc[Understand Lisk Blockchain]
+* xref:understand-blockchain/index.adoc[Understand Klayr Blockchain]
 ** xref:understand-blockchain/state-machine.adoc[]
 ** xref:understand-blockchain/consensus/index.adoc[]
 *** xref:understand-blockchain/consensus/pos-poa.adoc[]
@@ -17,7 +17,7 @@
 *** xref:understand-blockchain/interoperability/communication.adoc[]
 *** xref:understand-blockchain/interoperability/sidechain-registration-and-recovery.adoc[]
 ** xref:understand-blockchain/blocks-txs.adoc[]
-** Lisk SDK
+** Klayr SDK
 *** xref:understand-blockchain/sdk/modules-commands.adoc[]
 *** xref:understand-blockchain/sdk/plugins.adoc[]
 *** xref:understand-blockchain/sdk/rpc.adoc[]
@@ -84,14 +84,14 @@
 // * xref:tutorial/index.adoc[Tutorials]
 // ** xref:tutorial/nft.adoc[]
 // ** xref:tutorial/srs.adoc[]
-// ** xref:tutorial/lns/index.adoc[Lisk Name Service (LNS) Tutorial]
+// ** xref:tutorial/lns/index.adoc[Klayr Name Service (LNS) Tutorial]
 // *** xref:tutorial/lns/1-blockchain.adoc[]
 // *** xref:tutorial/lns/2-frontend.adoc[]
 // *** xref:tutorial/lns/3-cli.adoc[]
 // *** xref:tutorial/lns/4-tests.adoc[]
 
 * APIs
-** xref:api/lisk-node-rpc.adoc[]
+** xref:api/klayr-node-rpc.adoc[]
 ** Module RPC APIs
 *** xref:api/module-rpc-api/auth-endpoints.adoc[]
 *** xref:api/module-rpc-api/dynamic-reward-endpoints.adoc[]
@@ -104,16 +104,16 @@
 *** xref:api/module-rpc-api/pos-endpoints.adoc[]
 ** Plugin RPC APIs
 *** xref:api/plugin-rpc-api/chain-connector-api.adoc[]
-** Lisk Service APIs
-*** xref:api/lisk-service-rpc.adoc[]
-*** xref:api/lisk-service-http.adoc[]
-*** xref:api/lisk-service-pubsub.adoc[]
-*** xref:api/lisk-service-api-migration.adoc[]
+** Klayr Service APIs
+*** xref:api/klayr-service-rpc.adoc[]
+*** xref:api/klayr-service-http.adoc[]
+*** xref:api/klayr-service-pubsub.adoc[]
+*** xref:api/klayr-service-api-migration.adoc[]
 
 * Products
-** xref:lisk-sdk::index.adoc[]
-** xref:lisk-service::index.adoc[]
-** xref:lisk-core::index.adoc[]
+** xref:klayr-sdk::index.adoc[]
+** xref:klayr-service::index.adoc[]
+** xref:klayr-core::index.adoc[]
 
 * xref:bug-bounty-program.adoc[]
 //* xref:glossary.adoc[]

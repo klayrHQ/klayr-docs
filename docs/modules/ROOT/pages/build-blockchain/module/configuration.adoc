@@ -4,7 +4,7 @@ Mona Bärenfänger <mona@lightcurve.io>
 :idprefix:
 :idseparator: -
 :sectnums:
-:docs_sdk: lisk-sdk::
+:docs_sdk: klayr-sdk::
 // URLs
 // Project URLS
 :url_build_plugin: build-blockchain/create-plugin.adoc
@@ -63,7 +63,7 @@ Once the default config is created, define the corresponding module config inter
 .hello_client/src/app/modules/hello/types.ts
 [source,typescript]
 ----
-import { JSONObject } from 'lisk-sdk';
+import { JSONObject } from 'klayr-sdk';
 
 export interface ModuleConfig {
     maxMessageLength: number;
@@ -142,8 +142,8 @@ import {
     GenesisBlockExecuteContext, InsertAssetContext, ModuleInitArgs,
     ModuleMetadata, TransactionExecuteContext, TransactionVerifyContext,
     VerificationResult, codec, utils
-} from 'lisk-sdk';
-import { validator } from '@liskhq/lisk-validator';
+} from 'klayr-sdk';
+import { validator } from '@klayrhq/klayr-validator';
 import { createHelloSchema, CreateHelloParams, configSchema } from './schema';
 import { ModuleConfigJSON } from './types';
 // [...]

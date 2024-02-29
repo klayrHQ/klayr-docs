@@ -6,12 +6,12 @@
 :source-language: bash
 :toclevels: 6
 // URLs
-:url_typedoc_crypto: {site-url}/lisk-sdk/v6/references/typedoc/modules/_liskhq_lisk_cryptography.html
-:url_lisk_learn_create_account: https://lisk.com/learn/undefined/create-an-account
-:url_github_guides_multisig: https://github.com/LiskHQ/lisk-sdk-examples/blob/development/guides/tx-creation-and-signing/multisig.js
+:url_typedoc_crypto: {site-url}/klayr-sdk/v6/references/typedoc/modules/_klayrhq_klayr_cryptography.html
+:url_klayr_learn_create_account: https://klayr.com/learn/undefined/create-an-account
+:url_github_guides_multisig: https://github.com/KlayrHQ/klayr-sdk-examples/blob/development/guides/tx-creation-and-signing/multisig.js
 // Project URLs
-:url_sdk_commander: lisk-sdk::references/lisk-commander/index.adoc
-:url_core: lisk-core::index.adoc
+:url_sdk_commander: klayr-sdk::references/klayr-commander/index.adoc
+:url_core: klayr-core::index.adoc
 :url_run_accounts: run-blockchain/account-management.adoc
 :url_integrate_accounts: integrate-blockchain/integrate-ui/create-get-account.adoc
 :url_integrate_posttxs_apiclient: integrate-blockchain/posting-transactions.adoc#ws-ipc-api-example-with-api-client
@@ -20,12 +20,12 @@
 :url_posting_transaction_node: integrate-blockchain/posting-transactions.adoc#posting-transaction-with-the-node-cli
 :url_posting_transaction_curl: integrate-blockchain/posting-transactions.adoc#http-api-example-with-curl
 
-:url_accounts: https://github.com/LiskHQ/lisk-sdk-examples/blob/development/guides/register-multi-sig-accounts/accounts.json
-:url_account_registration_script: https://github.com/LiskHQ/lisk-sdk-examples/blob/development/guides/register-multi-sig-accounts/register-multiSig-account.js
-:url_multiSig_reg_directory: https://github.com/LiskHQ/lisk-sdk-examples/tree/development/guides/register-multi-sig-accounts
-:url_multiSigtx_creation_signing_directory: https://github.com/LiskHQ/lisk-sdk-examples/tree/development/guides/multiSigtx-creation-signing
-:url_multiSig_Tx: https://github.com/LiskHQ/lisk-sdk-examples/blob/development/guides/multiSigtx-creation-signing/create-multiSig-transaction.js
-:url_multiSig_tx_directory: https://github.com/LiskHQ/lisk-sdk-examples/tree/development/guides/multiSigtx-creation-signing
+:url_accounts: https://github.com/KlayrHQ/klayr-sdk-examples/blob/development/guides/register-multi-sig-accounts/accounts.json
+:url_account_registration_script: https://github.com/KlayrHQ/klayr-sdk-examples/blob/development/guides/register-multi-sig-accounts/register-multiSig-account.js
+:url_multiSig_reg_directory: https://github.com/KlayrHQ/klayr-sdk-examples/tree/development/guides/register-multi-sig-accounts
+:url_multiSigtx_creation_signing_directory: https://github.com/KlayrHQ/klayr-sdk-examples/tree/development/guides/multiSigtx-creation-signing
+:url_multiSig_Tx: https://github.com/KlayrHQ/klayr-sdk-examples/blob/development/guides/multiSigtx-creation-signing/create-multiSig-transaction.js
+:url_multiSig_tx_directory: https://github.com/KlayrHQ/klayr-sdk-examples/tree/development/guides/multiSigtx-creation-signing
 
 ====
 On this page, you'll learn:
@@ -130,16 +130,16 @@ IMPORTANT: If you create a *new account*, don't forget to send over *sufficient 
 
 [tabs]
 =====
-Lisk Desktop::
+Klayr Desktop::
 +
 --
-For a step-by-step guide about how to create a new account with Lisk Desktop, please refer to: {url_lisk_learn_create_account}[Create an Account^].
+For a step-by-step guide about how to create a new account with Klayr Desktop, please refer to: {url_klayr_learn_create_account}[Create an Account^].
 
 --
-Lisk SDK::
+Klayr SDK::
 +
 --
-For a step-by-step guide on creating a new account with Lisk SDK, please refer to the xref:{url_integrate_accounts}[] guide.
+For a step-by-step guide on creating a new account with Klayr SDK, please refer to the xref:{url_integrate_accounts}[] guide.
 Following our example in the <<parameters, parameters>> section, we need three different account credentials to register the multi-signature account.
 Each account will be used to sign the registerMultiSignature transaction individually.
 The first account among the three will also be used to send the `registerMultisignature` transaction.
@@ -152,19 +152,19 @@ Create three accounts, one for each optionalKey and then add them into an {url_a
 {
    "accounts": [
       {
-         "address": "lsk6oqambp2mgqvqxxxm5aohs6s6329sgwftax2rf",
+         "address": "kly6oqambp2mgqvqxxxm5aohs6s6329sgwftax2rf",
          "keyPath": "m/44'/134'/0'",
          "publicKey": "e98e8a6325730be6bf2644af83d5a0b004bb31c15858fedbd0ac2c1f89e2eece",
          "privateKey": "5f6b8fab4419d78e7e5620c03dd4c54dbf82e14f7b18e68b983c1c1884252dd8e98e8a6325730be6bf2644af83d5a0b004bb31c15858fedbd0ac2c1f89e2eece"
       },
       {
-         "address": "lskgmmkgyc67n5jrpf2trgtxtc4yjg7bpu992chba",
+         "address": "klygmmkgyc67n5jrpf2trgtxtc4yjg7bpu992chba",
          "keyPath": "m/44'/134'/1'",
          "publicKey": "c61cd862a8b7f73857b248a4358a7b35c29ca273d76ba3819e8c54b62801f16e",
          "privateKey": "df4f52c787f9cb993384c42c2c146bd1d4d433790d1e175baa03c484543bf760c61cd862a8b7f73857b248a4358a7b35c29ca273d76ba3819e8c54b62801f16e"
       },
       {
-         "address": "lskrw8gmg6fgdkkgj48q364quzkoqzya479x7rc3d",
+         "address": "klyrw8gmg6fgdkkgj48q364quzkoqzya479x7rc3d",
          "keyPath": "m/44'/134'/2'",
          "publicKey": "fad413df3fe5e7961b81ee8dc168d13d7e1f5cccdd062ed77da77142c7d571f0",
          "privateKey": "dfe7b84b3a919bd7d170509072aaf92ab9a817384a0c315b72960f62764c13c4fad413df3fe5e7961b81ee8dc168d13d7e1f5cccdd062ed77da77142c7d571f0"
@@ -195,7 +195,7 @@ For a step-by-step guide regarding how to create a new account with the node CLI
 
 [tabs]
 =====
-Lisk Desktop::
+Klayr Desktop::
 +
 --
 Click on the "Register multisignature account" button in the top left menu::
@@ -268,7 +268,7 @@ NOTE: The `000..0` signatures are placeholders for the pending signatures from t
 They will be replaced automatically with the correct signatures, once the members sign the transaction.
 
 --
-Lisk SDK::
+Klayr SDK::
 +
 --
 Let's prepare a script that takes the accounts' data and uses it to create and later sign a `registerMultisignature` transaction.
@@ -281,10 +281,10 @@ Import all the relevant classes and schemas.
 .register-multiSig-account.js
 [source,js]
 ----
-const { apiClient, cryptography, codec, Transaction, multisigRegMsgSchema } = require('lisk-sdk');
+const { apiClient, cryptography, codec, Transaction, multisigRegMsgSchema } = require('klayr-sdk');
 const { ed, address } = cryptography;
 const { accounts } = require('./accounts.json');
-const { registerMultisignatureParamsSchema, } = require('lisk-framework/dist-node/modules/auth/schemas');
+const { registerMultisignatureParamsSchema, } = require('klayr-framework/dist-node/modules/auth/schemas');
 ----
 +
 . Create an `apiClient` to communicate with the node and also define the `chainID` of the node.
@@ -317,11 +317,11 @@ const RPC_ENDPOINT = 'ws://127.0.0.1:7887/rpc-ws';
 [source,js]
 ----
     const { nonce } = await appClient.invoke('auth_getAuthAccount', {
-        address: address.getLisk32AddressFromPublicKey(Buffer.from(senderKeyInfo.publicKey, 'hex')),
+        address: address.getKlayr32AddressFromPublicKey(Buffer.from(senderKeyInfo.publicKey, 'hex')),
     });
 
     const unSignedData = {
-        address: address.getAddressFromLisk32Address(senderKeyInfo.address),
+        address: address.getAddressFromKlayr32Address(senderKeyInfo.address),
         nonce: BigInt(nonce),
         numberOfSignatures: 2,
         mandatoryKeys: sortedMandatoryKeys,
@@ -379,7 +379,7 @@ Node CLI::
 Create the transaction via the CLI and provide all required parameters:
 
 ----
-lisk-core transaction:create auth registerMultisignature 100000000 --json --pretty
+klayr-core transaction:create auth registerMultisignature 100000000 --json --pretty
 ----
 
 Provide the required parameters, when prompted for them:
@@ -439,10 +439,10 @@ Therefore, it is recommended to choose the first member of the group to share th
 
 [tabs]
 =====
-Lisk Desktop::
+Klayr Desktop::
 +
 --
-When the member receives the JSON, they can use Lisk Desktop to sign the JSON like so:
+When the member receives the JSON, they can use Klayr Desktop to sign the JSON like so:
 
 . After logging in to your account, click on the kbd:[Sign multisignature] button in the navigation.
 +
@@ -561,12 +561,12 @@ Now either send the JSON back to the person who shared the JSON with you, or for
 ----
 ====
 --
-Lisk SDK::
+Klayr SDK::
 +
 --
 . Use each optional account's details to add a signature for each account.
-To add a signature to a transaction, use the `ed.signDataWithPrivateKey()` method of the {url_typedoc_crypto}[lisk-cryptography^] package.
-This package is also part of the `lisk-sdk` package.
+To add a signature to a transaction, use the `ed.signDataWithPrivateKey()` method of the {url_typedoc_crypto}[klayr-cryptography^] package.
+This package is also part of the `klayr-sdk` package.
 Add the following after the `var signatures = [];` line of code.
 +
 .register-multiSig-account.js
@@ -574,7 +574,7 @@ Add the following after the `var signatures = [];` line of code.
 ----
     for (const account of [optionalAccount1, optionalAccount2, optionalAccount3].sort((a, b) => Buffer.from(a.publicKey, 'hex').compare(Buffer.from(b.publicKey, 'hex')))) {
         signatures.push(ed.signDataWithPrivateKey(
-            'LSK_RMSG_',
+            'KLY_RMSG_',
             chainID,
             msgBytes,
             Buffer.from(account.privateKey, 'hex'),
@@ -678,11 +678,11 @@ Signed Transaction with the sender's key -------> Transaction {
 
 // Extend the script from <<converting-a-user-account-into-a-multi-signature-account>> and append some code that asks for the private key of a user, and uses it to sign the prepared transaction JSON.
 
-// To add a signature to a transaction, use the `ed.signDataWithPrivateKey()` method of the {url_typedoc_crypto}[lisk-cryptography^] package.
+// To add a signature to a transaction, use the `ed.signDataWithPrivateKey()` method of the {url_typedoc_crypto}[klayr-cryptography^] package.
 
-// Don't forget to specify the other required parameters for `ed.signDataWithPrivateKey()`, especially `chainID` should be the correct chain ID for the account, and the `tag` for multi-signature registrations should always be `LSK_RMSG_`.
+// Don't forget to specify the other required parameters for `ed.signDataWithPrivateKey()`, especially `chainID` should be the correct chain ID for the account, and the `tag` for multi-signature registrations should always be `KLY_RMSG_`.
 
-// An example script can be found in the lisk-sdk-examples repository: {url_github_guides_multisig}[multisig.js^]
+// An example script can be found in the klayr-sdk-examples repository: {url_github_guides_multisig}[multisig.js^]
 
 // When using this script for several members, the `paramsStr` variable should be updated to the params that were returned from running `node multisig.js PRIVATEKEY`.
 // This way all required signatures will be added to the parameters one after another.
@@ -698,16 +698,16 @@ Node CLI::
 +
 --
 
-Log in to Lisk Desktop with your account that is defined as part of the new multi-sig group.
+Log in to Klayr Desktop with your account that is defined as part of the new multi-sig group.
 
-Copy the transaction from above in JSON string format and proceed to sign the transaction object in Lisk Desktop, as explained in <<collecting-signatures>>.
+Copy the transaction from above in JSON string format and proceed to sign the transaction object in Klayr Desktop, as explained in <<collecting-signatures>>.
 ////
 
 === How to send the multi-signature registration
 
 [tabs]
 =====
-Lisk Desktop::
+Klayr Desktop::
 +
 --
 After all group members have signed the transaction object, it is possible to send it to the network:
@@ -716,7 +716,7 @@ image:integrate-blockchain/multisig/12-send.png[,200]
 
 If the transaction was sent successfully, it will show a confirmation message.
 --
-Lisk SDK::
+Klayr SDK::
 +
 --
 . Use the xref:{url_posting_transaction_curl}[txpool_postTransaction] endpoint to send the transaction to the node.
@@ -752,7 +752,7 @@ The following code will also display the output of sending a transaction as well
 }
 ----
 
-// For a step-by-step guide on sending a transaction with Lisk SDK, please refer to the xref:{url_integrate_posttxs_apiclient}[How to post a transaction] guide.
+// For a step-by-step guide on sending a transaction with Klayr SDK, please refer to the xref:{url_integrate_posttxs_apiclient}[How to post a transaction] guide.
 --
 =====
 The account is converted into a multi-signature account, and it is possible to <<how-to-create-a-multi-signature-transaction,create and sign multi-signature transactions>>.
@@ -762,27 +762,27 @@ The account is converted into a multi-signature account, and it is possible to <
 Node CLI::
 +
 --
-If you used Lisk Desktop to collect the required signatures, it is possible to directly send it from Lisk Desktop, after the last required signature was added to the transaction.
+If you used Klayr Desktop to collect the required signatures, it is possible to directly send it from Klayr Desktop, after the last required signature was added to the transaction.
 
-In case you want to send the transaction via CLI, download or copy the JSON from Lisk Desktop and send it like this:
+In case you want to send the transaction via CLI, download or copy the JSON from Klayr Desktop and send it like this:
 
-Use the console of xref:{url_core}[Lisk Core] or xref:{url_sdk_commander}[Lisk Commander] to encode the transaction JSON;
+Use the console of xref:{url_core}[Klayr Core] or xref:{url_sdk_commander}[Klayr Commander] to encode the transaction JSON;
 
 ----
-lisk console
+klayr console
 ----
 
 Assign the transaction JSON to a variable.
 
 [,js]
 ----
-lisk-core > const tx = {
+klayr-core > const tx = {
 ...   module: 'token',
 ...   command: 'transfer',
 ...   params: {
 ...     tokenID: '0300000800000000',
 ...     amount: '100000000',
-...     recipientAddress: 'lskycz7hvr8yfu74bcwxy2n4mopfmjancgdvxq8xz',
+...     recipientAddress: 'klyycz7hvr8yfu74bcwxy2n4mopfmjancgdvxq8xz',
 ...     data: 'Hello World!'
 ...   },
 ...   nonce: '2',
@@ -800,8 +800,8 @@ lisk-core > const tx = {
 Encode the transaction by using the API client.
 
 ----
-lisk-core > let hexTx
-lisk-core > api.then((client) => {
+klayr-core > let hexTx
+klayr-core > api.then((client) => {
 ... const decodedTx = client.transaction.fromJSON(tx);
 ... const encodedTx = client.transaction.encode(decodedTx);
 ... hexTx = encodedTx.toString('hex');
@@ -809,14 +809,14 @@ lisk-core > api.then((client) => {
 ----
 
 ----
-lisk-core > hexTx
+klayr-core > hexTx
 '0a05746f6b656e12087472616e7366657218022080df0a2a20ec10255d3e78b2977f04e59ea9afd3e9a2ce9a6b44619ef9f6c47c29695b1df332330a0803000008000000001080c2d72f1a1488c0ee8a4f8fa0e498770c70749584f179938ffa220c48656c6c6f20576f726c64213a40866c4a96e8d9dd27100520759e1974cea8db52bf0df4b7660b5a87c6e4cd4488c6c71ac6f6ebbd57188a355a331d10f318f814eae63fb966e4f8cea25530480f'
 ----
 
 Copy the resulting hex string, close the console, and send the transaction as usual via node CLI:
 
 ----
-lisk-core transaction:send 0a05746f6b656e12087472616e7366657218022080df0a2a20ec10255d3e78b2977f04e59ea9afd3e9a2ce9a6b44619ef9f6c47c29695b1df332330a0803000008000000001080c2d72f1a1488c0ee8a4f8fa0e498770c70749584f179938ffa220c48656c6c6f20576f726c64213a40866c4a96e8d9dd27100520759e1974cea8db52bf0df4b7660b5a87c6e4cd4488c6c71ac6f6ebbd57188a355a331d10f318f814eae63fb966e4f8cea25530480f
+klayr-core transaction:send 0a05746f6b656e12087472616e7366657218022080df0a2a20ec10255d3e78b2977f04e59ea9afd3e9a2ce9a6b44619ef9f6c47c29695b1df332330a0803000008000000001080c2d72f1a1488c0ee8a4f8fa0e498770c70749584f179938ffa220c48656c6c6f20576f726c64213a40866c4a96e8d9dd27100520759e1974cea8db52bf0df4b7660b5a87c6e4cd4488c6c71ac6f6ebbd57188a355a331d10f318f814eae63fb966e4f8cea25530480f
 ----
 ////
 
@@ -832,21 +832,21 @@ One difference is, that for multi-sig transactions, it will not be possible to s
 First, all required signatures need to be collected, as explained in <<how-to-sign-a-multi-signature-transaction>>.
 That is why you want the transaction to be returned in JSON format in most cases, so all data to be signed is human-readable and can be reviewed and verified by the respective group members.
 
-For Lisk Desktop, it is important to note that the transaction object can only be created from the multi-signature account itself (not its other members).
+For Klayr Desktop, it is important to note that the transaction object can only be created from the multi-signature account itself (not its other members).
 
 [tabs]
 =====
-Lisk Desktop::
+Klayr Desktop::
 +
 --
-In Lisk Desktop, it is only possible to create a multi-signature transaction by the account owner of the multi-sig account, i.e. the person owning the passphrase/private key of the account.
+In Klayr Desktop, it is only possible to create a multi-signature transaction by the account owner of the multi-sig account, i.e. the person owning the passphrase/private key of the account.
 Only when you log in to the original multi-sig account, it is possible to create the transaction object as described below.
 
 If you are a member of a multi-sig account, but you don't personally have the passphrase for the multi-sig account, it is still possible to create transaction objects for the account, that you can sign and share with other group members.
-For this, please refer to the examples in the "Node CLI" and "Lisk SDK" tabs.
+For this, please refer to the examples in the "Node CLI" and "Klayr SDK" tabs.
 
 Prepare a transaction, for example, a token transfer::
-From Lisk Desktop, click on the kbd:[Send] button as you would normally to create a token transfer.
+From Klayr Desktop, click on the kbd:[Send] button as you would normally to create a token transfer.
 image:integrate-blockchain/multisig/14-create-tx.png[]
 
 Confirm the transaction parameters::
@@ -868,7 +868,7 @@ Create a transaction via the CLI, and add the `--no-signature` and the `--sender
 A multi-signature transaction requires individual signatures from the owners of the multi-signature account, hence whilst creating such a transaction, the aforementioned flags should be used.
 
 ----
-lisk-core transaction:create token transfer 1000000 --no-signature --sender-public-key e98e8a6325730be6bf2644af83d5a0b004bb31c15858fedbd0ac2c1f89e2eece
+klayr-core transaction:create token transfer 1000000 --no-signature --sender-public-key e98e8a6325730be6bf2644af83d5a0b004bb31c15858fedbd0ac2c1f89e2eece
 ----
 
 Define the transaction params:
@@ -876,7 +876,7 @@ Define the transaction params:
 ----
 ? Please enter: tokenID:  0000000100000000
 ? Please enter: amount:  20000000
-? Please enter: recipientAddress:  lskgmmkgyc67n5jrpf2trgtxtc4yjg7bpu992chba
+? Please enter: recipientAddress:  klygmmkgyc67n5jrpf2trgtxtc4yjg7bpu992chba
 ? Please enter: data:
 ----
 
@@ -888,12 +888,12 @@ Now copy the transaction hex as it will be used in the signing the multi-signatu
 {"transaction":"0a05746f6b656e12087472616e73666572180120c0843d2a20e98e8a6325730be6bf2644af83d5a0b004bb31c15858fedbd0ac2c1f89e2eece32270a0800000001000000001080dac4091a14f94b4fc46a71d7c913d89cbf30cc698f3ee3120d2200"}
 ----
 --
-Lisk SDK::
+Klayr SDK::
 +
 --
 To create a multi-signature transaction an unsigned transaction object is created first without any signatures, similar to how it is done with the CLI.
 Then, the transaction is signed individually by the required signatories and later it can be sent to the node for execution.
-A sample script is available in the lisk-sdk-examples repository where a token transfer transaction is first created and signed by a signatory.
+A sample script is available in the klayr-sdk-examples repository where a token transfer transaction is first created and signed by a signatory.
 This signed transaction can be then passed to the other signatory and a different private key can be used to sign the transaction again.
 To create a transaction, do the following steps:
 
@@ -906,17 +906,17 @@ The accounts are the same ones that we have used earlier in the registration of 
 {
     "accounts": [
         {
-            "address": "lsk6oqambp2mgqvqxxxm5aohs6s6329sgwftax2rf",
+            "address": "kly6oqambp2mgqvqxxxm5aohs6s6329sgwftax2rf",
             "keyPath": "m/44'/134'/0'",
             "publicKey": "e98e8a6325730be6bf2644af83d5a0b004bb31c15858fedbd0ac2c1f89e2eece"
         },
         {
-            "address": "lskgmmkgyc67n5jrpf2trgtxtc4yjg7bpu992chba",
+            "address": "klygmmkgyc67n5jrpf2trgtxtc4yjg7bpu992chba",
             "keyPath": "m/44'/134'/1'",
             "publicKey": "c61cd862a8b7f73857b248a4358a7b35c29ca273d76ba3819e8c54b62801f16e"
         },
         {
-            "address": "lskrw8gmg6fgdkkgj48q364quzkoqzya479x7rc3d",
+            "address": "klyrw8gmg6fgdkkgj48q364quzkoqzya479x7rc3d",
             "keyPath": "m/44'/134'/2'",
             "publicKey": "fad413df3fe5e7961b81ee8dc168d13d7e1f5cccdd062ed77da77142c7d571f0"
         }
@@ -931,8 +931,8 @@ NOTE: The {url_multiSig_Tx}[create-multiSig-transaction.js^] script can be found
 .create-multiSig-transaction.js
 [,js]
 ----
-const { apiClient, cryptography, codec, Transaction, transactions } = require('lisk-sdk');
-const { transferParamsSchema } = require('lisk-framework/dist-node/modules/token/schemas');
+const { apiClient, cryptography, codec, Transaction, transactions } = require('klayr-sdk');
+const { transferParamsSchema } = require('klayr-framework/dist-node/modules/token/schemas');
 const { accounts } = require('./accounts.json');
 const signedTX = require('./signedTx.json');
 const readline = require("readline");
@@ -971,7 +971,7 @@ const keys = {
 ----
 const tokenTransferParams = {
     tokenID: tokenID,
-    recipientAddress: cryptography.address.getAddressFromLisk32Address(accounts[1].address),
+    recipientAddress: cryptography.address.getAddressFromKlayr32Address(accounts[1].address),
     amount: BigInt(20000000),
     data: 'Hello!',
 };
@@ -1059,7 +1059,7 @@ Let's add the code for the second signatory.
 [,js]
 ----
         else {
-            // Convert the JSON object read on the 7th step back to the Lisk accepted format, for the signing process.
+            // Convert the JSON object read on the 7th step back to the Klayr accepted format, for the signing process.
             signedTX['nonce'] = BigInt(signedTX.nonce);
             signedTX['fee'] = BigInt(signedTX.fee);
             signedTX['senderPublicKey'] = Buffer.from(signedTX.senderPublicKey, 'hex');
@@ -1123,11 +1123,11 @@ Once the required signatures are reached for a transaction, it is possible to se
 
 [tabs]
 =====
-Lisk Desktop::
+Klayr Desktop::
 +
 --
 Import the transaction::
-In Lisk Desktop, click on the kbd:[Sign multisignature] button in the left menu.
+In Klayr Desktop, click on the kbd:[Sign multisignature] button in the left menu.
 This will open a new window, where it is possible to paste the JSON of the multi-sig transaction that the account intends to sign.
 image:integrate-blockchain/multisig/16-import-tx.png[]
 
@@ -1153,7 +1153,7 @@ Paste the transaction hash retrieved in the previous step.
 Since the multi-signature account set up in this guide requires two signatures, two public keys should be mentioned after the `--optional-keys` flag.
 
 ----
-lisk-core transaction:sign 0a05746f6b656e12087472616e73666572180120c0843d2a20e98e8a6325730be6bf2644af83d5a0b004bb31c15858fedbd0ac2c1f89e2eece32270a0800000001000000001080dac4091a14f94b4fc46a71d7c913d89cbf30cc698f3ee3120d2200 --optional-keys c61cd862a8b7f73857b248a4358a7b35c29ca273d76ba3819e8c54b62801f16e e98e8a6325730be6bf2644af83d5a0b004bb31c15858fedbd0ac2c1f89e2eece --json --pretty
+klayr-core transaction:sign 0a05746f6b656e12087472616e73666572180120c0843d2a20e98e8a6325730be6bf2644af83d5a0b004bb31c15858fedbd0ac2c1f89e2eece32270a0800000001000000001080dac4091a14f94b4fc46a71d7c913d89cbf30cc698f3ee3120d2200 --optional-keys c61cd862a8b7f73857b248a4358a7b35c29ca273d76ba3819e8c54b62801f16e e98e8a6325730be6bf2644af83d5a0b004bb31c15858fedbd0ac2c1f89e2eece --json --pretty
 ----
 
 Enter the account's passphrase:
@@ -1182,7 +1182,7 @@ The aforementioned `sign` transaction adds a single signature as per the lexicog
     "params": {
       "tokenID": "0000000100000000",
       "amount": "20000000",
-      "recipientAddress": "lskgmmkgyc67n5jrpf2trgtxtc4yjg7bpu992chba",
+      "recipientAddress": "klygmmkgyc67n5jrpf2trgtxtc4yjg7bpu992chba",
       "data": ""
     },
     "signatures": [
@@ -1198,7 +1198,7 @@ Use the transaction hash above and send it to the second signatory.
 The second signatory should repeat the same process with one change, update the transaction hash with the recently signed transaction, like this:
 
 ----
-lisk-core transaction:sign 0a05746f6b656e12087472616e73666572180120c0843d2a20e98e8a6325730be6bf2644af83d5a0b004bb31c15858fedbd0ac2c1f89e2eece32270a0800000001000000001080dac4091a14f94b4fc46a71d7c913d89cbf30cc698f3ee3120d22003a003a405470fa9d437fe8e8e2936ed527d269e91f256ca0b5d2a62f863276c2329d02ad69309f3f6b29648a627577ebc8234cd61fb6e4fae757c98dcd2928ea7eec5f053a00 --optional-keys c61cd862a8b7f73857b248a4358a7b35c29ca273d76ba3819e8c54b62801f16e e98e8a6325730be6bf2644af83d5a0b004bb31c15858fedbd0ac2c1f89e2eece --json --pretty
+klayr-core transaction:sign 0a05746f6b656e12087472616e73666572180120c0843d2a20e98e8a6325730be6bf2644af83d5a0b004bb31c15858fedbd0ac2c1f89e2eece32270a0800000001000000001080dac4091a14f94b4fc46a71d7c913d89cbf30cc698f3ee3120d22003a003a405470fa9d437fe8e8e2936ed527d269e91f256ca0b5d2a62f863276c2329d02ad69309f3f6b29648a627577ebc8234cd61fb6e4fae757c98dcd2928ea7eec5f053a00 --optional-keys c61cd862a8b7f73857b248a4358a7b35c29ca273d76ba3819e8c54b62801f16e e98e8a6325730be6bf2644af83d5a0b004bb31c15858fedbd0ac2c1f89e2eece --json --pretty
 ----
 
 Enter the account's passphrase:
@@ -1223,7 +1223,7 @@ Enter the account's passphrase:
     "params": {
       "tokenID": "0000000100000000",
       "amount": "20000000",
-      "recipientAddress": "lskgmmkgyc67n5jrpf2trgtxtc4yjg7bpu992chba",
+      "recipientAddress": "klygmmkgyc67n5jrpf2trgtxtc4yjg7bpu992chba",
       "data": ""
     },
     "signatures": [
@@ -1241,7 +1241,7 @@ Once the transaction is executed, check the account balance of the sender (the m
 The balance of both accounts should have changed.
 --
 
-Lisk SDK::
+Klayr SDK::
 +
 --
 
