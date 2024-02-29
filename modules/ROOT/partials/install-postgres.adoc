@@ -43,9 +43,9 @@ sudo pg_dropcluster --stop 10 main
 sudo pg_createcluster --locale en_US.UTF-8 --start 10 main
 ----
 
-Create a new database user called `lisk` and grant it access rights to create databases.
-Then create the database with the `lisk` user as the owner.
-Finally, define the password for the `lisk` user by executing the following commands below:
+Create a new database user called `klayr` and grant it access rights to create databases.
+Then create the database with the `klayr` user as the owner.
+Finally, define the password for the `klayr` user by executing the following commands below:
 
 [NOTE]
 =====
@@ -55,13 +55,13 @@ The command will be executed regardless.
 
 [source,bash]
 ----
-sudo -u postgres -i createuser --createdb lisk
-sudo -u postgres -i createdb lisk_dev --owner lisk
-sudo -u postgres psql -d lisk_dev -c "alter user lisk with password 'password';"
+sudo -u postgres -i createuser --createdb klayr
+sudo -u postgres -i createdb klayr_dev --owner klayr
+sudo -u postgres psql -d klayr_dev -c "alter user klayr with password 'password';"
 ----
 
 IMPORTANT: Please change the `password` to a secure password of your choice.
-In addition, do not forget to update this password in the xref:guides/app-development/configuration.adoc[Lisk SDK configuration] later.
+In addition, do not forget to update this password in the xref:guides/app-development/configuration.adoc[Klayr SDK configuration] later.
 
 [[postgres_macos]]
 *MacOS*
@@ -81,18 +81,18 @@ echo 'export PATH="/usr/local/opt/postgresql@10/bin:$PATH"' >> ~/.bash_profile
 source ~/.bash_profile
 ----
 
-Start the PostgreSQL, and create the `lisk` user and the database by executing the following commands below:
+Start the PostgreSQL, and create the `klayr` user and the database by executing the following commands below:
 
 [source,bash]
 ----
 pg_ctl -D /usr/local/var/postgresql@10 start
-createuser lisk
-createdb --owner=lisk lisk_dev
-psql --dbname=lisk_dev --command="ALTER USER lisk WITH PASSWORD 'password';"
+createuser klayr
+createdb --owner=klayr klayr_dev
+psql --dbname=klayr_dev --command="ALTER USER klayr WITH PASSWORD 'password';"
 ----
 
 IMPORTANT: Please change the `password` to a secure password of your choice.
-In addition, do not forget to update this password in the xref:guides/app-development/configuration.adoc[Lisk SDK configuration] later.
+In addition, do not forget to update this password in the xref:guides/app-development/configuration.adoc[Klayr SDK configuration] later.
 --
 PostgreSQL with Docker::
 +
@@ -122,22 +122,22 @@ IMPORTANT: If you have other versions of PostgreSQL installed on your machine, p
 
 [source,bash]
 ----
-docker run --name lisk_db -p 5432:5432 -e POSTGRES_USER=lisk -e POSTGRES_PASSWORD=password -e POSTGRES_DB=lisk_dev -d postgres:10
+docker run --name klayr_db -p 5432:5432 -e POSTGRES_USER=klayr -e POSTGRES_PASSWORD=password -e POSTGRES_DB=klayr_dev -d postgres:10
 ----
 
-This will install PostgreSQL version 10 (`postgres:10`) in a container with name `lisk_db` and binds the port `5432` of the container with the same port of the machine.
-As environment variables we expose `POSTGRES_USER=lisk` to create the lisk user and `POSTGRES_PASSWORD=password` to set the password for the lisk user.
-Finally the environment variable `POSTGRES_DB` creates the database `lisk_dev` with the `lisk` user as owner.
+This will install PostgreSQL version 10 (`postgres:10`) in a container with name `klayr_db` and binds the port `5432` of the container with the same port of the machine.
+As environment variables we expose `POSTGRES_USER=klayr` to create the klayr user and `POSTGRES_PASSWORD=password` to set the password for the klayr user.
+Finally the environment variable `POSTGRES_DB` creates the database `klayr_dev` with the `klayr` user as owner.
 
-The above should be enough to set up the database ready to use with the Lisk SDK.
+The above should be enough to set up the database ready to use with the Klayr SDK.
 To manage the Docker container, use the following commands listed below:
 
 [source,bash]
 ----
-docker stop lisk_db <1>
-docker start lisk_db <2>
-docker restart lisk_db <3>
-docker rm lisk_db <4>
+docker stop klayr_db <1>
+docker start klayr_db <2>
+docker restart klayr_db <3>
+docker rm klayr_db <4>
 ----
 
 <1> Stop the container.
@@ -149,7 +149,7 @@ In order to access PostgreSQL inside the container via the CLI, please execute t
 
 [source,bash]
 ----
-docker exec --tty --interactive lisk_db psql -h localhost -U lisk -d postgres
+docker exec --tty --interactive klayr_db psql -h localhost -U klayr -d postgres
 ----
 --
 ====

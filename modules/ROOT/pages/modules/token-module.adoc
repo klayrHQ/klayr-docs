@@ -78,7 +78,7 @@ Allows the possibility to execute a transfer transaction, which transfers tokens
 [source,typescript]
 ----
 {
-    $id: 'lisk/transfer-asset',
+    $id: 'klayr/transfer-asset',
     title: 'Transfer transaction asset',
     type: 'object',
     required: ['amount', 'recipientAddress', 'data'],

@@ -1,29 +1,29 @@
 = API client
 Mona Bärenfänger <mona@lightcurve.io>
-:description: Technical references regarding the API client package of Lisk Elements.
-:page-aliases: lisk-elements/packages/api-client.adoc, reference/lisk-elements/packages/api-client.adoc
+:description: Technical references regarding the API client package of Klayr Elements.
+:page-aliases: klayr-elements/packages/api-client.adoc, reference/klayr-elements/packages/api-client.adoc
 :toc:
 // Project URLs
-:url_elements_client: references/lisk-elements/client.adoc
+:url_elements_client: references/klayr-elements/client.adoc
 
-The Lisk Elements API Client provides a convenient wrapper for interacting with the public API of nodes on the Lisk network.
+The Klayr Elements API Client provides a convenient wrapper for interacting with the public API of nodes on the Klayr network.
 
-NOTE: Please use the `apiClient` of the xref:{url_elements_client}[`lisk-client` package] for all code that runs in the browser
+NOTE: Please use the `apiClient` of the xref:{url_elements_client}[`klayr-client` package] for all code that runs in the browser
 
 == Installation
 
-This adds Lisk Client as a dependency of your project:
+This adds Klayr Client as a dependency of your project:
 
 [source,bash]
 ----
-$ npm install @liskhq/lisk-api-client
+$ npm install @klayrhq/klayr-api-client
 ----
 
 == Upgrade
 
 [source,bash]
 ----
-npm update @liskhq/lisk-api-client
+npm update @klayrhq/klayr-api-client
 ----
 
 === APIClient interface

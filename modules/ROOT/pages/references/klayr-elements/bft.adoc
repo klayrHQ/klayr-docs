@@ -1,0 +1,22 @@
+= BFT
+Mona Bärenfänger <mona@lightcurve.io>
+:description: Technical references regarding the BFT package of Klayr Elements.
+:toc:
+
+@klayrhq/klayr-bft is byzantine fault tolerance implementation according to the Klayr protocol.
+
+== Installation
+
+[source,bash]
+----
+npm install @klayrhq/klayr-bft
+----
+
+== Update
+
+To perform an upgrade, execute the following command:
+
+[source,bash]
+----
+npm update @klayrhq/klayr-bft
+----

@@ -1,15 +1,15 @@
 = Codec
 Mona Bärenfänger <mona@lightcurve.io>
-:description: Technical references regarding the codec package of Lisk Elements.
+:description: Technical references regarding the codec package of Klayr Elements.
 :toc:
 
-The @liskhq/lisk-codec package implements a decoder and encoder using Lisk JSON (JavaScript Object Notation), schema according to the Lisk protocol.
+The @klayrhq/klayr-codec package implements a decoder and encoder using Klayr JSON (JavaScript Object Notation), schema according to the Klayr protocol.
 
 == Installation
 
 [source,bash]
 ----
-npm install @liskhq/lisk-codec
+npm install @klayrhq/klayr-codec
 ----
 
 == Update
@@ -18,15 +18,15 @@ To perform an upgrade, execute the following command:
 
 [source,bash]
 ----
-npm update @liskhq/lisk-codec
+npm update @klayrhq/klayr-codec
 ----
 
 == Usage
 
 [source,js]
 ----
-//import * as codecFunctions from '@liskhq/lisk-codec';
-import { codec as codecFunctions } from 'lisk-sdk';
+//import * as codecFunctions from '@klayrhq/klayr-codec';
+import { codec as codecFunctions } from 'klayr-sdk';
 // Codec can be used in two ways:
 // 1) Use exposed default instance
 codecFunctions.codec.encode(schema, object);

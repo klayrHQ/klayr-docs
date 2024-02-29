@@ -8,7 +8,7 @@
 
 // Project URLs
 
-`@liskhq/lisk-framework-monitor-plugin` is a plugin for the Lisk Framework that provides network statistics of the running node.
+`@klayrhq/klayr-framework-monitor-plugin` is a plugin for the Klayr Framework that provides network statistics of the running node.
 
 [TIP]
 ====
@@ -38,7 +38,7 @@ How to register the monitor plugin with the blockchain application.
 
 [source,js]
 ----
-const { Application, MonitorPlugin, genesisBlockDevnet, configDevnet } = require('lisk-sdk');
+const { Application, MonitorPlugin, genesisBlockDevnet, configDevnet } = require('klayr-sdk');
 
 const app = Application.defaultApplication(genesisBlockDevnet, configDevnet);
 
@@ -62,7 +62,7 @@ NOTE: The application will use the default values, in case there is no plugin co
 .Monitor options in the configuration
 [source,js]
 ----
-const { Application, HTTPAPIPlugin, genesisBlockDevnet, configDevnet } = require('lisk-sdk');
+const { Application, HTTPAPIPlugin, genesisBlockDevnet, configDevnet } = require('klayr-sdk');
 
 const appConfig = utils.objects.mergeDeep({}, configDevnet, {
   plugins: {

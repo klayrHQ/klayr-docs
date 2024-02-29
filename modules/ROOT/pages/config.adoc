@@ -5,7 +5,7 @@ Mona Bärenfänger <mona@lightcurve.io>
 :toc:
 :v_sdk: v5.2.1
 // URLs
-:url_github_sdk_configschema: https://github.com/LiskHQ/lisk-sdk/blob/{v_sdk}/framework/src/schema/application_config_schema.ts
+:url_github_sdk_configschema: https://github.com/KlayrHQ/klayr-sdk/blob/{v_sdk}/framework/src/schema/application_config_schema.ts
 // Project URLs
 
 The application config object is passed to the `Application` instance and must follow the configuration schema.
@@ -26,7 +26,7 @@ const config = {
 	// network version defines a P2P network version
 	"networkVersion": "1.0",
     // rootPath defines the root path for all data to be stored
-	"rootPath": "~/.lisk",
+	"rootPath": "~/.klayr",
 	// logger holds information for the logging
 	"logger": {
 	    // fileLogLevel defines the log level output for the file logging
@@ -34,7 +34,7 @@ const config = {
 		// consoleLogLevel defines the log level output for the console logging
 		"consoleLogLevel": "info",
 		// logFileName defines a name for the log file
-		"logFileName": "lisk.log"
+		"logFileName": "klayr.log"
 	},
 	// rpc defines communication behavior
 	"rpc": {

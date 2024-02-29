@@ -5,7 +5,7 @@
 :url_guides_config: guides/app-development/configuration.adoc
 :url_architecture_registering_plugins: advanced-explanations/architecture.adoc#registering-modules-and-plugins
 
-`@liskhq/lisk-framework-forger-plugin` is a plugin for the Lisk Framework that monitors configured delegates forging activity, and voters information.
+`@klayrhq/klayr-framework-forger-plugin` is a plugin for the Klayr Framework that monitors configured delegates forging activity, and voters information.
 
 [cols=",",stripes="hover"]
 |===
@@ -30,8 +30,8 @@ How to register the forger plugin with the blockchain application.
 
 [source,js]
 ----
-// Import the ForgerPlugin from the lisk-sdk package
-const { Application, ForgerPlugin, genesisBlockDevnet, configDevnet } = require('lisk-sdk');
+// Import the ForgerPlugin from the klayr-sdk package
+const { Application, ForgerPlugin, genesisBlockDevnet, configDevnet } = require('klayr-sdk');
 
 const app = Application.defaultApplication(genesisBlockDevnet, configDevnet);
 
@@ -56,12 +56,12 @@ NOTE: The application will use the default values, in case no plugin configurati
 .Forger options in the configuration
 [source,js]
 ----
-const { Application, ForgerPlugin, genesisBlockDevnet, configDevnet } = require('lisk-sdk');
+const { Application, ForgerPlugin, genesisBlockDevnet, configDevnet } = require('klayr-sdk');
 
 configDevnet.plugins.forger = {};
 // Configure where to store the plugin data.
-// Default location is ~/.lisk/forger
-configDevnet.plugins.forger.dataPath = '~/.lisk/forger'; <1>
+// Default location is ~/.klayr/forger
+configDevnet.plugins.forger.dataPath = '~/.klayr/forger'; <1>
 
 const app = Application.defaultApplication(genesisBlockDevnet, configDevnet);
 

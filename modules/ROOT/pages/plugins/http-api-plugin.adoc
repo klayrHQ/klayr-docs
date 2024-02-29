@@ -2,14 +2,14 @@
 :description: The HTTP API plugin description covers all specifications and associated information including restrictions, endpoints, paths, and definitions.
 :toc: preamble
 :toclevels: 3
-:docs_general: lisk-v3@ROOT::
+:docs_general: klayr-v3@ROOT::
 
 :url_guides_config: {docs_general}build-blockchain/configure-app.adoc
 :url_architecture_registering_plugins: {docs_general}understand-blockchain/architecture.adoc#registering-modules-and-plugins
 :url_utf_glossary: {docs_general}glossary.adoc#utf-8-unicode-transformation-format-8
 :url_total_votes: {docs_general}glossary.adoc#total-votes-received
 
-`@liskhq/lisk-framework-http-api-plugin` is a plugin for the Lisk Framework that provides basic HTTP API endpoints to get running node information.
+`@klayrhq/klayr-framework-http-api-plugin` is a plugin for the Klayr Framework that provides basic HTTP API endpoints to get running node information.
 
 [cols=",",stripes="hover"]
 |===
@@ -30,7 +30,7 @@ How to register the HTTP API plugin with the blockchain application.
 
 [source,js]
 ----
-const { Application, HTTPAPIPlugin, genesisBlockDevnet, configDevnet } = require('lisk-sdk');
+const { Application, HTTPAPIPlugin, genesisBlockDevnet, configDevnet } = require('klayr-sdk');
 
 const app = Application.defaultApplication(genesisBlockDevnet, configDevnet);
 
@@ -54,7 +54,7 @@ NOTE: The application will use the default values, in case no plugin configurati
 .API access options in the configuration
 [source,js]
 ----
-const { Application, HTTPAPIPlugin, genesisBlockDevnet, configDevnet } = require('lisk-sdk');
+const { Application, HTTPAPIPlugin, genesisBlockDevnet, configDevnet } = require('klayr-sdk');
 
 const appConfig = utils.objects.mergeDeep({}, configDevnet, {
   plugins: {
@@ -140,7 +140,7 @@ The responses for each API request have a common basic structure as shown below:
 
 === List of endpoints
 
-All possible API endpoints for Lisk Core are listed below.
+All possible API endpoints for Klayr Core are listed below.
 Click on an endpoint to view the descriptions, details and examples.
 
 
@@ -151,7 +151,7 @@ __Version__ : 1.0.32
 
 ==== Contact information
 [%hardbreaks]
-__Contact Email__ : admin@lisk.com
+__Contact Email__ : admin@klayr.com
 
 
 ==== License information
@@ -399,7 +399,7 @@ PATCH /forging
 
 ===== Description
 Upon passing the correct password and address, forging will be enabled or disabled for the delegate of this particular node.
-The password can be generated locally by encrypting your passphrase, either by using Lisk Commander or with Lisk Elements.
+The password can be generated locally by encrypting your passphrase, either by using Klayr Commander or with Klayr Elements.
 
 
 ===== Parameters
@@ -893,7 +893,7 @@ __required__|Unix timestamp of block created in seconds.|number
 |**transactionRoot** +
 __required__|Hex encoded value of Merkle tree root of the transaction IDs.|string
 |**version** +
-__required__|Versioning for future upgrades of the Lisk protocol.|number
+__required__|Versioning for future upgrades of the Klayr protocol.|number
 |===
 
 
@@ -1108,7 +1108,7 @@ __required__|Offset value for results. +
 |Name|Description|Schema
 |**finalizedHeight** +
 __required__|The largest height with precommits by at least 68 delegates.
-See https://github.com/LiskHQ/lips/blob/master/proposals/lip-0014.md +
+See https://github.com/KlayrHQ/lips/blob/master/proposals/lip-0014.md +
 **Example** : `123`|integer
 |**genesisConfig** +
 __required__||<<_nodeinfo_genesisconfig,genesisConfig>>
@@ -1124,7 +1124,7 @@ __required__|ID of the last processed block. +
 __required__|Hex encoded value of the network identifier as per LIP-0009. +
 **Example** : `"93d00fe5be70d90e7ae247936a2e7d83b50809c79b73fa14285f02c842348b3e"`|string
 |**networkVersion** +
-__required__|The protocol version of Lisk Core that the peer node runs on. +
+__required__|The protocol version of Klayr Core that the peer node runs on. +
 **Example** : `"1.1"`|string
 |**syncing** +
 __required__|True if the node is syncing with other peers. +
@@ -1153,7 +1153,7 @@ __required__|Block time interval in seconds. +
 **Example** : `10`|integer
 |**communityIdentifier** +
 __optional__|The unique name of the relevant community as a string encoded in xref:{url_utf_glossary}[UTF-8] format. +
-**Example** : `"Lisk"`|string
+**Example** : `"Klayr"`|string
 |**delegateListRoundOffset** +
 __required__|Number of previous rounds in which the list of delegates will be used for the current round. +
 **Example** : `2`|integer
@@ -1166,7 +1166,7 @@ __required__||<<_nodeinfo_rewards,rewards>>
 __required__|Number of standby delegates per round. +
 **Example** : `2`|integer
 |**totalAmount** +
-__optional__|Total amount of LSK available in the network before the rewards milestone started. +
+__optional__|Total amount of KLY available in the network before the rewards milestone started. +
 **Example** : `"10000000000000000"`|string
 |===
 
@@ -1214,7 +1214,7 @@ __required__|IPv4 address of the peer node. +
 __required__|Hex encoded value of the network identifier as per LIP-0009. +
 **Example** : `"93d00fe5be70d90e7ae247936a2e7d83b50809c79b73fa14285f02c842348b3e"`|string
 |**networkVersion** +
-__required__|The protocol version of Lisk Core that the peer node runs on. +
+__required__|The protocol version of Klayr Core that the peer node runs on. +
 **Example** : `"1.1"`|string
 |**options** +
 __required__|Optional field defined by the application.|object

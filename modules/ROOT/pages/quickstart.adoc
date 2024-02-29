@@ -9,20 +9,20 @@ Mona Bärenfänger <mona@lightcurve.io>
 :icons: font
 :page-no-previous: true
 //External URLs
-:url_lisk_roadmap: https://lisk.com/roadmap
+:url_klayr_roadmap: https://klayr.com/roadmap
 //Project URLs
-:url_introduction_modules: lisk-v3@ROOT::understand-blockchain/modules-commands.adoc
-:url_introduction_plugins: lisk-v3@ROOT::understand-blockchain/plugins.adoc
+:url_introduction_modules: klayr-v3@ROOT::understand-blockchain/modules-commands.adoc
+:url_introduction_plugins: klayr-v3@ROOT::understand-blockchain/plugins.adoc
 :url_references_cli: application-cli.adoc
-:url_references_commander: references/lisk-commander/index.adoc
+:url_references_commander: references/klayr-commander/index.adoc
 :url_references_dashboard_plugin: plugins/dashboard-plugin.adoc
 :url_references_test_suite: references/test-utils.adoc
 
-The quickest way to bootstrap a blockchain application with the Lisk SDK is explained here.
+The quickest way to bootstrap a blockchain application with the Klayr SDK is explained here.
 
 == Supported Operating Systems
 
-The Lisk SDK will run on both the Ubuntu and MacOS operating systems listed below:
+The Klayr SDK will run on both the Ubuntu and MacOS operating systems listed below:
 
 [tabs]
 
@@ -47,14 +47,14 @@ NOTE: Please note that the SDK does not come with any official support for Windo
 
 == Dependencies
 
-The following dependencies need to be installed to run the Lisk SDK:
+The following dependencies need to be installed to run the Klayr SDK:
 
 [options="header",]
 |===
 |Dependencies |Version
 |Git | v2 (latest)
 |Node.js | v16.15.0
-|Lisk Commander | v5.1.10 (latest)
+|Klayr Commander | v5.1.10 (latest)
 |===
 
 === Node.js
@@ -67,13 +67,13 @@ nvm install v16.15.0
 ----
 
 
-=== Lisk Commander
+=== Klayr Commander
 
-It is recommended to install Lisk Commander globally with NPM (Node Package Manager), to facilitate the convenient usage of the Lisk Commander CLI.
+It is recommended to install Klayr Commander globally with NPM (Node Package Manager), to facilitate the convenient usage of the Klayr Commander CLI.
 
 [source,bash]
 ----
-npm install --global lisk-commander
+npm install --global klayr-commander
 ----
 
 == Project setup
@@ -87,16 +87,16 @@ cd new_app
 .new_app/
 [source,bash]
 ----
-lisk init
+klayr init
 ----
 
-The user is asked for the application name, description, author, and license after running `lisk init`.
+The user is asked for the application name, description, author, and license after running `klayr init`.
 
-Next, all the required files are created by Lisk Commander.
+Next, all the required files are created by Klayr Commander.
 ----
-Using template "lisk-ts"
+Using template "klayr-ts"
 Initializing git repository
-Updating .liskrc.json file
+Updating .klayrrc.json file
 Creating project structure
 ? Application name new_app
 ? Application description My blockchain application

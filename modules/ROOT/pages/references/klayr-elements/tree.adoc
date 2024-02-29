@@ -1,0 +1,23 @@
+= Tree
+Mona Bärenfänger <mona@lightcurve.io>
+:description: Technical references regarding the tree package of Klayr Elements.
+:toc:
+
+@klayrhq/klayr-tree is a package which contains Merkle tree implementations for use with Klayr-related software.
+
+== Installation
+
+[source,bash]
+----
+npm install @klayrhq/klayr-tree
+----
+
+== Update
+
+To perform an upgrade, execute the following command:
+
+[source,bash]
+----
+npm update @klayrhq/klayr-tree
+----
+

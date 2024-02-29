@@ -1,10 +1,10 @@
-= The Lisk SDK testing utilities
+= The Klayr SDK testing utilities
 :toc: preamble
 // URLs
-:url_github_statestor_mock: https://github.com/LiskHQ/lisk-sdk/blob/v5.2.1/elements/lisk-chain/src/testing/mocks/state_store_mock.ts
-:url_github_app_env: https://github.com/LiskHQ/lisk-sdk/blob/v5.2.1/framework/src/testing/app_env.ts
+:url_github_statestor_mock: https://github.com/KlayrHQ/klayr-sdk/blob/v5.2.1/elements/klayr-chain/src/testing/mocks/state_store_mock.ts
+:url_github_app_env: https://github.com/KlayrHQ/klayr-sdk/blob/v5.2.1/framework/src/testing/app_env.ts
 
-A detailed reference of the available test utilities in the Lisk SDK test suite.
+A detailed reference of the available test utilities in the Klayr SDK test suite.
 
 == Fixtures
 
@@ -15,7 +15,7 @@ Returns a default faucet account.
 
 [source,js]
 ----
-const sdk = require('lisk-sdk');
+const sdk = require('klayr-sdk');
 
 sdk.testing.fixtures.defaultFaucetAccount
 ----
@@ -44,7 +44,7 @@ Returns a list of all addresses of the 103 genesis delegates.
 
 [source,js]
 ----
-const sdk = require('lisk-sdk');
+const sdk = require('klayr-sdk');
 
 sdk.testing.fixtures.defaultAccounts()
 ----
@@ -82,7 +82,7 @@ The modules account schemas will be included in the returned account.
 
 [source,js]
 ----
-const sdk = require('lisk-sdk');
+const sdk = require('klayr-sdk');
 
 sdk.testing.fixtures.createDefaultAccount([sdk.TokenModule, sdk.DPoSModule], {customKey:"someData"});
 ----
@@ -119,7 +119,7 @@ Returns a default password.
 
 [source,js]
 ----
-const sdk = require('lisk-sdk');
+const sdk = require('klayr-sdk');
 
 sdk.testing.fixtures.defaultPassword
 ----
@@ -140,7 +140,7 @@ A default configuration for a blockchain application.
 
 [source,js]
 ----
-const sdk = require('lisk-sdk');
+const sdk = require('klayr-sdk');
 
 sdk.testing.fixtures.defaultConfig
 ----
@@ -154,11 +154,11 @@ sdk.testing.fixtures.defaultConfig
   label: 'beta-sdk-app',
   version: '0.0.0',
   networkVersion: '1.0',
-  rootPath: '~/.lisk',
+  rootPath: '~/.klayr',
   logger: {
     fileLogLevel: 'none',
     consoleLogLevel: 'none',
-    logFileName: 'lisk.log'
+    logFileName: 'klayr.log'
   },
   genesisConfig: {
     blockTime: 10,
@@ -227,7 +227,7 @@ Returns the passphrase of a default account.
 
 [source,js]
 ----
-const sdk = require('lisk-sdk');
+const sdk = require('klayr-sdk');
 const address = sdk.testing.fixtures.defaultAccounts()[0].address;
 
 sdk.testing.fixtures.getPassphraseFromDefaultConfig(address)
@@ -254,7 +254,7 @@ Returns the hash onion for a default delegate.
 
 [source,js]
 ----
-const sdk = require('lisk-sdk');
+const sdk = require('klayr-sdk');
 const address = sdk.testing.fixtures.defaultAccounts()[0].address;
 
 sdk.testing.fixtures.getHashOnionFromDefaultConfig(address, 3);
@@ -298,7 +298,7 @@ TIP: View the full implementation of the {url_github_statestor_mock}[StateStoreM
 
 [source,typescript]
 ----
-const sdk = require('lisk-sdk');
+const sdk = require('klayr-sdk');
 
 const account = sdk.testing.fixtures.createDefaultAccount([sdk.TokenModule, sdk.DPoSModule]);
 
@@ -315,7 +315,7 @@ Returns a mock for the channel.
 
 [source,typescript]
 ----
-const sdk = require('lisk-sdk');
+const sdk = require('klayr-sdk');
 
 sdk.testing.mocks.channelMock;
 ----
@@ -349,7 +349,7 @@ Returns a mock for consensus functions.
 
 [source,typescript]
 ----
-const sdk = require('lisk-sdk');
+const sdk = require('klayr-sdk');
 
 sdk.testing.mocks.consensusMock;
 ----
@@ -387,7 +387,7 @@ Returns a mock for the data access.
 
 [source,typescript]
 ----
-const sdk = require('lisk-sdk');
+const sdk = require('klayr-sdk');
 
 const dataAccess = new sdk.testing.mocks.DataAccessMock()
 ----
@@ -398,7 +398,7 @@ Returns a mock of the logger.
 ==== Usage
 [source,typescript]
 ----
-const sdk = require('lisk-sdk');
+const sdk = require('klayr-sdk');
 
 sdk.testing.mocks.loggerMock;
 ----
@@ -426,7 +426,7 @@ Returns a mock for the reducer handler.
 ==== Usage
 [source,typescript]
 ----
-const sdk = require('lisk-sdk');
+const sdk = require('klayr-sdk');
 
 sdk.testing.mocks.reducerHandlerMock;
 ----
@@ -459,7 +459,7 @@ Used for integration testing.
 ==== Usage
 [source,typescript]
 ----
-const sdk = require('lisk-sdk');
+const sdk = require('klayr-sdk');
 
 await sdk.testing.getBlockProcessingEnv({})
 ----
@@ -510,7 +510,7 @@ TIP: View the full implementation of the {url_github_app_env}[ApplicationEnv on 
 ==== Usage
 [source,typescript]
 ----
-const sdk = require('lisk-sdk');
+const sdk = require('klayr-sdk');
 
 sdk.testing.createDefaultApplicationEnv([sdk.TokenModule,sdk.DPoSModule])
 ----
@@ -521,7 +521,7 @@ sdk.testing.createDefaultApplicationEnv([sdk.TokenModule,sdk.DPoSModule])
 [source,typescript]
 ----
 ApplicationEnv {
-  _dataPath: '~/.lisk/beta-sdk-app',
+  _dataPath: '~/.klayr/beta-sdk-app',
   _application: Application {
     _mutex: Mutex { _queue: [], _locked: false },
     _genesisBlock: { header: [Object], payload: [] },
@@ -529,7 +529,7 @@ ApplicationEnv {
       label: 'beta-sdk-app',
       version: '0.0.0',
       networkVersion: '1.0',
-      rootPath: '~/.lisk',
+      rootPath: '~/.klayr',
       logger: [Object],
       rpc: [Object],
       genesisConfig: [Object],
@@ -626,7 +626,7 @@ Transaction {
 ==== Usage
 [source,typescript]
 ----
-const sdk = require('lisk-sdk');
+const sdk = require('klayr-sdk');
 
 sdk.testing.createGenesisBlock({modules: [sdk.TokenModule,sdk.DPoSModule]})
 ----
@@ -689,7 +689,7 @@ opts?: {
 ==== Usage
 [source,typescript]
 ----
-const sdk = require('lisk-sdk');
+const sdk = require('klayr-sdk');
 
 sdk.testing.getModuleInstance(TokenModule);
 ----
@@ -770,7 +770,7 @@ genesisConfig?: GenesisConfig,
 ==== Usage
 [source,typescript]
 ----
-const sdk = require('lisk-sdk');
+const sdk = require('klayr-sdk');
 
 sdk.testing.getAccountSchemaFromModules([sdk.TokenModule])
 ----
@@ -809,7 +809,7 @@ sdk.testing.getAccountSchemaFromModules([sdk.TokenModule])
 ==== Usage
 [source,typescript]
 ----
-const sdk = require('lisk-sdk');
+const sdk = require('klayr-sdk');
 
 sdk.testing.createBlock({
     passphrase: sdk.testing.fixtures.defaultPassword,
@@ -883,7 +883,7 @@ Creates a default block header.
 ==== Usage
 [source,typescript]
 ----
-const sdk = require('lisk-sdk');
+const sdk = require('klayr-sdk');
 
 sdk.testing.createBlockHeaderWithDefaults()
 ----
@@ -920,7 +920,7 @@ Creates a block header with a fake signature and ID.
 ==== Usage
 [source,typescript]
 ----
-const sdk = require('lisk-sdk');
+const sdk = require('klayr-sdk');
 
 sdk.testing.createFakeBlockHeader()
 ----
@@ -964,7 +964,7 @@ sdk.testing.createFakeBlockHeader()
 ==== Usage
 [source,typescript]
 ----
-const sdk = require('lisk-sdk');
+const sdk = require('klayr-sdk');
 
 let gb = sdk.testing.createGenesisBlock({modules: [sdk.TokenModule,sdk.DPoSModule]});
 sdk.testing.createAfterGenesisBlockApplyContext({modules: [sdk.TokenModule],genesisBlock: gb.genesisBlock});
@@ -1032,7 +1032,7 @@ sdk.testing.createAfterGenesisBlockApplyContext({modules: [sdk.TokenModule],gene
 ==== Usage
 [source,typescript]
 ----
-const sdk = require('lisk-sdk');
+const sdk = require('klayr-sdk');
 
 sdk.testing.createBeforeBlockApplyContext({})
 ----
@@ -1085,7 +1085,7 @@ sdk.testing.createBeforeBlockApplyContext({})
 ==== Usage
 [source,typescript]
 ----
-const sdk = require('lisk-sdk');
+const sdk = require('klayr-sdk');
 
 sdk.testing.createAfterBlockApplyContext({});
 ----
@@ -1142,7 +1142,7 @@ sdk.testing.createAfterBlockApplyContext({});
 ==== Usage
 [source,typescript]
 ----
-const sdk = require('lisk-sdk');
+const sdk = require('klayr-sdk');
 
 sdk.testing.createTransactionApplyContext({});
 ----
@@ -1195,7 +1195,7 @@ sdk.testing.createTransactionApplyContext({});
 ==== Usage
 [source,typescript]
 ----
-const sdk = require('lisk-sdk');
+const sdk = require('klayr-sdk');
 
 sdk.testing.createApplyAssetContext({});
 ----
@@ -1248,7 +1248,7 @@ sdk.testing.createApplyAssetContext({});
 ==== Usage
 [source,typescript]
 ----
-const sdk = require('lisk-sdk');
+const sdk = require('klayr-sdk');
 
 sdk.testing.createValidateAssetContext({});
 ----
