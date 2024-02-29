@@ -1,9 +1,9 @@
-= Lisk docs manual
+= Klayr docs manual
 Mona Bärenfänger <mona@lightcurve.io>
 :toc:
 :no-previous: true
 
-The Lisk docs manual contain guidances and explanations about how to write and build the documentation.
+The Klayr docs manual contain guidances and explanations about how to write and build the documentation.
 
 == Style guide
 

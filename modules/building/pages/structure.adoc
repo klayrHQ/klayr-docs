@@ -5,17 +5,17 @@
 // External URLs:
 :url_antora_ui: https://gitlab.com/antora/antora-ui-default
 :url_antora_ui_docs: https://docs.antora.org/antora-ui-default/
-:url_github_docs: git@github.com:LiskHQ/lisk-docs.git
+:url_github_docs: git@github.com:KlayrHQ/klayr-docs.git
 :url_antora: https://antora.org/
 :url_antora_directories: https://docs.antora.org/antora/latest/standard-directories/
-:url_docs: https://lisk.com/documentation
-:url_docs_staging: https://staginglisk.com/documentation
-:url_docs_gitpage: https://liskhq.github.io/lisk-docs
-:url_github_docs: https://github.com/LiskHQ/lisk-docs
+:url_docs: https://klayr.com/documentation
+:url_docs_staging: https://stagingklayr.com/documentation
+:url_docs_gitpage: https://klayrhq.github.io/klayr-docs
+:url_github_docs: https://github.com/KlayrHQ/klayr-docs
 :url_gitlab_antora_extensions: https://gitlab.com/antora/antora-asciidoctor-extensions
-:url_jenkins_build: https://deployment.liskdev.net/job/lisk-docs-build/
-:url_jenkins_staging: https://deployment.liskdev.net/job/lisk-docs-deploy-staging/
-:url_jenkins_production: https://deployment.liskdev.net/job/lisk-docs-deploy-production/
+:url_jenkins_build: https://deployment.klayrdev.net/job/klayr-docs-build/
+:url_jenkins_staging: https://deployment.klayrdev.net/job/klayr-docs-deploy-staging/
+:url_jenkins_production: https://deployment.klayrdev.net/job/klayr-docs-deploy-production/
 // Project URLs:
 :url_contributing: contributing.adoc
 :url_search: search.adoc
@@ -24,23 +24,23 @@
 :url_staging_playbook: {url_staging}#the-playbook-file
 :url_style_asciidoc: styleguide:asciidoc.adoc
 
-Lisk uses {url_antora}[Antora^] as a documentation generator.
+Klayr uses {url_antora}[Antora^] as a documentation generator.
 
-All files for the Lisk documentation are stored in the GitHub repository at {url_github_docs}[^].
+All files for the Klayr documentation are stored in the GitHub repository at {url_github_docs}[^].
 
 == Environments
 
 === GitHub Pages
 
-The testing and WIP environment for the Lisk documentation.
-Link to the WIP Lisk documentation: {url_docs_gitpage}.
+The testing and WIP environment for the Klayr documentation.
+Link to the WIP Klayr documentation: {url_docs_gitpage}.
 
 * Source content is stored in the `development` branch.
 * Compiled files are stored in the `git-page` branch.
 
 === Staging
 The staging environment mirrors the production version of the website.
-Link to the production version of the Lisk documentation: {url_docs_staging}.
+Link to the production version of the Klayr documentation: {url_docs_staging}.
 
 Documentation is deployed on staging before deploying on <<production>>, to verify the latest updates of the documentation.
 
@@ -48,22 +48,22 @@ Documentation is deployed on staging before deploying on <<production>>, to veri
 * Compiled files are stored in the `live` branch.
 
 ==== Deployment
-* Task for compiling a new version of the Lisk documentation: {url_jenkins_build}[^]
-* Task for deploying the latest docs on staging.lisk.com: {url_jenkins_staging}[^]
+* Task for compiling a new version of the Klayr documentation: {url_jenkins_build}[^]
+* Task for deploying the latest docs on staging.klayr.com: {url_jenkins_staging}[^]
 
 IMPORTANT: For accessing Jenkins, it is necessary to connect to the lightcurve network via the VPN, if you are not in the office.
 
 === Production
 
-The official and public location of the Lisk documentation.
-Link to the production version of the Lisk documentation: {url_docs}.
+The official and public location of the Klayr documentation.
+Link to the production version of the Klayr documentation: {url_docs}.
 
 * Source content is stored in the `main` branch.
 * Compiled files are stored in the `live` branch.
 
 ==== Deployment
-* Task for compiling a new version of the Lisk documentation: {url_jenkins_build}[^]
-* Task for deploying the latest docs on staging.lisk.com: {url_jenkins_production}[^]
+* Task for compiling a new version of the Klayr documentation: {url_jenkins_build}[^]
+* Task for deploying the latest docs on staging.klayr.com: {url_jenkins_production}[^]
 
 IMPORTANT: For accessing Jenkins, it is necessary to connect to the lightcurve network via the VPN, if you are not in the office.
 
@@ -73,7 +73,7 @@ The internal structure of `development` and `main` branch.
 
 === The `docs/` folder
 
-The source content for the general Lisk documentation  is located in the `docs/` folder.
+The source content for the general Klayr documentation  is located in the `docs/` folder.
 
 The file structure follows the expected structure for Antora documentation, see: {url_antora_directories}.
 
@@ -87,7 +87,7 @@ The UI is based on the {url_antora_ui}[Antora default UI^] (see also {url_antora
 
 It is customized as listed in the following points below:
 
-* Updated the CSS to follow improve UX and follow Lisk brand styleguide.
+* Updated the CSS to follow improve UX and follow Klayr brand styleguide.
 * Added additional features, such as:
 ** Algolia site search
 ** Dark theme
@@ -99,9 +99,9 @@ It is customized as listed in the following points below:
 === The `build/` folder
 The `build` folder contains...
 
-* ...the `site.yml` file, which is used to generate the Lisk documentation using Antora.
+* ...the `site.yml` file, which is used to generate the Klayr documentation using Antora.
 * ...the `searchdocs-scraper` folder, for creating the search index.
-* ...the `lib` folder, which stores the <<Asciidoc extensions>>, that are used in the Lisk documentation.
+* ...the `lib` folder, which stores the <<Asciidoc extensions>>, that are used in the Klayr documentation.
 
 ----
 .
@@ -121,7 +121,7 @@ Results are pushed to the `git-page` branch.
 
 == Product-specific docs
 
-There are additional content sources, which each store the documentation for a specific software product of Lisk.
+There are additional content sources, which each store the documentation for a specific software product of Klayr.
 
 === Content sources
 

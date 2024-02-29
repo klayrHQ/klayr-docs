@@ -21,7 +21,7 @@ Install the AsciiDoc plugin: {url_webstorm_asciidoc}[^]
 
 ==== Navigate into the `build/` folder
 
- cd lisk-docs/build
+ cd klayr-docs/build
 
 ==== Create a new folder
 
@@ -39,7 +39,7 @@ Install the AsciiDoc plugin: {url_webstorm_asciidoc}[^]
 
 . Navigate to the `ui/` folder
 +
- cd lisk-docs/ui
+ cd klayr-docs/ui
 
 . Start the local preview
 +
