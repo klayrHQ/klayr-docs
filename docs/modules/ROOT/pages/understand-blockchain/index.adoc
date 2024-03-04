@@ -1,20 +1,20 @@
-= Key concepts of the Lisk SDK blockchain
+= Key concepts of the Klayr SDK blockchain
 Mona Bärenfänger <mona@lightcurve.io>
 //Settings
 :toc: preamble
 :toclevels: 3
 :idprefix:
 :idseparator: -
-:docs_sdk: v5@lisk-sdk::
+:docs_sdk: v5@klayr-sdk::
 //:imagesdir: ../assets/images
 :experimental:
 :icons: font
 //External URLs
-:url_lisk_roadmap: https://lisk.com/roadmap
-:url_github_lns_dashboard: https://github.com/LiskHQ/lisk-sdk-examples/tree/nh-lisk-name-service/tutorials/lisk-name-service/lns-dashboard-plugin
-:url_github_srs: https://github.com/LiskHQ/lisk-sdk-examples/tree/development/tutorials/social-recovery
-:url_blog_benchmark: https://lisk.com/blog/development/benchmarking-lisk-core-v3.0.0-against-lisk-core-v2.1.6-0
-:url_lisk_apps: https://lisk.com/ecosystem
+:url_klayr_roadmap: https://klayr.com/roadmap
+:url_github_lns_dashboard: https://github.com/KlayrHQ/klayr-sdk-examples/tree/nh-klayr-name-service/tutorials/klayr-name-service/lns-dashboard-plugin
+:url_github_srs: https://github.com/KlayrHQ/klayr-sdk-examples/tree/development/tutorials/social-recovery
+:url_blog_benchmark: https://klayr.com/blog/development/benchmarking-klayr-core-v3.0.0-against-klayr-core-v2.1.6-0
+:url_klayr_apps: https://klayr.com/ecosystem
 //Project URLs
 :url_introduction_modules: understand-blockchain/modules-assets.adoc
 :url_introduction_plugins: understand-blockchain/plugins.adoc
@@ -22,10 +22,10 @@ Mona Bärenfänger <mona@lightcurve.io>
 :url_advanced_architecture_config: {docs_sdk}config.adoc
 :url_advanced_communication_actions: understand-blockchain/endpoints.adoc#actions
 :url_advanced_communication_events: understand-blockchain/endpoints.adoc#events
-:url_protocol: understand-blockchain/lisk-protocol/index.adoc
-:url_protocol_blocks: understand-blockchain/lisk-protocol/blocks.adoc
-:url_protocol_consensus: understand-blockchain/lisk-protocol/consensus-algorithm.adoc#voting_and_weight
-:url_protocol_transactions: understand-blockchain/lisk-protocol/transactions.adoc
+:url_protocol: understand-blockchain/klayr-protocol/index.adoc
+:url_protocol_blocks: understand-blockchain/klayr-protocol/blocks.adoc
+:url_protocol_consensus: understand-blockchain/klayr-protocol/consensus-algorithm.adoc#voting_and_weight
+:url_protocol_transactions: understand-blockchain/klayr-protocol/transactions.adoc
 :url_references_http_plugin: {docs_sdk}plugins/http-api-plugin.adoc
 :url_references_forger_plugin: {docs_sdk}plugins/forger-plugin.adoc
 :url_references_monitor_plugin: {docs_sdk}plugins/monitor-plugin.adoc
@@ -39,7 +39,7 @@ Mona Bärenfänger <mona@lightcurve.io>
 :url_integrate_ui: integrate-blockchain/create-user-interface.adoc
 
 ****
-The Lisk SDK is an open-source software development kit which enables developers to build scalable <<blockchain-applications>> in JavaScript.
+The Klayr SDK is an open-source software development kit which enables developers to build scalable <<blockchain-applications>> in JavaScript.
 ****
 
 == What is a blockchain?
@@ -67,13 +67,13 @@ After the block has been forged, it is added to the blockchain, and all state ch
 
 A blockchain application is any kind of application which uses its' own blockchain as a database layer.
 
-More specifically, within the Lisk documentation, every time we talk about blockchain applications, we are referring to applications running on blockchains that are compatible with xref:{url_protocol}[].
+More specifically, within the Klayr documentation, every time we talk about blockchain applications, we are referring to applications running on blockchains that are compatible with xref:{url_protocol}[].
 
 .Examples of blockchain applications
 ****
 Examples of blockchain applications can be found in the tutorials, such as the xref:{url_tutorials_nft}[], or the xref:{url_tutorials_srs}[] application.
 
-Additionally, check out the apps list at {url_lisk_apps}[^]
+Additionally, check out the apps list at {url_klayr_apps}[^]
 ****
 
 === Network topology diagram
@@ -100,7 +100,7 @@ They also possess the ability to scale extremely well, even for large networks w
 
 All important components of a blockchain application are displayed in the diagram below:
 
-image:architecture.png[lisk-framework-architecture]
+image:architecture.png[klayr-framework-architecture]
 
 ==== On-chain logic
 
@@ -108,7 +108,7 @@ The on-chain architecture is a layer of abstraction that provides a collection o
 
 In short, the on-chain logic covers the following points:
 
-* introduces state mutations through blocks footnote:block_footnote[For more information about blocks, check out the xref:{url_protocol_blocks}[] page of the Lisk protocol.] or transactions footnote:tx_footnote[For more information about transactions, check the xref:{url_protocol_transactions}[] page of the Lisk protocol.].
+* introduces state mutations through blocks footnote:block_footnote[For more information about blocks, check out the xref:{url_protocol_blocks}[] page of the Klayr protocol.] or transactions footnote:tx_footnote[For more information about transactions, check the xref:{url_protocol_transactions}[] page of the Klayr protocol.].
 * is part of the blockchain protocol.
 * is verifiable by anyone by synchronizing with the blockchain.
 * is located in modules.
@@ -150,7 +150,7 @@ xref:{url_introduction_plugins}[] are able to perform the following:
 * add a proxy to the application interfaces.
 ****
 
-The default application does not include any plugins by default, however, the Lisk SDK is bundled with a few common plugins listed below, which can be imported directly:
+The default application does not include any plugins by default, however, the Klayr SDK is bundled with a few common plugins listed below, which can be imported directly:
 
 xref:{url_references_http_plugin}[], xref:{url_references_forger_plugin}[], xref:{url_references_monitor_plugin}[], xref:{url_references_report_misbbehavior_plugin}[]
 
@@ -162,16 +162,16 @@ To add a new plugin to your application, either reuse an already existing plugin
 
 image::intro/communication-architecture.png[,600 ,align="center"]
 
-The communication architecture of the Lisk SDK allows internal application components and external services to communicate to the blockchain application via various channels.
+The communication architecture of the Klayr SDK allows internal application components and external services to communicate to the blockchain application via various channels.
 
-The Lisk SDK provides two industry standard communication protocols: Inter Process Communication (IPC) and Web Sockets (WS).
+The Klayr SDK provides two industry standard communication protocols: Inter Process Communication (IPC) and Web Sockets (WS).
 The communication protocol of the blockchain application is changed in the xref:{url_advanced_architecture_config}[configuration].
 
 It is possible to communicate to modules and plugins directly by invoking xref:{url_advanced_communication_actions}[actions] via a RPC request, or by subscribing to xref:{url_advanced_communication_events}[events].
 
-It is recommended to use the IPC/WebSocket protocols where possible, as they provide a more enhanced performance in regard to the response times, (see the blog post: {url_blog_benchmark}[Benchmarking Lisk Core v3.0.0 against Lisk Core v2.1.6]).
+It is recommended to use the IPC/WebSocket protocols where possible, as they provide a more enhanced performance in regard to the response times, (see the blog post: {url_blog_benchmark}[Benchmarking Klayr Core v3.0.0 against Klayr Core v2.1.6]).
 However, if you prefer an HTTP API, it is possible to add support for custom APIs by registering additional plugins, such as the xref:{url_references_http_plugin}[].
-//We also recommend to try out xref:{url_service}[Lisk Service], which provides a much more comprehensive API compared to the HTTP API plugin.
+//We also recommend to try out xref:{url_service}[Klayr Service], which provides a much more comprehensive API compared to the HTTP API plugin.
 
 For more information about the communication architecture, check out the xref:{url_advanced_communication}[endpoints explanation].
 
@@ -189,11 +189,11 @@ For example, this can be achieved in the following ways:
 
 [loweralpha]
 . Create a new xref:{url_introduction_plugins}[plugin] for the blockchain application.
-An example implementation of a frontend as a plugin is the {url_github_lns_dashboard}[LNS UI plugin] for the example application *Lisk Name Service*.
+An example implementation of a frontend as a plugin is the {url_github_lns_dashboard}[LNS UI plugin] for the example application *Klayr Name Service*.
 . Use your favorite framework/ programming language to develop a user interface, and communicate to the node via the <<communication-interfaces-apis>>.
 One example is the frontend of the {url_github_srs}[SRS example application^] , which has been developed with React.js.
 Another example is the UI for the Hello World application, detailed in the guide xref:{url_integrate_ui}[].
-. For later requirements in a production environment, a middleware similar to Lisk Service should be used, which will aggregate the data from the blockchain network and possibly other 3rd party sources as well.
+. For later requirements in a production environment, a middleware similar to Klayr Service should be used, which will aggregate the data from the blockchain network and possibly other 3rd party sources as well.
 The frontend can then request this data via API requests from the middleware.
 
 image::intro/ui-diagrams.png[]
@@ -216,20 +216,20 @@ If the flexible characteristics of smart contracts are desired inside a blockcha
 For example, a new module could be added to the application, which accepts smart contracts.
 This way it is possible to have the best of both worlds combined.
 
-Additionally, smart contracts can reuse an already existing blockchain, which saves time when launching the application, as it is not necessary to take care of setting up an independent blockchain network, finding delegates footnote:delegate_footnote[For more information about delegates, check the xref:{url_protocol_consensus}[Consensus algorithm] page of the Lisk protocol.], etc.
+Additionally, smart contracts can reuse an already existing blockchain, which saves time when launching the application, as it is not necessary to take care of setting up an independent blockchain network, finding delegates footnote:delegate_footnote[For more information about delegates, check the xref:{url_protocol_consensus}[Consensus algorithm] page of the Klayr protocol.], etc.
 
 Blockchain applications on the contrary rely on their own blockchain, and therefore also need to take care of maintaining their own network.
 In the beginning, this will make the launch of the application slightly more complex, however, having an independent network comes with numerous benefits which are covered in the following paragraphs.
 
-The Lisk documentation is referring to applications built with the Lisk SDK as "blockchain applications" and not "dApps". In order to clarify the difference here, applications are not sharing a common blockchain, but instead are each running on their own chain.
+The Klayr documentation is referring to applications built with the Klayr SDK as "blockchain applications" and not "dApps". In order to clarify the difference here, applications are not sharing a common blockchain, but instead are each running on their own chain.
 As a result blockchain applications have the following advantages:
 
 * Lower transaction fees, as high traffic of one blockchain application has no effect on other blockchain applications.
 * The blockchain for the application can be designed with the optimal characteristics for the specific use case, (for example by adjusting the block time or the number of delegates, or even changing the whole consensus algorithm).
 * A much more scalable blockchain, as it only handles the data from one blockchain application.
 Therefore it is growing much slower in size, and doesn't suffer so much from potential bottlenecks in the network, which can happen during times of high workload on many different dApps.
-* Interoperability: Register a blockchain application as a sidechain to connect it to the Lisk Mainchain, (this is coming {url_lisk_roadmap}[soon^]).
-This will provide seamless interoperability to the Lisk Mainchain and all of its' connected sidechains.
+* Interoperability: Register a blockchain application as a sidechain to connect it to the Klayr Mainchain, (this is coming {url_klayr_roadmap}[soon^]).
+This will provide seamless interoperability to the Klayr Mainchain and all of its' connected sidechains.
 
 
 

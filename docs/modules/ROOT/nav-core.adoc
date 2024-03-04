@@ -1,8 +1,8 @@
-:url_core: master@lisk-core:ROOT:
+:url_core: master@klayr-core:ROOT:
 
 '''
 
-.Lisk Core
+.Klayr Core
 * xref:{url_core}index.adoc[]
 * Setup
 ** xref:{url_core}setup/npm.adoc[]

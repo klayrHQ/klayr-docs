@@ -1,10 +1,10 @@
-= Overview - Lisk Documentation
+= Overview - Klayr Documentation
 :toclevels: 4
 :page-no-previous: true
-:url_protocol: master@lisk-sdk:protocol:
-:url_sdk: master@lisk-sdk:ROOT:
-:url_core: master@lisk-core:ROOT:
-:url_service: master@lisk-service:ROOT:
+:url_protocol: master@klayr-sdk:protocol:
+:url_sdk: master@klayr-sdk:ROOT:
+:url_core: master@klayr-core:ROOT:
+:url_service: master@klayr-service:ROOT:
 
 :url_intro: introduction
 :url_understand: understand-blockchain/index.adoc
@@ -14,15 +14,15 @@
 :url_understand_plugins: understand-blockchain/plugins.adoc
 :url_understand_reducers: understand-blockchain/reducers.adoc
 :url_understand_codec: understand-blockchain/codec-schema.adoc
-:url_understand_protocol: understand-blockchain/lisk-protocol/index.adoc
-:url_understand_protocol_accounts: understand-blockchain/lisk-protocol/accounts.adoc
-:url_understand_protocol_blocks: understand-blockchain/lisk-protocol/blocks.adoc
-:url_understand_protocol_consensusalgorithm: understand-blockchain/lisk-protocol/consensus-algorithm.adoc
-:url_understand_protocol_network: understand-blockchain/lisk-protocol/network.adoc
-:url_understand_protocol_transactions: understand-blockchain/lisk-protocol/transactions.adoc
-:url_understand_protocol_appendix: understand-blockchain/lisk-protocol/appendix.adoc
+:url_understand_protocol: understand-blockchain/klayr-protocol/index.adoc
+:url_understand_protocol_accounts: understand-blockchain/klayr-protocol/accounts.adoc
+:url_understand_protocol_blocks: understand-blockchain/klayr-protocol/blocks.adoc
+:url_understand_protocol_consensusalgorithm: understand-blockchain/klayr-protocol/consensus-algorithm.adoc
+:url_understand_protocol_network: understand-blockchain/klayr-protocol/network.adoc
+:url_understand_protocol_transactions: understand-blockchain/klayr-protocol/transactions.adoc
+:url_understand_protocol_appendix: understand-blockchain/klayr-protocol/appendix.adoc
 :url_build: build-blockchain/index.adoc
-:url_build_quickstart: v5@lisk-sdk::quickstart.adoc
+:url_build_quickstart: v5@klayr-sdk::quickstart.adoc
 :url_build_bapp: build-blockchain/create-blockchain-app.adoc
 :url_build_module: build-blockchain/create-module.adoc
 :url_build_asset: build-blockchain/create-asset.adoc
@@ -48,17 +48,17 @@
 :url_tutorial_nft: tutorial/nft.adoc
 :url_tutorial_srs: tutorial/srs.adoc
 :url_tutorial_lns: tutorial/lns/index.adoc
-:url_api_node_http: api/lisk-node-http.adoc
+:url_api_node_http: api/klayr-node-http.adoc
 :url_api_node_rpc: understand-blockchain/endpoints.adoc
-:url_api_service_http: api/lisk-service-http.adoc
-:url_api_service_http_testnet: api/lisk-service-http-testnet.adoc
-:url_api_service_pubsub: api/lisk-service-pubsub.adoc
-:url_api_service_rpc: api/lisk-service-rpc.adoc
-:url_sdk: v5@lisk-sdk::index.adoc
-:url_core: v3@lisk-core::index.adoc
-:url_service: v0.6@lisk-service::index.adoc
+:url_api_service_http: api/klayr-service-http.adoc
+:url_api_service_http_testnet: api/klayr-service-http-testnet.adoc
+:url_api_service_pubsub: api/klayr-service-pubsub.adoc
+:url_api_service_rpc: api/klayr-service-rpc.adoc
+:url_sdk: v5@klayr-sdk::index.adoc
+:url_core: v3@klayr-core::index.adoc
+:url_service: v0.6@klayr-service::index.adoc
 
-Welcome to the official Lisk documentation!
+Welcome to the official Klayr documentation!
 
 [.overview-banner]
 .Getting started image:bannerwhite.svg[]
@@ -76,7 +76,7 @@ Welcome to the official Lisk documentation!
 [.overview-title]
 .xref:{url_understand}[Understand Blockchain]
 *****
-Explanations & descriptions about the main concepts and components of the Lisk blockchain.
+Explanations & descriptions about the main concepts and components of the Klayr blockchain.
 *****
 ****
 |
@@ -87,7 +87,7 @@ Explanations & descriptions about the main concepts and components of the Lisk b
 .xref:{url_build}[Build Blockchain]
 *****
 Guides for blockchain developers.
-How to develop a blockchain application with the Lisk SDK, explained in different dedicated guides.
+How to develop a blockchain application with the Klayr SDK, explained in different dedicated guides.
 *****
 ****
 |
@@ -119,16 +119,16 @@ Guides how to integrate blockchain data in external applications & services.
 
 [.card.card-index]
 --
-xref:{url_intro}[[.card-title]#Introduction to Lisk# [.card-body.card-content-overflow]#pass:q[
-** Lisk interoperability
-** Lisks consensus algorithms
+xref:{url_intro}[[.card-title]#Introduction to Klayr# [.card-body.card-content-overflow]#pass:q[
+** Klayr interoperability
+** Klayrs consensus algorithms
 ]#]
 --
 
 [.card.card-index]
 --
-xref:{url_protocol}index.adoc[[.card-title]#Lisk Protocol# [.card-body.card-content-overflow]#pass:q[
-A high level overview about the underlying protocol of Lisk.
+xref:{url_protocol}index.adoc[[.card-title]#Klayr Protocol# [.card-body.card-content-overflow]#pass:q[
+A high level overview about the underlying protocol of Klayr.
 ]#]
 --
 
@@ -146,7 +146,7 @@ xref:{url_sdk}blockchain-applications.adoc[[.card-title]#Concepts & explanations
 [.card.card-index]
 --
 xref:{url_sdk}guides/app-development/setup.adoc[[.card-title]#Getting Started# [.card-body.card-content-overflow]#pass:q[
-* How to develop a blockchain app with the Lisk SDK
+* How to develop a blockchain app with the Klayr SDK
 * How to create a module
 * How to create a plugin
 ]#]
@@ -172,7 +172,7 @@ xref:{url_core}setup/binary.adoc[[.card-title]#Setting a node up# [.card-body.ca
 
 [.card.card-index]
 --
-xref:{url_service}setup/docker.adoc[[.card-title]#Setting up Lisk Service# [.card-body.card-content-overflow]#pass:q[How to setup Lisk Service with Docker]#]
+xref:{url_service}setup/docker.adoc[[.card-title]#Setting up Klayr Service# [.card-body.card-content-overflow]#pass:q[How to setup Klayr Service with Docker]#]
 --
 
 '''

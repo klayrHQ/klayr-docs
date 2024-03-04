@@ -27,7 +27,7 @@ If you wish to connect to a different node, simply update the API URL defined in
 .index.js
 [source,js]
 ----
-const { apiClient, transactions } = require('@liskhq/lisk-client');
+const { apiClient, transactions } = require('@klayrhq/klayr-client');
 
 let clientCache;
 const nodeAPIURL = 'ws://localhost:8080/ws'
@@ -53,13 +53,13 @@ To calculate the minimum fee of a transaction, first create the respective trans
 A value for the transaction fee is already required to create and sign the transaction.
 
 Therefore, just use an arbitrary default value.
-In this example below, we have used 1 LSK.
+In this example below, we have used 1 KLY.
 This value will be replaced with the calculated minimum fee for the transaction in the next step.
 
 .index.js
 [source,js]
 ----
-const { apiClient, transactions } = require('@liskhq/lisk-client');
+const { apiClient, transactions } = require('@klayrhq/klayr-client');
 
 // ...
 
@@ -67,7 +67,7 @@ const calcMinFee = async (client) => {
 	const signedTxWithSomeFee = await client.transaction.create({
 		moduleID: 1000,
 		assetID: 0,
-		fee: BigInt(transactions.convertLSKToBeddows("1")),
+		fee: BigInt(transactions.convertKLYToBeddows("1")),
 		asset: {
 			helloString: "Hello World!"
 		}
@@ -86,7 +86,7 @@ For the final step, all the above defined functions are called and the calculate
 .index.js
 [source,js]
 ----
-const { apiClient, transactions } = require('@liskhq/lisk-client');
+const { apiClient, transactions } = require('@klayrhq/klayr-client');
 
 // ...
 

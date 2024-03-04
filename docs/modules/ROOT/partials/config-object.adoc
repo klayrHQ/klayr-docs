@@ -6,7 +6,7 @@
         version: "0.0.0", <2>
         minVersion: "0.0.0", <3>
         protocolVersion: "1.1", <4>
-        tempPath: "/tmp/lisk", <5>
+        tempPath: "/tmp/klayr", <5>
         ipc: { enabled: false}, <6>
         genesisConfig: { <7>
             EPOCH_TIME: new Date(Date.UTC(2016, 4, 24, 17, 0, 0, 0)).toISOString(), <8>
@@ -28,21 +28,21 @@
     components: {
         logger: {
             fileLogLevel: "info", <19>
-            logFileName: "logs/lisk.log", <20>
+            logFileName: "logs/klayr.log", <20>
             consoleLogLevel: "none" <21>
         },
         storage: {
-            database: "lisk_dev", <22>
+            database: "klayr_dev", <22>
             host: "localhost", <23>
             port: 5432, <24>
-            user: "lisk", <25>
+            user: "klayr", <25>
             password: "password", <26>
             min: 10, <27>
             max: 25, <28>
             poolIdleTimeout: 30000, <29>
             reapIntervalMillis: 1000, <30>
             logEvents: ["error"], <31>
-            logFileName: "logs/lisk_db.log" <32>
+            logFileName: "logs/klayr_db.log" <32>
         },
         cache: { <33>
             db: 0, <34>
@@ -66,8 +66,8 @@
                 options: {
                     port: 443, <49>
                     address: "0.0.0.0", <50>
-                    key: "./ssl/lisk.key", <51>
-                    cert: "./ssl/lisk.crt", <52>
+                    key: "./ssl/klayr.key", <51>
+                    cert: "./ssl/klayr.crt", <52>
                 },
             },
             options: {
@@ -165,7 +165,7 @@
 <8> Timestamp indicating the initial network start, (`Date.toISOString()`).
 <9> Slot time interval in seconds.
 <10> Maximum number of transactions allowed per block.
-<11> Initial 5 LSK, and decreasing until 1 LSK.
+<11> Initial 5 KLY, and decreasing until 1 KLY.
 <12> Initial Reward.
 <13> Milestone 1.
 <14> Milestone 2.
@@ -175,7 +175,7 @@
 <18> Distance between each milestone.
 <19> Minimum loglevel, that should be logged in the log file.
 <20> Define name and path of the log file.
-Default: logs/lisk.log
+Default: logs/klayr.log
 <21> Minimum loglevel, that should be logged in the console when starting the node.
 <22> The name of the database to use.
 <23> The host address of the database.
@@ -208,12 +208,12 @@ If true, the client IP addresses are understood as the left-most entry in the X-
 <45> If true, the API endpoints of the node are available to public.
 <46> This parameter allows connections to the API by IP.
 Defaults to only allow local host.
-<47> Options for enabling SSL with Lisk HTTP API, (alternative to enabling SSL through a Webserver).
+<47> Options for enabling SSL with Klayr HTTP API, (alternative to enabling SSL through a Webserver).
 <48> Enables SSL for HTTP requests.
-<49> Port to host the Lisk Wallet on, default is 443 but is recommended to use a port above 1024 with IP tables.
-<50> Interface to listen on for the Lisk Wallet.
+<49> Port to host the Klayr Wallet on, default is 443 but is recommended to use a port above 1024 with IP tables.
+<50> Interface to listen on for the Klayr Wallet.
 <51> Required private key to decrypt and verify the SSL Certificate.
-<52> SSL certificate to use with the Lisk Wallet.
+<52> SSL certificate to use with the Klayr Wallet.
 <53> Limits for API connections.
 <54> Maximum of API connections.
 <55> Minimum delay between API calls in ms.

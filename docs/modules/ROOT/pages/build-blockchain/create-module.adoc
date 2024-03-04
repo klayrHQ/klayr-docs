@@ -4,11 +4,11 @@ Mona Bärenfänger <mona@lightcurve.io>
 :sectnums:
 :idprefix:
 :idseparator: -
-:docs_sdk: v5@lisk-sdk::
+:docs_sdk: v5@klayr-sdk::
 // URLs
-:url_github_guides_module: https://github.com/LiskHQ/lisk-sdk-examples/tree/development/guides/02-module/hello_app
-:url_github_nft_module: https://github.com/LiskHQ/lisk-sdk-examples/blob/development/tutorials/nft/blockchain_app/nft_module/index.js
-:url_github_srs_module: https://github.com/LiskHQ/lisk-sdk-examples/blob/development/tutorials/social-recovery/blockchain_app/srs_module/index.js
+:url_github_guides_module: https://github.com/KlayrHQ/klayr-sdk-examples/tree/development/guides/02-module/hello_app
+:url_github_nft_module: https://github.com/KlayrHQ/klayr-sdk-examples/blob/development/tutorials/nft/blockchain_app/nft_module/index.js
+:url_github_srs_module: https://github.com/KlayrHQ/klayr-sdk-examples/blob/development/tutorials/social-recovery/blockchain_app/srs_module/index.js
 
 // Project URLS
 :url_guides_setup: build-blockchain/create-blockchain-app.adoc
@@ -26,9 +26,9 @@ Mona Bärenfänger <mona@lightcurve.io>
 :url_modules_dpos: {docs_sdk}modules/dpos-module.adoc
 :url_advanced_communication: understand-blockchain/endpoints.adoc
 :url_advanced_communication_aliases: {url_advanced_communication}#aliases
-:url_rpc_endpoints: api/lisk-node-rpc.adoc#actions
+:url_rpc_endpoints: api/klayr-node-rpc.adoc#actions
 :url_references_schemas: understand-blockchain/codec-schema.adoc
-:url_references_commander_commands_module: {docs_sdk}references/lisk-commander/commands.adoc#generate-module
+:url_references_commander_commands_module: {docs_sdk}references/klayr-commander/commands.adoc#generate-module
 :url_tutorials_nft: tutorial/nft.adoc
 :url_tutorials_srs: tutorial/srs.adoc
 
@@ -37,7 +37,7 @@ How to create a new xref:{url_intro_modules}[module] for a blockchain applicatio
 .Sample code
 [NOTE]
 ====
-View the complete sample code of this guide on GitHub in the {url_github_guides_module}[Lisk SDK examples repository^].
+View the complete sample code of this guide on GitHub in the {url_github_guides_module}[Klayr SDK examples repository^].
 ====
 
 [TIP]
@@ -64,38 +64,38 @@ The notification includes information about the sender andress and the sent hell
 ====
 To use this guide, the following criteria is assumed:
 
-* Lisk Commander is installed, and a basic blockchain application is already initialized, as explained in the previous guide xref:{url_guides_setup}[].
+* Klayr Commander is installed, and a basic blockchain application is already initialized, as explained in the previous guide xref:{url_guides_setup}[].
 ====
 
 == Generating the module skeleton
 
-While in the root folder of your blockchain application, generate a skeleton for the new module with Lisk Commander.
+While in the root folder of your blockchain application, generate a skeleton for the new module with Klayr Commander.
 
-The command `lisk generate:module` expects 2 arguments:
+The command `klayr generate:module` expects 2 arguments:
 
 . The xref:{url_intro_modules_name}[module name].
 . The xref:{url_intro_modules_id}[module ID].
 Needs to be unique within the application.
 The minimum value is `1000`.
 
-For a complete overview of all available options of the `generate:module` command, visit the xref:{url_references_commander_commands_module}[Lisk Commander command reference].
+For a complete overview of all available options of the `generate:module` command, visit the xref:{url_references_commander_commands_module}[Klayr Commander command reference].
 
 As an example, we use the module name `hello` and the module ID `1000`:
 
 [[generate-module]]
 [source,bash]
 ----
-lisk generate:module hello 1000
+klayr generate:module hello 1000
 ----
 
 This will generate the following files:
 
 ----
 Creating module skeleton with module name "hello" and module ID "1000"
-Using template "lisk-ts"
+Using template "klayr-ts"
 Generating module skeleton.
 Registering module...
-identical .liskrc.json
+identical .klayrrc.json
    create src/app/modules/hello/hello_module.ts
    create test/unit/modules/hello/hello_module.spec.ts
 
@@ -120,7 +120,7 @@ Otherwise, you will run into the following error, when trying to start the appli
 .src/app/modules.ts
 [source,typescript]
 ----
-import { Application } from 'lisk-sdk';
+import { Application } from 'klayr-sdk';
 import { HelloModule } from "./modules/hello/hello_module";
 
 export const registerModules = (app: Application): void => {
@@ -150,7 +150,7 @@ import {
     BeforeBlockApplyContext,
     AfterGenesisBlockApplyContext,
     // GenesisConfig
-} from 'lisk-sdk';
+} from 'klayr-sdk';
 
 export class HelloModule extends BaseModule {
     public actions = {
@@ -225,7 +225,7 @@ The following sections explain how the different components of a module can be u
 
 == The module class
 
-The module class always extends from the `BaseModule`, which is imported from the `lisk-sdk` package.
+The module class always extends from the `BaseModule`, which is imported from the `klayr-sdk` package.
 
 The properties `name` and `id` are pre-filled by the values that were used when <<generate-module,generating the module skeleton>> in the previous step.
 
@@ -298,7 +298,7 @@ Assuming an asset `CreateHelloAsset` has been created for the module, then it wi
 .src/app/modules/hello/hello_module.ts
 [source,typescript]
 ----
-import { BaseModule } from 'lisk-sdk';
+import { BaseModule } from 'klayr-sdk';
 const { CreateHelloAsset } = require('./assets/create_hello_asset');
 
 export class HelloModule extends BaseModule {
@@ -407,7 +407,7 @@ const CHAIN_STATE_HELLO_COUNTER = "hello:helloCounter";
 
 // This schema is used to decode/encode the data of the hello counter from/for the database
 const helloCounterSchema = {
-  $id: "lisk/hello/counter",
+  $id: "klayr/hello/counter",
   type: "object",
   required: ["helloCounter"],
   properties: {
@@ -420,7 +420,7 @@ const helloCounterSchema = {
 
 // This schema is used to decode/encode the data of the asset of the hello transaction from/for the database
 const helloAssetSchema = {
-  $id: "lisk/hello/asset",
+  $id: "klayr/hello/asset",
   type: "object",
   required: ["helloString"],
   properties: {

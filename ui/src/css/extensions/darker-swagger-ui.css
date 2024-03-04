@@ -8,7 +8,7 @@
 
 .swagger-ui a.nostyle,
 .swagger-ui a.nostyle:visited {
-  color: var(--color-ultramarine-blue);
+  color: var(--color-azule);
 }
 
 .base-url {

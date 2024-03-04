@@ -4,9 +4,9 @@ Mona Bärenfänger <mona@lightcurve.io>
 :toc: preamble
 :idseparator: -
 :idprefix:
-:docs_sdk: v5@lisk-sdk::
+:docs_sdk: v5@klayr-sdk::
 // URLs
-:url_github_guides_asset: https://github.com/LiskHQ/lisk-sdk-examples/tree/development/guides/03-asset/hello_app
+:url_github_guides_asset: https://github.com/KlayrHQ/klayr-sdk-examples/tree/development/guides/03-asset/hello_app
 // Project URLs
 :url_guides_setup: build-blockchain/create-blockchain-app.adoc
 :url_guides_module: build-blockchain/create-module.adoc
@@ -16,7 +16,7 @@ Mona Bärenfänger <mona@lightcurve.io>
 :url_intro_modules_asset_schema: {url_intro_modules}#transaction asset schema
 :url_intro_modules_statestore: {url_intro_modules}#the-state-store
 :url_references_schemas: understand-blockchain/codec-schema.adoc
-:url_references_commander_commands_asset: {docs_sdk}references/lisk-commander/commands.adoc#generate-asset
+:url_references_commander_commands_asset: {docs_sdk}references/klayr-commander/commands.adoc#generate-asset
 :url_transaction_asset: glossary.adoc#transaction-asset
 :url_module_asset: glossary.adoc#module-asset
 
@@ -29,7 +29,7 @@ As defined in the xref:{url_guides_setup_helloapp}[Hello World application overv
 .Sample code
 [NOTE]
 ====
-View the complete sample code of this guide on GitHub in the {url_github_guides_asset}[Lisk SDK examples repository^].
+View the complete sample code of this guide on GitHub in the {url_github_guides_asset}[Klayr SDK examples repository^].
 ====
 
 .Prerequisites
@@ -37,13 +37,13 @@ View the complete sample code of this guide on GitHub in the {url_github_guides_
 ====
 To follow this guide, the following criteria below is assumed:
 
-. Lisk Commander is installed, and a basic blockchain application is already initialized, as explained in the guide xref:{url_guides_setup}[].
+. Klayr Commander is installed, and a basic blockchain application is already initialized, as explained in the guide xref:{url_guides_setup}[].
 . a new module `HelloModule` is created, as explained in the previous guide xref:{url_guides_module}[].
 ====
 
 == Generating the asset skeleton
 
-In the root folder of the blockchain application, generate a skeleton for the new asset with Lisk Commander.
+In the root folder of the blockchain application, generate a skeleton for the new asset with Klayr Commander.
 
 The command `generate:asset` expects 3 arguments:
 
@@ -55,24 +55,24 @@ No numbers, hyphens, etc., are allowed.
 It needs to be unique within the module.
 The minimum value is 0.
 
-For a complete overview of all available options of the `generate:asset` command, see the xref:{url_references_commander_commands_asset}[Lisk Commander command reference].
+For a complete overview of all available options of the `generate:asset` command, see the xref:{url_references_commander_commands_asset}[Klayr Commander command reference].
 
 As an example, we will add a new asset `createHello` to the `hello` module:
 
 [[generate-asset]]
 [source,bash]
 ----
-lisk generate:asset hello createHello 0
+klayr generate:asset hello createHello 0
 ----
 
 This will generate the following files:
 
 ----
 Creating asset skeleton with asset name "createHello" and asset ID "0" for module "hello"
-Using template "lisk-ts"
+Using template "klayr-ts"
 Generating asset skeleton.
 Registering asset...
-identical .liskrc.json
+identical .klayrrc.json
    create src/app/modules/hello/assets/create_hello_asset.ts
    create test/unit/modules/hello/assets/create_hello_asset.spec.ts
 
@@ -88,7 +88,7 @@ Open the asset skeleton in `create_hello_asset.ts`:
 .src/app/modules/hello/assets/create_hello_asset.ts
 [source,typescript]
 ----
-import { BaseAsset, ApplyAssetContext, ValidateAssetContext } from 'lisk-sdk';
+import { BaseAsset, ApplyAssetContext, ValidateAssetContext } from 'klayr-sdk';
 
 export class CreateHelloAsset extends BaseAsset {
   public name = 'createHello';
@@ -129,14 +129,14 @@ The following sections describe an example implementation of each component of a
 
 == The asset class
 
-The asset class always extends from the `BaseAsset`, which is imported from the `lisk-sdk` package.
+The asset class always extends from the `BaseAsset`, which is imported from the `klayr-sdk` package.
 
 The properties `name` and `id` are prefilled by the values used when <<generate-asset,generating the asset skeleton>> was completed in the previous step.
 
 .src/app/modules/hello/assets/create_hello_asset.ts
 [source,typescript]
 ----
-import { BaseAsset, ApplyAssetContext, ValidateAssetContext } from 'lisk-sdk';
+import { BaseAsset, ApplyAssetContext, ValidateAssetContext } from 'klayr-sdk';
 
 export class CreateHelloAsset extends BaseAsset {
   public name = 'createHello';
@@ -150,7 +150,7 @@ export class CreateHelloAsset extends BaseAsset {
 
 The xref:{url_intro_modules_asset_schema}[asset schema] defines in which format data is sent in the transaction asset.
 
-TIP: For more information about schemas and how they are used in the Lisk SDK, check out the xref:{url_references_schemas}[].
+TIP: For more information about schemas and how they are used in the Klayr SDK, check out the xref:{url_references_schemas}[].
 
 We expect the following data in a transaction to be able to create a new hello message:
 
@@ -162,7 +162,7 @@ Therefore, the asset schema is adjusted accordingly as shown below:
 [source,typescript]
 ----
 public schema = {
-    $id: 'lisk/hello/asset',
+    $id: 'klayr/hello/asset',
     type: 'object',
     required: ["helloString"], // <1>
     properties: {

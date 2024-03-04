@@ -4,7 +4,7 @@ Mona Bärenfänger <mona@lightcurve.io>
 :toc:
 :idprefix:
 :idseparator: -
-:docs_sdk: v5@lisk-sdk::
+:docs_sdk: v5@klayr-sdk::
 // Project URLs
 :url_default_modules: understand-blockchain/index.adoc#default-modules
 :url_genesis_block: understand-blockchain/architecture.adoc#genesis-block
@@ -35,16 +35,16 @@ If a new module that includes an account schema is then registered with the appl
 
 ----
 $ ./bin/run start
-Starting Lisk hello_app at /Users/mona/.lisk/hello_app.
-12:31:44 INFO lisk-framework: Starting the app - hello_app (module=lisk:app)
-12:31:44 INFO lisk-framework: If you experience any type of error, please open an issue on Lisk GitHub: https://github.com/LiskHQ/lisk-sdk/issues (module=lisk:app)
-12:31:44 INFO lisk-framework: Contribution guidelines can be found at Lisk-sdk: https://github.com/LiskHQ/lisk-sdk/blob/development/docs/CONTRIBUTING.md (module=lisk:app)
-12:31:44 INFO lisk-framework: Booting the application with Lisk Framework(0.1.0) (module=lisk:app)
-12:31:44 INFO lisk-framework: Initializing controller (module=lisk:app)
-12:31:44 INFO lisk-framework: Loading controller (module=lisk:app)
-12:31:44 INFO lisk-framework: Event * was subscribed but not registered to the bus yet. (module=lisk:app)
+Starting Klayr hello_app at /Users/mona/.klayr/hello_app.
+12:31:44 INFO klayr-framework: Starting the app - hello_app (module=klayr:app)
+12:31:44 INFO klayr-framework: If you experience any type of error, please open an issue on Klayr GitHub: https://github.com/KlayrHQ/klayr-sdk/issues (module=klayr:app)
+12:31:44 INFO klayr-framework: Contribution guidelines can be found at Klayr-sdk: https://github.com/KlayrHQ/klayr-sdk/blob/development/docs/CONTRIBUTING.md (module=klayr:app)
+12:31:44 INFO klayr-framework: Booting the application with Klayr Framework(0.1.0) (module=klayr:app)
+12:31:44 INFO klayr-framework: Initializing controller (module=klayr:app)
+12:31:44 INFO klayr-framework: Loading controller (module=klayr:app)
+12:31:44 INFO klayr-framework: Event * was subscribed but not registered to the bus yet. (module=klayr:app)
     TypeError: Cannot read property 'helloMessage' of undefined
-12:31:45 INFO lisk-framework: Application shutdown started (module=lisk:app)
+12:31:45 INFO klayr-framework: Application shutdown started (module=klayr:app)
 {
  "errorCode": 2,
  "message": "process.exit"
@@ -90,7 +90,7 @@ Assuming no custom config is used, the following commands can be used to update 
 
 Remove the old application data:
 
- rm -r ~/.lisk/<YOUR_APP>
+ rm -r ~/.klayr/<YOUR_APP>
 
 Now start the node again:
 
@@ -148,16 +148,16 @@ IMPORTANT: Ensure the file `accounts.json` is securely stored somewhere safe, as
 }
 ----
 
-== Manual genesis block creation (alternative with Lisk Genesis)
+== Manual genesis block creation (alternative with Klayr Genesis)
 
 The `genesis` library can be used to generate a valid genesis block based on the above parameters.
-It can be imported directly from the `lisk-sdk` package, or alternatively it can be installed as a separate package `@liskhq/lisk-genesis`.
+It can be imported directly from the `klayr-sdk` package, or alternatively it can be installed as a separate package `@klayrhq/klayr-genesis`.
 
 [source,bash]
 ----
-npm install lisk-sdk
+npm install klayr-sdk
 # or
-npm install @liskhq/lisk-genesis
+npm install @klayrhq/klayr-genesis
 ----
 
 === Including the account asset schemas
@@ -169,7 +169,7 @@ To achieve this, first import all relevant modules to get their account schemas:
 
 [source,js]
 ----
-const { TokenModule, DPoSModule, KeysModule, SequenceModule, genesis, passphrase, cryptography, configDevnet } = require('lisk-sdk');
+const { TokenModule, DPoSModule, KeysModule, SequenceModule, genesis, passphrase, cryptography, configDevnet } = require('klayr-sdk');
 const { MyModule } = require('./my-module');
 
 // Create the accountAssetSchemas
@@ -338,7 +338,7 @@ console.log(genesisBlock);
 .Full example: How to generate a genesis block
 [source,js]
 ----
-const { TokenModule, DPoSModule, KeysModule, SequenceModule, genesis, passphrase, cryptography, configDevnet } = require('lisk-sdk');
+const { TokenModule, DPoSModule, KeysModule, SequenceModule, genesis, passphrase, cryptography, configDevnet } = require('klayr-sdk');
 const { MyModule } = require('./my-module');
 
 // Create the accountAssetSchemas

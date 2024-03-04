@@ -6,19 +6,19 @@ Mona Bärenfänger <mona@lightcurve.io>
 :idprefix:
 :idseparator: -
 :experimental:
-:docs_sdk: v5@lisk-sdk::
+:docs_sdk: v5@klayr-sdk::
 // URLs
-:url_example_helloapp: https://github.com/LiskHQ/lisk-sdk-examples/tree/development/guides/04-plugin/hello_app
+:url_example_helloapp: https://github.com/KlayrHQ/klayr-sdk-examples/tree/development/guides/04-plugin/hello_app
 // Project URLS
-:url_references_elements: {docs_sdk}references/lisk-elements/index.adoc
-:url_references_client: {docs_sdk}references/lisk-elements/client.adoc
-:url_references_apiclient: {docs_sdk}references/lisk-elements/api-client.adoc
+:url_references_elements: {docs_sdk}references/klayr-elements/index.adoc
+:url_references_client: {docs_sdk}references/klayr-elements/client.adoc
+:url_references_apiclient: {docs_sdk}references/klayr-elements/api-client.adoc
 :url_guides_config: build-blockchain/configure-app.adoc#rpc
 
 The API of a blockchain node typically returns all requested transactions and blocks encoded.
 To be readable, they need to be decoded into JS or JSON compatible objects.
 
-Blocks and transactions can be decoded conveniently with the xref:{url_references_apiclient}[apiClient] library of the Lisk SDK.
+Blocks and transactions can be decoded conveniently with the xref:{url_references_apiclient}[apiClient] library of the Klayr SDK.
 
 == Connecting a node with the API client
 
@@ -28,11 +28,11 @@ This can be achieved either via a WebSocket (local or remote), or an IPC (only o
 In most scenarios, it is beneficial to have a local node running (for example, the {url_example_helloapp}[Hello World application^]) to which the client can send the API requests.
 The RPC options in the config should be enabled and configured accordingly, see xref:{url_guides_config}[RPC configuration of a node].
 
-TIP: The `apiClient` is also included in the NPM package xref:{url_references_client}[`@liskhq/lisk-client`].
+TIP: The `apiClient` is also included in the NPM package xref:{url_references_client}[`@klayrhq/klayr-client`].
 
 [source,js]
 ----
-const { apiClient } = require('@liskhq/lisk-client');
+const { apiClient } = require('@klayrhq/klayr-client');
 let clientCache;
 const nodeAPIURL = 'ws://localhost:8080/ws';
 
@@ -52,7 +52,7 @@ The following script shows how to decode & encode a block by a given ID.
 .`getBlockById.js`:
 [source%linenums,js,highlight='1..9|2..4|6..8']
 ----
-const { apiClient } = require('@liskhq/lisk-client');
+const { apiClient } = require('@klayrhq/klayr-client');
 let clientCache;
 const nodeAPIURL = 'ws://localhost:8080/ws';
 
@@ -159,7 +159,7 @@ Create a new file `getTxById.js`:
 .Example for decoding a transaction by a given ID
 [source,js]
 ----
-const { apiClient } = require('@liskhq/lisk-client');
+const { apiClient } = require('@klayrhq/klayr-client');
 let clientCache;
 const nodeAPIURL = 'ws://localhost:8080/ws';
 

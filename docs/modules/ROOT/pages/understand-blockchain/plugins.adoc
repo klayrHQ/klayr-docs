@@ -5,12 +5,12 @@ Mona Bärenfänger <mona@lightcurve.io>
 :idprefix:
 :idseparator: -
 :imagesdir: ../../assets/images
-:docs_sdk: v5@lisk-sdk::
+:docs_sdk: v5@klayr-sdk::
 // URLs
-:url_github_hello_plugin: https://github.com/LiskHQ/lisk-sdk-examples/blob/development/tutorials/hello-world/blockchain_app/hello_plugin/index.js
-:url_github_nft_plugin: https://github.com/LiskHQ/lisk-sdk-examples/blob/development/tutorials/nft/blockchain_app/nft_api_plugin/index.js
-:url_github_srs_api_plugin: https://github.com/LiskHQ/lisk-sdk-examples/blob/development/tutorials/social-recovery/blockchain_app/plugins/srs_api_plugin/index.js
-:url_github_srs_data_plugin: https://github.com/LiskHQ/lisk-sdk-examples/blob/development/tutorials/social-recovery/blockchain_app/plugins/srs_data_plugin/index.js
+:url_github_hello_plugin: https://github.com/KlayrHQ/klayr-sdk-examples/blob/development/tutorials/hello-world/blockchain_app/hello_plugin/index.js
+:url_github_nft_plugin: https://github.com/KlayrHQ/klayr-sdk-examples/blob/development/tutorials/nft/blockchain_app/nft_api_plugin/index.js
+:url_github_srs_api_plugin: https://github.com/KlayrHQ/klayr-sdk-examples/blob/development/tutorials/social-recovery/blockchain_app/plugins/srs_api_plugin/index.js
+:url_github_srs_data_plugin: https://github.com/KlayrHQ/klayr-sdk-examples/blob/development/tutorials/social-recovery/blockchain_app/plugins/srs_data_plugin/index.js
 // Project URLs
 :url_advanced_architecture_config: understand-blockchain/architecture.adoc#configuration
 :url_advanced_communication: understand-blockchain/endpoints.adoc
@@ -58,12 +58,12 @@ If you wish to view an example of a fully implemented plugin, check out the foll
 == Adding a plugin to the application
 
 Plugins need to be registered to become available in the application.
-If the application was xref:{url_guides_setup}[bootstrapped] with Lisk Commander, they are registered in the file `src/app/plugins.ts`.
+If the application was xref:{url_guides_setup}[bootstrapped] with Klayr Commander, they are registered in the file `src/app/plugins.ts`.
 
 .Example: How to register a plugin with the application in `plugins.ts`
 [source,typescript]
 ----
-import { Application } from 'lisk-sdk';
+import { Application } from 'klayr-sdk';
 import { SomePlugin } from "some-plugin"; // <1>
 import { OtherPlugin } from "other-plugin";
 
@@ -90,11 +90,11 @@ image::intro/plugin-diagram.png[plugin-diagram ,500 ,align="center"]
 == The plugin class
 
 All custom plugins must extend the `BasePlugin` exposed by the SDK.
-The interface for the `BasePlugin` is described in the xref:{url_references_framework_baseplugin}[Lisk Framework reference].
+The interface for the `BasePlugin` is described in the xref:{url_references_framework_baseplugin}[Klayr Framework reference].
 
 [source,js]
 ----
-const { BasePlugin } = require("lisk-sdk");
+const { BasePlugin } = require("klayr-sdk");
 
 class ForgerPlugin extends BasePlugin {
 
@@ -144,7 +144,7 @@ The configuration options can then be accessed in the plugin under the variable 
 ----
 get defaults() {
     return {
-        $id: '#/plugins/lisk-dashboard/config',
+        $id: '#/plugins/klayr-dashboard/config',
         type: 'object',
         properties: {
             applicationName: {
@@ -171,7 +171,7 @@ get defaults() {
             applicationUrl: 'ws://localhost:8080/ws',
             port: 4005,
             host: '127.0.0.1',
-            applicationName: 'Lisk',
+            applicationName: 'Klayr',
         },
     }
 };
