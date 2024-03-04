@@ -1,12 +1,12 @@
 = SDK Architecture
 Mona Bärenfänger <mona@lightcurve.io>
 //Settings
-:page-aliases: lisk-framework/index.adoc
+:page-aliases: klayr-framework/index.adoc
 :toc: preamble
 :idprefix:
 :idseparator: -
 :imagesdir: ../../images
-:docs_sdk: v5@lisk-sdk::
+:docs_sdk: v5@klayr-sdk::
 // URLs
 :nodejs: https://nodejs.org/en/
 // Project URLs
@@ -17,17 +17,17 @@ Mona Bärenfänger <mona@lightcurve.io>
 :url_guides_genesis_block: build-blockchain/create-genesis-block.adoc
 :url_guides_setup: build-blockchain/create-blockchain-app.adoc
 :url_references_config: {docs_sdk}config.adoc
-:url_references_commander: {docs_sdk}references/lisk-commander/index.adoc
-:url_references_elements: {docs_sdk}references/lisk-elements/index.adoc
+:url_references_commander: {docs_sdk}references/klayr-commander/index.adoc
+:url_references_elements: {docs_sdk}references/klayr-elements/index.adoc
 :url_references_framework: {docs_sdk}references/framework-class-interfaces.adoc
 :url_references_framework_basemodule: {url_references_framework}#the-basemodule
-:url_protocol: understand-blockchain/lisk-protocol/index.adoc
-:url_protocol_genesis_block: understand-blockchain/lisk-protocol/blocks.adoc#genesis-block
-:url_lisk_sdk: glossary.adoc#lisk-sdk
-:url_lisk_framework: glossary.adoc#lisk-framework
+:url_protocol: understand-blockchain/klayr-protocol/index.adoc
+:url_protocol_genesis_block: understand-blockchain/klayr-protocol/blocks.adoc#genesis-block
+:url_klayr_sdk: glossary.adoc#klayr-sdk
+:url_klayr_framework: glossary.adoc#klayr-framework
 
-The xref:{url_lisk_sdk}[Lisk SDK] operates on the {nodejs}[Node.js^] runtime and consists primarily of an application framework (xref:{url_lisk_framework}[Lisk Framework]).
-It contains a collection of libraries providing blockchain application functionalities (xref:{url_references_elements}[Lisk Elements]), and a powerful Command Line Interface (xref:{url_references_commander}[Lisk Commander]), which allows developers to bootstrap and manage their xref:{url_introduction_bapps}[].
+The xref:{url_klayr_sdk}[Klayr SDK] operates on the {nodejs}[Node.js^] runtime and consists primarily of an application framework (xref:{url_klayr_framework}[Klayr Framework]).
+It contains a collection of libraries providing blockchain application functionalities (xref:{url_references_elements}[Klayr Elements]), and a powerful Command Line Interface (xref:{url_references_commander}[Klayr Commander]), which allows developers to bootstrap and manage their xref:{url_introduction_bapps}[].
 
 image::diagram_sdk.png[Diagram , 600 ,align="center"]
 
@@ -36,12 +36,12 @@ image::diagram_sdk.png[Diagram , 600 ,align="center"]
 [width="100%",cols="23%,77%",options="header",]
 |===
 | Component | Description
-| xref:{url_references_framework}[Lisk Framework] | Lisk Framework is an application framework responsible for establishing and maintaining the interactions between the different xref:{url_introduction_bapps_diagram}[components of a blockchain application].
+| xref:{url_references_framework}[Klayr Framework] | Klayr Framework is an application framework responsible for establishing and maintaining the interactions between the different xref:{url_introduction_bapps_diagram}[components of a blockchain application].
 
-| xref:{url_references_elements}[Lisk Elements] | Lisk Elements is a collection of libraries, each of them implements a certain type of blockchain application functionality such as cryptography, transactions, p2p, etc.
+| xref:{url_references_elements}[Klayr Elements] | Klayr Elements is a collection of libraries, each of them implements a certain type of blockchain application functionality such as cryptography, transactions, p2p, etc.
 Each library is designed to be compatible with xref:{url_protocol}[].
 
-| xref:{url_references_commander}[Lisk Commander] | Lisk Commander is a command line tool which provides various commands to simplify the development and management of blockchain applications.
+| xref:{url_references_commander}[Klayr Commander] | Klayr Commander is a command line tool which provides various commands to simplify the development and management of blockchain applications.
 For example, it allows to xref:{url_guides_setup}[bootstrap] a complete blockchain application with just 1 command.
 |===
 

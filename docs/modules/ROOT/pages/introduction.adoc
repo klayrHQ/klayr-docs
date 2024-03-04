@@ -1,4 +1,4 @@
-= The Lisk ecosystem
+= The Klayr ecosystem
 :toc:
 :toclevels: 4
 :glossary-tooltip: title
@@ -6,21 +6,21 @@
 
 == General Introduction
 
-=== Lisk Introduction
+=== Klayr Introduction
 
-High level overview introduction to Lisk in general.
-Should explain what is Lisk, what makes Lisk different, what are blockchain applications and more.
+High level overview introduction to Klayr in general.
+Should explain what is Klayr, what makes Klayr different, what are blockchain applications and more.
 
-==== How Lisk is Different
+==== How Klayr is Different
 ==== Introduction to Blockchain Applications
-=== Lisk Ecosystem
-=== Lisk public Networks
-=== Lisk Platform
-=== Lisk SDK
+=== Klayr Ecosystem
+=== Klayr public Networks
+=== Klayr Platform
+=== Klayr SDK
 === Validator selection algorithms
-==== Lisk DPoS
-==== Lisk PoA
-=== The Lisk Protocol
+==== Klayr DPoS
+==== Klayr PoA
+=== The Klayr Protocol
 
 == For Blockchain Developers
 
@@ -48,14 +48,14 @@ This is the answer.
 
 === Public APIs
 
-List of public Lisk Service API:
+List of public Klayr Service API:
 
 * HTTP
 * WS
 
-=== How to Communicate / Interact with a Lisk Blockchain Network
+=== How to Communicate / Interact with a Klayr Blockchain Network
 
-* Lisk Core
+* Klayr Core
 ** Setup
 *** Connect to Testnet
 *** Connect to Mainnet
@@ -65,8 +65,8 @@ List of public Lisk Service API:
 *** HTTP API Plugin
 ** Management
 *** How to sign transaction offline
-*** How to secure a Lisk node
-* Lisk Service
+*** How to secure a Klayr node
+* Klayr Service
 ** Setup
 *** Connect to Testnet
 *** Connect to Mainnet

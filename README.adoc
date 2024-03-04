@@ -5,13 +5,13 @@
 // External URLs:
 :url_antora_ui: https://gitlab.com/antora/antora-ui-default
 :url_antora_ui_docs: https://docs.antora.org/antora-ui-default/
-:url_github_docs: git@github.com:LiskHQ/lisk-docs.git
+:url_github_docs: git@github.com:KlayrHQ/klayr-docs.git
 :url_antora: https://antora.org/
 :url_antora_directories: https://docs.antora.org/antora/latest/standard-directories/
-:url_docs: https://lisk.com/documentation
-:url_docs_staging: https://staginglisk.com/documentation
-:url_docs_gitpage: https://liskhq.github.io/lisk-docs
-:url_github_docs: https://github.com/LiskHQ/lisk-docs
+:url_docs: https://klayr.com/documentation
+:url_docs_staging: https://stagingklayr.com/documentation
+:url_docs_gitpage: https://klayrhq.github.io/klayr-docs
+:url_github_docs: https://github.com/KlayrHQ/klayr-docs
 :url_gitlab_antora_extensions: https://gitlab.com/antora/antora-asciidoctor-extensions
 // Project URLs:
 :url_contributing: contributing.adoc
@@ -21,7 +21,7 @@
 :url_staging_playbook: {url_staging}#the-playbook-file
 :url_style_asciidoc: styleguide:asciidoc.adoc
 
-Lisk uses {url_antora}[Antora^] as a documentation generator.
+Klayr uses {url_antora}[Antora^] as a documentation generator.
 
 == Structure
 
@@ -29,7 +29,7 @@ The internal structure of `development` and `main` branch.
 
 === The `docs/` folder
 
-The source content for the general Lisk documentation is located in the `docs/` folder.
+The source content for the general Klayr documentation is located in the `docs/` folder.
 
 The file structure follows the expected structure for Antora documentation, see: {url_antora_directories}.
 
@@ -43,7 +43,7 @@ The UI is based on the {url_antora_ui}[Antora default UI^] (see also {url_antora
 
 It is customized as listed in the following points below:
 
-* Updated the CSS to improve the UX and follow the Lisk brand styleguide.
+* Updated the CSS to improve the UX and follow the Klayr brand styleguide.
 * Added additional features, such as:
 ** Algolia site search
 ** Dark theme
@@ -55,9 +55,9 @@ It is customized as listed in the following points below:
 === The `build/` folder
 The `build` folder contains the following:
 
-* ...the `site.yml` file, which is used to generate the Lisk documentation using Antora.
+* ...the `site.yml` file, which is used to generate the Klayr documentation using Antora.
 * ...the `searchdocs-scraper` folder, for creating the search index.
-* ...the `lib` folder which stores the Asciidoc extensions that are used in the Lisk documentation.
+* ...the `lib` folder which stores the Asciidoc extensions that are used in the Klayr documentation.
 
 ----
 .
@@ -77,7 +77,7 @@ Results are pushed to the `git-page` branch.
 
 == Product-specific docs
 
-There are additional content sources, which each store the documentation for a specific software product of Lisk.
+There are additional content sources, which each store the documentation for a specific software product of Klayr.
 
 === Content sources
 

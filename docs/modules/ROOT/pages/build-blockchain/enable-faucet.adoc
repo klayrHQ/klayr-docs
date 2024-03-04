@@ -7,7 +7,7 @@ Mona Bärenfänger <mona@lightcurve.io>
 :idseparator: -
 :sectnums:
 :experimental:
-:docs_sdk: v5@lisk-sdk::
+:docs_sdk: v5@klayr-sdk::
 // URLs
 :url_recaptcha_keys: https://developers.google.com/recaptcha/docs/faq#id-like-to-run-automated-tests-with-recaptcha.-what-should-i-do
 :url_faucet: http://localhost:4004
@@ -34,7 +34,7 @@ To register the Faucet plugin, first install it with NPM:
 
 [source,bash]
 ----
-npm i @liskhq/lisk-framework-faucet-plugin
+npm i @klayrhq/klayr-framework-faucet-plugin
 ----
 
 Now open `plugins.ts`, import the Faucet plugin, and register it with the application as shown below:
@@ -43,8 +43,8 @@ Now open `plugins.ts`, import the Faucet plugin, and register it with the applic
 [source,typescript]
 ----
 /* eslint-disable @typescript-eslint/no-empty-function */
-import { Application } from 'lisk-sdk';
-import { FaucetPlugin } from "@liskhq/lisk-framework-faucet-plugin";
+import { Application } from 'klayr-sdk';
+import { FaucetPlugin } from "@klayrhq/klayr-framework-faucet-plugin";
 // @ts-expect-error Unused variable error happens here until at least one module is registered
 export const registerPlugins = (app: Application): void => {
     app.registerPlugin(FaucetPlugin);
@@ -70,12 +70,12 @@ For example, use one of the genesis delegates for the faucet account, e.g. the f
 ]
 ----
 
-Use Lisk Commander to encrypt the passphrase of the account with a password.
+Use Klayr Commander to encrypt the passphrase of the account with a password.
 Save the password securely as it will be required to enable and disable the faucet later.
 
 [source,bash]
 ----
-$ lisk passphrase:encrypt
+$ klayr passphrase:encrypt
 ? Please enter passphrase:  [hidden]
 ? Please re-enter passphrase:  [hidden]
 ? Please enter password:  [hidden] # <1>
@@ -95,7 +95,7 @@ Add the required configuration options for the faucet plugin under the key `plug
 
 The {url_recaptcha_keys}[free site key and secret key for reCAPTCHA^] are used below for testing purposes.
 
-.~/.lisk/lns/config/default/config.json
+.~/.klayr/lns/config/default/config.json
 [source,json]
 ----
 "plugins": {
@@ -156,11 +156,11 @@ Via the JS script::
 --
 Alternatively, choose a different method to send an RPC request to the node, for example use the `apiClient` as described below.
 
-Use the `apiClient` of the `lisk-client` package and write a small script to invoke the action:
+Use the `apiClient` of the `klayr-client` package and write a small script to invoke the action:
 
 [source,js]
 ----
-const { apiClient } = require('@liskhq/lisk-client');
+const { apiClient } = require('@klayrhq/klayr-client');
 let clientCache;
 const getClient = async () => {
   if (!clientCache) {

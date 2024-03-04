@@ -13,9 +13,9 @@ forger.db::
 Stores forging data which is unique to each delegate.
 Important for enabling forging.
 
-All databases are located under `~/.lisk/BAPP-NAME/data/`
+All databases are located under `~/.klayr/BAPP-NAME/data/`
 
-If plugins are registered in the application, they will have a separate key-value store for each plugin for the plugin-specific off-chain data under `~/.lisk/BAPP-NAME/plugins/data/`.
+If plugins are registered in the application, they will have a separate key-value store for each plugin for the plugin-specific off-chain data under `~/.klayr/BAPP-NAME/plugins/data/`.
 
 == Resetting the blockchain
 
@@ -57,7 +57,7 @@ USAGE
 
 OPTIONS
   -d, --data-path=data-path  Directory path to specify where the node data is stored. Environment variable
-                             "LISK_DATA_PATH" can also be used.
+                             "KLAYR_DATA_PATH" can also be used.
 
   -o, --output=output        The output directory. Default will set to current working directory.
 
@@ -92,12 +92,12 @@ ARGUMENTS
 
 OPTIONS
   -d, --data-path=data-path  Directory path to specify where the node data is stored. Environment variable
-                             "LISK_DATA_PATH" can also be used.
+                             "KLAYR_DATA_PATH" can also be used.
 
   -f, --force                Delete and overwrite existing blockchain data
 
 EXAMPLES
   blockchain:import ./path/to/blockchain.db.tar.gz
-  blockchain:import ./path/to/blockchain.db.tar.gz --data-path ./lisk/
-  blockchain:import ./path/to/blockchain.db.tar.gz --data-path ./lisk/ --force
+  blockchain:import ./path/to/blockchain.db.tar.gz --data-path ./klayr/
+  blockchain:import ./path/to/blockchain.db.tar.gz --data-path ./klayr/ --force
 ----

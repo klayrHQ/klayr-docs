@@ -1,27 +1,27 @@
 :root {
-  --navbar_hover-background: var(--color-zodiac-blue);
+  --navbar_hover-background: var(--color-dark-blue);
   /* base */
-  --body-background: var(--color-zodiac-blue);
-  --panel-background: var(--color-zodiac-blue);
+  --body-background: var(--color-dark-blue);
+  --panel-background: var(--color-dark-blue);
   --panel-border-color: var(--color-second-blue);
-  --scrollbar-thumb-color: var(--color-ink-blue);
+  --scrollbar-thumb-color: var(--color-azule);
   /* fonts */
   --body-font-color: var(--color-silver-gray);
   /* doc */
   --doc-font-color: var(--color-silver-gray);
   --example-border-color: var(--color-second-blue);
   --heading-font-color: var(--color-white);
-  --link-font-color: var(--color-ultramarine-blue);
-  --link_hover-font-color: var(--color-ultramarine-blue);
+  --link-font-color: var(--color-azule);
+  --link_hover-font-color: var(--color-azule);
   --link_unresolved-font-color: var(--important-color);
-  --caption-font-color: var(--color-ufo-green);
-  --table-footer-background: linear-gradient(to bottom, var(--color-zodiac-blue) 0%, var(--color-black) 100%);
+  --caption-font-color: var(--color-volt);
+  --table-footer-background: linear-gradient(to bottom, var(--color-dark-blue) 0%, var(--color-black) 100%);
   /* navbar */
-  --navbar-background: var(--color-zodiac-blue);
-  --navbar-font-color: var(--color-ultramarine-blue);
-  --navbar_hover-background: var(--color-zodiac-blue);
-  --navbar-button-background: var(--color-zodiac-blue);
-  --navbar-menu-background: var(--color-zodiac-blue);
+  --navbar-background: var(--color-dark-blue);
+  --navbar-font-color: var(--color-azule);
+  --navbar_hover-background: var(--color-dark-blue);
+  --navbar-button-background: var(--color-dark-blue);
+  --navbar-menu-background: var(--color-dark-blue);
   --navbar-menu-font-color: var(--body-font-color);
   --navbar-menu_hover-background: var(--color-second-blue);
   /* toolbar */
@@ -30,16 +30,16 @@
   --toolbar-border-color: var(--color-second-blue);
   --page-version-menu-background: var(--color-black);
   /* nav */
-  --nav-background: var(--color-zodiac-blue);
+  --nav-background: var(--color-dark-blue);
   --nav-secondary-background: var(--color-black);
   --nav-muted-color: var(--color-athens-white);
   --nav-panel-divider-color: var(--color-second-blue);
   /*  footer  */
-  --footer-background: var(--color-zodiac-blue);
+  --footer-background: var(--color-dark-blue);
   --footer-font-color: var(--color-athens-white);
   --footer-link-font-color: var(--color-platinum-gray);
   /* docsearch */
-  --docsearch-primary-color: #5468ff;
+  --docsearch-primary-color: var(--color-azule);
   --docsearch-spacing: 12px;
   --docsearch-icon-stroke-width: 1.4;
   --docsearch-highlight-color: var(--docsearch-primary-color);

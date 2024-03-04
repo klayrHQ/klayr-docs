@@ -6,29 +6,29 @@ Mona Bärenfänger <mona@lightcurve.io>
 :idseparator: -
 :sectnums:
 :sectnumlevels: 2
-:docs_sdk: v5@lisk-sdk::
+:docs_sdk: v5@klayr-sdk::
 // URLs
-:url_lisk_wallet: https://lisk.com/wallet
+:url_klayr_wallet: https://klayr.com/wallet
 :url_wikipedia_password_strength: https://en.wikipedia.org/wiki/Password_strength#Guidelines_for_strong_passwords
 // Project URLs
 :url_guides_config: build-blockchain/configure-app.adoc
-:url_guides_setup_bootstrap: build-blockchain/create-blockchain-app.adoc#bootstrapping-a-new-blockchain-application-with-lisk-commander
-:url_commander_commands: {docs_sdk}references/lisk-commander/commands.adoc
+:url_guides_setup_bootstrap: build-blockchain/create-blockchain-app.adoc#bootstrapping-a-new-blockchain-application-with-klayr-commander
+:url_commander_commands: {docs_sdk}references/klayr-commander/commands.adoc
 :url_framework_dashbobardplugin: {docs_sdk}plugins/dashboard-plugin.adoc
-:url_elements: {docs_sdk}references/lisk-elements/index.adoc
-:url_elements_crytpography: {docs_sdk}references/lisk-elements/cryptography.adoc
+:url_elements: {docs_sdk}references/klayr-elements/index.adoc
+:url_elements_crytpography: {docs_sdk}references/klayr-elements/cryptography.adoc
 :url_explanations_consensus: {docs_sdk}modules/dpos-module.adoc#forging
 :url_explanations_consensus_register: {docs_sdk}modules/dpos-module.adoc#delegate_registration
 :url_references_cli_forgingconfig: {docs_sdk}application-cli.adoc#forgingconfig
 :url_references_cli_forgingenable: {docs_sdk}application-cli.adoc#forgingenable
-:url_protocol_block_forgers: understand-blockchain/lisk-protocol/blocks.adoc#forgers
-:url_protocol_dpos: understand-blockchain/lisk-protocol/consensus-algorithm.adoc
-:url_protocol_delegate_selection: understand-blockchain/lisk-protocol/consensus-algorithm.adoc#delegate_selection
-:url_protocol_blocks_punishment: understand-blockchain/lisk-protocol/consensus-algorithm.adoc#punishment
-:url_protocol_tx_registerdelegegate: understand-blockchain/lisk-protocol/transactions.adoc#delegate-registration
-:url_sdk_protocol_puninshment: understand-blockchain/lisk-protocol/consensus-algorithm.adoc#punishment
-:url_ref_cli: v3@lisk-core::reference/cli.adoc
-:url_mgmt_accounts: v3@lisk-core::management/account-management.adoc#how-to-voteunvote-delegates
+:url_protocol_block_forgers: understand-blockchain/klayr-protocol/blocks.adoc#forgers
+:url_protocol_dpos: understand-blockchain/klayr-protocol/consensus-algorithm.adoc
+:url_protocol_delegate_selection: understand-blockchain/klayr-protocol/consensus-algorithm.adoc#delegate_selection
+:url_protocol_blocks_punishment: understand-blockchain/klayr-protocol/consensus-algorithm.adoc#punishment
+:url_protocol_tx_registerdelegegate: understand-blockchain/klayr-protocol/transactions.adoc#delegate-registration
+:url_sdk_protocol_puninshment: understand-blockchain/klayr-protocol/consensus-algorithm.adoc#punishment
+:url_ref_cli: v3@klayr-core::reference/cli.adoc
+:url_mgmt_accounts: v3@klayr-core::management/account-management.adoc#how-to-voteunvote-delegates
 
 How to enable forging on a node as a delegate.
 For more information about forging, please check the xref:{url_explanations_consensus}[forging] explanations on the DPoS module page.
@@ -38,7 +38,7 @@ For more information about forging, please check the xref:{url_explanations_cons
 Before it is possible to enable forging on a node, it is required to register as a delegate.
 This is achieved by choosing a unique delegate name, and posting a corresponding xref:{url_protocol_tx_registerdelegegate}[Register Delegate] transaction to the network.
 
-TIP: There are many possibilities to post the transaction, use the one you prefer: {url_lisk_wallet}[Lisk Desktop^], xref:{url_elements}[Lisk Elements], or the xref:{url_framework_dashbobardplugin}[].
+TIP: There are many possibilities to post the transaction, use the one you prefer: {url_klayr_wallet}[Klayr Desktop^], xref:{url_elements}[Klayr Elements], or the xref:{url_framework_dashbobardplugin}[].
 
 An option is to create the transaction object with the application CLI:
 
@@ -46,15 +46,15 @@ An option is to create the transaction object with the application CLI:
 
 [tabs]
 =====
-Lisk Core::
+Klayr Core::
 +
 --
 [source,bash]
 ----
-lisk-core start
+klayr-core start
 ----
 --
-Lisk app::
+Klayr app::
 +
 --
 [source,bash]
@@ -68,18 +68,18 @@ Lisk app::
 
 [tabs]
 =====
-Lisk Core::
+Klayr Core::
 +
 --
 [source,bash]
 ----
-lisk-core transaction:create 5 0 1100000000 --asset='{"username":"myname"}'
+klayr-core transaction:create 5 0 1100000000 --asset='{"username":"myname"}'
 ? Please enter passphrase:  [hidden]
 ? Please re-enter passphrase:  [hidden]
 {"transaction":"0805100018032080d6c28c042a20bad983c72bed43fd274f852658c298b74c71ab6fc50508879fef309e3836384b32080a066d796e616d653a4045afdd04d0c0bc6e548c0915d5fabef1311b1b75b1eb919a43b88dab539e7b6a99b9075f5d6382ec3bbebfca3301651a15d8af3f999d5b6fa7873b3969cd3d0c"}
 ----
 --
-Lisk app::
+Klayr app::
 +
 --
 [source,bash]
@@ -96,16 +96,16 @@ Lisk app::
 
 [tabs]
 =====
-Lisk Core::
+Klayr Core::
 +
 --
 [source,bash]
 ----
-lisk-core transaction:send 0805100018032080d6c28c042a20bad983c72bed43fd274f852658c298b74c71ab6fc50508879fef309e3836384b32080a066d796e616d653a4045afdd04d0c0bc6e548c0915d5fabef1311b1b75b1eb919a43b88dab539e7b6a99b9075f5d6382ec3bbebfca3301651a15d8af3f999d5b6fa7873b3969cd3d0c
+klayr-core transaction:send 0805100018032080d6c28c042a20bad983c72bed43fd274f852658c298b74c71ab6fc50508879fef309e3836384b32080a066d796e616d653a4045afdd04d0c0bc6e548c0915d5fabef1311b1b75b1eb919a43b88dab539e7b6a99b9075f5d6382ec3bbebfca3301651a15d8af3f999d5b6fa7873b3969cd3d0c
 Transaction with id: '1809da284fe26dba90d34dc3aab837a32d3c291a4ca78a9bfa263f927c69598a' received by node.
 ----
 --
-Lisk app::
+Klayr app::
 +
 --
 [source,bash]
@@ -122,15 +122,15 @@ Use the `account:get` command to verify the account has now registered a delegat
 
 [tabs]
 =====
-Lisk Core::
+Klayr Core::
 +
 --
 [source,bash]
 ----
-lisk-core account:get ed86183c22f8399f7aa28f7d2c2f1680224f7281 --pretty
+klayr-core account:get ed86183c22f8399f7aa28f7d2c2f1680224f7281 --pretty
 ----
 --
-Lisk app::
+Klayr app::
 +
 --
 [source,bash]
@@ -190,7 +190,7 @@ To create the delegate configuration data,
 . First create a custom config file
 . Then use one of the following alternatives to generate the delegate config data:
 ** <<option-1-via-application-cli>>
-** <<option-2-with-lisk-commander>>
+** <<option-2-with-klayr-commander>>
 . Lastly, add the delegate config data to the custom config file.
 
 === Creating a custom config file
@@ -199,15 +199,15 @@ First copy the existing config file for the respective network.
 
 [tabs]
 ====
-Lisk Core::
+Klayr Core::
 +
 --
 [source,bash]
 ----
-cp ~/lisk-core/config/mainnet/config.json ~/lisk-core/config/mainnet/custom-config.json
+cp ~/klayr-core/config/mainnet/config.json ~/klayr-core/config/mainnet/custom-config.json
 ----
 --
-Lisk app::
+Klayr app::
 +
 --
 Navigate to the app root folder, then
@@ -221,23 +221,23 @@ cp config/default/config.json config/default/custom-config.json
 
 === Option 1: via application CLI
 
-If the blockchain application was xref:{url_guides_setup_bootstrap}[bootstrapped with Lisk Commander], it is possible to conveniently generate the relevant forging data using the command xref:{url_references_cli_forgingconfig}[forging:config].
+If the blockchain application was xref:{url_guides_setup_bootstrap}[bootstrapped with Klayr Commander], it is possible to conveniently generate the relevant forging data using the command xref:{url_references_cli_forgingconfig}[forging:config].
 
 [tabs]
 =====
-Lisk Core::
+Klayr Core::
 +
 --
 [source,bash]
 ----
-$ lisk-core forging:config --output ./delegate_config.json
+$ klayr-core forging:config --output ./delegate_config.json
 ? Please enter passphrase:  [hidden]        # <1>
 ? Please re-enter passphrase:  [hidden]
 ? Please enter password:  [hidden]          # <2>
 ? Please re-enter password:  [hidden]
 ----
 --
-Lisk app::
+Klayr app::
 +
 --
 [source,bash]
@@ -295,15 +295,15 @@ After providing the required inputs, the delegate configuration data will be sav
 <1>  The list of delegates who are allowed to forge on this node.
 ====
 
-=== Option 2: with Lisk Commander
+=== Option 2: with Klayr Commander
 
-Please ensure that the xref:{url_commander_commands}[Lisk Commander] is installed in a secure environment.
+Please ensure that the xref:{url_commander_commands}[Klayr Commander] is installed in a secure environment.
 Upon completion, please follow these commands to generate the encrypted passphrase:
 
 [source,bash]
 ----
-$ lisk
-lisk passphrase:encrypt --json
+$ klayr
+klayr passphrase:encrypt --json
 Please enter your secret passphrase: *****     # <1>
 Please re-enter your secret passphrase: *****
 Please enter your password: ***                # <2>
@@ -323,11 +323,11 @@ Ensure a strong password is used.
 See the {url_wikipedia_password_strength}[Guidelines for password strength^] at Wikipedia for reference.
 ====
 
-The hash onion can be generated with Lisk Commander in the following manner:
+The hash onion can be generated with Klayr Commander in the following manner:
 
 [source,bash]
 ----
-lisk hash-onion --json
+klayr hash-onion --json
 ----
 
 * Add the hash onion and the delegate address in hexadecimal representation to the object with the `encryptedPassphrase`.
@@ -366,7 +366,7 @@ lisk hash-onion --json
 Restart the node to apply the changes in the config.
 ====
 
-For more information about the configuration of the Lisk SDK check out the xref:{url_guides_config}[configuration guide].
+For more information about the configuration of the Klayr SDK check out the xref:{url_guides_config}[configuration guide].
 
 === Updating the custom configuration
 
@@ -431,7 +431,7 @@ Examples of config options that might be interesting to update can be found belo
 ----
 
 <1> Set the console log level to `info` to view all relevant logs on the console.
-<2> Enable IPC to be able to use all commands of the Lisk Core CLI (see xref:{url_ref_cli}[])
+<2> Enable IPC to be able to use all commands of the Klayr Core CLI (see xref:{url_ref_cli}[])
 <3> Add the delegate config info here, under `forging.delegates` of the node configuration.
 ====
 
@@ -449,19 +449,19 @@ These  three variables are required for enabling forging for the corresponding d
 
 == Checking the forging status
 
-To check the forging status of a Lisk Core node, execute the following command:
+To check the forging status of a Klayr Core node, execute the following command:
 
 [tabs]
 =====
-Lisk Core::
+Klayr Core::
 +
 --
 [source,bash]
 ----
-lisk-core forging:status
+klayr-core forging:status
 ----
 --
-Lisk app::
+Klayr app::
 +
 --
 [source,bash]
@@ -498,22 +498,22 @@ Afterwards, it is always required to use the latest values of the `forger_info` 
 
 === via application CLI
 
-If the blockchain application was xref:{url_guides_setup_bootstrap}[bootstrapped with Lisk Commander], it is possible to conveniently generate the relevant forging data using the command xref:{url_references_cli_forgingenable}[forging:enable].
+If the blockchain application was xref:{url_guides_setup_bootstrap}[bootstrapped with Klayr Commander], it is possible to conveniently generate the relevant forging data using the command xref:{url_references_cli_forgingenable}[forging:enable].
 
 NOTE: The blockchain application needs to be running to successfully enable forging on the node.
 
 [tabs]
 =====
-Lisk Core::
+Klayr Core::
 +
 --
 .Enable forging
 [source,bash]
 ----
-lisk-core forging:enable 9bd82e637d306533b1e1ad66e19ca0047faa1a6a --use-status-values #<1>
+klayr-core forging:enable 9bd82e637d306533b1e1ad66e19ca0047faa1a6a --use-status-values #<1>
 ----
 --
-Lisk app::
+Klayr app::
 +
 --
 .Enable forging
@@ -550,7 +550,7 @@ Updated forging status:
 Enable forging for the given delegate address.
 
 USAGE
-  $ lisk-core forging:enable ADDRESS [HEIGHT] [MAXHEIGHTPREVIOUSLYFORGED] [MAXHEIGHTPREVOTED]
+  $ klayr-core forging:enable ADDRESS [HEIGHT] [MAXHEIGHTPREVIOUSLYFORGED] [MAXHEIGHTPREVOTED]
 
 ARGUMENTS
   ADDRESS                    Address of an account in hex format.
@@ -559,7 +559,7 @@ ARGUMENTS
   MAXHEIGHTPREVOTED          Delegates largest prevoted height for a block.
 
 OPTIONS
-  -d, --data-path=data-path  Directory path to specify where node data is stored. Environment variable "LISK_DATA_PATH" can also be
+  -d, --data-path=data-path  Directory path to specify where node data is stored. Environment variable "KLAYR_DATA_PATH" can also be
                              used.
 
   -w, --password=password    Specifies a source for your secret password. Command will prompt you for input if this option is not
@@ -592,7 +592,7 @@ Invoke the following action to *enable the forging* for a delegate:
 .Enable forging
 [source,js]
 ----
-const { createWSClient } = require('@liskhq/lisk-api-client');
+const { createWSClient } = require('@klayrhq/klayr-api-client');
 
 export const enableForging = async () => {
     let apiClient = await createWSClient('ws://localhost:8080/ws');
@@ -631,30 +631,30 @@ Must match the value in the `forger_info` data.
 
 == Disable forging
 
-Sometimes it is necessary to disable forging, for example to update to the latest Lisk Core version, or if you are moving your node to a different server.
+Sometimes it is necessary to disable forging, for example to update to the latest Klayr Core version, or if you are moving your node to a different server.
 
 [IMPORTANT]
 ====
 If you would like to completely stop forging without being punished by the network, make sure to unvote yourself, see:
 
 * xref:{url_mgmt_accounts}[How to unvote via CLI]
-* Alternatively, use {url_lisk_wallet}[Lisk Desktop^] to unvote.
+* Alternatively, use {url_klayr_wallet}[Klayr Desktop^] to unvote.
 ====
 
 === with the application CLI
 
 [tabs]
 =====
-Lisk Core::
+Klayr Core::
 +
 --
 .Disable forging
 [source,bash]
 ----
-lisk-core forging:disable 9bd82e637d306533b1e1ad66e19ca0047faa1a6a #<1>
+klayr-core forging:disable 9bd82e637d306533b1e1ad66e19ca0047faa1a6a #<1>
 ----
 --
-Lisk app::
+Klayr app::
 +
 --
 .Disable forging
@@ -675,13 +675,13 @@ Lisk app::
 Disable forging for the given delegate address.
 
 USAGE
-  $ lisk-core forging:disable ADDRESS
+  $ klayr-core forging:disable ADDRESS
 
 ARGUMENTS
   ADDRESS  Address of an account in a hexadecimal format.
 
 OPTIONS
-  -d, --data-path=data-path  Directory path to specify where node data is stored. Environment variable "LISK_DATA_PATH" can also be used.
+  -d, --data-path=data-path  Directory path to specify where node data is stored. Environment variable "KLAYR_DATA_PATH" can also be used.
 
   -w, --password=password    Specifies a source for your secret password. Command will prompt you for input if this option is not set.
                              	Examples:
@@ -705,7 +705,7 @@ Invoke the following action to *disable the forging* for a delegate:
 .Disable forging
 [source,js]
 ----
-const { createWSClient } = require('@liskhq/lisk-api-client');
+const { createWSClient } = require('@klayrhq/klayr-api-client');
 
 export const disableForging = async () => {
     let apiClient = await createWSClient('ws://localhost:8080/ws');
@@ -733,14 +733,14 @@ If available, it is recommended to synchronize from snapshots to speed up the sy
 +
 [source,bash]
 ----
-lisk-core forger-info:export
+klayr-core forger-info:export
 ----
 . Login to the server with the new node.
 . Restore the `forger_info` table.
 +
 [source,bash]
 ----
-lisk-core forger-info:import ./forger.db.tar.gz
+klayr-core forger-info:import ./forger.db.tar.gz
 ----
 . <<add-delegate-data-to-config>>.
 . Ensure the node is fully synchronized with the network.
@@ -748,7 +748,7 @@ The height of your node should be equal to the current network height.
 +
 [source,bash]
 ----
-lisk-core node:info
+klayr-core node:info
 ----
 . Fetch the forging data needed to enable forging by <<checking-the-forging-status>>.
 . <<enable-forging>>.
@@ -757,7 +757,7 @@ lisk-core node:info
 
 Configurable Constants::
 
-* `BLOCK_TIME = 10`: The block time of the considered blockchain in seconds, i.e., 10 for Lisk Mainnet.
+* `BLOCK_TIME = 10`: The block time of the considered blockchain in seconds, i.e., 10 for Klayr Mainnet.
 * `MAX_FORK_DEPTH = 8640`: An upper boundary on the largest chain of off-chain blocks for which the validator generated a block, i.e., for every block at height `h` generated by the validator, the parent block at height `h - MAX_FORK_DEPTH` must be contained in the canonical chain that is eventually finalized.
 It is recommended to use `MAX_FORK_DEPTH` = 8640 = 24*60 *6 (number of blocks generated in 24 h).
 
@@ -766,7 +766,7 @@ Required Delegate Input::
 * `lastHeightActive`: Unix timestamp of the last height when the validator node could have possibly been active and forging, (over estimate with a larger number when uncertain about the exact time).
 
 Instructions::
-. Start a new node with forging deactivated and synchronize with the Lisk blockchain until there is a block `finalizedBlock` that is
+. Start a new node with forging deactivated and synchronize with the Klayr blockchain until there is a block `finalizedBlock` that is
 finalized, and that the finalized block header timestamp is greater than the last active height: `finalizedBlock.header.timestamp > lastHeightActive`
 . Obtain a block `parentBlock` which is a parent block of `finalizedBlock` at height `finalizedBlock.header.height - MAX_FORK_DEPTH`.
 

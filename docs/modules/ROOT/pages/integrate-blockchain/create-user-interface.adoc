@@ -7,7 +7,7 @@ Mona Bärenfänger <mona@lightcurve.io>
 :imagesdir: ../../../assets/images
 :figure-caption!:
 // External URL
-:url_github_guides_frontend: https://github.com/LiskHQ/lisk-sdk-examples/tree/development/guides/06-frontend/hello_frontend
+:url_github_guides_frontend: https://github.com/KlayrHQ/klayr-sdk-examples/tree/development/guides/06-frontend/hello_frontend
 :url_reactjs: https://reactjs.org/
 :url_frontend: http://localhost:3000
 // Project URLS
@@ -17,20 +17,20 @@ Mona Bärenfänger <mona@lightcurve.io>
 :url_guides_config: build-blockchain/configure-app.adoc
 :url_guides_genesisblock: build-blockchain/create-genesis-block.adoc
 :url_guides_plugin: build-blockchain/create-plugin.adoc
-:url_lisk_sdk: glossary.adoc#lisk-sdk
+:url_klayr_sdk: glossary.adoc#klayr-sdk
 
-How to build a simple frontend that communicates with a blockchain application built with the xref:{url_lisk_sdk}[Lisk SDK].
+How to build a simple frontend that communicates with a blockchain application built with the xref:{url_klayr_sdk}[Klayr SDK].
 
 To interact with the blockchain application conveniently through a browser, it is possible to build a simple frontend application.
 This frontend can be built with any technology stack of your choice.
 In this example, {url_reactjs}[React.js] is used.
 
-We will use the `@liskhq/lisk-client` package in the frontend application to communicate with the blockchain application.
+We will use the `@klayrhq/klayr-client` package in the frontend application to communicate with the blockchain application.
 
 .Sample code
 [NOTE]
 ====
-View the complete sample code of this guide on GitHub in the {url_github_guides_frontend}[Lisk SDK examples repository^].
+View the complete sample code of this guide on GitHub in the {url_github_guides_frontend}[Klayr SDK examples repository^].
 ====
 
 .Prerequisites
@@ -38,7 +38,7 @@ View the complete sample code of this guide on GitHub in the {url_github_guides_
 ====
 To use this guide, it is assumed that the following criteria have been met:
 
-. Lisk Commander is installed, and a basic blockchain application is already initialized, as explained in the guide xref:{url_guides_setup}[].
+. Klayr Commander is installed, and a basic blockchain application is already initialized, as explained in the guide xref:{url_guides_setup}[].
 . A new module `HelloModule` is created, as explained in the guide xref:{url_guides_module}[].
 . A new asset `HelloAsset` is created, as explained in the guide xref:{url_guides_asset}[].
 . A new plugin `LatestHelloPlugin` is created, as explained in the guide xref:{url_guides_plugin}[].
@@ -121,10 +121,10 @@ npm i react-router-dom # <1>
 
 [source,bash]
 ----
-npm i @liskhq/lisk-client # <1>
+npm i @klayrhq/klayr-client # <1>
 ----
 
-<1> A collection of Lisk-related libraries which can be used in the frontend.
+<1> A collection of Klayr-related libraries which can be used in the frontend.
 
 To use `BigInt` in the frontend, it may be required to add the following options to the `package.json` file:
 
@@ -167,13 +167,13 @@ This simple app can be customized by creating different components for the first
 
 A page for generating new accounts that conveniently allows the creation of credentials that can be used in the application.
 
-Import `passphrase` and `cryptography` from the `lisk-client` package to create new account credentials.
+Import `passphrase` and `cryptography` from the `klayr-client` package to create new account credentials.
 
 .src/components/NewAccount.js
 [source,jsx]
 ----
 import React, { Component } from 'react';
-import { passphrase, cryptography } from '@liskhq/lisk-client';
+import { passphrase, cryptography } from '@klayrhq/klayr-client';
 
 const newCredentials = () => {
     const pass = passphrase.Mnemonic.generateMnemonic();
@@ -205,12 +205,12 @@ export default NewAccount;
 
 The faucet is a component that allows accounts to receive tokens from the genesis account, which holds the majority of initial tokens at the start of the Devnet.
 
-In a new file `api.js`, the `apiClient` from package `lisk-client` provides an interface for the faucet and other React components to connect to the blockchain application via a WebSocket on port 8080.
+In a new file `api.js`, the `apiClient` from package `klayr-client` provides an interface for the faucet and other React components to connect to the blockchain application via a WebSocket on port 8080.
 
 .src/api.js
 [source,js]
 ----
-const { apiClient, cryptography } = require('@liskhq/lisk-client');
+const { apiClient, cryptography } = require('@klayrhq/klayr-client');
 const RPC_ENDPOINT = 'ws://localhost:8080/ws';
 
 let clientCache;
@@ -245,8 +245,8 @@ Next, create a new file `Faucet.js`, which will store the React component of the
 [source,jsx]
 ----
 import React, { useState } from 'react';
-// `transactions` and `cryptography` from the `lisk-client` package are used to convert the data of the transaction into the correct format.
-import { cryptography, transactions } from '@liskhq/lisk-client';
+// `transactions` and `cryptography` from the `klayr-client` package are used to convert the data of the transaction into the correct format.
+import { cryptography, transactions } from '@klayrhq/klayr-client';
 // Inside `Faucet.js`, import the previously defined API client from `api.js`.
 import * as api from '../api.js';
 //List of accounts, the list should be same as the hello_app
@@ -277,9 +277,9 @@ const Faucet = () => {
         const tx = await client.transaction.create({
             moduleID: 2,
             assetID: 0,
-            fee: BigInt(transactions.convertLSKToBeddows('0.01')),
+            fee: BigInt(transactions.convertKLYToBeddows('0.01')),
             asset: {
-                amount: BigInt(transactions.convertLSKToBeddows(state.amount)),
+                amount: BigInt(transactions.convertKLYToBeddows(state.amount)),
                 recipientAddress: address,
                 data: '',
             },
@@ -342,7 +342,7 @@ The only difference is that the sender is not essentially a genesis account, but
 [source,jsx]
 ----
 import React, { useState } from 'react';
-import { cryptography, transactions } from '@liskhq/lisk-client';
+import { cryptography, transactions } from '@klayrhq/klayr-client';
 import * as api from '../api.js';
 
 const Transfer = () => {
@@ -372,9 +372,9 @@ const Transfer = () => {
         const tx = await client.transaction.create({
             moduleID: 2,
             assetID: 0,
-            fee: BigInt(transactions.convertLSKToBeddows(state.fee)),
+            fee: BigInt(transactions.convertKLYToBeddows(state.fee)),
             asset: {
-                amount: BigInt(transactions.convertLSKToBeddows(state.amount)),
+                amount: BigInt(transactions.convertKLYToBeddows(state.amount)),
                 recipientAddress: address,
                 data: '',
             },
@@ -440,7 +440,7 @@ Create a new file `Hello.js` inside of the `components/` folder, and add the fol
 .src/components/Hello.js
 [source,jsx]
 ----
-import { cryptography, transactions } from '@liskhq/lisk-client';
+import { cryptography, transactions } from '@klayrhq/klayr-client';
 import React, { Component, useState } from 'react';
 import * as api from '../api.js';
 
@@ -468,7 +468,7 @@ const Hello = () => {
         const tx = await client.transaction.create({
             moduleID: 1000,
             assetID: 0,
-            fee: BigInt(transactions.convertLSKToBeddows(state.fee)),
+            fee: BigInt(transactions.convertKLYToBeddows(state.fee)),
             asset: {
                 helloString: state.hello,
             },
@@ -527,7 +527,7 @@ The API client is imported again from `api.js`, in order to communicate with the
 .src/components/Account.js
 [source,jsx]
 ----
-import { cryptography } from '@liskhq/lisk-client';
+import { cryptography } from '@klayrhq/klayr-client';
 import React, { useState } from 'react';
 import * as api from '../api.js';
 
@@ -619,8 +619,8 @@ class Home extends Component {
     render() {
         return (
             <div>
-                <h2>Hello Lisk!</h2>
-                <p>A simple frontend for blockchain applications built with the Lisk SDK.</p>
+                <h2>Hello Klayr!</h2>
+                <p>A simple frontend for blockchain applications built with the Klayr SDK.</p>
                 <p>Hello counter:</p>
                 <pre>{this.state.data.helloCounter}</pre>
                 <p>Latest Hello:</p>
@@ -743,7 +743,7 @@ For the new configurations to take effect, the existing data of `hello_app` must
 
 [source,bash]
 ----
-rm -rf ~/.lisk 
+rm -rf ~/.klayr 
 ----
 == View in browser
 

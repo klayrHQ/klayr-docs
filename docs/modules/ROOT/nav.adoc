@@ -1,14 +1,14 @@
-:url_sdk: master@lisk-sdk:ROOT:
-:url_protocol: master@lisk-sdk:protocol:
-:url_core: master@lisk-core:ROOT:
-:url_service: master@lisk-service:ROOT:
+:url_sdk: master@klayr-sdk:ROOT:
+:url_protocol: master@klayr-sdk:protocol:
+:url_core: master@klayr-core:ROOT:
+:url_service: master@klayr-service:ROOT:
 
 
 ////
-* Introduction to Lisk
+* Introduction to Klayr
 ** xref:intro/what-is-blockchain.adoc[]
 ** xref:intro/how-blockchain-works.adoc[]
-** xref:intro/lisk-products.adoc[]
+** xref:intro/klayr-products.adoc[]
 ////
 
 
@@ -20,13 +20,13 @@
 ** xref:understand-blockchain/endpoints.adoc[]
 ** xref:understand-blockchain/reducers.adoc[]
 ** xref:understand-blockchain/codec-schema.adoc[]
-** xref:understand-blockchain/lisk-protocol/index.adoc[Lisk Protocol]
-*** xref:understand-blockchain/lisk-protocol/accounts.adoc[]
-*** xref:understand-blockchain/lisk-protocol/blocks.adoc[]
-*** xref:understand-blockchain/lisk-protocol/consensus-algorithm.adoc[]
-*** xref:understand-blockchain/lisk-protocol/network.adoc[]
-*** xref:understand-blockchain/lisk-protocol/transactions.adoc[]
-*** xref:understand-blockchain/lisk-protocol/appendix.adoc[]
+** xref:understand-blockchain/klayr-protocol/index.adoc[Klayr Protocol]
+*** xref:understand-blockchain/klayr-protocol/accounts.adoc[]
+*** xref:understand-blockchain/klayr-protocol/blocks.adoc[]
+*** xref:understand-blockchain/klayr-protocol/consensus-algorithm.adoc[]
+*** xref:understand-blockchain/klayr-protocol/network.adoc[]
+*** xref:understand-blockchain/klayr-protocol/transactions.adoc[]
+*** xref:understand-blockchain/klayr-protocol/appendix.adoc[]
 
 * xref:build-blockchain/index.adoc[Build Blockchain]
 ** xref:build-blockchain/create-blockchain-app.adoc[]
@@ -58,23 +58,23 @@
 * xref:tutorial/index.adoc[Tutorials]
 ** xref:tutorial/nft.adoc[]
 ** xref:tutorial/srs.adoc[]
-** xref:tutorial/lns/index.adoc[Lisk Name Service (LNS) Tutorial]
+** xref:tutorial/lns/index.adoc[Klayr Name Service (LNS) Tutorial]
 *** xref:tutorial/lns/1-blockchain.adoc[]
 *** xref:tutorial/lns/2-frontend.adoc[]
 *** xref:tutorial/lns/3-cli.adoc[]
 *** xref:tutorial/lns/4-tests.adoc[]
 
 * APIs
-** xref:api/lisk-node-http.adoc[]
-** xref:api/lisk-node-rpc.adoc[]
-** xref:api/lisk-service-http.adoc[]
-** xref:api/lisk-service-rpc.adoc[]
-** xref:api/lisk-service-pubsub.adoc[]
+** xref:api/klayr-node-http.adoc[]
+** xref:api/klayr-node-rpc.adoc[]
+** xref:api/klayr-service-http.adoc[]
+** xref:api/klayr-service-rpc.adoc[]
+** xref:api/klayr-service-pubsub.adoc[]
 
 * Products
-** xref:v5@lisk-sdk::index.adoc[]
-** xref:v0.6@lisk-service::index.adoc[]
-** xref:v3@lisk-core::index.adoc[]
+** xref:v5@klayr-sdk::index.adoc[]
+** xref:v0.6@klayr-service::index.adoc[]
+** xref:v3@klayr-core::index.adoc[]
 
 * xref:bug-bounty-program.adoc[]
 * xref:glossary.adoc[]

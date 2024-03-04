@@ -7,9 +7,9 @@ Mona Bärenfänger <mona@lightcurve.io>
 :sectnums:
 :experimental:
 :figure-caption!:
-:docs_sdk: v5@lisk-sdk::
+:docs_sdk: v5@klayr-sdk::
 // Project URLS
-:advanced_rpc_appactions: api/lisk-node-rpc.adoc#actions
+:advanced_rpc_appactions: api/klayr-node-rpc.adoc#actions
 :url_guides_asset: build-blockchain/create-asset.adoc
 :url_guides_config: build-blockchain/configure-app.adoc
 :url_guides_config_hello: {url_guides_config}#example-configuration-of-the-hello-world-application
@@ -29,7 +29,7 @@ How to conveniently interact with a blockchain application during development, b
 ====
 To use this guide, it is assumed that the following criteria have been met:
 
-. Lisk Commander is installed, and a basic blockchain application is already initialized, as explained in the guide xref:{url_guides_setup}[].
+. Klayr Commander is installed, and a basic blockchain application is already initialized, as explained in the guide xref:{url_guides_setup}[].
 . A new module `HelloModule` is created, as explained in the guide xref:{url_guides_module}[].
 . A new asset `HelloAsset` is created, as explained in the guide xref:{url_guides_asset}[].
 . A new plugin `LatestHelloPlugin` is created, as explained in the guide xref:{url_guides_plugin}[].
@@ -41,7 +41,7 @@ Install the dashboard plugin:
 
 [source,bash]
 ----
-npm i @liskhq/lisk-framework-dashboard-plugin
+npm i @klayrhq/klayr-framework-dashboard-plugin
 ----
 
 Now open `plugins.ts`, import the Dashboard plugin, and register it with the application as shown below:
@@ -50,9 +50,9 @@ Now open `plugins.ts`, import the Dashboard plugin, and register it with the app
 [source,typescript]
 ----
 /* eslint-disable @typescript-eslint/no-empty-function */
-import { Application } from 'lisk-sdk';
+import { Application } from 'klayr-sdk';
 import { LatestHelloPlugin } from "./plugins/latest_hello/latest_hello_plugin";
-import { DashboardPlugin } from "@liskhq/lisk-framework-dashboard-plugin";
+import { DashboardPlugin } from "@klayrhq/klayr-framework-dashboard-plugin";
 
 // @ts-expect-error Unused variable error happens here until at least one module is registered
 export const registerPlugins = (app: Application): void => {

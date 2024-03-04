@@ -29,6 +29,48 @@
   font-size: 1.15em;
 }
 
+.videoblock {
+  display: flex;
+  flex-direction: column;
+}
+
+.doc .videoblock .title {
+  text-align: center !important;
+}
+
+/* Icon for external links */
+.doc a[href^="http"]::before,
+.navbar-menu a[href^="http"]::before {
+  display: inline-block;
+  font-size: inherit;
+  height: 1em;
+  overflow: visible;
+  vertical-align: -0.125em;
+  width: 0.875em;
+
+  /* Icon */
+  content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cpath fill='%230D75FD' d='M320 0c-17.7 0-32 14.3-32 32s14.3 32 32 32h82.7L201.4 265.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L448 109.3V192c0 17.7 14.3 32 32 32s32-14.3 32-32V32c0-17.7-14.3-32-32-32H320zM80 32C35.8 32 0 67.8 0 112V432c0 44.2 35.8 80 80 80H400c44.2 0 80-35.8 80-80V320c0-17.7-14.3-32-32-32s-32 14.3-32 32V432c0 8.8-7.2 16-16 16H80c-8.8 0-16-7.2-16-16V112c0-8.8 7.2-16 16-16H192c17.7 0 32-14.3 32-32s-14.3-32-32-32H80z'%3E%3C/path%3E%3C/svg%3E");
+  /* Margin */
+  margin-right: 0.25rem;
+}
+
+.doc a[href^="#"]:not(.footnote):not(.toc a):not(.anchor):not([href^="#_footnoteref"])::before {
+  /* svg-inline--fa */
+  display: inline-block;
+  font-size: inherit;
+  height: 1em;
+  overflow: visible;
+  vertical-align: -0.125em;
+
+  /* fa-w-14 */
+  width: 0.875em;
+
+  /* Icon */
+  content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 448 512'%3E%3Cpath fill='%230D75FD' d='M246.6 470.6c-12.5 12.5-32.8 12.5-45.3 0l-160-160c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L224 402.7 361.4 265.4c12.5-12.5 32.8-12.5 45.3 0s12.5 32.8 0 45.3l-160 160zm160-352l-160 160c-12.5 12.5-32.8 12.5-45.3 0l-160-160c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L224 210.7 361.4 73.4c12.5-12.5 32.8-12.5 45.3 0s12.5 32.8 0 45.3z'%3E%3C/path%3E%3C/svg%3E");
+  /* Margin */
+  margin-right: 0.25rem;
+}
+
 .nav {
   height: calc(var(--nav-height--desktop) - 3.75em);
 }
@@ -78,7 +120,7 @@
 
 .doc .overview-banner > .content > .title {
   font-size: 2em !important;
-  font-family: 'Gilroy', sans-serif;
+  font-family: 'Utendo', sans-serif;
 }
 
 .doc table.tableblock.overview-table {
@@ -95,7 +137,7 @@
 
 .is-current-page.parent > span,
 .is-current-page:not(.parent) {
-  background: rgba(var(--rgb-ultramarine-blue), 0.1);
+  background: rgba(var(--rgb-azule), 0.1);
   padding: 0.5em 0 0.5em 1em;
 }
 
@@ -105,7 +147,7 @@
 
 .is-current-page.parent > span > a,
 .is-current-page > .nav-link {
-  color: var(--color-ultramarine-blue);
+  color: var(--color-azule);
   font-weight: 400;
 }
 
@@ -275,9 +317,10 @@
   padding: 0.5rem 1.5rem 0.5rem 0.7rem;
 }
 
-.lisk-logo {
+.klayr-logo {
   height: 2rem;
-  background-image: url(../img/lisk-symbol.svg);
+  background-image: url(../img/klayr-symbol.svg);
+  background-size: contain;
   background-repeat: no-repeat;
   width: 2rem;
 }
@@ -354,7 +397,7 @@
 }
 
 .edit-this-page:hover a {
-  color: var(--color-ultramarine-blue);
+  color: var(--color-azule);
   text-decoration: none;
 }
 
@@ -378,13 +421,13 @@
 }
 
 .nav-panel-explore .component .version a:hover {
-  border: 1px solid var(--color-ink-blue);
-  color: var(--color-ink-blue);
+  border: 1px solid var(--color-azule);
+  color: var(--color-azule);
 }
 
 .nav-panel-explore .component .version.is-current a,
 .nav-panel-explore .component .version a:focus {
-  background: var(--color-ink-blue);
+  background: var(--color-azule);
   color: var(--color-white);
 }
 
@@ -436,36 +479,94 @@
 }
 
 .doc h2 {
-  font-size: 1.35em;
+  font-size: 1.55em;
 }
 
 .doc h3 {
-  font-size: 1.25em;
+  font-size: 1.35em;
 }
 
 .doc h4 {
+  font-size: 1.2em;
+}
+
+.doc h5 {
+  font-size: 1.1em;
+}
+
+.doc h6 {
   font-size: 1.05em;
+}
+
+/* Tooltip container */
+.highlighttt {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted var(--color-azule); /* If you want dots under the hoverable text */
+}
+
+/* Tooltip text */
+.highlighttt .tooltip {
+  visibility: hidden;
+  width: 120px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+
+  /* Position the tooltip text */
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -60px;
+
+  /* Fade in tooltip */
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+/* Tooltip arrow */
+.highlighttt .tooltip::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+/* Show the tooltip text when you hover your mouse over the tooltip container */
+.highlighttt:hover .tooltip {
+  visibility: visible;
+  opacity: 1;
 }
 
 .doc h1,
 .doc h2 {
-  font-family: "Gilroy", "Roboto", sans-serif;
+  font-family: "Utendo", "Roboto", sans-serif;
   line-height: 120%;
 }
 
 .doc h3:not(.discrete),
-.doc h4:not(.discrete) {
-  font-family: "Gilroy", "Roboto", sans-serif;
+.doc h4:not(.discrete),
+.doc h5:not(.discrete),
+.doc h6:not(.discrete) {
+  font-family: "Utendo", "Roboto", sans-serif;
   line-height: 150%;
   font-weight: normal;
 }
 
 .doc {
-  font-family: "BasierCircle", "Roboto", sans-serif;
+  font-family: "Inter", "Roboto", sans-serif;
   max-width: var(--doc-max-width--desktop);
   padding: 0 1rem 2rem;
 }
 
+.doc .videoblock,
 .doc .imageblock {
   border-radius: 20px;
 }
@@ -477,6 +578,7 @@
 .doc .admonitionblock .title,
 .doc .exampleblock .title,
 .doc .imageblock .title,
+.doc .videoblock .title,
 .doc .literalblock .title,
 .doc .listingblock .title,
 .doc .openblock .title,
@@ -621,7 +723,7 @@ footer.footer {
 }
 
 .doc .admonitionblock.note td.content {
-  background: rgba(var(--rgb-ultramarine-blue), 0.07);
+  background: rgba(var(--rgb-azule), 0.07);
 }
 
 .doc .admonitionblock.important td.content {
@@ -633,7 +735,7 @@ footer.footer {
 }
 
 .doc .admonitionblock.warning td.content {
-  background: rgba(var(--rgb-fury-red), 0.07);
+  background: rgba(var(--rgb-lobster), 0.07);
 }
 
 .doc .admonitionblock .icon {
@@ -666,7 +768,7 @@ footer.footer {
 
 .doc .admonitionblock.important .icon i {
   background-image: url(../img/i-important-outlined.svg);
-  color: var(--color-zodiac-blue);
+  color: var(--color-dark-blue);
 }
 
 .doc .admonitionblock.caution .icon i {
@@ -678,7 +780,7 @@ footer.footer {
 }
 
 .doc .admonitionblock.note .icon {
-  background: rgba(var(--rgb-ultramarine-blue), 1);
+  background: rgba(var(--rgb-azule), 1);
 }
 
 .doc .admonitionblock.important .icon {
@@ -690,7 +792,7 @@ footer.footer {
 }
 
 .doc .admonitionblock.warning .icon {
-  background: rgba(var(--rgb-fury-red), 1);
+  background: rgba(var(--rgb-lobster), 1);
 }
 
 .toc.sidebar .toc-menu ul {

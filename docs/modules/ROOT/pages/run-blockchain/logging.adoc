@@ -6,10 +6,10 @@ Mona Bärenfänger <mona@lightcurve.io>
 // External URLs
 :url_bunyan: https://github.com/trentm/node-bunyan
 :url_bunyan_docs: http://trentm.com/node-bunyan/bunyan.1.html
-:url_lisk_sdk: glossary.adoc#lisk-sdk
+:url_klayr_sdk: glossary.adoc#klayr-sdk
 
 
-For monitoring or debugging your node, the xref:{url_lisk_sdk}[Lisk SDK] tracks all activities that occur within the node by creating applicable log messages.
+For monitoring or debugging your node, the xref:{url_klayr_sdk}[Klayr SDK] tracks all activities that occur within the node by creating applicable log messages.
 
 These log messages are grouped in different log levels.
 Hence, making it straightforward and easy to define the level of the log details.
@@ -43,8 +43,8 @@ Each output source can be configured independently inside of `config.json` under
 
 === Console log stream
 
-The console log level displays the logs directly to the console from where the Lisk SDK process is started.
-This is useful for quick debugging or verifying that the Lisk SDK starts correctly.
+The console log level displays the logs directly to the console from where the Klayr SDK process is started.
+This is useful for quick debugging or verifying that the Klayr SDK starts correctly.
 The default log level for the console log stream is `none`.
 
 *To display the console log stream, start the application:*
@@ -60,7 +60,7 @@ The default log level for the console log stream is `none`.
 === File log stream
 
 All logs with equal or higher log levels than specified in the `config.json` file are saved in a `.log`-file for further analysis.
-By default, the generated log files are saved inside of the `logs` folder under `~/.lisk/APP_NAME/logs/lisk.log`.
+By default, the generated log files are saved inside of the `logs` folder under `~/.klayr/APP_NAME/logs/klayr.log`.
 Plugins produce separate log files, which are saved in the same location.
 
 The default log level for the file log stream is `error`.
@@ -70,7 +70,7 @@ The file log stream can be used to monitor the node.
 [[logrotation]]
 == Logrotation
 
-It is recommended to set up some form of log rotation for the log files of Lisk SDK.
+It is recommended to set up some form of log rotation for the log files of Klayr SDK.
 If log rotation is not initiated, then the log files may grow very large over time (depending on the specified file log level), and hence will eventually exceed the server's disk space limits.
 
 For example, Ubuntu systems  provide a service called `logrotate` specifically for this purpose.
@@ -81,12 +81,12 @@ Please ensure Logrotate is installed on your system as shown below:
 logrotate --version
 ----
 
-Now go to the logrotate config directory and create a new logrotate file for Lisk SDK as shown below:
+Now go to the logrotate config directory and create a new logrotate file for Klayr SDK as shown below:
 
 [source,bash]
 ----
 cd /etc/logrotate.d
-touch lisk
+touch klayr
 ----
 
 Inside this file, define the parameters for the log rotation.
@@ -95,7 +95,7 @@ Example values can be seen below:
 
 [source,bash]
 ----
-/path/to/lisk/logs/mainnet/*.log {
+/path/to/klayr/logs/mainnet/*.log {
         daily                   <1>
         rotate 5                <2>
         maxage 14               <3>

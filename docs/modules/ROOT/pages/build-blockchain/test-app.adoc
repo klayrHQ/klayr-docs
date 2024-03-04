@@ -1,9 +1,9 @@
 = Testing the blockchain application
 // Settings
 :toc: preamble
-:docs_sdk: v5@lisk-sdk::
+:docs_sdk: v5@klayr-sdk::
 // URLs
-:url_github_guides_tests: https://github.com/LiskHQ/lisk-sdk-examples/tree/development/guides/04-plugin/hello_app/test
+:url_github_guides_tests: https://github.com/KlayrHQ/klayr-sdk-examples/tree/development/guides/04-plugin/hello_app/test
 // Project URLs
 :url_reducerhandler: understand-blockchain/modules-assets.adoc#the-reducerhandler
 :url_guides_setup: build-blockchain/create-blockchain-app.adoc
@@ -12,15 +12,15 @@
 :url_intro_modules_statestore: understand-blockchain/modules-assets.adoc#the-state-store
 :url_tutorials_nft: tutorial/nft.adoc
 :url_reference_test_suite: {docs_sdk}references/test-utils.adoc
-:url_lisk_sdk: glossary.adoc#lisk-sdk
+:url_klayr_sdk: glossary.adoc#klayr-sdk
 
 
-How to use the test utility of the xref:{url_lisk_sdk}[Lisk SDK] to test your application.
+How to use the test utility of the xref:{url_klayr_sdk}[Klayr SDK] to test your application.
 
 .Sample code
 [NOTE]
 ====
-View the complete sample code of this guide on GitHub in the {url_github_guides_tests}[Lisk SDK examples repository^].
+View the complete sample code of this guide on GitHub in the {url_github_guides_tests}[Klayr SDK examples repository^].
 ====
 
 .Prerequisites
@@ -28,7 +28,7 @@ View the complete sample code of this guide on GitHub in the {url_github_guides_
 ====
 To use this guide, it is assumed that the following criteria have been met:
 
-* Lisk Commander is installed, and a basic blockchain application is already initialized, as explained in the guide xref:{url_guides_setup}[].
+* Klayr Commander is installed, and a basic blockchain application is already initialized, as explained in the guide xref:{url_guides_setup}[].
 * A new module has been generated as described in the guide xref:{url_guides_module}[].
 * A new asset has been generated as described in the guide xref:{url_guides_asset}[].
 ====
@@ -205,14 +205,14 @@ Add the following lines at the top of `create_hello_asset.spec.ts` to import the
 [source,typescript]
 ----
 import { CreateHelloAsset } from '../../../../../src/app/modules/hello/assets/create_hello_asset'; // <1>
-import { testing, StateStore, ReducerHandler, codec } from 'lisk-sdk'; // <2>
+import { testing, StateStore, ReducerHandler, codec } from 'klayr-sdk'; // <2>
 import { HelloModule } from '../../../../../src/app/modules/hello/hello_module'; // <3>
 ----
 
 <1> `CreateHelloAsset`: The asset which is tested here.
-<2> The following is imported from the `lisk-sdk` package:
+<2> The following is imported from the `klayr-sdk` package:
 
-* `testing` contains the functions of the Lisk SDk test suite.
+* `testing` contains the functions of the Klayr SDk test suite.
 * `StateStore`: See xref:{url_intro_modules_statestore}[the state store].
 * `ReducerHandler`: See xref:{url_reducerhandler}[ReducerHandler].
 * `codec`: contains functions for encoding and decoding data.
@@ -404,7 +404,7 @@ Add the following lines at the top of `hello_module.spec.ts` to import the requi
 ----
 import { helloCounterSchema, CHAIN_STATE_HELLO_COUNTER } from "./assets/create_hello_asset.spec"; // <1>
 import { CreateHelloAsset } from '../../../../src/app/modules/hello/assets/create_hello_asset'; // <2>
-import { testing, StateStore, codec } from 'lisk-sdk'; // <3>
+import { testing, StateStore, codec } from 'klayr-sdk'; // <3>
 import { HelloModule } from '../../../../src/app/modules/hello/hello_module'; // <4>
 ----
 
@@ -413,9 +413,9 @@ import { HelloModule } from '../../../../src/app/modules/hello/hello_module'; //
 * `helloCounterSchema`: used to encode the hello counter for the database.
 * `CHAIN_STATE_HELLO_COUNTER`: the key under which the hello counter is saved in the database.
 <2> `CreateHelloAsset`: used to create a valid test transaction with a hello asset.
-<3> The following is imported from the `lisk-sdk` package:
+<3> The following is imported from the `klayr-sdk` package:
 
-* `testing`: contains the functions of the Lisk SDK test suite.
+* `testing`: contains the functions of the Klayr SDK test suite.
 * `StateStore`: See xref:{url_intro_modules_statestore}[the state store].
 * `ReducerHandler`: See xref:{url_reducerhandler}[reducerHandler].
 * `codec`: contains functions for encoding and decoding data.
