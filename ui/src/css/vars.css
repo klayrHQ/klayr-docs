@@ -64,7 +64,7 @@
   /* admonitions */
   --caution-color: #a0439c;
   --caution-on-color: var(--color-white);
-  --important-color: #FF422D;
+  --important-color: #ff422d;
   --important-on-color: var(--color-white);
   --note-color: var(--color-azule);
   --note-on-color: var(--color-white);

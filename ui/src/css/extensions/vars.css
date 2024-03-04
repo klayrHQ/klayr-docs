@@ -1,11 +1,11 @@
 :root {
-  --color-volt: #D4FF00;
+  --color-volt: #d4ff00;
   --rgb-volt: 212, 255, 0;
-  --color-volt-dark: #B8FF01;
+  --color-volt-dark: #b8ff01;
   --rgb-volt-dark: 184, 255, 1;
   --color-dark-blue: #050516;
   --color-second-blue: #363f55;
-  --color-azule: #0D75FD;
+  --color-azule: #0d75fd;
   --rgb-azule: 13, 117, 253;
   --color-ufo-green: #2bd67b;
   --rgb-ufo-green: 43, 214, 123;
@@ -17,11 +17,11 @@
   --rgb-silver-gray: 197, 207, 228;
   --color-platinum-gray: #dfe6f2;
   --color-athens-white: #f7f9fb;
-  --color-sand: #EDEDCE;
+  --color-sand: #ededce;
   --rgb-sand: 237, 237, 206;
-  --color-lobster: #FF422D;
+  --color-lobster: #ff422d;
   --rgb-lobster: 255, 66, 45;
-  --color-lobster-dark: #FF1208;
+  --color-lobster-dark: #ff1208;
   --rgb-lobster-dark: 255, 18, 8;
   --color-orange: #ff8743;
   --rgb-orange: 255, 135, 67;
