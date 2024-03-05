@@ -120,7 +120,7 @@
 
 .doc .overview-banner > .content > .title {
   font-size: 2em !important;
-  font-family: 'Gilroy', sans-serif;
+  font-family: 'Utendo', sans-serif;
 }
 
 .doc table.tableblock.overview-table {
@@ -547,7 +547,7 @@
 
 .doc h1,
 .doc h2 {
-  font-family: "Gilroy", "Roboto", sans-serif;
+  font-family: "Utendo", "Roboto", sans-serif;
   line-height: 120%;
 }
 
@@ -555,13 +555,13 @@
 .doc h4:not(.discrete),
 .doc h5:not(.discrete),
 .doc h6:not(.discrete) {
-  font-family: "Gilroy", "Roboto", sans-serif;
+  font-family: "Utendo", "Roboto", sans-serif;
   line-height: 150%;
   font-weight: normal;
 }
 
 .doc {
-  font-family: "BasierCircle", "Roboto", sans-serif;
+  font-family: "Inter", "Roboto", sans-serif;
   max-width: var(--doc-max-width--desktop);
   padding: 0 1rem 2rem;
 }
