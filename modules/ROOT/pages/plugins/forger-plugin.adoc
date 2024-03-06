@@ -5,7 +5,7 @@
 :url_guides_config: guides/app-development/configuration.adoc
 :url_architecture_registering_plugins: advanced-explanations/architecture.adoc#registering-modules-and-plugins
 
-`@klayrhq/klayr-framework-forger-plugin` is a plugin for the Klayr Framework that monitors configured delegates forging activity, and voters information.
+`@klayr/forger-plugin` is a plugin for the Klayr Framework that monitors configured delegates forging activity, and voters information.
 
 [cols=",",stripes="hover"]
 |===

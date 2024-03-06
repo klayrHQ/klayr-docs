@@ -3,13 +3,13 @@ Mona Bärenfänger <mona@lightcurve.io>
 :description: Technical references regarding the codec package of Klayr Elements.
 :toc:
 
-The @klayrhq/klayr-codec package implements a decoder and encoder using Klayr JSON (JavaScript Object Notation), schema according to the Klayr protocol.
+The @klayr/codec package implements a decoder and encoder using Klayr JSON (JavaScript Object Notation), schema according to the Klayr protocol.
 
 == Installation
 
 [source,bash]
 ----
-npm install @klayrhq/klayr-codec
+npm install @klayr/codec
 ----
 
 == Update
@@ -18,14 +18,14 @@ To perform an upgrade, execute the following command:
 
 [source,bash]
 ----
-npm update @klayrhq/klayr-codec
+npm update @klayr/codec
 ----
 
 == Usage
 
 [source,js]
 ----
-//import * as codecFunctions from '@klayrhq/klayr-codec';
+//import * as codecFunctions from '@klayr/codec';
 import { codec as codecFunctions } from 'klayr-sdk';
 // Codec can be used in two ways:
 // 1) Use exposed default instance

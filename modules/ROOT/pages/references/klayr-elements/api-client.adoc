@@ -16,14 +16,14 @@ This adds Klayr Client as a dependency of your project:
 
 [source,bash]
 ----
-$ npm install @klayrhq/klayr-api-client
+$ npm install @klayr/api-client
 ----
 
 == Upgrade
 
 [source,bash]
 ----
-npm update @klayrhq/klayr-api-client
+npm update @klayr/api-client
 ----
 
 === APIClient interface

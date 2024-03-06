@@ -4,14 +4,14 @@ Mona Bärenfänger <mona@lightcurve.io>
 :page-aliases: klayr-elements/packages/transactions.adoc, reference/klayr-elements/packages/transactions.adoc
 :toc:
 
-Transaction utility functions are defined in `@klayrhq/klayr-transactions`.
-The functionalities can be accessed through package `@klayrhq/klayr-transactions`, `@klayrhq/klayr-client` or `klayr-sdk`.
+Transaction utility functions are defined in `@klayr/transactions`.
+The functionalities can be accessed through package `@klayr/transactions`, `@klayr/client` or `klayr-sdk`.
 
 == Installation
 
 [source,bash]
 ----
-$ npm install @klayrhq/klayr-transactions
+$ npm install @klayr/transactions
 ----
 
 == Upgrade
@@ -20,7 +20,7 @@ To perform an upgrade, execute the following command:
 
 [source,bash]
 ----
-npm update @klayrhq/klayr-transactions
+npm update @klayr/transactions
 ----
 
 == Signing transactions

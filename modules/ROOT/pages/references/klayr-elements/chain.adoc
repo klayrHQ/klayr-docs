@@ -5,13 +5,13 @@ Mona Bärenfänger <mona@lightcurve.io>
 
 :url_bft_glossary: klayr-v3@ROOT::glossary.adoc#bft-byzantine-fault-tolerance
 
-@klayrhq/klayr-chain implements blocks and state management that are used for block processing according to the Klayr protocol.
+@klayr/chain implements blocks and state management that are used for block processing according to the Klayr protocol.
 
 == Installation
 
 [source,bash]
 ----
-npm install @klayrhq/klayr-chain
+npm install @klayr/chain
 ----
 
 == Update
@@ -20,7 +20,7 @@ To perform an upgrade, execute the following command:
 
 [source,bash]
 ----
-npm update @klayrhq/klayr-chain
+npm update @klayr/chain
 ----
 
 == State store and database mechanism

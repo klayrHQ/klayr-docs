@@ -2,7 +2,7 @@
 :description: This section covers the installation, updates, constants, specifications and data structures for the transaction pool package of Klayr Elements.
 :toc:
 
-The @klayrhq/klayr-transaction-pool package collects, verifies, and provides transactions to the forger module in order to produce a block.
+The @klayr/transaction-pool package collects, verifies, and provides transactions to the forger module in order to produce a block.
 
 Due to dynamic transaction fees and transaction nonces supported by the Klayr protocol, the transaction pool is required to sort transactions based on a nonce while also maximizing the fee.
 
@@ -12,7 +12,7 @@ The transaction pool has a single list of transactions and a periodic job which 
 
 [source,bash]
 ----
-npm install @klayrhq/klayr-transaction-pool
+npm install @klayr/transaction-pool
 ----
 
 == Update
@@ -21,7 +21,7 @@ To perform an upgrade, execute the following command:
 
 [source,bash]
 ----
-npm update @klayrhq/klayr-transaction-pool
+npm update @klayr/transaction-pool
 ----
 
 == Constants
@@ -32,7 +32,7 @@ Transaction-pool-specific constants include names as shown below:
 
 [source,js]
 ----
-const transactionPool = require('@klayrhq/klayr-transaction-pool')
+const transactionPool = require('@klayr/transaction-pool')
 
 transactionPool.EVENT_ADDED_TRANSACTIONS; // 'transactionsAdded'
 transactionPool.EVENT_REMOVED_TRANSACTIONS; // 'transactionsRemoved'
