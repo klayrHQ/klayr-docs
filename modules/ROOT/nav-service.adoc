@@ -1,8 +1,8 @@
-:url_service: master@lisk-service:ROOT:
+:url_service: master@klayr-service:ROOT:
 
 '''
 
-.Lisk Service
+.Klayr Service
 * Setup
 ** xref:{url_service}setup/docker.adoc[]
 ** xref:{url_service}setup/source.adoc[]

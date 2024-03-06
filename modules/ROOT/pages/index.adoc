@@ -1,11 +1,11 @@
-= Overview - Lisk Documentation
+= Overview - Klayr Documentation
 :toc:
 :toclevels: 4
 :page-no-previous: true
-:url_protocol: master@lisk-sdk:protocol:
-:url_sdk: master@lisk-sdk:ROOT:
-:url_core: master@lisk-core:ROOT:
-:url_service: master@lisk-service:ROOT:
+:url_protocol: master@klayr-sdk:protocol:
+:url_sdk: master@klayr-sdk:ROOT:
+:url_core: master@klayr-core:ROOT:
+:url_service: master@klayr-service:ROOT:
 
 :url_intro: introduction
 
@@ -15,16 +15,16 @@
 
 [.card.card-index]
 --
-xref:{url_intro}[[.card-title]#Introduction to Lisk# [.card-body.card-content-overflow]#pass:q[
-** Lisk interoperability
-** Lisks consensus algorithms
+xref:{url_intro}[[.card-title]#Introduction to Klayr# [.card-body.card-content-overflow]#pass:q[
+** Klayr interoperability
+** Klayrs consensus algorithms
 ]#]
 --
 
 [.card.card-index]
 --
-xref:{url_protocol}index.adoc[[.card-title]#Lisk Protocol# [.card-body.card-content-overflow]#pass:q[
-A high level overview about the underlying protocol of Lisk.
+xref:{url_protocol}index.adoc[[.card-title]#Klayr Protocol# [.card-body.card-content-overflow]#pass:q[
+A high level overview about the underlying protocol of Klayr.
 ]#]
 --
 
@@ -42,7 +42,7 @@ xref:{url_sdk}blockchain-applications.adoc[[.card-title]#Concepts & explanations
 [.card.card-index]
 --
 xref:{url_sdk}guides/app-development/setup.adoc[[.card-title]#Getting Started# [.card-body.card-content-overflow]#pass:q[
-* How to develop a blockchain app with the Lisk SDK
+* How to develop a blockchain app with the Klayr SDK
 * How to create a module
 * How to create a plugin
 ]#]
@@ -68,7 +68,7 @@ xref:{url_core}setup/binary.adoc[[.card-title]#Setting a node up# [.card-body.ca
 
 [.card.card-index]
 --
-xref:{url_service}setup/docker.adoc[[.card-title]#Setting up Lisk Service# [.card-body.card-content-overflow]#pass:q[How to setup Lisk Service with Docker]#]
+xref:{url_service}setup/docker.adoc[[.card-title]#Setting up Klayr Service# [.card-body.card-content-overflow]#pass:q[How to setup Klayr Service with Docker]#]
 --
 
 '''

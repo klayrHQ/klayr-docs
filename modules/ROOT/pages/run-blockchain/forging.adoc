@@ -8,24 +8,24 @@ Mona Bärenfänger <mona@lightcurve.io>
 :sectnums:
 :sectnumlevels: 2
 // URLs
-:url_lisk_wallet: https://lisk.com/wallet
+:url_klayr_wallet: https://klayr.com/wallet
 :url_wikipedia_password_strength: https://en.wikipedia.org/wiki/Password_strength#Guidelines_for_strong_passwords
 // Project URLs
 :url_guides_config: build-blockchain/configure-app.adoc
-:url_guides_setup_bootstrap: build-blockchain/get-started.adoc#bootstrapping-a-new-blockchain-application-with-lisk-commander
-:url_commander_commands: {v_sdk}@lisk-sdk::reference/lisk-commander/commands.adoc
-:url_framework_dashbobardplugin: {v_sdk}@lisk-sdk::reference/lisk-framework/dashboard-plugin.adoc
-:url_elements: {v_sdk}@lisk-sdk::reference/lisk-elements/index.adoc
-:url_elements_crytpography: {v_sdk}@lisk-sdk::reference/lisk-elements/cryptography.adoc
-:url_explanations_consensus: {v_sdk}@lisk-sdk::reference/lisk-framework/dpos-module.adoc#forging
-:url_explanations_consensus_register: {v_sdk}@lisk-sdk::reference/lisk-framework/dpos-module.adoc#delegate_registration
-:url_references_cli_forgingconfig: {v_sdk}@lisk-sdk::reference/application-cli.adoc#forgingconfig
-:url_references_cli_forgingenable: {v_sdk}@lisk-sdk::reference/application-cli.adoc#forgingenable
-:url_protocol_block_forgers: understand-blockchain/lisk-protocol/blocks.adoc#forgers
-:url_protocol_dpos: understand-blockchain/lisk-protocol/consensus-algorithm.adoc
-:url_protocol_delegate_selection: understand-blockchain/lisk-protocol/consensus-algorithm.adoc#delegate_selection
-:url_protocol_blocks_punishment: understand-blockchain/lisk-protocol/consensus-algorithm.adoc#punishment
-:url_protocol_tx_registerdelegegate: understand-blockchain/lisk-protocol/transactions.adoc#delegate-registration
+:url_guides_setup_bootstrap: build-blockchain/get-started.adoc#bootstrapping-a-new-blockchain-application-with-klayr-commander
+:url_commander_commands: {v_sdk}@klayr-sdk::reference/klayr-commander/commands.adoc
+:url_framework_dashbobardplugin: {v_sdk}@klayr-sdk::reference/klayr-framework/dashboard-plugin.adoc
+:url_elements: {v_sdk}@klayr-sdk::reference/klayr-elements/index.adoc
+:url_elements_crytpography: {v_sdk}@klayr-sdk::reference/klayr-elements/cryptography.adoc
+:url_explanations_consensus: {v_sdk}@klayr-sdk::reference/klayr-framework/dpos-module.adoc#forging
+:url_explanations_consensus_register: {v_sdk}@klayr-sdk::reference/klayr-framework/dpos-module.adoc#delegate_registration
+:url_references_cli_forgingconfig: {v_sdk}@klayr-sdk::reference/application-cli.adoc#forgingconfig
+:url_references_cli_forgingenable: {v_sdk}@klayr-sdk::reference/application-cli.adoc#forgingenable
+:url_protocol_block_forgers: understand-blockchain/klayr-protocol/blocks.adoc#forgers
+:url_protocol_dpos: understand-blockchain/klayr-protocol/consensus-algorithm.adoc
+:url_protocol_delegate_selection: understand-blockchain/klayr-protocol/consensus-algorithm.adoc#delegate_selection
+:url_protocol_blocks_punishment: understand-blockchain/klayr-protocol/consensus-algorithm.adoc#punishment
+:url_protocol_tx_registerdelegegate: understand-blockchain/klayr-protocol/transactions.adoc#delegate-registration
 
 How to enable forging on a node as a delegate.
 For more information about forging, please check the xref:{url_explanations_consensus}[forging] explanations on the DPoS module page.
@@ -35,7 +35,7 @@ For more information about forging, please check the xref:{url_explanations_cons
 Before it is possible to enable forging on a node, it is required to register as a delegate.
 This is achieved by choosing a unique delegate name, and posting a corresponding xref:{url_protocol_tx_registerdelegegate}[Register Delegate] transaction to the network.
 
-There are many possibilities to post the transaction, use the one you prefer: {url_lisk_wallet}[Lisk Desktop^], xref:{url_elements}[Lisk Elements], or the xref:{url_framework_dashbobardplugin}[].
+There are many possibilities to post the transaction, use the one you prefer: {url_klayr_wallet}[Klayr Desktop^], xref:{url_elements}[Klayr Elements], or the xref:{url_framework_dashbobardplugin}[].
 
 One option is to create the transaction object with the application CLI:
 
@@ -125,7 +125,7 @@ To create the forging configuration data, it is recommended to use one of the fo
 Option A - Creating the data with the application CLI::
 +
 --
-If the blockchain application was xref:{url_guides_setup_bootstrap}[bootstrapepd with Lisk Commander], it is possible to generate the relevant forging data conveniently with the command xref:{url_references_cli_forgingconfig}[forging:config].
+If the blockchain application was xref:{url_guides_setup_bootstrap}[bootstrapepd with Klayr Commander], it is possible to generate the relevant forging data conveniently with the command xref:{url_references_cli_forgingconfig}[forging:config].
 
 [source,bash]
 ----
@@ -164,16 +164,16 @@ Generally though, it is recommended to use high values for `count`, so the deleg
 }
 ----
 --
-Option B - Creating the data with Lisk Commander::
+Option B - Creating the data with Klayr Commander::
 +
 --
-Please ensure the xref:{url_commander_commands}[Lisk Commander] is installed in a secure environment.
+Please ensure the xref:{url_commander_commands}[Klayr Commander] is installed in a secure environment.
 Upon completion, please follow these commands to generate the encrypted passphrase:
 
 [source,bash]
 ----
-$ lisk
-lisk passphrase:encrypt --json
+$ klayr
+klayr passphrase:encrypt --json
 Please enter your secret passphrase: ***** # <1>
 Please re-enter your secret passphrase: *****
 Please enter your password: *** # <2>
@@ -193,11 +193,11 @@ Be sure to use a strong password.
 See the {url_wikipedia_password_strength}[Guidelines for password strength^] at Wikipedia for reference.
 ====
 
-The hash onion can be generated with Lisk Commander in the following manner:
+The hash onion can be generated with Klayr Commander in the following manner:
 
 [source,bash]
 ----
-lisk hash-onion --json
+klayr hash-onion --json
 ----
 
 * Add the hash onion and the delegate address in hexadecimal representation to the object with the `encryptedPassphraser`.
@@ -233,7 +233,7 @@ lisk hash-onion --json
 
 Now restart the node to apply the changes in the config.
 
-For more information about the configuration of the Lisk SDK check out the xref:{url_guides_config}[configuration guide].
+For more information about the configuration of the Klayr SDK check out the xref:{url_guides_config}[configuration guide].
 --
 =====
 
@@ -253,7 +253,7 @@ This behavior will be xref:{url_protocol_blocks_punishment}[punished] by the net
 Option A - Updating the forging status with the application CLI::
 +
 --
-If the blockchain application was xref:{url_guides_setup_bootstrap}[bootstrapped with Lisk Commander], it is possible to generate the relevant forging data conveniently with the command xref:{url_references_cli_forgingenable}[forging:enable].
+If the blockchain application was xref:{url_guides_setup_bootstrap}[bootstrapped with Klayr Commander], it is possible to generate the relevant forging data conveniently with the command xref:{url_references_cli_forgingenable}[forging:enable].
 
 NOTE: The blockchain application needs to be running to successfully enable forging on the node.
 
@@ -279,7 +279,7 @@ Invoke the following action to *enable the forging* for a delegate:
 .Enable forging
 [source,js]
 ----
-const { createWSClient } = require('@liskhq/lisk-api-client');
+const { createWSClient } = require('@klayrhq/klayr-api-client');
 
 export const enableForging = async () => {
     let apiClient = await createWSClient('ws://localhost:8080/ws');
@@ -322,7 +322,7 @@ Invoke the following action to *disable the forging* for a delegate:
 .Disable forging
 [source,js]
 ----
-const { createWSClient } = require('@liskhq/lisk-api-client');
+const { createWSClient } = require('@klayrhq/klayr-api-client');
 
 export const disableForging = async () => {
     let apiClient = await createWSClient('ws://localhost:8080/ws');

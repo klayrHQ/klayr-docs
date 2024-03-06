@@ -1,13 +1,13 @@
-:url_sdk: master@lisk-sdk:ROOT:
-:url_protocol: master@lisk-sdk:protocol:
-:url_core: master@lisk-core:ROOT:
-:url_service: master@lisk-service:ROOT:
+:url_sdk: master@klayr-sdk:ROOT:
+:url_protocol: master@klayr-sdk:protocol:
+:url_core: master@klayr-core:ROOT:
+:url_service: master@klayr-service:ROOT:
 
-.Introduction to Lisk
+.Introduction to Klayr
 * xref:index.adoc[]
 * xref:intro/what-is-blockchain.adoc[]
 * xref:intro/how-blockchain-works.adoc[]
-* xref:intro/lisk-products.adoc[]
+* xref:intro/klayr-products.adoc[]
 
 ---
 
@@ -20,14 +20,14 @@
 * xref:understand-blockchain/api.adoc[]
 * xref:understand-blockchain/endpoints.adoc[]
 * xref:understand-blockchain/codec-schema.adoc[]
-* Lisk Protocol
-** xref:understand-blockchain/lisk-protocol/index.adoc[]
-** xref:understand-blockchain/lisk-protocol/accounts.adoc[]
-** xref:understand-blockchain/lisk-protocol/blocks.adoc[]
-** xref:understand-blockchain/lisk-protocol/consensus-algorithm.adoc[]
-** xref:understand-blockchain/lisk-protocol/network.adoc[]
-** xref:understand-blockchain/lisk-protocol/transactions.adoc[]
-** xref:understand-blockchain/lisk-protocol/appendix.adoc[]
+* Klayr Protocol
+** xref:understand-blockchain/klayr-protocol/index.adoc[]
+** xref:understand-blockchain/klayr-protocol/accounts.adoc[]
+** xref:understand-blockchain/klayr-protocol/blocks.adoc[]
+** xref:understand-blockchain/klayr-protocol/consensus-algorithm.adoc[]
+** xref:understand-blockchain/klayr-protocol/network.adoc[]
+** xref:understand-blockchain/klayr-protocol/transactions.adoc[]
+** xref:understand-blockchain/klayr-protocol/appendix.adoc[]
 
 ---
 
@@ -67,10 +67,10 @@
 ---
 
 .APIs
-* xref:api/lisk-core.adoc[]
-* xref:api/lisk-service.adoc[]
+* xref:api/klayr-core.adoc[]
+* xref:api/klayr-service.adoc[]
 
 .Products
-* xref:6.0.0@lisk-sdk::index.adoc[]
-* xref:lisk-service::index.adoc[]
-* xref:lisk-core::index.adoc[]
+* xref:6.0.0@klayr-sdk::index.adoc[]
+* xref:klayr-service::index.adoc[]
+* xref:klayr-core::index.adoc[]

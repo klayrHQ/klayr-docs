@@ -7,41 +7,41 @@ Mona Bärenfänger <mona@lightcurve.io>
 :imagesdir: ../../assets/images
 :experimental:
 // External URLs
-:url_github_srs: https://github.com/LiskHQ/lisk-sdk-examples/tree/development/tutorials/social-recovery
-:url_github_srs_module: https://github.com/LiskHQ/lisk-sdk-examples/blob/development/tutorials/social-recovery/blockchain_app/srs_module/index.js
-:url_github_srs_schemas: https://github.com/LiskHQ/lisk-sdk-examples/blob/development/tutorials/social-recovery/blockchain_app/srs_module/schemas.js
-:url_github_srs_constants: https://github.com/LiskHQ/lisk-sdk-examples/blob/development/tutorials/social-recovery/blockchain_app/srs_module/constants.js
-:url_github_srs_create_asset: https://github.com/LiskHQ/lisk-sdk-examples/blob/development/tutorials/social-recovery/blockchain_app/srs_module/assets/create_recovery.js
-:url_github_srs_initiate_asset: https://github.com/LiskHQ/lisk-sdk-examples/blob/development/tutorials/social-recovery/blockchain_app/srs_module/assets/initiate_recovery.js
-:url_github_srs_vouch_asset: https://github.com/LiskHQ/lisk-sdk-examples/blob/development/tutorials/social-recovery/blockchain_app/srs_module/assets/vouch_recovery.js
-:url_github_srs_claim_asset: https://github.com/LiskHQ/lisk-sdk-examples/blob/development/tutorials/social-recovery/blockchain_app/srs_module/assets/claim_recovery.js
-:url_github_srs_close_asset: https://github.com/LiskHQ/lisk-sdk-examples/blob/development/tutorials/social-recovery/blockchain_app/srs_module/assets/close_recovery.js
-:url_github_srs_remove_asset: https://github.com/LiskHQ/lisk-sdk-examples/blob/development/tutorials/social-recovery/blockchain_app/srs_module/assets/remove_recovery.js
-:url_github_srs_transfer: https://github.com/LiskHQ/lisk-sdk-examples/blob/development/tutorials/social-recovery/blockchain_app/srs_api_plugin/controllers/transfer_token_api.js
-:url_github_srs_create: https://github.com/LiskHQ/lisk-sdk-examples/blob/development/tutorials/social-recovery/blockchain_app/srs_api_plugin/controllers/create_recovery_api.js
-:url_github_srs_initiate: https://github.com/LiskHQ/lisk-sdk-examples/blob/development/tutorials/social-recovery/blockchain_app/srs_api_plugin/controllers/initiate_recovery_api.js
-:url_github_srs_vouch: https://github.com/LiskHQ/lisk-sdk-examples/blob/development/tutorials/social-recovery/blockchain_app/srs_api_plugin/controllers/vouch_recovery_api.js
-:url_github_srs_claim: https://github.com/LiskHQ/lisk-sdk-examples/blob/development/tutorials/social-recovery/blockchain_app/srs_api_plugin/controllers/claim_recovery_api.js
-:url_github_srs_close: https://github.com/LiskHQ/lisk-sdk-examples/blob/development/tutorials/social-recovery/blockchain_app/srs_api_plugin/controllers/close_recovery_api.js
-:url_github_srs_remove: https://github.com/LiskHQ/lisk-sdk-examples/blob/development/tutorials/social-recovery/blockchain_app/srs_api_plugin/controllers/remove_recovery_api.js
-:url_github_srs_component_home: https://github.com/LiskHQ/lisk-sdk-examples/blob/development/tutorials/social-recovery/frontend_app/src/components/home.js
-:url_github_srs_component_create: https://github.com/LiskHQ/lisk-sdk-examples/blob/development/tutorials/social-recovery/frontend_app/src/components/createRecovery.js
-:url_github_srs_component_initiate: https://github.com/LiskHQ/lisk-sdk-examples/blob/development/tutorials/social-recovery/frontend_app/src/components/initiateRecovery.js
-:url_github_srs_component_vouch: https://github.com/LiskHQ/lisk-sdk-examples/blob/development/tutorials/social-recovery/frontend_app/src/components/vouchRecovery.js
-:url_github_srs_component_claim: https://github.com/LiskHQ/lisk-sdk-examples/blob/development/tutorials/social-recovery/frontend_app/src/components/claimRecovery.js
-:url_github_srs_component_close: https://github.com/LiskHQ/lisk-sdk-examples/blob/development/tutorials/social-recovery/frontend_app/src/components/closeRecovery.js
-:url_github_srs_component_remove: https://github.com/LiskHQ/lisk-sdk-examples/blob/development/tutorials/social-recovery/frontend_app/src/components/removeRecovery.js
-:url_github_srs_component_account: https://github.com/LiskHQ/lisk-sdk-examples/blob/development/tutorials/social-recovery/frontend_app/src/components/getAccount.js
-:url_github_srs_component_node: https://github.com/LiskHQ/lisk-sdk-examples/blob/development/tutorials/social-recovery/frontend_app/src/components/getNodeInfo.js
-:url_github_srs_component_recoveryconfigs: https://github.com/LiskHQ/lisk-sdk-examples/blob/development/tutorials/social-recovery/frontend_app/src/components/getRecoveryAccounts.js
-:url_github_srs_component_sidemenu: https://github.com/LiskHQ/lisk-sdk-examples/blob/development/tutorials/social-recovery/frontend_app/src/components/sideMenu.js
-:url_github_srs_component_manager: https://github.com/LiskHQ/lisk-sdk-examples/blob/development/tutorials/social-recovery/frontend_app/src/components/recoveryManager.js
+:url_github_srs: https://github.com/KlayrHQ/klayr-sdk-examples/tree/development/tutorials/social-recovery
+:url_github_srs_module: https://github.com/KlayrHQ/klayr-sdk-examples/blob/development/tutorials/social-recovery/blockchain_app/srs_module/index.js
+:url_github_srs_schemas: https://github.com/KlayrHQ/klayr-sdk-examples/blob/development/tutorials/social-recovery/blockchain_app/srs_module/schemas.js
+:url_github_srs_constants: https://github.com/KlayrHQ/klayr-sdk-examples/blob/development/tutorials/social-recovery/blockchain_app/srs_module/constants.js
+:url_github_srs_create_asset: https://github.com/KlayrHQ/klayr-sdk-examples/blob/development/tutorials/social-recovery/blockchain_app/srs_module/assets/create_recovery.js
+:url_github_srs_initiate_asset: https://github.com/KlayrHQ/klayr-sdk-examples/blob/development/tutorials/social-recovery/blockchain_app/srs_module/assets/initiate_recovery.js
+:url_github_srs_vouch_asset: https://github.com/KlayrHQ/klayr-sdk-examples/blob/development/tutorials/social-recovery/blockchain_app/srs_module/assets/vouch_recovery.js
+:url_github_srs_claim_asset: https://github.com/KlayrHQ/klayr-sdk-examples/blob/development/tutorials/social-recovery/blockchain_app/srs_module/assets/claim_recovery.js
+:url_github_srs_close_asset: https://github.com/KlayrHQ/klayr-sdk-examples/blob/development/tutorials/social-recovery/blockchain_app/srs_module/assets/close_recovery.js
+:url_github_srs_remove_asset: https://github.com/KlayrHQ/klayr-sdk-examples/blob/development/tutorials/social-recovery/blockchain_app/srs_module/assets/remove_recovery.js
+:url_github_srs_transfer: https://github.com/KlayrHQ/klayr-sdk-examples/blob/development/tutorials/social-recovery/blockchain_app/srs_api_plugin/controllers/transfer_token_api.js
+:url_github_srs_create: https://github.com/KlayrHQ/klayr-sdk-examples/blob/development/tutorials/social-recovery/blockchain_app/srs_api_plugin/controllers/create_recovery_api.js
+:url_github_srs_initiate: https://github.com/KlayrHQ/klayr-sdk-examples/blob/development/tutorials/social-recovery/blockchain_app/srs_api_plugin/controllers/initiate_recovery_api.js
+:url_github_srs_vouch: https://github.com/KlayrHQ/klayr-sdk-examples/blob/development/tutorials/social-recovery/blockchain_app/srs_api_plugin/controllers/vouch_recovery_api.js
+:url_github_srs_claim: https://github.com/KlayrHQ/klayr-sdk-examples/blob/development/tutorials/social-recovery/blockchain_app/srs_api_plugin/controllers/claim_recovery_api.js
+:url_github_srs_close: https://github.com/KlayrHQ/klayr-sdk-examples/blob/development/tutorials/social-recovery/blockchain_app/srs_api_plugin/controllers/close_recovery_api.js
+:url_github_srs_remove: https://github.com/KlayrHQ/klayr-sdk-examples/blob/development/tutorials/social-recovery/blockchain_app/srs_api_plugin/controllers/remove_recovery_api.js
+:url_github_srs_component_home: https://github.com/KlayrHQ/klayr-sdk-examples/blob/development/tutorials/social-recovery/frontend_app/src/components/home.js
+:url_github_srs_component_create: https://github.com/KlayrHQ/klayr-sdk-examples/blob/development/tutorials/social-recovery/frontend_app/src/components/createRecovery.js
+:url_github_srs_component_initiate: https://github.com/KlayrHQ/klayr-sdk-examples/blob/development/tutorials/social-recovery/frontend_app/src/components/initiateRecovery.js
+:url_github_srs_component_vouch: https://github.com/KlayrHQ/klayr-sdk-examples/blob/development/tutorials/social-recovery/frontend_app/src/components/vouchRecovery.js
+:url_github_srs_component_claim: https://github.com/KlayrHQ/klayr-sdk-examples/blob/development/tutorials/social-recovery/frontend_app/src/components/claimRecovery.js
+:url_github_srs_component_close: https://github.com/KlayrHQ/klayr-sdk-examples/blob/development/tutorials/social-recovery/frontend_app/src/components/closeRecovery.js
+:url_github_srs_component_remove: https://github.com/KlayrHQ/klayr-sdk-examples/blob/development/tutorials/social-recovery/frontend_app/src/components/removeRecovery.js
+:url_github_srs_component_account: https://github.com/KlayrHQ/klayr-sdk-examples/blob/development/tutorials/social-recovery/frontend_app/src/components/getAccount.js
+:url_github_srs_component_node: https://github.com/KlayrHQ/klayr-sdk-examples/blob/development/tutorials/social-recovery/frontend_app/src/components/getNodeInfo.js
+:url_github_srs_component_recoveryconfigs: https://github.com/KlayrHQ/klayr-sdk-examples/blob/development/tutorials/social-recovery/frontend_app/src/components/getRecoveryAccounts.js
+:url_github_srs_component_sidemenu: https://github.com/KlayrHQ/klayr-sdk-examples/blob/development/tutorials/social-recovery/frontend_app/src/components/sideMenu.js
+:url_github_srs_component_manager: https://github.com/KlayrHQ/klayr-sdk-examples/blob/development/tutorials/social-recovery/frontend_app/src/components/recoveryManager.js
 :url_react_docs: https://reactjs.org/docs/getting-started.html
 // Project URLs
 :url_references_schemas: understand-blockchain/codec-schema.adoc
-:url_statestore: 6.0.0@lisk-sdk::reference/lisk-elements/chain.adoc#state-store
-:url_references_token_module: 6.0.0@lisk-sdk::reference/lisk-framework/token-module.adoc
-:url_lisk_sdk: glossary.adoc#lisk-sdk
+:url_statestore: 6.0.0@klayr-sdk::reference/klayr-elements/chain.adoc#state-store
+:url_references_token_module: 6.0.0@klayr-sdk::reference/klayr-framework/token-module.adoc
+:url_klayr_sdk: glossary.adoc#klayr-sdk
 
 How to create a blockchain application which offers users a feature to recover the balance of their accounts for the scenario whereby their passphrase has been lost or forgotten.
 
@@ -72,7 +72,7 @@ In addition to the blockchain application, a **frontend application** will also 
 
 Create a new folder which will contain all the files for the SRS app.
 The Social Recovery System consists of two applications: The blockchain application and the frontend application.
-First, create the folder for the blockchain application, initialize a new Node.js ptoject and install the xref:{url_lisk_sdk}[Lisk SDK] as dependency.
+First, create the folder for the blockchain application, initialize a new Node.js ptoject and install the xref:{url_klayr_sdk}[Klayr SDK] as dependency.
 
 [source,bash]
 ----
@@ -80,7 +80,7 @@ mkdir srs
 mkdir srs/blockchain_app
 cd srs/blockchain_app
 npm init --yes
-npm i lisk-sdk
+npm i klayr-sdk
 ----
 
 Next, create a new file `index.js` and paste the following:
@@ -88,7 +88,7 @@ Next, create a new file `index.js` and paste the following:
 .srs/blockchain_app/index.js
 [source,js]
 ----
-const { Application, genesisBlockDevnet, configDevnet } = require('lisk-sdk');
+const { Application, genesisBlockDevnet, configDevnet } = require('klayr-sdk');
 
 const app = Application.defaultApplication(genesisBlockDevnet, configDevnet);
 
@@ -212,7 +212,7 @@ Now open the file and paste the code below:
 .srs/blockchain_app/srs_module/transactions/create_recovery.js
 [source,js]
 ----
-const { BaseAsset } = require("lisk-sdk");
+const { BaseAsset } = require("klayr-sdk");
 
 // extend base asset to implement the custom asset
 class CreateRecoveryAsset extends BaseAsset { <1>
@@ -231,7 +231,7 @@ Now all required properties for the transaction asset are defined in sequential 
 .srs/blockchain_app/srs_module/transactions/create_recovery.js
 [source,js]
 ----
-const { BaseAsset } = require("lisk-sdk");
+const { BaseAsset } = require("klayr-sdk");
 const { CREATE_RECOVERY_ASSET_ID } = require('../constants');
 
 // extend base asset to implement your custom asset
@@ -296,7 +296,7 @@ Now import the asset schema into `create_recovery.js`.
 .srs/blockchain_app/srs_module/transactions/create_recovery.js
 [source,js]
 ----
-const { BaseAsset } = require('lisk-sdk');
+const { BaseAsset } = require('klayr-sdk');
 const { CREATE_RECOVERY_ASSET_ID } = require('../constants');
 const { createRecoverySchema } = require('../schemas');
 
@@ -322,7 +322,7 @@ It is used here to get and set certain data from and to the database.
 .srs/blockchain_app/srs_module/transactions/create_recovery.js
 [source,js]
 ----
-const { BaseAsset, transactions } = require('lisk-sdk');
+const { BaseAsset, transactions } = require('klayr-sdk');
 const { createRecoverySchema } = require('../schemas');
 const { BASE_RECOVERY_DEPOSIT, FRIEND_FACTOR_FEE, CREATE_RECOVERY_ASSET_ID } = require('../constants');
 
@@ -351,7 +351,7 @@ class CreateRecoveryAsset extends BaseAsset {
         // Minimum number of blocks after recovery process when account will be recoverable
         sender.srs.config.delayPeriod = asset.delayPeriod;
         // Set the deposit based on number of friends, 10 + friends.length * 2
-        const deposit = BigInt(BASE_RECOVERY_DEPOSIT) + BigInt(transactions.convertLSKToBeddows((sender.srs.config.friends.length * FRIEND_FACTOR_FEE).toString()));
+        const deposit = BigInt(BASE_RECOVERY_DEPOSIT) + BigInt(transactions.convertKLYToBeddows((sender.srs.config.friends.length * FRIEND_FACTOR_FEE).toString()));
         sender.srs.config.deposit = deposit;
         // Save the value in stateStore
         await stateStore.account.set(sender.address, sender);
@@ -385,7 +385,7 @@ If the rescuer doesn't have an adequate balance, it should throw an error.
 .srs/blockchain_app/srs_module/transactions/initiate_recovery.js
 [source,js]
 ----
-const { BaseAsset } = require('lisk-sdk');
+const { BaseAsset } = require('klayr-sdk');
 const { initiateRecoverySchema } = require('../schemas');
 const { INITIATE_RECOVERY_ASSET_ID } = require('../constants');
 
@@ -464,7 +464,7 @@ The following logic is implemented:
 .srs/blockchain_app/srs_module/transactions/vouch_recovery.js
 [source,js]
 ----
-const { BaseAsset } = require('lisk-sdk');
+const { BaseAsset } = require('klayr-sdk');
 const { vouchRecoverySchema } = require('../schemas');
 const { VOUCH_RECOVERY_ASSET_ID } = require('../constants');
 
@@ -528,7 +528,7 @@ NOTE: You always need to leave the minimum account balance inside of the `lostAc
 .srs/blockchain_app/srs_module/transactions/claim_recovery.js
 [source,js]
 ----
-const { BaseAsset } = require('lisk-sdk');
+const { BaseAsset } = require('klayr-sdk');
 const { claimRecoverySchema } = require('../schemas');
 const { CLAIM_RECOVERY_ASSET_ID } = require('../constants');
 
@@ -613,7 +613,7 @@ The following logic is implemented:
 .srs/blockchain_app/srs_module/transactions/close_recovery.js
 [source,js]
 ----
-const { BaseAsset } = require('lisk-sdk');
+const { BaseAsset } = require('klayr-sdk');
 const { closeRecoverySchema } = require('../schemas');
 const { CLOSE_RECOVERY_ASSET_ID } = require('../constants');
 
@@ -670,7 +670,7 @@ The following logic is implemented:
 ----
 const {
 	BaseAsset
-} = require('lisk-sdk');
+} = require('klayr-sdk');
 const { removeRecoverySchema } = require('../schemas');
 const { REMOVE_RECOVERY_ASSET_ID } = require('../constants');
 
@@ -728,11 +728,11 @@ Open `index.js` and create the skeleton which will contain all parts of the SRS 
 
 Set the unique identifier for the SRS module to `srs`, and the module ID to `1026`.
 
-NOTE: Module ID until 1000 is reserved by Lisk SDK for future default modules.
+NOTE: Module ID until 1000 is reserved by Klayr SDK for future default modules.
 
 [source,js]
 ----
-const { BaseModule } = require('lisk-sdk');
+const { BaseModule } = require('klayr-sdk');
 
 // Extend from the base module to implement a custom module
 class SRSModule extends BaseModule {
@@ -841,7 +841,7 @@ Now use the `SRSAccountSchema` inside of the module:
 .srs/blockchain_app/srs_module/index.js
 [source,js]
 ----
-const { BaseModule } = require('lisk-sdk');
+const { BaseModule } = require('klayr-sdk');
 const { SRSAccountSchema } = require('./schemas');
 
 // Extend from the base module to implement a custom module
@@ -873,7 +873,7 @@ In this example: `CreateRecoveryAsset`, `InitiateRecoveryAsset`, `VouchRecoveryA
 .srs/blockchain_app/srs_module/index.js
 [source,js]
 ----
-const { BaseModule } = require('lisk-sdk');
+const { BaseModule } = require('klayr-sdk');
 const CreateRecoveryAsset = require('./assets/create_recovery');
 const ClaimRecoveryAsset = require('./assets/claim_recovery');
 const InitiateRecoveryAsset = require('./assets/initiate_recovery');
@@ -913,7 +913,7 @@ As described in section <<srs-application-overview>>, define three different eve
 .srs/blockchain_app/srs_module/index.js
 [source,js]
 ----
-const { BaseModule } = require('lisk-sdk');
+const { BaseModule } = require('klayr-sdk');
 const CreateRecoveryAsset = require('./assets/create_recovery');
 const ClaimRecoveryAsset = require('./assets/claim_recovery');
 const InitiateRecoveryAsset = require('./assets/initiate_recovery');
@@ -959,7 +959,7 @@ The following events are fired:
 .srs/blockchain_app/srs_module/index.js
 [source,js]
 ----
-const { BaseModule, codec } = require('lisk-sdk');
+const { BaseModule, codec } = require('klayr-sdk');
 const CreateRecoveryAsset = require('./assets/create_recovery');
 const ClaimRecoveryAsset = require('./assets/claim_recovery');
 const InitiateRecoveryAsset = require('./assets/initiate_recovery');
@@ -1061,7 +1061,7 @@ Open `index.js` and create the skeleton, which will contain all parts of the SRS
 .srs/blockchain_app/plugins/srs_data_plugin/index.js
 [source,js]
 ----
-const { BasePlugin } = require('lisk-sdk');
+const { BasePlugin } = require('klayr-sdk');
 const pJSON = require('../../package.json');
 
 class SRSDataPlugin extends BasePlugin { <1>
@@ -1101,7 +1101,7 @@ Here, the data is reused from the `package.json` file.
 The following helper functions and constants are defined:
 
 `getDBInstance()`::
-Returns a key-value store for the plugin data, which is stored under the path `~/.lisk/srs-app/plugins/data/srs_data_plugin.db`.
+Returns a key-value store for the plugin data, which is stored under the path `~/.klayr/srs-app/plugins/data/srs_data_plugin.db`.
 
 `encodedConfigAccountsSchema`::
 The schema describes how the accounts and their recovery configurations are saved in the database.
@@ -1133,7 +1133,7 @@ Use the above defined `encodedConfigAccountsSchema` for this purpose.
 .srs/blockchain_app/plugins/srs_data_plugin/index.js
 [source,js]
 ----
-const { BasePlugin, db, codec } = require('lisk-sdk');
+const { BasePlugin, db, codec } = require('klayr-sdk');
 const pJSON = require('../../package.json');
 const fs_extra = require("fs-extra");
 const os = require("os");
@@ -1141,7 +1141,7 @@ const path = require("path");
 
 const DB_KEY_CONFIGACCOUNTS = "srs:configAccounts";
 
-const getDBInstance = async (dataPath = '~/.lisk/srs-app/', dbName = 'srs_data_plugin.db') => {
+const getDBInstance = async (dataPath = '~/.klayr/srs-app/', dbName = 'srs_data_plugin.db') => {
   const dirPath = path.join(dataPath.replace('~', os.homedir()), 'plugins/data', dbName);
   await fs_extra.ensureDir(dirPath);
   return new db.KVStore(dirPath);
@@ -1331,7 +1331,7 @@ Open `index.js` and paste the following snippet:
 .srs/blockchain_app/plugins/srs_api_plugin/index.js
 [source,js]
 ----
-const { BasePlugin } = require('lisk-sdk');
+const { BasePlugin } = require('klayr-sdk');
 const pJSON = require('../../package.json');
 
 // 1.plugin can be a daemon/HTTP/Websocket service for off-chain processing
@@ -1400,7 +1400,7 @@ Feel free to copy and paste the files above from GitHub into your own project.
 .srs/blockchain_app/plugins/srs_api_plugin/controllers
 [source,js]
 ----
-const { transactions, cryptography } = require('@liskhq/lisk-client');
+const { transactions, cryptography } = require('@klayrhq/klayr-client');
 const { createRecoverySchema } = require('../schemas');
 const { SRS_CREATE_ASSET_ID, SRS_MODULE_ID, DEFAULT_FEE } = require('../constants');
 
@@ -1474,7 +1474,7 @@ Add the new function `load()` into the `SRSAPIPlugin` with the following content
 ----
 const express = require('express');
 const cors = require('cors');
-const { BasePlugin } = require('lisk-sdk');
+const { BasePlugin } = require('klayr-sdk');
 const pJSON = require('../../package.json');
 const controllers = require('./controllers');
 
@@ -1573,14 +1573,14 @@ Open the `srs/blockchain_app/index.js` file again and paste the following code:
 .srs/blockchain_app/index.js
 [source,js]
 ----
-// 1.Import lisk sdk to create the blockchain application
+// 1.Import klayr sdk to create the blockchain application
 const {
 	Application,
 	configDevnet,
 	genesisBlockDevnet,
 	HTTPAPIPlugin,
 	utils,
-} = require('lisk-sdk');
+} = require('klayr-sdk');
 // 2.Import SRS module & plugins
 const { SRSModule } = require('./srs_module');
 const { SRSAPIPlugin } = require('./srs_api_plugin/');
@@ -1657,17 +1657,17 @@ The development of the frontend application is completely flexible, and you can 
 In this example, we use React to build the client application.
 ====
 
-This tutorial predominantly covers and explains how to build with the Lisk SDK, therefore other parts of the frontend app are not explained in great detail.
+This tutorial predominantly covers and explains how to build with the Klayr SDK, therefore other parts of the frontend app are not explained in great detail.
 More information about how to build a React application can be found in the {url_react_docs}[official React documentation^].
 
-For convenience, clone the development branch from the `lisk-sdk-examples` GitHub repository and use the prepared SRS `frontend_app` from the Lisk SDK examples.
+For convenience, clone the development branch from the `klayr-sdk-examples` GitHub repository and use the prepared SRS `frontend_app` from the Klayr SDK examples.
 
 .srs/
 [source,bash]
 ----
-git clone https://github.com/LiskHQ/lisk-sdk-examples.git
-mv lisk-sdk-examples/tutorials/social-recovery/frontend_app frontend_app
-rm -r ./lisk-sdk-examples
+git clone https://github.com/KlayrHQ/klayr-sdk-examples.git
+mv klayr-sdk-examples/tutorials/social-recovery/frontend_app frontend_app
+rm -r ./klayr-sdk-examples
 cd frontend_app
 npm i
 ----
@@ -1689,11 +1689,11 @@ This should open the React app in the browser under http://localhost:3000/.
 [TIP]
 
 ====
-To reset the database of the application, remove the `./lisk/` folder, which can normally be found in the home directory of the user:
+To reset the database of the application, remove the `./klayr/` folder, which can normally be found in the home directory of the user:
 
 [source,bash]
 ----
-rm -r ~/.lisk/srs-app
+rm -r ~/.klayr/srs-app
 ----
 ====
 
@@ -1730,7 +1730,7 @@ Original Account
 passphrase:
 peanut hundred pen hawk invite exclude brain chunk gadget wait wrong ready
 address:
-lskdxc4ta5j43jp9ro3f8zqbxta9fn6jwzjucw7yt
+klydxc4ta5j43jp9ro3f8zqbxta9fn6jwzjucw7yt
 address (hex string):
 d04699e57c4a3846c988f3c15306796f8eae5c1c
 =======================
@@ -1739,7 +1739,7 @@ Rescuer
 passphrase:
 endless focus guilt bronze hold economy bulk parent soon tower cement venue
 address:
-lsktrqfj84n34tn97vraaq2ztmrgwgwakmqyskqw4
+klytrqfj84n34tn97vraaq2ztmrgwgwakmqyskqw4
 address (hex string):
 9cabee3d27426676b852ce6b804cb2fdff7cd0b5
 =======================
@@ -1748,7 +1748,7 @@ Friend 1
 passphrase:
 mushroom edit regular pencil ten casino wine north vague bachelor swim piece
 address:
-lsk32gnhxjs887bqmgoz6y6ozh6c4c6ztpz7wjfa9
+kly32gnhxjs887bqmgoz6y6ozh6c4c6ztpz7wjfa9
 address (hex string):
 463e7e879b7bdc6a97ec02a2a603aa1a46a04c80
 =======================
@@ -1757,7 +1757,7 @@ Friend 2
 passphrase:
 thought talk cherry write armed valve salute fabric auction maid join rebuild
 address:
-lskb6bufqcbrwvgkzuu5wqu6wnruz7awvhxwfkonb
+klyb6bufqcbrwvgkzuu5wqu6wnruz7awvhxwfkonb
 address (hex string):
 328d0f546695c5fa02105deb055cf2801d9b8ba1
 =======================
@@ -1766,7 +1766,7 @@ Friend 3
 passphrase:
 exist night more net diesel exact will purse orbit vacuum birth wide
 address:
-lskomdmvwhb9r3sgj3ryp4fsqnzfn8c8twzkecugt
+klyomdmvwhb9r3sgj3ryp4fsqnzfn8c8twzkecugt
 address (hex string):
 6174515fa66c91bff1128913edd4e0f1de37cee0
 ----
@@ -1900,7 +1900,7 @@ Accepts two arguments:
 .srs/frontent_app/src/api/index.js
 [source,js]
 ----
-import { apiClient } from '@liskhq/lisk-client';
+import { apiClient } from '@klayrhq/klayr-client';
 
 const RPC_ENDPOINT = 'ws://localhost:8888/ws';
 
@@ -1998,7 +1998,7 @@ import { sendTransactions } from '../api';
 import { createRecoveryDefaults } from "../utils/defaults";
 import Snackbar from '@material-ui/core/Snackbar';
 import MuiAlert from '@material-ui/lab/Alert';
-import { cryptography } from '@liskhq/lisk-client';
+import { cryptography } from '@klayrhq/klayr-client';
 
 function Alert(props) {
   return <MuiAlert elevation={6} variant="filled" {...props} />;
@@ -2255,7 +2255,7 @@ It consists of the following components:
 
 Feel free to play around with the code example by changing/adjusting certain options, or by extending the application in your own way.
 
-The following exercises might be interesting to get more familiar with the Lisk SDK.
+The following exercises might be interesting to get more familiar with the Klayr SDK.
 
 === Implement HTTP API endpoint as plugin actions
 

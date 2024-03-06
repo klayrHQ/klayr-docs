@@ -14,20 +14,20 @@ Mona Bärenfänger <mona@lightcurve.io>
 :url_faucet: http://localhost:4004
 :url_dashboard: http://localhost:4005
 :url_oclif: https://oclif.io/
-:url_sdkexamples_lns_secret: https://github.com/LiskHQ/lisk-sdk-examples/tree/development/tutorials/lisk-name-service/lns/.secret
+:url_sdkexamples_lns_secret: https://github.com/KlayrHQ/klayr-sdk-examples/tree/development/tutorials/klayr-name-service/lns/.secret
 // Project URLs
 :url_guide_dashboard: build-blockchain/using-dashboard.adoc
 :url_guide_setup_dependencies: build-blockchain/create-blockchain-app.adoc#dependencies
 :url_guide_setup_init: build-blockchain/create-blockchain-app.adoc#initializing-a-new-blockchain-application
 :url_guide_genesisblock: build-blockchain/create-genesis-block.adoc
-:url_reference_dashboard: 6.0.0@lisk-sdk::plugins/dashboard-plugin.adoc
-:url_reference_faucet: 6.0.0@lisk-sdk::plugins/faucet-plugin.adoc
+:url_reference_dashboard: 6.0.0@klayr-sdk::plugins/dashboard-plugin.adoc
+:url_reference_faucet: 6.0.0@klayr-sdk::plugins/faucet-plugin.adoc
 :url_transaction_asset: glossary.adoc#transaction-asset
 :sectnums:
 
 == Dependencies
 
-Please refer to the section xref:{url_guide_setup_dependencies}[Lisk SDK Dependencies] of the setup guide to set up all the required dependencies to follow this tutorial, if you have not done so already.
+Please refer to the section xref:{url_guide_setup_dependencies}[Klayr SDK Dependencies] of the setup guide to set up all the required dependencies to follow this tutorial, if you have not done so already.
 
 == Bootstrapping the default application
 
@@ -35,24 +35,24 @@ Please follow the section xref:{url_guide_setup_init}[Initializing a new blockch
 
 [NOTE]
 ====
-Please use `lisk-name-service/lns` as the root folder for the LNS blockchain application, and `lns` as the application name.
+Please use `klayr-name-service/lns` as the root folder for the LNS blockchain application, and `lns` as the application name.
 
 [source,bash]
 ----
-mkdir lisk-name-service
-cd lisk-name-service
-lisk init
+mkdir klayr-name-service
+cd klayr-name-service
+klayr init
 ----
 ====
 
 To customize the default blockchain application to suit our desired use case, generate the LNS module skeleton.
 
-Create the module skeleton by executing the command `lisk generate:module` as shown below:
+Create the module skeleton by executing the command `klayr generate:module` as shown below:
 
-.lisk-name-service/lns/
+.klayr-name-service/lns/
 [source,bash]
 ----
-lisk generate:module lns 1000
+klayr generate:module lns 1000
 ----
 
 The command expects two arguments:
@@ -85,14 +85,14 @@ The first part of the module to be implemented here are the assets to handle the
 
 === Register Domain
 
-As the first step for creating the asset, use Lisk Commander again, this time to create the asset skeleton.
+As the first step for creating the asset, use Klayr Commander again, this time to create the asset skeleton.
 
 Execute the following command:
 
-.lisk-name-service/lns/
+.klayr-name-service/lns/
 [source,bash]
 ----
-lisk generate:asset lns register 1
+klayr generate:asset lns register 1
 ----
 
 ----
@@ -117,7 +117,7 @@ When you open `register.ts` at this point, it will appear as shown below:
 .src/app/modules/lns/assets/register.ts
 [source,typescript]
 ----
-import { BaseAsset, ApplyAssetContext, ValidateAssetContext } from 'lisk-sdk';
+import { BaseAsset, ApplyAssetContext, ValidateAssetContext } from 'klayr-sdk';
 
 export class RegisterAsset extends BaseAsset {
   public name = 'register';
@@ -222,7 +222,7 @@ Now, include the schema in the asset file:
 .src/app/modules/lns/assets/register.ts
 [source,typescript]
 ----
-import { BaseAsset, ApplyAssetContext, ValidateAssetContext } from 'lisk-sdk';
+import { BaseAsset, ApplyAssetContext, ValidateAssetContext } from 'klayr-sdk';
 import { RegisterAssetProps, registerAssetPropsSchema } from '../data';
 
 export class RegisterAsset extends BaseAsset<RegisterAssetProps> {
@@ -248,7 +248,7 @@ Add the following two constants.
 [source,typescript]
 ----
 export const MIN_TTL_VALUE = 60 * 60; // 1 hour
-export const VALID_TLDS = ['lsk'];
+export const VALID_TLDS = ['kly'];
 ----
 
 Now import the constants into the `register` asset, and use them to check the validity of transaction assets:
@@ -265,7 +265,7 @@ The corresponding code can be seen below:
 .src/app/modules/lns/assets/register.ts
 [source,typescript]
 ----
-import { BaseAsset, ApplyAssetContext, ValidateAssetContext } from 'lisk-sdk';
+import { BaseAsset, ApplyAssetContext, ValidateAssetContext } from 'klayr-sdk';
 import { RegisterAssetProps, registerAssetPropsSchema } from '../data';
 import { MIN_TTL_VALUE, VALID_TLDS } from '../constants';
 
@@ -315,7 +315,7 @@ The following logic is implemented in the `apply()` function:
 [source,typescript]
 ----
 import { addYears } from 'date-fns';
-import { BaseAsset, ApplyAssetContext, ValidateAssetContext } from 'lisk-sdk';
+import { BaseAsset, ApplyAssetContext, ValidateAssetContext } from 'klayr-sdk';
 import { LNSAccountProps, RegisterAssetProps, registerAssetPropsSchema } from '../data';
 import { createLNSObject, getLNSObject, getNodeForName } from '../storage';
 import { MIN_TTL_VALUE, VALID_TLDS } from '../constants';
@@ -382,7 +382,7 @@ export interface LNSAccountProps {
 }
 
 export const lsnAccountPropsSchema = {
-	$id: 'lisk/lns/lnsAccount',
+	$id: 'klayr/lns/lnsAccount',
 	type: 'object',
 	required: ['ownNodes', 'reverseLookup'],
 	properties: {
@@ -436,7 +436,7 @@ import * as namehash from 'eth-ens-namehash';
 
 // constants
 export const LNS_PREFIX = 'LNS';
-export const VALID_TLDS = ['lsk'];
+export const VALID_TLDS = ['kly'];
 
 // Get a unique key for each LNS object
 export const getKeyForNode = (node: Buffer): string => `${LNS_PREFIX}:${node.toString('hex')}`;
@@ -451,7 +451,7 @@ import * as namehash from 'eth-ens-namehash';
 
 // constants
 export const LNS_PREFIX = 'LNS';
-export const VALID_TLDS = ['lsk'];
+export const VALID_TLDS = ['kly'];
 
 // Get a unique key for each LNS object
 export const getKeyForNode = (node: Buffer): string => `${LNS_PREFIX}:${node.toString('hex')}`;
@@ -480,7 +480,7 @@ The stateStore allows performing state changes on the blockchain.
 .src/app/modules/lns/storage.ts
 [source,typescript]
 ----
-import { chain, codec, StateStore } from 'lisk-sdk';
+import { chain, codec, StateStore } from 'klayr-sdk';
 import * as namehash from 'eth-ens-namehash';
 
 // ...
@@ -518,7 +518,7 @@ The stateStore allows performing state changes on the blockchain.
 .src/app/modules/lns/storage.ts
 [source,typescript]
 ----
-import { chain, codec, StateStore } from 'lisk-sdk';
+import { chain, codec, StateStore } from 'klayr-sdk';
 import * as namehash from 'eth-ens-namehash';
 
 // ...
@@ -573,7 +573,7 @@ Based on this interface, create the corresponding schema, as shown below:
 [source,typescript]
 ----
 export const lnsNodeRecordSchema = {
-	$id: 'lisk/lns/lnsNodeRecord',
+	$id: 'klayr/lns/lnsNodeRecord',
 	type: 'object',
 	required: ['type', 'label', 'value'],
 	properties: {
@@ -627,7 +627,7 @@ Based on this interface, it is now possible to create the corresponding schema a
 [source,typescript]
 ----
 export const lnsNodeSchema = {
-	$id: 'lisk/lns/lnsNode',
+	$id: 'klayr/lns/lnsNode',
 	type: 'object',
 	required: ['ownerAddress', 'name', 'ttl', 'expiry', 'records', 'createdAt', 'updatedAt'],
 	properties: {
@@ -677,13 +677,13 @@ As an account can register multiple domains, it is important to define which dom
 
 To achieve this, the account owner needs to send a reverse lookup transaction to update the default domain, which their account address should default to.
 
-Similar to the register asset, use Lisk Commander to first generate the asset skeleton.
+Similar to the register asset, use Klayr Commander to first generate the asset skeleton.
 Use `reverse_lookup` as the asset name and `2` as the asset ID.
 
-.lisk-name-service/lns/
+.klayr-name-service/lns/
 [source,bash]
 ----
-lisk generate:asset lns reverse_lookup 2
+klayr generate:asset lns reverse_lookup 2
 ----
 
 ==== Schema
@@ -718,7 +718,7 @@ Now include the schema in the asset file:
 .src/app/modules/lns/assets/reverse_lookup.ts
 [source,typescript]
 ----
-import { ApplyAssetContext, BaseAsset } from 'lisk-sdk';
+import { ApplyAssetContext, BaseAsset } from 'klayr-sdk';
 import { LNSAccountProps, ReverseLookupAssetProps, reverseLookupAssetPropsSchema } from '../data';
 import { getNodeForName } from '../storage';
 
@@ -777,7 +777,7 @@ For example if you build any DNS provider service on top of the LNS app, then yo
 
 [source,bash]
 ----
-lisk generate:asset lns update_records 3
+klayr generate:asset lns update_records 3
 ----
 
 ==== Schema
@@ -820,7 +820,7 @@ Now include the schema in the asset file.
 .src/app/modules/lns/assets/reverse_lookup.ts
 [source,typescript]
 ----
-import { ApplyAssetContext, BaseAsset, ValidateAssetContext } from 'lisk-sdk';
+import { ApplyAssetContext, BaseAsset, ValidateAssetContext } from 'klayr-sdk';
 import { LNSAccountProps, UpdateRecordsAssetProps, updateRecordsAssetPropsSchema } from '../data';
 
 export class UpdateRecordsAsset extends BaseAsset<UpdateRecordsAssetProps> {
@@ -854,7 +854,7 @@ Now import the constants inside of `update_records.ts` and implement the `valida
 .src/app/modules/lns/assets/update_records.ts
 [source,typescript]
 ----
-import { ApplyAssetContext, BaseAsset, ValidateAssetContext } from 'lisk-sdk';
+import { ApplyAssetContext, BaseAsset, ValidateAssetContext } from 'klayr-sdk';
 import {
 	MAX_RECORDS,
 	MAX_RECORD_LABEL_LENGTH,
@@ -932,7 +932,7 @@ The following logic is implemented:
 .src/app/modules/lns/assets/update_records.ts
 [source,typescript]
 ----
-import { ApplyAssetContext, BaseAsset, ValidateAssetContext } from 'lisk-sdk';
+import { ApplyAssetContext, BaseAsset, ValidateAssetContext } from 'klayr-sdk';
 import {
 	MAX_RECORDS,
 	MAX_RECORD_LABEL_LENGTH,
@@ -1028,7 +1028,7 @@ import {
     BeforeBlockApplyContext,
     AfterGenesisBlockApplyContext,
     // GenesisConfig
-} from 'lisk-sdk';
+} from 'klayr-sdk';
 
 export class LnsModule extends BaseModule {
     public actions = {
@@ -1092,7 +1092,7 @@ export class LnsModule extends BaseModule {
 }
 ----
 
-As can be seen, the following values have been pre-filled when creating the LNS module with Lisk Commander in the step <<bootstrapping-the-default-application>>.
+As can be seen, the following values have been pre-filled when creating the LNS module with Klayr Commander in the step <<bootstrapping-the-default-application>>.
 
 * `name`: The module name (here: `lns`).
 * `id`: The module ID (here: `1000`).
@@ -1127,7 +1127,7 @@ Don't forget to add the `lnsAccountPropsSchema` to the file `data/account_props.
 [source,js]
 ----
 export const lnsAccountPropsSchema = {
-	$id: 'lisk/lns/lnsAccount',
+	$id: 'klayr/lns/lnsAccount',
 	type: 'object',
 	required: ['ownNodes', 'reverseLookup'],
 	properties: {
@@ -1201,7 +1201,7 @@ import {
     BeforeBlockApplyContext,
     AfterGenesisBlockApplyContext,
     // GenesisConfig
-} from 'lisk-sdk';
+} from 'klayr-sdk';
 import { RegisterAsset } from './assets/register';
 import { UpdateRecordsAsset } from './assets/update_records';
 import { ReverseLookupAsset } from './assets/reverse_lookup';
@@ -1275,7 +1275,7 @@ import {
     BeforeBlockApplyContext,
     AfterGenesisBlockApplyContext,
     // GenesisConfig
-} from 'lisk-sdk';
+} from 'klayr-sdk';
 import { RegisterAsset } from './assets/register';
 import { UpdateRecordsAsset } from './assets/update_records';
 import { ReverseLookupAsset } from './assets/reverse_lookup';
@@ -1323,7 +1323,7 @@ Add the code of the functions `resolveNode()`, resolveName()`, and `lookupAddres
 [source,typescript]
 ----
 import * as namehash from 'eth-ens-namehash';
-import { chain, codec, StateStore } from 'lisk-sdk';
+import { chain, codec, StateStore } from 'klayr-sdk';
 import { EMPTY_BUFFER, LNS_PREFIX } from './constants';
 import { LNSAccountProps, LNSNode, lnsNodeSchema } from './data';
 import { isExpired } from './utils';
@@ -1419,31 +1419,31 @@ With this last step, all required parts of the LNS module are implemented.
 
 === Updating the genesis block
 
-NOTE: In case the LNS tutorial was cloned from the `lisk-sdk-examples` repository, this step can be skipped, as the example application already contains the correct genesis block.
+NOTE: In case the LNS tutorial was cloned from the `klayr-sdk-examples` repository, this step can be skipped, as the example application already contains the correct genesis block.
 
-If the blockchain application was newly bootstrapped with `lisk init`, it still contains a default genesis block, which does not include the account schema of the new LNS module.
+If the blockchain application was newly bootstrapped with `klayr init`, it still contains a default genesis block, which does not include the account schema of the new LNS module.
 Therefore it is necessary to create a new genesis block with genesis accounts that include the new account properties of the LNS module.
 
 //TODO: Add more information about how to update the genesis block
 TIP: Detailed information about this process can be found in the guide xref:{url_guide_genesisblock}[].
 
-./lisk-name-service/lns/
+./klayr-name-service/lns/
 [source,bash]
 ----
-./bin/run genesis-block:create --output  /home/USERNAME/.lisk/lns/config/default
+./bin/run genesis-block:create --output  /home/USERNAME/.klayr/lns/config/default
 ----
 
-Copy the following content to `~/.lisk/lns/config/default/config.json`:
+Copy the following content to `~/.klayr/lns/config/default/config.json`:
 
 * copy the content of `forging_info.json` to under forging.delegates
 * copy the content of `password.json` to under forging.defaultPassword
 
 Save the file `accounts.json` somewhere secure as it contains the credentials for all genesis accounts.
-In the LNS example application, the file is stored in the {url_sdkexamples_lns_secret}[lisk-name-service/lns/.secret/^] folder.
+In the LNS example application, the file is stored in the {url_sdkexamples_lns_secret}[klayr-name-service/lns/.secret/^] folder.
 
 After the genesis block and config are updated, the application should start again successfully. To start, run the following command:
 
-.lisk-name-service/lns/
+.klayr-name-service/lns/
 [source,bash]
 ----
 ./bin/run start
@@ -1486,19 +1486,19 @@ More information about the Faucet plugin can be found on the reference page of t
 
 Install the dashboard plugin:
 
-.lisk-name-service/
+.klayr-name-service/
 [source,bash]
 ----
-npm i @liskhq/lisk-framework-dashboard-plugin
+npm i @klayrhq/klayr-framework-dashboard-plugin
 ----
 
 Now open `plugins.ts`, import the Dashboard plugin, and register it with the application as shown below:
 
-.lisk-name-service/lns/src/app/plugins.ts
+.klayr-name-service/lns/src/app/plugins.ts
 [source,typescript]
 ----
-import { Application } from 'lisk-sdk';
-import { DashboardPlugin } from "@liskhq/lisk-framework-dashboard-plugin";
+import { Application } from 'klayr-sdk';
+import { DashboardPlugin } from "@klayrhq/klayr-framework-dashboard-plugin";
 
 export const registerPlugins = (app: Application): void => {
 
@@ -1517,20 +1517,20 @@ Genesis accounts normally have an initial amount of tokens in their balance, so 
 
 Install the faucet plugin:
 
-.lisk-name-service/
+.klayr-name-service/
 [source,bash]
 ----
-npm i @liskhq/lisk-framework-faucet-plugin
+npm i @klayrhq/klayr-framework-faucet-plugin
 ----
 
 Now open `plugins.ts`, import the Faucet plugin, and register it with the application as shown below:
 
-.lisk-name-service/lns/src/app/plugins.ts
+.klayr-name-service/lns/src/app/plugins.ts
 [source,typescript]
 ----
-import { Application } from 'lisk-sdk';
-import { DashboardPlugin } from "@liskhq/lisk-framework-dashboard-plugin";
-import { FaucetPlugin } from "@liskhq/lisk-framework-faucet-plugin";
+import { Application } from 'klayr-sdk';
+import { DashboardPlugin } from "@klayrhq/klayr-framework-dashboard-plugin";
+import { FaucetPlugin } from "@klayrhq/klayr-framework-faucet-plugin";
 
 export const registerPlugins = (app: Application): void => {
 
@@ -1541,9 +1541,9 @@ export const registerPlugins = (app: Application): void => {
 
 Save and close `plugins.ts`.
 
-Choose one of the genesis delegate to be the faucet account, e.g. the first account in `lisk-name-service/.secret/accounts.json`.
+Choose one of the genesis delegate to be the faucet account, e.g. the first account in `klayr-name-service/.secret/accounts.json`.
 
-.lisk-name-service/.secret/accounts.json
+.klayr-name-service/.secret/accounts.json
 [source,js]
 ----
 [
@@ -1555,12 +1555,12 @@ Choose one of the genesis delegate to be the faucet account, e.g. the first acco
 ]
 ----
 
-Use Lisk Commander to encrypt the passphrase of the account with a password.
+Use Klayr Commander to encrypt the passphrase of the account with a password.
 Save the password securely as it is needed to enable and disable the faucet later.
 
 [source,bash]
 ----
-$ lisk passphrase:encrypt
+$ klayr passphrase:encrypt
 ? Please enter passphrase:  [hidden]
 ? Please re-enter passphrase:  [hidden]
 ? Please enter password:  [hidden] # <1>
@@ -1571,7 +1571,7 @@ $ lisk passphrase:encrypt
 <1> Choose a simple password to encrypt the passphrase symmetrically.
 The password will be required later to enable the faucet plugin through the action `faucet:authorize`.
 
-Open the config file of the LNS application which is located under the path `~/.lisk/lns/config/default/config.json` and scroll down to the bottom of the file.
+Open the config file of the LNS application which is located under the path `~/.klayr/lns/config/default/config.json` and scroll down to the bottom of the file.
 Add the required configuration options for the faucet plugin under the key `plugins.faucet`:
 
 * `encryptedPassphrase`: The encrypted passphrase of the account that will provide the tokens for the faucet.
@@ -1580,7 +1580,7 @@ Add the required configuration options for the faucet plugin under the key `plug
 
 The {url_recaptcha_keys}[free site key and secret key for reCAPTCHA^] are used below for testing purposes.
 
-.~/.lisk/lns/config/default/config.json
+.~/.klayr/lns/config/default/config.json
 [source,json]
 ----
 "plugins": {
@@ -1658,7 +1658,7 @@ Clicking on the account will open the above window with the account credentials 
 Before it is possible to send any transactions, it is first necessary to receive a certain amount of tokens to the new account.
 The tokens will be used to pay the transaction fees for the different transaction we are going to send.
 
-Copy the Lisk32 address of the newly created account, go to the Faucet page, and receive tokens by pasting the address, checking the captcha, and clicking on the kbd:[Request] button.
+Copy the Klayr32 address of the newly created account, go to the Faucet page, and receive tokens by pasting the address, checking the captcha, and clicking on the kbd:[Request] button.
 
 image:tutorials/lns/faucet-send.png[faucet-send,200,100]
 
@@ -1754,7 +1754,7 @@ image:tutorials/lns/transactions3.png[transactions3,200,100]
 
 With the action `app:getAccount`, it is possible to get the data of an account based on its' address.
 
-Please be aware that the action expects the account address in hexadecimal representation (not Lisk32), as shown in the example below:
+Please be aware that the action expects the account address in hexadecimal representation (not Klayr32), as shown in the example below:
 
 image:tutorials/lns/call-action-app-getaccount.png[call-action-app-getaccount,200,100]
 

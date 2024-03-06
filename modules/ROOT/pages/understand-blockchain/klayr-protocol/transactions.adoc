@@ -1,16 +1,16 @@
 = Transactions
 :toc: preamble
-:description: This section describes the default transactions present in the Lisk protocol.
+:description: This section describes the default transactions present in the Klayr protocol.
 :imagesdir: ../assets/images
 
-:url_protocol: understand-blockchain/lisk-protocol/
+:url_protocol: understand-blockchain/klayr-protocol/
 :url_accounts: {url_protocol}accounts.adoc
 :url_accounts_address: {url_protocol}accounts.adoc#address
 :url_accounts_keys: {url_protocol}accounts.adoc#keys
 :url_blocks: {url_protocol}blocks.adoc
 :url_blocks_header: {url_protocol}blocks.adoc#block-header
 :url_appendix_signature_scheme: {url_protocol}appendix.adoc#signature_scheme
-:url_consensus_bft: {url_protocol}consensus-algorithm.adoc#lisk_bft
+:url_consensus_bft: {url_protocol}consensus-algorithm.adoc#klayr_bft
 :url_consensus_bft_punishment: {url_protocol}consensus-algorithm.adoc#punishment
 :url_consensus_voting_and_weight: {url_protocol}consensus-algorithm.adoc#voting_and_weight
 :url_transactions_balance_transfer: {url_protocol}transactions.adoc#transfer
@@ -19,16 +19,16 @@
 :url_transactions_unlock: {url_protocol}transactions.adoc#unlock-vote
 :url_transactions_vote: {url_protocol}transactions.adoc#vote
 
-In Lisk, the state of accounts is updated by transactions included in a xref:{url_blocks}[block].
+In Klayr, the state of accounts is updated by transactions included in a xref:{url_blocks}[block].
 Every account can issue a transaction, with the corresponding signature and data.
 Similar transactions are grouped together into one module.
 Apart from the module-specific xref:{url_accounts}[account properties], a module defines the validation and execution logic for every transaction contained within that module.
-The Lisk protocol contains four default modules, Token, Sequence, Keys, and DPoS, which contain the six transactions shown in the table below.
+The Klayr protocol contains four default modules, Token, Sequence, Keys, and DPoS, which contain the six transactions shown in the table below.
 
 |===
 |*Transaction*|*Module*|*Purpose*
 
-|*token transfer*|*Token*|Transmit funds to another Lisk account
+|*token transfer*|*Token*|Transmit funds to another Klayr account
 |*delegate registration*|*DPoS*|Register a delegate for the account
 |*delegate vote*|*DPoS*|Submit or remove vote(s) for delegates
 |*token unlock*|*DPoS*|Unlock locked tokens
@@ -40,7 +40,7 @@ The Lisk protocol contains four default modules, Token, Sequence, Keys, and DPoS
 
 image::protocol/baseTransaction.svg[TxDiagram]
 
-Every transaction object in the Lisk protocol has a common set of properties. These properties are shown in the subsection below.
+Every transaction object in the Klayr protocol has a common set of properties. These properties are shown in the subsection below.
 
 === `moduleID`
 
@@ -61,10 +61,10 @@ Once one of the two transactions is included in the blockchain, the other one be
 [[fee]]
 === `fee`
 
-The fee to be spent by the transaction. This fee has to be equal or greater than a minimum value for the transaction to be valid. The minimum value is calculated as the size of the transaction object multiplied by a constant, `minFeePerByte`, given by the protocol. The value of `minFeePerByte` is 1000 (10^-5^ LSK/byte in Lisk Mainnet). Note that for *delegate registration* transactions there is an extra summand of 10^9^ (10 LSK in Lisk Mainnet) added to the minimum fee to account for the name space used by this transaction.
+The fee to be spent by the transaction. This fee has to be equal or greater than a minimum value for the transaction to be valid. The minimum value is calculated as the size of the transaction object multiplied by a constant, `minFeePerByte`, given by the protocol. The value of `minFeePerByte` is 1000 (10^-5^ KLY/byte in Klayr Mainnet). Note that for *delegate registration* transactions there is an extra summand of 10^9^ (10 KLY in Klayr Mainnet) added to the minimum fee to account for the name space used by this transaction.
 
-For example, in Lisk Mainnet, for a <<transfer,token transfer>> transaction with a size of 133 bytes, the minimum fee is 10^-5^ LSK/byte × 133 bytes = 0.00133 LSK.
-In the case of <<delegate,delegate registration>> transaction with a size of 124 bytes, the minimum fee of the transaction is 10 LSK + 10^-5^ LSK/byte × 124 bytes = 10.00124 LSK.
+For example, in Klayr Mainnet, for a <<transfer,token transfer>> transaction with a size of 133 bytes, the minimum fee is 10^-5^ KLY/byte × 133 bytes = 0.00133 KLY.
+In the case of <<delegate,delegate registration>> transaction with a size of 124 bytes, the minimum fee of the transaction is 10 KLY + 10^-5^ KLY/byte × 124 bytes = 10.00124 KLY.
 
 This required minimum fee paid by every transaction is burned, in other words, it is not assigned to any account balance.
 The remaining fee on top of this is assigned to the delegate forging the block in which the transaction is included.
@@ -93,19 +93,19 @@ In the xref:{url_appendix_signature_scheme}[Appendix] section more details about
 [[id]]
 == Transaction ID
 
-In Lisk, every transaction is associated with a transaction ID, which uniquely identifies a transaction in the blockchain.
+In Klayr, every transaction is associated with a transaction ID, which uniquely identifies a transaction in the blockchain.
 The transaction ID is the SHA-256 (Secure Hash Algorithm 256), hash of the serialized transaction.
 
 == Minimum balance
 
-A <<transfer,token transfer>> transaction must make the balance of the receiving account equal to or greater than 5 × 10^6^ (0.05 LSK in Lisk Mainnet).
+A <<transfer,token transfer>> transaction must make the balance of the receiving account equal to or greater than 5 × 10^6^ (0.05 KLY in Klayr Mainnet).
 Subsequently, any transaction sent from an account is only valid if the resulting balance of the sender account is at least 5 × 10^6^.
-This constraint exists to account for the cost of creating and storing accounts in Lisk.
+This constraint exists to account for the cost of creating and storing accounts in Klayr.
 
 [[types]]
 == Transactions
 
-The 6 different transactions from the default modules of the Lisk protocol are listed in the table displayed above.
+The 6 different transactions from the default modules of the Klayr protocol are listed in the table displayed above.
 Each one induces a concrete operation on accounts and is defined by a unique schema and transaction logic.
 The specific data is given in the `asset` property previously mentioned.
 The key points and useful information for each of these transactions are commented in the following subsections.
@@ -132,10 +132,10 @@ This transaction registers the sender account as a xref:{url_consensus_voting_an
 image::protocol/voteAsset.svg[VoteDiagram]
 
 This transaction submits the votes specified in `votes` from the sender account.
-This is accomplished by specifying the Lisk xref:{url_accounts_address}[address] of the voted delegate in `delegateAddress` together with the amount of support given to this delegate in `amount`.
+This is accomplished by specifying the Klayr xref:{url_accounts_address}[address] of the voted delegate in `delegateAddress` together with the amount of support given to this delegate in `amount`.
 The quantity given in `amount` is subsequently [#index-locked-2]#*locked*# and cannot be used for other transactions.
 If the amount is negative, it implies that the specified amount of votes are removed from the delegate.
-The maximum number of votes that can be cast in a single transaction is 20 and `amount` has to be a multiple of 10^9^ (10 LSK in Lisk Mainnet).
+The maximum number of votes that can be cast in a single transaction is 20 and `amount` has to be a multiple of 10^9^ (10 KLY in Klayr Mainnet).
 
 [[unlock]]
 === Token unlock
@@ -147,7 +147,7 @@ This transaction is only valid if it is issued after the unlocking period has be
 For a regular vote the unlocking period is 2000 blocks (around 5 hours).
 For self-votes, i.e. if the `delegateAddress` property of the transaction is equal to the account xref:{url_accounts_address}[address], this period is 260,000 blocks (around 30 days).
 
-As described in the xref:{url_consensus_bft_punishment}[Punishment of Lisk-BFT protocol violations] section, the validity of the unlock transaction also depends on potential misbehaviors by the unvoted delegate. 
+As described in the xref:{url_consensus_bft_punishment}[Punishment of Klayr-BFT protocol violations] section, the validity of the unlock transaction also depends on potential misbehaviors by the unvoted delegate. 
 An unvote for a punished delegate has its unlocking period extended. 
 For regular votes, this period is extended from 2000 blocks to 260,000 blocks (from 5 hours to 30 days).
 For self-votes, this period is extended from 260,000 blocks to 780,000 blocks (from 30 days to 3 months).
@@ -170,5 +170,5 @@ Once this transaction is included in a block, every transaction from this accoun
 image::protocol/pomAsset.svg[PoMDiagram]
 
 This transaction can be utilized to report a misbehavior of a certain delegate.
-It contains the information necessary to prove that the delegate who signed the xref:{url_blocks_header}[block headers] given in `header1` and `header2` has violated the xref:{url_consensus_bft}[Lisk-BFT protocol].
-The xref:{url_consensus_bft_punishment}[Punishment of Lisk-BFT protocol violations] section provides the details regarding the implications of this transaction.
+It contains the information necessary to prove that the delegate who signed the xref:{url_blocks_header}[block headers] given in `header1` and `header2` has violated the xref:{url_consensus_bft}[Klayr-BFT protocol].
+The xref:{url_consensus_bft_punishment}[Punishment of Klayr-BFT protocol violations] section provides the details regarding the implications of this transaction.

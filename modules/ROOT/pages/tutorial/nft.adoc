@@ -7,13 +7,13 @@ Mona Bärenfänger <mona@lightcurve.io>
 :imagesdir: ../../assets/images
 :experimental:
 // External URLs
-:url_github_nft: https://github.com/LiskHQ/lisk-sdk-examples/tree/development/tutorials/nft
+:url_github_nft: https://github.com/KlayrHQ/klayr-sdk-examples/tree/development/tutorials/nft
 :url_react_docs: https://reactjs.org/docs/getting-started.html
 // Project URLs
 :url_references_schemas: understand-blockchain/codec-schema.adoc
-:url_statestore: 6.0.0@lisk-sdk::reference/lisk-elements/chain.adoc#state-store
-:url_references_token_module: 6.0.0@lisk-sdk::reference/lisk-framework/token-module.adoc
-:url_lisk_sdk: glossary.adoc#lisk-sdk
+:url_statestore: 6.0.0@klayr-sdk::reference/klayr-elements/chain.adoc#state-store
+:url_references_token_module: 6.0.0@klayr-sdk::reference/klayr-framework/token-module.adoc
+:url_klayr_sdk: glossary.adoc#klayr-sdk
 
 How to create a blockchain application that supports NFTs.
 You will learn how to create a custom module that adds the feature to create and purchase NFTs in a blockchain application, and a custom plugin that provides additional NFT-related features.
@@ -47,7 +47,7 @@ a|
 |Examples
 a|
 * Real world: Fiat currencies like the Dollar($) or Euro(€).
-* Digital tokens: Bitcoin(BTC) or Lisk(LSK).
+* Digital tokens: Bitcoin(BTC) or Klayr(KLY).
 a|
 * Real world: Paintings or music.
 * Digital tokens: Crypto collectibles (e.g. Cryptokitties), event tickets, or other virtual assets.
@@ -79,7 +79,7 @@ mkdir nft
 mkdir nft/blockchain_app
 cd nft/blockchain_app
 npm init --yes
-npm i lisk-sdk
+npm i klayr-sdk
 ----
 
 Next, create a new file `index.js` then copy and paste the following:
@@ -87,7 +87,7 @@ Next, create a new file `index.js` then copy and paste the following:
 .nft/blockchain_app/index.js
 [source,js]
 ----
-const { Application, genesisBlockDevnet, configDevnet } = require('lisk-sdk');
+const { Application, genesisBlockDevnet, configDevnet } = require('klayr-sdk');
 
 const app = Application.defaultApplication(genesisBlockDevnet, configDevnet);
 
@@ -143,10 +143,10 @@ These variables are available in the module and are explained in more detail in 
 .nft/blockchain_app/nft_module/nft.js
 [source,js]
 ----
-const { codec, cryptography } = require("lisk-sdk");
+const { codec, cryptography } = require("klayr-sdk");
 
 const registeredNFTTokensSchema = {
-  $id: "lisk/nft/registeredTokens",
+  $id: "klayr/nft/registeredTokens",
   type: "object",
   required: ["registeredNFTTokens"],
   properties: {
@@ -280,7 +280,7 @@ Now open the file and copy and paste the code below:
 .nft/blockchain_app/nft_module/transactions/create_nft_asset.js
 [source,js]
 ----
-const { BaseAsset } = require("lisk-sdk");
+const { BaseAsset } = require("klayr-sdk");
 
 // extend base asset to implement your custom asset
 class CreateNFTAsset extends BaseAsset { <1>
@@ -299,7 +299,7 @@ Now define all required properties for the transaction asset one after another.
 .nft/blockchain_app/nft_module/transactions/create_nft_asset.js
 [source,js]
 ----
-const { BaseAsset } = require("lisk-sdk");
+const { BaseAsset } = require("klayr-sdk");
 
 // extend base asset to implement your custom asset
 class CreateNFTAsset extends BaseAsset {
@@ -331,7 +331,7 @@ Therefore, create the schema as described below:
 .nft/blockchain_app/nft_module/transactions/create_nft_asset.js
 [source,js]
 ----
-const { BaseAsset } = require("lisk-sdk");
+const { BaseAsset } = require("klayr-sdk");
 
 // extend base asset to implement your custom asset
 class CreateNFTAsset extends BaseAsset {
@@ -340,7 +340,7 @@ class CreateNFTAsset extends BaseAsset {
   id = 0;
   // define asset schema for serialization
   schema = {
-    $id: "lisk/nft/create",
+    $id: "klayr/nft/create",
     type: "object",
     required: ["minPurchaseMargin", "initValue", "name"],
     properties: {
@@ -376,7 +376,7 @@ The `validate()` function has access to:
 .nft/blockchain_app/nft_module/transactions/create_nft_asset.js
 [source,js]
 ----
-const { BaseAsset } = require("lisk-sdk");
+const { BaseAsset } = require("klayr-sdk");
 
 // extend base asset to implement your custom asset
 class CreateNFTAsset extends BaseAsset {
@@ -385,7 +385,7 @@ class CreateNFTAsset extends BaseAsset {
   id = 0;
   // define asset schema for serialization
   schema = {
-    $id: "lisk/nft/create",
+    $id: "klayr/nft/create",
     type: "object",
     required: ["minPurchaseMargin", "initValue", "name"],
     properties: {
@@ -434,7 +434,7 @@ It is used here to get and set certain data from and to the database.
 .nft/blockchain_app/nft_module/transactions/create_nft_asset.js
 [source,js]
 ----
-const { BaseAsset } = require("lisk-sdk");
+const { BaseAsset } = require("klayr-sdk");
 const {
   getAllNFTTokens,
   setAllNFTTokens,
@@ -448,7 +448,7 @@ class CreateNFTAsset extends BaseAsset {
   id = 0;
   // define asset schema for serialization
   schema = {
-    $id: "lisk/nft/create",
+    $id: "klayr/nft/create",
     type: "object",
     required: ["minPurchaseMargin", "initValue", "name"],
     properties: {
@@ -523,7 +523,7 @@ Analog to the implementation of the `createNFT` asset, create the `purchaseNFT` 
 .nft/blockchain_app/nft_module/transactions/purchase_nft_asset.js
 [source,js]
 ----
-const { BaseAsset } = require("lisk-sdk");
+const { BaseAsset } = require("klayr-sdk");
 const { getAllNFTTokens, setAllNFTTokens } = require("../nft");
 
 // extend base asset to implement your custom asset
@@ -533,7 +533,7 @@ class PurchaseNFTAsset extends BaseAsset {
   id = 1;
   // define asset schema for serialization
   schema = {
-    $id: "lisk/nft/purchase",
+    $id: "klayr/nft/purchase",
     type: "object",
     required: ["nftId", "purchaseValue", "name"],
     properties: {
@@ -598,13 +598,13 @@ class PurchaseNFTAsset extends BaseAsset {
     nftTokens[nftTokenIndex] = token;
     await setAllNFTTokens(stateStore, nftTokens);
 
-    // debit LSK tokens from purchaser account <5>
+    // debit KLY tokens from purchaser account <5>
     await reducerHandler.invoke("token:debit", {
       address: purchaserAddress,
       amount: purchaseValue,
     });
 
-    // credit LSK tokens to purchaser account <6>
+    // credit KLY tokens to purchaser account <6>
     await reducerHandler.invoke("token:credit", {
       address: tokenOwnerAddress,
       amount: purchaseValue,
@@ -639,7 +639,7 @@ Create the `transferNFT` asset by pasting the snippet below.
 .nft/blockchain_app/nft_module/transactions/transfer_nft_asset.js
 [source,js]
 ----
-const { BaseAsset } = require("lisk-sdk");
+const { BaseAsset } = require("klayr-sdk");
 const { getAllNFTTokens, setAllNFTTokens } = require("../nft");
 
 // 1.extend base asset to implement your custom asset
@@ -649,7 +649,7 @@ class TransferNFTAsset extends BaseAsset {
   id = 2;
   // 3.define asset schema for serialization
   schema = {
-    $id: "lisk/nft/transfer",
+    $id: "klayr/nft/transfer",
     type: "object",
     required: ["nftId", "recipient"],
     properties: {
@@ -726,7 +726,7 @@ Open `index.js` and create the skeleton, which will contain all parts of the NFT
 .nft/blockchain_app/nft_module/index.js
 [source,js]
 ----
-const { BaseModule } = require("lisk-sdk");
+const { BaseModule } = require("klayr-sdk");
 
 class NFTModule extends BaseModule { <1>
 
@@ -746,7 +746,7 @@ It is recommended to start with the easiest ones: defining the module name and I
 .nft/blockchain_app/nft_module/index.js
 [source,js]
 ----
-const { BaseModule } = require("lisk-sdk");
+const { BaseModule } = require("klayr-sdk");
 
 class NFTModule extends BaseModule {
   name = "nft"; <1>
@@ -760,7 +760,7 @@ module.exports = { NFTModule };
 <2> Set the module id to `1024`.
 
 The module ID has to be unique within the network.
-The minimum value for it is `1000`, as the other IDs are reserved for future default modules of the xref:{url_lisk_sdk}[Lisk SDK].
+The minimum value for it is `1000`, as the other IDs are reserved for future default modules of the xref:{url_klayr_sdk}[Klayr SDK].
 If the module ID is not unique, it will cause forks in the network.
 
 The module name should be unique within the network as well, otherwise, it will lead to confusion.
@@ -776,7 +776,7 @@ By default, it is empty.
 .nft/blockchain_app/nft_module/index.js
 [source,js]
 ----
-const { BaseModule } = require("lisk-sdk");
+const { BaseModule } = require("klayr-sdk");
 
 // Extend base module to implement your custom module
 class NFTModule extends BaseModule {
@@ -822,7 +822,7 @@ In this example: `CreateNFTAsset`, `PurchaseNFTAsset`, and `TransferNFTAsset`.
 .nft/blockchain_app/nft_module/index.js
 [source,js]
 ----
-const { BaseModule } = require("lisk-sdk");
+const { BaseModule } = require("klayr-sdk");
 
 const CreateNFTAsset = require("./transactions/create_nft_asset");
 const PurchaseNFTAsset = require("./transactions/purchase_nft_asset");
@@ -868,7 +868,7 @@ This variable is available throughout the module and is used in the `actions` to
 .nft/blockchain_app/nft_module/index.js
 [source,js]
 ----
-const { BaseModule } = require("lisk-sdk");
+const { BaseModule } = require("klayr-sdk");
 const { getAllNFTTokensAsJSON } = require("./nft");
 
 const CreateNFTAsset = require("./transactions/create_nft_asset");
@@ -944,7 +944,7 @@ Open `index.js` and create the skeleton, which will contain all parts of the NFT
 .nft/blockchain_app/nft_api_plugin/index.js
 [source,js]
 ----
-const { BasePlugin } = require("lisk-sdk");
+const { BasePlugin } = require("klayr-sdk");
 const pJSON = require("../package.json");
 
 class NFTAPIPlugin extends BasePlugin { <1>
@@ -1012,7 +1012,7 @@ Saves the individual owner history for the corresponding NFTs in the database.
 const fs_extra = require("fs-extra");
 const os = require("os");
 const path = require("path");
-const { cryptography, codec, db } = require("lisk-sdk");
+const { cryptography, codec, db } = require("klayr-sdk");
 
 const DB_KEY_TRANSACTIONS = "nft:transactions"; <1>
 const CREATENFT_ASSET_ID = 0;
@@ -1049,7 +1049,7 @@ const encodedNFTHistorySchema = { <3>
   },
 };
 
-const getDBInstance = async (dataPath = '~/.lisk/nft-app/', dbName = 'nft_plugin.db') => {
+const getDBInstance = async (dataPath = '~/.klayr/nft-app/', dbName = 'nft_plugin.db') => {
   const dirPath = path.join(dataPath.replace('~', os.homedir()), 'plugins/data', dbName);
   await fs_extra.ensureDir(dirPath);
   return new db.KVStore(dirPath);
@@ -1107,7 +1107,7 @@ const saveNFTHistory = async (db, decodedBlock, registeredModules, channel) => {
               dbKey = `nft:${val[i].id}`; <4>
               savedHistory = await getNFTHistory(db, dbKey);
               if (savedHistory && savedHistory.length < 1) {
-                base32Address = cryptography.getBase32AddressFromPublicKey(Buffer.from(trx.senderPublicKey, 'hex'), 'lsk');
+                base32Address = cryptography.getBase32AddressFromPublicKey(Buffer.from(trx.senderPublicKey, 'hex'), 'kly');
                 nftHistory = [Buffer.from(base32Address, 'binary'), ...savedHistory];
                 encodedNFTHistory = codec.encode(encodedNFTHistorySchema, { nftHistory });
                 await db.put(dbKey, encodedNFTHistory);
@@ -1117,7 +1117,7 @@ const saveNFTHistory = async (db, decodedBlock, registeredModules, channel) => {
         });
       } else {
         dbKey = `nft:${trx.asset.nftId}`; <5>
-        base32Address = (trx.assetID === TRANSFERNFT_ASSET_ID) ? cryptography.getBase32AddressFromAddress(Buffer.from(trx.asset.recipient, 'hex')) : cryptography.getBase32AddressFromPublicKey(Buffer.from(trx.senderPublicKey, 'hex'), 'lsk');
+        base32Address = (trx.assetID === TRANSFERNFT_ASSET_ID) ? cryptography.getBase32AddressFromAddress(Buffer.from(trx.asset.recipient, 'hex')) : cryptography.getBase32AddressFromPublicKey(Buffer.from(trx.senderPublicKey, 'hex'), 'kly');
         savedHistory = await getNFTHistory(db, dbKey);
         nftHistory = [Buffer.from(base32Address, 'binary'), ...savedHistory];
         encodedNFTHistory = codec.encode(encodedNFTHistorySchema, { nftHistory });
@@ -1204,7 +1204,7 @@ The code in the `unload()` function is executed in complement by the blockchain 
 ----
 const express = require("express");
 const cors = require("cors");
-const { BasePlugin, codec } = require("lisk-sdk");
+const { BasePlugin, codec } = require("klayr-sdk");
 const pJSON = require("../package.json");
 const { getDBInstance, getNFTHistory, getAllTransactions, saveNFTHistory, saveTransactions } = require("./db");
 
@@ -1343,14 +1343,14 @@ Open the `nft/blockchain_app/index.js` file again and copy and paste the followi
 .nft/blockchain_app/index.js
 [source,js]
 ----
-// 1.Import lisk sdk to create the blockchain application
+// 1.Import klayr sdk to create the blockchain application
 const {
 	Application,
 	configDevnet,
 	genesisBlockDevnet,
 	HTTPAPIPlugin,
 	utils,
-} = require('lisk-sdk');
+} = require('klayr-sdk');
 
 // 2.Import NFT module and Plugin
 const { NFTModule } = require('./nft_module');
@@ -1410,17 +1410,17 @@ The development of the frontend application is completely flexible, and you can 
 In this example, we use React to build the client application.
 ====
 
-This tutorial is mainly about explaining how to build with the Lisk SDK, therefore other parts of the frontend app are not explained in much detail here.
+This tutorial is mainly about explaining how to build with the Klayr SDK, therefore other parts of the frontend app are not explained in much detail here.
 You can find more information about how to build a React application, for example in the {url_react_docs}[official React documentation^].
 
-For convenience, clone the `development` branch from the `lisk-sdk-examples` GitHub repository and use the prepared NFT frontend_app from the sdk examples.
+For convenience, clone the `development` branch from the `klayr-sdk-examples` GitHub repository and use the prepared NFT frontend_app from the sdk examples.
 
 .nft/
 [source,bash]
 ----
-git clone https://github.com/LiskHQ/lisk-sdk-examples.git
-mv lisk-sdk-examples/tutorials/nft/frontend_app frontend_app
-rm -r ./lisk-sdk-examples
+git clone https://github.com/KlayrHQ/klayr-sdk-examples.git
+mv klayr-sdk-examples/tutorials/nft/frontend_app frontend_app
+rm -r ./klayr-sdk-examples
 cd frontend_app
 npm i
 ----
@@ -1458,15 +1458,15 @@ In the example screenshots we use the following account credentials:
 ================================
 Artist
 passphrase: boss annual room suspect ride robot connect repeat relax govern dolphin depth
-address: lsktxksfsbmkmoto68y7edszaecgpnaxqqg7cs43d
+address: klytxksfsbmkmoto68y7edszaecgpnaxqqg7cs43d
 --------------------------------
 Collector1
 passphrase: mammal fan below aspect thing iron uniform then humble double endorse gauge
-address: lskybgqryr9tk4m3rdp66ethaf6xurm6hj8c93udo
+address: klyybgqryr9tk4m3rdp66ethaf6xurm6hj8c93udo
 --------------------------------
 Collector2
 passphrase: emotion project prepare cream double damage gentle basket submit enhance between drill
-address: lskha38ewso7do8zeuqx8qnyoqd8962mk48atknbs
+address: klyha38ewso7do8zeuqx8qnyoqd8962mk48atknbs
 ================================
 ----
 
@@ -1507,13 +1507,13 @@ It is possible to verify the transaction was included in a block by observing th
 
 .Logs of the blockchain app when a valid transaction is posted to the node
 ----
-15:20:56 INFO lisk-framework: Added transaction to pool (module=lisk:app)
+15:20:56 INFO klayr-framework: Added transaction to pool (module=klayr:app)
 {
  "id": "b9d81d996886f28d2f9fd102c2d8407dc86df941eeea0b03c004080e0f100f27",
  "nonce": "0",
  "senderPublicKey": "836d4f07c7db6d10c84394c60549d3f95cf61354e2ab5b0965a3fe7120e2f70d"
 }
-15:21:00 INFO lisk-framework: New block added to the chain (module=lisk:app)
+15:21:00 INFO klayr-framework: New block added to the chain (module=klayr:app)
 {
  "id": "f6d2ee7cb0e76938340f0b8a946389d518e7f27c062759f2c78f47d2841a7010",
  "height": 787,
@@ -1671,7 +1671,7 @@ The `utils/` folder of the frontend app stores certain utility functions for cre
 
 The functions will be used in the <<dialogs>> below to create and send the transaction objects based on the form data in the dialog.
 
-The transactions are created and signed by utilizing the `signTransaction()` from the `@liskhq/lisk-client` package.
+The transactions are created and signed by utilizing the `signTransaction()` from the `@klayrhq/klayr-client` package.
 
 The nonce for each transaction is retrieved from the sender account by running `fetchAccountInfo()` from the <<api-related-functions>> section.
 
@@ -1682,12 +1682,12 @@ The nonce for each transaction is retrieved from the sender account by running `
 ----
 /* global BigInt */
 
-import { transactions, codec, cryptography } from "@liskhq/lisk-client";
+import { transactions, codec, cryptography } from "@klayrhq/klayr-client";
 import { getFullAssetSchema, calcMinTxFee } from "../common";
 import { fetchAccountInfo } from "../../api";
 
 export const createNFTTokenSchema = {
-  $id: "lisk/create-nft-asset",
+  $id: "klayr/create-nft-asset",
   type: "object",
   required: ["minPurchaseMargin", "initValue", "name"],
   properties: {
@@ -1730,11 +1730,11 @@ export const createNFTToken = async ({
       moduleID: 1024,
       assetID: 0,
       nonce: BigInt(nonce),
-      fee: BigInt(transactions.convertLSKToBeddows(fee)),
+      fee: BigInt(transactions.convertKLYToBeddows(fee)),
       senderPublicKey: publicKey,
       asset: {
         name,
-        initValue: BigInt(transactions.convertLSKToBeddows(initValue)),
+        initValue: BigInt(transactions.convertKLYToBeddows(initValue)),
         minPurchaseMargin: parseInt(minPurchaseMargin),
       },
     },
@@ -1757,12 +1757,12 @@ export const createNFTToken = async ({
 ----
 /* global BigInt */
 
-import { transactions, codec, cryptography } from "@liskhq/lisk-client";
+import { transactions, codec, cryptography } from "@klayrhq/klayr-client";
 import { getFullAssetSchema, calcMinTxFee } from "../common";
 import { fetchAccountInfo } from "../../api";
 
 export const purchaseNFTTokenSchema = {
-  $id: "lisk/nft/purchase",
+  $id: "klayr/nft/purchase",
   type: "object",
   required: ["nftId", "purchaseValue"],
   properties: {
@@ -1804,12 +1804,12 @@ export const purchaseNFTToken = async ({
       moduleID: 1024,
       assetID: 1,
       nonce: BigInt(nonce),
-      fee: BigInt(transactions.convertLSKToBeddows(fee)),
+      fee: BigInt(transactions.convertKLYToBeddows(fee)),
       senderPublicKey: publicKey,
       asset: {
         name,
         nftId: Buffer.from(nftId, "hex"),
-        purchaseValue: BigInt(transactions.convertLSKToBeddows(purchaseValue)),
+        purchaseValue: BigInt(transactions.convertKLYToBeddows(purchaseValue)),
       },
     },
     Buffer.from(networkIdentifier, "hex"),
@@ -1831,12 +1831,12 @@ export const purchaseNFTToken = async ({
 ----
 /* global BigInt */
 
-import { transactions, codec, cryptography } from "@liskhq/lisk-client";
+import { transactions, codec, cryptography } from "@klayrhq/klayr-client";
 import { getFullAssetSchema, calcMinTxFee } from "../common";
 import { fetchAccountInfo } from "../../api";
 
 export const transferAssetSchema = {
-  $id: "lisk/transfer-asset",
+  $id: "klayr/transfer-asset",
   title: "Transfer transaction asset",
   type: "object",
   required: ["amount", "recipientAddress", "data"],
@@ -1882,10 +1882,10 @@ export const transfer = async ({
       moduleID: 2,
       assetID: 0,
       nonce: BigInt(nonce),
-      fee: BigInt(transactions.convertLSKToBeddows(fee)),
+      fee: BigInt(transactions.convertKLYToBeddows(fee)),
       senderPublicKey: publicKey,
       asset: {
-        amount: BigInt(transactions.convertLSKToBeddows(amount)),
+        amount: BigInt(transactions.convertKLYToBeddows(amount)),
         recipientAddress: recipient,
         data: "",
       },
@@ -1909,12 +1909,12 @@ export const transfer = async ({
 ----
 /* global BigInt */
 
-import { transactions, codec, cryptography } from "@liskhq/lisk-client";
+import { transactions, codec, cryptography } from "@klayrhq/klayr-client";
 import { getFullAssetSchema, calcMinTxFee } from "../common";
 import { fetchAccountInfo } from "../../api";
 
 export const transferNFTSchema = {
-  $id: "lisk/nft/transfer",
+  $id: "klayr/nft/transfer",
   type: "object",
   required: ["nftId", "recipient"],
   properties: {
@@ -1957,7 +1957,7 @@ export const transferNFT = async ({
       moduleID: 1024,
       assetID: 2,
       nonce: BigInt(nonce),
-      fee: BigInt(transactions.convertLSKToBeddows(fee)),
+      fee: BigInt(transactions.convertKLYToBeddows(fee)),
       senderPublicKey: publicKey,
       asset: {
         name,
@@ -1987,7 +1987,7 @@ Note, that these account details are only created locally, and are not included 
 
 To include an account in the blockchain, simply send some funds to the account with the <<transfer-funds-dialog>>.
 
-To create the account details, the `passphrase` and `cryptography` library of the `@liskhq/lisk-client` package are used.
+To create the account details, the `passphrase` and `cryptography` library of the `@klayrhq/klayr-client` package are used.
 
 .frontend_app/src/components/dialogs/CreateAccountDialog.js
 [source,jsx]
@@ -2000,7 +2000,7 @@ import {
   TextField,
 } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
-import { passphrase, cryptography } from "@liskhq/lisk-client";
+import { passphrase, cryptography } from "@klayrhq/klayr-client";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -2201,7 +2201,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import { NodeInfoContext } from "../../context";
 import { purchaseNFTToken } from "../../utils/transactions/purchase_nft_token";
 import * as api from "../../api";
-import { transactions } from "@liskhq/lisk-client";
+import { transactions } from "@klayrhq/klayr-client";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -2215,7 +2215,7 @@ export default function PurchaseNFTTokenDialog(props) {
   const nodeInfo = useContext(NodeInfoContext);
   const classes = useStyles();
   const currentValue = parseFloat(
-    transactions.convertBeddowsToLSK(props.token.value)
+    transactions.convertBeddowsToKLY(props.token.value)
   );
   const minPurchaseMargin = parseFloat(props.token.minPurchaseMargin);
   const minPurchaseValue =
@@ -2564,9 +2564,9 @@ The code examples for the `HomePage` and `NFTToken` components can be found belo
 [TIP]
 
 ====
-As you may be aware, the account address can be represented in different formats, such as `bytes`, `Buffer`,`hex` or `Lisk32`.
+As you may be aware, the account address can be represented in different formats, such as `bytes`, `Buffer`,`hex` or `Klayr32`.
 
-The `Lisk32` format is the most human-readable representation of an account address, and therefore users of the application should only see this address in the UI.
+The `Klayr32` format is the most human-readable representation of an account address, and therefore users of the application should only see this address in the UI.
 
 More information about the different data formats can be found on the xref:{url_references_schemas}[] reference page.
 ====
@@ -2599,7 +2599,7 @@ import {
 } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import { Link as RouterLink } from "react-router-dom";
-import { transactions, cryptography, Buffer } from "@liskhq/lisk-client";
+import { transactions, cryptography, Buffer } from "@klayrhq/klayr-client";
 
 import PurchaseNFTTokenDialog from "./dialogs/PurchaseNFTTokenDialog";
 import TransferNFTDialog from "./dialogs/TransferNFTDialog";
@@ -2633,7 +2633,7 @@ export default function NFTToken(props) {
   const classes = useStyles();
   const [openPurchase, setOpenPurchase] = useState(false);
   const [openTransfer, setOpenTransfer] = useState(false);
-  const base32UIAddress = cryptography.getBase32AddressFromAddress(Buffer.from(props.item.ownerAddress, 'hex'), 'lsk').toString('binary');
+  const base32UIAddress = cryptography.getBase32AddressFromAddress(Buffer.from(props.item.ownerAddress, 'hex'), 'kly').toString('binary');
   return (
     <Card>
       <CardContent>
@@ -2646,7 +2646,7 @@ export default function NFTToken(props) {
           </li>
           <li>
             <dt>Token value</dt>
-            <dd>{transactions.convertBeddowsToLSK(props.item.value)}</dd>
+            <dd>{transactions.convertBeddowsToKLY(props.item.value)}</dd>
           </li>
           <li>
             <dt>Minimum Purchase Margin</dt>

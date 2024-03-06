@@ -1,16 +1,16 @@
-= Lisk Docs
+= Klayr Docs
 :imagesdir: assets
 
-Lisk uses https://antora.org/[Antora] as documentation generator.
+Klayr uses https://antora.org/[Antora] as documentation generator.
 
-Click here to see the live version of the https://lisk.io/documentation/lisk-sdk/index.html[Lisk Documentation].
+Click here to see the live version of the https://klayr.io/documentation/klayr-sdk/index.html[Klayr Documentation].
 
-xref:CONTRIBUTING.adoc[How to contribute to the Lisk Documentation]
+xref:CONTRIBUTING.adoc[How to contribute to the Klayr Documentation]
 
 == Overview
 
 Content::
-The Content of the whole Lisk documentation is stored in branches:
+The Content of the whole Klayr documentation is stored in branches:
 +
 ----
 docs-sdk
@@ -29,4 +29,4 @@ The presentation of the documentation is stored completely seperate form the act
 It's stored on the `antora` branch.
 
 Building::
-The `build` branch stores the `site.yml` file, which is used to generate the Lisk Documentation using Antora.
+The `build` branch stores the `site.yml` file, which is used to generate the Klayr Documentation using Antora.
