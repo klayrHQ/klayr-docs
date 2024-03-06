@@ -27,10 +27,10 @@ content:
   #  branches: [add-docs]
   #  start_path: docs
   - url: https://github.com/KlayrHQ/klayr-core.git
-    branches: [development]
+    branches: [docs-rebrand]
     start_path: docs/antora
   - url: https://github.com/KlayrHQ/klayr-service.git
-    branches: [development]
+    branches: [docs-rebrand]
     start_path: docs/antora
 ui:
   bundle:
