@@ -13,7 +13,7 @@ Mona Bärenfänger <mona@lightcurve.io>
 :url_elements_tree: references/klayr-elements/tree.adoc
 :url_elements_validator: references/klayr-elements/validator.adoc
 
-The @klayrhq/klayr-client package provides a default set of packages for use by clients of the Klayr network.
+The @klayr/client package provides a default set of packages for use by clients of the Klayr network.
 
 [NOTE]
 ====
@@ -31,7 +31,7 @@ To add Klayr client as a dependency of your project execute the following comman
 
 [source,bash]
 ----
-$ npm install @klayrhq/klayr-client
+$ npm install @klayr/client
 ----
 
 == Upgrade
@@ -40,7 +40,7 @@ To perform an upgrade, execute the following command:
 
 [source,bash]
 ----
-npm update @klayrhq/klayr-client
+npm update @klayr/client
 ----
 
 == Usage
@@ -49,23 +49,23 @@ Import using ES6 modules syntax:
 
 [source,js]
 ----
-import klayr from '@klayrhq/klayr-client';
+import klayr from '@klayr/client';
 ----
 
 Or using Node.js modules:
 
 [source,js]
 ----
-const klayr = require('@klayrhq/klayr-client');
+const klayr = require('@klayr/client');
 ----
 
 Or import specific namespaced functionality:
 
 [source,js]
 ----
-import { apiClient, transactions } from '@klayrhq/klayr-client';
+import { apiClient, transactions } from '@klayr/client';
 // or
-const { apiClient, transactions } = require('@klayrhq/klayr-client');
+const { apiClient, transactions } = require('@klayr/client');
 
 ----
 
@@ -73,7 +73,7 @@ const { apiClient, transactions } = require('@klayrhq/klayr-client');
 
 [source,js]
 ----
-const { apiClient } = require('@klayrhq/klayr-client');
+const { apiClient } = require('@klayr/client');
 
 let clientCache;
 

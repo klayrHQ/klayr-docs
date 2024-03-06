@@ -14,7 +14,7 @@ Mona Bärenfänger <mona@lightcurve.io>
 :url_pbk_glossary: {docs_general}glossary.adoc#pbkdf2-password-based-key-derivation-function-2
 
 
-The @klayrhq/klayr-cryptography package provides all the cryptographic functionality necessary when interacting with the Klayr ecosystem.
+The @klayr/cryptography package provides all the cryptographic functionality necessary when interacting with the Klayr ecosystem.
 
 == Installation
 
@@ -22,7 +22,7 @@ This adds the Klayr client as a dependency of your project:
 
 [source,bash]
 ----
-npm install @klayrhq/klayr-cryptography
+npm install @klayr/cryptography
 ----
 
 == Upgrade
@@ -31,14 +31,14 @@ To perform an upgrade, execute the following command:
 
 [source,bash]
 ----
-npm update @klayrhq/klayr-cryptography
+npm update @klayr/cryptography
 ----
 
 == Usage
 
-The `klayr-cryptography` package can be used on both server-side and client-side code.
+The `cryptography` package can be used on both server-side and client-side code.
 
-In case the `klayr-cryptography` is used server-side, it is beneficial to speed up the application by using the {url_github_sodium}[sodium-native^] library.
+In case the `cryptography` is used server-side, it is beneficial to speed up the application by using the {url_github_sodium}[sodium-native^] library.
 
 To perform this, expose `NACL_FAST=enable` as the environment variable as shown below:
 
@@ -81,7 +81,7 @@ Cryptography-specific constants are available via the `cryptography.constants` k
 
 [source,js]
 ----
-import * as cryptography from '@klayrhq/klayr-cryptography';
+import * as cryptography from '@klayr/cryptography';
 
 cryptography.constants.SIGNED_MESSAGE_PREFIX;
 ----

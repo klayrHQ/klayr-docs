@@ -5,13 +5,13 @@ Mona Bärenfänger <mona@lightcurve.io>
 :toc:
 :url_npm_bip39: https://www.npmjs.com/package/bip39
 
-@klayrhq/klayr-passphrase is a package which provides tools for generating and validating mnemonic passphrases.
+@klayr/passphrase is a package which provides tools for generating and validating mnemonic passphrases.
 
 == Installation
 
 [source,bash]
 ----
-$ npm install @klayrhq/klayr-passphrase
+$ npm install @klayr/passphrase
 ----
 
 == Upgrade
@@ -20,7 +20,7 @@ To perform an upgrade, execute the following command:
 
 [source,bash]
 ----
-npm update @klayrhq/klayr-passphrase
+npm update @klayr/passphrase
 ----
 
 == Mnemonic
@@ -32,7 +32,7 @@ Please refer to their documentation for full usage.
 
 [source,js]
 ----
-import * as passphrase from '@klayrhq/klayr-passphrase';
+import * as passphrase from '@klayr/passphrase';
 
 const { Mnemonic } = passphrase;
 
@@ -75,7 +75,7 @@ The array is empty if the passphrase is valid.
 
 [source,js]
 ----
-import * as passphrase from '@klayrhq/klayr-passphrase';
+import * as passphrase from '@klayr/passphrase';
 
 const errors = passphrase.validation.getPassphraseValidationErrors('this passphrase is not    valid', Mnemonic.wordlist.english, 24);
 /* [

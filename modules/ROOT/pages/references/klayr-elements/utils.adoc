@@ -2,13 +2,13 @@
 Mona Bärenfänger <mona@lightcurve.io>
 :toc:
 
-@klayrhq/klayr-utils is a library providing various utilities for handling data structures, objects, and jobs.
+@klayr/utils is a library providing various utilities for handling data structures, objects, and jobs.
 
 == Installation
 
 [source,bash]
 ----
-npm install @klayrhq/klayr-utils
+npm install @klayr/utils
 ----
 
 == Update
@@ -17,7 +17,7 @@ To perform an upgrade, execute the following command:
 
 [source,bash]
 ----
-npm update @klayrhq/klayr-utils
+npm update @klayr/utils
 ----
 
 == Method reference

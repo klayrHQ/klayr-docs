@@ -9,7 +9,7 @@
 // Project URLs
 :url_cryptography_encrypt_pw: references/klayr-elements/cryptography.adoc#encryptpassphrasewithpassword
 
-`@klayrhq/klayr-framework-faucet-plugin` is a plugin for the Klayr Framework that provides a user interface to receive an certain amount of tokens on request.
+`@klayr/faucet-plugin` is a plugin for the Klayr Framework that provides a user interface to receive an certain amount of tokens on request.
 The faucet plugin is a useful tool during development and also in testing networks.
 
 The faucet plugin includes the following features:
@@ -39,7 +39,7 @@ How to register the faucet plugin with the blockchain application.
 [source,js]
 ----
 const { Application, genesisBlockDevnet, configDevnet } = require('klayr-sdk');
-const { FaucetPlugin } = require('@klayrhq/klayr-framework-faucet-plugin');
+const { FaucetPlugin } = require('@klayr/faucet-plugin');
 
 const app = Application.defaultApplication(genesisBlockDevnet, configDevnet);
 
@@ -72,7 +72,7 @@ There are three required config options that need to be defined in order for the
 [source,js]
 ----
 const { Application, genesisBlockDevnet, configDevnet } = require('klayr-sdk');
-const { FaucetPlugin } = require('@klayrhq/klayr-framework-faucet-plugin');
+const { FaucetPlugin } = require('@klayr/faucet-plugin');
 
 const appConfig = utils.objects.mergeDeep({}, configDevnet, {
     plugins: {

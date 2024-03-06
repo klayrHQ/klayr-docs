@@ -3,7 +3,7 @@
 
 :url_klayr_framework: klayr-v3@ROOT::glossary.adoc#klayr-framework
 
-`@klayrhq/klayr-framework-dashboard-plugin` is a plugin for the xref:{url_klayr_framework}[Klayr Framework] that provides a user interface which enables developers to conveniently view and communicate with the blockchain application during the development.
+`@klayr/dashboard-plugin` is a plugin for the xref:{url_klayr_framework}[Klayr Framework] that provides a user interface which enables developers to conveniently view and communicate with the blockchain application during the development.
 
 The dashboard plugin includes the following features:
 
@@ -35,7 +35,7 @@ How to register the dashboard plugin with the blockchain application.
 [source,js]
 ----
 const { Application, genesisBlockDevnet, configDevnet } = require('klayr-sdk');
-const { DashboardPlugin } = require('@klayrhq/klayr-framework-dashboard-plugin');
+const { DashboardPlugin } = require('@klayr/dashboard-plugin');
 
 const app = Application.defaultApplication(genesisBlockDevnet, configDevnet);
 
@@ -60,7 +60,7 @@ NOTE: The application will use the default values in the case whereby there is n
 [source,js]
 ----
 const { Application, genesisBlockDevnet, configDevnet } = require('klayr-sdk');
-const { DashboardPlugin } = require('@klayrhq/klayr-framework-dashboard-plugin');
+const { DashboardPlugin } = require('@klayr/dashboard-plugin');
 
 const appConfig = utils.objects.mergeDeep({}, configDevnet, {
     plugins: {

@@ -5,14 +5,14 @@
 :url_klayr_protocol: klayr-v3@ROOT::understand-blockchain/klayr-protocol/index.adoc
 :url_semver: https://semver.org/
 
-The @klayrhq/klayr-validator package is a wrapper of validation packages.
+The @klayr/validator package is a wrapper of validation packages.
 It includes custom validations utilities related to the xref:{url_klayr_protocol}[Klayr Protocol].
 
 == Installation
 
 [source,bash]
 ----
-npm install @klayrhq/klayr-validator
+npm install @klayr/validator
 ----
 
 == Update
@@ -21,14 +21,14 @@ To perform an upgrade, execute the following command:
 
 [source,bash]
 ----
-npm update @klayrhq/klayr-validator
+npm update @klayr/validator
 ----
 
 == Usage
 
 [source,js]
 ----
-const validator = require('@klayrhq/klayr-validator');
+const validator = require('@klayr/validator');
 
 console.log(validator.MAX_SINT64) //9223372036854775807n
 ----

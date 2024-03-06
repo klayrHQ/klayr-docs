@@ -10,7 +10,7 @@
 
 :url_lip: https://github.com/KlayrHQ/lips/blob/master/proposals/lip-0004.md
 
-@klayrhq/klayr-p2p is a package for creating unstructured P2P networks.
+@klayr/p2p is a package for creating unstructured P2P networks.
 The package in abstraction enables peer discovery, network security, and reliability.
 A developer can leverage all the underlying specifications proposed in https://github.com/KlayrHQ/lips/blob/master/proposals/lip-0004.md[LIP: 0004: Introduce robust peer selection and banning mechanism] and use the package for building P2P use cases.
 
@@ -18,7 +18,7 @@ A developer can leverage all the underlying specifications proposed in https://g
 
 [source,bash]
 ----
-npm install --save @klayrhq/klayr-p2p
+npm install --save @klayr/p2p
 ----
 
 == Update
@@ -27,7 +27,7 @@ To perform an upgrade, execute the following command:
 
 [source,bash]
 ----
-npm update @klayrhq/klayr-p2p
+npm update @klayr/p2p
 ----
 
 == Usage
@@ -36,7 +36,7 @@ To run a P2P node.
 
 [source,js]
 ----
-const { P2P } = require('@klayrhq/klayr-p2p');
+const { P2P } = require('@klayr/p2p');
 
 const p2p = new P2P({
 	nodeInfo: {

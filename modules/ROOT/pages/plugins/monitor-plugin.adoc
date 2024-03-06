@@ -8,7 +8,7 @@
 
 // Project URLs
 
-`@klayrhq/klayr-framework-monitor-plugin` is a plugin for the Klayr Framework that provides network statistics of the running node.
+`@klayr/monitor-plugin` is a plugin for the Klayr Framework that provides network statistics of the running node.
 
 [TIP]
 ====
