@@ -5,7 +5,6 @@
 
 :url_blockchain_apps: {docs_general}understand-blockchain/index.adoc#blockchain-applications
 :url_protocol_dpos: {docs_general}understand-blockchain/klayr-protocol/consensus-algorithm.adoc#klayr-dpos
-:url_protocol_bft: {docs_general}understand-blockchain/klayr-protocol/consensus-algorithm.adoc#klayr-bft
 :url_references_commander: references/klayr-commander/index.adoc
 :url_references_dashboard_plugin: plugins/dashboard-plugin.adoc
 :url_references_test_suite: references/test-utils.adoc

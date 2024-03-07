@@ -10,7 +10,6 @@
 
 :url_protocol_blocks_rewards: {docs_general}understand-blockchain/klayr-protocol/blocks.adoc#rewards_and_fees
 :url_protocol_dpos: {docs_general}understand-blockchain/klayr-protocol/consensus-algorithm.adoc#dpos
-:url_protocol_bft: {docs_general}understand-blockchain/klayr-protocol/consensus-algorithm.adoc#klayr_bft
 :url_protocol_delegate_selection: {docs_general}understand-blockchain/klayr-protocol/consensus-algorithm.adoc#delegate_selection
 :url_protocol_fork_choice: {docs_general}understand-blockchain/klayr-protocol/consensus-algorithm.adoc#index-fork_choice_rule-1
 :url_protocol_punishment: {docs_general}understand-blockchain/klayr-protocol/consensus-algorithm.adoc#punishment
@@ -19,7 +18,6 @@
 :url_protocol_transactions_unlock: {docs_general}understand-blockchain/klayr-protocol/transactions.adoc#unlock
 :url_protocol_transactions_vote: {docs_general}understand-blockchain/klayr-protocol/transactions.adoc#vote
 
-:url_bft_glossary: {docs_general}glossary.adoc#bft-byzantine-fault-tolerance
 :url_active_delegate: {docs_general}glossary.adoc#active-delegate
 :url_klayr_sdk: {docs_general}glossary.adoc#klayr-sdk
 :url_transaction_asset: {docs_general}glossary.adoc#transaction-asset

@@ -11,12 +11,11 @@ Mona Bärenfänger <mona@lightcurve.io>
 :url_nodejs: https://nodejs.org/
 :url_nodejs_download: https://nodejs.org/en/download/
 :url_npm_klayr_api: https://www.npmjs.com/package/@klayr/api-client
-:url_npm_klayr_bft: https://www.npmjs.com/package/@klayrhq/klayr-bft
 :url_npm_klayr_chain: https://www.npmjs.com/package/@klayr/chain
 :url_npm_klayr_client: https://www.npmjs.com/package/@klayr/client
 :url_npm_klayr_codec: https://www.npmjs.com/package/@klayr/codec
 :url_npm_klayr_cryptography: https://www.npmjs.com/package/@klayr/cryptography
-:url_npm_klayr_db: https://www.npmjs.com/package/@klayrhq/klayr-db
+:url_npm_klayr_db: https://www.npmjs.com/package/@liskhq/lisk-db
 :url_npm_klayr_genesis: https://www.npmjs.com/package/@klayr/genesis
 :url_npm_klayr_p2p: https://www.npmjs.com/package/@klayr/p2p
 :url_npm_klayr_passphrase: https://www.npmjs.com/package/@klayr/passphrase
@@ -27,7 +26,6 @@ Mona Bärenfänger <mona@lightcurve.io>
 :url_npm_klayr_validator: https://www.npmjs.com/package/@klayr/validator
 // Project URls
 :url_npm_klayr_api_docs: references/klayr-elements/api-client.adoc
-:url_npm_klayr_bft_docs: references/klayr-elements/bft.adoc
 :url_npm_klayr_chain_docs: references/klayr-elements/chain.adoc
 :url_npm_klayr_client_docs: references/klayr-elements/client.adoc
 :url_npm_klayr_codec_docs: references/klayr-elements/codec.adoc
