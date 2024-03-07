@@ -104,8 +104,8 @@ Now open `plugins.ts`, import the UI plugin, and register it with the applicatio
 [source,typescript]
 ----
 import { Application } from 'klayr-sdk';
-import { DashboardPlugin } from "@klayrhq/klayr-framework-dashboard-plugin";
-import { FaucetPlugin } from "@klayrhq/klayr-framework-faucet-plugin";
+import { DashboardPlugin } from "@klayr/framework-dashboard-plugin";
+import { FaucetPlugin } from "@klayr/framework-faucet-plugin";
 import { LNSDashboardPlugin } from 'lns-dashboard-plugin';
 
 export const registerPlugins = (app: Application): void => {

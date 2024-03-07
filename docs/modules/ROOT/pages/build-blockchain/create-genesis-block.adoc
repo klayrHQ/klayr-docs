@@ -151,13 +151,13 @@ IMPORTANT: Ensure the file `accounts.json` is securely stored somewhere safe, as
 == Manual genesis block creation (alternative with Klayr Genesis)
 
 The `genesis` library can be used to generate a valid genesis block based on the above parameters.
-It can be imported directly from the `klayr-sdk` package, or alternatively it can be installed as a separate package `@klayrhq/klayr-genesis`.
+It can be imported directly from the `klayr-sdk` package, or alternatively it can be installed as a separate package `@klayr/genesis`.
 
 [source,bash]
 ----
 npm install klayr-sdk
 # or
-npm install @klayrhq/klayr-genesis
+npm install @klayr/genesis
 ----
 
 === Including the account asset schemas

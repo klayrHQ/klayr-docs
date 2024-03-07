@@ -1400,7 +1400,7 @@ Feel free to copy and paste the files above from GitHub into your own project.
 .srs/blockchain_app/plugins/srs_api_plugin/controllers
 [source,js]
 ----
-const { transactions, cryptography } = require('@klayrhq/klayr-client');
+const { transactions, cryptography } = require('@klayr/client');
 const { createRecoverySchema } = require('../schemas');
 const { SRS_CREATE_ASSET_ID, SRS_MODULE_ID, DEFAULT_FEE } = require('../constants');
 
@@ -1900,7 +1900,7 @@ Accepts two arguments:
 .srs/frontent_app/src/api/index.js
 [source,js]
 ----
-import { apiClient } from '@klayrhq/klayr-client';
+import { apiClient } from '@klayr/client';
 
 const RPC_ENDPOINT = 'ws://localhost:8888/ws';
 
@@ -1998,7 +1998,7 @@ import { sendTransactions } from '../api';
 import { createRecoveryDefaults } from "../utils/defaults";
 import Snackbar from '@material-ui/core/Snackbar';
 import MuiAlert from '@material-ui/lab/Alert';
-import { cryptography } from '@klayrhq/klayr-client';
+import { cryptography } from '@klayr/client';
 
 function Alert(props) {
   return <MuiAlert elevation={6} variant="filled" {...props} />;

@@ -1,7 +1,7 @@
 = Running a blockchain node
 :toc: preamble
 :docs_core: v3@klayr-core::
-:url_faucet: https://testnet-faucet.klayr.com/
+:url_faucet: https://testnet-faucet.klayr.xyz/
 :url_observer: https://klayr.observer/delegates
 :url_liskscan: https://liskscan.com/delegates
 :url_run_reset: run-blockchain/blockchain-reset.adoc

@@ -41,7 +41,7 @@ Install the dashboard plugin:
 
 [source,bash]
 ----
-npm i @klayrhq/klayr-framework-dashboard-plugin
+npm i @klayr/framework-dashboard-plugin
 ----
 
 Now open `plugins.ts`, import the Dashboard plugin, and register it with the application as shown below:
@@ -52,7 +52,7 @@ Now open `plugins.ts`, import the Dashboard plugin, and register it with the app
 /* eslint-disable @typescript-eslint/no-empty-function */
 import { Application } from 'klayr-sdk';
 import { LatestHelloPlugin } from "./plugins/latest_hello/latest_hello_plugin";
-import { DashboardPlugin } from "@klayrhq/klayr-framework-dashboard-plugin";
+import { DashboardPlugin } from "@klayr/framework-dashboard-plugin";
 
 // @ts-expect-error Unused variable error happens here until at least one module is registered
 export const registerPlugins = (app: Application): void => {

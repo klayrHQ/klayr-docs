@@ -10,11 +10,11 @@ Mona Bärenfänger <mona@lightcurve.io>
 :experimental:
 :icons: font
 //External URLs
-:url_klayr_roadmap: https://klayr.com/roadmap
+:url_klayr_roadmap: https://klayr.xyz/roadmap
 :url_github_lns_dashboard: https://github.com/KlayrHQ/klayr-sdk-examples/tree/nh-klayr-name-service/tutorials/klayr-name-service/lns-dashboard-plugin
 :url_github_srs: https://github.com/KlayrHQ/klayr-sdk-examples/tree/development/tutorials/social-recovery
-:url_blog_benchmark: https://klayr.com/blog/development/benchmarking-klayr-core-v3.0.0-against-klayr-core-v2.1.6-0
-:url_klayr_apps: https://klayr.com/ecosystem
+:url_blog_benchmark: https://klayr.xyz/blog/development/benchmarking-klayr-core-v3.0.0-against-klayr-core-v2.1.6-0
+:url_klayr_apps: https://klayr.xyz/ecosystem
 //Project URLs
 :url_introduction_modules: understand-blockchain/modules-assets.adoc
 :url_introduction_plugins: understand-blockchain/plugins.adoc

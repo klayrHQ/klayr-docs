@@ -25,7 +25,7 @@ To interact with the blockchain application conveniently through a browser, it i
 This frontend can be built with any technology stack of your choice.
 In this example, {url_reactjs}[React.js] is used.
 
-We will use the `@klayrhq/klayr-client` package in the frontend application to communicate with the blockchain application.
+We will use the `@klayr/client` package in the frontend application to communicate with the blockchain application.
 
 .Sample code
 [NOTE]
@@ -121,7 +121,7 @@ npm i react-router-dom # <1>
 
 [source,bash]
 ----
-npm i @klayrhq/klayr-client # <1>
+npm i @klayr/client # <1>
 ----
 
 <1> A collection of Klayr-related libraries which can be used in the frontend.
@@ -173,7 +173,7 @@ Import `passphrase` and `cryptography` from the `klayr-client` package to create
 [source,jsx]
 ----
 import React, { Component } from 'react';
-import { passphrase, cryptography } from '@klayrhq/klayr-client';
+import { passphrase, cryptography } from '@klayr/client';
 
 const newCredentials = () => {
     const pass = passphrase.Mnemonic.generateMnemonic();
@@ -210,7 +210,7 @@ In a new file `api.js`, the `apiClient` from package `klayr-client` provides an 
 .src/api.js
 [source,js]
 ----
-const { apiClient, cryptography } = require('@klayrhq/klayr-client');
+const { apiClient, cryptography } = require('@klayr/client');
 const RPC_ENDPOINT = 'ws://localhost:8080/ws';
 
 let clientCache;
@@ -246,7 +246,7 @@ Next, create a new file `Faucet.js`, which will store the React component of the
 ----
 import React, { useState } from 'react';
 // `transactions` and `cryptography` from the `klayr-client` package are used to convert the data of the transaction into the correct format.
-import { cryptography, transactions } from '@klayrhq/klayr-client';
+import { cryptography, transactions } from '@klayr/client';
 // Inside `Faucet.js`, import the previously defined API client from `api.js`.
 import * as api from '../api.js';
 //List of accounts, the list should be same as the hello_app
@@ -342,7 +342,7 @@ The only difference is that the sender is not essentially a genesis account, but
 [source,jsx]
 ----
 import React, { useState } from 'react';
-import { cryptography, transactions } from '@klayrhq/klayr-client';
+import { cryptography, transactions } from '@klayr/client';
 import * as api from '../api.js';
 
 const Transfer = () => {
@@ -440,7 +440,7 @@ Create a new file `Hello.js` inside of the `components/` folder, and add the fol
 .src/components/Hello.js
 [source,jsx]
 ----
-import { cryptography, transactions } from '@klayrhq/klayr-client';
+import { cryptography, transactions } from '@klayr/client';
 import React, { Component, useState } from 'react';
 import * as api from '../api.js';
 
@@ -527,7 +527,7 @@ The API client is imported again from `api.js`, in order to communicate with the
 .src/components/Account.js
 [source,jsx]
 ----
-import { cryptography } from '@klayrhq/klayr-client';
+import { cryptography } from '@klayr/client';
 import React, { useState } from 'react';
 import * as api from '../api.js';
 

@@ -138,7 +138,7 @@ An example script how to create a transaction object via the API client is descr
 
 [source,js]
 ----
-const { apiClient, cryptography, transactions } = require('@klayrhq/klayr-client');
+const { apiClient, cryptography, transactions } = require('@klayr/client');
 const RPC_ENDPOINT = 'ws://localhost:8080/ws';
 
 let clientCache;
@@ -317,7 +317,7 @@ jsome.params.colored = true;
 // Use local Service node
 const WS_RPC_ENDPOINT = 'ws://localhost:9901/rpc-v2';
 //Use public Service node
-//const WS_RPC_ENDPOINT = "wss://service.klayr.com/rpc-v2";
+//const WS_RPC_ENDPOINT = "wss://service.klayr.xyz/rpc-v2";
 
 // 2. Connect to Klayr Service via WebSockets
 const socket = io(WS_RPC_ENDPOINT, {
@@ -363,7 +363,7 @@ If the xref:{url_sdk_httpapi}[] is enabled on a node, it is possible to send the
 [source,bash]
 ----
 curl -X 'POST' \
-  'https://mainnet.klayr.com/api/transactions' \
+  'https://mainnet.klayr.xyz/api/transactions' \
   -H 'accept: application/json' \
   -H 'Content-Type: application/json' \
   -d '{
@@ -394,7 +394,7 @@ A full example how to create and send a transaction via the API client is descri
 
 [source,js]
 ----
-const { apiClient, cryptography, transactions } = require('@klayrhq/klayr-client');
+const { apiClient, cryptography, transactions } = require('@klayr/client');
 const RPC_ENDPOINT = 'ws://localhost:8080/ws';
 
 let clientCache;
@@ -450,7 +450,7 @@ If the xref:{url_api_node_rpc}[] is enabled on a node, it is possible to send a 
 
 [source,js]
 ----
-const { apiClient, cryptography, transactions } = require('@klayrhq/klayr-client');
+const { apiClient, cryptography, transactions } = require('@klayr/client');
 let clientCache;
 const nodeAPIURL = 'ws://localhost:8080/ws';
 // Replace with the recipient address

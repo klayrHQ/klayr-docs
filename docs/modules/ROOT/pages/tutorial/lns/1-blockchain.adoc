@@ -1511,7 +1511,7 @@ Install the dashboard plugin:
 .klayr-name-service/
 [source,bash]
 ----
-npm i @klayrhq/klayr-framework-dashboard-plugin
+npm i @klayr/framework-dashboard-plugin
 ----
 
 Now open `plugins.ts`, import the Dashboard plugin, and register it with the application as shown below:
@@ -1520,7 +1520,7 @@ Now open `plugins.ts`, import the Dashboard plugin, and register it with the app
 [source,typescript]
 ----
 import { Application } from 'klayr-sdk';
-import { DashboardPlugin } from "@klayrhq/klayr-framework-dashboard-plugin";
+import { DashboardPlugin } from "@klayr/framework-dashboard-plugin";
 
 export const registerPlugins = (app: Application): void => {
 
@@ -1542,7 +1542,7 @@ Install the faucet plugin:
 .klayr-name-service/
 [source,bash]
 ----
-npm i @klayrhq/klayr-framework-faucet-plugin
+npm i @klayr/framework-faucet-plugin
 ----
 
 Now open `plugins.ts`, import the Faucet plugin, and register it with the application as shown below:
@@ -1551,8 +1551,8 @@ Now open `plugins.ts`, import the Faucet plugin, and register it with the applic
 [source,typescript]
 ----
 import { Application } from 'klayr-sdk';
-import { DashboardPlugin } from "@klayrhq/klayr-framework-dashboard-plugin";
-import { FaucetPlugin } from "@klayrhq/klayr-framework-faucet-plugin";
+import { DashboardPlugin } from "@klayr/framework-dashboard-plugin";
+import { FaucetPlugin } from "@klayr/framework-faucet-plugin";
 
 export const registerPlugins = (app: Application): void => {
 

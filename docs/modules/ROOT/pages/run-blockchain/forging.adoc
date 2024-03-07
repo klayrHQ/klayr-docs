@@ -8,12 +8,12 @@ Mona Bärenfänger <mona@lightcurve.io>
 :sectnumlevels: 2
 :docs_sdk: v5@klayr-sdk::
 // URLs
-:url_klayr_wallet: https://klayr.com/wallet
+:url_klayr_wallet: https://klayr.xyz/wallet
 :url_wikipedia_password_strength: https://en.wikipedia.org/wiki/Password_strength#Guidelines_for_strong_passwords
 // Project URLs
 :url_guides_config: build-blockchain/configure-app.adoc
-:url_guides_setup_bootstrap: build-blockchain/create-blockchain-app.adoc#bootstrapping-a-new-blockchain-application-with-klayr-commander
-:url_commander_commands: {docs_sdk}references/klayr-commander/commands.adoc
+:url_guides_setup_bootstrap: build-blockchain/create-blockchain-app.adoc#bootstrapping-a-new-blockchain-application-with-klayr.xyzmander
+:url_commander_commands: {docs_sdk}references/klayr.xyzmander/commands.adoc
 :url_framework_dashbobardplugin: {docs_sdk}plugins/dashboard-plugin.adoc
 :url_elements: {docs_sdk}references/klayr-elements/index.adoc
 :url_elements_crytpography: {docs_sdk}references/klayr-elements/cryptography.adoc
@@ -190,7 +190,7 @@ To create the delegate configuration data,
 . First create a custom config file
 . Then use one of the following alternatives to generate the delegate config data:
 ** <<option-1-via-application-cli>>
-** <<option-2-with-klayr-commander>>
+** <<option-2-with-klayr.xyzmander>>
 . Lastly, add the delegate config data to the custom config file.
 
 === Creating a custom config file
@@ -592,7 +592,7 @@ Invoke the following action to *enable the forging* for a delegate:
 .Enable forging
 [source,js]
 ----
-const { createWSClient } = require('@klayrhq/klayr-api-client');
+const { createWSClient } = require('@klayr/api-client');
 
 export const enableForging = async () => {
     let apiClient = await createWSClient('ws://localhost:8080/ws');
@@ -705,7 +705,7 @@ Invoke the following action to *disable the forging* for a delegate:
 .Disable forging
 [source,js]
 ----
-const { createWSClient } = require('@klayrhq/klayr-api-client');
+const { createWSClient } = require('@klayr/api-client');
 
 export const disableForging = async () => {
     let apiClient = await createWSClient('ws://localhost:8080/ws');

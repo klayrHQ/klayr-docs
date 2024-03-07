@@ -28,11 +28,11 @@ This can be achieved either via a WebSocket (local or remote), or an IPC (only o
 In most scenarios, it is beneficial to have a local node running (for example, the {url_example_helloapp}[Hello World application^]) to which the client can send the API requests.
 The RPC options in the config should be enabled and configured accordingly, see xref:{url_guides_config}[RPC configuration of a node].
 
-TIP: The `apiClient` is also included in the NPM package xref:{url_references_client}[`@klayrhq/klayr-client`].
+TIP: The `apiClient` is also included in the NPM package xref:{url_references_client}[`@klayr/client`].
 
 [source,js]
 ----
-const { apiClient } = require('@klayrhq/klayr-client');
+const { apiClient } = require('@klayr/client');
 let clientCache;
 const nodeAPIURL = 'ws://localhost:8080/ws';
 
@@ -52,7 +52,7 @@ The following script shows how to decode & encode a block by a given ID.
 .`getBlockById.js`:
 [source%linenums,js,highlight='1..9|2..4|6..8']
 ----
-const { apiClient } = require('@klayrhq/klayr-client');
+const { apiClient } = require('@klayr/client');
 let clientCache;
 const nodeAPIURL = 'ws://localhost:8080/ws';
 
@@ -159,7 +159,7 @@ Create a new file `getTxById.js`:
 .Example for decoding a transaction by a given ID
 [source,js]
 ----
-const { apiClient } = require('@klayrhq/klayr-client');
+const { apiClient } = require('@klayr/client');
 let clientCache;
 const nodeAPIURL = 'ws://localhost:8080/ws';
 

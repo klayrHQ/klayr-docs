@@ -2,4 +2,4 @@
 Mona Bärenfänger <mona@lightcurve.io>
 :description: Interactive HTTP API reference of Klayr Service (Mainnet).
 :page-layout: swagger
-:page-swagger-url: https://service.klayr.com/api/v2/spec
+:page-swagger-url: https://service.klayr.xyz/api/v2/spec

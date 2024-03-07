@@ -120,7 +120,7 @@ export const transferAssetSchema = {
 
 [source,typescript]
 ----
-const { validator, transactions } = require('@klayrhq/klayr-client');
+const { validator, transactions } = require('@klayr/client');
 const { transactionSchema, transferAssetSchema } = require('./schemas');
 
 // Example account credentials
@@ -300,7 +300,7 @@ Adjust the RPC (Remote-Procedure-Call), endpoint to point to the node you want t
 .api-client.js
 [source,js]
 ----
- const { apiClient } = require('@klayrhq/klayr-client');
+ const { apiClient } = require('@klayr/client');
 
 const RPC_ENDPOINT = 'ws://localhost:8080/ws';
 let clientCache;
@@ -349,7 +349,7 @@ jsome.params.colored = true;
 // Use local Service node
 const WS_RPC_ENDPOINT = 'ws://localhost:9901/rpc-v2';
 //Use public Service node
-//const WS_RPC_ENDPOINT = "wss://service.klayr.com/rpc-v2";
+//const WS_RPC_ENDPOINT = "wss://service.klayr.xyz/rpc-v2";
 
 // 2. Connect to Klayr Service via WebSockets
 const socket = io(WS_RPC_ENDPOINT, {

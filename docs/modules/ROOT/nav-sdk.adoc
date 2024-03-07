@@ -43,9 +43,9 @@
 ** xref:{url_sdk}references/application-cli.adoc[]
 ** xref:{url_sdk}references/config.adoc[]
 ** Klayr Commander
-*** xref:{url_sdk}references/klayr-commander/index.adoc[]
-*** xref:{url_sdk}references/klayr-commander/commands.adoc[]
-*** xref:{url_sdk}references/klayr-commander/sensitive-inputs.adoc[]
+*** xref:{url_sdk}references/klayr.xyzmander/index.adoc[]
+*** xref:{url_sdk}references/klayr.xyzmander/commands.adoc[]
+*** xref:{url_sdk}references/klayr.xyzmander/sensitive-inputs.adoc[]
 ** Klayr Elements
 *** xref:{url_sdk}references/klayr-elements/index.adoc[]
 *** Frontend

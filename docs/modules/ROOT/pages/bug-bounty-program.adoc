@@ -6,7 +6,7 @@ Chris Braithwaite <christopher.braithwaite@lightcurve.io> Mona Bärenfänger <mo
 :idseparator: -
 :imagesdir: ../../assets/images
 
-:url_submission_form: https://klayr.com/contact/ive-found-bug/form
+:url_submission_form: https://klayr.xyz/contact/ive-found-bug/form
 
 image::intro/bug-bounty1.png[align="center"]
 
@@ -50,7 +50,7 @@ image::intro/bug-bounty-payout1.png[ align="center"]
 
 image::intro/bug-reportform1.png[role="related thumb right",200]
 // To file a report, use this link to access the {url_submission_form}[submission form^].
-To file a report, please send an email to the following address: security@klayr.com
+To file a report, please send an email to the following address: security@klayr.xyz
 
 Submitted vulnerabilities and bugs should be described in the most methodical and detailed manner as possible.
 Clear reproducible steps or a solution are preferred and may lead to a higher remuneration.

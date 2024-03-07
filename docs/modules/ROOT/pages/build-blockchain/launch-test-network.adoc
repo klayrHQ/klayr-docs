@@ -19,10 +19,10 @@ Mona Bärenfänger <mona@lightcurve.io>
 :url_github_hello_transaction: https://github.com/KlayrHQ/klayr-sdk-examples/tree/development/hello_world/transactions
 :url_github_sdk_configDevnet: https://github.com/KlayrHQ/klayr-sdk/blob/{v_sdk}/sdk/src/samples/config_devnet.json
 :url_gitlab: https://about.gitlab.com/
-:url_klayr_community: https://klayr.io/community
+:url_klayr.xyzmunity: https://klayr.io/community
 // Project URLs
 :url_bapps_network: understand-blockchain/index.adoc#architecture-of-blockchain-applications
-:url_commander_commands_createaccount: {docs_sdk}references/klayr-commander/commands.adoc#create-account
+:url_commander_commands_createaccount: {docs_sdk}references/klayr.xyzmander/commands.adoc#create-account
 :url_references_cli_createaccount: {docs_sdk}application-cli.adoc#accountcreate
 :url_guides_forging: run-blockchain/forging.adoc
 :url_guides_securenonforging: run-blockchain/non-forging-node-protection.adoc
@@ -297,7 +297,7 @@ Install the Faucet plugin:
 
 [source,bash]
 ----
-npm i @klayrhq/klayr-framework-faucet-plugin
+npm i @klayr/framework-faucet-plugin
 ----
 
 Now open `plugins.ts`, import the Faucet plugin, and register it with the application as shown below:
@@ -307,7 +307,7 @@ Now open `plugins.ts`, import the Faucet plugin, and register it with the applic
 ----
 /* eslint-disable @typescript-eslint/no-empty-function */
 import { Application } from 'klayr-sdk';
-import { FaucetPlugin } from "@klayrhq/klayr-framework-faucet-plugin";
+import { FaucetPlugin } from "@klayr/framework-faucet-plugin";
 
 // @ts-expect-error Unused variable error happens here until at least one module is registered
 export const registerPlugins = (app: Application): void => {
@@ -346,7 +346,7 @@ Use the `apiClient` of the `klayr-client` package and write a small script to in
 
 [source,js]
 ----
-const { apiClient } = require('@klayrhq/klayr-client');
+const { apiClient } = require('@klayr/client');
 let clientCache;
 
 const getClient = async () => {

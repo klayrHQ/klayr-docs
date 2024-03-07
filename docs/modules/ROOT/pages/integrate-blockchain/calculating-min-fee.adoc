@@ -27,7 +27,7 @@ If you wish to connect to a different node, simply update the API URL defined in
 .index.js
 [source,js]
 ----
-const { apiClient, transactions } = require('@klayrhq/klayr-client');
+const { apiClient, transactions } = require('@klayr/client');
 
 let clientCache;
 const nodeAPIURL = 'ws://localhost:8080/ws'
@@ -59,7 +59,7 @@ This value will be replaced with the calculated minimum fee for the transaction 
 .index.js
 [source,js]
 ----
-const { apiClient, transactions } = require('@klayrhq/klayr-client');
+const { apiClient, transactions } = require('@klayr/client');
 
 // ...
 
@@ -86,7 +86,7 @@ For the final step, all the above defined functions are called and the calculate
 .index.js
 [source,js]
 ----
-const { apiClient, transactions } = require('@klayrhq/klayr-client');
+const { apiClient, transactions } = require('@klayr/client');
 
 // ...
 

@@ -8,7 +8,7 @@
 :url_github_docs: git@github.com:KlayrHQ/klayr-docs.git
 :url_antora: https://antora.org/
 :url_antora_directories: https://docs.antora.org/antora/latest/standard-directories/
-:url_docs: https://klayr.com/documentation
+:url_docs: https://klayr.xyz/documentation
 :url_docs_staging: https://stagingklayr.com/documentation
 :url_docs_gitpage: https://klayrhq.github.io/klayr-docs
 :url_github_docs: https://github.com/KlayrHQ/klayr-docs

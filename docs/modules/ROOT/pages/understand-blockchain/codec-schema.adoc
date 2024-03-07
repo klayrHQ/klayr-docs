@@ -151,8 +151,8 @@ To conveniently decode and encode the data structures stored on the blockchain, 
 The library can be imported from the following NPM packages:
 
 * `klayr-sdk`
-* `@klayrhq/klayr-client`
-* `@klayrhq/klayr-codec`
+* `@klayr/client`
+* `@klayr/codec`
 
 .Example: Importing the `codec` library from the `klayr-sdk` package
 [source,js]

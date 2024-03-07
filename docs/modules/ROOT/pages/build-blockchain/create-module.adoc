@@ -28,7 +28,7 @@ Mona Bärenfänger <mona@lightcurve.io>
 :url_advanced_communication_aliases: {url_advanced_communication}#aliases
 :url_rpc_endpoints: api/klayr-node-rpc.adoc#actions
 :url_references_schemas: understand-blockchain/codec-schema.adoc
-:url_references_commander_commands_module: {docs_sdk}references/klayr-commander/commands.adoc#generate-module
+:url_references_commander_commands_module: {docs_sdk}references/klayr.xyzmander/commands.adoc#generate-module
 :url_tutorials_nft: tutorial/nft.adoc
 :url_tutorials_srs: tutorial/srs.adoc
 

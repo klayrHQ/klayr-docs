@@ -24,9 +24,9 @@ How to create a new blockchain application with the Klayr SDK.
 [TIP]
 
 ====
-To get started with the development of a blockchain application in the most simple and efficient manner, it is *recommended* to follow the guide <<bootstrapping-a-new-blockchain-application-with-klayr-commander>>.
+To get started with the development of a blockchain application in the most simple and efficient manner, it is *recommended* to follow the guide <<bootstrapping-a-new-blockchain-application-with-klayr.xyzmander>>.
 
-If you prefer not to use Klayr Commander to get started with development, the <<manual-setup-alternative-without-klayr-commander>> is explained below.
+If you prefer not to use Klayr Commander to get started with development, the <<manual-setup-alternative-without-klayr.xyzmander>> is explained below.
 ====
 
 == Bootstrapping a new blockchain application with Klayr Commander
@@ -97,7 +97,7 @@ It is recommended to install Klayr Commander globally with the NPM (Node Packet 
 
 [source,bash]
 ----
-npm install --global klayr-commander
+npm install --global klayr.xyzmander
 ----
 
 To check the successful installation of Klayr Commander, run the following command:
@@ -105,7 +105,7 @@ To check the successful installation of Klayr Commander, run the following comma
 [source,bash]
 ----
 $ klayr --version
-klayr-commander/5.1.10 darwin-x64 node-v16.15.0
+klayr.xyzmander/5.1.10 darwin-x64 node-v16.15.0
 ----
 
 ==== Toolchain dependencies
