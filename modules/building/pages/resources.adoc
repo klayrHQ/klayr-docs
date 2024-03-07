@@ -9,7 +9,7 @@ General resources to educate oneself about the Klayr protocol and code base.
 
 == Blog posts
 
-* https://klayr.com/blog[Klayr Blog^]
+* https://klayr.xyz/blog[Klayr Blog^]
 
 == Videos
 
@@ -17,8 +17,8 @@ General resources to educate oneself about the Klayr protocol and code base.
 
 == Forums
 
-* https://dev.klayr.com/[Developer Forum^]
-* https://research.klayr.com/[Research Forum^]
+* https://dev.klayr.xyz/[Developer Forum^]
+* https://research.klayr.xyz/[Research Forum^]
 
 == Documentation resources
 
@@ -30,4 +30,4 @@ General resources to educate oneself about the Klayr protocol and code base.
 * https://dev-wiki.lightcurve.io/[Developers Wiki^]
 * https://github.com/KlayrHQ/discussions/discussions/categories/research-development[Dev Discussions^]
 * https://github.com/KlayrHQ[Klayr GitHub^]
-* https://npm.klayr.com/[Klayr NPM registry]
+* https://npm.klayr.xyz/[Klayr NPM registry]

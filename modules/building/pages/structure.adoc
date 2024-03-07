@@ -8,8 +8,8 @@
 :url_github_docs: git@github.com:KlayrHQ/klayr-docs.git
 :url_antora: https://antora.org/
 :url_antora_directories: https://docs.antora.org/antora/latest/standard-directories/
-:url_docs: https://klayr.com/documentation
-:url_docs_staging: https://stagingklayr.com/documentation
+:url_docs: https://klayr.xyz/documentation
+:url_docs_staging: https://stagingklayr.xyz/documentation
 :url_docs_gitpage: https://klayrhq.github.io/klayr-docs
 :url_github_docs: https://github.com/KlayrHQ/klayr-docs
 :url_gitlab_antora_extensions: https://gitlab.com/antora/antora-asciidoctor-extensions
@@ -49,7 +49,7 @@ Documentation is deployed on staging before deploying on <<production>>, to veri
 
 ==== Deployment
 * Task for compiling a new version of the Klayr documentation: {url_jenkins_build}[^]
-* Task for deploying the latest docs on staging.klayr.com: {url_jenkins_staging}[^]
+* Task for deploying the latest docs on staging.klayr.xyz: {url_jenkins_staging}[^]
 
 IMPORTANT: For accessing Jenkins, it is necessary to connect to the lightcurve network via the VPN, if you are not in the office.
 
@@ -63,7 +63,7 @@ Link to the production version of the Klayr documentation: {url_docs}.
 
 ==== Deployment
 * Task for compiling a new version of the Klayr documentation: {url_jenkins_build}[^]
-* Task for deploying the latest docs on staging.klayr.com: {url_jenkins_production}[^]
+* Task for deploying the latest docs on staging.klayr.xyz: {url_jenkins_production}[^]
 
 IMPORTANT: For accessing Jenkins, it is necessary to connect to the lightcurve network via the VPN, if you are not in the office.
 
