@@ -45,7 +45,7 @@ Open the `.env` file to change the default configuration options of Klayr Servic
 ## Klayr Service Core
 
 # Klayr static assets, ie. known account lists
-KLAYR_STATIC=https://static-data.klayr.com
+KLAYR_STATIC=https://static-data.klayr.xyz
 
 # Klayr Service geolocation backend (empty = disabled)
 GEOIP_JSON=
@@ -167,7 +167,7 @@ services:
       GEOIP_JSON: ''
       INDEX_N_BLOCKS: '0'
       KLAYR_CORE_WS: ws://host.docker.internal:8080
-      KLAYR_STATIC: https://static-data.klayr.com
+      KLAYR_STATIC: https://static-data.klayr.xyz
       SERVICE_BROKER: redis://redis_common:6379/0
       SERVICE_CORE_MYSQL: mysql://klayr:password@mysql_core:3306/klayr
       SERVICE_CORE_REDIS: redis://redis_core_persistent:6379/0

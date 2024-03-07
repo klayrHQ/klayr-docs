@@ -170,10 +170,10 @@ It is recommended to use alphanumeric characters and the commonly accepted speci
 [source,bash]
 ----
 # Klayr static assets, i.e. known account lists
-KLAYR_STATIC=https://static-data.klayr.com
+KLAYR_STATIC=https://static-data.klayr.xyz
 
 # Klayr Service geolocation backend
-GEOIP_JSON=https://geoip.klayr.com/json
+GEOIP_JSON=https://geoip.klayr.xyz/json
 ----
 
 === Indexing
@@ -257,5 +257,5 @@ SERVICE_MARKET_REDIS=redis://localhost:6379/2
 [source,bash]
 ----
 # This setting is required only for SDK version 4 or lower.
-KLAYR_CORE_HTTP=https://mainnet.klayr.com # Klayr Core HTTP URL
+KLAYR_CORE_HTTP=https://mainnet.klayr.xyz # Klayr Core HTTP URL
 ----

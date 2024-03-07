@@ -79,7 +79,7 @@ module.exports = {
 				SERVICE_CORE_REDIS: 'redis://localhost:6379/1',
 				SERVICE_CORE_REDIS_VOLATILE: 'redis://localhost:6379/8',
 				SERVICE_CORE_MYSQL: 'mysql://root:password@localhost:3306/klayr',
-				KLAYR_STATIC: 'https://static-data.klayr.com',
+				KLAYR_STATIC: 'https://static-data.klayr.xyz',
 				GEOIP_JSON: '',
 				INDEX_N_BLOCKS: '0',
 				ENABLE_TRANSACTION_STATS: 'true',
