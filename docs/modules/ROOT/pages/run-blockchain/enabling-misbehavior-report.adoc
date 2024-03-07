@@ -50,7 +50,7 @@ You can check the `package.json` file of the blockchain client to ensure the ins
 ----
 "dependencies": {
   //[...]
-	"@klayrhq/klayr-framework-report-misbehavior-plugin": "0.3.0",
+	"@klayr/framework-report-misbehavior-plugin": "0.3.0",
 	//[...]
 },
 ----
@@ -59,7 +59,7 @@ Otherwise, you can install the Report Misbehavior plugin like this:
  
 [source,bash]
 ----
-npm install --save @klayrhq/klayr-framework-report-misbehavior-plugin
+npm install --save @klayr/framework-report-misbehavior-plugin
 ----
 
 There are various ways to enable the Report Misbehavior plugin.
@@ -79,7 +79,7 @@ Open the `plugins.ts` file, import the Report Misbehavior plugin, and register i
 [source,typescript]
 ----
 /* eslint-disable @typescript-eslint/no-empty-function */
-import { ReportMisbehaviorPlugin } from '@klayrhq/klayr-framework-report-misbehavior-plugin';
+import { ReportMisbehaviorPlugin } from '@klayr/framework-report-misbehavior-plugin';
 import { Application } from 'klayr-sdk';
 
 export const registerPlugins = (app: Application): void => {

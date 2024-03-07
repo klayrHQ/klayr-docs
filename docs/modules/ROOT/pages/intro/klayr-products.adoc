@@ -11,10 +11,10 @@ Chris Braithwaite <christopher.braithwaite@lightcurve.io> Mona Bärenfänger <mo
 :url_klayr_sdk: klayr-sdk::index.adoc
 :url_klayr_core: klayr-core::index.adoc
 :url_klayr_service: klayr-service::index.adoc
-:url_klayr_desktop: https://klayr.com/wallet
-:url_klayr_mobile: https://klayr.com/wallet
+:url_klayr_desktop: https://klayr.xyz/wallet
+:url_klayr_mobile: https://klayr.xyz/wallet
 :url_lips: https://github.com/KlayrHQ/lips
-:url_research: https://research.klayr.com/
+:url_research: https://research.klayr.xyz/
 
 image:intro/klayr-ecosystem.png[align="center"]
 

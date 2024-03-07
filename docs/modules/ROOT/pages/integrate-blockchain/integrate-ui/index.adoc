@@ -88,12 +88,12 @@ hello/
 <1> Contains all the web pages, that will provide the  <<ui-features, aforementioned functionalities>>.
 
 == Installing dependencies
-Now, navigate to the `hello_frontend` folder and install the `@klayrhq/klayr-client` package.
+Now, navigate to the `hello_frontend` folder and install the `@klayr/client` package.
 Through `klayr-client`, the UI will communicate with the *hello_client*.
 
 [source, bash]
 ----
-npm install @klayrhq/klayr-client --save
+npm install @klayr/client --save
 ----
 
 Next, install `buffer` to *hello_frontend*.
@@ -140,8 +140,8 @@ With `apiClient`, the frontend will be able to invoke endpoints, create and send
 .hello_frontend/src/api.js
 [source,javascript]
 ----
-// Always use the browser version of the '@klayrhq/klayr-client' for UI projects.
-import { apiClient } from '@klayrhq/klayr-client/browser'; 
+// Always use the browser version of the '@klayr/client' for UI projects.
+import { apiClient } from '@klayr/client/browser'; 
 
 const RPC_ENDPOINT = 'ws://localhost:7887/rpc-ws';
 

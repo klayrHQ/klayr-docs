@@ -11,7 +11,7 @@
 :url_github_lip_71: https://github.com/KlayrHQ/lips/blob/main/proposals/lip-0071.md
 :url_arxiv: https://arxiv.org/abs/1903.11434
 :url_github_poa: https://github.com/ethereum/guide/blob/master/poa.md
-:url_blog_poa: https://klayr.com/blog/posts/proof-authority-consensus-sidechains
+:url_blog_poa: https://klayr.xyz/blog/posts/proof-authority-consensus-sidechains
 //Project URLs
 :url_blocks_genesis: understand-blockchain/index.adoc#genesis-block
 :url_run_validator: run-blockchain/become-a-validator.adoc

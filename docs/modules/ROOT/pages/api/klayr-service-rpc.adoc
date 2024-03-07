@@ -11,7 +11,7 @@ Muhammad Talha <muhammad.talha@lightcurve.io>
 === API base URL
 The base URL for the Klayr Service WS-RPC endpoints are available to query under the `/rpc-v3` namespace.
 
-* *WS-RPC:* `wss://service.klayr.com/rpc-v3/`
+* *WS-RPC:* `wss://service.klayr.xyz/rpc-v3/`
 
 === Structure of endpoint
 Each RPC endpoint in Klayr Service follows a specific structure.
@@ -7372,19 +7372,19 @@ To request Klayr Service endpoints via WS, set up a *socket.io* connection as su
       "description": "Klayr is a blockchain application platform.",
       "networkType": "mainnet",
       "isDefault": true,
-      "genesisURL": "https://downloads.klayr.com/klayr/mainnet/genesis_block.json.tar.gz",
-      "projectPage": "https://klayr.com",
+      "genesisURL": "https://downloads.klayr.xyz/klayr/mainnet/genesis_block.json.tar.gz",
+      "projectPage": "https://klayr.xyz",
       "serviceURLs": [
         {
-          "http": "https://service.klayr.com",
-          "ws": "wss://service.klayr.com"
+          "http": "https://service.klayr.xyz",
+          "ws": "wss://service.klayr.xyz"
         }
       ],
       "logo": {
-        "png": "https://downloads.klayr.com/klayr/images/logo.png",
-        "svg": "https://downloads.klayr.com/klayr/images/logo.svg"
+        "png": "https://downloads.klayr.xyz/klayr/images/logo.png",
+        "svg": "https://downloads.klayr.xyz/klayr/images/logo.svg"
       },
-      "appPage": "https://klayr.com",
+      "appPage": "https://klayr.xyz",
       "backgroundColor": "#0981D1",
       "explorers": [
         {
@@ -7394,7 +7394,7 @@ To request Klayr Service endpoints via WS, set up a *socket.io* connection as su
       ],
       "appNodes": [
         {
-          "url": "https://mainnet.klayr.com",
+          "url": "https://mainnet.klayr.xyz",
           "maintainer": "Lightcurve GmbH"
         }
       ]
@@ -7537,8 +7537,8 @@ To request Klayr Service endpoints via WS, set up a *socket.io* connection as su
       "displayDenom": "KLY",
       "baseDenom": "beddows",
       "logo": {
-        "png": "https://downloads.klayr.com/klayr/images/logo.png",
-        "svg": "https://downloads.klayr.com/klayr/images/logo.svg"
+        "png": "https://downloads.klayr.xyz/klayr/images/logo.png",
+        "svg": "https://downloads.klayr.xyz/klayr/images/logo.svg"
       }
     }
   ],
@@ -7640,8 +7640,8 @@ To request Klayr Service endpoints via WS, set up a *socket.io* connection as su
       "networkType": "mainnet",
       "description": "Default token for the entire Klayr ecosystem",
       "logo": {
-        "png": "https://downloads.klayr.com/klayr/images/logo.png",
-        "svg": "https://downloads.klayr.com/klayr/images/logo.svg"
+        "png": "https://downloads.klayr.xyz/klayr/images/logo.png",
+        "svg": "https://downloads.klayr.xyz/klayr/images/logo.svg"
       },
       "symbol": "KLY",
       "displayDenom": "kly",
@@ -7897,9 +7897,9 @@ After a few seconds, re-request the same API with the same credentials to get a 
 }
 ----
 
-Upon receiving a similar response as mentioned above, combine the `fileUrl` with the HTTP base URL: https://service.klayr.com to download the file as shown in the following URL:
+Upon receiving a similar response as mentioned above, combine the `fileUrl` with the HTTP base URL: https://service.klayr.xyz to download the file as shown in the following URL:
 
-https://service.klayr.com/api/v3/export/download?filename=transactions_00000000_klykje69szpgmfaefmbf7zvw7ghc6mamdvf9z3cpw_2023-08-30_2023-08-30.xlsx
+https://service.klayr.xyz/api/v3/export/download?filename=transactions_00000000_klykje69szpgmfaefmbf7zvw7ghc6mamdvf9z3cpw_2023-08-30_2023-08-30.xlsx
 --
 =====
 ====
@@ -7912,9 +7912,9 @@ https://service.klayr.com/api/v3/export/download?filename=transactions_00000000_
 // The RPC WebSocket API can be accessed by the `ws://localhost:9901/rpc-v2`.
 
 // === Access paths and compatibility
-// The WebSocket API can be accessed by the `wss://service.klayr.com/rpc-v2`.
+// The WebSocket API can be accessed by the `wss://service.klayr.xyz/rpc-v2`.
 
-// The testnet network can also be accessed by `wss://testnet-service.klayr.com/rpc-v2`.
+// The testnet network can also be accessed by `wss://testnet-service.klayr.xyz/rpc-v2`.
 
 // The Klayr Service WebSocket API uses the `socket.io` library and is compatible with the JSON-RPC 2.0 standard.
 // The specification below contains numerous examples of how to use the API in practice.

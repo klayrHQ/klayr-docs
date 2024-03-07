@@ -45,7 +45,7 @@ Firstly, define the necessary variables and the `handleChange` event.
 // UI libraries import
 import React, { useState } from "react";
 // Klayr libraries import
-import { cryptography, transactions } from '@klayrhq/klayr-client/browser';
+import { cryptography, transactions } from '@klayr/client/browser';
 import * as api from '../api';
 
 function SendHello() {

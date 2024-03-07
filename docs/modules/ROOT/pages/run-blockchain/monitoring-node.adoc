@@ -53,7 +53,7 @@ You can check the `package.json` file of the blockchain client to ensure the ins
 ----
 "dependencies": {
   //[...]
-	"@klayrhq/klayr-framework-monitor-plugin": "0.4.1",
+	"@klayr/framework-monitor-plugin": "0.4.1",
 	//[...]
 },
 ----
@@ -62,7 +62,7 @@ Otherwise, you can install the Monitor plugin like this:
  
 [source,bash]
 ----
-npm install --save @klayrhq/klayr-framework-monitor-plugin
+npm install --save @klayr/framework-monitor-plugin
 ----
 
 There are various ways to enable the Monitor plugin.
@@ -82,7 +82,7 @@ Open the `plugins.ts` file, import the Monitor plugin, and register it with the 
 [source,typescript]
 ----
 /* eslint-disable @typescript-eslint/no-empty-function */
-import { MonitorPlugin } from '@klayrhq/klayr-framework-monitor-plugin';
+import { MonitorPlugin } from '@klayr/framework-monitor-plugin';
 import { Application } from 'klayr-sdk';
 
 export const registerPlugins = (app: Application): void => {

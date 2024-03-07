@@ -10,7 +10,7 @@ Mona Bärenfänger <mona@lightcurve.io>
 :url_eip2334: https://eips.ethereum.org/EIPS/eip-2334
 :url_eip2333: https://eips.ethereum.org/EIPS/eip-2333
 :url_rfc8032: https://datatracker.ietf.org/doc/html/rfc8032#section-5.1.5
-:url_klayr_wallet: https://klayr.com/wallet
+:url_klayr_wallet: https://klayr.xyz/wallet
 :url_github_bip_39: https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki#generating-the-mnemonic
 :url_github_bip_173: https://github.com/bitcoin/bips/blob/master/bip-0173.mediawiki
 :url_github_lip_18: https://github.com/KlayrHQ/lips/blob/main/proposals/lip-0018.md

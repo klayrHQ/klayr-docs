@@ -7,7 +7,7 @@ Chris Braithwaite <christopher.braithwaite@lightcurve.io>, Mona Bärenfänger <m
 :idseparator: -
 :docs_sdk: klayr-sdk::
 // URLs
-:url_klayr_wallet: https://klayr.com/wallet
+:url_klayr_wallet: https://klayr.xyz/wallet
 :url_bls_key: https://github.com/KlayrHQ/lips/blob/main/proposals/lip-0038.md#public-key-registration-and-proof-of-possession
 :url_lip56: https://github.com/KlayrHQ/lips/blob/main/proposals/lip-0056.md
 :url_lip56_bftweight: {url_lip56}#terminology
@@ -254,7 +254,7 @@ Minimum and maximum values for the certificate threshold are calculated using th
 .How to calculate minimum and maximum certificate thresholds for sidechain validators
 [source,js]
 ----
-const { apiClient } = require('@klayrhq/klayr-client');
+const { apiClient } = require('@klayr/client');
 
 (async () => {
 	// Update the path to point to your sidechain client data folder
@@ -1309,8 +1309,8 @@ Off-chain metadata of a sidechain, to be used by client applications such as Kla
     "chainName": "Klayr",
     "chainID": "02000000",
     "networkType": "betanet",
-    "genesisURL": "https://downloads.klayr.com/klayr/betanet/genesis_block.json.tar.gz",
-    "projectPage": "https://klayr.com",
+    "genesisURL": "https://downloads.klayr.xyz/klayr/betanet/genesis_block.json.tar.gz",
+    "projectPage": "https://klayr.xyz",
     "logo": {
         "png": "https://raw.githubusercontent.com/KlayrHQ/app-registry/main/betanet/Klayr/images/application/klayr.png",
         "svg": "https://raw.githubusercontent.com/KlayrHQ/app-registry/main/betanet/Klayr/images/application/klayr.svg"
@@ -1318,8 +1318,8 @@ Off-chain metadata of a sidechain, to be used by client applications such as Kla
     "backgroundColor": "#f7f9fb",
     "serviceURLs": [
         {
-            "http": "https://betanet-service.klayr.com",
-            "ws": "wss://betanet-service.klayr.com"
+            "http": "https://betanet-service.klayr.xyz",
+            "ws": "wss://betanet-service.klayr.xyz"
         }
     ],
     "explorers": [
@@ -1330,11 +1330,11 @@ Off-chain metadata of a sidechain, to be used by client applications such as Kla
     ],
     "appNodes": [
         {
-            "url": "https://betanet.klayr.com",
+            "url": "https://betanet.klayr.xyz",
             "maintainer": "Lightcurve GmbH"
         },
         {
-            "url": "wss://betanet.klayr.com",
+            "url": "wss://betanet.klayr.xyz",
             "maintainer": "Lightcurve GmbH"
         }
     ]

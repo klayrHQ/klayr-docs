@@ -7,7 +7,7 @@
 :toclevels: 6
 // URLs
 :url_typedoc_crypto: {site-url}/klayr-sdk/v6/references/typedoc/modules/_klayrhq_klayr_cryptography.html
-:url_klayr_learn_create_account: https://klayr.com/learn/undefined/create-an-account
+:url_klayr_learn_create_account: https://klayr.xyz/learn/undefined/create-an-account
 :url_github_guides_multisig: https://github.com/KlayrHQ/klayr-sdk-examples/blob/development/guides/tx-creation-and-signing/multisig.js
 // Project URLs
 :url_sdk_commander: klayr-sdk::references/klayr-commander/index.adoc

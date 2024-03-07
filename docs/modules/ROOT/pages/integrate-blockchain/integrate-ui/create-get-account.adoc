@@ -41,7 +41,7 @@ For that, we will use the `passphrase` and `cryptography` libraries of the *klay
 // UI libraries import
 import React, { useState, useEffect } from "react";
 // Klayr libraries import
-import { passphrase, cryptography } from '@klayrhq/klayr-client/browser';
+import { passphrase, cryptography } from '@klayr/client/browser';
 
 function NewAccount() {
 
