@@ -3,9 +3,9 @@ Mona Bärenfänger <mona@lightcurve.io>
 // Settings
 :toc:
 // Project URLs
-:url_klayr_snapshots: https://snapshots.klayr.com
-:url_klayr_snapshots_testnet: https://snapshots.klayr.com/testnet/
-:url_klayr_snapshots_mainnet: https://snapshots.klayr.com/mainnet/
+:url_klayr_snapshots: https://snapshots.klayr.xyz
+:url_klayr_snapshots_testnet: https://snapshots.klayr.xyz/testnet/
+:url_klayr_snapshots_mainnet: https://snapshots.klayr.xyz/mainnet/
 
 == Synchronizing a node
 

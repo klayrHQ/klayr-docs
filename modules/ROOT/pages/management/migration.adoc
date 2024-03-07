@@ -5,10 +5,10 @@
 :idseparator: -
 :klayr-migrator: klayr-migrator-v1.0.2-linux-x64.tar.gz
 // External URLs
-:url_klayr_migrator: https://downloads.klayr.com/klayr-migrator/{klayr-migrator}
-:url_wallet: https://klayr.com/wallet
-:url_klayr_blog_migration: https://klayr.com/blog/development/announcing-klayr-testnet-v3-migration
-:url_klayr_blog_migration_mainnet: https://klayr.com/blog/development/announcing-klayr-mainnet-v3-migration
+:url_klayr_migrator: https://downloads.klayr.xyz/klayr-migrator/{klayr-migrator}
+:url_wallet: https://klayr.xyz/wallet
+:url_klayr_blog_migration: https://klayr.xyz/blog/development/announcing-klayr-testnet-v3-migration
+:url_klayr_blog_migration_mainnet: https://klayr.xyz/blog/development/announcing-klayr-mainnet-v3-migration
 // Project URLs
 :url_core_install: setup/binary.adoc
 :url_sdk_protocol_voteweight: klayr-v3@ROOT::understand-blockchain/klayr-protocol/consensus-algorithm.adoc#voting_and_weight
