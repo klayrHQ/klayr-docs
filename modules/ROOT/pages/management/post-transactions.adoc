@@ -71,7 +71,7 @@ An example script how to create a transaction object is described in the code sn
 
 [source,js]
 ----
-const { apiClient, cryptography, transactions } = require('@klayrhq/klayr-client');
+const { apiClient, cryptography, transactions } = require('@klayr/client');
 const RPC_ENDPOINT = 'ws://localhost:8080/ws';
 
 let clientCache;
@@ -138,7 +138,7 @@ jsome.params.colored = true;
 // Use local Service node
 const WS_RPC_ENDPOINT = 'ws://localhost:9901/rpc-v2';
 //Use public Service node
-//const WS_RPC_ENDPOINT = "wss://service.klayr.com/rpc-v2";
+//const WS_RPC_ENDPOINT = "wss://service.klayr.xyz/rpc-v2";
 
 // 2. Connect to Klayr Service via WebSockets
 const socket = io(WS_RPC_ENDPOINT, {

@@ -5,9 +5,9 @@
 The RPC WebSocket API can be accessed by the `ws://localhost:9901/rpc-v2`.
 
 === Access paths and compatibility
-The WebSocket API can be accessed by the `wss://service.klayr.com/rpc-v2`.
+The WebSocket API can be accessed by the `wss://service.klayr.xyz/rpc-v2`.
 
-The testnet network can also be accessed by `wss://testnet-service.klayr.com/rpc-v2`.
+The testnet network can also be accessed by `wss://testnet-service.klayr.xyz/rpc-v2`.
 
 The Klayr Service WebSocket API uses the `socket.io` library and is compatible with the JSON-RPC 2.0 standard.
 The specification below contains numerous examples how to use the API in practice.
@@ -1239,15 +1239,15 @@ Retrieves all sources by default.
     {
       "author": "Klayr",
       "content": "On Wednesday, March 3rd, Max Kordek, CEO and Co-founder at Klayr, hosted a live\nmonthly AMA (Ask Max Anything) on Klayr.chat. He answered questions regarding the\nupcoming milestones for Klayr, Klayr.js 2021, marketing plans for this year, and\nmuch more.\n\nThis blog post includes a recap of the live AMA session and features the\nquestions asked by community members, as well as Max’s answers.",
-      "image_url": "https://klayr.com/sites/default/files/styles/blog_main_image_xl_retina/public/images/2021-04/montly-ama-ask-max-anything-recap-MAIN-V1%402x_0.png?itok=_0lipXxp",
-      "imageUrl": "https://klayr.com/sites/default/files/styles/blog_main_image_xl_retina/public/images/2021-04/montly-ama-ask-max-anything-recap-MAIN-V1%402x_0.png?itok=_0lipXxp",
+      "image_url": "https://klayr.xyz/sites/default/files/styles/blog_main_image_xl_retina/public/images/2021-04/montly-ama-ask-max-anything-recap-MAIN-V1%402x_0.png?itok=_0lipXxp",
+      "imageUrl": "https://klayr.xyz/sites/default/files/styles/blog_main_image_xl_retina/public/images/2021-04/montly-ama-ask-max-anything-recap-MAIN-V1%402x_0.png?itok=_0lipXxp",
       "source": "drupal_klayr_general",
       "sourceId": "1001",
       "timestamp": 1614854580,
       "createdAt": 1614854580,
       "modifiedAt": 1614854580,
       "title": "AMA Recap: Ask Max Anything in March 2021",
-      "url": "https://klayr.com/blog/events/ama-recap-ask-max-anything-march-2021"
+      "url": "https://klayr.xyz/blog/events/ama-recap-ask-max-anything-march-2021"
     }
   ],
   "meta": {

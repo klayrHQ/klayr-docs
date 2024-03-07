@@ -7,18 +7,18 @@ Mona Bärenfänger <mona@lightcurve.io>
 :imagesdir: ../assets/images
 :page-no-previous: true
 
-:url_api_mainnet: https://service.klayr.com/api/v2
-:url_api_testnet: https://testnet-service.klayr.com/api/v2
-:url_rpc_api_mainnet: wss://service.klayr.com/rpc-v2
-:url_rpc_api_testnet: wss://testnet-service.klayr.com/rpc-v2
-:url_subscribe_api_mainnet: wss://testnet-service.klayr.com/blockchain
-:url_subscribe_api_testnet: wss://testnet-service.klayr.com/blockchain
+:url_api_mainnet: https://service.klayr.xyz/api/v2
+:url_api_testnet: https://testnet-service.klayr.xyz/api/v2
+:url_rpc_api_mainnet: wss://service.klayr.xyz/rpc-v2
+:url_rpc_api_testnet: wss://testnet-service.klayr.xyz/rpc-v2
+:url_subscribe_api_mainnet: wss://testnet-service.klayr.xyz/blockchain
+:url_subscribe_api_testnet: wss://testnet-service.klayr.xyz/blockchain
 :url_bitcoin: https://en.bitcoin.it/wiki/Protocol_documentation
 :url_electrumx_docs: https://electrumx.readthedocs.io/en/latest/
 :url_github_klayr_explorer: https://github.com/KlayrHQ/klayr-explorer
 :url_github_klayr_service: https://github.com/KlayrHQ/klayr-service
 :url_github_leveldb: https://github.com/google/leveldb
-:url_klayr_wallet: https://klayr.com/wallet
+:url_klayr_wallet: https://klayr.xyz/wallet
 :url_moleculer: https://moleculer.services/
 :url_nats: http://nats.io/
 :url_npm_socketio_client: https://www.npmjs.com/package/socket.io-client
@@ -109,8 +109,8 @@ In the Public API base URLs listed above, in order to fetch the required entitie
 
 For example:
 
-* https://service.klayr.com/api/v2/transactions
-* https://testnet-service.klayr.com/api/v2/transactions
+* https://service.klayr.xyz/api/v2/transactions
+* https://testnet-service.klayr.xyz/api/v2/transactions
 ====
 
 ==== Example: Request data with curl
@@ -198,7 +198,7 @@ jsome.params.colored = true;
 // Use local Service node
 const WS_RPC_ENDPOINT = 'ws://localhost:9901/rpc-v2';
 //Use public Service node
-//const WS_RPC_ENDPOINT = "wss://service.klayr.com/rpc-v2";
+//const WS_RPC_ENDPOINT = "wss://service.klayr.xyz/rpc-v2";
 
 // 2. Connect to Klayr Service via WebSockets
 const socket = io(WS_RPC_ENDPOINT, {
@@ -257,7 +257,7 @@ jsome.params.colored = true;
 // Uses local Service node
 const WS_SUBSCRIBE_ENDPOINT = 'ws://localhost:9901/blockchain';
 // Uses public Service node
-//const WS_SUBSCRIBE_ENDPOINT = "wss://service.klayr.com/blockchain";
+//const WS_SUBSCRIBE_ENDPOINT = "wss://service.klayr.xyz/blockchain";
 
 const socket = io(WS_SUBSCRIBE_ENDPOINT, {
 	forceNew: true,
