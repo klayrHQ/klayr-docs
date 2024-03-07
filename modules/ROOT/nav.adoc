@@ -34,8 +34,8 @@
 *** {site-url}/klayr-sdk/references/typedoc/modules/_klayrhq_klayr_tree.html[Klayr Tree reference^]
 *** {site-url}/klayr-sdk/references/typedoc/modules/_klayrhq_klayr_utils.html[Klayr Utils reference^]
 *** {site-url}/klayr-sdk/references/typedoc/modules/_klayrhq_klayr_validator.html[Klayr Validator reference^]
-** xref:references/klayr-commander/index.adoc[Klayr Commander]
-*** {site-url}/klayr-sdk/references/typedoc/modules/klayr_commander.html[Klayr Commander reference^]
+** xref:references/klayr.xyzmander/index.adoc[Klayr Commander]
+*** {site-url}/klayr-sdk/references/typedoc/modules/klayr.xyzmander.html[Klayr Commander reference^]
 ** {site-url}/klayr-sdk/references/typedoc/modules/klayr_framework.html[Klayr Framework reference^]
 
 

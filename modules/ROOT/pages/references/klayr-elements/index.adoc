@@ -206,14 +206,14 @@ The `klayr` variable will be exposed.
 .Client library
 [source,html]
 ----
-<script src="https://js.klayr.com/klayr-client-6.0.0.js"></script>
+<script src="https://js.klayr.xyz/klayr-client-6.0.0.js"></script>
 ----
 
 //@TODO: Update CDN URL
 .Minified client library:
 [source,html]
 ----
-<script src="https://js.klayr.com/klayr-client-6.0.0.min.js"></script>
+<script src="https://js.klayr.xyz/klayr-client-6.0.0.min.js"></script>
 ----
 
 To include other packages of Klayr Elements, replace `klayr-client` with any of the <<packages,packages>> of Klayr Elements.
@@ -240,7 +240,7 @@ For example, to load the minified version 6.0.0 of Klayr Elements, include the f
 
 [source,html]
 ----
-<script src="https://js.klayr.com/klayr-client-6.0.0.min.js"></script>
+<script src="https://js.klayr.xyz/klayr-client-6.0.0.min.js"></script>
 <script>
     const api = klayr.apiClient.createWSClient('ws://localhost:7887/rpc-ws');
 </script>

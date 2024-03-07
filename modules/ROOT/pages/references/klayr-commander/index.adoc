@@ -6,7 +6,7 @@ Mona Bärenfänger <mona@lightcurve.io>
 // URLs
 :url_nodejs_download: https://nodejs.org/en/download/
 // Project URLs
-:url_commander_cli: references/klayr-commander/cli.adoc
+:url_commander_cli: references/klayr.xyzmander/cli.adoc
 
 image:banner_commander.png[Logo]
 
@@ -67,7 +67,7 @@ To install the latest version of Klayr Commander as a global command, install th
 
 [source,bash]
 ----
-npm install --global klayr-commander
+npm install --global klayr.xyzmander
 ----
 
 Upon successful completion, NPM will add the Klayr Commander executable to your PATH.
@@ -91,7 +91,7 @@ Type `klayr` in the command-line to display the command list and general help:
 A command line interface for Klayr
 
 VERSION
-  klayr-commander/6.0.0 darwin-x64 node-v18.16.0
+  klayr.xyzmander/6.0.0 darwin-x64 node-v18.16.0
 
 USAGE
   $ klayr [COMMAND]
@@ -118,5 +118,5 @@ To update your global installation to the latest version of Klayr Commander, sim
 
 [source,bash]
 ----
-npm update --global klayr-commander
+npm update --global klayr.xyzmander
 ----
