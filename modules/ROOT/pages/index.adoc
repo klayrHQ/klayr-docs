@@ -9,9 +9,9 @@ Mona Bärenfänger <mona@lightcurve.io>
 :page-aliases: monitoring.adoc
 :imagesdir: ../assets/images
 // External URLs
-:url_faucet_testnet: https://testnet-faucet.klayr.com/
-:url_klayr_blog_betanet5: https://klayr.com/blog/development/launch-betanet-v5
-:url_klayr_desktop: https://klayr.com/wallet
+:url_faucet_testnet: https://testnet-faucet.klayr.xyz/
+:url_klayr_blog_betanet5: https://klayr.xyz/blog/development/launch-betanet-v5
+:url_klayr_desktop: https://klayr.xyz/wallet
 :url_nodejs: https://nodejs.org
 :url_postgresql: https://www.postgresql.org
 :url_redis: https://redis.io

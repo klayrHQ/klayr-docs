@@ -81,7 +81,7 @@ Install the `klayr-client` package:
 
 [source,bash]
 ----
-npm i @klayrhq/klayr-client
+npm i @klayr/client
 ----
 
 Write a small script to enable the plugin on the node:
@@ -89,7 +89,7 @@ Write a small script to enable the plugin on the node:
 .authorize-plugin.js
 [source,js]
 ----
-const { apiClient } = require('@klayrhq/klayr-client');
+const { apiClient } = require('@klayr/client');
 let clientCache;
 
 const getClient = async () => {

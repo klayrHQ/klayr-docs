@@ -10,7 +10,7 @@ Mona Bärenfänger <mona@lightcurve.io>
 // URLs
 :url_forger_sync: https://github.com/Gr33nDrag0n69/forger-sync
 :url_backup_plugin: https://github.com/JesusTheHun/klayr-plugin-backup
-:url_klayr_wallet: https://klayr.com/wallet
+:url_klayr_wallet: https://klayr.xyz/wallet
 // Project URLs
 :url_sdk_guides_forging: klayr-v3@ROOT::run-blockchain/forging.adoc
 :url_sdk_protocol_puninshment: klayr-v3@ROOT::understand-blockchain/klayr-protocol/consensus-algorithm.adoc#punishment
