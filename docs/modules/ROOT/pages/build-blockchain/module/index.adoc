@@ -26,7 +26,7 @@ Mona Bärenfänger <mona@lightcurve.io>
 :url_intro_modules_stores: {url_intro_modules}#stores
 :url_intro_modules_methods: {url_intro_modules}#methods
 :url_intro_modules_event: {url_intro_modules}#blockchain-events
-// :url_references_commander: {docs_sdk}references/klayr-commander/cli.adoc#generate
+// :url_references_commander: {docs_sdk}references/klayr.xyzmander/cli.adoc#generate
 
 // TODO: Update the page by uncommenting the hyperlinks once the updated pages are available.
 

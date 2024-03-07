@@ -25,7 +25,7 @@ Muhammad Talha <muhammad.talha@lightcurve.io>
 :url_integrate_ui: integrate-blockchain/integrate-ui/index.adoc
 :url_extend_indexer: integrate-blockchain/aggregate-blockchain-data/extend-indexer.adoc
 
-:url_klayr_wallet: https://klayr.com/wallet
+:url_klayr_wallet: https://klayr.xyz/wallet
 
 //footnotes
 :fn_node_config: footnote:config[Events are necessary to determine the transaction execution status and the actual block generation rewards. Without this information, Klayr Service wouldn’t be able to index all the transactions. Thus, the indexing will be incomplete. Setting "system.keepEventsForHeights: -1" will ensure that the events are not deleted and are maintained on the node for all the block heights. By default, the node only maintains the events for the last 300 blocks.]

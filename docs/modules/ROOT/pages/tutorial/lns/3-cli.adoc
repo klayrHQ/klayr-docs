@@ -89,7 +89,7 @@ Create a new class `LNSResolveCommand`, which extends the class {url_sdk_baseipc
 ./klayr-name-service/lns/src/commands/lns/resolve.ts
 [source,typescript]
 ----
-import { BaseIPCClientCommand } from 'klayr-commander';
+import { BaseIPCClientCommand } from 'klayr.xyzmander';
 
 export class LNSResolveCommand extends BaseIPCClientCommand {
 
@@ -108,7 +108,7 @@ You may also add some examples about the usage of the command, which will be add
 ./klayr-name-service/lns/src/commands/lns/resolve.ts
 [source,typescript]
 ----
-import { BaseIPCClientCommand } from 'klayr-commander';
+import { BaseIPCClientCommand } from 'klayr.xyzmander';
 
 export class LNSResolveCommand extends BaseIPCClientCommand {
     // Available command arguments
@@ -159,7 +159,7 @@ The implementation is analog to the previous command, nevertheless, now use the 
 ./klayr-name-service/lns/src/commands/lns/lookup.ts
 [source,typescript]
 ----
-import { BaseIPCClientCommand } from 'klayr-commander';
+import { BaseIPCClientCommand } from 'klayr.xyzmander';
 
 export class LNSLookupCommand extends BaseIPCClientCommand {
 	static args = [

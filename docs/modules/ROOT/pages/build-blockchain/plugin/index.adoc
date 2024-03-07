@@ -17,7 +17,7 @@ Muhammad Talha <muhammad.talha@lightcurve.io>
 :url_build_index: build-blockchain/index.adoc
 :url_build_index_hello: {url_build_index}#the-hello-world-client
 :url_intro_plugins: understand-blockchain/sdk/plugins.adoc
-// :url_references_commander_commands_plugin: {docs_sdk}references/klayr-commander/cli.adoc#generate
+// :url_references_commander_commands_plugin: {docs_sdk}references/klayr.xyzmander/cli.adoc#generate
 :url_plugin: understand-blockchain/sdk/plugins.adoc#plugin-anatomy
 
 // TODO: Update the page by uncommenting the hyperlinks once the updated pages are available.

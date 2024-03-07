@@ -11,9 +11,9 @@ Mona Bärenfänger <mona@lightcurve.io>
 :url_liskscan: https://liskscan.com/
 :url_liskscan_testnet: https://testnet.liskscan.com/
 :url_liskscan_betanet: https://betanet.liskscan.com/
-:url_faucet_testnet: https://testnet-faucet.klayr.com/
-:url_faucet_betanet: https://betanet-faucet.klayr.com/
-:url_klayr_desktop: https://klayr.com/wallet
+:url_faucet_testnet: https://testnet-faucet.klayr.xyz/
+:url_faucet_betanet: https://betanet-faucet.klayr.xyz/
+:url_klayr_desktop: https://klayr.xyz/wallet
 :url_typedoc_auth: {site-url}/klayr-sdk/v6/references/typedoc/classes/klayr_framework.AuthModule.html
 :url_typedoc_token: {site-url}/klayr-sdk/v6/references/typedoc/classes/klayr_framework.TokenModule.html
 :url_typedoc_fee: {site-url}/klayr-sdk/v6/references/typedoc/classes/klayr_framework.FeeModule.html
@@ -123,8 +123,8 @@ a|
 * {url_liskscan_testnet}[^]
 
 |Klayr service API base URLs
-|https://service.klayr.com/api/v3/[^]
-|https://testnet-service.klayr.com/api/v3/[^]
+|https://service.klayr.xyz/api/v3/[^]
+|https://testnet-service.klayr.xyz/api/v3/[^]
 |===
 
 == Klayr Mainnet
@@ -333,7 +333,7 @@ a|
 * {url_liskscan_betanet}[^]
 
 |Klayr service API base URLs
-|https://betanet-service.klayr.com/api/v3/[^]
+|https://betanet-service.klayr.xyz/api/v3/[^]
 
 |Faucet
 | {url_faucet_betanet}[^]

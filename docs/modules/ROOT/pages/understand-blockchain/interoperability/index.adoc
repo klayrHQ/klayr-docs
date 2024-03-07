@@ -7,7 +7,7 @@ Mona Bärenfänger <mona@lightcurve.io>
 // URLs
 :url_yt_klayr: https://www.youtube.com/c/KlayrHQ
 :url_yt_playlist: https://www.youtube.com/playlist?list=PLixm1arf_lEyET_m03E77iNfOffM17Ajt
-:url_blog_research: https://klayr.com/blog?categories=Research
+:url_blog_research: https://klayr.xyz/blog?categories=Research
 :url_blog_interop_intro: https://klayr.io/blog/research/introduction-blockchain-interoperability
 :url_wiki_topologies_star: https://en.wikipedia.org/wiki/Network_topology#Star
 :url_chain_id: https://github.com/KlayrHQ/lips/blob/main/proposals/lip-0043.md

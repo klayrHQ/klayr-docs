@@ -10,7 +10,7 @@ Mona Bärenfänger <mona@lightcurve.io>
 :fn_lip44: footnote:lip44[For more details about the validator registration process and the related cryptography, check out https://github.com/KlayrHQ/lips/blob/main/proposals/lip-0044.md[LIP 0044 - Introduce Validators module^].]
 :fn_lip23: footnote:lip23[For more details about the Klayr staking protocol, please read https://github.com/KlayrHQ/lips/blob/main/proposals/lip-0023.md[LIP 0023 - Introduce vote locking periods and new vote weight definition^].]
 // URLs
-:url_klayr_wallet: https://klayr.com/wallet
+:url_klayr_wallet: https://klayr.xyz/wallet
 :url_liskscan: https://liskscan.com/
 :url_klayrobserver: https://klayr.observer/
 :url_jsonrpc: https://www.jsonrpc.org/specification

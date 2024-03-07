@@ -11,7 +11,7 @@ Chris Braithwaite <christopher.braithwaite@lightcurve.io> Mona Bärenfänger <mo
 :url_plasma: https://academy.binance.com/en/glossary/plasma
 :url_sharding: https://101blockchains.com/what-is-blockchain-sharding/
 :url_state_channels: https://research.csiro.au/blockchainpatterns/general-patterns/blockchain-payment-patterns/payment-channel/
-:url_klayr_poa: https://klayr.com/blog/posts/proof-authority-consensus-sidechains
+:url_klayr_poa: https://klayr.xyz/blog/posts/proof-authority-consensus-sidechains
 :url_cross_chain: understand-blockchain/interoperability/communication.adoc
 
 :url_wiki_pos: https://en.wikipedia.org/wiki/Proof_of_stake

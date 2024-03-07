@@ -170,7 +170,7 @@ jsome.params.colored = true;
 // Use local Service node
 const WS_RPC_ENDPOINT = 'ws://localhost:9901/rpc-v3';
 //Use public Service node
-//const WS_RPC_ENDPOINT = "wss://service.klayr.com/rpc-v3";
+//const WS_RPC_ENDPOINT = "wss://service.klayr.xyz/rpc-v3";
 
 // 2. Connect to Klayr Service via WebSockets
 const socket = io(WS_RPC_ENDPOINT, {

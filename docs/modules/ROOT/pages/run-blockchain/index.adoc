@@ -6,7 +6,7 @@ Muhammad Talha <muhammad.talha@lightcurve.io>
 :docs_core: klayr-core::
 :docs_sdk: v6klayr-sdk::
 
-:url_faucet: https://testnet-faucet.klayr.com/
+:url_faucet: https://testnet-faucet.klayr.xyz/
 :url_observer: https://klayr.observer/delegates
 :url_liskscan: https://liskscan.com/delegates
 :url_run_reset: run-blockchain/blockchain-reset.adoc
@@ -58,7 +58,7 @@ Muhammad Talha <muhammad.talha@lightcurve.io>
 :fn_lips: footnote:witness[For more information about interoperability and the cross-chain update mechanism, check out {url_lip45}[LIP 0045^] and {url_lip53}[LIP 0053^].]
 
 
-// :url_p2p: https://klayr.com/documentation/klayr-docs/klayr-sdk/v6/references/typedoc/modules/_klayrhq_klayr_p2p.html
+// :url_p2p: https://klayr.xyz/documentation/klayr-docs/klayr-sdk/v6/references/typedoc/modules/_klayrhq_klayr_p2p.html
 // TODO: The older P2P link above was pointing to SDKv5, and it is now updated and commented out at the moment, as it is linked to a later version of Typedocs for Klayr elements/P2P. So once the beta version is rolled out we can uncomment this link above.
 
 The "Run Blockchain" section contains all the guides concerning the management of accounts and Klayr nodes, and is therefore especially interesting for validators and other Klayr node operators.

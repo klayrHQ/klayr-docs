@@ -2,7 +2,7 @@
   "index_name": "klayr-docs-search",
   "start_urls": [
     {
-      "url": "https://klayr.com/documentation/(?=klayr-sdk(?!/v3|/v4|/v2)/)",
+      "url": "https://klayr.xyz/documentation/(?=klayr-sdk(?!/v3|/v4|/v2)/)",
       "variables": {
         "component": [
           "klayr-sdk",
@@ -16,7 +16,7 @@
       }
     },
     {
-      "url": "https://klayr.com/documentation/(?=klayr-core(?!/v2)/)",
+      "url": "https://klayr.xyz/documentation/(?=klayr-core(?!/v2)/)",
       "variables": {
         "component": [
           "klayr-sdk",
@@ -29,7 +29,7 @@
       }
     },
     {
-      "url": "https://klayr.com/documentation/(?=klayr-service(?!/v0.3)/)",
+      "url": "https://klayr.xyz/documentation/(?=klayr-service(?!/v0.3)/)",
       "variables": {
         "component": [
           "klayr-sdk",
@@ -43,7 +43,7 @@
     }
   ],
   "sitemap_urls": [
-    "https://klayr.com/documentation/sitemap.xml"
+    "https://klayr.xyz/documentation/sitemap.xml"
   ],
   "scrape_start_urls": false,
   "stop_urls": [],

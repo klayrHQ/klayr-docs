@@ -55,8 +55,8 @@ Muhammad Talha <muhammad.talha@lightcurve.io>
 //External URLs
 :url_github_lns_dashboard: https://github.com/KlayrHQ/klayr-sdk-examples/tree/nh-klayr-name-service/tutorials/klayr-name-service/lns-dashboard-plugin
 :url_github_srs: https://github.com/KlayrHQ/klayr-sdk-examples/tree/development/tutorials/social-recovery
-:url_blog_benchmark: https://klayr.com/blog/posts/benchmarking-klayr-core-v3.0.0-against-klayr-core-v2.1.6-0
-:url_klayr_apps: https://klayr.com/ecosystem
+:url_blog_benchmark: https://klayr.xyz/blog/posts/benchmarking-klayr-core-v3.0.0-against-klayr-core-v2.1.6-0
+:url_klayr_apps: https://klayr.xyz/ecosystem
 
 // TODO: Update the page by uncommenting the hyperlinks once the updated pages are available.
 

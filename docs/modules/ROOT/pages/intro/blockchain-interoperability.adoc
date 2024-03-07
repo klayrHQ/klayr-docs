@@ -11,7 +11,7 @@ Chris Braithwaite <christopher.braithwaite@lightcurve.io>
 //:url_configure: klayr-core::management/configuration.adoc
 //:url_snapshot: klayr-core::management/reset-synchronize.adoc#creating-own-snapshots
 //:url_restful_api: api/klayr-service-http.adoc
-//:url_klayr_desktop: https://klayr.com/wallet
+//:url_klayr_desktop: https://klayr.xyz/wallet
 //image:intro/xxx.png[align="center"]
 :url_sidechain: understand-blockchain/interoperability/sidechain-registration-and-recovery.adoc
 :url_decentralization: intro/what-is-blockchain.adoc#decentralization
@@ -37,7 +37,7 @@ Chris Braithwaite <christopher.braithwaite@lightcurve.io>
 :url_web3: https://www.mckinsey.com/featured-insights/mckinsey-explainers/what-is-web3
 :url_oracles: https://research.aimultiple.com/blockchain-oracle/
 :url_iot: https://www.analyticsvidhya.com/blog/2023/02/the-key-to-security-combining-iot-and-blockchain-technology/
-:url_klayr_interop_blog: https://klayr.com/blog/posts/high-level-overview-klayr-interoperability
+:url_klayr_interop_blog: https://klayr.xyz/blog/posts/high-level-overview-klayr-interoperability
 :url_axie: https://axieinfinity.com/
 :url_starkdefi: https://www.starkdefi.com/
 :url_cross_chain_bridges: https://group.hashkey.com/en/insights/cross-chain-bridge-transfer-crypto-blockchain.html

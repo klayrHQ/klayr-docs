@@ -4,7 +4,7 @@
 :idseparator: -
 :docs_sdk: klayr-sdk::
 // URLs
-:url_klayr_wallet: https://klayr.com/wallet
+:url_klayr_wallet: https://klayr.xyz/wallet
 
 // Project URLs
 :url_sdk_elements: {docs_sdk}references/klayr-elements/index.adoc

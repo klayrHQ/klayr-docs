@@ -19,14 +19,14 @@ Mona Bärenfänger <mona@lightcurve.io> Muhammad Talha <muhammad.talha@lightcurv
 :url_integrate_ui: integrate-blockchain/integrate-ui/index.adoc
 :url_references_cli: {docs_sdk}client-cli.adoc#help
 :url_references_cli_start: {docs_sdk}client-cli.adoc#start
-:url_klayr_commander: {docs_sdk}references/klayr-commander/index.adoc
+:url_klayr.xyzmander: {docs_sdk}references/klayr.xyzmander/index.adoc
 :url_klayr_default_modules: {docs_sdk}modules/index.adoc
 
 On this page, you will learn how to create a new blockchain client with Klayr Commander.
 
 == Bootstrapping a new blockchain client with Klayr Commander
 
-xref:{url_klayr_commander}[Klayr Commander] offers various commands related to <<initializing-a-new-blockchain-client>> which can be used to conveniently get started.
+xref:{url_klayr.xyzmander}[Klayr Commander] offers various commands related to <<initializing-a-new-blockchain-client>> which can be used to conveniently get started.
 
 .Sample code
 [NOTE]
@@ -93,7 +93,7 @@ It is recommended to install Klayr Commander globally with NPM (Node Package Man
 
 [source,bash]
 ----
-npm install --global klayr-commander
+npm install --global klayr.xyzmander
 ----
 
 To check the successful installation of Klayr Commander, run the following command:
@@ -105,7 +105,7 @@ klayr --version
 
 .Output
 ----
-klayr-commander/6.0.0 darwin-arm64 node-v18.16.0
+klayr.xyzmander/6.0.0 darwin-arm64 node-v18.16.0
 ----
 
 ==== Toolchain dependencies

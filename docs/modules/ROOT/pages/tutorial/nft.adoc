@@ -10,7 +10,7 @@ Mona Bärenfänger <mona@lightcurve.io>
 :url_github_nft: https://github.com/KlayrHQ/klayr-sdk-examples/tree/development/tutorials/nft
 :url_react_docs: https://reactjs.org/docs/getting-started.html
 // Project URLs
-:url_build_bapp: build-blockchain/create-blockchain-client.adoc#bootstrapping-a-new-blockchain-client-with-klayr-commander
+:url_build_bapp: build-blockchain/create-blockchain-client.adoc#bootstrapping-a-new-blockchain-client-with-klayr.xyzmander
 :url_references_schemas: understand-blockchain/sdk/codec-schema.adoc
 // :url_statestore: klayr-sdk::references/klayr-elements/chain.adoc#state-store
 // :url_references_token_module: klayr-sdk::modules/token-module.adoc

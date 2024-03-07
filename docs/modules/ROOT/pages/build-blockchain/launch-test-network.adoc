@@ -19,7 +19,7 @@ Mona Bärenfänger <mona@lightcurve.io>
 :url_github_hello_transaction: https://github.com/KlayrHQ/klayr-sdk-examples/tree/development/hello_world/transactions
 :url_github_sdk_configDevnet: https://github.com/KlayrHQ/klayr-sdk/blob/{v_sdk}/sdk/src/samples/config_devnet.json
 :url_gitlab: https://about.gitlab.com/
-:url_klayr_community: https://klayr.io/community
+:url_klayr.xyzmunity: https://klayr.io/community
 // Project URLs
 :url_bapps_network: understand-blockchain/index.adoc#architecture-of-blockchain-applications
 

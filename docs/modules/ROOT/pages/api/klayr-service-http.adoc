@@ -2,4 +2,4 @@
 Mona Bärenfänger <mona@lightcurve.io>
 :description: Interactive HTTP API reference of Klayr Service 0.7 (connected to Testnet).
 :page-layout: swagger
-:page-swagger-url: https://testnet-service.klayr.com/api/v3/spec
+:page-swagger-url: https://testnet-service.klayr.xyz/api/v3/spec
