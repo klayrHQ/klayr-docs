@@ -254,7 +254,7 @@ Minimum and maximum values for the certificate threshold are calculated using th
 .How to calculate minimum and maximum certificate thresholds for sidechain validators
 [source,js]
 ----
-const { apiClient } = require('@klayrhq/klayr-client');
+const { apiClient } = require('@klayr/client');
 
 (async () => {
 	// Update the path to point to your sidechain client data folder

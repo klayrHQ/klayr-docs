@@ -53,7 +53,7 @@ You can check the `package.json` file of the blockchain client to ensure the ins
 [source,json]
 ----
 "dependencies": {
-	"@klayrhq/klayr-framework-dashboard-plugin": "0.2.0",
+	"@klayr/framework-dashboard-plugin": "0.2.0",
 	//[...]
 },
 ----
@@ -62,7 +62,7 @@ Otherwise, you can install the Dashboard plugin like this:
 
 [source,bash]
 ----
-npm i @klayrhq/klayr-framework-dashboard-plugin
+npm i @klayr/framework-dashboard-plugin
 ----
 
 Now open the `plugins.ts` file, import the Dashboard plugin, and register it with the application as shown below:
@@ -72,7 +72,7 @@ Now open the `plugins.ts` file, import the Dashboard plugin, and register it wit
 ----
 /* eslint-disable @typescript-eslint/no-empty-function */
 import { Application } from 'klayr-sdk';
-import { DashboardPlugin } from '@klayrhq/klayr-framework-dashboard-plugin';
+import { DashboardPlugin } from '@klayr/framework-dashboard-plugin';
 //[...]
 
 export const registerPlugins = (app: Application): void => {

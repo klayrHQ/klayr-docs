@@ -21,7 +21,7 @@ NOTE: See the complete code example of the script in the Klayr SDK examples repo
 
 [TIP]
 ====
-To compute the minimum fee for a transaction without a connection to the API client, the user can also use directly the {url_typedoc_transactions}[@klayrhq/klayr-transactions^] package.
+To compute the minimum fee for a transaction without a connection to the API client, the user can also use directly the {url_typedoc_transactions}[@klayr/transactions^] package.
 In this case, the user needs to provide the transaction object and the corresponding transaction schema to the function.
 ====
 
@@ -35,7 +35,7 @@ To use the Klayr API client, install the `klayr-client` package with NPM:
 
 [source,bash]
 ----
-npm install @klayrhq/klayr-client
+npm install @klayr/client
 ----
 
 [tabs]
@@ -50,7 +50,7 @@ Adjust `nodeAPIURL` to point to the node you want to post the transaction to.
 .api-client.js
 [source,js]
 ----
-const { apiClient } = require('@klayrhq/klayr-client');
+const { apiClient } = require('@klayr/client');
 let clientCache;
 const nodeAPIURL = 'ws://localhost:7887/rpc-ws'
 
@@ -77,7 +77,7 @@ Adjust `DATA_PATH` to point to the blockchain client data path.
 .api-client.js
 [source,js]
 ----
-const { apiClient } = require('@klayrhq/klayr-client');
+const { apiClient } = require('@klayr/client');
 
 const DATA_PATH = '~/.klayr/hello_client';
 let clientCache;
@@ -170,7 +170,7 @@ Import all the above created script into `index.js` and use the functions to cal
 .index.js
 [source,js]
 ----
-const { transactions } = require('@klayrhq/klayr-client');
+const { transactions } = require('@klayr/client');
 const { getMinFee } = require('./getMinFee');
 const { dryRun } = require('./dry-run');
 

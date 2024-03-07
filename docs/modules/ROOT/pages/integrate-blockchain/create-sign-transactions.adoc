@@ -147,7 +147,7 @@ The properties of a transaction are described in detail on the xref:{url_protoco
 
 The API client allows external services and applications to connect and interact with a particular blockchain node.
 
-The API client is part of the `@klayrhq/klayr-api-client` package, and is also included in the `@klayrhq/klayr-client` and `klayr-sdk` packages.
+The API client is part of the `@klayr/api-client` package, and is also included in the `@klayr/client` and `klayr-sdk` packages.
 
 [NOTE]
 ====
@@ -161,7 +161,7 @@ An example script depicting how to create a transaction object via the API clien
 
 [source,js]
 ----
-const { apiClient, cryptography, transactions } = require('@klayrhq/klayr-client');
+const { apiClient, cryptography, transactions } = require('@klayr/client');
 
 // For the apiClient to work in the WebSocket mode, the node must have the WebSocket mode enabled. This is true for IPC mode as well.
 const RPC_ENDPOINT = 'ws://localhost:7887/rpc-ws';

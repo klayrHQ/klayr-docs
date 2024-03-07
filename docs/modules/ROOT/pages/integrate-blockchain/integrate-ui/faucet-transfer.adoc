@@ -37,7 +37,7 @@ Firstly, define the necessary variables and the `handleChange` event.
 // UI libraries import
 import React, { useState, useEffect } from "react";
 // Klayr libraries import
-import { cryptography, transactions } from '@klayrhq/klayr-client/browser';
+import { cryptography, transactions } from '@klayr/client/browser';
 import * as api from '../api';
 import { Buffer } from 'buffer';
 
@@ -237,7 +237,7 @@ Similar to the faucet, we will start by importing the necessary libraries, defin
 // UI libraries import
 import React, { useState } from "react";
 // Import Klayr packages, api, and buffer. 
-import { cryptography, transactions } from '@klayrhq/klayr-client/browser';
+import { cryptography, transactions } from '@klayr/client/browser';
 import * as api from '../api';
 import { Buffer } from 'buffer';
 

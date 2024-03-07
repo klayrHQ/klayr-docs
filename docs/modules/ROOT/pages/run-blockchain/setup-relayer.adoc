@@ -50,7 +50,7 @@ However, in case it is required to install it manually, run the following comman
 
 [source,bash]
 ----
-npm install @klayrhq/klayr-framework-chain-connector-plugin
+npm install @klayr/framework-chain-connector-plugin
 ----
 
 == Configuring the Chain Connector plugin
@@ -281,7 +281,7 @@ Alternatively, the *plugins.ts* file of the client can be updated to have the fo
 ----
 import { Application } from 'klayr-sdk';
 // Import the 'ChainConnectorPlugin'
-import { ChainConnectorPlugin } from '@klayrhq/klayr-framework-chain-connector-plugin';
+import { ChainConnectorPlugin } from '@klayr/framework-chain-connector-plugin';
 
 export const registerPlugins = (app: Application): void => {
     // Register the ChainConnectorPlugin with the app

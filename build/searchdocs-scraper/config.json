@@ -2,7 +2,7 @@
   "index_name": "klayr-docs-search",
   "start_urls": [
     {
-      "url": "https://klayr.com/(?=documentation/)",
+      "url": "https://klayr.xyz/(?=documentation/)",
       "variables": {
         "component": [
           "klayr-sdk",
@@ -16,7 +16,7 @@
     }
   ],
   "sitemap_urls": [
-    "https://klayr.com/documentation/sitemap.xml"
+    "https://klayr.xyz/documentation/sitemap.xml"
   ],
   "selectors": {
     "default": {

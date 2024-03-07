@@ -1,7 +1,7 @@
 site:
   title: Docs
   # the 404 page and sitemap files only get generated when the url property is set
-  url: https://klayr.com/documentation
+  url: https://klayr.xyz/documentation
   start_page: klayr-sdk::index.adoc
 asciidoc:
   attributes:

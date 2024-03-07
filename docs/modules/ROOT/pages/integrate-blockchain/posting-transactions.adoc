@@ -35,7 +35,7 @@ To use the Klayr API client, install the klayr-client package with NPM:
 
 [source,bash]
 ----
-npm install @klayrhq/klayr-client
+npm install @klayr/client
 ----
 
 [tabs]
@@ -50,7 +50,7 @@ Adjust the `RPC_ENDPOINT` to point to the node you want to post the transaction 
 .api-client.js
 [source,js]
 ----
-const { apiClient } = require('@klayrhq/klayr-client');
+const { apiClient } = require('@klayr/client');
 
 const RPC_ENDPOINT = 'ws://localhost:7887/rpc-ws';
 let clientCache;
@@ -75,7 +75,7 @@ Adjust the `DATA_PATH` to point to the blockchain client data path.
 .api-client.js
 [source,js]
 ----
-const { apiClient } = require('@klayrhq/klayr-client');
+const { apiClient } = require('@klayr/client');
 
 const DATA_PATH = '~/.klayr/hello_client';
 let clientCache;

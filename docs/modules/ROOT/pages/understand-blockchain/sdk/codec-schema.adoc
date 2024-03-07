@@ -244,8 +244,8 @@ Klayr uses the `klayr-codec` package to encode, decode  and perform the aforemen
 By default, the `klayr-codec` package can be found in the following NPM packages:
 
 * `klayr-sdk`
-* `@klayrhq/klayr-client`
-* `@klayrhq/klayr-codec`
+* `@klayr/client`
+* `@klayr/codec`
 
 TIP: To see a complete reference of the `*klayr-codec*` package, see {url_typedoc_codec}[Klayr Codec reference^].
 
@@ -253,7 +253,7 @@ In case, it is required to install `klayr-codec`, the following command can be u
 
 [source,bash]
 ----
-npm install --save @klayrhq/klayr-codec
+npm install --save @klayr/codec
 ----
 
 TIP: To learn about how codec and schemas are used to encode and decode data, checkout out our dedicated guide: xref:{url_guides_decode}[].
@@ -274,8 +274,8 @@ TIP: To learn about how codec and schemas are used to encode and decode data, ch
 // The library can be imported from the following NPM packages:
 
 // * `klayr-sdk`
-// * `@klayrhq/klayr-client`
-// * `@klayrhq/klayr-codec`
+// * `@klayr/client`
+// * `@klayr/codec`
 
 // .Example: Importing the codec library from the klayr-sdk package
 // [source,js]

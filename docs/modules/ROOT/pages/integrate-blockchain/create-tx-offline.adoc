@@ -128,9 +128,9 @@ The relevant files discussed in this guide are {url_schemas}[schemas.js^], {url_
 
 The following Klayr Elements packages are required to create and sign a transaction offline:
 
-* `@klayrhq/klayr-client`, including the following libraries:
-** {url_typedoc_transactions}[@klayrhq/klayr-transactions^]
-** {url_typedoc_validator}[@klayrhq/klayr-validator^] (optional)
+* `@klayr/client`, including the following libraries:
+** {url_typedoc_transactions}[@klayr/transactions^]
+** {url_typedoc_validator}[@klayr/validator^] (optional)
 
 === Provide the transaction schema and params schema
 
@@ -293,14 +293,14 @@ Create a new file `create-offline.js` to create the unsigned transaction object.
 
 Define the unsigned transaction object manually by following the <<provide-the-transaction-schema-and-params-schema,transaction schema>>.
 
-It is recommended to verify the correct format of the transaction with the `validator.validate()` function of the `@klayrhq/klayr-validator` package afterwards.
+It is recommended to verify the correct format of the transaction with the `validator.validate()` function of the `@klayr/validator` package afterwards.
 
 Then, manually define the parameters for the *Token Transfer* command, and add them to the unsigned transaction.
 
 .create-offline.js
 [source,js]
 ----
-const { validator } = require('@klayrhq/klayr-client');
+const { validator } = require('@klayr/client');
 const { transactionSchema } = require('./schemas');
 // Example account credentials
 const account = require('./account.json');
@@ -346,7 +346,7 @@ The transaction object is now returned, and ready to be signed by the sender in 
 
 Create a new file `sign-offline.js` to create a script that will sign a given unsigned transaction object.
 
-To sign the transaction, use the `signTransaction()` function of the `@klayrhq/klayr-transactions` package.
+To sign the transaction, use the `signTransaction()` function of the `@klayr/transactions` package.
 It requires the following parameters:
 
 . The unsigned transaction
@@ -357,7 +357,7 @@ It requires the following parameters:
 .sign-offline.js
 [source,js]
 ----
-const { transactions } = require('@klayrhq/klayr-client');
+const { transactions } = require('@klayr/client');
 const { transferParamsSchema } = require('./schemas');
 const account = require('./account.json');
 
@@ -390,7 +390,7 @@ Create a new file `api-client.js` and paste the following code:
 .api-client.js
 [source,js]
 ----
-const { apiClient } = require('@klayrhq/klayr-client');
+const { apiClient } = require('@klayr/client');
 
 const RPC_ENDPOINT = 'ws://127.0.0.1:7887/rpc-ws';
 let clientCache;

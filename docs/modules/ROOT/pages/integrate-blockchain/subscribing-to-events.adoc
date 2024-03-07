@@ -89,8 +89,8 @@ With the Klayr API client, it is possible to subscribe to the *JSON-RPC events* 
 
 An API client can be imported into any JS client application as shown in the following snippets.
 
-// TIP: To conveniently communicate with a blockchain node, use the `apiClient` included in the xref:{url_references_elements_client}[@klayrhq/klayr-client] and the {url_npm_klayr_sdk}[klayr-sdk^] packages.
-TIP: To conveniently communicate with a blockchain node, use the `apiClient` included in the `@klayrhq/klayr-client` and the `klayr-sdk` packages.
+// TIP: To conveniently communicate with a blockchain node, use the `apiClient` included in the xref:{url_references_elements_client}[@klayr/client] and the {url_npm_klayr_sdk}[klayr-sdk^] packages.
+TIP: To conveniently communicate with a blockchain node, use the `apiClient` included in the `@klayr/client` and the `klayr-sdk` packages.
 
 [tabs]
 
@@ -100,7 +100,7 @@ WS API client example::
 --
 [source,js]
 ----
-const { apiClient } = require('@klayrhq/klayr-client');
+const { apiClient } = require('@klayr/client');
 let clientCache;
 const nodeAPIURL = 'ws://localhost:7887/rpc-ws';
 
@@ -123,7 +123,7 @@ IPC API client example::
 --
 [source,js]
 ----
-const { apiClient } = require('@klayrhq/klayr-client');
+const { apiClient } = require('@klayr/client');
 let clientCache;
 const nodePath = '~/.klayr/my-app';
 
@@ -155,8 +155,8 @@ To fetch such an event, we can use the xref:{url_chain_get_event}[chain_getEvent
 
 [source,js]
 ----
-const { apiClient } = require('@klayrhq/klayr-client');
-const { codec } = require('@klayrhq/klayr-codec');
+const { apiClient } = require('@klayr/client');
+const { codec } = require('@klayr/codec');
 let clientCache;
 const nodeAPIURL = 'ws://127.0.0.1:7887/rpc-ws'
 
@@ -203,7 +203,7 @@ getClient().then((client) => {
 ----
 Once an event is retrieved from the event log, its `data` property can be decoded by using the `codec.decode()` function. This function takes in the encoded data and the relevant schema as arguments. 
 
-The `codec.decode()` function is available inside the *@klayrhq/klayr-codec* package.
+The `codec.decode()` function is available inside the *@klayr/codec* package.
 
 [TIP]
 ====

@@ -297,7 +297,7 @@ Install the Faucet plugin:
 
 [source,bash]
 ----
-npm i @klayrhq/klayr-framework-faucet-plugin
+npm i @klayr/framework-faucet-plugin
 ----
 
 Now open `plugins.ts`, import the Faucet plugin, and register it with the application as shown below:
@@ -307,7 +307,7 @@ Now open `plugins.ts`, import the Faucet plugin, and register it with the applic
 ----
 /* eslint-disable @typescript-eslint/no-empty-function */
 import { Application } from 'klayr-sdk';
-import { FaucetPlugin } from "@klayrhq/klayr-framework-faucet-plugin";
+import { FaucetPlugin } from "@klayr/framework-faucet-plugin";
 
 // @ts-expect-error Unused variable error happens here until at least one module is registered
 export const registerPlugins = (app: Application): void => {
@@ -346,7 +346,7 @@ Use the `apiClient` of the `klayr-client` package and write a small script to in
 
 [source,js]
 ----
-const { apiClient } = require('@klayrhq/klayr-client');
+const { apiClient } = require('@klayr/client');
 let clientCache;
 
 const getClient = async () => {

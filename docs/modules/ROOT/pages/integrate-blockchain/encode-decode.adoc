@@ -32,14 +32,14 @@ This can be achieved either via a WebSocket (local or remote), or an IPC (only o
 In most scenarios, it is beneficial to have a local node running to which the client can send the API requests.
 The RPC options in the config should be enabled and configured accordingly, see xref:{url_guides_config}[RPC configuration of a node].
 
-TIP: The `apiClient` is also included in the NPM package @klayrhq/klayr-client.
-// xref:{url_references_client}[`@klayrhq/klayr-client`].
+TIP: The `apiClient` is also included in the NPM package @klayr/client.
+// xref:{url_references_client}[`@klayr/client`].
 
 Install the `klayr-client` package like this:
 
 [source,bash]
 ----
-npm i @klayrhq/klayr-client
+npm i @klayr/client
 ----
 
 Then, create a new file `api-client.js` with a function `getClient()` that returns an instance of the API client when executed.
@@ -47,7 +47,7 @@ Then, create a new file `api-client.js` with a function `getClient()` that retur
 .api-client.js
 [source,js]
 ----
-const { apiClient } = require('@klayrhq/klayr-client');
+const { apiClient } = require('@klayr/client');
 let clientCache;
 const nodeAPIURL = 'ws://localhost:7887/rpc-ws';
 

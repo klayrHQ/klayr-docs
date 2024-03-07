@@ -143,7 +143,7 @@ import {
     ModuleMetadata, TransactionExecuteContext, TransactionVerifyContext,
     VerificationResult, codec, utils
 } from 'klayr-sdk';
-import { validator } from '@klayrhq/klayr-validator';
+import { validator } from '@klayr/validator';
 import { createHelloSchema, CreateHelloParams, configSchema } from './schema';
 import { ModuleConfigJSON } from './types';
 // [...]
