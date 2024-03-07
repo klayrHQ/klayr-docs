@@ -7,27 +7,27 @@ Mona Bärenfänger <mona@lightcurve.io>
 :imagesdir: ../../../assets/images
 :title-logo-image: image:test-logo.png[]
 // URLs
-:url_typedoc: {site-url}/klayr-sdk/references/typedoc/modules
+:url_typedoc: {site-url}/lisk-sdk/references/typedoc/modules
 :url_nodejs: https://nodejs.org/
 :url_nodejs_download: https://nodejs.org/en/download/
-:url_npm_klayr_api: https://www.npmjs.com/package/@klayrhq/klayr-api-client
-:url_npm_klayr_bft: https://www.npmjs.com/package/@klayrhq/klayr-bft
-:url_npm_klayr_chain: https://www.npmjs.com/package/@klayrhq/klayr-chain
-:url_npm_klayr_client: https://www.npmjs.com/package/@klayrhq/klayr-client
-:url_npm_klayr_codec: https://www.npmjs.com/package/@klayrhq/klayr-codec
-:url_npm_klayr_cryptography: https://www.npmjs.com/package/@klayrhq/klayr-cryptography
-:url_npm_klayr_db: https://www.npmjs.com/package/@klayrhq/klayr-db
-:url_npm_klayr_genesis: https://www.npmjs.com/package/@klayrhq/klayr-genesis
-:url_npm_klayr_p2p: https://www.npmjs.com/package/@klayrhq/klayr-p2p
-:url_npm_klayr_passphrase: https://www.npmjs.com/package/@klayrhq/klayr-passphrase
-:url_npm_klayr_transaction_pool: https://www.npmjs.com/package/@klayrhq/klayr-transaction-pool
-:url_npm_klayr_transactions: https://www.npmjs.com/package/@klayrhq/klayr-transactions
-:url_npm_klayr_tree: https://www.npmjs.com/package/@klayrhq/klayr-tree
-:url_npm_klayr_utils: https://www.npmjs.com/package/@klayrhq/klayr-utils
-:url_npm_klayr_validator: https://www.npmjs.com/package/@klayrhq/klayr-validator
+:url_npm_klayr_api: https://www.npmjs.com/package/@klayr/api-client
+:url_npm_klayr_bft: https://www.npmjs.com/package/@klayr/bft
+:url_npm_klayr_chain: https://www.npmjs.com/package/@klayr/chain
+:url_npm_klayr_client: https://www.npmjs.com/package/@klayr/client
+:url_npm_klayr_codec: https://www.npmjs.com/package/@klayr/codec
+:url_npm_klayr_cryptography: https://www.npmjs.com/package/@klayr/cryptography
+:url_npm_klayr_db: https://www.npmjs.com/package/@klayr/db
+:url_npm_klayr_genesis: https://www.npmjs.com/package/@klayr/genesis
+:url_npm_klayr_p2p: https://www.npmjs.com/package/@klayr/p2p
+:url_npm_klayr_passphrase: https://www.npmjs.com/package/@klayr/passphrase
+:url_npm_klayr_transaction_pool: https://www.npmjs.com/package/@klayr/transaction-pool
+:url_npm_klayr_transactions: https://www.npmjs.com/package/@klayr/transactions
+:url_npm_klayr_tree: https://www.npmjs.com/package/@klayr/tree
+:url_npm_klayr_utils: https://www.npmjs.com/package/@klayr/utils
+:url_npm_klayr_validator: https://www.npmjs.com/package/@klayr/validator
 
 // Project URls
-:url_npm_klayr_api_docs: {url_typedoc}/_klayrhq_klayr_api_client.html
+:url_npm_klayr_api_docs: {url_typedoc}/_liskhq_lisk_api_client.html
 :url_npm_klayr_chain_docs: {url_typedoc}/_klayrhq_klayr_chain.html
 :url_npm_klayr_client_docs: {url_typedoc}/klayr-client
 :url_npm_klayr_codec_docs: {url_typedoc}/_klayrhq_klayr_codec.html
@@ -56,7 +56,7 @@ Klayr Elements is a collection of JavaScript libraries, each tackling a certain 
 |Name | NPM | Specification
 
 | Client
-| {url_npm_klayr_client}[@klayrhq/klayr-client^]
+| {url_npm_klayr_client}[@klayr/client^]
 | {url_npm_klayr_client_docs}[klayr-client^]
 |===
 
@@ -76,47 +76,47 @@ It is a collection of the following packages:
 |Name | NPM | Specification
 
 | API client
-| {url_npm_klayr_api}[@klayrhq/klayr-api-client^]
+| {url_npm_klayr_api}[@klayr/api-client^]
 | {url_npm_klayr_api_docs}[klayr-api-client^]
 
 | Chain
-| {url_npm_klayr_chain}[@klayrhq/klayr-chain^]
+| {url_npm_klayr_chain}[@klayr/chain^]
 | {url_npm_klayr_chain_docs}[klayr-chain^]
 
 | Codec
-| {url_npm_klayr_codec}[@klayrhq/klayr-codec^]
+| {url_npm_klayr_codec}[@klayr/codec^]
 | {url_npm_klayr_codec_docs}[klayr-codec^]
 
 | Cryptography
-| {url_npm_klayr_cryptography}[@klayrhq/klayr-cryptography^]
+| {url_npm_klayr_cryptography}[@klayr/cryptography^]
 | {url_npm_klayr_cryptography_docs}[klayr-cryptography^]
 
 | P2P
-| {url_npm_klayr_p2p}[@klayrhq/klayr-p2p^]
+| {url_npm_klayr_p2p}[@klayr/p2p^]
 | {url_npm_klayr_p2p_docs}[klayr-p2p^]
 
 | Passphrase
-| {url_npm_klayr_passphrase}[@klayrhq/klayr-passphrase^]
+| {url_npm_klayr_passphrase}[@klayr/passphrase^]
 | {url_npm_klayr_passphrase_docs}[klayr-passphrase^]
 
 | Transaction pool
-| {url_npm_klayr_transaction_pool}[@klayrhq/klayr-transaction-pool^]
+| {url_npm_klayr_transaction_pool}[@klayr/transaction-pool^]
 | {url_npm_klayr_transaction_pool_docs}[klayr-transaction-pool^]
 
 | Transactions
-| {url_npm_klayr_transactions}[@klayrhq/klayr-transactions^]
+| {url_npm_klayr_transactions}[@klayr/transactions^]
 | {url_npm_klayr_transactions_docs}[klayr-transactions^]
 
 | Tree
-| {url_npm_klayr_tree}[@klayrhq/klayr-tree^]
+| {url_npm_klayr_tree}[@klayr/tree^]
 | {url_npm_klayr_tree_docs}[klayr-tree^]
 
 | Utils
-| {url_npm_klayr_utils}[@klayrhq/klayr-utils^]
+| {url_npm_klayr_utils}[@klayr/utils^]
 | {url_npm_klayr_utils_docs}[klayr-utils^]
 
 | Validator
-| {url_npm_klayr_validator}[@klayrhq/klayr-validator^]
+| {url_npm_klayr_validator}[@klayr/validator^]
 | {url_npm_klayr_validator_docs}[klayr-validator^]
 |===
 
@@ -184,7 +184,7 @@ npm install klayr-elements
 .Frontend related packages only
 [source,bash]
 ----
-npm install @klayrhq/klayr-client
+npm install @klayr/client
 ----
 
 .Specific package
@@ -206,14 +206,14 @@ The `klayr` variable will be exposed.
 .Client library
 [source,html]
 ----
-<script src="https://js.klayr.com/klayr-client-6.0.0.js"></script>
+<script src="https://js.klayr.xyz/klayr-client-6.0.0.js"></script>
 ----
 
 //@TODO: Update CDN URL
 .Minified client library:
 [source,html]
 ----
-<script src="https://js.klayr.com/klayr-client-6.0.0.min.js"></script>
+<script src="https://js.klayr.xyz/klayr-client-6.0.0.min.js"></script>
 ----
 
 To include other packages of Klayr Elements, replace `klayr-client` with any of the <<packages,packages>> of Klayr Elements.
@@ -228,9 +228,9 @@ Simply import, (or require) the package and access its functionality according t
 
 [source,js]
 ----
-import klayr from '@klayrhq/klayr-client';
+import klayr from '@klayr/client';
 //or
-const klayr = require('@klayrhq/klayr-client');
+const klayr = require('@klayr/client');
 ----
 
 === Browser
@@ -240,7 +240,7 @@ For example, to load the minified version 6.0.0 of Klayr Elements, include the f
 
 [source,html]
 ----
-<script src="https://js.klayr.com/klayr-client-6.0.0.min.js"></script>
+<script src="https://js.klayr.xyz/klayr-client-6.0.0.min.js"></script>
 <script>
     const api = klayr.apiClient.createWSClient('ws://localhost:7887/rpc-ws');
 </script>
