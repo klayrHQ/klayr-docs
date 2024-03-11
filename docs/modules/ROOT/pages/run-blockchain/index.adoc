@@ -3,7 +3,7 @@
 :docs_core: v3@klayr-core::
 :url_faucet: https://testnet-faucet.klayr.xyz/
 :url_observer: https://klayr.observer/delegates
-:url_liskscan: https://liskscan.com/delegates
+:url_explorer: https://explorer.klayr.xyzdelegates
 :url_run_reset: run-blockchain/blockchain-reset.adoc
 :url_run_forging: run-blockchain/forging.adoc
 :url_run_logging: run-blockchain/logging.adoc
@@ -86,8 +86,7 @@ To gain a secure forging spot for a forging round, a delegate needs to be one of
 
 To see the currently required thresholds for entering the top 101, check the delegate weights of the currently actively 101 forging delegates, for example in one of the public Klayr network explorers:
 
-* *Klayr Observer:* {url_observer}[^]
-* *Klayr Scan:* {url_liskscan}[^]
+* *Klayr Scan:* {url_explorer}[^]
 
 ==== Earning rewards as standby delegate
 
