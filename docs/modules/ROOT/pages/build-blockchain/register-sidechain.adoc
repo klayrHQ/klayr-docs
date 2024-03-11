@@ -1324,8 +1324,8 @@ Off-chain metadata of a sidechain, to be used by client applications such as Kla
     ],
     "explorers": [
         {
-            "url": "https://betanet.liskscan.com",
-            "txnPage": "https://betanet.liskscan.com/transactions"
+            "url": "https://explorer.klayr.xyz",
+            "txnPage": "https://explorer.klayr.xyz/transactions"
         }
     ],
     "appNodes": [

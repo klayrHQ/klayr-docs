@@ -8,9 +8,9 @@ Mona Bärenfänger <mona@lightcurve.io>
 :url_observer: https://klayr.observer/
 :url_observer_testnet: https://testnet.klayr.observer/
 :url_observer_betanet: https://betanet.klayr.observer/
-:url_liskscan: https://liskscan.com/
-:url_liskscan_testnet: https://testnet.liskscan.com/
-:url_liskscan_betanet: https://betanet.liskscan.com/
+:url_explorer: https://explorer.klayr.xyz
+:url_explorer_testnet: https://testnet.explorer.klayr.xyz
+:url_explorer_betanet: https://betanet.explorer.klayr.xyz
 :url_faucet_testnet: https://testnet-faucet.klayr.xyz/
 :url_faucet_betanet: https://betanet-faucet.klayr.xyz/
 :url_klayr_desktop: https://klayr.xyz/wallet
@@ -116,11 +116,11 @@ xref:{url_core}[Klayr Core] is the blockchain client that is required to be inst
 |Explorer
 a|
 * {url_observer}[^]
-* {url_liskscan}[^]
+* {url_explorer}[^]
 
 a|
 * {url_observer_testnet}[^]
-* {url_liskscan_testnet}[^]
+* {url_explorer_testnet}[^]
 
 |Klayr service API base URLs
 |https://service.klayr.xyz/api/v3/[^]
@@ -330,7 +330,7 @@ The most important properties of the Klayr Betanet are listed in the table below
 |Explorer
 a|
 * {url_observer_betanet}[^]
-* {url_liskscan_betanet}[^]
+* {url_explorer_betanet}[^]
 
 |Klayr service API base URLs
 |https://betanet-service.klayr.xyz/api/v3/[^]

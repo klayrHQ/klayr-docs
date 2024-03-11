@@ -11,8 +11,7 @@ Mona Bärenfänger <mona@lightcurve.io>
 :fn_lip23: footnote:lip23[For more details about the Klayr staking protocol, please read https://github.com/KlayrHQ/lips/blob/main/proposals/lip-0023.md[LIP 0023 - Introduce vote locking periods and new vote weight definition^].]
 // URLs
 :url_klayr_wallet: https://klayr.xyz/wallet
-:url_liskscan: https://liskscan.com/
-:url_klayrobserver: https://klayr.observer/
+:url_explorer: https://explorer.klayr.xyz
 :url_jsonrpc: https://www.jsonrpc.org/specification
 // Project URLs
 :url_run_staking: run-blockchain/staking.adoc
@@ -593,7 +592,7 @@ TIP: In the Klayr Mainnet, the minimum validator weight is 1000 KLY.
 
 The required validator weight to achieve an active position in the block generation is relative to the validator weights of the other validators who are participating in the network.
 A good way to check the exact validator weight required to reach an active position is to just check the validator weights of the currently active 101 validators.
-For the Klayr Mainnet, this information can be obtained directly from the {url_klayr_wallet}[Klayr Desktop^], or one of the various Klayr explorers like {url_liskscan}[^] or {url_klayrobserver}[^].
+For the Klayr Mainnet, this information can be obtained directly from the {url_klayr_wallet}[Klayr Desktop^], or one of the various Klayr explorers like {url_explorer}[^].
 
 NOTE: Please note, that even if you do not have enough validator weight to be an active validator, there is still a chance for you in each round to be selected as one of the two random validators.
 To be considered for the random selection, a validator just needs to have a weight equal to or greater than the minimum validator weight of the network.
