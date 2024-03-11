@@ -17,10 +17,8 @@ Mona Bärenfänger <mona@lightcurve.io>
 :url_redis: https://redis.io
 :url_semver: https://semver.org/
 :url_swagger: https://swagger.io
-:url_observer: https://klayr.observer/
-:url_observer_testnet: https://testnet.klayr.observer/
-:url_liskscan: https://liskscan.com/
-:url_liskscan_testnet: https://testnet.liskscan.com/
+:url_explorer: https://liskscan.com/
+:url_explorer_testnet: https://testnet.explorer.klayr.xyz
 // Project URLs
 :url_config: management/configuration.adoc
 :url_config_forging: management/forging.adoc
@@ -107,8 +105,7 @@ Within this network the Klayr users can transfer KLY tokens from one account to 
 
 ==== Mainnet blockchain explorer
 
-* {url_observer}[^]
-* {url_liskscan}[^]
+* {url_explorer}[^]
 
 === Testnet
 
@@ -121,8 +118,7 @@ To connect to the Testnet via {url_klayr_desktop}[Klayr Desktop^], simply enable
 
 ==== Testnet blockchain explorer
 
-* {url_observer_testnet}[^]
-* {url_liskscan_testnet}[^]
+* {url_explorer_testnet}[^]
 
 == APIs
 
