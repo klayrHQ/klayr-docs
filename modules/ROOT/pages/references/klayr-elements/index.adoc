@@ -16,7 +16,7 @@ Mona Bärenfänger <mona@lightcurve.io>
 :url_npm_klayr_client: https://www.npmjs.com/package/@klayr/client
 :url_npm_klayr_codec: https://www.npmjs.com/package/@klayr/codec
 :url_npm_klayr_cryptography: https://www.npmjs.com/package/@klayr/cryptography
-:url_npm_klayr_db: https://www.npmjs.com/package/@klayr/db
+:url_npm_klayr_db: https://www.npmjs.com/package/@liskhq/lisk-db
 :url_npm_klayr_genesis: https://www.npmjs.com/package/@klayr/genesis
 :url_npm_klayr_p2p: https://www.npmjs.com/package/@klayr/p2p
 :url_npm_klayr_passphrase: https://www.npmjs.com/package/@klayr/passphrase
@@ -27,20 +27,20 @@ Mona Bärenfänger <mona@lightcurve.io>
 :url_npm_klayr_validator: https://www.npmjs.com/package/@klayr/validator
 
 // Project URls
-:url_npm_klayr_api_docs: {url_typedoc}/_liskhq_lisk_api_client.html
-:url_npm_klayr_chain_docs: {url_typedoc}/_klayrhq_klayr_chain.html
+:url_npm_klayr_api_docs: {url_typedoc}/_klayr_api_client.html
+:url_npm_klayr_chain_docs: {url_typedoc}/_klayr_chain.html
 :url_npm_klayr_client_docs: {url_typedoc}/klayr-client
-:url_npm_klayr_codec_docs: {url_typedoc}/_klayrhq_klayr_codec.html
-:url_npm_klayr_cryptography_docs: {url_typedoc}/_klayrhq_klayr_cryptography.html
+:url_npm_klayr_codec_docs: {url_typedoc}/_klayr_codec.html
+:url_npm_klayr_cryptography_docs: {url_typedoc}/_klayr_cryptography.html
 :url_npm_klayr_db_docs: {url_typedoc}/klayr-elements/modules/db
 :url_npm_klayr_genesis_docs: {url_typedoc}/klayr-elements/modules/genesis
-:url_npm_klayr_p2p_docs: {url_typedoc}/_klayrhq_klayr_p2p.html
-:url_npm_klayr_passphrase_docs: {url_typedoc}/_klayrhq_klayr_passphrase.html
-:url_npm_klayr_transaction_pool_docs: {url_typedoc}/_klayrhq_klayr_transaction_pool.html
-:url_npm_klayr_transactions_docs: {url_typedoc}/_klayrhq_klayr_transactions.html
-:url_npm_klayr_tree_docs: {url_typedoc}/_klayrhq_klayr_tree.html
-:url_npm_klayr_utils_docs: {url_typedoc}/_klayrhq_klayr_utils.html
-:url_npm_klayr_validator_docs: {url_typedoc}/_klayrhq_klayr_validator.html
+:url_npm_klayr_p2p_docs: {url_typedoc}/_klayr_p2p.html
+:url_npm_klayr_passphrase_docs: {url_typedoc}/_klayr_passphrase.html
+:url_npm_klayr_transaction_pool_docs: {url_typedoc}/_klayr_transaction_pool.html
+:url_npm_klayr_transactions_docs: {url_typedoc}/_klayr_transactions.html
+:url_npm_klayr_tree_docs: {url_typedoc}/_klayr_tree.html
+:url_npm_klayr_utils_docs: {url_typedoc}/_klayr_utils.html
+:url_npm_klayr_validator_docs: {url_typedoc}/_klayr_validator.html
 
 image:banner_elements.png[Logo]
 
@@ -57,7 +57,7 @@ Klayr Elements is a collection of JavaScript libraries, each tackling a certain 
 
 | Client
 | {url_npm_klayr_client}[@klayr/client^]
-| {url_npm_klayr_client_docs}[klayr-client^]
+| {url_npm_klayr_client_docs}[@klayr/client^]
 |===
 
 [NOTE]
@@ -65,7 +65,7 @@ Klayr Elements is a collection of JavaScript libraries, each tackling a certain 
 The `klayr-client` package is specifically designed to be used in the browser and other frontends.
 It is a collection of the following packages:
 
-`klayr-api-client`, `klayr-codec`, `klayr-cryptography`, `klayr-passphrase`, `klayr-transactions`, `klayr-utils`, `klayr-tree`, and `klayr-validator`.
+`api-client`, `codec`, `cryptography`, `passphrase`, `transactions`, `utils`, `tree`, and `validator`.
 
 ====
 
@@ -77,47 +77,47 @@ It is a collection of the following packages:
 
 | API client
 | {url_npm_klayr_api}[@klayr/api-client^]
-| {url_npm_klayr_api_docs}[klayr-api-client^]
+| {url_npm_klayr_api_docs}[api-client^]
 
 | Chain
 | {url_npm_klayr_chain}[@klayr/chain^]
-| {url_npm_klayr_chain_docs}[klayr-chain^]
+| {url_npm_klayr_chain_docs}[chain^]
 
 | Codec
 | {url_npm_klayr_codec}[@klayr/codec^]
-| {url_npm_klayr_codec_docs}[klayr-codec^]
+| {url_npm_klayr_codec_docs}[codec^]
 
 | Cryptography
 | {url_npm_klayr_cryptography}[@klayr/cryptography^]
-| {url_npm_klayr_cryptography_docs}[klayr-cryptography^]
+| {url_npm_klayr_cryptography_docs}[cryptography^]
 
 | P2P
 | {url_npm_klayr_p2p}[@klayr/p2p^]
-| {url_npm_klayr_p2p_docs}[klayr-p2p^]
+| {url_npm_klayr_p2p_docs}[p2p^]
 
 | Passphrase
 | {url_npm_klayr_passphrase}[@klayr/passphrase^]
-| {url_npm_klayr_passphrase_docs}[klayr-passphrase^]
+| {url_npm_klayr_passphrase_docs}[passphrase^]
 
 | Transaction pool
 | {url_npm_klayr_transaction_pool}[@klayr/transaction-pool^]
-| {url_npm_klayr_transaction_pool_docs}[klayr-transaction-pool^]
+| {url_npm_klayr_transaction_pool_docs}[transaction-pool^]
 
 | Transactions
 | {url_npm_klayr_transactions}[@klayr/transactions^]
-| {url_npm_klayr_transactions_docs}[klayr-transactions^]
+| {url_npm_klayr_transactions_docs}[transactions^]
 
 | Tree
 | {url_npm_klayr_tree}[@klayr/tree^]
-| {url_npm_klayr_tree_docs}[klayr-tree^]
+| {url_npm_klayr_tree_docs}[tree^]
 
 | Utils
 | {url_npm_klayr_utils}[@klayr/utils^]
-| {url_npm_klayr_utils_docs}[klayr-utils^]
+| {url_npm_klayr_utils_docs}[utils^]
 
 | Validator
 | {url_npm_klayr_validator}[@klayr/validator^]
-| {url_npm_klayr_validator_docs}[klayr-validator^]
+| {url_npm_klayr_validator_docs}[validator^]
 |===
 
 == Setup
@@ -178,7 +178,7 @@ npm install klayr-sdk
 .Klayr Elements packages only
 [source,bash]
 ----
-npm install klayr-elements
+npm install @klayr/elements
 ----
 
 .Frontend related packages only
@@ -190,7 +190,7 @@ npm install @klayr/client
 .Specific package
 [source,bash]
 ----
-npm install @klayrhq/<package-name>
+npm install @klayr/<package-name>
 ----
 
 `<package-name>` can be any of the <<packages,packages>> in Klayr Elements.
@@ -216,7 +216,7 @@ The `klayr` variable will be exposed.
 <script src="https://js.klayr.xyz/klayr-client-6.0.0.min.js"></script>
 ----
 
-To include other packages of Klayr Elements, replace `klayr-client` with any of the <<packages,packages>> of Klayr Elements.
+To include other packages of Klayr Elements, replace `@klayr/client` with any of the <<packages,packages>> of Klayr Elements.
 
 == Usage
 
@@ -253,12 +253,12 @@ To update your installation to the latest version of Klayr Elements, simply run 
 .Complete library
 [source,bash]
 ----
-npm update klayr-elements
+npm update @klayr/elements
 ----
 
 .Specific package
 [source,bash]
 ----
-npm update @klayrhq/<package-name>
+npm update @klayr/<package-name>
 ----
 
