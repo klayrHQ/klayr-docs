@@ -7,8 +7,7 @@ Muhammad Talha <muhammad.talha@lightcurve.io>
 :docs_sdk: v6klayr-sdk::
 
 :url_faucet: https://testnet-faucet.klayr.xyz/
-:url_observer: https://klayr.observer/delegates
-:url_liskscan: https://liskscan.com/delegates
+:url_explorer: https://explorer.klayr.xyz/
 :url_run_reset: run-blockchain/blockchain-reset.adoc
 :url_run_logging: run-blockchain/logging.adoc
 :url_run_pm2: run-blockchain/process-management.adoc
@@ -211,8 +210,7 @@ If you are intending to generate blocks for the first time, it is highly recomme
 Furthermore, to acquire a secure validator spot for a block generation round, a validator must be one of the top 103 validators with the most xref:{url_validator_weight}[validator weight] in the network.
 To view the currently required thresholds for entering the top 103, check the validator weights of the currently active 103 validators, for example, in one of the public Klayr network explorers:
 
-* *Klayr Observer:* {url_observer}[^]
-* *Klayr Scan:* {url_liskscan}[^]
+* *Klayr Scan:* {url_explorer}[^]
 
 == Node management
 
