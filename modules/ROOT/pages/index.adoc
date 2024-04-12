@@ -3,7 +3,7 @@ Muhammad Talha <muhammad.talha@lightcurve.io>
 // Project URLs
 :docs_general: ROOT::
 :url_blockchain_apps: {docs_general}understand-blockchain/index.adoc#what-are-blockchain-applications
-:url_references_commander: references/klayr.xyzmander/index.adoc
+:url_references_commander: references/klayr-commander/index.adoc
 :url_references_dashboard_plugin: plugins/dashboard-plugin.adoc
 :url_references_test_suite: references/test-utils.adoc
 :url_guides_setup_bootstrapping: quickstart.adoc
@@ -23,7 +23,7 @@ image::banner_sdk.png[Logo]
 The Klayr SDK is an open-source software development kit that enables developers to build scalable xref:{url_blockchain_apps}[blockchain applications] in JavaScript & TypeScript.
 ****
 
-// TODO: Update the page by uncommenting the hyperlinks once the updated pages are available. 
+// TODO: Update the page by uncommenting the hyperlinks once the updated pages are available.
 
 == Highlights
 
@@ -36,7 +36,7 @@ The most important highlights and features of the Klayr SDK:
 * *Convenient development tools*:
 //** xref:{url_references_commander}[Klayr Commander]:
 ** Klayr Commander:
-// *** xref:{url_guides_setup_bootstrapping}[Bootstrap] 
+// *** xref:{url_guides_setup_bootstrapping}[Bootstrap]
 *** Bootstrap a complete, default Klayr client with a single command.
 *** Generate skeletons for modules, commands, and plugins.
 *** Use the Klayr SDK libraries directly in the terminal via the interactive Klayr console.
@@ -76,7 +76,7 @@ SSD: 50GB+
 |===
 | Component | Description
 | Klayr Framework | Klayr Framework is an application framework responsible for establishing and maintaining the interactions between the different components of a blockchain client.
-// xref:{url_references_framework}[Klayr Framework] 
+// xref:{url_references_framework}[Klayr Framework]
 
 | Klayr Elements | Klayr Elements is a collection of libraries, each of which implements a certain type of blockchain functionality such as cryptography, transactions, p2p, etc.
 Each library of Klayr Elements is also published as an NPM package, and can be installed separately if needed.

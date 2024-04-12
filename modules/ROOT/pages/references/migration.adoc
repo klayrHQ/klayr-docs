@@ -232,54 +232,6 @@ Klayr Service now offers additional endpoints to query for events more convenien
 ////
 |===
 --
-Module events - SDKv5::
-+
---
-[cols="1h,6"]
-|===
-|Description
-|Analog to the xref:{url_sdkv5_rpc_events}[application events] from v5, module events could be subscribed to via the RPC API of a node.
-
-An event informs services that subscribed to it, if a certain event happened (e.g. a transaction was executed), and often contain additional data, providing more information or context about the event.
-
-*Module events in Klayr SDK v5 follow the {url_wiki_pubsub}[publish-subscribe-pattern^].*
-
-|Purpose
-|Events are used to communicate about certain events in real time, and to prevent reoccuring RPC request, just to check if there are any changes.
-
-|Definition
-a|
-[source,js]
-----
-public events = ['newHello'];
-----
-
-For more information how to create the corresponding event class, please check out the guide xref:{url_build_module_event}[]
-
-|Publishing
-a|
-[source,js]
-----
-this._channel.publish('hello:newHello', {
-    sender: tx.senderAddress.toString('hex'),
-    hello: helloAsset.helloString
-});
-----
-
-|Retrieving
-a|
-In Klayr SDK v5, events could be subscribed directly via the API client.
-
-If an event was missed, there was no way of retrieving the event, after it was emitted by a node.
-
-[source,js]
-----
-client.subscribe('app:block:new', ( data ) => {
-  console.log('new block:',data);
-});
-----
-|===
---
 =====
 
 == Chain ID replaces network ID

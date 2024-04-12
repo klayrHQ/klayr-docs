@@ -5,7 +5,7 @@ Mona Bärenfänger <mona@lightcurve.io> Muhammad Talha <muhammad.talha@lightcurv
 :toclevels: 5
 :page-toclevels: 4
 // Project URLs
-:url_guides_setup_init: ROOT::build-blockchain/create-blockchain-client.adoc#bootstrapping-a-new-blockchain-client-with-klayr.xyzmander
+:url_guides_setup_init: ROOT::build-blockchain/create-blockchain-client.adoc#bootstrapping-a-new-blockchain-client-with-klayr-commander
 
 // External URLs
 :url_read_eval_print_loop: https://en.wikipedia.org/wiki/Read%E2%80%93eval%E2%80%93print_loop
@@ -362,7 +362,7 @@ EXAMPLES
   blockchain:export --data-path ./data --output ./my/path/
 ----
 
-.Example 
+.Example
 [%collapsible]
 ====
 [source,bash]
@@ -390,7 +390,7 @@ EXAMPLES
   blockchain:hash --data-path ./data
 ----
 
-.Example 
+.Example
 [%collapsible]
 ====
 [source,bash]
@@ -423,7 +423,7 @@ EXAMPLES
   blockchain:import ./path/to/blockchain.tar.gz --data-path ./klayr/ --force
 ----
 
-.Example 
+.Example
 [%collapsible]
 ====
 [source,bash]
@@ -453,7 +453,7 @@ EXAMPLES
   blockchain:reset --yes
 ----
 
-.Example 
+.Example
 [%collapsible]
 ====
 [source,bash]
@@ -497,7 +497,7 @@ EXAMPLES
   config:create --output mydir --label beta-sdk-app --community-identifier sdk
 ----
 
-.Example 
+.Example
 [%collapsible]
 ====
 [source,bash]
@@ -528,7 +528,7 @@ EXAMPLES
   config:show --config ./custom-config.json --data-path ./data
 ----
 
-.Example 
+.Example
 [%collapsible]
 ====
 [source,bash]
@@ -631,7 +631,7 @@ EXAMPLES
   endpoint:invoke consensus_getBFTParameters -f ./input.json
 ----
 
-.Example 
+.Example
 [%collapsible]
 ====
 [source,bash]
@@ -811,7 +811,7 @@ EXAMPLES
   generator:export --output /mypath/genInfo.json --data-path ./data
 ----
 
-.Example 
+.Example
 [%collapsible]
 ====
 [source,bash]
@@ -867,7 +867,7 @@ EXAMPLES
   generator:import --file-path ./my/path/genInfo.json --data-path ./data
 ----
 
-.Example 
+.Example
 [%collapsible]
 ====
 [source,bash]
@@ -897,7 +897,7 @@ EXAMPLES
   generator:status --data-path ./sample --pretty
 ----
 
-.Example 
+.Example
 [%collapsible]
 ====
 [source,bash]
@@ -957,7 +957,7 @@ EXAMPLES
   genesis-block:create --output mydir --assets-file ./assets.json
 ----
 
-.Example 
+.Example
 [%collapsible]
 ====
 [source,bash]
@@ -1044,7 +1044,7 @@ EXAMPLES
   keys:create --passphrase your-passphrase --password your-password --count 2 --offset 1 --chainid 1 --output /mypath/keys.json
 ----
 
-.Example 
+.Example
 [%collapsible]
 ====
 [source,bash]
@@ -1124,7 +1124,7 @@ EXAMPLES
   keys:encrypt --file-path ./my/path/keys.json --password mypass
 ----
 
-.Example 
+.Example
 [%collapsible]
 ====
 [source,bash]
@@ -1195,7 +1195,7 @@ EXAMPLES
   keys:export --output /mypath/keys.json --data-path ./data
 ----
 
-.Example 
+.Example
 [%collapsible]
 ====
 [source,bash]
@@ -1226,7 +1226,7 @@ EXAMPLES
   keys:import --file-path ./my/path/keys.json --data-path ./data
 ----
 
-.Example 
+.Example
 [%collapsible]
 ====
 [source,bash]
@@ -1268,7 +1268,7 @@ EXAMPLES
   system:node-info --data-path ./klayr
 ----
 
-.Example 
+.Example
 [%collapsible]
 ====
 [source,bash]
@@ -7291,7 +7291,7 @@ EXAMPLES
   passphrase:decrypt --file-path ./my/path/output.json --password your-password
 ----
 
-.Example 
+.Example
 [%collapsible]
 ====
 [source,bash]
@@ -7343,7 +7343,7 @@ EXAMPLES
   passphrase:encrypt --output-public-key --output /mypath/keys.json
 ----
 
-.Example 
+.Example
 [%collapsible]
 ====
 [source,bash]
@@ -7445,7 +7445,7 @@ EXAMPLES
   transaction:create token transfer 100000000 --file=/txn_params.json --json
 ----
 
-.Example 
+.Example
 [%collapsible]
 ====
 [source,bash]
@@ -7493,7 +7493,7 @@ EXAMPLE
   ./bin/run transaction:get eab06c6a22e88bca7150e0347a7d976acd070cb9284423e6eabecd657acc1263
 ----
 
-.Example 
+.Example
 [%collapsible]
 ====
 [source,bash]
@@ -7546,7 +7546,7 @@ EXAMPLES
   transaction:send 080810011880cab5ee012220fd061b9146691f3c56504be051175d5b76d1b1d0179c5c4370e18534c58821222a2408641214ab0041a7d3f7b2c290b5b834d46bdc7b7eb858151a0a73656e6420746f6b656e324028edd3601cdc35a41bb23415a0d9f3c3e9cf188d9971adf18742cea39d58aa84809aa87bcfe6feaac46211c80472ad9297fd87727709f5d7e7b4134caf106b02
 ----
 
-.Example 
+.Example
 [%collapsible]
 ====
 [source,bash]
@@ -7593,7 +7593,7 @@ EXAMPLES
   transaction:sign <hex-encoded-binary-transaction> --network testnet
 ----
 
-.Example 
+.Example
 [%collapsible]
 ====
 [source,bash]

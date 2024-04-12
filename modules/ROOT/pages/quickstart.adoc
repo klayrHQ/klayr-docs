@@ -14,7 +14,7 @@ Mona Bärenfänger <mona@lightcurve.io>
 :url_introduction_modules: ROOT::understand-blockchain/modules-commands.adoc
 :url_introduction_plugins: ROOT::understand-blockchain/plugins.adoc
 :url_references_cli: client-cli.adoc
-:url_references_commander: references/klayr.xyzmander/index.adoc
+:url_references_commander: references/klayr-commander/index.adoc
 :url_references_dashboard_plugin: plugins/dashboard-plugin.adoc
 :url_references_test_suite: references/test-utils.adoc
 
@@ -73,7 +73,7 @@ It is recommended to install Klayr Commander globally with NPM (Node Package Man
 
 [source,bash]
 ----
-npm install --global klayr.xyzmander
+npm install --global klayr-commander
 ----
 
 == Project setup
