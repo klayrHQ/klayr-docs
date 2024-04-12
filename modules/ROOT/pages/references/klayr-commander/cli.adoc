@@ -20,7 +20,7 @@ Displays command reference.
 A command line interface for Klayr
 
 VERSION
-  klayr.xyzmander/5.1.10 darwin-x64 node-v18.16.0
+  klayr-commander/5.1.10 darwin-x64 node-v18.16.0
 
 USAGE
   $ klayr [COMMAND]

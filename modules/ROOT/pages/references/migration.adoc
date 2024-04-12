@@ -5,7 +5,6 @@ Mona Bärenfänger <mona@lightcurve.io>
 :idprefix:
 :idseparator: -
 :docs-general: ROOT::
-:docs-klayr-v5: v5@klayr-sdk::
 :docs-understand-modules: {docs-general}understand-blockchain/sdk/modules-commands.adoc
 :sectnums:
 // URLs
@@ -13,7 +12,6 @@ Mona Bärenfänger <mona@lightcurve.io>
 :url_wiki_pubsub: https://en.wikipedia.org/wiki/Publish%E2%80%93subscribe_pattern
 :url_lip_37: https://github.com/KlayrHQ/lips/blob/main/proposals/lip-0037.md
 // Project URLs
-:url_sdkv5_rpc_events: {docs-klayr-v5}events.adoc
 :url_api_rpc_getEvents: {docs-general}api/klayr-node-rpc.adoc
 :url_standardevent: {docs-understand-modules}#standard-event
 :url_methods: {docs-understand-modules}#methods
