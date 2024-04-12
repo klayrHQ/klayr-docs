@@ -13,17 +13,17 @@ asciidoc:
   - ./lib/tabs-block/extension.js
 content:
   sources:
-  - url: https://github.com/KlayrHQ/klayr-docs.git
-    branches: [docs-sdk, docs-sdk-v5, docs-core-v3, docs-service-v0.6, docs-manual]
-  - url: https://github.com/KlayrHQ/klayr-docs.git
-    branches: [ main, docs-klayr-v3 ]
-    start_path: docs
-  - url: https://github.com/KlayrHQ/klayr-core.git
-    branches: [ development ]
-    start_path: docs/antora
-  - url: https://github.com/KlayrHQ/klayr-service.git
-    branches: [ development ]
-    start_path: docs/antora
+    - url: https://github.com/KlayrHQ/klayr-docs.git
+      branches: [docs-sdk, docs-manual]
+    - url: https://github.com/KlayrHQ/klayr-docs.git
+      branches: [ main-dev ]
+      start_path: docs
+    - url: https://github.com/KlayrHQ/klayr-core.git
+      branches: [ docs-rebrand ]
+      start_path: docs/antora
+    - url: https://github.com/KlayrHQ/klayr-service.git
+      branches: [ development ]
+      start_path: docs/antora
 ui:
   bundle:
    url: ../ui/build/ui-bundle.zip

@@ -30,7 +30,7 @@ Muhammad Talha <muhammad.talha@lightcurve.io>
 // :url_api_service_pubsub: api/klayr-service-pubsub.adoc
 // :url_service_setup_docker_coreconfig: klayr-service::setup/docker.adoc#configuring-klayr-core
 // :url_service_setup_docker: klayr-service::setup/docker.adoc
-:url_service_setup_source: klayr-service::setup/source.adoc
+// :url_service_setup_source: klayr-service::setup/source.adoc
 :url_communication_protocol: understand-blockchain/sdk/rpc.adoc
 :url_enable_block_gen: run-blockchain/enable-block-generation.adoc
 :url_accounts: run-blockchain/account-management.adoc

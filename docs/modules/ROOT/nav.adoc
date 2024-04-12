@@ -90,29 +90,29 @@
 // *** xref:tutorial/lns/3-cli.adoc[]
 // *** xref:tutorial/lns/4-tests.adoc[]
 
-* APIs
-** xref:api/klayr-node-rpc.adoc[]
-** Module RPC APIs
-*** xref:api/module-rpc-api/auth-endpoints.adoc[]
-*** xref:api/module-rpc-api/dynamic-reward-endpoints.adoc[]
-*** xref:api/module-rpc-api/fee-endpoints.adoc[]
-*** xref:api/module-rpc-api/interoperability-endpoints.adoc[]
-*** xref:api/module-rpc-api/mainchain-interoperability-endpoints.adoc[]
-*** xref:api/module-rpc-api/token-endpoints.adoc[]
-*** xref:api/module-rpc-api/validators-endpoints.adoc[]
-*** xref:api/module-rpc-api/random-endpoints.adoc[]
-*** xref:api/module-rpc-api/pos-endpoints.adoc[]
-** Plugin RPC APIs
-*** xref:api/plugin-rpc-api/chain-connector-api.adoc[]
-** Klayr Service APIs
-*** xref:api/klayr-service-rpc.adoc[]
-*** xref:api/klayr-service-http.adoc[]
-*** xref:api/klayr-service-pubsub.adoc[]
-*** xref:api/klayr-service-api-migration.adoc[]
+// * APIs
+// ** xref:api/klayr-node-rpc.adoc[]
+// ** Module RPC APIs
+// *** xref:api/module-rpc-api/auth-endpoints.adoc[]
+// *** xref:api/module-rpc-api/dynamic-reward-endpoints.adoc[]
+// *** xref:api/module-rpc-api/fee-endpoints.adoc[]
+// *** xref:api/module-rpc-api/interoperability-endpoints.adoc[]
+// *** xref:api/module-rpc-api/mainchain-interoperability-endpoints.adoc[]
+// *** xref:api/module-rpc-api/token-endpoints.adoc[]
+// *** xref:api/module-rpc-api/validators-endpoints.adoc[]
+// *** xref:api/module-rpc-api/random-endpoints.adoc[]
+// *** xref:api/module-rpc-api/pos-endpoints.adoc[]
+// ** Plugin RPC APIs
+// *** xref:api/plugin-rpc-api/chain-connector-api.adoc[]
+// ** Klayr Service APIs
+// *** xref:api/klayr-service-rpc.adoc[]
+// *** xref:api/klayr-service-http.adoc[]
+// *** xref:api/klayr-service-pubsub.adoc[]
+// *** xref:api/klayr-service-api-migration.adoc[]
 
 * Products
-** xref:klayr-sdk::index.adoc[]
-** xref:klayr-service::index.adoc[]
+// ** xref:klayr-sdk::index.adoc[]
+// ** xref:klayr-service::index.adoc[]
 ** xref:klayr-core::index.adoc[]
 
 * xref:bug-bounty-program.adoc[]
