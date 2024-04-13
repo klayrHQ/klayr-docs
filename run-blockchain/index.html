@@ -3,9 +3,9 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Running a blockchain node :: Lisk documentation</title>
-    <link rel="canonical" href="https://liskhq.github.io/lisk-docs/run-blockchain/index.html">
-    <link rel="prev" href="../build-blockchain/interoperable-module/execute-ccm.html">
+    <title>Running a blockchain node :: Klayr documentation</title>
+    <link rel="canonical" href="https://klayr.xyz/documentation/run-blockchain/index.html">
+    <link rel="prev" href="../build-blockchain/test-app.html">
     <link rel="next" href="process-management.html">
     <meta name="generator" content="Antora 3.1.1">
 
@@ -22,11 +22,11 @@
   _paq.push(['trackPageView']);
   _paq.push(['enableLinkTracking']);
   (function() {
-    var u="https://lisk.matomo.cloud/";
+    var u="https://klayr.matomo.cloud/";
     _paq.push(['setTrackerUrl', u+'matomo.php']);
     _paq.push(['setSiteId', '2']);
     var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-    g.async=true; g.src='//cdn.matomo.cloud/lisk.matomo.cloud/matomo.js'; s.parentNode.insertBefore(g,s);
+    g.async=true; g.src='//cdn.matomo.cloud/klayr.matomo.cloud/matomo.js'; s.parentNode.insertBefore(g,s);
   })();
 </script>
 <!-- End Matomo Code -->
@@ -35,7 +35,7 @@
   var _mtm = window._mtm = window._mtm || [];
   _mtm.push({'mtm.startTime': (new Date().getTime()), 'event': 'mtm.Start'});
   var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-  g.async=true; g.src='https://cdn.matomo.cloud/lisk.matomo.cloud/container_RUW6y8yf.js'; s.parentNode.insertBefore(g,s);
+  g.async=true; g.src='https://cdn.matomo.cloud/klayr.matomo.cloud/container_RUW6y8yf.js'; s.parentNode.insertBefore(g,s);
 </script>
 <!-- End Matomo Tag Manager -->
 <link rel="icon" href="../_/img/favicon.png" type="image/x-icon">
@@ -45,10 +45,10 @@
   <nav class="navbar">
     <div class="navbar-brand">
       <div class="top-logo">
-        <a href=".." class="lisk-logo"></a>
+        <a href=".." class="klayr-logo"></a>
         <a href=".." class="docs-logo"></a>
       </div>
-      <!--<a class="navbar-item" href="https://liskhq.github.io/lisk-docs">Lisk documentation</a>-->
+      <!--<a class="navbar-item" href="https://klayr.xyz/documentation">Klayr documentation</a>-->
       <button class="navbar-burger" data-target="topbar-nav">
         <span></span>
         <span></span>
@@ -60,29 +60,28 @@
         <div class="navbar-item has-dropdown is-hoverable">
           <a class="navbar-link" href="#">APIs</a>
           <div class="navbar-dropdown">
-            <a class="navbar-item" href="../api/lisk-node-rpc.html">Lisk node RPC API</a>
-            <a class="navbar-item" href="../api/lisk-service-http.html">Lisk Service HTTP
+            <a class="navbar-item" href="../api/klayr-node-rpc.html">Klayr node RPC API</a>
+            <a class="navbar-item" href="../api/klayr-service-http.html">Klayr Service HTTP
               API</a>
-            <a class="navbar-item" href="../api/lisk-service-rpc.html">Lisk Service RPC
+            <a class="navbar-item" href="../api/klayr-service-rpc.html">Klayr Service RPC
               API</a>
-            <a class="navbar-item" href="../api/lisk-service-pubsub.html">Lisk Service
+            <a class="navbar-item" href="../api/klayr-service-pubsub.html">Klayr Service
               Pub/Sub API</a>
           </div>
         </div>
         <div class="navbar-item has-dropdown is-hoverable">
           <a class="navbar-link" href="#">Explorers</a>
           <div class="navbar-dropdown">
-            <a class="navbar-item" href="https://lisk.observer/" target="_blank">Lisk Observer</a>
-            <a class="navbar-item" href="https://liskscan.com/" target="_blank">LiskScan</a>
+            <a class="navbar-item" href="https://explorer.klayr.xyz/" target="_blank">Klayr Explorer</a>
           </div>
         </div>
         <div class="navbar-item has-dropdown is-hoverable">
           <a class="navbar-link" href="#">Products</a>
           <div class="navbar-dropdown">
-            <a class="navbar-item" href="../lisk-sdk/">Lisk SDK</a>
-            <a class="navbar-item" href="../lisk-service/">Lisk Service</a>
-            <a class="navbar-item" href="../lisk-core/">Lisk Core</a>
-            <a class="navbar-item" href="https://lisk.com/wallet" target="_blank">Lisk Wallets</a>
+            <a class="navbar-item" href="../klayr-sdk/">Klayr SDK</a>
+            <a class="navbar-item" href="../klayr-service/">Klayr Service</a>
+            <a class="navbar-item" href="../klayr-core/">Klayr Core</a>
+            <a class="navbar-item" href="https://klayr.xyz/wallet" target="_blank">Klayr Wallets</a>
           </div>
         </div>
         <button onclick="switch_style('toggle')" id="theme-toggle" class="theme-toggle navbar-item"></button>
@@ -99,34 +98,26 @@
   <button class="nav-toggle"></button>
   <div class="components-versions">
       <div class="page-components">
-    <button class="component-menu-toggle" title="Show other documentations">Lisk Documentation</button>
+    <button class="component-menu-toggle" title="Show other documentations">Klayr Documentation</button>
     <div class="component-menu">
-        <a class="component" href="../lisk-core/index.html">Lisk Core</a>
-        <a class="component" href="../lisk-docs-manual/index.html">Lisk docs manual</a>
-        <a class="component is-current" href="../index.html">Lisk Documentation</a>
-        <a class="component" href="../lisk-sdk/index.html">Lisk SDK</a>
-        <a class="component" href="../lisk-service/index.html">Lisk Service</a>
+        <a class="component" href="../klayr-core/index.html">Klayr Core</a>
+        <a class="component is-current" href="../index.html">Klayr Documentation</a>
+        <a class="component" href="../klayr-sdk/index.html">Klayr SDK</a>
+        <a class="component" href="../klayr-service/index.html">Klayr Service</a>
     </div>
   </div>
     <span></span>
-    <div class="page-versions">
-  <button class="version-menu-toggle" title="Show other versions of page">default</button>
-  <div class="version-menu">
-    <a class="version is-current" href="index.html">default</a>
-    <a class="version" href="../lisk-v3/run-blockchain/index.html">lisk-v3</a>
-  </div>
-</div>
-  </div>
+      </div>
   <span></span>
   <span></span>
     <a href="../index.html" class="home-link"></a>
   <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
-    <li><a href="../index.html">Lisk Documentation</a></li>
+    <li><a href="../index.html">Klayr Documentation</a></li>
     <li><a href="index.html">Run Blockchain</a></li>
   </ul>
 </nav>
-  <div class="edit-this-page"><a href="https://github.com/LiskHQ/lisk-docs/edit/development/docs/modules/ROOT/pages/run-blockchain/index.adoc">Edit this Page</a></div>
+  <div class="edit-this-page"><a href="https://github.com/KlayrHQ/klayr-docs/edit/main-dev/docs/modules/ROOT/pages/run-blockchain/index.adoc">Edit this Page</a></div>
 </div>
 
 <div class="body">
@@ -135,7 +126,7 @@
     <div class="panels">
 <div class="nav-panel-menu is-active" data-panel="menu">
   <nav class="nav-menu">
-    <h3 class="title"><a href="../index.html">Lisk Documentation</a></h3>
+    <h3 class="title"><a href="../index.html">Klayr Documentation</a></h3>
 <ul class="nav-list">
   <li class="nav-item" data-depth="0">
 <ul class="nav-list">
@@ -153,7 +144,7 @@
     <a class="nav-link" href="../intro/blockchain-scalability.html">Blockchain Scalability</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../intro/lisk-products.html">Lisk products</a>
+    <a class="nav-link" href="../intro/klayr-products.html">Klayr products</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../intro/blockchain-interoperability.html">Blockchain Interoperability</a>
@@ -162,7 +153,7 @@
   </li>
   <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="../understand-blockchain/index.html">Understand Lisk Blockchain</a>
+    <a class="nav-link" href="../understand-blockchain/index.html">Understand Klayr Blockchain</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../understand-blockchain/state-machine.html">State machine</a>
@@ -172,7 +163,7 @@
     <a class="nav-link" href="../understand-blockchain/consensus/index.html">Consensus protocols</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../understand-blockchain/consensus/pos-poa.html">Proof of Stake (PoS) &amp; Proof of Authority (PoA) in Lisk</a>
+    <a class="nav-link" href="../understand-blockchain/consensus/pos-poa.html">Proof of Stake (PoS) &amp; Proof of Authority (PoA) in Klayr</a>
   </li>
 </ul>
   </li>
@@ -184,7 +175,7 @@
   </li>
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="../understand-blockchain/interoperability/index.html">Lisk Interoperability</a>
+    <a class="nav-link" href="../understand-blockchain/interoperability/index.html">Klayr Interoperability</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../understand-blockchain/interoperability/communication.html">Cross-chain communication</a>
@@ -199,7 +190,7 @@
   </li>
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
-    <span class="nav-text">Lisk SDK</span>
+    <span class="nav-text">Klayr SDK</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../understand-blockchain/sdk/modules-commands.html">Modules and Commands</a>
@@ -208,7 +199,7 @@
     <a class="nav-link" href="../understand-blockchain/sdk/plugins.html">Plugins</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../understand-blockchain/sdk/rpc.html">Communicating to a Lisk node via RPC</a>
+    <a class="nav-link" href="../understand-blockchain/sdk/rpc.html">Communicating to a Klayr node via RPC</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../understand-blockchain/sdk/codec-schema.html">Schemas &amp; Codec</a>
@@ -292,6 +283,9 @@
     <a class="nav-link" href="../build-blockchain/interoperable-module/execute-ccm.html">How to execute a CCM</a>
   </li>
 </ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../build-blockchain/test-app.html">Testing the blockchain application</a>
   </li>
 </ul>
   </li>
@@ -391,7 +385,7 @@
   </li>
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="../integrate-blockchain/aggregate-blockchain-data/index.html">Aggregate blockchain data with Lisk Service</a>
+    <a class="nav-link" href="../integrate-blockchain/aggregate-blockchain-data/index.html">Aggregate blockchain data with Klayr Service</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../integrate-blockchain/aggregate-blockchain-data/extend-indexer.html">Extending the Indexer microservice</a>
@@ -409,7 +403,7 @@
     <span class="nav-text">APIs</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../api/lisk-node-rpc.html">RPC API for Lisk nodes</a>
+    <a class="nav-link" href="../api/klayr-node-rpc.html">RPC API for Klayr nodes</a>
   </li>
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
@@ -455,19 +449,19 @@
   </li>
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
-    <span class="nav-text">Lisk Service APIs</span>
+    <span class="nav-text">Klayr Service APIs</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../api/lisk-service-rpc.html">RPC API of Lisk Service</a>
+    <a class="nav-link" href="../api/klayr-service-rpc.html">RPC API of Klayr Service</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../api/lisk-service-http.html">HTTP API (Lisk Service)</a>
+    <a class="nav-link" href="../api/klayr-service-http.html">HTTP API (Klayr Service)</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../api/lisk-service-pubsub.html">Publish/Subscribe API (Lisk Service)</a>
+    <a class="nav-link" href="../api/klayr-service-pubsub.html">Publish/Subscribe API (Klayr Service)</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../api/lisk-service-api-migration.html">Lisk Service API v2 vs v3</a>
+    <a class="nav-link" href="../api/klayr-service-api-migration.html">Klayr Service API v2 vs v3</a>
   </li>
 </ul>
   </li>
@@ -478,18 +472,18 @@
     <span class="nav-text">Products</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../lisk-sdk/index.html">Lisk SDK</a>
+    <a class="nav-link" href="../klayr-sdk/index.html">Klayr SDK</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../lisk-service/index.html">Lisk Service</a>
+    <a class="nav-link" href="../klayr-service/index.html">Klayr Service</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../lisk-core/index.html">Lisk Core</a>
+    <a class="nav-link" href="../klayr-core/index.html">Klayr Core</a>
   </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="../bug-bounty-program.html">Lisk Bug Bounty Program</a>
+    <a class="nav-link" href="../bug-bounty-program.html">Klayr Bug Bounty Program</a>
   </li>
 </ul>
   </li>
@@ -498,59 +492,39 @@
 </div>
 <div class="nav-panel-explore" data-panel="explore">
   <div class="context">
-    <span class="title">Lisk Documentation</span>
+    <span class="title">Klayr Documentation</span>
     <span class="version">default</span>
   </div>
   <ul class="components">
     <li class="component">
-      <a class="title" href="../lisk-core/index.html">Lisk Core</a>
+      <a class="title" href="../klayr-core/index.html">Klayr Core</a>
       <ul class="versions">
         <li class="version is-latest">
-          <a href="../lisk-core/index.html">4.0 (latest)</a>
-        </li>
-        <li class="version">
-          <a href="../lisk-core/v3/index.html">3.1.1</a>
-        </li>
-      </ul>
-    </li>
-    <li class="component">
-      <a class="title" href="../lisk-docs-manual/index.html">Lisk docs manual</a>
-      <ul class="versions">
-        <li class="version is-latest">
-          <a href="../lisk-docs-manual/index.html">0.1.0</a>
+          <a href="../klayr-core/index.html">4.0 (latest)</a>
         </li>
       </ul>
     </li>
     <li class="component is-current">
-      <a class="title" href="../index.html">Lisk Documentation</a>
+      <a class="title" href="../index.html">Klayr Documentation</a>
       <ul class="versions">
         <li class="version is-current is-latest">
           <a href="../index.html">default</a>
         </li>
-        <li class="version">
-          <a href="../lisk-v3/index.html">lisk-v3</a>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../klayr-sdk/index.html">Klayr SDK</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../klayr-sdk/index.html">6.0 (latest)</a>
         </li>
       </ul>
     </li>
     <li class="component">
-      <a class="title" href="../lisk-sdk/index.html">Lisk SDK</a>
+      <a class="title" href="../klayr-service/index.html">Klayr Service</a>
       <ul class="versions">
         <li class="version is-latest">
-          <a href="../lisk-sdk/index.html">6.0 (latest)</a>
-        </li>
-        <li class="version">
-          <a href="../lisk-sdk/v5/index.html">5.3.0</a>
-        </li>
-      </ul>
-    </li>
-    <li class="component">
-      <a class="title" href="../lisk-service/index.html">Lisk Service</a>
-      <ul class="versions">
-        <li class="version is-latest">
-          <a href="../lisk-service/index.html">0.7 (latest)</a>
-        </li>
-        <li class="version">
-          <a href="../lisk-service/v0.6/index.html">0.6</a>
+          <a href="../klayr-service/index.html">0.7 (latest)</a>
         </li>
       </ul>
     </li>
@@ -569,7 +543,7 @@
     <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>The "Run Blockchain" section contains all the guides concerning the management of accounts and Lisk nodes, and is therefore especially interesting for validators and other Lisk node operators.</p>
+<p>The "Run Blockchain" section contains all the guides concerning the management of accounts and Klayr nodes, and is therefore especially interesting for validators and other Klayr node operators.</p>
 </div>
 </div>
 <div id="toc" class="toc">
@@ -580,7 +554,7 @@
 <li><a href="#rpc-nodes">RPC nodes</a></li>
 <li><a href="#validator-nodes">Validator nodes</a></li>
 <li><a href="#relayer-nodes">Relayer nodes</a></li>
-<li><a href="#lisk-service-nodes">Lisk Service nodes</a></li>
+<li><a href="#klayr-service-nodes">Klayr Service nodes</a></li>
 </ul>
 </li>
 <li><a href="#account-management">Account management</a></li>
@@ -592,14 +566,14 @@
 <h2 id="what-is-a-blockchain-node"><a class="anchor" href="#what-is-a-blockchain-node"></a>What is a blockchain node?</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The Lisk blockchain is a decentralized network that consists of many different servers, (or nodes).
-A blockchain node is a server with a running blockchain client, such as <a href="../lisk-core/index.html" class="xref page">Lisk Core</a>.
+<p>The Klayr blockchain is a decentralized network that consists of many different servers, (or nodes).
+A blockchain node is a server with a running blockchain client, such as <a href="../klayr-core/index.html" class="xref page">Klayr Core</a>.
 Nodes are usually connected to other nodes which are running an instance of the same client via P2P.
 Node operators are required to set up a node on a server, and then connect it to the desired network.</p>
 </div>
 <div class="paragraph">
 <p>Depending on the node configuration, a node can have different roles in the network.
-In the Lisk ecosystem, a node can be any one of the following four types.</p>
+In the Klayr ecosystem, a node can be any one of the following four types.</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
@@ -613,7 +587,7 @@ In the Lisk ecosystem, a node can be any one of the following four types.</p>
 <p><a href="#relayer-nodes">Relayer nodes</a></p>
 </li>
 <li>
-<p><a href="#lisk-service-nodes">Lisk Service nodes</a></p>
+<p><a href="#klayr-service-nodes">Klayr Service nodes</a></p>
 </li>
 </ol>
 </div>
@@ -636,10 +610,10 @@ Depending on the node configuration, an <a href="../understand-blockchain/sdk/rp
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Supported communication protocols</strong>: <a href="../understand-blockchain/sdk/rpc.html" class="xref page">Communicating to a Lisk node via RPC</a>.</p>
+<p><strong>Supported communication protocols</strong>: <a href="../understand-blockchain/sdk/rpc.html" class="xref page">Communicating to a Klayr node via RPC</a>.</p>
 </li>
 <li>
-<p><strong>RPC endpoints</strong>: <a href="../api/lisk-node-rpc.html" class="xref page">RPC API for Lisk nodes</a>.</p>
+<p><strong>RPC endpoints</strong>: <a href="../api/klayr-node-rpc.html" class="xref page">RPC API for Klayr nodes</a>.</p>
 </li>
 </ul>
 </div>
@@ -647,12 +621,12 @@ Depending on the node configuration, an <a href="../understand-blockchain/sdk/rp
 <div class="sect2">
 <h3 id="validator-nodes"><a class="anchor" href="#validator-nodes"></a>Validator nodes</h3>
 <div class="paragraph">
-<p>In the Lisk <a href="../intro/how-blockchain-works.html#proof-of-stake" class="xref page">PoS</a>, a certain set of validators is selected by the network to add new blocks to the blockchain.
+<p>In the Klayr <a href="../intro/how-blockchain-works.html#proof-of-stake" class="xref page">PoS</a>, a certain set of validators is selected by the network to add new blocks to the blockchain.
 To participate in the block generation process, a validator needs to set up a node and configure it to enable block generation.
 These nodes are called <strong>validator nodes</strong>.</p>
 </div>
 <div class="paragraph">
-<p>In the Lisk Mainnet, exactly 103 validators exist in the network for each block generation round.
+<p>In the Klayr Mainnet, exactly 103 validators exist in the network for each block generation round.
 Validator nodes are the only nodes that can propose new blocks to the blockchain.
 During a block generation round, every validator node has the opportunity to generate at least one block.</p>
 </div>
@@ -676,7 +650,7 @@ For more information on how to become a validator and enable block generation, c
 <div class="sect2">
 <h3 id="relayer-nodes"><a class="anchor" href="#relayer-nodes"></a>Relayer nodes</h3>
 <div class="paragraph">
-<p>Nodes from different chains can interact with one another in the Lisk ecosystem, and this interaction is carried out via relayer nodes.
+<p>Nodes from different chains can interact with one another in the Klayr ecosystem, and this interaction is carried out via relayer nodes.
 Any chain such as a mainchain or a sidechain can have relayer node(s).
 Relayer nodes are nodes of a blockchain that are configured to relay Cross-Chain Updates (CCUs) and Cross-Chain Messages (CCMs) to another blockchain<sup class="footnote" id="_footnote_witness">[<a id="_footnoteref_1" class="footnote" href="#_footnotedef_1" title="View footnote.">1</a>]</sup>.
 A sidechain always has to communicate with other blockchains via the mainchain.</p>
@@ -688,16 +662,16 @@ If a sidechain <strong>S1</strong> wants to communicate with another sidechain <
 The CCUs will then take the route of <strong>S1 &#8594; Mainchain &#8594; S2</strong> and vice versa.</p>
 </div>
 <div class="paragraph">
-<p>To become a relayer node, Lisk provides an easy-to-use plugin called the Chain Connector.
+<p>To become a relayer node, Klayr provides an easy-to-use plugin called the Chain Connector.
 The chain connector plugin allows a node to act as a relayer of CCUs and CCMs.
 A relayer node can be configured for both mainchain and sidechains.
 Once configured, a relayer node can directly connect with the RPC nodes of the receiving chains.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="lisk-service-nodes"><a class="anchor" href="#lisk-service-nodes"></a>Lisk Service nodes</h3>
+<h3 id="klayr-service-nodes"><a class="anchor" href="#klayr-service-nodes"></a>Klayr Service nodes</h3>
 <div class="paragraph">
-<p><a href="https://github.com/LiskHQ/lisk-service" target="_blank" rel="noopener">Lisk Service</a> is a data aggregation service that connects to a particular <a href="#rpc-nodes">RPC node</a> and aggregates the blockchain data, to provide enriched API endpoints for other applications and services that rely on data from the blockchain.</p>
+<p><a href="https://github.com/KlayrHQ/klayr-service" target="_blank" rel="noopener">Klayr Service</a> is a data aggregation service that connects to a particular <a href="#rpc-nodes">RPC node</a> and aggregates the blockchain data, to provide enriched API endpoints for other applications and services that rely on data from the blockchain.</p>
 </div>
 <div class="dlist">
 <dl>
@@ -706,7 +680,7 @@ Once configured, a relayer node can directly connect with the RPC nodes of the r
 <div class="ulist">
 <ul>
 <li>
-<p><a href="../integrate-blockchain/aggregate-blockchain-data/index.html" class="xref page">Aggregate blockchain data with Lisk Service</a></p>
+<p><a href="../integrate-blockchain/aggregate-blockchain-data/index.html" class="xref page">Aggregate blockchain data with Klayr Service</a></p>
 </li>
 <li>
 <p><a href="../integrate-blockchain/aggregate-blockchain-data/extend-indexer.html" class="xref page">Extending the Indexer microservice</a></p>
@@ -748,15 +722,12 @@ Once configured, a relayer node can directly connect with the RPC nodes of the r
 <div class="paragraph">
 <p>If you are intending to generate blocks for the first time, it is highly recommended to first check out the dedicated guide: <a href="become-a-validator.html" class="xref page">How to become a validator</a>.
 Furthermore, to acquire a secure validator spot for a block generation round, a validator must be one of the top 103 validators with the most <a href="../understand-blockchain/consensus/pos-poa.html#validator-weight" class="xref page">validator weight</a> in the network.
-To view the currently required thresholds for entering the top 103, check the validator weights of the currently active 103 validators, for example, in one of the public Lisk network explorers:</p>
+To view the currently required thresholds for entering the top 103, check the validator weights of the currently active 103 validators, for example, in one of the public Klayr network explorers:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Lisk Observer:</strong> <a href="https://lisk.observer/delegates" class="bare" target="_blank" rel="noopener">https://lisk.observer/delegates</a></p>
-</li>
-<li>
-<p><strong>Lisk Scan:</strong> <a href="https://liskscan.com/delegates" class="bare" target="_blank" rel="noopener">https://liskscan.com/delegates</a></p>
+<p><strong>Klayr Scan:</strong> <a href="https://explorer.klayr.xyz/" class="bare" target="_blank" rel="noopener">https://explorer.klayr.xyz/</a></p>
 </li>
 </ul>
 </div>
@@ -776,7 +747,7 @@ To view the currently required thresholds for entering the top 103, check the va
 <p><strong>Exchanges, Web3 app developer:</strong> and other services that rely on a stable API interface to the network.</p>
 </li>
 <li>
-<p><strong>Relayers:</strong> Who participate in the Lisk cross-chain communication by relaying CCUs.</p>
+<p><strong>Relayers:</strong> Who participate in the Klayr cross-chain communication by relaying CCUs.</p>
 </li>
 <li>
 <p><strong>Validators:</strong> Who would like to actively generate new blocks.</p>
@@ -787,25 +758,25 @@ To view the currently required thresholds for entering the top 103, check the va
 </ul>
 </div>
 </dd>
-<dt class="hdlist1">How to set up a Lisk Mainnet/Testnet node</dt>
+<dt class="hdlist1">How to set up a Klayr Mainnet/Testnet node</dt>
 <dd>
-<p>Lisk Core is the blockchain client that maintains the Lisk Mainnet and Testnet, depending on the <a href="../lisk-core/management/configuration.html" class="xref page">configuration</a>.</p>
+<p>Klayr Core is the blockchain client that maintains the Klayr Mainnet and Testnet, depending on the <a href="../klayr-core/management/configuration.html" class="xref page">configuration</a>.</p>
 <div class="paragraph">
-<p>To set up Lisk Core, choose a distribution and follow the respective setup guide:</p>
+<p>To set up Klayr Core, choose a distribution and follow the respective setup guide:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>NPM:</strong> <a href="../lisk-core/setup/npm.html" class="xref page">NPM setup</a></p>
+<p><strong>NPM:</strong> <a href="../klayr-core/setup/npm.html" class="xref page">NPM setup</a></p>
 </li>
 <li>
-<p><strong>Binary:</strong> <a href="../lisk-core/setup/binary.html" class="xref page">Binary setup</a></p>
+<p><strong>Binary:</strong> <a href="../klayr-core/setup/binary.html" class="xref page">Binary setup</a></p>
 </li>
 <li>
-<p><strong>Docker:</strong> <a href="../lisk-core/setup/docker.html" class="xref page">Docker setup</a></p>
+<p><strong>Docker:</strong> <a href="../klayr-core/setup/docker.html" class="xref page">Docker setup</a></p>
 </li>
 <li>
-<p><strong>Source code:</strong> <a href="../lisk-core/setup/source.html" class="xref page">Source code setup</a></p>
+<p><strong>Source code:</strong> <a href="../klayr-core/setup/source.html" class="xref page">Source code setup</a></p>
 </li>
 </ul>
 </div>
@@ -825,7 +796,7 @@ To view the currently required thresholds for entering the top 103, check the va
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Lisk Core Configuration:</strong> <a href="../lisk-core/management/configuration.html" class="xref page">Lisk Core configuration</a></p>
+<p><strong>Klayr Core Configuration:</strong> <a href="../klayr-core/management/configuration.html" class="xref page">Klayr Core configuration</a></p>
 </li>
 <li>
 <p><strong>Process management with PM2:</strong> <a href="process-management.html" class="xref page">Process management with PM2</a></p>
@@ -840,11 +811,11 @@ To view the currently required thresholds for entering the top 103, check the va
 <div id="footnotes">
 <hr>
 <div class="footnote" id="_footnotedef_1">
-<a href="#_footnoteref_1">1</a>. For more information about interoperability and the cross-chain update mechanism, check out <a href="https://github.com/LiskHQ/lips/blob/main/proposals/lip-0045.md" target="_blank" rel="noopener">LIP 0045</a> and <a href="https://github.com/LiskHQ/lips/blob/main/proposals/lip-0053.md" target="_blank" rel="noopener">LIP 0053</a>.
+<a href="#_footnoteref_1">1</a>. For more information about interoperability and the cross-chain update mechanism, check out <a href="https://github.com/KlayrHQ/lips/blob/main/proposals/lip-0045.md" target="_blank" rel="noopener">LIP 0045</a> and <a href="https://github.com/KlayrHQ/lips/blob/main/proposals/lip-0053.md" target="_blank" rel="noopener">LIP 0053</a>.
 </div>
 </div>
   <nav class="pagination">
-  <span class="prev"><a href="../build-blockchain/interoperable-module/execute-ccm.html">How to execute a CCM</a></span>
+  <span class="prev"><a href="../build-blockchain/test-app.html">Testing the blockchain application</a></span>
   <span class="next"><a href="process-management.html">Process management with PM2</a></span>
 </nav>
 </article>
@@ -853,14 +824,14 @@ To view the currently required thresholds for entering the top 103, check the va
 </div>
 <footer class="footer">
   <div class="footerdiv">
-    <p>© 2023 Lisk Foundation</p>
+    <p>© 2023 Klayr</p>
     <!-- <div class="community-section">
-      <p class="community-section__text">Follow Lisk on: </p>
+      <p class="community-section__text">Follow Klayr on: </p>
       <div class="community-section__icons"> -->
     <div class="community_icons">
-      <a href="https://lisk.chat" title="Discord" target="_blank" class="footer_icon icon-discord"><p>Discord</p></a>
-      <a href="https://dev.lisk.com" title="Discourse" target="_blank" class="footer_icon icon-discourse"><p>Discourse</p></a>
-      <a href="https://github.com/LiskHQ" title="GitHub" target="_blank" class="footer_icon icon-github"><p>GitHub</p></a>
+      <a href="https://klayr.chat" title="Discord" target="_blank" class="footer_icon icon-discord"><p>Discord</p></a>
+      <a href="https://dev.klayr.xyz" title="Discourse" target="_blank" class="footer_icon icon-discourse"><p>Discourse</p></a>
+      <a href="https://github.com/KlayrHQ" title="GitHub" target="_blank" class="footer_icon icon-github"><p>GitHub</p></a>
       <!--    </div> -->
     </div>
   </div>

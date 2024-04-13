@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Setting up an Off-chain database :: Lisk documentation</title>
-    <link rel="canonical" href="https://liskhq.github.io/lisk-docs/build-blockchain/plugin/offchain-db.html">
+    <title>Setting up an Off-chain database :: Klayr documentation</title>
+    <link rel="canonical" href="https://klayr.xyz/documentation/build-blockchain/plugin/offchain-db.html">
     <link rel="prev" href="schema-types.html">
     <link rel="next" href="configuring-plugin.html">
     <meta name="generator" content="Antora 3.1.1">
@@ -22,11 +22,11 @@
   _paq.push(['trackPageView']);
   _paq.push(['enableLinkTracking']);
   (function() {
-    var u="https://lisk.matomo.cloud/";
+    var u="https://klayr.matomo.cloud/";
     _paq.push(['setTrackerUrl', u+'matomo.php']);
     _paq.push(['setSiteId', '2']);
     var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-    g.async=true; g.src='//cdn.matomo.cloud/lisk.matomo.cloud/matomo.js'; s.parentNode.insertBefore(g,s);
+    g.async=true; g.src='//cdn.matomo.cloud/klayr.matomo.cloud/matomo.js'; s.parentNode.insertBefore(g,s);
   })();
 </script>
 <!-- End Matomo Code -->
@@ -35,7 +35,7 @@
   var _mtm = window._mtm = window._mtm || [];
   _mtm.push({'mtm.startTime': (new Date().getTime()), 'event': 'mtm.Start'});
   var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-  g.async=true; g.src='https://cdn.matomo.cloud/lisk.matomo.cloud/container_RUW6y8yf.js'; s.parentNode.insertBefore(g,s);
+  g.async=true; g.src='https://cdn.matomo.cloud/klayr.matomo.cloud/container_RUW6y8yf.js'; s.parentNode.insertBefore(g,s);
 </script>
 <!-- End Matomo Tag Manager -->
 <link rel="icon" href="../../_/img/favicon.png" type="image/x-icon">
@@ -45,10 +45,10 @@
   <nav class="navbar">
     <div class="navbar-brand">
       <div class="top-logo">
-        <a href="../.." class="lisk-logo"></a>
+        <a href="../.." class="klayr-logo"></a>
         <a href="../.." class="docs-logo"></a>
       </div>
-      <!--<a class="navbar-item" href="https://liskhq.github.io/lisk-docs">Lisk documentation</a>-->
+      <!--<a class="navbar-item" href="https://klayr.xyz/documentation">Klayr documentation</a>-->
       <button class="navbar-burger" data-target="topbar-nav">
         <span></span>
         <span></span>
@@ -60,29 +60,28 @@
         <div class="navbar-item has-dropdown is-hoverable">
           <a class="navbar-link" href="#">APIs</a>
           <div class="navbar-dropdown">
-            <a class="navbar-item" href="../../api/lisk-node-rpc.html">Lisk node RPC API</a>
-            <a class="navbar-item" href="../../api/lisk-service-http.html">Lisk Service HTTP
+            <a class="navbar-item" href="../../api/klayr-node-rpc.html">Klayr node RPC API</a>
+            <a class="navbar-item" href="../../api/klayr-service-http.html">Klayr Service HTTP
               API</a>
-            <a class="navbar-item" href="../../api/lisk-service-rpc.html">Lisk Service RPC
+            <a class="navbar-item" href="../../api/klayr-service-rpc.html">Klayr Service RPC
               API</a>
-            <a class="navbar-item" href="../../api/lisk-service-pubsub.html">Lisk Service
+            <a class="navbar-item" href="../../api/klayr-service-pubsub.html">Klayr Service
               Pub/Sub API</a>
           </div>
         </div>
         <div class="navbar-item has-dropdown is-hoverable">
           <a class="navbar-link" href="#">Explorers</a>
           <div class="navbar-dropdown">
-            <a class="navbar-item" href="https://lisk.observer/" target="_blank">Lisk Observer</a>
-            <a class="navbar-item" href="https://liskscan.com/" target="_blank">LiskScan</a>
+            <a class="navbar-item" href="https://explorer.klayr.xyz/" target="_blank">Klayr Explorer</a>
           </div>
         </div>
         <div class="navbar-item has-dropdown is-hoverable">
           <a class="navbar-link" href="#">Products</a>
           <div class="navbar-dropdown">
-            <a class="navbar-item" href="../../lisk-sdk/">Lisk SDK</a>
-            <a class="navbar-item" href="../../lisk-service/">Lisk Service</a>
-            <a class="navbar-item" href="../../lisk-core/">Lisk Core</a>
-            <a class="navbar-item" href="https://lisk.com/wallet" target="_blank">Lisk Wallets</a>
+            <a class="navbar-item" href="../../klayr-sdk/">Klayr SDK</a>
+            <a class="navbar-item" href="../../klayr-service/">Klayr Service</a>
+            <a class="navbar-item" href="../../klayr-core/">Klayr Core</a>
+            <a class="navbar-item" href="https://klayr.xyz/wallet" target="_blank">Klayr Wallets</a>
           </div>
         </div>
         <button onclick="switch_style('toggle')" id="theme-toggle" class="theme-toggle navbar-item"></button>
@@ -99,36 +98,28 @@
   <button class="nav-toggle"></button>
   <div class="components-versions">
       <div class="page-components">
-    <button class="component-menu-toggle" title="Show other documentations">Lisk Documentation</button>
+    <button class="component-menu-toggle" title="Show other documentations">Klayr Documentation</button>
     <div class="component-menu">
-        <a class="component" href="../../lisk-core/index.html">Lisk Core</a>
-        <a class="component" href="../../lisk-docs-manual/index.html">Lisk docs manual</a>
-        <a class="component is-current" href="../../index.html">Lisk Documentation</a>
-        <a class="component" href="../../lisk-sdk/index.html">Lisk SDK</a>
-        <a class="component" href="../../lisk-service/index.html">Lisk Service</a>
+        <a class="component" href="../../klayr-core/index.html">Klayr Core</a>
+        <a class="component is-current" href="../../index.html">Klayr Documentation</a>
+        <a class="component" href="../../klayr-sdk/index.html">Klayr SDK</a>
+        <a class="component" href="../../klayr-service/index.html">Klayr Service</a>
     </div>
   </div>
     <span></span>
-    <div class="page-versions">
-  <button class="version-menu-toggle" title="Show other versions of page">default</button>
-  <div class="version-menu">
-    <a class="version is-current" href="offchain-db.html">default</a>
-    <a class="version is-missing" href="../../lisk-v3/index.html">lisk-v3</a>
-  </div>
-</div>
-  </div>
+      </div>
   <span></span>
   <span></span>
     <a href="../../index.html" class="home-link"></a>
   <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
-    <li><a href="../../index.html">Lisk Documentation</a></li>
+    <li><a href="../../index.html">Klayr Documentation</a></li>
     <li><a href="../index.html">Build Blockchain</a></li>
     <li><a href="index.html">How to create a plugin</a></li>
     <li><a href="offchain-db.html">2. Setting up an Off-chain database</a></li>
   </ul>
 </nav>
-  <div class="edit-this-page"><a href="https://github.com/LiskHQ/lisk-docs/edit/development/docs/modules/ROOT/pages/build-blockchain/plugin/offchain-db.adoc">Edit this Page</a></div>
+  <div class="edit-this-page"><a href="https://github.com/KlayrHQ/klayr-docs/edit/main-dev/docs/modules/ROOT/pages/build-blockchain/plugin/offchain-db.adoc">Edit this Page</a></div>
 </div>
 
 <div class="body">
@@ -137,7 +128,7 @@
     <div class="panels">
 <div class="nav-panel-menu is-active" data-panel="menu">
   <nav class="nav-menu">
-    <h3 class="title"><a href="../../index.html">Lisk Documentation</a></h3>
+    <h3 class="title"><a href="../../index.html">Klayr Documentation</a></h3>
 <ul class="nav-list">
   <li class="nav-item" data-depth="0">
 <ul class="nav-list">
@@ -155,7 +146,7 @@
     <a class="nav-link" href="../../intro/blockchain-scalability.html">Blockchain Scalability</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../../intro/lisk-products.html">Lisk products</a>
+    <a class="nav-link" href="../../intro/klayr-products.html">Klayr products</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../../intro/blockchain-interoperability.html">Blockchain Interoperability</a>
@@ -164,7 +155,7 @@
   </li>
   <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="../../understand-blockchain/index.html">Understand Lisk Blockchain</a>
+    <a class="nav-link" href="../../understand-blockchain/index.html">Understand Klayr Blockchain</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../../understand-blockchain/state-machine.html">State machine</a>
@@ -174,7 +165,7 @@
     <a class="nav-link" href="../../understand-blockchain/consensus/index.html">Consensus protocols</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../../understand-blockchain/consensus/pos-poa.html">Proof of Stake (PoS) &amp; Proof of Authority (PoA) in Lisk</a>
+    <a class="nav-link" href="../../understand-blockchain/consensus/pos-poa.html">Proof of Stake (PoS) &amp; Proof of Authority (PoA) in Klayr</a>
   </li>
 </ul>
   </li>
@@ -186,7 +177,7 @@
   </li>
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="../../understand-blockchain/interoperability/index.html">Lisk Interoperability</a>
+    <a class="nav-link" href="../../understand-blockchain/interoperability/index.html">Klayr Interoperability</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../../understand-blockchain/interoperability/communication.html">Cross-chain communication</a>
@@ -201,7 +192,7 @@
   </li>
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
-    <span class="nav-text">Lisk SDK</span>
+    <span class="nav-text">Klayr SDK</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../../understand-blockchain/sdk/modules-commands.html">Modules and Commands</a>
@@ -210,7 +201,7 @@
     <a class="nav-link" href="../../understand-blockchain/sdk/plugins.html">Plugins</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../../understand-blockchain/sdk/rpc.html">Communicating to a Lisk node via RPC</a>
+    <a class="nav-link" href="../../understand-blockchain/sdk/rpc.html">Communicating to a Klayr node via RPC</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../../understand-blockchain/sdk/codec-schema.html">Schemas &amp; Codec</a>
@@ -294,6 +285,9 @@
     <a class="nav-link" href="../interoperable-module/execute-ccm.html">How to execute a CCM</a>
   </li>
 </ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../test-app.html">Testing the blockchain application</a>
   </li>
 </ul>
   </li>
@@ -393,7 +387,7 @@
   </li>
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="../../integrate-blockchain/aggregate-blockchain-data/index.html">Aggregate blockchain data with Lisk Service</a>
+    <a class="nav-link" href="../../integrate-blockchain/aggregate-blockchain-data/index.html">Aggregate blockchain data with Klayr Service</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../../integrate-blockchain/aggregate-blockchain-data/extend-indexer.html">Extending the Indexer microservice</a>
@@ -411,7 +405,7 @@
     <span class="nav-text">APIs</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../../api/lisk-node-rpc.html">RPC API for Lisk nodes</a>
+    <a class="nav-link" href="../../api/klayr-node-rpc.html">RPC API for Klayr nodes</a>
   </li>
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
@@ -457,19 +451,19 @@
   </li>
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
-    <span class="nav-text">Lisk Service APIs</span>
+    <span class="nav-text">Klayr Service APIs</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../../api/lisk-service-rpc.html">RPC API of Lisk Service</a>
+    <a class="nav-link" href="../../api/klayr-service-rpc.html">RPC API of Klayr Service</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../../api/lisk-service-http.html">HTTP API (Lisk Service)</a>
+    <a class="nav-link" href="../../api/klayr-service-http.html">HTTP API (Klayr Service)</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../../api/lisk-service-pubsub.html">Publish/Subscribe API (Lisk Service)</a>
+    <a class="nav-link" href="../../api/klayr-service-pubsub.html">Publish/Subscribe API (Klayr Service)</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../../api/lisk-service-api-migration.html">Lisk Service API v2 vs v3</a>
+    <a class="nav-link" href="../../api/klayr-service-api-migration.html">Klayr Service API v2 vs v3</a>
   </li>
 </ul>
   </li>
@@ -480,18 +474,18 @@
     <span class="nav-text">Products</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../../lisk-sdk/index.html">Lisk SDK</a>
+    <a class="nav-link" href="../../klayr-sdk/index.html">Klayr SDK</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../../lisk-service/index.html">Lisk Service</a>
+    <a class="nav-link" href="../../klayr-service/index.html">Klayr Service</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../../lisk-core/index.html">Lisk Core</a>
+    <a class="nav-link" href="../../klayr-core/index.html">Klayr Core</a>
   </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="../../bug-bounty-program.html">Lisk Bug Bounty Program</a>
+    <a class="nav-link" href="../../bug-bounty-program.html">Klayr Bug Bounty Program</a>
   </li>
 </ul>
   </li>
@@ -500,59 +494,39 @@
 </div>
 <div class="nav-panel-explore" data-panel="explore">
   <div class="context">
-    <span class="title">Lisk Documentation</span>
+    <span class="title">Klayr Documentation</span>
     <span class="version">default</span>
   </div>
   <ul class="components">
     <li class="component">
-      <a class="title" href="../../lisk-core/index.html">Lisk Core</a>
+      <a class="title" href="../../klayr-core/index.html">Klayr Core</a>
       <ul class="versions">
         <li class="version is-latest">
-          <a href="../../lisk-core/index.html">4.0 (latest)</a>
-        </li>
-        <li class="version">
-          <a href="../../lisk-core/v3/index.html">3.1.1</a>
-        </li>
-      </ul>
-    </li>
-    <li class="component">
-      <a class="title" href="../../lisk-docs-manual/index.html">Lisk docs manual</a>
-      <ul class="versions">
-        <li class="version is-latest">
-          <a href="../../lisk-docs-manual/index.html">0.1.0</a>
+          <a href="../../klayr-core/index.html">4.0 (latest)</a>
         </li>
       </ul>
     </li>
     <li class="component is-current">
-      <a class="title" href="../../index.html">Lisk Documentation</a>
+      <a class="title" href="../../index.html">Klayr Documentation</a>
       <ul class="versions">
         <li class="version is-current is-latest">
           <a href="../../index.html">default</a>
         </li>
-        <li class="version">
-          <a href="../../lisk-v3/index.html">lisk-v3</a>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../klayr-sdk/index.html">Klayr SDK</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../klayr-sdk/index.html">6.0 (latest)</a>
         </li>
       </ul>
     </li>
     <li class="component">
-      <a class="title" href="../../lisk-sdk/index.html">Lisk SDK</a>
+      <a class="title" href="../../klayr-service/index.html">Klayr Service</a>
       <ul class="versions">
         <li class="version is-latest">
-          <a href="../../lisk-sdk/index.html">6.0 (latest)</a>
-        </li>
-        <li class="version">
-          <a href="../../lisk-sdk/v5/index.html">5.3.0</a>
-        </li>
-      </ul>
-    </li>
-    <li class="component">
-      <a class="title" href="../../lisk-service/index.html">Lisk Service</a>
-      <ul class="versions">
-        <li class="version is-latest">
-          <a href="../../lisk-service/index.html">0.7 (latest)</a>
-        </li>
-        <li class="version">
-          <a href="../../lisk-service/v0.6/index.html">0.6</a>
+          <a href="../../klayr-service/index.html">0.7 (latest)</a>
         </li>
       </ul>
     </li>
@@ -591,14 +565,14 @@
 </div>
 </div>
 <div class="paragraph">
-<p>Plugins can use any database for their off-chain data storage needs, contrary to modules that use both on-chain and off-chain data stores offered by the Lisk SDK.</p>
+<p>Plugins can use any database for their off-chain data storage needs, contrary to modules that use both on-chain and off-chain data stores offered by the Klayr SDK.</p>
 </div>
 <div class="paragraph">
 <p>A plugin&#8217;s data store stays only on the node that registers it to the blockchain and is not shared with other nodes.</p>
 </div>
 <div class="paragraph">
-<p>For this guide, we want to store the NewHelloEvent&#8217;s data in an off-chain store by using <code>lisk-db</code>.
-Lisk-db is a key-value store based on <a href="https://rocksdb.org/" target="_blank" rel="noopener">RocksDB</a>.</p>
+<p>For this guide, we want to store the NewHelloEvent&#8217;s data in an off-chain store by using <code>klayr-db</code>.
+Klayr-db is a key-value store based on <a href="https://rocksdb.org/" target="_blank" rel="noopener">RocksDB</a>.</p>
 </div>
 <div class="paragraph">
 <p>The database-related operations will exist in a <code>db.ts</code> file which will be located in the plugin&#8217;s root folder: <code>hello_info</code>.
@@ -611,7 +585,7 @@ Create the new file in the aforementioned directory.</p>
 <i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
-The relevant file discussed in this guide is <a href="https://github.com/LiskHQ/lisk-sdk-examples/tree/development/tutorials/hello/hello_client/src/app/plugins/hello_info/db.ts" target="_blank" rel="noopener">db.ts</a>.
+The relevant file discussed in this guide is <a href="https://github.com/KlayrHQ/klayr-sdk-examples/tree/development/tutorials/hello/hello_client/src/app/plugins/hello_info/db.ts" target="_blank" rel="noopener">db.ts</a>.
 </td>
 </tr>
 </table>
@@ -646,7 +620,7 @@ The relevant file discussed in this guide is <a href="https://github.com/LiskHQ/
 <h2 id="getting-the-databases-instance"><a class="anchor" href="#getting-the-databases-instance"></a>1. Getting the database&#8217;s instance</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>A <code>lisk-db</code> instance requires a <strong>data path</strong> and the <strong>name</strong> of the database.
+<p>A <code>klayr-db</code> instance requires a <strong>data path</strong> and the <strong>name</strong> of the database.
 The data path of a plugin inherits the data path of the blockchain client and is mentioned in the <em>config.json</em> or <em>custom_config.json</em> file.</p>
 </div>
 <div class="paragraph">
@@ -655,20 +629,20 @@ The data path of a plugin inherits the data path of the blockchain client and is
 <div class="listingblock">
 <div class="title">getDBInstance</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">import { codec, db as liskDB, cryptography } from 'lisk-sdk';
+<pre class="highlightjs highlight"><code class="language-typescript hljs" data-lang="typescript">import { codec, db as klayrDB, cryptography } from 'klayr-sdk';
 import * as os from 'os';
 import { join } from 'path';
 import { ensureDir } from 'fs-extra';
 
 // [...]
 
-const { Database } = liskDB;
-type KVStore = liskDB.Database;
+const { Database } = klayrDB;
+type KVStore = klayrDB.Database;
 
 // Returns DB's instance.
 export const getDBInstance = async (
 	dataPath: string,
-	dbName = 'lisk-framework-helloInfo-plugin.db',
+	dbName = 'klayr-framework-helloInfo-plugin.db',
 ): Promise&lt;KVStore&gt; =&gt; {
 	const dirPath = join(dataPath.replace('~', os.homedir()), 'database', dbName);
 	await ensureDir(dirPath);
@@ -710,13 +684,13 @@ import { DB_KEY_EVENT_INFO, DB_LAST_COUNTER_INFO, DB_LAST_HEIGHT_INFO } from './
 // Stores event data in the database.
 export const setEventHelloInfo = async (
 	db: KVStore,
-	_lskAddress: Buffer,
+	_klyAddress: Buffer,
 	_message: string,
 	_eventHeight: number,
 	lastCounter: number,
 ): Promise&lt;void&gt; =&gt; {
 	const encodedAddressInfo = codec.encode(offChainEventSchema, {
-		senderAddress: _lskAddress,
+		senderAddress: _klyAddress,
 		message: _message,
 		height: _eventHeight,
 	});
@@ -896,14 +870,14 @@ export const getLastEventHeight = async (db: KVStore): Promise&lt;Height&gt; =&g
 </div>
 <footer class="footer">
   <div class="footerdiv">
-    <p>© 2023 Lisk Foundation</p>
+    <p>© 2023 Klayr</p>
     <!-- <div class="community-section">
-      <p class="community-section__text">Follow Lisk on: </p>
+      <p class="community-section__text">Follow Klayr on: </p>
       <div class="community-section__icons"> -->
     <div class="community_icons">
-      <a href="https://lisk.chat" title="Discord" target="_blank" class="footer_icon icon-discord"><p>Discord</p></a>
-      <a href="https://dev.lisk.com" title="Discourse" target="_blank" class="footer_icon icon-discourse"><p>Discourse</p></a>
-      <a href="https://github.com/LiskHQ" title="GitHub" target="_blank" class="footer_icon icon-github"><p>GitHub</p></a>
+      <a href="https://klayr.chat" title="Discord" target="_blank" class="footer_icon icon-discord"><p>Discord</p></a>
+      <a href="https://dev.klayr.xyz" title="Discourse" target="_blank" class="footer_icon icon-discourse"><p>Discourse</p></a>
+      <a href="https://github.com/KlayrHQ" title="GitHub" target="_blank" class="footer_icon icon-github"><p>GitHub</p></a>
       <!--    </div> -->
     </div>
   </div>

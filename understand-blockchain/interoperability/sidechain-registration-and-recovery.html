@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Sidechain Registration &amp; Recovery :: Lisk documentation</title>
-    <link rel="canonical" href="https://liskhq.github.io/lisk-docs/understand-blockchain/interoperability/sidechain-registration-and-recovery.html">
+    <title>Sidechain Registration &amp; Recovery :: Klayr documentation</title>
+    <link rel="canonical" href="https://klayr.xyz/documentation/understand-blockchain/interoperability/sidechain-registration-and-recovery.html">
     <link rel="prev" href="communication.html">
     <link rel="next" href="../blocks-txs.html">
     <meta name="generator" content="Antora 3.1.1">
@@ -22,11 +22,11 @@
   _paq.push(['trackPageView']);
   _paq.push(['enableLinkTracking']);
   (function() {
-    var u="https://lisk.matomo.cloud/";
+    var u="https://klayr.matomo.cloud/";
     _paq.push(['setTrackerUrl', u+'matomo.php']);
     _paq.push(['setSiteId', '2']);
     var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-    g.async=true; g.src='//cdn.matomo.cloud/lisk.matomo.cloud/matomo.js'; s.parentNode.insertBefore(g,s);
+    g.async=true; g.src='//cdn.matomo.cloud/klayr.matomo.cloud/matomo.js'; s.parentNode.insertBefore(g,s);
   })();
 </script>
 <!-- End Matomo Code -->
@@ -35,7 +35,7 @@
   var _mtm = window._mtm = window._mtm || [];
   _mtm.push({'mtm.startTime': (new Date().getTime()), 'event': 'mtm.Start'});
   var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-  g.async=true; g.src='https://cdn.matomo.cloud/lisk.matomo.cloud/container_RUW6y8yf.js'; s.parentNode.insertBefore(g,s);
+  g.async=true; g.src='https://cdn.matomo.cloud/klayr.matomo.cloud/container_RUW6y8yf.js'; s.parentNode.insertBefore(g,s);
 </script>
 <!-- End Matomo Tag Manager -->
 <link rel="icon" href="../../_/img/favicon.png" type="image/x-icon">
@@ -45,10 +45,10 @@
   <nav class="navbar">
     <div class="navbar-brand">
       <div class="top-logo">
-        <a href="../.." class="lisk-logo"></a>
+        <a href="../.." class="klayr-logo"></a>
         <a href="../.." class="docs-logo"></a>
       </div>
-      <!--<a class="navbar-item" href="https://liskhq.github.io/lisk-docs">Lisk documentation</a>-->
+      <!--<a class="navbar-item" href="https://klayr.xyz/documentation">Klayr documentation</a>-->
       <button class="navbar-burger" data-target="topbar-nav">
         <span></span>
         <span></span>
@@ -60,29 +60,28 @@
         <div class="navbar-item has-dropdown is-hoverable">
           <a class="navbar-link" href="#">APIs</a>
           <div class="navbar-dropdown">
-            <a class="navbar-item" href="../../api/lisk-node-rpc.html">Lisk node RPC API</a>
-            <a class="navbar-item" href="../../api/lisk-service-http.html">Lisk Service HTTP
+            <a class="navbar-item" href="../../api/klayr-node-rpc.html">Klayr node RPC API</a>
+            <a class="navbar-item" href="../../api/klayr-service-http.html">Klayr Service HTTP
               API</a>
-            <a class="navbar-item" href="../../api/lisk-service-rpc.html">Lisk Service RPC
+            <a class="navbar-item" href="../../api/klayr-service-rpc.html">Klayr Service RPC
               API</a>
-            <a class="navbar-item" href="../../api/lisk-service-pubsub.html">Lisk Service
+            <a class="navbar-item" href="../../api/klayr-service-pubsub.html">Klayr Service
               Pub/Sub API</a>
           </div>
         </div>
         <div class="navbar-item has-dropdown is-hoverable">
           <a class="navbar-link" href="#">Explorers</a>
           <div class="navbar-dropdown">
-            <a class="navbar-item" href="https://lisk.observer/" target="_blank">Lisk Observer</a>
-            <a class="navbar-item" href="https://liskscan.com/" target="_blank">LiskScan</a>
+            <a class="navbar-item" href="https://explorer.klayr.xyz/" target="_blank">Klayr Explorer</a>
           </div>
         </div>
         <div class="navbar-item has-dropdown is-hoverable">
           <a class="navbar-link" href="#">Products</a>
           <div class="navbar-dropdown">
-            <a class="navbar-item" href="../../lisk-sdk/">Lisk SDK</a>
-            <a class="navbar-item" href="../../lisk-service/">Lisk Service</a>
-            <a class="navbar-item" href="../../lisk-core/">Lisk Core</a>
-            <a class="navbar-item" href="https://lisk.com/wallet" target="_blank">Lisk Wallets</a>
+            <a class="navbar-item" href="../../klayr-sdk/">Klayr SDK</a>
+            <a class="navbar-item" href="../../klayr-service/">Klayr Service</a>
+            <a class="navbar-item" href="../../klayr-core/">Klayr Core</a>
+            <a class="navbar-item" href="https://klayr.xyz/wallet" target="_blank">Klayr Wallets</a>
           </div>
         </div>
         <button onclick="switch_style('toggle')" id="theme-toggle" class="theme-toggle navbar-item"></button>
@@ -99,36 +98,28 @@
   <button class="nav-toggle"></button>
   <div class="components-versions">
       <div class="page-components">
-    <button class="component-menu-toggle" title="Show other documentations">Lisk Documentation</button>
+    <button class="component-menu-toggle" title="Show other documentations">Klayr Documentation</button>
     <div class="component-menu">
-        <a class="component" href="../../lisk-core/index.html">Lisk Core</a>
-        <a class="component" href="../../lisk-docs-manual/index.html">Lisk docs manual</a>
-        <a class="component is-current" href="../../index.html">Lisk Documentation</a>
-        <a class="component" href="../../lisk-sdk/index.html">Lisk SDK</a>
-        <a class="component" href="../../lisk-service/index.html">Lisk Service</a>
+        <a class="component" href="../../klayr-core/index.html">Klayr Core</a>
+        <a class="component is-current" href="../../index.html">Klayr Documentation</a>
+        <a class="component" href="../../klayr-sdk/index.html">Klayr SDK</a>
+        <a class="component" href="../../klayr-service/index.html">Klayr Service</a>
     </div>
   </div>
     <span></span>
-    <div class="page-versions">
-  <button class="version-menu-toggle" title="Show other versions of page">default</button>
-  <div class="version-menu">
-    <a class="version is-current" href="sidechain-registration-and-recovery.html">default</a>
-    <a class="version is-missing" href="../../lisk-v3/index.html">lisk-v3</a>
-  </div>
-</div>
-  </div>
+      </div>
   <span></span>
   <span></span>
     <a href="../../index.html" class="home-link"></a>
   <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
-    <li><a href="../../index.html">Lisk Documentation</a></li>
-    <li><a href="../index.html">Understand Lisk Blockchain</a></li>
-    <li><a href="index.html">Lisk Interoperability</a></li>
+    <li><a href="../../index.html">Klayr Documentation</a></li>
+    <li><a href="../index.html">Understand Klayr Blockchain</a></li>
+    <li><a href="index.html">Klayr Interoperability</a></li>
     <li><a href="sidechain-registration-and-recovery.html">Sidechain Registration &amp; Recovery</a></li>
   </ul>
 </nav>
-  <div class="edit-this-page"><a href="https://github.com/LiskHQ/lisk-docs/edit/development/docs/modules/ROOT/pages/understand-blockchain/interoperability/sidechain-registration-and-recovery.adoc">Edit this Page</a></div>
+  <div class="edit-this-page"><a href="https://github.com/KlayrHQ/klayr-docs/edit/main-dev/docs/modules/ROOT/pages/understand-blockchain/interoperability/sidechain-registration-and-recovery.adoc">Edit this Page</a></div>
 </div>
 
 <div class="body">
@@ -137,7 +128,7 @@
     <div class="panels">
 <div class="nav-panel-menu is-active" data-panel="menu">
   <nav class="nav-menu">
-    <h3 class="title"><a href="../../index.html">Lisk Documentation</a></h3>
+    <h3 class="title"><a href="../../index.html">Klayr Documentation</a></h3>
 <ul class="nav-list">
   <li class="nav-item" data-depth="0">
 <ul class="nav-list">
@@ -155,7 +146,7 @@
     <a class="nav-link" href="../../intro/blockchain-scalability.html">Blockchain Scalability</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../../intro/lisk-products.html">Lisk products</a>
+    <a class="nav-link" href="../../intro/klayr-products.html">Klayr products</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../../intro/blockchain-interoperability.html">Blockchain Interoperability</a>
@@ -164,7 +155,7 @@
   </li>
   <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="../index.html">Understand Lisk Blockchain</a>
+    <a class="nav-link" href="../index.html">Understand Klayr Blockchain</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../state-machine.html">State machine</a>
@@ -174,7 +165,7 @@
     <a class="nav-link" href="../consensus/index.html">Consensus protocols</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../consensus/pos-poa.html">Proof of Stake (PoS) &amp; Proof of Authority (PoA) in Lisk</a>
+    <a class="nav-link" href="../consensus/pos-poa.html">Proof of Stake (PoS) &amp; Proof of Authority (PoA) in Klayr</a>
   </li>
 </ul>
   </li>
@@ -186,7 +177,7 @@
   </li>
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="index.html">Lisk Interoperability</a>
+    <a class="nav-link" href="index.html">Klayr Interoperability</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="communication.html">Cross-chain communication</a>
@@ -201,7 +192,7 @@
   </li>
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
-    <span class="nav-text">Lisk SDK</span>
+    <span class="nav-text">Klayr SDK</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../sdk/modules-commands.html">Modules and Commands</a>
@@ -210,7 +201,7 @@
     <a class="nav-link" href="../sdk/plugins.html">Plugins</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../sdk/rpc.html">Communicating to a Lisk node via RPC</a>
+    <a class="nav-link" href="../sdk/rpc.html">Communicating to a Klayr node via RPC</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../sdk/codec-schema.html">Schemas &amp; Codec</a>
@@ -294,6 +285,9 @@
     <a class="nav-link" href="../../build-blockchain/interoperable-module/execute-ccm.html">How to execute a CCM</a>
   </li>
 </ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../build-blockchain/test-app.html">Testing the blockchain application</a>
   </li>
 </ul>
   </li>
@@ -393,7 +387,7 @@
   </li>
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="../../integrate-blockchain/aggregate-blockchain-data/index.html">Aggregate blockchain data with Lisk Service</a>
+    <a class="nav-link" href="../../integrate-blockchain/aggregate-blockchain-data/index.html">Aggregate blockchain data with Klayr Service</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../../integrate-blockchain/aggregate-blockchain-data/extend-indexer.html">Extending the Indexer microservice</a>
@@ -411,7 +405,7 @@
     <span class="nav-text">APIs</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../../api/lisk-node-rpc.html">RPC API for Lisk nodes</a>
+    <a class="nav-link" href="../../api/klayr-node-rpc.html">RPC API for Klayr nodes</a>
   </li>
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
@@ -457,19 +451,19 @@
   </li>
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
-    <span class="nav-text">Lisk Service APIs</span>
+    <span class="nav-text">Klayr Service APIs</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../../api/lisk-service-rpc.html">RPC API of Lisk Service</a>
+    <a class="nav-link" href="../../api/klayr-service-rpc.html">RPC API of Klayr Service</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../../api/lisk-service-http.html">HTTP API (Lisk Service)</a>
+    <a class="nav-link" href="../../api/klayr-service-http.html">HTTP API (Klayr Service)</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../../api/lisk-service-pubsub.html">Publish/Subscribe API (Lisk Service)</a>
+    <a class="nav-link" href="../../api/klayr-service-pubsub.html">Publish/Subscribe API (Klayr Service)</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../../api/lisk-service-api-migration.html">Lisk Service API v2 vs v3</a>
+    <a class="nav-link" href="../../api/klayr-service-api-migration.html">Klayr Service API v2 vs v3</a>
   </li>
 </ul>
   </li>
@@ -480,18 +474,18 @@
     <span class="nav-text">Products</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../../lisk-sdk/index.html">Lisk SDK</a>
+    <a class="nav-link" href="../../klayr-sdk/index.html">Klayr SDK</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../../lisk-service/index.html">Lisk Service</a>
+    <a class="nav-link" href="../../klayr-service/index.html">Klayr Service</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../../lisk-core/index.html">Lisk Core</a>
+    <a class="nav-link" href="../../klayr-core/index.html">Klayr Core</a>
   </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="../../bug-bounty-program.html">Lisk Bug Bounty Program</a>
+    <a class="nav-link" href="../../bug-bounty-program.html">Klayr Bug Bounty Program</a>
   </li>
 </ul>
   </li>
@@ -500,59 +494,39 @@
 </div>
 <div class="nav-panel-explore" data-panel="explore">
   <div class="context">
-    <span class="title">Lisk Documentation</span>
+    <span class="title">Klayr Documentation</span>
     <span class="version">default</span>
   </div>
   <ul class="components">
     <li class="component">
-      <a class="title" href="../../lisk-core/index.html">Lisk Core</a>
+      <a class="title" href="../../klayr-core/index.html">Klayr Core</a>
       <ul class="versions">
         <li class="version is-latest">
-          <a href="../../lisk-core/index.html">4.0 (latest)</a>
-        </li>
-        <li class="version">
-          <a href="../../lisk-core/v3/index.html">3.1.1</a>
-        </li>
-      </ul>
-    </li>
-    <li class="component">
-      <a class="title" href="../../lisk-docs-manual/index.html">Lisk docs manual</a>
-      <ul class="versions">
-        <li class="version is-latest">
-          <a href="../../lisk-docs-manual/index.html">0.1.0</a>
+          <a href="../../klayr-core/index.html">4.0 (latest)</a>
         </li>
       </ul>
     </li>
     <li class="component is-current">
-      <a class="title" href="../../index.html">Lisk Documentation</a>
+      <a class="title" href="../../index.html">Klayr Documentation</a>
       <ul class="versions">
         <li class="version is-current is-latest">
           <a href="../../index.html">default</a>
         </li>
-        <li class="version">
-          <a href="../../lisk-v3/index.html">lisk-v3</a>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../klayr-sdk/index.html">Klayr SDK</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../klayr-sdk/index.html">6.0 (latest)</a>
         </li>
       </ul>
     </li>
     <li class="component">
-      <a class="title" href="../../lisk-sdk/index.html">Lisk SDK</a>
+      <a class="title" href="../../klayr-service/index.html">Klayr Service</a>
       <ul class="versions">
         <li class="version is-latest">
-          <a href="../../lisk-sdk/index.html">6.0 (latest)</a>
-        </li>
-        <li class="version">
-          <a href="../../lisk-sdk/v5/index.html">5.3.0</a>
-        </li>
-      </ul>
-    </li>
-    <li class="component">
-      <a class="title" href="../../lisk-service/index.html">Lisk Service</a>
-      <ul class="versions">
-        <li class="version is-latest">
-          <a href="../../lisk-service/index.html">0.7 (latest)</a>
-        </li>
-        <li class="version">
-          <a href="../../lisk-service/v0.6/index.html">0.6</a>
+          <a href="../../klayr-service/index.html">0.7 (latest)</a>
         </li>
       </ul>
     </li>
@@ -573,7 +547,7 @@
 <div class="exampleblock">
 <div class="content">
 <div class="paragraph">
-<p>On this page, you learn about the sidechain registration and recovery process in the Lisk ecosystem.
+<p>On this page, you learn about the sidechain registration and recovery process in the Klayr ecosystem.
 Specifically, you&#8217;ll learn about the following:</p>
 </div>
 <div class="ulist checklist">
@@ -604,7 +578,7 @@ Specifically, you&#8217;ll learn about the following:</p>
 <li><a href="#life-cycle-of-a-sidechain">Life Cycle of a Sidechain</a></li>
 <li><a href="#sidechain-registration">1. Sidechain registration</a>
 <ul class="sectlevel2">
-<li><a href="#sidechain-registration-on-the-lisk-mainchain">1.1. Sidechain registration on the Lisk Mainchain</a></li>
+<li><a href="#sidechain-registration-on-the-klayr-mainchain">1.1. Sidechain registration on the Klayr Mainchain</a></li>
 <li><a href="#mainchain-registration-on-a-sidechain">1.2. Mainchain registration on a sidechain</a></li>
 <li><a href="#registration-ccm">1.3. Registration CCM</a></li>
 </ul>
@@ -684,7 +658,7 @@ Specifically, you&#8217;ll learn about the following:</p>
 <p><span class="image right"><img src="../../_images/understand-blockchain/interop/sidechain-registration.png" alt="sidechain registration" width="300"></span></p>
 </div>
 <div class="paragraph">
-<p>The first step for a Lisk blockchain to become interoperable with other sidechains and the Lisk Mainchain is to register itself to the mainchain.</p>
+<p>The first step for a Klayr blockchain to become interoperable with other sidechains and the Klayr Mainchain is to register itself to the mainchain.</p>
 </div>
 <div class="paragraph">
 <p>A sidechain is registered by performing the following steps:</p>
@@ -692,7 +666,7 @@ Specifically, you&#8217;ll learn about the following:</p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p><a href="#sidechain-registration-on-the-lisk-mainchain">Sidechain registration on the Lisk Mainchain</a></p>
+<p><a href="#sidechain-registration-on-the-klayr-mainchain">Sidechain registration on the Klayr Mainchain</a></p>
 </li>
 <li>
 <p><a href="#mainchain-registration-on-a-sidechain">Mainchain registration on a sidechain</a></p>
@@ -713,7 +687,7 @@ A sidechain can stay in the <code>registered</code> status for any period of tim
 </table>
 </div>
 <div class="sect2">
-<h3 id="sidechain-registration-on-the-lisk-mainchain"><a class="anchor" href="#sidechain-registration-on-the-lisk-mainchain"></a>1.1. Sidechain registration on the Lisk Mainchain</h3>
+<h3 id="sidechain-registration-on-the-klayr-mainchain"><a class="anchor" href="#sidechain-registration-on-the-klayr-mainchain"></a>1.1. Sidechain registration on the Klayr Mainchain</h3>
 <div class="paragraph">
 <p>A sidechain can be registered by any user account on the mainchain by posting a <a href="#register-sidechain-command">Register Sidechain command</a>.</p>
 </div>
@@ -754,7 +728,7 @@ Please check out the guide <a href="../../build-blockchain/register-sidechain.ht
 <div class="sect3">
 <h4 id="register-sidechain-command"><a class="anchor" href="#register-sidechain-command"></a>1.1.1. Register Sidechain command</h4>
 <div class="paragraph">
-<p>The <a href="https://liskhq.github.io/lisk-docs/lisk-sdk/v6/references/typedoc/classes/lisk_framework.RegisterSidechainCommand.html" target="_blank" rel="noopener">Register Sidechain</a> command is used to register a sidechain on the Lisk mainchain.
+<p>The <a href="https://klayr.xyz/documentation/klayr-sdk/v6/references/typedoc/classes/klayr_framework.RegisterSidechainCommand.html" target="_blank" rel="noopener">Register Sidechain</a> command is used to register a sidechain on the Klayr mainchain.
 When this command is processed, a new account for the sidechain is created in the mainchain state under the interoperability store.
 The account is initialized with an empty inbox and outbox, while the sidechain name and the initial validators set are given in the command parameters.
 The chain ID, used as the store key, is also given in the command parameters.</p>
@@ -804,7 +778,7 @@ Please check out the guide: <a href="../../build-blockchain/register-sidechain.h
 <div class="sect3">
 <h4 id="register-mainchain-command"><a class="anchor" href="#register-mainchain-command"></a>1.2.1. Register Mainchain command</h4>
 <div class="paragraph">
-<p>The <a href="https://liskhq.github.io/lisk-docs/lisk-sdk/v6/references/typedoc/classes/lisk_framework.RegisterMainchainCommand.html" target="_blank" rel="noopener">Register Mainchain</a> command is used to register the Lisk mainchain on a sidechain.
+<p>The <a href="https://klayr.xyz/documentation/klayr-sdk/v6/references/typedoc/classes/klayr_framework.RegisterMainchainCommand.html" target="_blank" rel="noopener">Register Mainchain</a> command is used to register the Klayr mainchain on a sidechain.
 When this command is processed, a new account for the mainchain is created in the sidechain state under the Interoperability store.
 The account is initialized with an empty inbox and outbox, while the initial validators set is given in the command parameters.
 The name and chain ID of the mainchain are global protocol constants in the entire ecosystem.</p>
@@ -961,7 +935,7 @@ For more details on this topic, read <a href="#sidechain-recovery">Sidechain rec
 <p>The sidechain is <a href="#sending-malicious-ccms">Sending malicious CCMs</a>.</p>
 </li>
 <li>
-<p>The sidechain is <a href="#violating-the-lisk-interoperability-protocol">Violating the Lisk Interoperability protocol</a>.</p>
+<p>The sidechain is <a href="#violating-the-klayr-interoperability-protocol">Violating the Klayr Interoperability protocol</a>.</p>
 </li>
 </ol>
 </div>
@@ -997,10 +971,10 @@ This rule guarantees that users do not send funds to inactive sidechains and tha
 <div class="paragraph">
 <p>A sidechain is terminated, if it posts a CCU containing one or multiple malicious <a href="communication.html#inducing-state-changes-across-chains-with-ccms" class="xref page">CCMs</a>.
 Certain <a href="../sdk/modules-commands.html" class="xref page">modules</a> of a blockchain client have the ability to terminate a sidechain account.
-If a module receives a CCM that it considers to be malicious, it can call the <a href="https://github.com/LiskHQ/lips/blob/main/proposals/lip-0045.md#terminatechain" target="_blank" rel="noopener"><code>terminateChain</code></a> method of the Interoperability module to terminate the sidechain.</p>
+If a module receives a CCM that it considers to be malicious, it can call the <a href="https://github.com/KlayrHQ/lips/blob/main/proposals/lip-0045.md#terminatechain" target="_blank" rel="noopener"><code>terminateChain</code></a> method of the Interoperability module to terminate the sidechain.</p>
 </div>
 <div class="paragraph">
-<p>For example, the Token module on the mainchain can terminate a sidechain if it violates escrow, i.e. sends more LSK tokens to the mainchain that were sent to this sidechain.</p>
+<p>For example, the Token module on the mainchain can terminate a sidechain if it violates escrow, i.e. sends more KLY tokens to the mainchain that were sent to this sidechain.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -1029,10 +1003,10 @@ That means neither the mainchain nor any other sidechains can communicate with c
 </div>
 </div>
 <div class="sect3">
-<h4 id="violating-the-lisk-interoperability-protocol"><a class="anchor" href="#violating-the-lisk-interoperability-protocol"></a>3.1.3. Violating the Lisk Interoperability protocol</h4>
+<h4 id="violating-the-klayr-interoperability-protocol"><a class="anchor" href="#violating-the-klayr-interoperability-protocol"></a>3.1.3. Violating the Klayr Interoperability protocol</h4>
 <div class="paragraph">
-<p>It is also possible for a sidechain to be terminated, if it violates the Lisk Interoperability protocol.
-Note, that if a sidechain uses the Lisk Interoperability module, it never violates the protocol.</p>
+<p>It is also possible for a sidechain to be terminated, if it violates the Klayr Interoperability protocol.
+Note, that if a sidechain uses the Klayr Interoperability module, it never violates the protocol.</p>
 </div>
 <div class="paragraph">
 <p>But in case another custom module is used for interoperability in a sidechain, and for example, it sends CCUs that don&#8217;t follow the expected format, this can also lead to the termination of the sidechain.</p>
@@ -1042,7 +1016,7 @@ Note, that if a sidechain uses the Lisk Interoperability module, it never violat
 <div class="sect2">
 <h3 id="terminate-sidechain-for-liveness-command"><a class="anchor" href="#terminate-sidechain-for-liveness-command"></a>3.2. Terminate Sidechain For Liveness command</h3>
 <div class="paragraph">
-<p>The <a href="https://liskhq.github.io/lisk-docs/lisk-sdk/v6/references/typedoc/classes/lisk_framework.TerminateSidechainForLivenessCommand.html" target="_blank" rel="noopener">Terminate Sidechain For Liveness</a> command is used to terminate a sidechain that violated the liveness condition.
+<p>The <a href="https://klayr.xyz/documentation/klayr-sdk/v6/references/typedoc/classes/klayr_framework.TerminateSidechainForLivenessCommand.html" target="_blank" rel="noopener">Terminate Sidechain For Liveness</a> command is used to terminate a sidechain that violated the liveness condition.
 The timestamp of the last certificate provided by the sidechain is checked against the current timestamp.
 If the difference is greater than the maximum allowed timespan, the sidechain is terminated.</p>
 </div>
@@ -1189,7 +1163,7 @@ Subsequently, their effect can be reverted on the sending chain.</p>
 <div class="paragraph">
 <p>However, it is important to note that users are not guaranteed to recover their CCMs in every situation.
 Certain state information of the terminated sidechain might have been modified before the termination occurred, and this would make the recovered CCM application fail.
-For example, in the case whereby escrowed LSK tokens exist in the sidechain account on the mainchain, which could have been subtracted by prior malicious behavior in the terminated sidechain.</p>
+For example, in the case whereby escrowed KLY tokens exist in the sidechain account on the mainchain, which could have been subtracted by prior malicious behavior in the terminated sidechain.</p>
 </div>
 <div class="paragraph">
 <p>2.The <a href="#initialize-message-recovery">Initialize Message Recovery</a> command is then sent.
@@ -1345,7 +1319,7 @@ Recovery services would run a mainchain and sidechain node to provide the data a
 <div class="sect3">
 <h4 id="initialize-state-recovery"><a class="anchor" href="#initialize-state-recovery"></a>4.4.1. Initialize State Recovery</h4>
 <div class="paragraph">
-<p>The <a href="https://liskhq.github.io/lisk-docs/lisk-sdk/v6/references/typedoc/classes/lisk_framework.InitializeStateRecoveryCommand.html" target="_blank" rel="noopener">Initialize State Recovery</a> command sets the sidechain state root in the "terminated state" account, so that state recovery commands can be issued.</p>
+<p>The <a href="https://klayr.xyz/documentation/klayr-sdk/v6/references/typedoc/classes/klayr_framework.InitializeStateRecoveryCommand.html" target="_blank" rel="noopener">Initialize State Recovery</a> command sets the sidechain state root in the "terminated state" account, so that state recovery commands can be issued.</p>
 </div>
 <div class="paragraph">
 <p>A sidechain account can be terminated on a sidechain using the <code>terminateChain</code> function exposed by the Interoperability module.
@@ -1356,7 +1330,7 @@ Instead, the account stores the mainchain state root at the time of termination.
 <p>A state recovery initialization command can be posted afterwards to set the sidechain state root by giving an inclusion proof against this mainchain state root.
 It contains an inclusion proof against the mainchain state root stored in the terminated state account, proving the value of the state root of the terminated sidechain.
 Any user on the corresponding sidechain can send a transaction with this command and initiate the state recoveries with respect to the terminated sidechain.
-Further information including the <code>createTerminatedStateAccount</code> function can be found in <a href="https://github.com/LiskHQ/lips/blob/main/proposals/lip-0045.md" target="_blank" rel="noopener">LIP 0045</a>.</p>
+Further information including the <code>createTerminatedStateAccount</code> function can be found in <a href="https://github.com/KlayrHQ/lips/blob/main/proposals/lip-0045.md" target="_blank" rel="noopener">LIP 0045</a>.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -1365,7 +1339,7 @@ Further information including the <code>createTerminatedStateAccount</code> func
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-The <a href="https://liskhq.github.io/lisk-docs/lisk-sdk/v6/references/typedoc/classes/lisk_framework.InitializeStateRecoveryCommand.html" target="_blank" rel="noopener">Initialize State Recovery</a>  command can only be submitted on a sidechain.
+The <a href="https://klayr.xyz/documentation/klayr-sdk/v6/references/typedoc/classes/klayr_framework.InitializeStateRecoveryCommand.html" target="_blank" rel="noopener">Initialize State Recovery</a>  command can only be submitted on a sidechain.
 </td>
 </tr>
 </table>
@@ -1388,7 +1362,7 @@ It can be used to perform the following:</p>
 <div class="sect3">
 <h4 id="recover-state"><a class="anchor" href="#recover-state"></a>4.4.2. Recover State</h4>
 <div class="paragraph">
-<p>The <a href="https://liskhq.github.io/lisk-docs/lisk-sdk/v6/references/typedoc/classes/lisk_framework.RecoverStateCommand.html" target="_blank" rel="noopener">Recover State</a> command is used to recover assets (for example, fungible and non-fungible tokens) from a terminated sidechain.</p>
+<p>The <a href="https://klayr.xyz/documentation/klayr-sdk/v6/references/typedoc/classes/klayr_framework.RecoverStateCommand.html" target="_blank" rel="noopener">Recover State</a> command is used to recover assets (for example, fungible and non-fungible tokens) from a terminated sidechain.</p>
 </div>
 <div class="paragraph">
 <p>This command contains an inclusion proof, proving the user balance on the sidechain against the state root stored in the <a href="#terminated-state-substore">terminated state</a> account.</p>
@@ -1439,7 +1413,7 @@ This command contains the channel account of the mainchain stored in the state o
 <div class="sect3">
 <h4 id="recover-message"><a class="anchor" href="#recover-message"></a>4.4.4. Recover Message</h4>
 <div class="paragraph">
-<p>The <a href="https://liskhq.github.io/lisk-docs/lisk-sdk/v6/references/typedoc/classes/lisk_framework.RecoverMessageCommand.html" target="_blank" rel="noopener">Recover Message</a> command is used to recover any <a href="#pending-ccms">Pending CCMs</a> from the outbox of a terminated sidechain.</p>
+<p>The <a href="https://klayr.xyz/documentation/klayr-sdk/v6/references/typedoc/classes/klayr_framework.RecoverMessageCommand.html" target="_blank" rel="noopener">Recover Message</a> command is used to recover any <a href="#pending-ccms">Pending CCMs</a> from the outbox of a terminated sidechain.</p>
 </div>
 <div class="paragraph">
 <p>The user proves with an inclusion proof validated against the outbox root stored in the terminated outbox account that the message is in the terminated sidechain outbox.
@@ -1476,7 +1450,7 @@ When the recovery process is completed, a corresponding <a href="#recover-event"
 <div class="sect2">
 <h3 id="recover-event"><a class="anchor" href="#recover-event"></a>4.6. Recover event</h3>
 <div class="paragraph">
-<p>The <a href="https://github.com/LiskHQ/lips/blob/main/proposals/lip-0051.md#recover-1" target="_blank" rel="noopener">Recover event</a> is emitted by when a <a href="#ccm-recovery">CCM recovery</a> is performed.</p>
+<p>The <a href="https://github.com/KlayrHQ/lips/blob/main/proposals/lip-0051.md#recover-1" target="_blank" rel="noopener">Recover event</a> is emitted by when a <a href="#ccm-recovery">CCM recovery</a> is performed.</p>
 </div>
 </div>
 </div>
@@ -1485,7 +1459,7 @@ When the recovery process is completed, a corresponding <a href="#recover-event"
 <h2 id="interoperability-data-substores"><a class="anchor" href="#interoperability-data-substores"></a>Interoperability data substores</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Each sidechain stores data related to cross-chain interoperability in the <a href="../state-machine.html#data-stores" class="xref page">Interoperability data store</a>, maintained by the <a href="https://liskhq.github.io/lisk-docs/lisk-sdk/v6/references/typedoc/classes/lisk_framework.SidechainInteroperabilityModule.html" target="_blank" rel="noopener">Interoperability module</a>.</p>
+<p>Each sidechain stores data related to cross-chain interoperability in the <a href="../state-machine.html#data-stores" class="xref page">Interoperability data store</a>, maintained by the <a href="https://klayr.xyz/documentation/klayr-sdk/v6/references/typedoc/classes/klayr_framework.SidechainInteroperabilityModule.html" target="_blank" rel="noopener">Interoperability module</a>.</p>
 </div>
 <div class="paragraph">
 <p>The interoperability store consists of several substores, as shown in the diagram below.</p>
@@ -1558,12 +1532,12 @@ In particular, the inclusion proof contained in a CCU from a sidechain posted on
 <p>The "own chain" substore stores the name and ID of the respective chain.</p>
 </div>
 <div class="paragraph">
-<p>On the mainchain in the Lisk <strong>Mainnet</strong>, the own chain account is present by default and set to an object with the following properties:</p>
+<p>On the mainchain in the Klayr <strong>Mainnet</strong>, the own chain account is present by default and set to an object with the following properties:</p>
 </div>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-js hljs" data-lang="js">{
-    name: "lisk_mainchain",
+    name: "klayr_mainchain",
     chainID: 00000000,
     nonce: 0
 }</code></pre>
@@ -1638,7 +1612,7 @@ In particular, the inclusion proof contained in a CCU from a sidechain posted on
 <li>
 <p><code>name</code>: This property corresponds to the name of the sidechain as a string of characters.
 It has to be unique in the ecosystem and contain only characters from the set <code>[a-z0-9!@$&amp;_.]</code>.
-For the mainchain account on a sidechain, this property is initialized to the string <code>"lisk_mainchain"</code>.
+For the mainchain account on a sidechain, this property is initialized to the string <code>"klayr_mainchain"</code>.
 For a sidechain account on the mainchain, this property is set by the sender of the <a href="#register-sidechain-command">Register Sidechain command</a>.</p>
 </li>
 <li>
@@ -1939,8 +1913,8 @@ The "registered names" substore is only present on the mainchain.
 </table>
 </div>
 <div class="paragraph">
-<p>An entry for the Lisk Mainchain is present by default.
-Any new entry for a sidechain is created as part of the <a href="#sidechain-registration-on-the-lisk-mainchain">Sidechain registration on the Lisk Mainchain</a> in the "registered names" substore.</p>
+<p>An entry for the Klayr Mainchain is present by default.
+Any new entry for a sidechain is created as part of the <a href="#sidechain-registration-on-the-klayr-mainchain">Sidechain registration on the Klayr Mainchain</a> in the "registered names" substore.</p>
 </div>
 <details>
 <summary class="title">Details</summary>
@@ -1972,10 +1946,10 @@ Any new entry for a sidechain is created as part of the <a href="#sidechain-regi
 <div id="footnotes">
 <hr>
 <div class="footnote" id="_footnotedef_1">
-<a href="#_footnoteref_1">1</a>. See <a href="https://github.com/LiskHQ/lips/blob/main/proposals/lip-0053.md#verification" target="_blank" rel="noopener">LIP 0053</a> for more information about the verification of certificates.
+<a href="#_footnoteref_1">1</a>. See <a href="https://github.com/KlayrHQ/lips/blob/main/proposals/lip-0053.md#verification" target="_blank" rel="noopener">LIP 0053</a> for more information about the verification of certificates.
 </div>
 <div class="footnote" id="_footnotedef_2">
-<a href="#_footnoteref_2">2</a>. See <a href="https://github.com/LiskHQ/lips/blob/main/proposals/lip-0031.md#regular-merkle-trees" target="_blank" rel="noopener">LIP 0031</a> for more information about Regular Merkle Trees.
+<a href="#_footnoteref_2">2</a>. See <a href="https://github.com/KlayrHQ/lips/blob/main/proposals/lip-0031.md#regular-merkle-trees" target="_blank" rel="noopener">LIP 0031</a> for more information about Regular Merkle Trees.
 </div>
 </div>
   <nav class="pagination">
@@ -1988,14 +1962,14 @@ Any new entry for a sidechain is created as part of the <a href="#sidechain-regi
 </div>
 <footer class="footer">
   <div class="footerdiv">
-    <p>© 2023 Lisk Foundation</p>
+    <p>© 2023 Klayr</p>
     <!-- <div class="community-section">
-      <p class="community-section__text">Follow Lisk on: </p>
+      <p class="community-section__text">Follow Klayr on: </p>
       <div class="community-section__icons"> -->
     <div class="community_icons">
-      <a href="https://lisk.chat" title="Discord" target="_blank" class="footer_icon icon-discord"><p>Discord</p></a>
-      <a href="https://dev.lisk.com" title="Discourse" target="_blank" class="footer_icon icon-discourse"><p>Discourse</p></a>
-      <a href="https://github.com/LiskHQ" title="GitHub" target="_blank" class="footer_icon icon-github"><p>GitHub</p></a>
+      <a href="https://klayr.chat" title="Discord" target="_blank" class="footer_icon icon-discord"><p>Discord</p></a>
+      <a href="https://dev.klayr.xyz" title="Discourse" target="_blank" class="footer_icon icon-discourse"><p>Discourse</p></a>
+      <a href="https://github.com/KlayrHQ" title="GitHub" target="_blank" class="footer_icon icon-github"><p>GitHub</p></a>
       <!--    </div> -->
     </div>
   </div>

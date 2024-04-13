@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>How to implement cross-chain communication :: Lisk documentation</title>
-    <link rel="canonical" href="https://liskhq.github.io/lisk-docs/build-blockchain/interoperable-module/index.html">
+    <title>How to implement cross-chain communication :: Klayr documentation</title>
+    <link rel="canonical" href="https://klayr.xyz/documentation/build-blockchain/interoperable-module/index.html">
     <link rel="prev" href="../register-sidechain.html">
     <link rel="next" href="create-ccm.html">
     <meta name="generator" content="Antora 3.1.1">
@@ -22,11 +22,11 @@
   _paq.push(['trackPageView']);
   _paq.push(['enableLinkTracking']);
   (function() {
-    var u="https://lisk.matomo.cloud/";
+    var u="https://klayr.matomo.cloud/";
     _paq.push(['setTrackerUrl', u+'matomo.php']);
     _paq.push(['setSiteId', '2']);
     var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-    g.async=true; g.src='//cdn.matomo.cloud/lisk.matomo.cloud/matomo.js'; s.parentNode.insertBefore(g,s);
+    g.async=true; g.src='//cdn.matomo.cloud/klayr.matomo.cloud/matomo.js'; s.parentNode.insertBefore(g,s);
   })();
 </script>
 <!-- End Matomo Code -->
@@ -35,7 +35,7 @@
   var _mtm = window._mtm = window._mtm || [];
   _mtm.push({'mtm.startTime': (new Date().getTime()), 'event': 'mtm.Start'});
   var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-  g.async=true; g.src='https://cdn.matomo.cloud/lisk.matomo.cloud/container_RUW6y8yf.js'; s.parentNode.insertBefore(g,s);
+  g.async=true; g.src='https://cdn.matomo.cloud/klayr.matomo.cloud/container_RUW6y8yf.js'; s.parentNode.insertBefore(g,s);
 </script>
 <!-- End Matomo Tag Manager -->
 <link rel="icon" href="../../_/img/favicon.png" type="image/x-icon">
@@ -45,10 +45,10 @@
   <nav class="navbar">
     <div class="navbar-brand">
       <div class="top-logo">
-        <a href="../.." class="lisk-logo"></a>
+        <a href="../.." class="klayr-logo"></a>
         <a href="../.." class="docs-logo"></a>
       </div>
-      <!--<a class="navbar-item" href="https://liskhq.github.io/lisk-docs">Lisk documentation</a>-->
+      <!--<a class="navbar-item" href="https://klayr.xyz/documentation">Klayr documentation</a>-->
       <button class="navbar-burger" data-target="topbar-nav">
         <span></span>
         <span></span>
@@ -60,29 +60,28 @@
         <div class="navbar-item has-dropdown is-hoverable">
           <a class="navbar-link" href="#">APIs</a>
           <div class="navbar-dropdown">
-            <a class="navbar-item" href="../../api/lisk-node-rpc.html">Lisk node RPC API</a>
-            <a class="navbar-item" href="../../api/lisk-service-http.html">Lisk Service HTTP
+            <a class="navbar-item" href="../../api/klayr-node-rpc.html">Klayr node RPC API</a>
+            <a class="navbar-item" href="../../api/klayr-service-http.html">Klayr Service HTTP
               API</a>
-            <a class="navbar-item" href="../../api/lisk-service-rpc.html">Lisk Service RPC
+            <a class="navbar-item" href="../../api/klayr-service-rpc.html">Klayr Service RPC
               API</a>
-            <a class="navbar-item" href="../../api/lisk-service-pubsub.html">Lisk Service
+            <a class="navbar-item" href="../../api/klayr-service-pubsub.html">Klayr Service
               Pub/Sub API</a>
           </div>
         </div>
         <div class="navbar-item has-dropdown is-hoverable">
           <a class="navbar-link" href="#">Explorers</a>
           <div class="navbar-dropdown">
-            <a class="navbar-item" href="https://lisk.observer/" target="_blank">Lisk Observer</a>
-            <a class="navbar-item" href="https://liskscan.com/" target="_blank">LiskScan</a>
+            <a class="navbar-item" href="https://explorer.klayr.xyz/" target="_blank">Klayr Explorer</a>
           </div>
         </div>
         <div class="navbar-item has-dropdown is-hoverable">
           <a class="navbar-link" href="#">Products</a>
           <div class="navbar-dropdown">
-            <a class="navbar-item" href="../../lisk-sdk/">Lisk SDK</a>
-            <a class="navbar-item" href="../../lisk-service/">Lisk Service</a>
-            <a class="navbar-item" href="../../lisk-core/">Lisk Core</a>
-            <a class="navbar-item" href="https://lisk.com/wallet" target="_blank">Lisk Wallets</a>
+            <a class="navbar-item" href="../../klayr-sdk/">Klayr SDK</a>
+            <a class="navbar-item" href="../../klayr-service/">Klayr Service</a>
+            <a class="navbar-item" href="../../klayr-core/">Klayr Core</a>
+            <a class="navbar-item" href="https://klayr.xyz/wallet" target="_blank">Klayr Wallets</a>
           </div>
         </div>
         <button onclick="switch_style('toggle')" id="theme-toggle" class="theme-toggle navbar-item"></button>
@@ -99,35 +98,27 @@
   <button class="nav-toggle"></button>
   <div class="components-versions">
       <div class="page-components">
-    <button class="component-menu-toggle" title="Show other documentations">Lisk Documentation</button>
+    <button class="component-menu-toggle" title="Show other documentations">Klayr Documentation</button>
     <div class="component-menu">
-        <a class="component" href="../../lisk-core/index.html">Lisk Core</a>
-        <a class="component" href="../../lisk-docs-manual/index.html">Lisk docs manual</a>
-        <a class="component is-current" href="../../index.html">Lisk Documentation</a>
-        <a class="component" href="../../lisk-sdk/index.html">Lisk SDK</a>
-        <a class="component" href="../../lisk-service/index.html">Lisk Service</a>
+        <a class="component" href="../../klayr-core/index.html">Klayr Core</a>
+        <a class="component is-current" href="../../index.html">Klayr Documentation</a>
+        <a class="component" href="../../klayr-sdk/index.html">Klayr SDK</a>
+        <a class="component" href="../../klayr-service/index.html">Klayr Service</a>
     </div>
   </div>
     <span></span>
-    <div class="page-versions">
-  <button class="version-menu-toggle" title="Show other versions of page">default</button>
-  <div class="version-menu">
-    <a class="version is-current" href="index.html">default</a>
-    <a class="version is-missing" href="../../lisk-v3/index.html">lisk-v3</a>
-  </div>
-</div>
-  </div>
+      </div>
   <span></span>
   <span></span>
     <a href="../../index.html" class="home-link"></a>
   <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
-    <li><a href="../../index.html">Lisk Documentation</a></li>
+    <li><a href="../../index.html">Klayr Documentation</a></li>
     <li><a href="../index.html">Build Blockchain</a></li>
     <li><a href="index.html">How to implement cross-chain communication</a></li>
   </ul>
 </nav>
-  <div class="edit-this-page"><a href="https://github.com/LiskHQ/lisk-docs/edit/development/docs/modules/ROOT/pages/build-blockchain/interoperable-module/index.adoc">Edit this Page</a></div>
+  <div class="edit-this-page"><a href="https://github.com/KlayrHQ/klayr-docs/edit/main-dev/docs/modules/ROOT/pages/build-blockchain/interoperable-module/index.adoc">Edit this Page</a></div>
 </div>
 
 <div class="body">
@@ -136,7 +127,7 @@
     <div class="panels">
 <div class="nav-panel-menu is-active" data-panel="menu">
   <nav class="nav-menu">
-    <h3 class="title"><a href="../../index.html">Lisk Documentation</a></h3>
+    <h3 class="title"><a href="../../index.html">Klayr Documentation</a></h3>
 <ul class="nav-list">
   <li class="nav-item" data-depth="0">
 <ul class="nav-list">
@@ -154,7 +145,7 @@
     <a class="nav-link" href="../../intro/blockchain-scalability.html">Blockchain Scalability</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../../intro/lisk-products.html">Lisk products</a>
+    <a class="nav-link" href="../../intro/klayr-products.html">Klayr products</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../../intro/blockchain-interoperability.html">Blockchain Interoperability</a>
@@ -163,7 +154,7 @@
   </li>
   <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="../../understand-blockchain/index.html">Understand Lisk Blockchain</a>
+    <a class="nav-link" href="../../understand-blockchain/index.html">Understand Klayr Blockchain</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../../understand-blockchain/state-machine.html">State machine</a>
@@ -173,7 +164,7 @@
     <a class="nav-link" href="../../understand-blockchain/consensus/index.html">Consensus protocols</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../../understand-blockchain/consensus/pos-poa.html">Proof of Stake (PoS) &amp; Proof of Authority (PoA) in Lisk</a>
+    <a class="nav-link" href="../../understand-blockchain/consensus/pos-poa.html">Proof of Stake (PoS) &amp; Proof of Authority (PoA) in Klayr</a>
   </li>
 </ul>
   </li>
@@ -185,7 +176,7 @@
   </li>
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="../../understand-blockchain/interoperability/index.html">Lisk Interoperability</a>
+    <a class="nav-link" href="../../understand-blockchain/interoperability/index.html">Klayr Interoperability</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../../understand-blockchain/interoperability/communication.html">Cross-chain communication</a>
@@ -200,7 +191,7 @@
   </li>
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
-    <span class="nav-text">Lisk SDK</span>
+    <span class="nav-text">Klayr SDK</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../../understand-blockchain/sdk/modules-commands.html">Modules and Commands</a>
@@ -209,7 +200,7 @@
     <a class="nav-link" href="../../understand-blockchain/sdk/plugins.html">Plugins</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../../understand-blockchain/sdk/rpc.html">Communicating to a Lisk node via RPC</a>
+    <a class="nav-link" href="../../understand-blockchain/sdk/rpc.html">Communicating to a Klayr node via RPC</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../../understand-blockchain/sdk/codec-schema.html">Schemas &amp; Codec</a>
@@ -293,6 +284,9 @@
     <a class="nav-link" href="execute-ccm.html">How to execute a CCM</a>
   </li>
 </ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../test-app.html">Testing the blockchain application</a>
   </li>
 </ul>
   </li>
@@ -392,7 +386,7 @@
   </li>
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="../../integrate-blockchain/aggregate-blockchain-data/index.html">Aggregate blockchain data with Lisk Service</a>
+    <a class="nav-link" href="../../integrate-blockchain/aggregate-blockchain-data/index.html">Aggregate blockchain data with Klayr Service</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../../integrate-blockchain/aggregate-blockchain-data/extend-indexer.html">Extending the Indexer microservice</a>
@@ -410,7 +404,7 @@
     <span class="nav-text">APIs</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../../api/lisk-node-rpc.html">RPC API for Lisk nodes</a>
+    <a class="nav-link" href="../../api/klayr-node-rpc.html">RPC API for Klayr nodes</a>
   </li>
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
@@ -456,19 +450,19 @@
   </li>
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
-    <span class="nav-text">Lisk Service APIs</span>
+    <span class="nav-text">Klayr Service APIs</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../../api/lisk-service-rpc.html">RPC API of Lisk Service</a>
+    <a class="nav-link" href="../../api/klayr-service-rpc.html">RPC API of Klayr Service</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../../api/lisk-service-http.html">HTTP API (Lisk Service)</a>
+    <a class="nav-link" href="../../api/klayr-service-http.html">HTTP API (Klayr Service)</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../../api/lisk-service-pubsub.html">Publish/Subscribe API (Lisk Service)</a>
+    <a class="nav-link" href="../../api/klayr-service-pubsub.html">Publish/Subscribe API (Klayr Service)</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../../api/lisk-service-api-migration.html">Lisk Service API v2 vs v3</a>
+    <a class="nav-link" href="../../api/klayr-service-api-migration.html">Klayr Service API v2 vs v3</a>
   </li>
 </ul>
   </li>
@@ -479,18 +473,18 @@
     <span class="nav-text">Products</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../../lisk-sdk/index.html">Lisk SDK</a>
+    <a class="nav-link" href="../../klayr-sdk/index.html">Klayr SDK</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../../lisk-service/index.html">Lisk Service</a>
+    <a class="nav-link" href="../../klayr-service/index.html">Klayr Service</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../../lisk-core/index.html">Lisk Core</a>
+    <a class="nav-link" href="../../klayr-core/index.html">Klayr Core</a>
   </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="../../bug-bounty-program.html">Lisk Bug Bounty Program</a>
+    <a class="nav-link" href="../../bug-bounty-program.html">Klayr Bug Bounty Program</a>
   </li>
 </ul>
   </li>
@@ -499,59 +493,39 @@
 </div>
 <div class="nav-panel-explore" data-panel="explore">
   <div class="context">
-    <span class="title">Lisk Documentation</span>
+    <span class="title">Klayr Documentation</span>
     <span class="version">default</span>
   </div>
   <ul class="components">
     <li class="component">
-      <a class="title" href="../../lisk-core/index.html">Lisk Core</a>
+      <a class="title" href="../../klayr-core/index.html">Klayr Core</a>
       <ul class="versions">
         <li class="version is-latest">
-          <a href="../../lisk-core/index.html">4.0 (latest)</a>
-        </li>
-        <li class="version">
-          <a href="../../lisk-core/v3/index.html">3.1.1</a>
-        </li>
-      </ul>
-    </li>
-    <li class="component">
-      <a class="title" href="../../lisk-docs-manual/index.html">Lisk docs manual</a>
-      <ul class="versions">
-        <li class="version is-latest">
-          <a href="../../lisk-docs-manual/index.html">0.1.0</a>
+          <a href="../../klayr-core/index.html">4.0 (latest)</a>
         </li>
       </ul>
     </li>
     <li class="component is-current">
-      <a class="title" href="../../index.html">Lisk Documentation</a>
+      <a class="title" href="../../index.html">Klayr Documentation</a>
       <ul class="versions">
         <li class="version is-current is-latest">
           <a href="../../index.html">default</a>
         </li>
-        <li class="version">
-          <a href="../../lisk-v3/index.html">lisk-v3</a>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../../klayr-sdk/index.html">Klayr SDK</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../klayr-sdk/index.html">6.0 (latest)</a>
         </li>
       </ul>
     </li>
     <li class="component">
-      <a class="title" href="../../lisk-sdk/index.html">Lisk SDK</a>
+      <a class="title" href="../../klayr-service/index.html">Klayr Service</a>
       <ul class="versions">
         <li class="version is-latest">
-          <a href="../../lisk-sdk/index.html">6.0 (latest)</a>
-        </li>
-        <li class="version">
-          <a href="../../lisk-sdk/v5/index.html">5.3.0</a>
-        </li>
-      </ul>
-    </li>
-    <li class="component">
-      <a class="title" href="../../lisk-service/index.html">Lisk Service</a>
-      <ul class="versions">
-        <li class="version is-latest">
-          <a href="../../lisk-service/index.html">0.7 (latest)</a>
-        </li>
-        <li class="version">
-          <a href="../../lisk-service/v0.6/index.html">0.6</a>
+          <a href="../../klayr-service/index.html">0.7 (latest)</a>
         </li>
       </ul>
     </li>
@@ -573,7 +547,7 @@
 <li><a href="#creating-interoperable-modules">1. Creating interoperable modules</a></li>
 <li><a href="#testing-interoperable-modules">2. Testing interoperable modules</a>
 <ul class="sectlevel2">
-<li><a href="#the-interop-example-of-the-lisk-sdk-repository">2.1. The <code>interop</code> example of the <code>lisk-sdk</code> repository</a></li>
+<li><a href="#the-interop-example-of-the-klayr-sdk-repository">2.1. The <code>interop</code> example of the <code>klayr-sdk</code> repository</a></li>
 <li><a href="#create-a-hello-message-on-sidechain-1">2.2. Create a Hello message on sidechain 1</a></li>
 <li><a href="#create-reaction-on-sidechain-2">2.3. Create Reaction on sidechain 2</a></li>
 <li><a href="#observe-the-execution-of-the-ccm">2.4. Observe the execution of the CCM</a></li>
@@ -605,7 +579,7 @@
 </div>
 </div>
 <div class="paragraph">
-<p>If a Lisk app intends to interact with other blockchains in the network, it needs to provide the required cross-chain commands that create and execute the corresponding CCMs.</p>
+<p>If a Klayr app intends to interact with other blockchains in the network, it needs to provide the required cross-chain commands that create and execute the corresponding CCMs.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -665,7 +639,7 @@ To learn more about how sidechains communicate with each other via CCM, check ou
 <i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
-The <a href="https://github.com/LiskHQ/lisk-sdk/tree/release/6.1.0/examples/interop" target="_blank" rel="noopener">interop example</a> contains a complete interoperable set up for you to try out. If you simply want to try it out, refer to the next section <a href="#testing-interoperable-modules">Testing interoperable modules</a>.
+The <a href="https://github.com/KlayrHQ/klayr-sdk/tree/release/6.1.0/examples/interop" target="_blank" rel="noopener">interop example</a> contains a complete interoperable set up for you to try out. If you simply want to try it out, refer to the next section <a href="#testing-interoperable-modules">Testing interoperable modules</a>.
 </td>
 </tr>
 </table>
@@ -692,10 +666,10 @@ The <a href="https://github.com/LiskHQ/lisk-sdk/tree/release/6.1.0/examples/inte
 <p>As the interaction between two sidechains always involves three chains (sending chain, receiving chain, and mainchain), it is quite complicated to test newly implemented interoperable modules locally.</p>
 </div>
 <div class="paragraph">
-<p>To simplify the process, the <code>lisk-sdk</code> provides useful example scripts that can be easily adjusted to try out new interoperable modules.</p>
+<p>To simplify the process, the <code>klayr-sdk</code> provides useful example scripts that can be easily adjusted to try out new interoperable modules.</p>
 </div>
 <div class="sect2">
-<h3 id="the-interop-example-of-the-lisk-sdk-repository"><a class="anchor" href="#the-interop-example-of-the-lisk-sdk-repository"></a>2.1. The <code>interop</code> example of the <code>lisk-sdk</code> repository</h3>
+<h3 id="the-interop-example-of-the-klayr-sdk-repository"><a class="anchor" href="#the-interop-example-of-the-klayr-sdk-repository"></a>2.1. The <code>interop</code> example of the <code>klayr-sdk</code> repository</h3>
 <div class="openblock float-group">
 <div class="content">
 <div class="imageblock right">
@@ -705,7 +679,7 @@ The <a href="https://github.com/LiskHQ/lisk-sdk/tree/release/6.1.0/examples/inte
 <div class="title">Figure 1. The blockchain network of the interop example</div>
 </div>
 <div class="paragraph">
-<p>To try out the cross-chain communication of interoperable modules locally, go to the <a href="https://github.com/LiskHQ/lisk-sdk/tree/release/6.1.0/examples/interop" target="_blank" rel="noopener">interop/example</a> in the <code>lisk-sdk</code> repository.</p>
+<p>To try out the cross-chain communication of interoperable modules locally, go to the <a href="https://github.com/KlayrHQ/klayr-sdk/tree/release/6.1.0/examples/interop" target="_blank" rel="noopener">interop/example</a> in the <code>klayr-sdk</code> repository.</p>
 </div>
 <div class="paragraph">
 <p>There, you find a <code>README.md</code> which describes all the required steps to set up a simple interoperability example, as illustrated in <em>Figure 1</em>.</p>
@@ -714,7 +688,7 @@ The <a href="https://github.com/LiskHQ/lisk-sdk/tree/release/6.1.0/examples/inte
 <p>Additionally, you find examples of how to execute cross-chain token transfers between the chains.</p>
 </div>
 <div class="paragraph">
-<p>To start the interoperability example, run the <a href="https://github.com/LiskHQ/lisk-sdk/tree/release/6.1.0/examples/interop/start_example" target="_blank" rel="noopener">start_example</a> script.</p>
+<p>To start the interoperability example, run the <a href="https://github.com/KlayrHQ/klayr-sdk/tree/release/6.1.0/examples/interop/start_example" target="_blank" rel="noopener">start_example</a> script.</p>
 </div>
 <div class="listingblock">
 <div class="title">/examples/interop/</div>
@@ -742,7 +716,7 @@ This is why it should be verified, that the account, that intends to send the tr
 <div class="listingblock">
 <div class="title">/examples/interop/</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">ts-node pos-mainchain-fast/config/scripts/transfer_lsk_sidechain_two.ts</code></pre>
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">ts-node pos-mainchain-fast/config/scripts/transfer_kly_sidechain_two.ts</code></pre>
 </div>
 </div>
 <div class="admonitionblock note">
@@ -763,7 +737,7 @@ Wait for a few moments until you check the Balance on sidechain 2, as the cross-
 <div class="listingblock">
 <div class="title">pos-sidechain-example-two</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">./bin/run endpoint:invoke token_getBalances '{"address":"lskx5uqu2zzybdwrqswd8c6b5v5aj77yytn4k6mv6"}' --pretty</code></pre>
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">./bin/run endpoint:invoke token_getBalances '{"address":"klyx5uqu2zzybdwrqswd8c6b5v5aj77yytn4k6mv6"}' --pretty</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -805,7 +779,7 @@ Wait for a few moments until you check the Balance on sidechain 2, as the cross-
 </div>
 <div class="paragraph">
 <p>You will be prompted for the accounts' passphrase.
-Sign the transaction with the passphrase stored in <a href="https://github.com/LiskHQ/lisk-sdk/tree/release/6.1.0/examples/interop/pos-sidechain-example-one/config/default/passphrase.json" target="_blank" rel="noopener">passphrase.json</a> in the <code>config</code> folder.</p>
+Sign the transaction with the passphrase stored in <a href="https://github.com/KlayrHQ/klayr-sdk/tree/release/6.1.0/examples/interop/pos-sidechain-example-one/config/default/passphrase.json" target="_blank" rel="noopener">passphrase.json</a> in the <code>config</code> folder.</p>
 </div>
 <div class="literalblock">
 <div class="content">
@@ -862,7 +836,7 @@ The node should respond with the corresponding transaction ID if it accepts the 
 <div class="listingblock">
 <div class="title">pos-sidechain-example-one</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">./bin/run endpoint:invoke hello_getHello '{"address":"lskmjwp8z88avvxn4voktmx8cu9wk4opjkna5owt5"}'</code></pre>
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">./bin/run endpoint:invoke hello_getHello '{"address":"klymjwp8z88avvxn4voktmx8cu9wk4opjkna5owt5"}'</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -965,7 +939,7 @@ This property is required to create the CCM.</p>
 <div class="listingblock">
 <div class="title">pos-sidechain-example-two</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">./bin/run transaction:create react crossChainReact 1000000 --json --pretty --key-derivation-path="m/44'/134'/12'" --params='{"reactionType":0,"helloMessageID":"lskmjwp8z88avvxn4voktmx8cu9wk4opjkna5owt5","receivingChainID":"04000001","data":"","messageFee":"2100000","messageFeeTokenID":"0400000000000000"}' -p "crack tide merry unit rival joke drum private object top obey twelve exit scale sure pipe apple view forward surge aspect farm meat farm" --send</code></pre>
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">./bin/run transaction:create react crossChainReact 1000000 --json --pretty --key-derivation-path="m/44'/134'/12'" --params='{"reactionType":0,"helloMessageID":"klymjwp8z88avvxn4voktmx8cu9wk4opjkna5owt5","receivingChainID":"04000001","data":"","messageFee":"2100000","messageFeeTokenID":"0400000000000000"}' -p "crack tide merry unit rival joke drum private object top obey twelve exit scale sure pipe apple view forward surge aspect farm meat farm" --send</code></pre>
 </div>
 </div>
 <div class="admonitionblock tip">
@@ -1003,7 +977,7 @@ In the above example, we provide the passphrase directly in the command via the 
     ],
     "params": {
       "reactionType": 0,
-      "helloMessageID": "lskmjwp8z88avvxn4voktmx8cu9wk4opjkna5owt5",
+      "helloMessageID": "klymjwp8z88avvxn4voktmx8cu9wk4opjkna5owt5",
       "receivingChainID": "04000001",
       "data": "",
       "messageFee": "2100000"
@@ -1088,7 +1062,7 @@ In the above example, we provide the passphrase directly in the command via the 
 <div class="listingblock">
 <div class="title">Sidechain 1:</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">./bin/run endpoint:invoke hello_getReactions '{"address":"lskmjwp8z88avvxn4voktmx8cu9wk4opjkna5owt5"}'</code></pre>
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">./bin/run endpoint:invoke hello_getReactions '{"address":"klymjwp8z88avvxn4voktmx8cu9wk4opjkna5owt5"}'</code></pre>
 </div>
 </div>
 <div class="listingblock">
@@ -1124,7 +1098,7 @@ The endpoints can be invoked from any node CLI, and will always respond with dat
 <div class="listingblock">
 <div class="title">pos-sidechain-example-two</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">./bin/run endpoint:invoke chainConnector_getLastSentCCM --pretty --data-path=~/.lisk/mainchain-node-one</code></pre>
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">./bin/run endpoint:invoke chainConnector_getLastSentCCM --pretty --data-path=~/.klayr/mainchain-node-one</code></pre>
 </div>
 </div>
 </div>
@@ -1137,25 +1111,25 @@ Otherwise, it will not be possible to send CCUs between chains.</p>
 <div class="listingblock">
 <div class="title">Authorize sidechain 2</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">./bin/run endpoint:invoke 'chainConnector_authorize' '{"password": "lisk", "enable": true }' --data-path=~/.lisk/pos-sidechain-example-two</code></pre>
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">./bin/run endpoint:invoke 'chainConnector_authorize' '{"password": "klayr", "enable": true }' --data-path=~/.klayr/pos-sidechain-example-two</code></pre>
 </div>
 </div>
 <div class="listingblock">
 <div class="title">Authorize sidechain 1</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">./bin/run endpoint:invoke 'chainConnector_authorize' '{"password": "lisk", "enable": true }' --data-path=~/.lisk/pos-sidechain-example-one</code></pre>
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">./bin/run endpoint:invoke 'chainConnector_authorize' '{"password": "klayr", "enable": true }' --data-path=~/.klayr/pos-sidechain-example-one</code></pre>
 </div>
 </div>
 <div class="listingblock">
 <div class="title">Authorize mainchain 1</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">./bin/run endpoint:invoke 'chainConnector_authorize' '{"password": "lisk", "enable": true }' --data-path=~/.lisk/mainchain-node-one</code></pre>
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">./bin/run endpoint:invoke 'chainConnector_authorize' '{"password": "klayr", "enable": true }' --data-path=~/.klayr/mainchain-node-one</code></pre>
 </div>
 </div>
 <div class="listingblock">
 <div class="title">Authorize mainchain 2</div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">./bin/run endpoint:invoke 'chainConnector_authorize' '{"password": "lisk", "enable": true }' --data-path=~/.lisk/mainchain-node-two</code></pre>
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">./bin/run endpoint:invoke 'chainConnector_authorize' '{"password": "klayr", "enable": true }' --data-path=~/.klayr/mainchain-node-two</code></pre>
 </div>
 </div>
 </div>
@@ -1191,9 +1165,9 @@ Otherwise, it will not be possible to send CCUs between chains.</p>
 "sidechain_example_one" : Height: 10 | Status: 1
 "sidechain_example_two" : Height: 10 | Status: 1
 - Sidechain_1:
-"lisk_mainchain" : Height: 10 | Status: 1
+"klayr_mainchain" : Height: 10 | Status: 1
 - Sidechain 2:
-"lisk_mainchain" : Height: 10 | Status: 1</pre>
+"klayr_mainchain" : Height: 10 | Status: 1</pre>
 </div>
 </div>
 </div>
@@ -1210,14 +1184,14 @@ Otherwise, it will not be possible to send CCUs between chains.</p>
 </div>
 <footer class="footer">
   <div class="footerdiv">
-    <p>© 2023 Lisk Foundation</p>
+    <p>© 2023 Klayr</p>
     <!-- <div class="community-section">
-      <p class="community-section__text">Follow Lisk on: </p>
+      <p class="community-section__text">Follow Klayr on: </p>
       <div class="community-section__icons"> -->
     <div class="community_icons">
-      <a href="https://lisk.chat" title="Discord" target="_blank" class="footer_icon icon-discord"><p>Discord</p></a>
-      <a href="https://dev.lisk.com" title="Discourse" target="_blank" class="footer_icon icon-discourse"><p>Discourse</p></a>
-      <a href="https://github.com/LiskHQ" title="GitHub" target="_blank" class="footer_icon icon-github"><p>GitHub</p></a>
+      <a href="https://klayr.chat" title="Discord" target="_blank" class="footer_icon icon-discord"><p>Discord</p></a>
+      <a href="https://dev.klayr.xyz" title="Discourse" target="_blank" class="footer_icon icon-discourse"><p>Discourse</p></a>
+      <a href="https://github.com/KlayrHQ" title="GitHub" target="_blank" class="footer_icon icon-github"><p>GitHub</p></a>
       <!--    </div> -->
     </div>
   </div>

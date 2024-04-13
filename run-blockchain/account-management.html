@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Managing accounts :: Lisk documentation</title>
-    <link rel="canonical" href="https://liskhq.github.io/lisk-docs/run-blockchain/account-management.html">
+    <title>Managing accounts :: Klayr documentation</title>
+    <link rel="canonical" href="https://klayr.xyz/documentation/run-blockchain/account-management.html">
     <link rel="prev" href="process-management.html">
     <link rel="next" href="become-a-validator.html">
     <meta name="description" content="How to create and manage accounts including creating and sending transactions, transferring tokens &amp; voting.">
@@ -23,11 +23,11 @@
   _paq.push(['trackPageView']);
   _paq.push(['enableLinkTracking']);
   (function() {
-    var u="https://lisk.matomo.cloud/";
+    var u="https://klayr.matomo.cloud/";
     _paq.push(['setTrackerUrl', u+'matomo.php']);
     _paq.push(['setSiteId', '2']);
     var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-    g.async=true; g.src='//cdn.matomo.cloud/lisk.matomo.cloud/matomo.js'; s.parentNode.insertBefore(g,s);
+    g.async=true; g.src='//cdn.matomo.cloud/klayr.matomo.cloud/matomo.js'; s.parentNode.insertBefore(g,s);
   })();
 </script>
 <!-- End Matomo Code -->
@@ -36,7 +36,7 @@
   var _mtm = window._mtm = window._mtm || [];
   _mtm.push({'mtm.startTime': (new Date().getTime()), 'event': 'mtm.Start'});
   var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-  g.async=true; g.src='https://cdn.matomo.cloud/lisk.matomo.cloud/container_RUW6y8yf.js'; s.parentNode.insertBefore(g,s);
+  g.async=true; g.src='https://cdn.matomo.cloud/klayr.matomo.cloud/container_RUW6y8yf.js'; s.parentNode.insertBefore(g,s);
 </script>
 <!-- End Matomo Tag Manager -->
 <link rel="icon" href="../_/img/favicon.png" type="image/x-icon">
@@ -46,10 +46,10 @@
   <nav class="navbar">
     <div class="navbar-brand">
       <div class="top-logo">
-        <a href=".." class="lisk-logo"></a>
+        <a href=".." class="klayr-logo"></a>
         <a href=".." class="docs-logo"></a>
       </div>
-      <!--<a class="navbar-item" href="https://liskhq.github.io/lisk-docs">Lisk documentation</a>-->
+      <!--<a class="navbar-item" href="https://klayr.xyz/documentation">Klayr documentation</a>-->
       <button class="navbar-burger" data-target="topbar-nav">
         <span></span>
         <span></span>
@@ -61,29 +61,28 @@
         <div class="navbar-item has-dropdown is-hoverable">
           <a class="navbar-link" href="#">APIs</a>
           <div class="navbar-dropdown">
-            <a class="navbar-item" href="../api/lisk-node-rpc.html">Lisk node RPC API</a>
-            <a class="navbar-item" href="../api/lisk-service-http.html">Lisk Service HTTP
+            <a class="navbar-item" href="../api/klayr-node-rpc.html">Klayr node RPC API</a>
+            <a class="navbar-item" href="../api/klayr-service-http.html">Klayr Service HTTP
               API</a>
-            <a class="navbar-item" href="../api/lisk-service-rpc.html">Lisk Service RPC
+            <a class="navbar-item" href="../api/klayr-service-rpc.html">Klayr Service RPC
               API</a>
-            <a class="navbar-item" href="../api/lisk-service-pubsub.html">Lisk Service
+            <a class="navbar-item" href="../api/klayr-service-pubsub.html">Klayr Service
               Pub/Sub API</a>
           </div>
         </div>
         <div class="navbar-item has-dropdown is-hoverable">
           <a class="navbar-link" href="#">Explorers</a>
           <div class="navbar-dropdown">
-            <a class="navbar-item" href="https://lisk.observer/" target="_blank">Lisk Observer</a>
-            <a class="navbar-item" href="https://liskscan.com/" target="_blank">LiskScan</a>
+            <a class="navbar-item" href="https://explorer.klayr.xyz/" target="_blank">Klayr Explorer</a>
           </div>
         </div>
         <div class="navbar-item has-dropdown is-hoverable">
           <a class="navbar-link" href="#">Products</a>
           <div class="navbar-dropdown">
-            <a class="navbar-item" href="../lisk-sdk/">Lisk SDK</a>
-            <a class="navbar-item" href="../lisk-service/">Lisk Service</a>
-            <a class="navbar-item" href="../lisk-core/">Lisk Core</a>
-            <a class="navbar-item" href="https://lisk.com/wallet" target="_blank">Lisk Wallets</a>
+            <a class="navbar-item" href="../klayr-sdk/">Klayr SDK</a>
+            <a class="navbar-item" href="../klayr-service/">Klayr Service</a>
+            <a class="navbar-item" href="../klayr-core/">Klayr Core</a>
+            <a class="navbar-item" href="https://klayr.xyz/wallet" target="_blank">Klayr Wallets</a>
           </div>
         </div>
         <button onclick="switch_style('toggle')" id="theme-toggle" class="theme-toggle navbar-item"></button>
@@ -100,35 +99,27 @@
   <button class="nav-toggle"></button>
   <div class="components-versions">
       <div class="page-components">
-    <button class="component-menu-toggle" title="Show other documentations">Lisk Documentation</button>
+    <button class="component-menu-toggle" title="Show other documentations">Klayr Documentation</button>
     <div class="component-menu">
-        <a class="component" href="../lisk-core/index.html">Lisk Core</a>
-        <a class="component" href="../lisk-docs-manual/index.html">Lisk docs manual</a>
-        <a class="component is-current" href="../index.html">Lisk Documentation</a>
-        <a class="component" href="../lisk-sdk/index.html">Lisk SDK</a>
-        <a class="component" href="../lisk-service/index.html">Lisk Service</a>
+        <a class="component" href="../klayr-core/index.html">Klayr Core</a>
+        <a class="component is-current" href="../index.html">Klayr Documentation</a>
+        <a class="component" href="../klayr-sdk/index.html">Klayr SDK</a>
+        <a class="component" href="../klayr-service/index.html">Klayr Service</a>
     </div>
   </div>
     <span></span>
-    <div class="page-versions">
-  <button class="version-menu-toggle" title="Show other versions of page">default</button>
-  <div class="version-menu">
-    <a class="version is-current" href="account-management.html">default</a>
-    <a class="version" href="../lisk-v3/run-blockchain/account-management.html">lisk-v3</a>
-  </div>
-</div>
-  </div>
+      </div>
   <span></span>
   <span></span>
     <a href="../index.html" class="home-link"></a>
   <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
-    <li><a href="../index.html">Lisk Documentation</a></li>
+    <li><a href="../index.html">Klayr Documentation</a></li>
     <li><a href="index.html">Run Blockchain</a></li>
     <li><a href="account-management.html">Managing accounts</a></li>
   </ul>
 </nav>
-  <div class="edit-this-page"><a href="https://github.com/LiskHQ/lisk-docs/edit/development/docs/modules/ROOT/pages/run-blockchain/account-management.adoc">Edit this Page</a></div>
+  <div class="edit-this-page"><a href="https://github.com/KlayrHQ/klayr-docs/edit/main-dev/docs/modules/ROOT/pages/run-blockchain/account-management.adoc">Edit this Page</a></div>
 </div>
 
 <div class="body">
@@ -137,7 +128,7 @@
     <div class="panels">
 <div class="nav-panel-menu is-active" data-panel="menu">
   <nav class="nav-menu">
-    <h3 class="title"><a href="../index.html">Lisk Documentation</a></h3>
+    <h3 class="title"><a href="../index.html">Klayr Documentation</a></h3>
 <ul class="nav-list">
   <li class="nav-item" data-depth="0">
 <ul class="nav-list">
@@ -155,7 +146,7 @@
     <a class="nav-link" href="../intro/blockchain-scalability.html">Blockchain Scalability</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../intro/lisk-products.html">Lisk products</a>
+    <a class="nav-link" href="../intro/klayr-products.html">Klayr products</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../intro/blockchain-interoperability.html">Blockchain Interoperability</a>
@@ -164,7 +155,7 @@
   </li>
   <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="../understand-blockchain/index.html">Understand Lisk Blockchain</a>
+    <a class="nav-link" href="../understand-blockchain/index.html">Understand Klayr Blockchain</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../understand-blockchain/state-machine.html">State machine</a>
@@ -174,7 +165,7 @@
     <a class="nav-link" href="../understand-blockchain/consensus/index.html">Consensus protocols</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../understand-blockchain/consensus/pos-poa.html">Proof of Stake (PoS) &amp; Proof of Authority (PoA) in Lisk</a>
+    <a class="nav-link" href="../understand-blockchain/consensus/pos-poa.html">Proof of Stake (PoS) &amp; Proof of Authority (PoA) in Klayr</a>
   </li>
 </ul>
   </li>
@@ -186,7 +177,7 @@
   </li>
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="../understand-blockchain/interoperability/index.html">Lisk Interoperability</a>
+    <a class="nav-link" href="../understand-blockchain/interoperability/index.html">Klayr Interoperability</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../understand-blockchain/interoperability/communication.html">Cross-chain communication</a>
@@ -201,7 +192,7 @@
   </li>
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
-    <span class="nav-text">Lisk SDK</span>
+    <span class="nav-text">Klayr SDK</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../understand-blockchain/sdk/modules-commands.html">Modules and Commands</a>
@@ -210,7 +201,7 @@
     <a class="nav-link" href="../understand-blockchain/sdk/plugins.html">Plugins</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../understand-blockchain/sdk/rpc.html">Communicating to a Lisk node via RPC</a>
+    <a class="nav-link" href="../understand-blockchain/sdk/rpc.html">Communicating to a Klayr node via RPC</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../understand-blockchain/sdk/codec-schema.html">Schemas &amp; Codec</a>
@@ -294,6 +285,9 @@
     <a class="nav-link" href="../build-blockchain/interoperable-module/execute-ccm.html">How to execute a CCM</a>
   </li>
 </ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../build-blockchain/test-app.html">Testing the blockchain application</a>
   </li>
 </ul>
   </li>
@@ -393,7 +387,7 @@
   </li>
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="../integrate-blockchain/aggregate-blockchain-data/index.html">Aggregate blockchain data with Lisk Service</a>
+    <a class="nav-link" href="../integrate-blockchain/aggregate-blockchain-data/index.html">Aggregate blockchain data with Klayr Service</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../integrate-blockchain/aggregate-blockchain-data/extend-indexer.html">Extending the Indexer microservice</a>
@@ -411,7 +405,7 @@
     <span class="nav-text">APIs</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../api/lisk-node-rpc.html">RPC API for Lisk nodes</a>
+    <a class="nav-link" href="../api/klayr-node-rpc.html">RPC API for Klayr nodes</a>
   </li>
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
@@ -457,19 +451,19 @@
   </li>
   <li class="nav-item" data-depth="2">
     <button class="nav-item-toggle"></button>
-    <span class="nav-text">Lisk Service APIs</span>
+    <span class="nav-text">Klayr Service APIs</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../api/lisk-service-rpc.html">RPC API of Lisk Service</a>
+    <a class="nav-link" href="../api/klayr-service-rpc.html">RPC API of Klayr Service</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../api/lisk-service-http.html">HTTP API (Lisk Service)</a>
+    <a class="nav-link" href="../api/klayr-service-http.html">HTTP API (Klayr Service)</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../api/lisk-service-pubsub.html">Publish/Subscribe API (Lisk Service)</a>
+    <a class="nav-link" href="../api/klayr-service-pubsub.html">Publish/Subscribe API (Klayr Service)</a>
   </li>
   <li class="nav-item" data-depth="3">
-    <a class="nav-link" href="../api/lisk-service-api-migration.html">Lisk Service API v2 vs v3</a>
+    <a class="nav-link" href="../api/klayr-service-api-migration.html">Klayr Service API v2 vs v3</a>
   </li>
 </ul>
   </li>
@@ -480,18 +474,18 @@
     <span class="nav-text">Products</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../lisk-sdk/index.html">Lisk SDK</a>
+    <a class="nav-link" href="../klayr-sdk/index.html">Klayr SDK</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../lisk-service/index.html">Lisk Service</a>
+    <a class="nav-link" href="../klayr-service/index.html">Klayr Service</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../lisk-core/index.html">Lisk Core</a>
+    <a class="nav-link" href="../klayr-core/index.html">Klayr Core</a>
   </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="../bug-bounty-program.html">Lisk Bug Bounty Program</a>
+    <a class="nav-link" href="../bug-bounty-program.html">Klayr Bug Bounty Program</a>
   </li>
 </ul>
   </li>
@@ -500,59 +494,39 @@
 </div>
 <div class="nav-panel-explore" data-panel="explore">
   <div class="context">
-    <span class="title">Lisk Documentation</span>
+    <span class="title">Klayr Documentation</span>
     <span class="version">default</span>
   </div>
   <ul class="components">
     <li class="component">
-      <a class="title" href="../lisk-core/index.html">Lisk Core</a>
+      <a class="title" href="../klayr-core/index.html">Klayr Core</a>
       <ul class="versions">
         <li class="version is-latest">
-          <a href="../lisk-core/index.html">4.0 (latest)</a>
-        </li>
-        <li class="version">
-          <a href="../lisk-core/v3/index.html">3.1.1</a>
-        </li>
-      </ul>
-    </li>
-    <li class="component">
-      <a class="title" href="../lisk-docs-manual/index.html">Lisk docs manual</a>
-      <ul class="versions">
-        <li class="version is-latest">
-          <a href="../lisk-docs-manual/index.html">0.1.0</a>
+          <a href="../klayr-core/index.html">4.0 (latest)</a>
         </li>
       </ul>
     </li>
     <li class="component is-current">
-      <a class="title" href="../index.html">Lisk Documentation</a>
+      <a class="title" href="../index.html">Klayr Documentation</a>
       <ul class="versions">
         <li class="version is-current is-latest">
           <a href="../index.html">default</a>
         </li>
-        <li class="version">
-          <a href="../lisk-v3/index.html">lisk-v3</a>
+      </ul>
+    </li>
+    <li class="component">
+      <a class="title" href="../klayr-sdk/index.html">Klayr SDK</a>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../klayr-sdk/index.html">6.0 (latest)</a>
         </li>
       </ul>
     </li>
     <li class="component">
-      <a class="title" href="../lisk-sdk/index.html">Lisk SDK</a>
+      <a class="title" href="../klayr-service/index.html">Klayr Service</a>
       <ul class="versions">
         <li class="version is-latest">
-          <a href="../lisk-sdk/index.html">6.0 (latest)</a>
-        </li>
-        <li class="version">
-          <a href="../lisk-sdk/v5/index.html">5.3.0</a>
-        </li>
-      </ul>
-    </li>
-    <li class="component">
-      <a class="title" href="../lisk-service/index.html">Lisk Service</a>
-      <ul class="versions">
-        <li class="version is-latest">
-          <a href="../lisk-service/index.html">0.7 (latest)</a>
-        </li>
-        <li class="version">
-          <a href="../lisk-service/v0.6/index.html">0.6</a>
+          <a href="../klayr-service/index.html">0.7 (latest)</a>
         </li>
       </ul>
     </li>
@@ -573,7 +547,7 @@
 <div class="exampleblock">
 <div class="content">
 <div class="paragraph">
-<p>On this page, you&#8217;ll learn how to manage your account directly from the command-line with the CLI of a Lisk node.</p>
+<p>On this page, you&#8217;ll learn how to manage your account directly from the command-line with the CLI of a Klayr node.</p>
 </div>
 <div class="paragraph">
 <p>Specifically, the following topics below will be covered in detail:</p>
@@ -596,7 +570,7 @@
 <p><i class="fa fa-check-square-o"></i> Methods used for managing account credentials</p>
 </li>
 <li>
-<p><i class="fa fa-check-square-o"></i> Lisk wallet passphrase and security</p>
+<p><i class="fa fa-check-square-o"></i> Klayr wallet passphrase and security</p>
 </li>
 </ul>
 </div>
@@ -609,7 +583,7 @@
 <i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
-If you prefer a graphical user interface to manage your account, it is possible to use supported wallets such as <a href="https://lisk.com/wallet" target="_blank" rel="noopener">Lisk Wallet</a>.
+If you prefer a graphical user interface to manage your account, it is possible to use supported wallets such as <a href="https://klayr.xyz/wallet" target="_blank" rel="noopener">Klayr Wallet</a>.
 </td>
 </tr>
 </table>
@@ -636,9 +610,9 @@ If you prefer a graphical user interface to manage your account, it is possible 
 <li><a href="#user-substore">User Substore</a></li>
 </ul>
 </li>
-<li><a href="#lisk32-address-format">Lisk32 address format</a></li>
+<li><a href="#klayr32-address-format">Klayr32 address format</a></li>
 <li><a href="#key-management">Key Management</a></li>
-<li><a href="#lisk-wallet-passphrase-and-security-best-practices">Lisk wallet passphrase and security best practices</a>
+<li><a href="#klayr-wallet-passphrase-and-security-best-practices">Klayr wallet passphrase and security best practices</a>
 <ul class="sectlevel2">
 <li><a href="#security-best-practices">Security best practices</a></li>
 </ul>
@@ -678,13 +652,13 @@ Together with the <code>keyPath</code>, it identifies an account on the blockcha
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>address</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">lsk7dqp2w7447pqhuzmhx
+<td class="tableblock halign-left valign-top"><p class="tableblock">kly7dqp2w7447pqhuzmhx
 sxr65qeoq7nbfox28wxc</p></td>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p>The address is the main public identifier of the account and the human-readable representation of the <code>publicKey</code>.</p>
 </div>
 <div class="paragraph">
-<p>Depending on the context, the address is represented in <a href="#lisk32-address-format">different formats</a>.</p>
+<p>Depending on the context, the address is represented in <a href="#klayr32-address-format">different formats</a>.</p>
 </div></div></td>
 </tr>
 <tr>
@@ -746,7 +720,7 @@ cc6e21c14fd02f28e7e</p></td>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>blsKeyPath</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">"m/12381/134/0/0"</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Similarly to the specifications of <a href="https://eips.ethereum.org/EIPS/eip-2334" target="_blank" rel="noopener">EIP 2334</a>, Lisk uses the path <code>m/12381/134/chainIDConverted/0</code> for the BLS key derived for a chain, where <code>chainIDConverted = bytesToUint(chainID)</code>.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Similarly to the specifications of <a href="https://eips.ethereum.org/EIPS/eip-2334" target="_blank" rel="noopener">EIP 2334</a>, Klayr uses the path <code>m/12381/134/chainIDConverted/0</code> for the BLS key derived for a chain, where <code>chainIDConverted = bytesToUint(chainID)</code>.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>blsKey</code></p></td>
@@ -760,7 +734,7 @@ c96a17317e18</p></td>
 </div>
 <div id="bls-keys" class="paragraph">
 <p>An extra key pair, the BLS keys, is added to a validator account, following the key derivation method described in <a href="https://eips.ethereum.org/EIPS/eip-2333" target="_blank" rel="noopener">EIP 2333</a>.
-BLS keys are used by validators to create aggregated signatures for commits in Lisk blockchains, among other functions.</p>
+BLS keys are used by validators to create aggregated signatures for commits in Klayr blockchains, among other functions.</p>
 </div></div></td>
 </tr>
 <tr>
@@ -789,9 +763,9 @@ The proof-of-possession is important to prevent "rogue key" attacks, whereby att
 <div class="sect2">
 <h3 id="passphrases"><a class="anchor" href="#passphrases"></a>Passphrases</h3>
 <div class="paragraph">
-<p>As previously discussed, Lisk accounts employ a 12-word <a href="https://droomdroom.com/a-guide-to-mnemonic-phrase-and-passphrase/#:~:text=Mnemonic%20phrases%20are%20words%2C%20usually,ownership%20of%20its%20crypto%20assets" target="_blank" rel="noopener">Mnemonic Passphrase</a> to ensure robust security.
+<p>As previously discussed, Klayr accounts employ a 12-word <a href="https://droomdroom.com/a-guide-to-mnemonic-phrase-and-passphrase/#:~:text=Mnemonic%20phrases%20are%20words%2C%20usually,ownership%20of%20its%20crypto%20assets" target="_blank" rel="noopener">Mnemonic Passphrase</a> to ensure robust security.
 It is a sequence of carefully chosen words that acts as a human-readable representation of a complex cryptographic key, as in the example displayed in the <a href="#creating-a-new-passphrase">Creating a new passphrase</a> section.
-This passphrase is indispensable for accessing any Lisk wallet and conducting transactions from your account.</p>
+This passphrase is indispensable for accessing any Klayr wallet and conducting transactions from your account.</p>
 </div>
 <div class="paragraph">
 <p>Using a 12-word seed phrase encompasses 128 bits of entropy, a metric that gauges the level of unpredictability or randomness in the data employed for generating the phrase.
@@ -878,22 +852,22 @@ For example, the path <code>44'/134'/0'</code> (notice the apostrophe after each
 <div class="ulist tabs">
 <ul>
 <li>
-<p><a id="tabset1_lisk-core"></a>Lisk Core</p>
+<p><a id="tabset1_klayr-core"></a>Klayr Core</p>
 </li>
 <li>
-<p><a id="tabset1_lisk-app"></a>Lisk app</p>
+<p><a id="tabset1_klayr-app"></a>Klayr app</p>
 </li>
 </ul>
 </div>
 <div class="content">
-<div class="tab-pane" aria-labelledby="tabset1_lisk-core">
+<div class="tab-pane" aria-labelledby="tabset1_klayr-core">
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">lisk-core console</code></pre>
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">klayr-core console</code></pre>
 </div>
 </div>
 </div>
-<div class="tab-pane" aria-labelledby="tabset1_lisk-app">
+<div class="tab-pane" aria-labelledby="tabset1_klayr-app">
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">./bin/run console</code></pre>
@@ -903,11 +877,11 @@ For example, the path <code>44'/134'/0'</code> (notice the apostrophe after each
 </div>
 </div>
 <div class="paragraph">
-<p>Generate a new mnemonic passphrase using the Lisk Passphrase library:</p>
+<p>Generate a new mnemonic passphrase using the Klayr Passphrase library:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre> &gt; lisk.passphrase.Mnemonic.generateMnemonic()</pre>
+<pre> &gt; klayr.passphrase.Mnemonic.generateMnemonic()</pre>
 </div>
 </div>
 <div class="paragraph">
@@ -922,7 +896,7 @@ For example, the path <code>44'/134'/0'</code> (notice the apostrophe after each
 <div class="sect2">
 <h3 id="creating-the-other-credentials"><a class="anchor" href="#creating-the-other-credentials"></a>Creating the other credentials</h3>
 <div class="paragraph">
-<p>Next, use the <a href="../lisk-sdk/client-cli.html#keyscreate" class="xref page">keys:create</a> command to generate all relevant account credentials:</p>
+<p>Next, use the <a href="../klayr-sdk/client-cli.html#keyscreate" class="xref page">keys:create</a> command to generate all relevant account credentials:</p>
 </div>
 <div class="admonitionblock important">
 <table>
@@ -941,22 +915,22 @@ To put the new account on-chain, it is necessary to <a href="#account-initializa
 <div class="ulist tabs">
 <ul>
 <li>
-<p><a id="tabset2_lisk-core"></a>Lisk Core</p>
+<p><a id="tabset2_klayr-core"></a>Klayr Core</p>
 </li>
 <li>
-<p><a id="tabset2_lisk-app"></a>Lisk app</p>
+<p><a id="tabset2_klayr-app"></a>Klayr app</p>
 </li>
 </ul>
 </div>
 <div class="content">
-<div class="tab-pane" aria-labelledby="tabset2_lisk-core">
+<div class="tab-pane" aria-labelledby="tabset2_klayr-core">
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">lisk-core keys:create</code></pre>
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">klayr-core keys:create</code></pre>
 </div>
 </div>
 </div>
-<div class="tab-pane" aria-labelledby="tabset2_lisk-app">
+<div class="tab-pane" aria-labelledby="tabset2_klayr-app">
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">./bin/run keys:create</code></pre>
@@ -1014,7 +988,7 @@ Hence, it is advisable to store and maintain the password in a secure location s
 <pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">{
   "keys": [
     {
-      "address": "lskp24b6ev62w67v8qvk8wnvkhh2gv3hcoohes5z3",
+      "address": "klyp24b6ev62w67v8qvk8wnvkhh2gv3hcoohes5z3",
       "keyPath": "m/44'/134'/0'",
       "publicKey": "83eac294606806e0f4125203e2d0dac5ef1fc8730d5ec12e77e94f823f2262fa",
       "privateKey": "eafb0bc7f148e60f69fda52e0cc862071871bbfff884aad095ae84bdde8d298283eac294606806e0f4125203e2d0dac5ef1fc8730d5ec12e77e94f823f2262fa",
@@ -1074,22 +1048,22 @@ If you wish to start from a different key path, you can specify an <code>--offse
 <div class="ulist tabs">
 <ul>
 <li>
-<p><a id="tabset3_lisk-core"></a>Lisk Core</p>
+<p><a id="tabset3_klayr-core"></a>Klayr Core</p>
 </li>
 <li>
-<p><a id="tabset3_lisk-app"></a>Lisk app</p>
+<p><a id="tabset3_klayr-app"></a>Klayr app</p>
 </li>
 </ul>
 </div>
 <div class="content">
-<div class="tab-pane" aria-labelledby="tabset3_lisk-core">
+<div class="tab-pane" aria-labelledby="tabset3_klayr-core">
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">lisk-core keys:create --passphrase your-passphrase --no-encrypt --count 2 --offset 1</code></pre>
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">klayr-core keys:create --passphrase your-passphrase --no-encrypt --count 2 --offset 1</code></pre>
 </div>
 </div>
 </div>
-<div class="tab-pane" aria-labelledby="tabset3_lisk-app">
+<div class="tab-pane" aria-labelledby="tabset3_klayr-app">
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">./bin/run keys:create --passphrase your-passphrase --no-encrypt --count 2 --offset 1</code></pre>
@@ -1139,7 +1113,7 @@ For example, for the <code>transaction:create</code> command, the key derivation
 <p>When tokens are sent to a new address, it is required to pay an <strong>account initialization fee</strong>.</p>
 </div>
 <div class="paragraph">
-<p>In the Lisk Mainnet, the account initialization fee is 0.05 LSK.</p>
+<p>In the Klayr Mainnet, the account initialization fee is 0.05 KLY.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -1218,11 +1192,11 @@ The account initialization fee has to be paid on top of the other fees for a tra
 </div>
 </div>
 <div class="sect1">
-<h2 id="lisk32-address-format"><a class="anchor" href="#lisk32-address-format"></a>Lisk32 address format</h2>
+<h2 id="klayr32-address-format"><a class="anchor" href="#klayr32-address-format"></a>Klayr32 address format</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The <strong>Lisk32 representation</strong> displays addresses as a readable string with a checksum and the "lsk" prefix.
-Lisk32 addresses always have a fix length of 41 characters.</p>
+<p>The <strong>Klayr32 representation</strong> displays addresses as a readable string with a checksum and the "kly" prefix.
+Klayr32 addresses always have a fix length of 41 characters.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -1232,16 +1206,16 @@ Lisk32 addresses always have a fix length of 41 characters.</p>
 </td>
 <td class="content">
 <div class="title">Automatic detection of address typing errors</div>
-A BCH checksum is used for <a href="https://github.com/LiskHQ/lips/blob/main/proposals/lip-0018.md" target="_blank" rel="noopener">detection of small errors</a> in the address.
+A BCH checksum is used for <a href="https://github.com/KlayrHQ/lips/blob/main/proposals/lip-0018.md" target="_blank" rel="noopener">detection of small errors</a> in the address.
 Any errors in <strong>up to 4 characters</strong> are <strong>guaranteed</strong> to be detected and errors in <strong>more than 5 characters</strong> are <strong>likely</strong> to be detected.
 </td>
 </tr>
 </table>
 </div>
 <div class="literalblock">
-<div class="title">Lisk32 address example</div>
+<div class="title">Klayr32 address example</div>
 <div class="content">
-<pre>lsk24cd35u4jdq8szo3pnsqe5dsxwrnazyqqqg5eu</pre>
+<pre>kly24cd35u4jdq8szo3pnsqe5dsxwrnazyqqqg5eu</pre>
 </div>
 </div>
 <div class="admonitionblock tip">
@@ -1251,7 +1225,7 @@ Any errors in <strong>up to 4 characters</strong> are <strong>guaranteed</strong
 <i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
-To learn how the Lisk32 is derived from the public key, please go to <a href="https://github.com/LiskHQ/lips/blob/main/proposals/lip-0018.md#address-representation-for-user-interface-level" target="_blank" rel="noopener">Address Representation for User Interface Level (LIP 0018)</a>.
+To learn how the Klayr32 is derived from the public key, please go to <a href="https://github.com/KlayrHQ/lips/blob/main/proposals/lip-0018.md#address-representation-for-user-interface-level" target="_blank" rel="noopener">Address Representation for User Interface Level (LIP 0018)</a>.
 </td>
 </tr>
 </table>
@@ -1292,12 +1266,12 @@ Storing and backing up an encrypted file is necessary, but the user only needs t
 </div>
 </div>
 <div class="sect1">
-<h2 id="lisk-wallet-passphrase-and-security-best-practices"><a class="anchor" href="#lisk-wallet-passphrase-and-security-best-practices"></a>Lisk wallet passphrase and security best practices</h2>
+<h2 id="klayr-wallet-passphrase-and-security-best-practices"><a class="anchor" href="#klayr-wallet-passphrase-and-security-best-practices"></a>Klayr wallet passphrase and security best practices</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Wallets play a crucial role, as they provide a secure means to store, send, and receive both LSK tokens and other tokens/coins.
+<p>Wallets play a crucial role, as they provide a secure means to store, send, and receive both KLY tokens and other tokens/coins.
 Wallets in general come in different forms, including a variety of software wallets, such as hot wallets, custodial/non-custodial, and web wallets; hardware wallets, and even paper wallets.
-They operate using a combination of public and private keys, ensuring the safety and authenticity of transactions on the Lisk blockchain.
+They operate using a combination of public and private keys, ensuring the safety and authenticity of transactions on the Klayr blockchain.
 For a more in-depth overview regarding the wallets, see <a href="https://blockchain-council.org/blockchain/types-of-crypto-wallets-explained/" target="_blank" rel="noopener">types of wallets</a>.</p>
 </div>
 <div class="sect2">
@@ -1318,8 +1292,8 @@ Following this, take the time to assess your storage practices to prevent a recu
 </div>
 <div class="paragraph">
 <p>As long as you retain your passphrase, your account access remains intact.
-Furthermore, please note that your passphrase can be used interchangeably within the Lisk ecosystem.
-Hence, it is possible to utilize the same passphrase to log in to both Lisk Desktop and Lisk Mobile, granting access to your account.</p>
+Furthermore, please note that your passphrase can be used interchangeably within the Klayr ecosystem.
+Hence, it is possible to utilize the same passphrase to log in to both Klayr Desktop and Klayr Mobile, granting access to your account.</p>
 </div>
 </div>
 </div>
@@ -1334,14 +1308,14 @@ Hence, it is possible to utilize the same passphrase to log in to both Lisk Desk
 </div>
 <footer class="footer">
   <div class="footerdiv">
-    <p>© 2023 Lisk Foundation</p>
+    <p>© 2023 Klayr</p>
     <!-- <div class="community-section">
-      <p class="community-section__text">Follow Lisk on: </p>
+      <p class="community-section__text">Follow Klayr on: </p>
       <div class="community-section__icons"> -->
     <div class="community_icons">
-      <a href="https://lisk.chat" title="Discord" target="_blank" class="footer_icon icon-discord"><p>Discord</p></a>
-      <a href="https://dev.lisk.com" title="Discourse" target="_blank" class="footer_icon icon-discourse"><p>Discourse</p></a>
-      <a href="https://github.com/LiskHQ" title="GitHub" target="_blank" class="footer_icon icon-github"><p>GitHub</p></a>
+      <a href="https://klayr.chat" title="Discord" target="_blank" class="footer_icon icon-discord"><p>Discord</p></a>
+      <a href="https://dev.klayr.xyz" title="Discourse" target="_blank" class="footer_icon icon-discourse"><p>Discourse</p></a>
+      <a href="https://github.com/KlayrHQ" title="GitHub" target="_blank" class="footer_icon icon-github"><p>GitHub</p></a>
       <!--    </div> -->
     </div>
   </div>
