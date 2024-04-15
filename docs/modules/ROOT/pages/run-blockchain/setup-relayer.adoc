@@ -15,6 +15,7 @@ Muhammad Talha <muhammad.talha@lightcurve.io>
 :url_relayer_node: run-blockchain/index.adoc#relayer-nodes
 :url_mainnet_node: klayr-core::setup/npm.adoc
 :url_chainConnector_authorize: api/plugin-rpc-api/chain-connector-api.adoc#chainconnector_authorize
+:url_system_getmetadata: api/klayr-node-rpc.adoc#system_getmetadata
 
 // :fn_mainnet: footnote:witness[For more information about setting up a sidechain node, see the xref:{url_mainnet_node}[How to set up a Lisk Mainnet node] section.]
 :url_lip_53: https://github.com/KlayrHQ/lips/blob/main/proposals/lip-0053.md#appendix

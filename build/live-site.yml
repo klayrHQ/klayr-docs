@@ -17,7 +17,7 @@ content:
   - url: https://github.com/KlayrHQ/klayr-docs.git
     branches: [docs-sdk]
   - url: https://github.com/KlayrHQ/klayr-docs.git
-    branches: [ main-dev ]
+    branches: [ main ]
     start_path: docs
   - url: https://github.com/KlayrHQ/klayr-core.git
     branches: [ development ]
