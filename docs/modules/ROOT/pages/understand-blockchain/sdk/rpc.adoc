@@ -1,6 +1,6 @@
-= Communicating to a Lisk node via RPC
+= Communicating to a Klayr node via RPC
 Mona Bärenfänger <mona@lightcurve.io> Muhammad Talha <muhammad.talha@lightcurve.io>
-:description: Introduces the Lisk communication architecture, which is based on IPC Unix Sockets and WebSocket.
+:description: Introduces the Klayr communication architecture, which is based on IPC Unix Sockets and WebSocket.
 //Settings
 :toc: preamble
 :toclevels: 5
@@ -8,22 +8,22 @@ Mona Bärenfänger <mona@lightcurve.io> Muhammad Talha <muhammad.talha@lightcurv
 :idprefix:
 :idseparator: -
 :imagesdir: ../../assets/images
-:sdk_docs: lisk-sdk::
+:sdk_docs: klayr-sdk::
 //External URLs
-:url_npm_lisk_sdk: https://www.npmjs.com/package/lisk-sdk
+:url_npm_klayr_sdk: https://www.npmjs.com/package/klayr-sdk
 :url_wiki_ipc: https://en.wikipedia.org/wiki/Inter-process_communication
 :url_websocket: https://en.wikipedia.org/wiki/WebSocket
 :url_wiki_http_protocol: https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol
 :url_eda: https://en.wikipedia.org/wiki/Event-driven_architecture
 // Project URLs
 :url_rpc_config: {sdk_docs}config.adoc#rpc
-:url_advanced_rpc: api/lisk-node-rpc.adoc
+:url_advanced_rpc: api/klayr-node-rpc.adoc
 :url_guides_config_rpc: build-blockchain/configuration.adoc#rpc
 :url_intro_modules: understand-blockchain/sdk/modules-commands.adoc
 :url_intro_plugins: understand-blockchain/sdk/plugins.adoc
 :url_intro_plugins_load: understand-blockchain/sdk/plugins.adoc#defining-the-plugin-logic
-// :url_references_elements_apiclient: {sdk_docs}references/lisk-elements/api-client.adoc
-// :url_references_elements_client: {sdk_docs}references/lisk-elements/client.adoc
+// :url_references_elements_apiclient: {sdk_docs}references/klayr-elements/api-client.adoc
+// :url_references_elements_client: {sdk_docs}references/klayr-elements/client.adoc
 :url_advanced_rpc_endpoints: {url_advanced_rpc}#endpoints
 :url_advanced_rpc_events: {url_advanced_rpc}#events
 :url_guides_asset: build-blockchain/modules/command.adoc
@@ -34,7 +34,7 @@ Mona Bärenfänger <mona@lightcurve.io> Muhammad Talha <muhammad.talha@lightcurv
 :url_module_commands: understand-blockchain/sdk/modules-commands.adoc#blockchain-events 
 // TODO: Update the page by uncommenting the hyperlinks once the updated pages are available.
 
-The open Lisk communication architecture is based on three different RPC (Remote-Procedure-Call) API modes: {url_wiki_ipc}[Inter-Process Communication (IPC)^], {url_websocket}[WebSocket (WS)^], and {url_wiki_http_protocol}[Hypertext Transfer Protocol (HTTP)^].
+The open Klayr communication architecture is based on three different RPC (Remote-Procedure-Call) API modes: {url_wiki_ipc}[Inter-Process Communication (IPC)^], {url_websocket}[WebSocket (WS)^], and {url_wiki_http_protocol}[Hypertext Transfer Protocol (HTTP)^].
 
 The blockchain node can be configured to expose either IPC, WS, or HTTP APIs, as described in the xref:{url_rpc_config}[Node configuration reference].
 
@@ -47,13 +47,13 @@ image::intro/communication-architecture.png[,1000 ,align="center"]
 == The API client
 
 The API client simplifies sending API requests to a blockchain node.
-A Lisk application communicates to the blockchain by requesting the RPC endpoints of a blockchain node.
+A Klayr application communicates to the blockchain by requesting the RPC endpoints of a blockchain node.
 RPC-based interfaces i.e. IPC, WS, or HTTP allow applications to *invoke* and *subscribe* (WS and IPC only) to RPC endpoints and events.
 
 An API client can be imported into a JS client application as shown in the following snippets.
 
-// TIP: To conveniently communicate with a blockchain application, use the `apiClient` included in the xref:{url_references_elements_client}[@liskhq/lisk-client] and the {url_npm_lisk_sdk}[lisk-sdk^] packages.
-TIP: To conveniently communicate with a Lisk application, use the `apiClient` included in the `@liskhq/lisk-client` and the `lisk-sdk` packages.
+// TIP: To conveniently communicate with a blockchain application, use the `apiClient` included in the xref:{url_references_elements_client}[@klayr/client] and the {url_npm_klayr_sdk}[klayr-sdk^] packages.
+TIP: To conveniently communicate with a Klayr application, use the `apiClient` included in the `@klayr/client` and the `klayr-sdk` packages.
 
 [tabs]
 
@@ -63,7 +63,7 @@ WS API client example::
 --
 [source,js]
 ----
-const { apiClient } = require('@liskhq/lisk-client');
+const { apiClient } = require('@klayr/client');
 let clientCache;
 const nodeAPIURL = 'ws://localhost:7887/rpc-ws';
 
@@ -91,12 +91,12 @@ IPC API client example::
 --
 [source,js]
 ----
-const { apiClient } = require('@liskhq/lisk-client');
+const { apiClient } = require('@klayr/client');
 let clientCache;
 
 const getClient = async () => {
     if (!clientCache) {
-        clientCache = await apiClient.createIPCClient('~/.lisk/my-app');
+        clientCache = await apiClient.createIPCClient('~/.klayr/my-app');
     }
     return clientCache;
 };
@@ -115,7 +115,7 @@ getClient().then((client) => {
 HTTP cURL::
 +
 --
-Apart from the WS and IPC method, Lisk endpoints also support HTTP requests and response mechanisms.
+Apart from the WS and IPC method, Klayr endpoints also support HTTP requests and response mechanisms.
 With a {JSON_RPC_Specs}[JSON RPC 2.0^] based format, any endpoint can be invoked using a cURL request.
 
 For example:
@@ -139,7 +139,7 @@ curl --location --request POST 'http://localhost:7887/rpc' \
 
 === IPC vs WS vs HTTP
 
-The three modes of communication i.e. IPC, WS, and HTTP allow Lisk applications to communicate with Lisk nodes.
+The three modes of communication i.e. IPC, WS, and HTTP allow Klayr applications to communicate with Klayr nodes.
 
 *IPC* in general is the preferred method for local connections:
 
@@ -174,7 +174,7 @@ There are two methods that can be used to expose the node APIs via IPC, WS, and 
 - `--api-host=127.0.0.1`: IP over which the API is exposed. Use `0.0.0.0` to expose the API on all available ethernet IP instances
 - `--api-port=7887`: Port on which the API is exposed
 
-2. This can also be achieved by adding the RPC configuration option to your Lisk node's configuration file as shown below.
+2. This can also be achieved by adding the RPC configuration option to your Klayr node's configuration file as shown below.
 To enforce the config changes `--overwrite-config` flag must be passed when starting the application.
 To supply a custom config file, use the `--config=</path/to/custom/config>` flag:
 +
@@ -209,7 +209,7 @@ The prefix `system` in this example is referring to the xref:{url_RPC_System_API
 
 == Interfaces
 
-A Lisk application communicates via interfaces i.e. <<endpoints>> and <<events>>.
+A Klayr application communicates via interfaces i.e. <<endpoints>> and <<events>>.
 Endpoints are invoked and events are subscribed to.
 
 Within an application, different interfaces are exposed to different components.
@@ -262,20 +262,20 @@ console.log(data);
 ----
 
 == Events
-The Lisk apps emit RPC events and Blockchain events, whereby each follows very different concepts.
+The Klayr apps emit RPC events and Blockchain events, whereby each follows very different concepts.
 
 Details of both event types are discussed below:
 
 === RPC Events
-RPC events allow other applications to subscribe to Lisk Blockchain events.
-By default, Lisk exposes various events that can be subscribed to get the latest information regarding network, chain, and transactions.
+RPC events allow other applications to subscribe to Klayr Blockchain events.
+By default, Klayr exposes various events that can be subscribed to get the latest information regarding network, chain, and transactions.
 
 These events can be subscribed to, by the following:
 
 * xref:{url_intro_plugins}[]
 * External services/applications
 
-TIP: For more information about the default events exposed by the Lisk Framework, check out the xref:{url_RPC_Events}[Events reference] page.
+TIP: For more information about the default events exposed by the Klayr Framework, check out the xref:{url_RPC_Events}[Events reference] page.
 
 ==== How to subscribe to events
 Each event as described in the  xref:{url_RPC_Events}[Events reference] page can be subscribed to, by using the convention mentioned in the <<aliases>> section.

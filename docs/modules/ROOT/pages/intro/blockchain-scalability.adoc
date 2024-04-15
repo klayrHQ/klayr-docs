@@ -1,6 +1,6 @@
 = Blockchain Scalability
 Chris Braithwaite <christopher.braithwaite@lightcurve.io> Mona Bärenfänger <mona@lightcurve.io>
-:description: Scalability in the blockchain industry and how it is managed in the Lisk ecosystem
+:description: Scalability in the blockchain industry and how it is managed in the Klayr ecosystem
 :toc: preamble
 :idprefix:
 :idseparator: -
@@ -11,7 +11,7 @@ Chris Braithwaite <christopher.braithwaite@lightcurve.io> Mona Bärenfänger <mo
 :url_plasma: https://academy.binance.com/en/glossary/plasma
 :url_sharding: https://101blockchains.com/what-is-blockchain-sharding/
 :url_state_channels: https://research.csiro.au/blockchainpatterns/general-patterns/blockchain-payment-patterns/payment-channel/
-:url_lisk_poa: https://lisk.com/blog/posts/proof-authority-consensus-sidechains
+:url_klayr_poa: https://klayr.xyz/blog/posts/proof-authority-consensus-sidechains
 :url_cross_chain: understand-blockchain/interoperability/communication.adoc
 
 :url_wiki_pos: https://en.wikipedia.org/wiki/Proof_of_stake
@@ -73,8 +73,8 @@ In addition, this can also result in transaction fees increasing.
 * TPS (Transactions per second)
 
 The TPS (transactions per second), rates are directly related to the response times as described above, as managing the load and transaction speeds are intertwined, hence, these are two of the key challenges to be overcome.
-However, in the Lisk ecosystem, the TPS is actually improved due to the Lisk interoperability solution.
-This is covered further in the <<Scalability in Lisk>> section below.
+However, in the Klayr ecosystem, the TPS is actually improved due to the Klayr interoperability solution.
+This is covered further in the <<Scalability in Klayr>> section below.
 
 * Limitations
 
@@ -151,7 +151,7 @@ The benefits here consist of reducing network congestion problems and also resol
 
 A sidechain operates as a separate transactional chain alongside the mainchain and can be invaluable when large batch transactions are required to be processed, hence resulting in reducing the load.
 Sidechains can also utilize different consensus techniques as compared to the mainchain.
-In fact this approach is used by Lisk in order to improve scalability, as a Lisk sidechain can be adapted specifically for a blockchain app use-case.
+In fact this approach is used by Klayr in order to improve scalability, as a Klayr sidechain can be adapted specifically for a blockchain app use-case.
 
 * State Channels
 
@@ -183,9 +183,9 @@ Additional chains can be created on top of each child chain, resulting in a tree
 As there are 4 main versions of the Plasma model, which results in different variants, the transaction process is not described in detail in this section.
 For more information, see {url_plasma}[Plasma's^] description on the Glossary page.
 
-== Scalability in Lisk
+== Scalability in Klayr
 
-Lisk is currently well-placed in this regard, firstly by its interoperability solution that allows each application to run on its own sidechain.
+Klayr is currently well-placed in this regard, firstly by its interoperability solution that allows each application to run on its own sidechain.
 By deploying the *cross-chain certification* methodology, this results in an efficient and scalable solution for transferring information between chains.
 In effect, being able to run each application on a separate sidechain results in significantly increasing scalability.
 For further information, see the xref:{url_cross_chain}[cross-chain communication] page.
@@ -193,13 +193,13 @@ For further information, see the xref:{url_cross_chain}[cross-chain communicatio
 Secondly, scalability is further increased by the use of the PoS consensus mechanism as explained in more detail on the xref:{url_how_blockchain_works}[How blockchain works] page.
 Basically, PoS is a much more efficient consensus mechanism from a network scalability viewpoint as compared to PoW.
 In addition, PoS does not demand vast power requirements either.
-Furthermore, Lisk deploys deterministic block processing which in turn increases scalability further.
+Furthermore, Klayr deploys deterministic block processing which in turn increases scalability further.
 PoS also possesses further key benefits of being a highly decentralized and efficient consensus mechanism, coupled with having fast transactions, faster node restart times, reduced block production times, and a high level of security, ensuring it is well placed for any Web3-based projects.
 In addition, a limited amount of block processors are chosen based on their stake in the blockchain, making the throughput much greater and faster.
 
 [NOTE]
 ====
-The PoS used by Lisk is more of a middle ground between {url_wiki_pos}[PoS^] and DPoS.
+The PoS used by Klayr is more of a middle ground between {url_wiki_pos}[PoS^] and DPoS.
 
 The DPoS-related characteristic is the ability of users to register as validators and then receive stakes from other users, in order to increase their validator weight.
 
@@ -208,13 +208,13 @@ Another PoS characteristic is the mechanism for the selection of the two random 
 The higher the validator's weight, the higher the chance to be selected in one of the two random spots available for standby validators.
 ====
 
-Furthermore, with Lisk SDK v6 an additional consensus mechanism, Proof of Authority, (PoA) will also be supported, therefore the user will be able to choose between PoA and PoS.
-With PoA no consensus tokens are required, therefore it is possible to deploy a PoA sidechain that solely uses the Lisk token. This results in increasing the node's performance, resulting in a more simple and efficient system as it requires fewer message exchanges and less overhead.
-Finally, resulting in an additional positive effect on scaling for the Lisk ecosystem.
-Further information can be found here in the following Lisk blog post: {url_lisk_poa}[PoA Consensus for Sidechains^].
+Furthermore, with Klayr SDK v6 an additional consensus mechanism, Proof of Authority, (PoA) will also be supported, therefore the user will be able to choose between PoA and PoS.
+With PoA no consensus tokens are required, therefore it is possible to deploy a PoA sidechain that solely uses the Klayr token. This results in increasing the node's performance, resulting in a more simple and efficient system as it requires fewer message exchanges and less overhead.
+Finally, resulting in an additional positive effect on scaling for the Klayr ecosystem.
+Further information can be found here in the following Klayr blog post: {url_klayr_poa}[PoA Consensus for Sidechains^].
 
-To summarise, Lisk is well positioned in this regard, as having the ability to be able to run applications independently on separate sidechains, results in reducing the load on the mainchain, therefore increasing the overall scalability of the network.
-Furthermore, by offering the user the choice of either being able to use the efficient PoS consensus mechanism or the more simplified PoA consensus mechanism, now introduced with the Lisk SDK v6, also enables scalability to be effectively increased.
+To summarise, Klayr is well positioned in this regard, as having the ability to be able to run applications independently on separate sidechains, results in reducing the load on the mainchain, therefore increasing the overall scalability of the network.
+Furthermore, by offering the user the choice of either being able to use the efficient PoS consensus mechanism or the more simplified PoA consensus mechanism, now introduced with the Klayr SDK v6, also enables scalability to be effectively increased.
 
 == Future of scalability in blockchain
 

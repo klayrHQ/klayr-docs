@@ -3,9 +3,9 @@ Muhammad Talha <muhammad.talha@lightcurve.io>
 // Settings
 :toc: preamble
 //URLs
-:url_typedoc_reward: {site-url}/lisk-sdk/v6/references/typedoc/classes/lisk_framework.RewardModule.html
+:url_typedoc_reward: {site-url}/klayr-sdk/v6/references/typedoc/classes/klayr_framework.RewardModule.html
 
-:url_dynamic_reward: https://github.com/LiskHQ/lisk-sdk/blob/development/framework/src/modules/dynamic_rewards/endpoint.ts
+:url_dynamic_reward: https://github.com/KlayrHQ/klayr-sdk/blob/development/framework/src/modules/dynamic_rewards/endpoint.ts
 
 //Project URLs
 :url_integrate_endpoints: integrate-blockchain/connecting-endpoints.adoc
@@ -38,8 +38,8 @@ Specification::
 
 |`validatorAddress`
 |string
-|The Lisk32 address of a validator.
-|lskguo9kqnea2zsfo3a6qppozsxsg92nuuma3p7ad
+|The Klayr32 address of a validator.
+|klyguo9kqnea2zsfo3a6qppozsxsg92nuuma3p7ad
 |===
 --
 Node CLI::
@@ -47,7 +47,7 @@ Node CLI::
 --
 [source,bash]
 ----
-lisk-core endpoint:invoke dynamicReward_getExpectedValidatorRewards '{"validatorAddress":"lskguo9kqnea2zsfo3a6qppozsxsg92nuuma3p7ad"}' --pretty
+klayr-core endpoint:invoke dynamicReward_getExpectedValidatorRewards '{"validatorAddress":"klyguo9kqnea2zsfo3a6qppozsxsg92nuuma3p7ad"}' --pretty
 ----
 
 --
@@ -63,7 +63,7 @@ curl --location '127.0.0.1:7887/rpc' \
     "id": "1",
     "method": "dynamicReward_getExpectedValidatorRewards",
     "params": {
-         "validatorAddress": "lskguo9kqnea2zsfo3a6qppozsxsg92nuuma3p7ad"
+         "validatorAddress": "klyguo9kqnea2zsfo3a6qppozsxsg92nuuma3p7ad"
     }
 }'
 ----
@@ -112,7 +112,7 @@ Node CLI::
 --
 [source,bash]
 ----
-lisk-core endpoint:invoke dynamicReward_getDefaultRewardAtHeight '{"height":102}' --pretty
+klayr-core endpoint:invoke dynamicReward_getDefaultRewardAtHeight '{"height":102}' --pretty
 ----
 
 --
@@ -177,7 +177,7 @@ Node CLI::
 --
 [source,bash]
 ----
-lisk-core endpoint:invoke dynamicReward_getRewardTokenID '{"height":102}' --pretty
+klayr-core endpoint:invoke dynamicReward_getRewardTokenID '{"height":102}' --pretty
 ----
 
 --
@@ -242,7 +242,7 @@ Node CLI::
 --
 [source,bash]
 ----
-lisk-core endpoint:invoke dynamicReward_getAnnualInflation '{"height":102}' --pretty
+klayr-core endpoint:invoke dynamicReward_getAnnualInflation '{"height":102}' --pretty
 ----
 
 --

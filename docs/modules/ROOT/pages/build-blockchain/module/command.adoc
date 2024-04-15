@@ -5,11 +5,11 @@ Mona Bärenfänger <mona@lightcurve.io>
 :idprefix:
 :idseparator: -
 :sectnums:
-:docs_sdk: lisk-sdk::
+:docs_sdk: klayr-sdk::
 // URLs
 :url_json_schema: https://json-schema.org/understanding-json-schema/reference/index.html
 :url_json_schema_length: https://json-schema.org/understanding-json-schema/reference/string.html#length
-:url_github_hello_command: https://github.com/LiskHQ/lisk-sdk-examples/tree/development/tutorials/hello/hello_client/src/app/modules/hello/commands/create_hello_command.ts
+:url_github_hello_command: https://github.com/KlayrHQ/klayr-sdk-examples/tree/development/tutorials/hello/hello_client/src/app/modules/hello/commands/create_hello_command.ts
 // Project URLs
 :url_guides_setup: build-blockchain/create-blockchain-client.adoc
 :url_guides_module: build-blockchain/module/index.adoc
@@ -20,7 +20,7 @@ Mona Bärenfänger <mona@lightcurve.io>
 :url_understand_modules: understand-blockchain/sdk/modules-commands.adoc
 :url_understand_modules_cmdname: {url_understand_modules}#command-name
 :url_understand_modules_commands: {url_understand_modules}#commands
-// :url_sdk_references_commander: {docs_sdk}references/lisk-commander/cli.adoc#generate
+// :url_sdk_references_commander: {docs_sdk}references/klayr-commander/cli.adoc#generate
 
 // TODO: Update the page by uncommenting the hyperlinks once the updated pages are available. 
 
@@ -37,7 +37,7 @@ On this page, you'll learn how to:
 .Sample code
 [NOTE]
 =====
-View the complete sample code of this guide on GitHub in the {url_github_hello_command}[Lisk SDK examples repository^].
+View the complete sample code of this guide on GitHub in the {url_github_hello_command}[Klayr SDK examples repository^].
 =====
 
 As defined on the xref:{url_guides_module}[] page, the xref:{url_understand_modules_commands}[command] shall provide the following functionalities:
@@ -50,17 +50,17 @@ The Hello message should be rejected, if it includes one of the words in the bla
 
 == Generating the command skeleton
 
-In the root folder of the blockchain client, generate a skeleton for the new command with Lisk Commander.
+In the root folder of the blockchain client, generate a skeleton for the new command with Klayr Commander.
 
-The command `lisk generate:command` expects two arguments:
+The command `klayr generate:command` expects two arguments:
 
 . *Module name*: The name of the module the command belongs to.
 . xref:{url_understand_modules_cmdname}[Command name]: The name of the new command.
 It needs to be a string in camelCase, and always starts with a lower case letter.
 No numbers, hyphens, etc., are allowed.
 
-// For a complete overview of all available options of `lisk generate:command`, see the xref:{url_sdk_references_commander}[Lisk Commander reference] or type `lisk generate:command --help`.
-For a complete overview of all available options of `lisk generate:command`, see the Lisk Commander reference or type `lisk generate:command --help`.
+// For a complete overview of all available options of `klayr generate:command`, see the xref:{url_sdk_references_commander}[Klayr Commander reference] or type `klayr generate:command --help`.
+For a complete overview of all available options of `klayr generate:command`, see the Klayr Commander reference or type `klayr generate:command --help`.
 
 For our example, we choose `createHello` as the command name, and `hello`  as the module name:
 
@@ -68,7 +68,7 @@ For our example, we choose `createHello` as the command name, and `hello`  as th
 .hello/hello_client/
 [source,bash]
 ----
-lisk generate:command hello createHello
+klayr generate:command hello createHello
 ----
 
 This will generate the following files:
@@ -145,9 +145,9 @@ public async verifyTransaction(context: TransactionVerifyContext): Promise<Verif
 
 == Command class & skeleton
 
-The command `lisk generate:command` already created the class `CreateHelloCommand` which contains skeletons for the most important components of the command.
+The command `klayr generate:command` already created the class `CreateHelloCommand` which contains skeletons for the most important components of the command.
 
-The command class always extends from the `BaseCommand`, which is imported from the `lisk-sdk` package.
+The command class always extends from the `BaseCommand`, which is imported from the `klayr-sdk` package.
 
 However, this command is not performing any functions yet.
 To change this, we implement the methods of the command in the following chapters.
@@ -163,7 +163,7 @@ import {
     CommandExecuteContext,
     VerificationResult,
     VerifyStatus,
-} from 'lisk-sdk';
+} from 'klayr-sdk';
 
 interface Params {
 }
@@ -396,7 +396,7 @@ import {
 	CommandExecuteContext,
 	VerificationResult,
 	VerifyStatus,
-} from 'lisk-sdk';
+} from 'klayr-sdk';
 import { createHelloSchema } from '../schema';
 import { MessageStore } from '../stores/message';
 import { counterKey, CounterStore, CounterStoreData } from '../stores/counter';
@@ -478,7 +478,7 @@ npm run build
 +
 [source,bash]
 ----
-./bin/run transaction:create hello createHello 10000000 --params='{"message":"Hello Lisk SDK v6!"}' --json --pretty
+./bin/run transaction:create hello createHello 10000000 --params='{"message":"Hello Klayr SDK v6!"}' --json --pretty
 ----
 +
 [TIP]
@@ -490,7 +490,7 @@ If you want to use another account, for example the second account of the `dev-v
 
 [source,bash]
 ----
-./bin/run transaction:create hello createHello 10000000 --params='{"message":"Hello Lisk SDK v6!"}' --json --key-derivation-path="m/44'/134'/1'" --pretty
+./bin/run transaction:create hello createHello 10000000 --params='{"message":"Hello Klayr SDK v6!"}' --json --key-derivation-path="m/44'/134'/1'" --pretty
 ----
 ====
 +
@@ -514,7 +514,7 @@ The output of the command looks like this:
       "0cd91d8980e057b87186563def7ec3c33d4c00cab40dcaadd222d8e4ddc95402edfafd6e4f387ef7cb4eca88b36c8dd774448163388d08c4c1522efd5bc23102"
     ],
     "params": {
-      "message": "Hello Lisk SDK v6!"
+      "message": "Hello Klayr SDK v6!"
     },
     "id": "7ffb4283f0ecc765b7ddb1494e97c22471e136824b437594945f0a8224bc7abf"
   }
@@ -545,7 +545,7 @@ To verify that the transaction was included in a block, check for the correspond
 .Transaction was included in a block:
 +
 ----
-2022-11-04T10:18:50.422Z INFO engine 33965 [id=a58eed5296010bb0fbd8ae4118b101d137c24697c457f86dab9ac29879b2ab8f height=99 generator=lskaz4tmrvjnuz5fx956mh8b6x6g4d8fr5vdnk3ha numberOfTransactions=1 numberOfAssets=1 numberOfEvents=5] Block executed
+2022-11-04T10:18:50.422Z INFO engine 33965 [id=a58eed5296010bb0fbd8ae4118b101d137c24697c457f86dab9ac29879b2ab8f height=99 generator=klyaz4tmrvjnuz5fx956mh8b6x6g4d8fr5vdnk3ha numberOfTransactions=1 numberOfAssets=1 numberOfEvents=5] Block executed
 ----
 
 But how to actually get the hello messages back?

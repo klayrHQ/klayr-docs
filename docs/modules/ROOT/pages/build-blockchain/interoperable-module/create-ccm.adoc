@@ -5,7 +5,7 @@ Mona Bärenfänger <mona@lightcurve.io>
 :idseparator: -
 :sectnums:
 // URLs
-:url_github_sdk_interop: https://github.com/LiskHQ/lisk-sdk/tree/release/6.0.0/examples/interop
+:url_github_sdk_interop: https://github.com/KlayrHQ/klayr-sdk/tree/release/6.0.0/examples/interop
 :url_github_sdk_interop_sc2: {url_github_sdk_interop}/pos-sidechain-example-two/src/app
 // Project URLs
 :url_run_relayer: run-blockchain/setup-relayer.adoc
@@ -30,7 +30,7 @@ Assuming the sidechain is already xref:{url_build_init}[initialized], move into 
 
 [source,bash]
 ----
-lisk generate:module react
+klayr generate:module react
 ----
 
 Currently, there is no way to generate an interoperable module directly, so we need to make certain modifications to the module after generating it, in order to make it interoperable.
@@ -40,7 +40,7 @@ Inside the `react/module.ts` file, replace the class `BaseModule` with `BaseInte
 .react/module.ts
 [source,typescript]
 ----
-import { BaseInteroperableModule, ModuleMetadata, ModuleInitArgs } from 'lisk-sdk';
+import { BaseInteroperableModule, ModuleMetadata, ModuleInitArgs } from 'klayr-sdk';
 
 export class ReactModule extends BaseInteroperableModule {
     // ...
@@ -51,7 +51,7 @@ Additionally, create a new file called `cc_method.ts`, and add a skeleton for po
 
 [source,typescript]
 ----
-import { BaseCCMethod } from 'lisk-sdk';
+import { BaseCCMethod } from 'klayr-sdk';
 
 export class ReactInteroperableMethod extends BaseCCMethod {}
 ----
@@ -65,7 +65,7 @@ In the end, the module should look similar to the example below:
 ----
 /* eslint-disable class-methods-use-this */
 /* eslint-disable @typescript-eslint/member-ordering */
-import { BaseInteroperableModule, ModuleMetadata, ModuleInitArgs } from 'lisk-sdk';
+import { BaseInteroperableModule, ModuleMetadata, ModuleInitArgs } from 'klayr-sdk';
 import { ReactEndpoint } from './endpoint';
 import { ReactMethod } from './method';
 import { ReactInteroperableMethod } from './cc_method';
@@ -149,7 +149,7 @@ const data = {
 // Schema for the parameters of the crossChainReact CCM
 export const CCReactMessageParamsSchema = {
 	// The unique identifier of the schema.
-	$id: '/lisk/react/ccReactMessageParams',
+	$id: '/klayr/react/ccReactMessageParams',
 	type: 'object',
 	// The required parameters for the CCM.
 	required: ['reactionType', 'helloMessageID', 'data'],
@@ -164,7 +164,7 @@ export const CCReactMessageParamsSchema = {
 // Schema for the parameters of the react crossChainReact command
 export const CCReactCommandParamsSchema = {
 	// The unique identifier of the schema.
-	$id: '/lisk/react/ccReactCommandParams',
+	$id: '/klayr/react/ccReactCommandParams',
 	type: 'object',
 	// The required parameters for the command.
 	required: [...CCReactMessageParamsSchema.required, 'messageFee'],
@@ -200,7 +200,7 @@ import {
     CCMsg,
     ChannelData,
     OwnChainAccount,
-} from 'lisk-sdk';
+} from 'klayr-sdk';
 
 export type TokenID = Buffer;
 
@@ -249,7 +249,7 @@ Now create a new command called `crossChainReact`:
 
 [source,bash]
 ----
-lisk generate:command react crossChainReact
+klayr generate:command react crossChainReact
 ----
 
 To indicate that this command will create a new CCM, update the file name to `react_cc_command.ts`.
@@ -274,7 +274,7 @@ import {
     VerificationResult,
     VerifyStatus,
     codec,
-} from 'lisk-sdk';
+} from 'klayr-sdk';
 import { CROSS_CHAIN_COMMAND_REACT } from '../constants';
 import { CCReactCommandParamsSchema, CCReactMessageParamsSchema } from '../schemas';
 import { CCReactMessageParams, CCReactCommandParams, InteroperabilityMethod } from '../types';
@@ -373,7 +373,7 @@ Go back to the file `react/module.ts` and update it as described in the code com
 .react/module.ts
 [source,typescript]
 ----
-import { BaseInteroperableModule, ModuleMetadata, ModuleInitArgs } from 'lisk-sdk';
+import { BaseInteroperableModule, ModuleMetadata, ModuleInitArgs } from 'klayr-sdk';
 import { CrossChainReactCommand } from './commands/react_cc_command';
 import { ReactEndpoint } from './endpoint';
 import { ReactMethod } from './method';
@@ -419,7 +419,7 @@ It was added automatically during the command initialization.
 .app.ts
 [source,typescript]
 ----
-import { Application, PartialApplicationConfig } from 'lisk-sdk';
+import { Application, PartialApplicationConfig } from 'klayr-sdk';
 import { registerModules } from './modules';
 import { registerPlugins } from './plugins';
 import { ReactModule } from './modules/react/module';

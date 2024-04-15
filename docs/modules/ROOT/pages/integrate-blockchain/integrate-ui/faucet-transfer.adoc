@@ -7,11 +7,11 @@ Muhammad Talha <muhammad.talha@lightcurve.io>
 :idprefix:
 :idseparator: -
 :imagesdir: ../../assets/images
-:sdk_docs: lisk-sdk::
+:sdk_docs: klayr-sdk::
 
 // External URLs
-:url_faucet: https://github.com/LiskHQ/lisk-sdk-examples/blob/development/tutorials/hello/hello_frontend/src/components/faucet.js
-:url_transfer: https://github.com/LiskHQ/lisk-sdk-examples/blob/development/tutorials/hello/hello_frontend/src/components/transfer.js
+:url_faucet: https://github.com/KlayrHQ/klayr-sdk-examples/blob/development/tutorials/hello/hello_frontend/src/components/faucet.js
+:url_transfer: https://github.com/KlayrHQ/klayr-sdk-examples/blob/development/tutorials/hello/hello_frontend/src/components/transfer.js
 :url_checkBalance: integrate-blockchain/integrate-ui/create-get-account.adoc#check-balance
 
 On this page, you'll learn how to seed a new account with a faucet and how to transfer tokens both to and from a given account using the UI.
@@ -36,8 +36,8 @@ Firstly, define the necessary variables and the `handleChange` event.
 // [...]
 // UI libraries import
 import React, { useState, useEffect } from "react";
-// Lisk libraries import
-import { cryptography, transactions } from '@liskhq/lisk-client/browser';
+// Klayr libraries import
+import { cryptography, transactions } from '@klayr/client/browser';
 import * as api from '../api';
 import { Buffer } from 'buffer';
 
@@ -91,12 +91,12 @@ function Faucet() {
         const signedTx = await client.transaction.create({
             module: 'token',
             command: 'transfer',
-            fee: BigInt(transactions.convertLSKToBeddows('0.1')),
+            fee: BigInt(transactions.convertKLYToBeddows('0.1')),
             params: {
                 tokenID: Buffer.from('0000000100000000', 'hex'),
-                amount: BigInt(transactions.convertLSKToBeddows('10')),
+                amount: BigInt(transactions.convertKLYToBeddows('10')),
                 recipientAddress: state.address,
-                data: 'Please accept this grant from Lisk faucet.'
+                data: 'Please accept this grant from Klayr faucet.'
             }
         }, privateKey).catch(err => {
             responseError = err.message;
@@ -189,8 +189,8 @@ function Faucet() {
                         <div className="column">
                             <Form onSubmit={handleSubmit}>
                                 <Form.Field>
-                                    <label>Recipient's Lisk32 Address:</label>
-                                    <input placeholder="Recipient's Lisk32 Address" id="address" name="address" onChange={handleChange} value={state.address} />
+                                    <label>Recipient's Klayr32 Address:</label>
+                                    <input placeholder="Recipient's Klayr32 Address" id="address" name="address" onChange={handleChange} value={state.address} />
                                 </Form.Field>
                                 <Button type='submit' fluid size='large' style={{ backgroundColor: '#2BD67B', color: 'white' }}>Submit</Button>
                             </Form>
@@ -236,8 +236,8 @@ Similar to the faucet, we will start by importing the necessary libraries, defin
 // [...]
 // UI libraries import
 import React, { useState } from "react";
-// Import Lisk packages, api, and buffer. 
-import { cryptography, transactions } from '@liskhq/lisk-client/browser';
+// Import Klayr packages, api, and buffer. 
+import { cryptography, transactions } from '@klayr/client/browser';
 import * as api from '../api';
 import { Buffer } from 'buffer';
 
@@ -288,10 +288,10 @@ function Transfer() {
         const signedTx = await client.transaction.create({
             module: 'token',
             command: 'transfer',
-            fee: BigInt(transactions.convertLSKToBeddows(state.fee)),
+            fee: BigInt(transactions.convertKLYToBeddows(state.fee)),
             params: {
                 tokenID: Buffer.from('0000000100000000', 'hex'),
-                amount: BigInt(transactions.convertLSKToBeddows(state.amount)),
+                amount: BigInt(transactions.convertKLYToBeddows(state.amount)),
                 recipientAddress: state.address,
                 data: 'Hey! I am sending you tokens. Enjoy!'
             }
@@ -388,8 +388,8 @@ return (
 
                             <Form onSubmit={handleSubmit} class="ui form">
                                 <Form.Field class="field">
-                                    <label>Recipient's Lisk32 Address:</label>
-                                    <input placeholder="Recipient's Lisk32 Address" id="address" name="address" onChange={handleChange} value={state.address} />
+                                    <label>Recipient's Klayr32 Address:</label>
+                                    <input placeholder="Recipient's Klayr32 Address" id="address" name="address" onChange={handleChange} value={state.address} />
                                 </Form.Field>
                                 <Form.Field class="field">
                                     <label>Amount:</label>

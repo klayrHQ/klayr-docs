@@ -10,7 +10,7 @@ Chris Braithwaite <christopher.braithwaite@lightcurve.io> Mona Bärenfänger <mo
 :url_pow: https://en.wikipedia.org/wiki/Proof_of_work
 :url_hashing: https://www.onlinehashcrack.com/how-to-hashing-in-blockchain-explained.php
 :url_voting-mechanism: https://blockchain-academy.hs-mittweida.de/courses/blockchain-introduction-technical-beginner-to-intermediate/lessons/lesson-20-introduction-and-basic-functionality-of-delegated-proof-of-stake/topic/voting-in-dpos/
-:url_lisk-products: intro/lisk-products.adoc
+:url_klayr-products: intro/klayr-products.adoc
 :url_quorum: https://consensys.net/quorum/
 :url_corda: https://www.corda.net/
 :url_51: https://ieeexplore.ieee.org/document/9567686
@@ -220,7 +220,7 @@ Furthermore, with this stake-weighted {url_voting-mechanism}[voting mechanism^] 
 
 [NOTE]
 ====
-The PoS used by Lisk is more of a middle ground between {url_wiki_pos}[PoS^] and DPoS.
+The PoS used by Klayr is more of a middle ground between {url_wiki_pos}[PoS^] and DPoS.
 
 The DPoS-related characteristic is the ability of users to register as validators and then receive stakes from other users, to increase their validator weight.
 
@@ -335,8 +335,8 @@ Furthermore, the hash is irreversible, ensuring it is impossible to generate any
 
 As described earlier on the xref:{url_blockchain}[What is blockchain] page, it is also deterministic and is the key component in providing immutability of the blockchain data as well, which as we have learned is highly beneficial.
 
-Lisk maintains a cryptography package that contains all the cryptographic functionalities required when interacting with the Lisk ecosystem and can be used on both the server and client sides.
-// Further information can be found here on the xref:{url_cryptography}[Lisk cryptography package reference].
+Klayr maintains a cryptography package that contains all the cryptographic functionalities required when interacting with the Klayr ecosystem and can be used on both the server and client sides.
+// Further information can be found here on the xref:{url_cryptography}[Klayr cryptography package reference].
 
 == State machine
 
@@ -351,7 +351,7 @@ Therefore, it is best thought of as a reference to the process of moving from 1 
 Although it should be noted that even a block that does not contain any transactions also can alter the state of the blockchain.
 Furthermore, it maintains a temporary state that exists during the processing of a block.
 
-Now that we have covered how blockchain functions, the next step is to look at the extensive range of user-friendly xref:{url_lisk-products}[Lisk products] that will enable us to create and manage our blockchain applications.
+Now that we have covered how blockchain functions, the next step is to look at the extensive range of user-friendly xref:{url_klayr-products}[Klayr products] that will enable us to create and manage our blockchain applications.
 
 
 

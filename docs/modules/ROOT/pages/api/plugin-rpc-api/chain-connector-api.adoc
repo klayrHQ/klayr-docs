@@ -5,12 +5,12 @@ Muhammad Talha <muhammad.talha@lightcurve.io>
 :toc: preamble
 
 //URLs
-:url_typedoc_chainConnector: {site-url}/lisk-sdk/v6/references/typedoc/modules/_liskhq_lisk_framework_chain_connector_plugin.html
-:url_aggregate_commit: https://github.com/LiskHQ/lips/blob/main/proposals/lip-0061.md#aggregate-commits-1
-:url_block_headers: https://github.com/LiskHQ/lips/blob/main/proposals/lip-0055.md#block-header
-:url_crossChainMessageSentSuccess: https://github.com/LiskHQ/lips/blob/main/proposals/lip-0045.md#crosschainmessagesentsuccess
-:url_crossChainMessageProcessed: https://github.com/LiskHQ/lips/blob/main/proposals/lip-0045.md#crosschainmessageprocessed
-:url_validatorsHashPreImage: https://github.com/LiskHQ/lips/blob/main/proposals/lip-0061.md#approach-1-certificate-computation-from-aggregate-commits
+:url_typedoc_chainConnector: {site-url}/klayr-sdk/v6/references/typedoc/modules/_klayr_framework_chain_connector_plugin.html
+:url_aggregate_commit: https://github.com/KlayrHQ/lips/blob/main/proposals/lip-0061.md#aggregate-commits-1
+:url_block_headers: https://github.com/KlayrHQ/lips/blob/main/proposals/lip-0055.md#block-header
+:url_crossChainMessageSentSuccess: https://github.com/KlayrHQ/lips/blob/main/proposals/lip-0045.md#crosschainmessagesentsuccess
+:url_crossChainMessageProcessed: https://github.com/KlayrHQ/lips/blob/main/proposals/lip-0045.md#crosschainmessageprocessed
+:url_validatorsHashPreImage: https://github.com/KlayrHQ/lips/blob/main/proposals/lip-0061.md#approach-1-certificate-computation-from-aggregate-commits
 
 //Project URLs
 :url_integrate_endpoints: integrate-blockchain/connecting-endpoints.adoc
@@ -38,7 +38,7 @@ Node CLI::
 --
 [source,bash]
 ----
-lisk-core endpoint:invoke chainConnector_getSentCCUs --pretty
+klayr-core endpoint:invoke chainConnector_getSentCCUs --pretty
 ----
 
 --
@@ -218,7 +218,7 @@ Node CLI::
 --
 [source,bash]
 ----
-lisk-core endpoint:invoke chainConnector_getAggregateCommits '{"from":840, "to":1000}' --pretty
+klayr-core endpoint:invoke chainConnector_getAggregateCommits --pretty
 ----
 
 --
@@ -298,7 +298,7 @@ Node CLI::
 --
 [source,bash]
 ----
-lisk-core endpoint:invoke chainConnector_getBlockHeaders '{"from":840, "to":1000}' --pretty
+lisk-core endpoint:invoke chainConnector_getBlockHeaders --pretty
 ----
 
 --
@@ -345,7 +345,7 @@ curl --location 'http://127.0.0.1:7887/rpc' \
             "aggregationBits": "01",
             "certificateSignature": "90aaac7230c77fe5e27304c9e6a4c20054bbdd035751dd1842cd579acc3fd0a8ed5bbf77cd50d384b516673f654e852b0dc775222083178be34b7c16b7712f1e8e522bd9947a3bc9d514694cf4bc879bb6f9f16af341035f3cdf319f9b9f2b9b"
         },
-        "generatorAddress": "lskz98oaohxaw6jcfvtgdxm9sprcqzstddoqusrns",
+        "generatorAddress": "klyz98oaohxaw6jcfvtgdxm9sprcqzstddoqusrns",
         "maxHeightPrevoted": 904,
         "maxHeightGenerated": 904,
         "impliesMaxPrevotes": true,
@@ -367,7 +367,7 @@ curl --location 'http://127.0.0.1:7887/rpc' \
             "aggregationBits": "01",
             "certificateSignature": "8062f1ef0807f0bb1afa52b51f9cb105cf38627ba65f62a67895d734cda5f80e65d42d443b4b05f612afacfb2211612411d6770f807803c7addd87a203cc344ba9539aad604719dd192904ba69b367ed24c544c72adc33ebd662f5be21549d0d"
         },
-        "generatorAddress": "lskz98oaohxaw6jcfvtgdxm9sprcqzstddoqusrns",
+        "generatorAddress": "klyz98oaohxaw6jcfvtgdxm9sprcqzstddoqusrns",
         "maxHeightPrevoted": 903,
         "maxHeightGenerated": 903,
         "impliesMaxPrevotes": true,
@@ -389,7 +389,7 @@ curl --location 'http://127.0.0.1:7887/rpc' \
             "aggregationBits": "01",
             "certificateSignature": "a55cc53ba8bedc349b318f6af27a9cd6c1205b7179b74092f6bd2986c15dc0dbc09484fd71d0ee030d155e413e329d34118ee6fd584b3fe93d9423caaa6418486efaa9a87cd9996a52f0a3cfbef69b103bdd5a51c7b2c353224c6cff31c49102"
         },
-        "generatorAddress": "lskz98oaohxaw6jcfvtgdxm9sprcqzstddoqusrns",
+        "generatorAddress": "klyz98oaohxaw6jcfvtgdxm9sprcqzstddoqusrns",
         "maxHeightPrevoted": 902,
         "maxHeightGenerated": 902,
         "impliesMaxPrevotes": true,
@@ -411,7 +411,7 @@ curl --location 'http://127.0.0.1:7887/rpc' \
             "aggregationBits": "01",
             "certificateSignature": "a8eaad357942e1c92567a9080e88c778737c9b1596f3cdc2d6fb35c9511f00c054513f89d05f23b5914c1520fa723def03678da0099684f4e23249243b6fd10aba1c16952a9a1c34f147d154a0db37d4a8d327fc2b3457fa8d0e9079ff38fbb9"
         },
-        "generatorAddress": "lskz98oaohxaw6jcfvtgdxm9sprcqzstddoqusrns",
+        "generatorAddress": "klyz98oaohxaw6jcfvtgdxm9sprcqzstddoqusrns",
         "maxHeightPrevoted": 901,
         "maxHeightGenerated": 901,
         "impliesMaxPrevotes": true,
@@ -457,7 +457,7 @@ Node CLI::
 --
 [source,bash]
 ----
-lisk-core endpoint:invoke chainConnector_getCrossChainMessages '{"from":840, "to":1000}' --pretty
+klayr-core endpoint:invoke chainConnector_getCrossChainMessages '{"from":840, "to":1000}' --pretty
 ----
 
 --
@@ -521,7 +521,7 @@ Node CLI::
 --
 [source,bash]
 ----
-lisk-core endpoint:invoke chainConnector_getLastSentCCM --pretty
+klayr-core endpoint:invoke chainConnector_getLastSentCCM --pretty
 ----
 
 --
@@ -581,7 +581,7 @@ Node CLI::
 --
 [source,bash]
 ----
-lisk-core endpoint:invoke chainConnector_getAllValidatorsData --pretty
+klayr-core endpoint:invoke chainConnector_getAllValidatorsData --pretty
 ----
 
 --
@@ -745,7 +745,7 @@ Specification::
 |`password`
 |string
 |Password used to create the `encryptedPrivateKey` mentioned in the Chain Connector plugin's configuration.
-|lisk
+|klayr
 
 |`enable`
 |boolean
@@ -758,7 +758,7 @@ Node CLI::
 --
 [source,bash]
 ----
-lisk-core endpoint:invoke chainConnector_authorize '{"password": "lisk", "enable":true}' --pretty
+klayr-core endpoint:invoke chainConnector_authorize '{"password": "klayr", "enable":true}' --pretty
 ----
 
 --
@@ -774,7 +774,7 @@ curl --location 'http://127.0.0.1:7887/rpc' \
     "id": "1",
     "method": "chainConnector_authorize",
     "params": {
-        "password": "lisk",
+        "password": "klayr",
         "enable": true
     }
 }'

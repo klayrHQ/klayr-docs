@@ -5,8 +5,8 @@ Muhammad Talha <muhammad.talha@lightcurve.io>
 :idseparator: -
 :sectnums:
 // URLs
-:url_github_schemas: https://github.com/LiskHQ/lisk-sdk-examples/tree/development/tutorials/hello/hello_client/src/app/plugins/hello_info/schemas.ts
-:url_github_hello_info_plugin: https://github.com/LiskHQ/lisk-sdk-examples/tree/development/tutorials/hello/hello_client/src/app/plugins/hello_info/hello_info_plugin.ts
+:url_github_schemas: https://github.com/KlayrHQ/klayr-sdk-examples/tree/development/tutorials/hello/hello_client/src/app/plugins/hello_info/schemas.ts
+:url_github_hello_info_plugin: https://github.com/KlayrHQ/klayr-sdk-examples/tree/development/tutorials/hello/hello_client/src/app/plugins/hello_info/hello_info_plugin.ts
 
 // Project URLS
 :url_blockchain_event: build-blockchain/module/blockchain-event.adoc#emit-the-event
@@ -37,7 +37,7 @@ So let's instantiate our plugin instance in our already available `load()` funct
 .hello_client/src/app/plugins/hello_info/hello_info_plugin.ts
 [source,typescript]
 ----
-import { BasePlugin, db as liskDB, codec } from 'lisk-sdk';
+import { BasePlugin, db as klayrDB, codec } from 'klayr-sdk';
 import {
 	getDBInstance,
 	getLastCounter,
@@ -51,7 +51,7 @@ import { HelloInfoPluginConfig, Height, Counter } from './types';
 
 export class HelloInfoPlugin extends BasePlugin<HelloInfoPluginConfig> {
 	public configSchema = configSchema;
-	private _pluginDB!: liskDB.Database;
+	private _pluginDB!: klayrDB.Database;
 
 	public get nodeModulePath(): string {
 		return __filename;
@@ -103,7 +103,7 @@ export class HelloInfoPlugin extends BasePlugin<HelloInfoPluginConfig> {
 			const counter = await getLastCounter(this._pluginDB);
 			return counter;
 		} catch (error) {
-			if (!(error instanceof liskDB.NotFoundError)) {
+			if (!(error instanceof klayrDB.NotFoundError)) {
 				throw error;
 			}
 			await setLastCounter(this._pluginDB, 0);
@@ -131,7 +131,7 @@ export class HelloInfoPlugin extends BasePlugin<HelloInfoPluginConfig> {
 			const height = await getLastEventHeight(this._pluginDB);
 			return height;
 		} catch (error) {
-			if (!(error instanceof liskDB.NotFoundError)) {
+			if (!(error instanceof klayrDB.NotFoundError)) {
 				throw error;
 			}
 			await setLastEventHeight(this._pluginDB, 0);

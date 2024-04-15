@@ -5,7 +5,7 @@ Mona Bärenfänger <mona@lightcurve.io> Muhammad Talha <muhammad.talha@lightcurv
 :toc: preamble
 :idprefix:
 :idseparator: -
-:docs-sdk: lisk-sdk::
+:docs-sdk: klayr-sdk::
 // URLs
 // Project URLs
 :url_build_module_config: build-blockchain/module/configuration.adoc
@@ -35,7 +35,7 @@ On this page, you'll learn:
 
 == Node config reference
 
-To get a complete overview of all configuration options for the Lisk SDK, please refer to the xref:{url_references_config}[].
+To get a complete overview of all configuration options for the Klayr SDK, please refer to the xref:{url_references_config}[].
 
 === Configurations for the blockchain developer
 
@@ -61,7 +61,7 @@ The default node configuration is used, if no other config is specified when sta
 
 === After initialization
 
-When a new client is initialized with `lisk init`, a default config template for the client is generated under `config/default/`.
+When a new client is initialized with `klayr init`, a default config template for the client is generated under `config/default/`.
 
 IMPORTANT: This config is only a template, which is used to generate a default configuration on the initial start of the node.
 After the node is started, it will use the config in the <<client-data,client data folder>>.
@@ -71,13 +71,13 @@ After the node is started, it will use the config in the <<client-data,client da
 
 === After the first start
 
-When the blockchain client is started for the first time, the config is copied from the template to the folder for the node data, which is located under `~/.lisk/<CLIENT_NAME>/`.
+When the blockchain client is started for the first time, the config is copied from the template to the folder for the node data, which is located under `~/.klayr/<CLIENT_NAME>/`.
 
 The blockchain client will always use the config in the *client data folder* by default, if no custom config is specified.
 
 [#client-data]
 .Client config path
- ~/.lisk/<CLIENT_NAME>/config/config.json
+ ~/.klayr/<CLIENT_NAME>/config/config.json
 
 == How to use a custom configuration
 
@@ -133,7 +133,7 @@ Such configuration allows sending transactions and other RPC API requests to the
 
 Whereas the IPC and WS modes can entertain RPC requests made to the node.
 
-The `allowedMethods:[*]` configuration will allow the node to access all the endpoints offered by various Lisk modules.
+The `allowedMethods:[*]` configuration will allow the node to access all the endpoints offered by various Klayr modules.
 
 After updating the `custom_config.json` file, restart the client with the `--overwrite-config` flag to apply the new configuration.
 

@@ -5,9 +5,9 @@ Mona Bärenfänger <mona@lightcurve.io> Muhammad Talha <muhammad.talha@lightcurv
 :idprefix:
 :idseparator: -
 :experimental:
-:docs_sdk: lisk-sdk::
+:docs_sdk: klayr-sdk::
 // URLs
-:url_github_guides_bootstrap: https://github.com/LiskHQ/lisk-sdk-examples/tree/development/tutorials/hello
+:url_github_guides_bootstrap: https://github.com/KlayrHQ/klayr-sdk-examples/tree/development/tutorials/hello
 :url_homebrew: https://brew.sh/
 :url_nvm: https://github.com/nvm-sh/nvm
 // Project URLs
@@ -19,24 +19,24 @@ Mona Bärenfänger <mona@lightcurve.io> Muhammad Talha <muhammad.talha@lightcurv
 :url_integrate_ui: integrate-blockchain/integrate-ui/index.adoc
 :url_references_cli: {docs_sdk}client-cli.adoc#help
 :url_references_cli_start: {docs_sdk}client-cli.adoc#start
-:url_lisk_commander: {docs_sdk}references/lisk-commander/index.adoc
-:url_lisk_default_modules: {docs_sdk}modules/index.adoc
+:url_klayr_commander: {docs_sdk}references/klayr-commander/index.adoc
+:url_klayr_default_modules: {docs_sdk}modules/index.adoc
 
-On this page, you will learn how to create a new blockchain client with Lisk Commander.
+On this page, you will learn how to create a new blockchain client with Klayr Commander.
 
-== Bootstrapping a new blockchain client with Lisk Commander
+== Bootstrapping a new blockchain client with Klayr Commander
 
-xref:{url_lisk_commander}[Lisk Commander] offers various commands related to <<initializing-a-new-blockchain-client>> which can be used to conveniently get started.
+xref:{url_klayr_commander}[Klayr Commander] offers various commands related to <<initializing-a-new-blockchain-client>> which can be used to conveniently get started.
 
 .Sample code
 [NOTE]
 ====
-View the complete sample code of this guide on GitHub in the {url_github_guides_bootstrap}[Lisk SDK examples repository^].
+View the complete sample code of this guide on GitHub in the {url_github_guides_bootstrap}[Klayr SDK examples repository^].
 ====
 
 === Supported Operating Systems
 
-The Lisk SDK runs on both Ubuntu and macOS operating systems and supports the following versions, as described below:
+The Klayr SDK runs on both Ubuntu and macOS operating systems and supports the following versions, as described below:
 
 [tabs]
 
@@ -69,7 +69,7 @@ NOTE: Please note that the SDK does not come with any official support for Windo
 |Dependencies |Version 
 |Git | v2 (latest) 
 |Node.js | v18 (latest LTS) 
-|Lisk Commander | v6.0.0 (latest) 
+|Klayr Commander | v6.0.0 (latest) 
 |Homebrew (macOS) | v3.6.7 (latest)
 |automake | 1.16.5 (latest)
 |autoconf | 2.71 (latest)
@@ -87,30 +87,30 @@ If you are using NVM ({url_nvm}[Node.js Version Manager^]), install the correct 
 nvm install 18
 ----
 
-==== Lisk Commander
+==== Klayr Commander
 
-It is recommended to install Lisk Commander globally with NPM (Node Package Manager), to facilitate the convenient usage of the Lisk Commander CLI.
-
-[source,bash]
-----
-npm install --global lisk-commander
-----
-
-To check the successful installation of Lisk Commander, run the following command:
+It is recommended to install Klayr Commander globally with NPM (Node Package Manager), to facilitate the convenient usage of the Klayr Commander CLI.
 
 [source,bash]
 ----
-lisk --version
+npm install --global klayr-commander
+----
+
+To check the successful installation of Klayr Commander, run the following command:
+
+[source,bash]
+----
+klayr --version
 ----
 
 .Output
 ----
-lisk-commander/6.0.0 darwin-arm64 node-v18.16.0
+klayr-commander/6.0.0 darwin-arm64 node-v18.16.0
 ----
 
 ==== Toolchain dependencies
 
-Once Lisk Commander is installed, install the following compiler dependencies as well.
+Once Klayr Commander is installed, install the following compiler dependencies as well.
 
 [tabs]
 ====
@@ -158,12 +158,12 @@ mkdir hello_client
 cd hello_client
 ----
 
-Inside the `hello_client`, execute the `init` command of Lisk Commander as shown below:
+Inside the `hello_client`, execute the `init` command of Klayr Commander as shown below:
 
 ./hello/hello_client/
 [source,bash]
 ----
-lisk init
+klayr init
 ----
 
 NOTE: The `init` command can be executed anywhere on the disk to bootstrap a sidechain client, however, to accommodate both *frontend* and the *sidechain client*, we have to create the aforementioned folders.
@@ -171,9 +171,9 @@ NOTE: The `init` command can be executed anywhere on the disk to bootstrap a sid
 As a result of executing the `init` command, you will be asked for the *Name*, *ChainID*, *Description*, *Author*, and *License* of the blockchain client.
 
 ----
-Using template "lisk-ts"
+Using template "klayr-ts"
 Initializing git repository
-Updating .liskrc.json file
+Updating .klayrrc.json file
 Creating project structure
 ? Application name hello_client
 ? Chain ID in hex representation. ChainID must be 4 bytes (8 characters) 12345678
@@ -182,7 +182,7 @@ Creating project structure
 ? License ISC
 ----
 
-Next, all the required files are created by Lisk Commander.
+Next, all the required files are created by Klayr Commander.
 
 === Using the client CLI globally
 
@@ -237,7 +237,7 @@ The above command will display the general xref:{url_references_cli}[CLI command
 
 .Available commands
 ----
-Lisk-SDK Client
+Klayr-SDK Client
 
 VERSION
   hello_client/0.1.0 darwin-arm64 node-v18.16.0
@@ -259,7 +259,7 @@ TOPICS
 
 COMMANDS
   autocomplete  Displays autocomplete installation instructions
-  console       Lisk interactive REPL session to run commands.
+  console       Klayr interactive REPL session to run commands.
   hash-onion    Creates hash onions to be used by the forger.
   help          Displays help for hello_client.
   start         Starts Blockchain Node.
@@ -304,25 +304,25 @@ The blockchain client will have the following file structure after the first ini
 <3> `app/`: Contains the files of the blockchain client.
 <4> `app.ts`: Creates the `Application` instance of the client.
 <5> `modules/`: Contains modules of the client.
-This folder is empty after the first initialization with the `lisk init`.
-The command `lisk generate:module` creates a new module in this folder.
+This folder is empty after the first initialization with the `klayr init`.
+The command `klayr generate:module` creates a new module in this folder.
 <6> `modules.ts` Registers the modules with the client.
 <7> `plugins/`: Contains plugins of the client.
-This folder is empty after the first initialization with `lisk init`.
-The command `lisk generate:plugin` creates a new plugin in this folder.
+This folder is empty after the first initialization with `klayr init`.
+The command `klayr generate:plugin` creates a new plugin in this folder.
 <8> `plugins.ts` Registers the plugins with the client.
 <9> `commands/`: Contains the logic for the CLI commands of the client.
 The files for the different commands can be adjusted and extended as desired, for example, to include new flags and commands.
 <10> `test/`: Contains the test files for the unit, functional, and integration tests.
 
-These files create a ready-to-start blockchain client configured for a local devnet, which uses only the default modules of the Lisk SDK.
+These files create a ready-to-start blockchain client configured for a local devnet, which uses only the default modules of the Klayr SDK.
 
 [#default-modules]
 .Default modules
-TIP: Lisk provides a range of *default modules* out of the box.
-These modules are created automatically, whenever a blockchain client is bootstrapped via Lisk Commander.
+TIP: Klayr provides a range of *default modules* out of the box.
+These modules are created automatically, whenever a blockchain client is bootstrapped via Klayr Commander.
 The default modules provide basic blockchain functionality required by a blockchain client to work.
-For more information, see the xref:{url_lisk_default_modules}[] page.
+For more information, see the xref:{url_klayr_default_modules}[] page.
 
 === Starting the client
 The client is created in the file `app.ts`:
@@ -330,7 +330,7 @@ The client is created in the file `app.ts`:
 .src/app/app.ts
 [source,typescript]
 ----
-import { Application, PartialApplicationConfig } from 'lisk-sdk';
+import { Application, PartialApplicationConfig } from 'klayr-sdk';
 import { registerModules } from './modules';
 import { registerPlugins } from './plugins';
 
@@ -395,9 +395,9 @@ If no errors are thrown, the application will start to add new logs every 10 sec
 
 Once it is verified that the client is functioning correctly, stop the client again with kbd:[Ctrl] + kbd:[C].
 
-The corresponding application data can be found under the path `~/.lisk/hello_client/`, once the client starts successfully for the first time.
+The corresponding application data can be found under the path `~/.klayr/hello_client/`, once the client starts successfully for the first time.
 
-.~/.lisk/hello_client/
+.~/.klayr/hello_client/
 ----
 .
 ├── config
@@ -432,20 +432,20 @@ It is used to create the genesis block for the blockchain.
 
 ==== How to reset the database of a blockchain client
 
-Once the client starts for the first time, it saves the client-specific data under the path `~/.lisk/hello_client/`.
+Once the client starts for the first time, it saves the client-specific data under the path `~/.klayr/hello_client/`.
 
 To reset the database of the client, simply delete the folder with the client data:
 
 [source,bash]
 ----
-rm -r ~/.lisk/hello_client/data/
+rm -r ~/.klayr/hello_client/data/
 ----
 
 NOTE: Once removed, the *`hello_client/data`* folder is recreated automatically after the sidechain client starts again.
 
 === Next steps
 
-By installing Lisk Commander and running `lisk init`, a functional blockchain client now exists with the default configurations for running in a local Devnet.
+By installing Klayr Commander and running `klayr init`, a functional blockchain client now exists with the default configurations for running in a local Devnet.
 
 To extend the blockchain client further, it is required to register additional modules and/or plugins to the client.
 

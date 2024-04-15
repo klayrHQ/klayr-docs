@@ -4,11 +4,11 @@ Mona Bärenfänger <mona@lightcurve.io>
 :toc: preamble
 :idprefix:
 :idseparator: -
-:docs_sdk: lisk-sdk::
+:docs_sdk: klayr-sdk::
 // URLs
 // Project URLS
-// :url_references_client: {docs_sdk}references/lisk-elements/client.adoc
-// :url_references_apiclient: {docs_sdk}references/lisk-elements/api-client.adoc
+// :url_references_client: {docs_sdk}references/klayr-elements/client.adoc
+// :url_references_apiclient: {docs_sdk}references/klayr-elements/api-client.adoc
 :url_guides_config: {docs_sdk}config.adoc#rpc
 
 // TODO: Update the page by uncommenting the hyperlinks once the updated pages are available.
@@ -23,7 +23,7 @@ On this page, you'll learn:
 ====
 
 == Connecting a node with the API client
-Blocks and transactions can be decoded and encoded conveniently with the `@liskhq/api-client` library of the Lisk SDK.
+Blocks and transactions can be decoded and encoded conveniently with the `@klayrhq/api-client` library of the Klayr SDK.
 // xref:{url_references_apiclient}[apiClient]
 
 Before the API client can be used, it needs to connect to a blockchain node.
@@ -32,14 +32,14 @@ This can be achieved either via a WebSocket (local or remote), or an IPC (only o
 In most scenarios, it is beneficial to have a local node running to which the client can send the API requests.
 The RPC options in the config should be enabled and configured accordingly, see xref:{url_guides_config}[RPC configuration of a node].
 
-TIP: The `apiClient` is also included in the NPM package @liskhq/lisk-client.
-// xref:{url_references_client}[`@liskhq/lisk-client`].
+TIP: The `apiClient` is also included in the NPM package @klayr/client.
+// xref:{url_references_client}[`@klayr/client`].
 
-Install the `lisk-client` package like this:
+Install the `klayr-client` package like this:
 
 [source,bash]
 ----
-npm i @liskhq/lisk-client
+npm i @klayr/client
 ----
 
 Then, create a new file `api-client.js` with a function `getClient()` that returns an instance of the API client when executed.
@@ -47,7 +47,7 @@ Then, create a new file `api-client.js` with a function `getClient()` that retur
 .api-client.js
 [source,js]
 ----
-const { apiClient } = require('@liskhq/lisk-client');
+const { apiClient } = require('@klayr/client');
 let clientCache;
 const nodeAPIURL = 'ws://localhost:7887/rpc-ws';
 
@@ -137,7 +137,7 @@ This will display the different block formats in the console, as described below
     transactionRoot: '98c6520c40514db11da9aa0ba293665b8810d554374f21bdfcf78e7c486c5e8c',
     validatorsHash: '458f294af772546633809db0842bdbf8e3b4070e76ecbd1d926f4e630c1f2778',
     aggregateCommit: { height: 3450, aggregationBits: '', certificateSignature: '' },
-    generatorAddress: 'lskz4bzo8zkfnzrs2f3zb3yfk2vz9px4bhk5vjeha',
+    generatorAddress: 'klyz4bzo8zkfnzrs2f3zb3yfk2vz9px4bhk5vjeha',
     maxHeightPrevoted: 3528,
     maxHeightGenerated: 3462,
     impliesMaxPrevotes: true,
@@ -180,7 +180,7 @@ This will display the different block formats in the console, as described below
     transactionRoot: '98c6520c40514db11da9aa0ba293665b8810d554374f21bdfcf78e7c486c5e8c',
     validatorsHash: '458f294af772546633809db0842bdbf8e3b4070e76ecbd1d926f4e630c1f2778',
     aggregateCommit: { height: 3450, aggregationBits: '', certificateSignature: '' },
-    generatorAddress: 'lskz4bzo8zkfnzrs2f3zb3yfk2vz9px4bhk5vjeha',
+    generatorAddress: 'klyz4bzo8zkfnzrs2f3zb3yfk2vz9px4bhk5vjeha',
     maxHeightPrevoted: 3528,
     maxHeightGenerated: 3462,
     impliesMaxPrevotes: true,
@@ -380,7 +380,7 @@ This will display the different transaction formats in the console, as described
   params: {
     tokenID: '0300000800000000',
     amount: '100000000',
-    recipientAddress: 'lskycz7hvr8yfu74bcwxy2n4mopfmjancgdvxq8xz',
+    recipientAddress: 'klyycz7hvr8yfu74bcwxy2n4mopfmjancgdvxq8xz',
     data: 'Hello World!'
   },
   nonce: '2',

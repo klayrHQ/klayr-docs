@@ -4,13 +4,13 @@ Muhammad Talha <muhammad.talha@lightcurve.io>
 :idprefix:
 :idseparator: -
 :sectnums:
-:docs_sdk: lisk-sdk::
+:docs_sdk: klayr-sdk::
 // URLs
-:url_github_db: https://github.com/LiskHQ/lisk-sdk-examples/tree/development/tutorials/hello/hello_client/src/app/plugins/hello_info/db.ts
+:url_github_db: https://github.com/KlayrHQ/klayr-sdk-examples/tree/development/tutorials/hello/hello_client/src/app/plugins/hello_info/db.ts
 :url_rocks_db: https://rocksdb.org/
 
 // Project URLS
-// :url_lisk_db: {docs_sdk}references/lisk-elements/db.adoc
+// :url_klayr_db: {docs_sdk}references/klayr-elements/db.adoc
 :url_plugin_schema: build-blockchain/plugin/schema-types.adoc#NewHelloEvent
 
 // TODO: Update the page by uncommenting the hyperlinks once the updated pages are available.
@@ -23,15 +23,15 @@ On this page, you'll learn:
 * [x] Defining methods for retrieving data from the database.
 ====
 
-Plugins can use any database for their off-chain data storage needs, contrary to modules that use both on-chain and off-chain data stores offered by the Lisk SDK.
+Plugins can use any database for their off-chain data storage needs, contrary to modules that use both on-chain and off-chain data stores offered by the Klayr SDK.
 
 A plugin's data store stays only on the node that registers it to the blockchain and is not shared with other nodes.
 
 //TODO: Add back link once the related content is updated
-// For this guide, we want to store the NewHelloEvent's data in an off-chain store by using xref:{url_lisk_db}[lisk-db]. 
+// For this guide, we want to store the NewHelloEvent's data in an off-chain store by using xref:{url_klayr_db}[klayr-db]. 
 
-For this guide, we want to store the NewHelloEvent's data in an off-chain store by using `lisk-db`. 
-Lisk-db is a key-value store based on {url_rocks_db}[RocksDB^].
+For this guide, we want to store the NewHelloEvent's data in an off-chain store by using `klayr-db`. 
+Klayr-db is a key-value store based on {url_rocks_db}[RocksDB^].
 
 The database-related operations will exist in a `db.ts` file which will be located in the plugin's root folder: `hello_info`. 
 Create the new file in the aforementioned directory.
@@ -39,7 +39,7 @@ Create the new file in the aforementioned directory.
 TIP: The relevant file discussed in this guide is {url_github_db}[db.ts^].
 
 == Getting the database's instance
-A `lisk-db` instance requires a *data path* and the *name* of the database.
+A `klayr-db` instance requires a *data path* and the *name* of the database.
 The data path of a plugin inherits the data path of the blockchain client and is mentioned in the _config.json_ or _custom_config.json_ file.
 
 Add the following code to your `db.ts` for getting a database instance.
@@ -47,20 +47,20 @@ Add the following code to your `db.ts` for getting a database instance.
 .getDBInstance
 [source,typescript]
 ----
-import { codec, db as liskDB, cryptography } from 'lisk-sdk';
+import { codec, db as klayrDB, cryptography } from 'klayr-sdk';
 import * as os from 'os';
 import { join } from 'path';
 import { ensureDir } from 'fs-extra';
 
 // [...]
 
-const { Database } = liskDB;
-type KVStore = liskDB.Database;
+const { Database } = klayrDB;
+type KVStore = klayrDB.Database;
 
 // Returns DB's instance.
 export const getDBInstance = async (
 	dataPath: string,
-	dbName = 'lisk-framework-helloInfo-plugin.db',
+	dbName = 'klayr-framework-helloInfo-plugin.db',
 ): Promise<KVStore> => {
 	const dirPath = join(dataPath.replace('~', os.homedir()), 'database', dbName);
 	await ensureDir(dirPath);
@@ -95,13 +95,13 @@ import { DB_KEY_EVENT_INFO, DB_LAST_COUNTER_INFO, DB_LAST_HEIGHT_INFO } from './
 // Stores event data in the database.
 export const setEventHelloInfo = async (
 	db: KVStore,
-	_lskAddress: Buffer,
+	_klyAddress: Buffer,
 	_message: string,
 	_eventHeight: number,
 	lastCounter: number,
 ): Promise<void> => {
 	const encodedAddressInfo = codec.encode(offChainEventSchema, {
-		senderAddress: _lskAddress,
+		senderAddress: _klyAddress,
 		message: _message,
 		height: _eventHeight,
 	});

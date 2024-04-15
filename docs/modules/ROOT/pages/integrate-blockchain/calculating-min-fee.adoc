@@ -1,8 +1,8 @@
 = How to calculate the minimum fee for a transaction
 :toc: preamble
 // URLs
-:url_typedoc_transactions: {site-url}/lisk-sdk/v6/references/typedoc/modules/_liskhq_lisk_transactions.html
-:url_sdkexamples_minfee: https://github.com/LiskHQ/lisk-sdk-examples/blob/development/guides/calculate-minfee/
+:url_typedoc_transactions: {site-url}/klayr-sdk/v6/references/typedoc/modules/_klayrhq_klayr_transactions.html
+:url_sdkexamples_minfee: https://github.com/KlayrHQ/klayr-sdk-examples/blob/development/guides/calculate-minfee/
 // Project URLs
 :url_understand_tx_fee: understand-blockchain/blocks-txs.adoc#transaction-fees
 :url_integrate_createtx: integrate-blockchain/create-sign-transactions.adoc
@@ -17,25 +17,25 @@ On this page, you'll learn:
 To compute the xref:{url_understand_tx_fee}[minimum fee] for a transaction, use the API client.
 Create a small script called `compute-minfee.js` as described in the following sections.
 
-NOTE: See the complete code example of the script in the Lisk SDK examples repository: {url_sdkexamples_minfee}[^]
+NOTE: See the complete code example of the script in the Klayr SDK examples repository: {url_sdkexamples_minfee}[^]
 
 [TIP]
 ====
-To compute the minimum fee for a transaction without a connection to the API client, the user can also use directly the {url_typedoc_transactions}[@liskhq/lisk-transactions^] package.
+To compute the minimum fee for a transaction without a connection to the API client, the user can also use directly the {url_typedoc_transactions}[@klayr/transactions^] package.
 In this case, the user needs to provide the transaction object and the corresponding transaction schema to the function.
 ====
 
 == Connect the API client to a node
 
-The Lisk API client is a JS package that allows to connect to a node API through WS and IPC protocols.
+The Klayr API client is a JS package that allows to connect to a node API through WS and IPC protocols.
 
 It can be used inside of JS or TS script to connect to a blockchain node API in order to calculate the minimum fee for a transaction conveniently.
 
-To use the Lisk API client, install the `lisk-client` package with NPM:
+To use the Klayr API client, install the `klayr-client` package with NPM:
 
 [source,bash]
 ----
-npm install @liskhq/lisk-client
+npm install @klayr/client
 ----
 
 [tabs]
@@ -50,7 +50,7 @@ Adjust `nodeAPIURL` to point to the node you want to post the transaction to.
 .api-client.js
 [source,js]
 ----
-const { apiClient } = require('@liskhq/lisk-client');
+const { apiClient } = require('@klayr/client');
 let clientCache;
 const nodeAPIURL = 'ws://localhost:7887/rpc-ws'
 
@@ -77,9 +77,9 @@ Adjust `DATA_PATH` to point to the blockchain client data path.
 .api-client.js
 [source,js]
 ----
-const { apiClient } = require('@liskhq/lisk-client');
+const { apiClient } = require('@klayr/client');
 
-const DATA_PATH = '~/.lisk/hello_client';
+const DATA_PATH = '~/.klayr/hello_client';
 let clientCache;
 
 const getClient = async () => {
@@ -110,7 +110,7 @@ TIP: For more information about the different ways to create transactions, check
 
 [source,json]
 ----
-{"transaction":{"module":"token","command":"transfer","fee":"0","nonce":"3","senderPublicKey":"ec10255d3e78b2977f04e59ea9afd3e9a2ce9a6b44619ef9f6c47c29695b1df3","signatures":["500d192a25a2c7b340b5ae03471c329b174d7fb3b05d47aefd71f0c4b76e220fe2edc79efcc16b9f89ac61708bcb9755f78262f1b00439f52972422a94f69a07"],"params":{"tokenID":"0000000000000000","amount":"1000000000","recipientAddress":"lskoytn4jcgs2pjpy2vfsttt7g8eb9wwbaf6hxc27","data":"Happy Birthday!"},"id":"0f81c6442ad49313046d73a8eb96178ff0c16ee2d353c4005f982310cdbbe39e"}}
+{"transaction":{"module":"token","command":"transfer","fee":"0","nonce":"3","senderPublicKey":"ec10255d3e78b2977f04e59ea9afd3e9a2ce9a6b44619ef9f6c47c29695b1df3","signatures":["500d192a25a2c7b340b5ae03471c329b174d7fb3b05d47aefd71f0c4b76e220fe2edc79efcc16b9f89ac61708bcb9755f78262f1b00439f52972422a94f69a07"],"params":{"tokenID":"0000000000000000","amount":"1000000000","recipientAddress":"klyoytn4jcgs2pjpy2vfsttt7g8eb9wwbaf6hxc27","data":"Happy Birthday!"},"id":"0f81c6442ad49313046d73a8eb96178ff0c16ee2d353c4005f982310cdbbe39e"}}
 ----
 
 == Compute minimumFee
@@ -170,16 +170,16 @@ Import all the above created script into `index.js` and use the functions to cal
 .index.js
 [source,js]
 ----
-const { transactions } = require('@liskhq/lisk-client');
+const { transactions } = require('@klayr/client');
 const { getMinFee } = require('./getMinFee');
 const { dryRun } = require('./dry-run');
 
 (async () => {
-	const txJSON = {"module":"token","command":"transfer","fee":"0","nonce":"3","senderPublicKey":"ec10255d3e78b2977f04e59ea9afd3e9a2ce9a6b44619ef9f6c47c29695b1df3","signatures":["500d192a25a2c7b340b5ae03471c329b174d7fb3b05d47aefd71f0c4b76e220fe2edc79efcc16b9f89ac61708bcb9755f78262f1b00439f52972422a94f69a07"],"params":{"tokenID":"0300000800000000","amount":"1000000000","recipientAddress":"lskoytn4jcgs2pjpy2vfsttt7g8eb9wwbaf6hxc27","data":"Happy Birthday!"},"id":"0f81c6442ad49313046d73a8eb96178ff0c16ee2d353c4005f982310cdbbe39e"};
+	const txJSON = {"module":"token","command":"transfer","fee":"0","nonce":"3","senderPublicKey":"ec10255d3e78b2977f04e59ea9afd3e9a2ce9a6b44619ef9f6c47c29695b1df3","signatures":["500d192a25a2c7b340b5ae03471c329b174d7fb3b05d47aefd71f0c4b76e220fe2edc79efcc16b9f89ac61708bcb9755f78262f1b00439f52972422a94f69a07"],"params":{"tokenID":"0300000800000000","amount":"1000000000","recipientAddress":"klyoytn4jcgs2pjpy2vfsttt7g8eb9wwbaf6hxc27","data":"Happy Birthday!"},"id":"0f81c6442ad49313046d73a8eb96178ff0c16ee2d353c4005f982310cdbbe39e"};
 
 	const minFee = await getMinFee(txJSON);
 
-	console.log("The minimum fee for the given transaction is: ", minFee, " Beddows, i.e. ", transactions.convertBeddowsToLSK(minFee.toString()), " LSK.");
+	console.log("The minimum fee for the given transaction is: ", minFee, " Beddows, i.e. ", transactions.convertBeddowsToKLY(minFee.toString()), " KLY.");
 
 	const txWithFee = {
 		...txJSON,
@@ -212,7 +212,7 @@ The result will be displayed in the terminal like shown below:
 =====
 [source,bash]
 ----
-The minimum fee for the given transaction is:  180000n  Beddows, i.e.  0.0018  LSK.
+The minimum fee for the given transaction is:  180000n  Beddows, i.e.  0.0018  KLY.
 Dry run result {"result":1,"events":[{"data":"0a14fa892e1aa42a8af96c45dfd5afc428b3dba950e612036665651a0803000008000000002080ade2042800","index":0,"module":"token","name":"lock","topics":["8672ad60aca728cd1742862d02abb857b8329f3a74434e895e51504eaaaa3c52","fa892e1aa42a8af96c45dfd5afc428b3dba950e6"],"height":3967},{"data":"0a14fa892e1aa42a8af96c45dfd5afc428b3dba950e61214646674f07fde09c24702f6e739bbefb19b7b9b3e1a080300000800000000208094ebdc032800","index":1,"module":"token","name":"transfer","topics":["8672ad60aca728cd1742862d02abb857b8329f3a74434e895e51504eaaaa3c52","fa892e1aa42a8af96c45dfd5afc428b3dba950e6","646674f07fde09c24702f6e739bbefb19b7b9b3e"],"height":3967},{"data":"0a14fa892e1aa42a8af96c45dfd5afc428b3dba950e612036665651a0803000008000000002080ade2042800","index":2,"module":"token","name":"unlock","topics":["8672ad60aca728cd1742862d02abb857b8329f3a74434e895e51504eaaaa3c52","fa892e1aa42a8af96c45dfd5afc428b3dba950e6"],"height":3967},{"data":"0a14fa892e1aa42a8af96c45dfd5afc428b3dba950e6120803000008000000001888860b2000","index":3,"module":"token","name":"burn","topics":["8672ad60aca728cd1742862d02abb857b8329f3a74434e895e51504eaaaa3c52","fa892e1aa42a8af96c45dfd5afc428b3dba950e6"],"height":3967},{"data":"0a14fa892e1aa42a8af96c45dfd5afc428b3dba950e61214522e3ab2e804cd0d84bdfb585753bb9137e4812b1a08030000080000000020f8a6d7042800","index":4,"module":"token","name":"transfer","topics":["8672ad60aca728cd1742862d02abb857b8329f3a74434e895e51504eaaaa3c52","fa892e1aa42a8af96c45dfd5afc428b3dba950e6","522e3ab2e804cd0d84bdfb585753bb9137e4812b"],"height":3967},{"data":"0a14fa892e1aa42a8af96c45dfd5afc428b3dba950e61214522e3ab2e804cd0d84bdfb585753bb9137e4812b1888860b20f8a6d704","index":5,"module":"fee","name":"generatorFeeProcessed","topics":["8672ad60aca728cd1742862d02abb857b8329f3a74434e895e51504eaaaa3c52","fa892e1aa42a8af96c45dfd5afc428b3dba950e6","522e3ab2e804cd0d84bdfb585753bb9137e4812b"],"height":3967},{"data":"0801","index":6,"module":"token","name":"commandExecutionResult","topics":["8672ad60aca728cd1742862d02abb857b8329f3a74434e895e51504eaaaa3c52"],"height":3967}]}
 ----
 =====
@@ -222,7 +222,7 @@ Dry run result {"result":1,"events":[{"data":"0a14fa892e1aa42a8af96c45dfd5afc428
 =====
 [source,bash]
 ----
-The minimum fee for the given transaction is:  180000n  Beddows, i.e.  0.0018  LSK.
+The minimum fee for the given transaction is:  180000n  Beddows, i.e.  0.0018  KLY.
 Dry run result {
   result: -1,
   events: [],

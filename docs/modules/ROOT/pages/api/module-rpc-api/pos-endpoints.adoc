@@ -4,9 +4,9 @@ Muhammad Talha <muhammad.talha@lightcurve.io>
 :toc: preamble
 
 //URLs
-:url_typedoc_pos: {site-url}/lisk-sdk/v6/references/typedoc/classes/lisk_framework.PoSModule.html
+:url_typedoc_pos: {site-url}/klayr-sdk/v6/references/typedoc/classes/klayr_framework.PoSModule.html
 
-:url_pos: https://github.com/LiskHQ/lisk-sdk/blob/development/framework/src/modules/pos/endpoint.ts
+:url_pos: https://github.com/KlayrHQ/klayr-sdk/blob/development/framework/src/modules/pos/endpoint.ts
 
 //Project URLs
 :url_integrate_endpoints: integrate-blockchain/connecting-endpoints.adoc
@@ -37,8 +37,8 @@ Specification::
 
 |`address`
 |string
-|The Lisk32 address of a staker.
-|lskhf3gtj3wecxaxy7csqb5k8kszugghpscvat5b4
+|The Klayr32 address of a staker.
+|klyhf3gtj3wecxaxy7csqb5k8kszugghpscvat5b4
 
 
 |===
@@ -48,7 +48,7 @@ Node CLI::
 --
 [source,bash]
 ----
-lisk-core endpoint:invoke pos_getStaker '{"address":"lskhf3gtj3wecxaxy7csqb5k8kszugghpscvat5b4"}' --pretty
+klayr-core endpoint:invoke pos_getStaker '{"address":"klyhf3gtj3wecxaxy7csqb5k8kszugghpscvat5b4"}' --pretty
 ----
 
 --
@@ -64,7 +64,7 @@ curl --location 'http://localhost:7887/rpc' \
     "id": "1",
     "method": "pos_getStaker",
     "params": {
-        "address": "lskhf3gtj3wecxaxy7csqb5k8kszugghpscvat5b4"
+        "address": "klyhf3gtj3wecxaxy7csqb5k8kszugghpscvat5b4"
     }
 }'
 ----
@@ -80,12 +80,12 @@ curl --location 'http://localhost:7887/rpc' \
 {
   "stakes": [
     {
-      "validatorAddress": "lskx9oc6auv2v38sorwbwgzhq9ovmjwbk5wpzmda7",
+      "validatorAddress": "klyx9oc6auv2v38sorwbwgzhq9ovmjwbk5wpzmda7",
       "amount": "500000000000",
       "sharingCoefficients": []
     },
     {
-      "validatorAddress": "lskhf3gtj3wecxaxy7csqb5k8kszugghpscvat5b4",
+      "validatorAddress": "klyhf3gtj3wecxaxy7csqb5k8kszugghpscvat5b4",
       "amount": "9899000000000",
       "sharingCoefficients": [
         {
@@ -97,12 +97,12 @@ curl --location 'http://localhost:7887/rpc' \
   ],
   "pendingUnlocks": [
     {
-      "validatorAddress": "lskpgd5q6up2u3m7xgfwnpazu2k2e3rea6a2pkh4k",
+      "validatorAddress": "klypgd5q6up2u3m7xgfwnpazu2k2e3rea6a2pkh4k",
       "amount": "500000000000",
       "unstakeHeight": 128838
     },
     {
-      "validatorAddress": "lskhf3gtj3wecxaxy7csqb5k8kszugghpscvat5b4",
+      "validatorAddress": "klyhf3gtj3wecxaxy7csqb5k8kszugghpscvat5b4",
       "amount": "1000000000",
       "unstakeHeight": 92887
     }
@@ -132,8 +132,8 @@ Specification::
 
 |`address`
 |string
-|The Lisk32 address of a validator.
-|lskhf3gtj3wecxaxy7csqb5k8kszugghpscvat5b4
+|The Klayr32 address of a validator.
+|klyhf3gtj3wecxaxy7csqb5k8kszugghpscvat5b4
 
 |===
 --
@@ -142,7 +142,7 @@ Node CLI::
 --
 [source,bash]
 ----
-lisk-core endpoint:invoke pos_getValidator '{"address":"lskhf3gtj3wecxaxy7csqb5k8kszugghpscvat5b4"}' --pretty
+klayr-core endpoint:invoke pos_getValidator '{"address":"klyhf3gtj3wecxaxy7csqb5k8kszugghpscvat5b4"}' --pretty
 ----
 
 --
@@ -158,7 +158,7 @@ curl --location 'http://localhost:7887/rpc' \
     "id": "1",
     "method": "pos_getValidator",
     "params": {
-        "address": "lskhf3gtj3wecxaxy7csqb5k8kszugghpscvat5b4"
+        "address": "klyhf3gtj3wecxaxy7csqb5k8kszugghpscvat5b4"
     }
 }'
 ----
@@ -187,7 +187,7 @@ curl --location 'http://localhost:7887/rpc' \
       "coefficient": "20c157e32fecfda501718a0f"
     }
   ],
-  "address": "lskhf3gtj3wecxaxy7csqb5k8kszugghpscvat5b4",
+  "address": "klyhf3gtj3wecxaxy7csqb5k8kszugghpscvat5b4",
   "punishmentPeriods": []
 }
 ----
@@ -209,7 +209,7 @@ Node CLI::
 --
 [source,bash]
 ----
-lisk-core endpoint:invoke pos_getAllValidators --pretty
+klayr-core endpoint:invoke pos_getAllValidators --pretty
 ----
 
 --
@@ -249,7 +249,7 @@ curl --location 'http://localhost:7887/rpc' \
       "commission": 10000,
       "lastCommissionIncreaseHeight": 0,
       "sharingCoefficients": [],
-      "address": "lskzzsu2zz6gqvdcawjfv64ovznx36qq86ap3opz5",
+      "address": "klyzzsu2zz6gqvdcawjfv64ovznx36qq86ap3opz5",
       "punishmentPeriods": []
     },
     {
@@ -268,7 +268,7 @@ curl --location 'http://localhost:7887/rpc' \
           "coefficient": ""
         }
       ],
-      "address": "lskzytpy82c8xtkpopchzee3vydza4cvjvcsa4fv3",
+      "address": "klyzytpy82c8xtkpopchzee3vydza4cvjvcsa4fv3",
       "punishmentPeriods": []
     },
     {
@@ -282,7 +282,7 @@ curl --location 'http://localhost:7887/rpc' \
       "commission": 10000,
       "lastCommissionIncreaseHeight": 0,
       "sharingCoefficients": [],
-      "address": "lskz224zqw73czcr6yecdkp47h8xdbfwwzmc4be82",
+      "address": "klyz224zqw73czcr6yecdkp47h8xdbfwwzmc4be82",
       "punishmentPeriods": []
     },
     {
@@ -296,7 +296,7 @@ curl --location 'http://localhost:7887/rpc' \
       "commission": 10000,
       "lastCommissionIncreaseHeight": 0,
       "sharingCoefficients": [],
-      "address": "lskzjyzhmeo4sy8rwfbq72autamoa3u5yq7u4x24u",
+      "address": "klyzjyzhmeo4sy8rwfbq72autamoa3u5yq7u4x24u",
       "punishmentPeriods": []
     },
     {
@@ -310,7 +310,7 @@ curl --location 'http://localhost:7887/rpc' \
       "commission": 10000,
       "lastCommissionIncreaseHeight": 0,
       "sharingCoefficients": [],
-      "address": "lskxc4ut4byxxt28z8bbgxxdtxg2e3ma835y3gosh",
+      "address": "klyxc4ut4byxxt28z8bbgxxdtxg2e3ma835y3gosh",
       "punishmentPeriods": []
     },
     {
@@ -324,7 +324,7 @@ curl --location 'http://localhost:7887/rpc' \
       "commission": 10000,
       "lastCommissionIncreaseHeight": 0,
       "sharingCoefficients": [],
-      "address": "lskxpwpxjhqcypj78wpsfsm2go4zy3yrqek8qom4s",
+      "address": "klyxpwpxjhqcypj78wpsfsm2go4zy3yrqek8qom4s",
       "punishmentPeriods": []
     },
     {
@@ -343,7 +343,7 @@ curl --location 'http://localhost:7887/rpc' \
           "coefficient": ""
         }
       ],
-      "address": "lskxbe5kzt6k69km6ruq9nx4b7kyyonp3bj5yhrcq",
+      "address": "klyxbe5kzt6k69km6ruq9nx4b7kyyonp3bj5yhrcq",
       "punishmentPeriods": []
     },
     {
@@ -357,7 +357,7 @@ curl --location 'http://localhost:7887/rpc' \
       "commission": 10000,
       "lastCommissionIncreaseHeight": 0,
       "sharingCoefficients": [],
-      "address": "lskx54mqaunemxpfgn5w3jgjzrp77aun5wdxvzxnc",
+      "address": "klyx54mqaunemxpfgn5w3jgjzrp77aun5wdxvzxnc",
       "punishmentPeriods": []
     },
     {
@@ -376,7 +376,7 @@ curl --location 'http://localhost:7887/rpc' \
           "coefficient": "037d9eba0c56b89a6a5e979dd8"
         }
       ],
-      "address": "lskx9oc6auv2v38sorwbwgzhq9ovmjwbk5wpzmda7",
+      "address": "klyx9oc6auv2v38sorwbwgzhq9ovmjwbk5wpzmda7",
       "punishmentPeriods": []
     },
     {
@@ -390,7 +390,7 @@ curl --location 'http://localhost:7887/rpc' \
       "commission": 1580,
       "lastCommissionIncreaseHeight": 295526,
       "sharingCoefficients": [],
-      "address": "lskxud8mwmw4et3zhrr6cee9q4d8thhe2b3x6yqdp",
+      "address": "klyxud8mwmw4et3zhrr6cee9q4d8thhe2b3x6yqdp",
       "punishmentPeriods": []
     },
     {
@@ -409,7 +409,7 @@ curl --location 'http://localhost:7887/rpc' \
           "coefficient": ""
         }
       ],
-      "address": "lskxsddtvbc7ze98bqbawaq3ydj2f8387429633t9",
+      "address": "klyxsddtvbc7ze98bqbawaq3ydj2f8387429633t9",
       "punishmentPeriods": []
     },
     {
@@ -423,7 +423,7 @@ curl --location 'http://localhost:7887/rpc' \
       "commission": 10000,
       "lastCommissionIncreaseHeight": 0,
       "sharingCoefficients": [],
-      "address": "lskxhk9o3tqd887vj9e6hzmz6t9aj4t546wmabmxm",
+      "address": "klyxhk9o3tqd887vj9e6hzmz6t9aj4t546wmabmxm",
       "punishmentPeriods": []
     },
     {
@@ -437,7 +437,7 @@ curl --location 'http://localhost:7887/rpc' \
       "commission": 10000,
       "lastCommissionIncreaseHeight": 0,
       "sharingCoefficients": [],
-      "address": "lskxgmgx6ycbsgg5wzjqgqtgk7vhqe5s2rrdetfbn",
+      "address": "klyxgmgx6ycbsgg5wzjqgqtgk7vhqe5s2rrdetfbn",
       "punishmentPeriods": []
     },
     {
@@ -451,7 +451,7 @@ curl --location 'http://localhost:7887/rpc' \
       "commission": 10000,
       "lastCommissionIncreaseHeight": 0,
       "sharingCoefficients": [],
-      "address": "lskvxb95vmcgvxk22gq84u654r7t5x5ooe5xsm887",
+      "address": "klyvxb95vmcgvxk22gq84u654r7t5x5ooe5xsm887",
       "punishmentPeriods": []
     },
     {
@@ -465,7 +465,7 @@ curl --location 'http://localhost:7887/rpc' \
       "commission": 10000,
       "lastCommissionIncreaseHeight": 0,
       "sharingCoefficients": [],
-      "address": "lskvpjmup72df9jw32yfoqraqspx77gfuuaz92n6b",
+      "address": "klyvpjmup72df9jw32yfoqraqspx77gfuuaz92n6b",
       "punishmentPeriods": []
     },
     {
@@ -479,7 +479,7 @@ curl --location 'http://localhost:7887/rpc' \
       "commission": 10000,
       "lastCommissionIncreaseHeight": 0,
       "sharingCoefficients": [],
-      "address": "lskvuv6xf2d8eqveht8o6vghyuut5sw3sm7pvst8b",
+      "address": "klyvuv6xf2d8eqveht8o6vghyuut5sw3sm7pvst8b",
       "punishmentPeriods": []
     },
     {
@@ -493,7 +493,7 @@ curl --location 'http://localhost:7887/rpc' \
       "commission": 10000,
       "lastCommissionIncreaseHeight": 0,
       "sharingCoefficients": [],
-      "address": "lskvtoofp8mpvvbtpd9rhx9h6f6b2x46a4hndqq3t",
+      "address": "klyvtoofp8mpvvbtpd9rhx9h6f6b2x46a4hndqq3t",
       "punishmentPeriods": []
     },
     {
@@ -507,7 +507,7 @@ curl --location 'http://localhost:7887/rpc' \
       "commission": 10000,
       "lastCommissionIncreaseHeight": 0,
       "sharingCoefficients": [],
-      "address": "lskvk2ojvbhux564z3o6v8pzcbcejnrmn3p3p3qyh",
+      "address": "klyvk2ojvbhux564z3o6v8pzcbcejnrmn3p3p3qyh",
       "punishmentPeriods": []
     },
     {
@@ -521,7 +521,7 @@ curl --location 'http://localhost:7887/rpc' \
       "commission": 10000,
       "lastCommissionIncreaseHeight": 0,
       "sharingCoefficients": [],
-      "address": "lskvac7vvztxetrecq3nvafgvdh8vb2n565at3zfg",
+      "address": "klyvac7vvztxetrecq3nvafgvdh8vb2n565at3zfg",
       "punishmentPeriods": []
     },
     {
@@ -535,7 +535,7 @@ curl --location 'http://localhost:7887/rpc' \
       "commission": 10000,
       "lastCommissionIncreaseHeight": 0,
       "sharingCoefficients": [],
-      "address": "lskvam7a9cgdbu7y2vw88ojbpzh7s2ukmzdzsph7x",
+      "address": "klyvam7a9cgdbu7y2vw88ojbpzh7s2ukmzdzsph7x",
       "punishmentPeriods": []
     },
     {
@@ -549,7 +549,7 @@ curl --location 'http://localhost:7887/rpc' \
       "commission": 10000,
       "lastCommissionIncreaseHeight": 0,
       "sharingCoefficients": [],
-      "address": "lskvsxpr4vwcgfryyx2w94xjw63294xwj2s66dkmp",
+      "address": "klyvsxpr4vwcgfryyx2w94xjw63294xwj2s66dkmp",
       "punishmentPeriods": []
     },
     {
@@ -563,7 +563,7 @@ curl --location 'http://localhost:7887/rpc' \
       "commission": 10000,
       "lastCommissionIncreaseHeight": 0,
       "sharingCoefficients": [],
-      "address": "lskvgphcvbvfxaopmt98b4y4qfvvfrd6oa7mhneuo",
+      "address": "klyvgphcvbvfxaopmt98b4y4qfvvfrd6oa7mhneuo",
       "punishmentPeriods": []
     },
     {
@@ -577,7 +577,7 @@ curl --location 'http://localhost:7887/rpc' \
       "commission": 10000,
       "lastCommissionIncreaseHeight": 0,
       "sharingCoefficients": [],
-      "address": "lskcxg3gzuv82zptppz2n9qmnwcy8kx8dnprsfpat",
+      "address": "klycxg3gzuv82zptppz2n9qmnwcy8kx8dnprsfpat",
       "punishmentPeriods": []
     },
     {
@@ -591,7 +591,7 @@ curl --location 'http://localhost:7887/rpc' \
       "commission": 10000,
       "lastCommissionIncreaseHeight": 0,
       "sharingCoefficients": [],
-      "address": "lskcmvk8ypeye2uqpawwun9u35y5c8kyrgrnygqq4",
+      "address": "klycmvk8ypeye2uqpawwun9u35y5c8kyrgrnygqq4",
       "punishmentPeriods": []
     },
     {
@@ -605,7 +605,7 @@ curl --location 'http://localhost:7887/rpc' \
       "commission": 10000,
       "lastCommissionIncreaseHeight": 0,
       "sharingCoefficients": [],
-      "address": "lskcbc28736x95p6txz3ad8mxx4yko6jbzo4vhagf",
+      "address": "klycbc28736x95p6txz3ad8mxx4yko6jbzo4vhagf",
       "punishmentPeriods": []
     },
     {
@@ -619,7 +619,7 @@ curl --location 'http://localhost:7887/rpc' \
       "commission": 10000,
       "lastCommissionIncreaseHeight": 0,
       "sharingCoefficients": [],
-      "address": "lskc94hx5zgu3vbydwj96v64r5pdfj4q3ytfxyw23",
+      "address": "klyc94hx5zgu3vbydwj96v64r5pdfj4q3ytfxyw23",
       "punishmentPeriods": []
     },
     {
@@ -633,7 +633,7 @@ curl --location 'http://localhost:7887/rpc' \
       "commission": 10000,
       "lastCommissionIncreaseHeight": 0,
       "sharingCoefficients": [],
-      "address": "lskcdmcxk82hn7krh58u8u2h3whqrtfbjjh267ksk",
+      "address": "klycdmcxk82hn7krh58u8u2h3whqrtfbjjh267ksk",
       "punishmentPeriods": []
     },
     {
@@ -647,7 +647,7 @@ curl --location 'http://localhost:7887/rpc' \
       "commission": 10000,
       "lastCommissionIncreaseHeight": 0,
       "sharingCoefficients": [],
-      "address": "lskpnpmxcr4x3j7d7j2gj5mmk56xjcyu7foddmkmx",
+      "address": "klypnpmxcr4x3j7d7j2gj5mmk56xjcyu7foddmkmx",
       "punishmentPeriods": []
     },
     {
@@ -661,7 +661,7 @@ curl --location 'http://localhost:7887/rpc' \
       "commission": 10000,
       "lastCommissionIncreaseHeight": 0,
       "sharingCoefficients": [],
-      "address": "lskp3f884jszqaqoqfczet4g7dyg8q4dyaajc6vr9",
+      "address": "klyp3f884jszqaqoqfczet4g7dyg8q4dyaajc6vr9",
       "punishmentPeriods": []
     },
     {
@@ -675,7 +675,7 @@ curl --location 'http://localhost:7887/rpc' \
       "commission": 10000,
       "lastCommissionIncreaseHeight": 0,
       "sharingCoefficients": [],
-      "address": "lskpwubbs45u628t6y34ouqdnje8dtwx5s46yw9ve",
+      "address": "klypwubbs45u628t6y34ouqdnje8dtwx5s46yw9ve",
       "punishmentPeriods": []
     },
     {
@@ -689,7 +689,7 @@ curl --location 'http://localhost:7887/rpc' \
       "commission": 10000,
       "lastCommissionIncreaseHeight": 0,
       "sharingCoefficients": [],
-      "address": "lskp2yfmwkga9atcwqsk6b6ck7dcxbqdxnuzdbcpn",
+      "address": "klyp2yfmwkga9atcwqsk6b6ck7dcxbqdxnuzdbcpn",
       "punishmentPeriods": []
     },
     {
@@ -703,7 +703,7 @@ curl --location 'http://localhost:7887/rpc' \
       "commission": 10000,
       "lastCommissionIncreaseHeight": 0,
       "sharingCoefficients": [],
-      "address": "lskpaabbq6evah2bdhv7e2dd2pfe4xxmzanyod65u",
+      "address": "klypaabbq6evah2bdhv7e2dd2pfe4xxmzanyod65u",
       "punishmentPeriods": []
     },
     {
@@ -717,7 +717,7 @@ curl --location 'http://localhost:7887/rpc' \
       "commission": 10000,
       "lastCommissionIncreaseHeight": 111575,
       "sharingCoefficients": [],
-      "address": "lskpgd5q6up2u3m7xgfwnpazu2k2e3rea6a2pkh4k",
+      "address": "klypgd5q6up2u3m7xgfwnpazu2k2e3rea6a2pkh4k",
       "punishmentPeriods": []
     },
     {
@@ -736,7 +736,7 @@ curl --location 'http://localhost:7887/rpc' \
           "coefficient": "03f624c8f9aaeeed45f814a606"
         }
       ],
-      "address": "lskmz22uzabdhhad2ddb2f6hqky9v9b4n926hggfg",
+      "address": "klymz22uzabdhhad2ddb2f6hqky9v9b4n926hggfg",
       "punishmentPeriods": []
     },
     {
@@ -750,7 +750,7 @@ curl --location 'http://localhost:7887/rpc' \
       "commission": 5000,
       "lastCommissionIncreaseHeight": 1292,
       "sharingCoefficients": [],
-      "address": "lskmzafez7j53hxtaw6we8eas9c8omvcp6e6bha3v",
+      "address": "klymzafez7j53hxtaw6we8eas9c8omvcp6e6bha3v",
       "punishmentPeriods": []
     },
     {
@@ -764,7 +764,7 @@ curl --location 'http://localhost:7887/rpc' \
       "commission": 10000,
       "lastCommissionIncreaseHeight": 0,
       "sharingCoefficients": [],
-      "address": "lskm6pz3coqmeo5nzwrcxntwrnu2u77yav7w4vmmy",
+      "address": "klym6pz3coqmeo5nzwrcxntwrnu2u77yav7w4vmmy",
       "punishmentPeriods": []
     },
     {
@@ -778,7 +778,7 @@ curl --location 'http://localhost:7887/rpc' \
       "commission": 10000,
       "lastCommissionIncreaseHeight": 0,
       "sharingCoefficients": [],
-      "address": "lskm6fdfhem7wvj76tj6bako4d446scr8wnomocqo",
+      "address": "klym6fdfhem7wvj76tj6bako4d446scr8wnomocqo",
       "punishmentPeriods": []
     },
     {
@@ -797,7 +797,7 @@ curl --location 'http://localhost:7887/rpc' \
           "coefficient": "065e697575cf1806ee6eb5469c"
         }
       ],
-      "address": "lskm7bcu9g5wz8vc4j2tfjmndnq2hsupsarcu7p8v",
+      "address": "klym7bcu9g5wz8vc4j2tfjmndnq2hsupsarcu7p8v",
       "punishmentPeriods": []
     },
     {
@@ -811,7 +811,7 @@ curl --location 'http://localhost:7887/rpc' \
       "commission": 4778,
       "lastCommissionIncreaseHeight": 0,
       "sharingCoefficients": [],
-      "address": "lskm25ey5bcsnu5kh98wavyhy9t6m8yqumq2nhcbw",
+      "address": "klym25ey5bcsnu5kh98wavyhy9t6m8yqumq2nhcbw",
       "punishmentPeriods": []
     },
     {
@@ -830,7 +830,7 @@ curl --location 'http://localhost:7887/rpc' \
           "coefficient": "0155c571775d86b0f4eae4adae"
         }
       ],
-      "address": "lskmfoq8b2xjk9ttnfhhhjq33ukas4ndb7eckc3c3",
+      "address": "klymfoq8b2xjk9ttnfhhhjq33ukas4ndb7eckc3c3",
       "punishmentPeriods": []
     },
     {
@@ -844,7 +844,7 @@ curl --location 'http://localhost:7887/rpc' \
       "commission": 10000,
       "lastCommissionIncreaseHeight": 0,
       "sharingCoefficients": [],
-      "address": "lskbcfrv3owewqpemx8vswbx5qg69f9skmod4zcdm",
+      "address": "klybcfrv3owewqpemx8vswbx5qg69f9skmod4zcdm",
       "punishmentPeriods": []
     },
     {
@@ -863,7 +863,7 @@ curl --location 'http://localhost:7887/rpc' \
           "coefficient": "056a62b6aef04cd3480c1cf371"
         }
       ],
-      "address": "lskbm4p4sava9x75osfcw67jwv387m7zgwvz35mkw",
+      "address": "klybm4p4sava9x75osfcw67jwv387m7zgwvz35mkw",
       "punishmentPeriods": []
     },
     {
@@ -877,7 +877,7 @@ curl --location 'http://localhost:7887/rpc' \
       "commission": 3700,
       "lastCommissionIncreaseHeight": 1157,
       "sharingCoefficients": [],
-      "address": "lskbgyrx3v76jxowgkgthu9yaf3dr29wqxbtxz8yp",
+      "address": "klybgyrx3v76jxowgkgthu9yaf3dr29wqxbtxz8yp",
       "punishmentPeriods": []
     },
     {
@@ -896,7 +896,7 @@ curl --location 'http://localhost:7887/rpc' \
           "coefficient": ""
         }
       ],
-      "address": "lsknnashp7msn4zwn7owe84xfn7brr9p66e7m9uzg",
+      "address": "klynnashp7msn4zwn7owe84xfn7brr9p66e7m9uzg",
       "punishmentPeriods": []
     },
     {
@@ -910,7 +910,7 @@ curl --location 'http://localhost:7887/rpc' \
       "commission": 10000,
       "lastCommissionIncreaseHeight": 0,
       "sharingCoefficients": [],
-      "address": "lskn4f6an9fxcncnrt97tzkpfpv8hztyu3pyebsx3",
+      "address": "klyn4f6an9fxcncnrt97tzkpfpv8hztyu3pyebsx3",
       "punishmentPeriods": []
     },
     {
@@ -924,7 +924,7 @@ curl --location 'http://localhost:7887/rpc' \
       "commission": 10000,
       "lastCommissionIncreaseHeight": 0,
       "sharingCoefficients": [],
-      "address": "lskndyb4mogp2m8s8yq77aa5kg9fevqzj7mhu7daw",
+      "address": "klyndyb4mogp2m8s8yq77aa5kg9fevqzj7mhu7daw",
       "punishmentPeriods": []
     },
     {
@@ -938,7 +938,7 @@ curl --location 'http://localhost:7887/rpc' \
       "commission": 10000,
       "lastCommissionIncreaseHeight": 0,
       "sharingCoefficients": [],
-      "address": "lsknfpvztkyw3k74dqhdz4ghup9xp5c485222fod3",
+      "address": "klynfpvztkyw3k74dqhdz4ghup9xp5c485222fod3",
       "punishmentPeriods": []
     },
     {
@@ -952,7 +952,7 @@ curl --location 'http://localhost:7887/rpc' \
       "commission": 10000,
       "lastCommissionIncreaseHeight": 0,
       "sharingCoefficients": [],
-      "address": "lsk3b9wwqp9phaxtdfqz5pwhry4m4oabza8ydttrj",
+      "address": "kly3b9wwqp9phaxtdfqz5pwhry4m4oabza8ydttrj",
       "punishmentPeriods": []
     },
     {
@@ -971,7 +971,7 @@ curl --location 'http://localhost:7887/rpc' \
           "coefficient": ""
         }
       ],
-      "address": "lsk3oe7hmf5k5e4f58zhmbouzx3t4v98sgsfuhwnw",
+      "address": "kly3oe7hmf5k5e4f58zhmbouzx3t4v98sgsfuhwnw",
       "punishmentPeriods": []
     },
     {
@@ -985,7 +985,7 @@ curl --location 'http://localhost:7887/rpc' \
       "commission": 10000,
       "lastCommissionIncreaseHeight": 0,
       "sharingCoefficients": [],
-      "address": "lsk39e24ozjr6egmeg2atepd3m5xrwuukvjqpu2ev",
+      "address": "kly39e24ozjr6egmeg2atepd3m5xrwuukvjqpu2ev",
       "punishmentPeriods": []
     },
     {
@@ -999,7 +999,7 @@ curl --location 'http://localhost:7887/rpc' \
       "commission": 10000,
       "lastCommissionIncreaseHeight": 0,
       "sharingCoefficients": [],
-      "address": "lsk3t2qkdhno6996kstuonpt7p6z97b4o3vufwux9",
+      "address": "kly3t2qkdhno6996kstuonpt7p6z97b4o3vufwux9",
       "punishmentPeriods": []
     },
     {
@@ -1013,7 +1013,7 @@ curl --location 'http://localhost:7887/rpc' \
       "commission": 10000,
       "lastCommissionIncreaseHeight": 297584,
       "sharingCoefficients": [],
-      "address": "lsk3s8rsbv4nvnq8azesm74ub9mhncw57kumarf7t",
+      "address": "kly3s8rsbv4nvnq8azesm74ub9mhncw57kumarf7t",
       "punishmentPeriods": []
     },
     {
@@ -1027,7 +1027,7 @@ curl --location 'http://localhost:7887/rpc' \
       "commission": 10000,
       "lastCommissionIncreaseHeight": 0,
       "sharingCoefficients": [],
-      "address": "lsk3gj4sfhzp3nof67nsaqpntnr8y3573rujk2dde",
+      "address": "kly3gj4sfhzp3nof67nsaqpntnr8y3573rujk2dde",
       "punishmentPeriods": []
     },
     {
@@ -1046,7 +1046,7 @@ curl --location 'http://localhost:7887/rpc' \
           "coefficient": ""
         }
       ],
-      "address": "lsk6pbgwqdmba9ktyxy3k5rzjvyeknxp6wfwk36oa",
+      "address": "kly6pbgwqdmba9ktyxy3k5rzjvyeknxp6wfwk36oa",
       "punishmentPeriods": []
     },
     {
@@ -1060,7 +1060,7 @@ curl --location 'http://localhost:7887/rpc' \
       "commission": 10000,
       "lastCommissionIncreaseHeight": 0,
       "sharingCoefficients": [],
-      "address": "lsk6b4o7wvqnyotqsu44pkxbhyjmyozqt8q32osje",
+      "address": "kly6b4o7wvqnyotqsu44pkxbhyjmyozqt8q32osje",
       "punishmentPeriods": []
     },
     {
@@ -1074,7 +1074,7 @@ curl --location 'http://localhost:7887/rpc' \
       "commission": 10000,
       "lastCommissionIncreaseHeight": 0,
       "sharingCoefficients": [],
-      "address": "lsk6ew29p4dzponwg98ymekg6nbjaynq4hqwetxpm",
+      "address": "kly6ew29p4dzponwg98ymekg6nbjaynq4hqwetxpm",
       "punishmentPeriods": []
     },
     {
@@ -1088,7 +1088,7 @@ curl --location 'http://localhost:7887/rpc' \
       "commission": 10000,
       "lastCommissionIncreaseHeight": 298369,
       "sharingCoefficients": [],
-      "address": "lsk6h5esgwgmpkvgxcwaksn6c6x9grj92scyjhu2q",
+      "address": "kly6h5esgwgmpkvgxcwaksn6c6x9grj92scyjhu2q",
       "punishmentPeriods": []
     },
     {
@@ -1102,7 +1102,7 @@ curl --location 'http://localhost:7887/rpc' \
       "commission": 10000,
       "lastCommissionIncreaseHeight": 0,
       "sharingCoefficients": [],
-      "address": "lsk5vjoxvy844fp7aqjfhdkabdyx6vz4f3ynfkutu",
+      "address": "kly5vjoxvy844fp7aqjfhdkabdyx6vz4f3ynfkutu",
       "punishmentPeriods": []
     },
     {
@@ -1121,7 +1121,7 @@ curl --location 'http://localhost:7887/rpc' \
           "coefficient": ""
         }
       ],
-      "address": "lsk5cbsc8y69shtgnmegoqt4yrfy5xe92db3kaqxb",
+      "address": "kly5cbsc8y69shtgnmegoqt4yrfy5xe92db3kaqxb",
       "punishmentPeriods": []
     },
     {
@@ -1135,7 +1135,7 @@ curl --location 'http://localhost:7887/rpc' \
       "commission": 10000,
       "lastCommissionIncreaseHeight": 0,
       "sharingCoefficients": [],
-      "address": "lsk5uzmjmyukatwdznuy2g289fnmcjvdz94osrphj",
+      "address": "kly5uzmjmyukatwdznuy2g289fnmcjvdz94osrphj",
       "punishmentPeriods": []
     },
     {
@@ -1149,7 +1149,7 @@ curl --location 'http://localhost:7887/rpc' \
       "commission": 10000,
       "lastCommissionIncreaseHeight": 0,
       "sharingCoefficients": [],
-      "address": "lsk5w3z9xpm5rz788nk2337ecry92sjuk9v3p5zvz",
+      "address": "kly5w3z9xpm5rz788nk2337ecry92sjuk9v3p5zvz",
       "punishmentPeriods": []
     },
     {
@@ -1163,7 +1163,7 @@ curl --location 'http://localhost:7887/rpc' \
       "commission": 10000,
       "lastCommissionIncreaseHeight": 0,
       "sharingCoefficients": [],
-      "address": "lskovuu99rvqfdhs3s9e9xyfbodccyf73k4yz4ouc",
+      "address": "klyovuu99rvqfdhs3s9e9xyfbodccyf73k4yz4ouc",
       "punishmentPeriods": []
     },
     {
@@ -1177,7 +1177,7 @@ curl --location 'http://localhost:7887/rpc' \
       "commission": 10000,
       "lastCommissionIncreaseHeight": 0,
       "sharingCoefficients": [],
-      "address": "lsko689oj26mb36tej8e83fduh9aczcwm6e3vp9ec",
+      "address": "klyo689oj26mb36tej8e83fduh9aczcwm6e3vp9ec",
       "punishmentPeriods": []
     },
     {
@@ -1191,7 +1191,7 @@ curl --location 'http://localhost:7887/rpc' \
       "commission": 10000,
       "lastCommissionIncreaseHeight": 301692,
       "sharingCoefficients": [],
-      "address": "lskooakcgz89t9m7goeyafpa4acttwr6nm4q3fyh6",
+      "address": "klyooakcgz89t9m7goeyafpa4acttwr6nm4q3fyh6",
       "punishmentPeriods": []
     },
     {
@@ -1205,7 +1205,7 @@ curl --location 'http://localhost:7887/rpc' \
       "commission": 10000,
       "lastCommissionIncreaseHeight": 0,
       "sharingCoefficients": [],
-      "address": "lskoqqyfe6dsu8vu2ryatvkaq7cggkbdob67rkd2d",
+      "address": "klyoqqyfe6dsu8vu2ryatvkaq7cggkbdob67rkd2d",
       "punishmentPeriods": []
     },
     {
@@ -1219,7 +1219,7 @@ curl --location 'http://localhost:7887/rpc' \
       "commission": 10000,
       "lastCommissionIncreaseHeight": 0,
       "sharingCoefficients": [],
-      "address": "lskoary3z6dwdc4g87daqw7dpfetmn2yyanuytztq",
+      "address": "klyoary3z6dwdc4g87daqw7dpfetmn2yyanuytztq",
       "punishmentPeriods": []
     },
     {
@@ -1238,7 +1238,7 @@ curl --location 'http://localhost:7887/rpc' \
           "coefficient": ""
         }
       ],
-      "address": "lsk9xxaky96k6p3o7azt6brgasfye9yhumywwduyc",
+      "address": "kly9xxaky96k6p3o7azt6brgasfye9yhumywwduyc",
       "punishmentPeriods": []
     },
     {
@@ -1257,7 +1257,7 @@ curl --location 'http://localhost:7887/rpc' \
           "coefficient": "03f44db16f5590d4dee02706d0"
         }
       ],
-      "address": "lsk9xu5ohfvx5bzntyy5udqx59amoha6w55xwcn97",
+      "address": "kly9xu5ohfvx5bzntyy5udqx59amoha6w55xwcn97",
       "punishmentPeriods": []
     },
     {
@@ -1276,7 +1276,7 @@ curl --location 'http://localhost:7887/rpc' \
           "coefficient": "02d9bb2355699a36df6d8b2d"
         }
       ],
-      "address": "lsk9p7zenqhs3avzy58vjavt98c9gmncvfemhayxt",
+      "address": "kly9p7zenqhs3avzy58vjavt98c9gmncvfemhayxt",
       "punishmentPeriods": []
     },
     {
@@ -1290,7 +1290,7 @@ curl --location 'http://localhost:7887/rpc' \
       "commission": 10000,
       "lastCommissionIncreaseHeight": 0,
       "sharingCoefficients": [],
-      "address": "lsk9nuup6rxnc2qgf3obd3bdchw2u86t4x4w2mmmb",
+      "address": "kly9nuup6rxnc2qgf3obd3bdchw2u86t4x4w2mmmb",
       "punishmentPeriods": []
     },
     {
@@ -1304,7 +1304,7 @@ curl --location 'http://localhost:7887/rpc' \
       "commission": 10000,
       "lastCommissionIncreaseHeight": 0,
       "sharingCoefficients": [],
-      "address": "lsk983s23sx8g5qettuttbru9o6anqxr97xbpr8ve",
+      "address": "kly983s23sx8g5qettuttbru9o6anqxr97xbpr8ve",
       "punishmentPeriods": []
     },
     {
@@ -1318,7 +1318,7 @@ curl --location 'http://localhost:7887/rpc' \
       "commission": 10000,
       "lastCommissionIncreaseHeight": 0,
       "sharingCoefficients": [],
-      "address": "lsk9f8zd62up4gyzrvpnkqf75d2a2jyyca4jcropb",
+      "address": "kly9f8zd62up4gyzrvpnkqf75d2a2jyyca4jcropb",
       "punishmentPeriods": []
     },
     {
@@ -1332,7 +1332,7 @@ curl --location 'http://localhost:7887/rpc' \
       "commission": 10000,
       "lastCommissionIncreaseHeight": 0,
       "sharingCoefficients": [],
-      "address": "lsk7bx83fp49gk5wr8hvyk2ap6sdm9rzyj3fowvdw",
+      "address": "kly7bx83fp49gk5wr8hvyk2ap6sdm9rzyj3fowvdw",
       "punishmentPeriods": []
     },
     {
@@ -1346,7 +1346,7 @@ curl --location 'http://localhost:7887/rpc' \
       "commission": 10000,
       "lastCommissionIncreaseHeight": 0,
       "sharingCoefficients": [],
-      "address": "lsk789atxh65gcg44vnbx6y8s2uhgnxy5ww6r76ee",
+      "address": "kly789atxh65gcg44vnbx6y8s2uhgnxy5ww6r76ee",
       "punishmentPeriods": []
     },
     {
@@ -1360,7 +1360,7 @@ curl --location 'http://localhost:7887/rpc' \
       "commission": 10000,
       "lastCommissionIncreaseHeight": 0,
       "sharingCoefficients": [],
-      "address": "lsk7eoho24rx8utowyqxc6g6bugb8w59fuovdp2z3",
+      "address": "kly7eoho24rx8utowyqxc6g6bugb8w59fuovdp2z3",
       "punishmentPeriods": []
     },
     {
@@ -1374,7 +1374,7 @@ curl --location 'http://localhost:7887/rpc' \
       "commission": 10000,
       "lastCommissionIncreaseHeight": 0,
       "sharingCoefficients": [],
-      "address": "lsk7hsxb4wbqc6kxjs67vxtnghvfva53yrfp8fjk9",
+      "address": "kly7hsxb4wbqc6kxjs67vxtnghvfva53yrfp8fjk9",
       "punishmentPeriods": []
     },
     {
@@ -1388,7 +1388,7 @@ curl --location 'http://localhost:7887/rpc' \
       "commission": 10000,
       "lastCommissionIncreaseHeight": 0,
       "sharingCoefficients": [],
-      "address": "lsk8b6dnfzxhnfmeo9b2ayxcpxtca8ujpxp3bqyxh",
+      "address": "kly8b6dnfzxhnfmeo9b2ayxcpxtca8ujpxp3bqyxh",
       "punishmentPeriods": []
     },
     {
@@ -1402,7 +1402,7 @@ curl --location 'http://localhost:7887/rpc' \
       "commission": 10000,
       "lastCommissionIncreaseHeight": 0,
       "sharingCoefficients": [],
-      "address": "lsk8qbtu8gs9wgzuu6363cxdfqp6e6pexbqkxntwa",
+      "address": "kly8qbtu8gs9wgzuu6363cxdfqp6e6pexbqkxntwa",
       "punishmentPeriods": []
     },
     {
@@ -1416,7 +1416,7 @@ curl --location 'http://localhost:7887/rpc' \
       "commission": 10000,
       "lastCommissionIncreaseHeight": 0,
       "sharingCoefficients": [],
-      "address": "lsk8sr9rcx8zqyawywk7g9fxnmzjnvbtuewatdb72",
+      "address": "kly8sr9rcx8zqyawywk7g9fxnmzjnvbtuewatdb72",
       "punishmentPeriods": []
     },
     {
@@ -1430,7 +1430,7 @@ curl --location 'http://localhost:7887/rpc' \
       "commission": 10000,
       "lastCommissionIncreaseHeight": 0,
       "sharingCoefficients": [],
-      "address": "lskuu794czefzz5vk3tv52zstfvxhuwcz99fv9o49",
+      "address": "klyuu794czefzz5vk3tv52zstfvxhuwcz99fv9o49",
       "punishmentPeriods": []
     },
     {
@@ -1444,7 +1444,7 @@ curl --location 'http://localhost:7887/rpc' \
       "commission": 10000,
       "lastCommissionIncreaseHeight": 0,
       "sharingCoefficients": [],
-      "address": "lsku2foy2q87nrxfexvs3f3gf6bboptrvs2zq8kkx",
+      "address": "klyu2foy2q87nrxfexvs3f3gf6bboptrvs2zq8kkx",
       "punishmentPeriods": []
     },
     {
@@ -1458,7 +1458,7 @@ curl --location 'http://localhost:7887/rpc' \
       "commission": 10000,
       "lastCommissionIncreaseHeight": 0,
       "sharingCoefficients": [],
-      "address": "lskuatmyvmbtaduv7k6z2b9qn3dw7deher5pakfbh",
+      "address": "klyuatmyvmbtaduv7k6z2b9qn3dw7deher5pakfbh",
       "punishmentPeriods": []
     },
     {
@@ -1472,7 +1472,7 @@ curl --location 'http://localhost:7887/rpc' \
       "commission": 10000,
       "lastCommissionIncreaseHeight": 0,
       "sharingCoefficients": [],
-      "address": "lskufnvso6xdursjaazz547t5jgpbhgy6nkpzembu",
+      "address": "klyufnvso6xdursjaazz547t5jgpbhgy6nkpzembu",
       "punishmentPeriods": []
     },
     {
@@ -1491,7 +1491,7 @@ curl --location 'http://localhost:7887/rpc' \
           "coefficient": ""
         }
       ],
-      "address": "lskyvov25nzg63c6k59hytnfhgd3vcsrztx3zux49",
+      "address": "klyyvov25nzg63c6k59hytnfhgd3vcsrztx3zux49",
       "punishmentPeriods": []
     },
     {
@@ -1505,7 +1505,7 @@ curl --location 'http://localhost:7887/rpc' \
       "commission": 10000,
       "lastCommissionIncreaseHeight": 0,
       "sharingCoefficients": [],
-      "address": "lskyym2fymah28syg6w2pd2bs3srmgp987wyk5xff",
+      "address": "klyyym2fymah28syg6w2pd2bs3srmgp987wyk5xff",
       "punishmentPeriods": []
     },
     {
@@ -1519,7 +1519,7 @@ curl --location 'http://localhost:7887/rpc' \
       "commission": 10000,
       "lastCommissionIncreaseHeight": 0,
       "sharingCoefficients": [],
-      "address": "lskrzt55u2ya44m84mdyk8puy7ss5z2s8djyjtkjo",
+      "address": "klyrzt55u2ya44m84mdyk8puy7ss5z2s8djyjtkjo",
       "punishmentPeriods": []
     },
     {
@@ -1538,7 +1538,7 @@ curl --location 'http://localhost:7887/rpc' \
           "coefficient": ""
         }
       ],
-      "address": "lskrbqgfofry4gqqzzakuyevvtcsn52m94pb5gf9b",
+      "address": "klyrbqgfofry4gqqzzakuyevvtcsn52m94pb5gf9b",
       "punishmentPeriods": []
     },
     {
@@ -1552,7 +1552,7 @@ curl --location 'http://localhost:7887/rpc' \
       "commission": 10000,
       "lastCommissionIncreaseHeight": 0,
       "sharingCoefficients": [],
-      "address": "lskr58cuw632y2p9ft6gz2quzgznqhfo3ejyynbpe",
+      "address": "klyr58cuw632y2p9ft6gz2quzgznqhfo3ejyynbpe",
       "punishmentPeriods": []
     },
     {
@@ -1566,7 +1566,7 @@ curl --location 'http://localhost:7887/rpc' \
       "commission": 10000,
       "lastCommissionIncreaseHeight": 0,
       "sharingCoefficients": [],
-      "address": "lskrfk9x3ak9hx5tkgp6v3vr3tf7mg3c8wysuwqgv",
+      "address": "klyrfk9x3ak9hx5tkgp6v3vr3tf7mg3c8wysuwqgv",
       "punishmentPeriods": []
     },
     {
@@ -1580,7 +1580,7 @@ curl --location 'http://localhost:7887/rpc' \
       "commission": 10000,
       "lastCommissionIncreaseHeight": 0,
       "sharingCoefficients": [],
-      "address": "lskrgyyuoo5d4o3z922wang58faw4v2p7mj8vm5wa",
+      "address": "klyrgyyuoo5d4o3z922wang58faw4v2p7mj8vm5wa",
       "punishmentPeriods": []
     },
     {
@@ -1594,7 +1594,7 @@ curl --location 'http://localhost:7887/rpc' \
       "commission": 10000,
       "lastCommissionIncreaseHeight": 67872,
       "sharingCoefficients": [],
-      "address": "lsktmnjxbt77t4hpr5qq4yprr4aemv47dvcj5dj3h",
+      "address": "klytmnjxbt77t4hpr5qq4yprr4aemv47dvcj5dj3h",
       "punishmentPeriods": []
     },
     {
@@ -1613,7 +1613,7 @@ curl --location 'http://localhost:7887/rpc' \
           "coefficient": "07dd639418d278168840638fe6"
         }
       ],
-      "address": "lskth9yqsevfc984gpe8euk9m85vtowqzv2ewwnmv",
+      "address": "klyth9yqsevfc984gpe8euk9m85vtowqzv2ewwnmv",
       "punishmentPeriods": []
     },
     {
@@ -1627,7 +1627,7 @@ curl --location 'http://localhost:7887/rpc' \
       "commission": 10000,
       "lastCommissionIncreaseHeight": 0,
       "sharingCoefficients": [],
-      "address": "lskqvmuk9qxpp5n53wk23zz4gvdxsamxtjaf78yhs",
+      "address": "klyqvmuk9qxpp5n53wk23zz4gvdxsamxtjaf78yhs",
       "punishmentPeriods": []
     },
     {
@@ -1641,7 +1641,7 @@ curl --location 'http://localhost:7887/rpc' \
       "commission": 10000,
       "lastCommissionIncreaseHeight": 0,
       "sharingCoefficients": [],
-      "address": "lskq3c6z24ogq7xce9y9xy78qbn76a8vuawtjzrt8",
+      "address": "klyq3c6z24ogq7xce9y9xy78qbn76a8vuawtjzrt8",
       "punishmentPeriods": []
     },
     {
@@ -1655,7 +1655,7 @@ curl --location 'http://localhost:7887/rpc' \
       "commission": 10000,
       "lastCommissionIncreaseHeight": 0,
       "sharingCoefficients": [],
-      "address": "lskqo8t2pawy7mbqk6mkbcguz5mhhs543pr29amvy",
+      "address": "klyqo8t2pawy7mbqk6mkbcguz5mhhs543pr29amvy",
       "punishmentPeriods": []
     },
     {
@@ -1669,7 +1669,7 @@ curl --location 'http://localhost:7887/rpc' \
       "commission": 10000,
       "lastCommissionIncreaseHeight": 0,
       "sharingCoefficients": [],
-      "address": "lskqs4o97adpr8k5vwxgwmdrhe7quck78k99wa4pa",
+      "address": "klyqs4o97adpr8k5vwxgwmdrhe7quck78k99wa4pa",
       "punishmentPeriods": []
     },
     {
@@ -1683,7 +1683,7 @@ curl --location 'http://localhost:7887/rpc' \
       "commission": 10000,
       "lastCommissionIncreaseHeight": 0,
       "sharingCoefficients": [],
-      "address": "lske4yuaygtugq28uzfnmfugbejtv48jbro2ppaae",
+      "address": "klye4yuaygtugq28uzfnmfugbejtv48jbro2ppaae",
       "punishmentPeriods": []
     },
     {
@@ -1697,7 +1697,7 @@ curl --location 'http://localhost:7887/rpc' \
       "commission": 10000,
       "lastCommissionIncreaseHeight": 0,
       "sharingCoefficients": [],
-      "address": "lske689ejxjjmmhnfdnrj4fg3rsaq4ndn4mx4ucne",
+      "address": "klye689ejxjjmmhnfdnrj4fg3rsaq4ndn4mx4ucne",
       "punishmentPeriods": []
     },
     {
@@ -1711,7 +1711,7 @@ curl --location 'http://localhost:7887/rpc' \
       "commission": 10000,
       "lastCommissionIncreaseHeight": 0,
       "sharingCoefficients": [],
-      "address": "lskeogmhs2dog4ecgepbjwsbynuhvc9a75raxgjv9",
+      "address": "klyeogmhs2dog4ecgepbjwsbynuhvc9a75raxgjv9",
       "punishmentPeriods": []
     },
     {
@@ -1730,7 +1730,7 @@ curl --location 'http://localhost:7887/rpc' \
           "coefficient": ""
         }
       ],
-      "address": "lskeqhjv84465mtjqtmpthkzuucovd7nmrwa7y5r4",
+      "address": "klyeqhjv84465mtjqtmpthkzuucovd7nmrwa7y5r4",
       "punishmentPeriods": []
     },
     {
@@ -1744,7 +1744,7 @@ curl --location 'http://localhost:7887/rpc' \
       "commission": 10000,
       "lastCommissionIncreaseHeight": 0,
       "sharingCoefficients": [],
-      "address": "lskejmx5d8ecs7x7depaxuf4tnfz4evzhkn2dgc6n",
+      "address": "klyejmx5d8ecs7x7depaxuf4tnfz4evzhkn2dgc6n",
       "punishmentPeriods": []
     },
     {
@@ -1758,7 +1758,7 @@ curl --location 'http://localhost:7887/rpc' \
       "commission": 10000,
       "lastCommissionIncreaseHeight": 0,
       "sharingCoefficients": [],
-      "address": "lskwpqc7w84mxjcoh62m39f9dfzxjhrn7zx7m739p",
+      "address": "klywpqc7w84mxjcoh62m39f9dfzxjhrn7zx7m739p",
       "punishmentPeriods": []
     },
     {
@@ -1772,7 +1772,7 @@ curl --location 'http://localhost:7887/rpc' \
       "commission": 10000,
       "lastCommissionIncreaseHeight": 0,
       "sharingCoefficients": [],
-      "address": "lskw3b26zznjpn42mshfvrrrnkazuwwdt743aepux",
+      "address": "klyw3b26zznjpn42mshfvrrrnkazuwwdt743aepux",
       "punishmentPeriods": []
     },
     {
@@ -1786,7 +1786,7 @@ curl --location 'http://localhost:7887/rpc' \
       "commission": 10000,
       "lastCommissionIncreaseHeight": 0,
       "sharingCoefficients": [],
-      "address": "lskweagknwvxfmdubjs98nyon3qa7k9njjsonj67z",
+      "address": "klyweagknwvxfmdubjs98nyon3qa7k9njjsonj67z",
       "punishmentPeriods": []
     },
     {
@@ -1800,7 +1800,7 @@ curl --location 'http://localhost:7887/rpc' \
       "commission": 10000,
       "lastCommissionIncreaseHeight": 0,
       "sharingCoefficients": [],
-      "address": "lskw2y6gybz98wkcmcgcd9ggempqopkqa293ga83c",
+      "address": "klyw2y6gybz98wkcmcgcd9ggempqopkqa293ga83c",
       "punishmentPeriods": []
     },
     {
@@ -1814,7 +1814,7 @@ curl --location 'http://localhost:7887/rpc' \
       "commission": 10000,
       "lastCommissionIncreaseHeight": 0,
       "sharingCoefficients": [],
-      "address": "lsk27p9fjqdmoythmzkm9bwtvhh722o6casbjqm5u",
+      "address": "kly27p9fjqdmoythmzkm9bwtvhh722o6casbjqm5u",
       "punishmentPeriods": []
     },
     {
@@ -1828,7 +1828,7 @@ curl --location 'http://localhost:7887/rpc' \
       "commission": 10000,
       "lastCommissionIncreaseHeight": 0,
       "sharingCoefficients": [],
-      "address": "lsk2t7r4usxeqj45t7r9aw56he3w8nwgpjgh7ydsz",
+      "address": "kly2t7r4usxeqj45t7r9aw56he3w8nwgpjgh7ydsz",
       "punishmentPeriods": []
     },
     {
@@ -1842,7 +1842,7 @@ curl --location 'http://localhost:7887/rpc' \
       "commission": 10000,
       "lastCommissionIncreaseHeight": 0,
       "sharingCoefficients": [],
-      "address": "lsk2w86e245npdtosxm93oykpq3bfxe3qqwm4pmda",
+      "address": "kly2w86e245npdtosxm93oykpq3bfxe3qqwm4pmda",
       "punishmentPeriods": []
     },
     {
@@ -1856,7 +1856,7 @@ curl --location 'http://localhost:7887/rpc' \
       "commission": 10000,
       "lastCommissionIncreaseHeight": 0,
       "sharingCoefficients": [],
-      "address": "lsk2h79h9vnw5bn9a64p3cjrmbaayyz4da9bqdypg",
+      "address": "kly2h79h9vnw5bn9a64p3cjrmbaayyz4da9bqdypg",
       "punishmentPeriods": []
     },
     {
@@ -1870,7 +1870,7 @@ curl --location 'http://localhost:7887/rpc' \
       "commission": 10000,
       "lastCommissionIncreaseHeight": 0,
       "sharingCoefficients": [],
-      "address": "lska7nb5ezs2rz34pqs8fde55gpnhhb4n637ojv48",
+      "address": "klya7nb5ezs2rz34pqs8fde55gpnhhb4n637ojv48",
       "punishmentPeriods": []
     },
     {
@@ -1889,7 +1889,7 @@ curl --location 'http://localhost:7887/rpc' \
           "coefficient": ""
         }
       ],
-      "address": "lska7owayy5cgmko5gxxou9kgf6gjmharb94k34rv",
+      "address": "klya7owayy5cgmko5gxxou9kgf6gjmharb94k34rv",
       "punishmentPeriods": []
     },
     {
@@ -1903,7 +1903,7 @@ curl --location 'http://localhost:7887/rpc' \
       "commission": 10000,
       "lastCommissionIncreaseHeight": 0,
       "sharingCoefficients": [],
-      "address": "lska8nwqtwgfeqz4o9mr5fak3uygrkqwxjy43k58z",
+      "address": "klya8nwqtwgfeqz4o9mr5fak3uygrkqwxjy43k58z",
       "punishmentPeriods": []
     },
     {
@@ -1917,7 +1917,7 @@ curl --location 'http://localhost:7887/rpc' \
       "commission": 10000,
       "lastCommissionIncreaseHeight": 0,
       "sharingCoefficients": [],
-      "address": "lskakvdvjnsdjot2uqyt43uxkykqfmcujogyd766z",
+      "address": "klyakvdvjnsdjot2uqyt43uxkykqfmcujogyd766z",
       "punishmentPeriods": []
     },
     {
@@ -1931,7 +1931,7 @@ curl --location 'http://localhost:7887/rpc' \
       "commission": 10000,
       "lastCommissionIncreaseHeight": 0,
       "sharingCoefficients": [],
-      "address": "lskafnbdxsyr56nn5d6pbs92s574ga2e8g7chgk2p",
+      "address": "klyafnbdxsyr56nn5d6pbs92s574ga2e8g7chgk2p",
       "punishmentPeriods": []
     },
     {
@@ -1945,7 +1945,7 @@ curl --location 'http://localhost:7887/rpc' \
       "commission": 10000,
       "lastCommissionIncreaseHeight": 0,
       "sharingCoefficients": [],
-      "address": "lskafuhtj7rjn5g7u45qjxf5hn6mhc9zja7vyasdw",
+      "address": "klyafuhtj7rjn5g7u45qjxf5hn6mhc9zja7vyasdw",
       "punishmentPeriods": []
     },
     {
@@ -1959,7 +1959,7 @@ curl --location 'http://localhost:7887/rpc' \
       "commission": 10000,
       "lastCommissionIncreaseHeight": 0,
       "sharingCoefficients": [],
-      "address": "lskd5zqbts72odcq5wdfddftnrhvjybx5nk77rxcz",
+      "address": "klyd5zqbts72odcq5wdfddftnrhvjybx5nk77rxcz",
       "punishmentPeriods": []
     },
     {
@@ -1973,7 +1973,7 @@ curl --location 'http://localhost:7887/rpc' \
       "commission": 10000,
       "lastCommissionIncreaseHeight": 297908,
       "sharingCoefficients": [],
-      "address": "lskd8qqfbdmd58kwxc8kpph5myyceqvdcasgc6dqd",
+      "address": "klyd8qqfbdmd58kwxc8kpph5myyceqvdcasgc6dqd",
       "punishmentPeriods": []
     },
     {
@@ -1987,7 +1987,7 @@ curl --location 'http://localhost:7887/rpc' \
       "commission": 10000,
       "lastCommissionIncreaseHeight": 0,
       "sharingCoefficients": [],
-      "address": "lskducahygwshx6co8hexjkagqd3n5ftz4zr8pgk4",
+      "address": "klyducahygwshx6co8hexjkagqd3n5ftz4zr8pgk4",
       "punishmentPeriods": []
     },
     {
@@ -2001,7 +2001,7 @@ curl --location 'http://localhost:7887/rpc' \
       "commission": 10000,
       "lastCommissionIncreaseHeight": 0,
       "sharingCoefficients": [],
-      "address": "lskdf96jm3jooqe8xa2hs6x3hhfw2q3babh8wz9yc",
+      "address": "klydf96jm3jooqe8xa2hs6x3hhfw2q3babh8wz9yc",
       "punishmentPeriods": []
     },
     {
@@ -2015,7 +2015,7 @@ curl --location 'http://localhost:7887/rpc' \
       "commission": 10000,
       "lastCommissionIncreaseHeight": 0,
       "sharingCoefficients": [],
-      "address": "lskszxb5yyat36hyt9uq2kwsys8jteoy2vjtssdoz",
+      "address": "klyszxb5yyat36hyt9uq2kwsys8jteoy2vjtssdoz",
       "punishmentPeriods": []
     },
     {
@@ -2029,7 +2029,7 @@ curl --location 'http://localhost:7887/rpc' \
       "commission": 10000,
       "lastCommissionIncreaseHeight": 297834,
       "sharingCoefficients": [],
-      "address": "lsksyufsp93ptnwhrkw4uren33ts3pg9wbrz6dpxq",
+      "address": "klysyufsp93ptnwhrkw4uren33ts3pg9wbrz6dpxq",
       "punishmentPeriods": []
     },
     {
@@ -2043,7 +2043,7 @@ curl --location 'http://localhost:7887/rpc' \
       "commission": 10000,
       "lastCommissionIncreaseHeight": 0,
       "sharingCoefficients": [],
-      "address": "lsksjo5op9yo3brvsns5o8mksd94qnz93ydzwm5z5",
+      "address": "klysjo5op9yo3brvsns5o8mksd94qnz93ydzwm5z5",
       "punishmentPeriods": []
     },
     {
@@ -2057,7 +2057,7 @@ curl --location 'http://localhost:7887/rpc' \
       "commission": 10000,
       "lastCommissionIncreaseHeight": 0,
       "sharingCoefficients": [],
-      "address": "lskj8tb7ortqbo4rz23gk4s5ctuua7c942mjjscz9",
+      "address": "klyj8tb7ortqbo4rz23gk4s5ctuua7c942mjjscz9",
       "punishmentPeriods": []
     },
     {
@@ -2071,7 +2071,7 @@ curl --location 'http://localhost:7887/rpc' \
       "commission": 10000,
       "lastCommissionIncreaseHeight": 0,
       "sharingCoefficients": [],
-      "address": "lskjebqm4vruteehae4excs2rcf4vjtfvhn9y9378",
+      "address": "klyjebqm4vruteehae4excs2rcf4vjtfvhn9y9378",
       "punishmentPeriods": []
     },
     {
@@ -2090,7 +2090,7 @@ curl --location 'http://localhost:7887/rpc' \
           "coefficient": "05cdf46e11690433824a355d59"
         }
       ],
-      "address": "lskhahpjmn86e3ahn4wpvtmjnwzqguz3zv9woqh8u",
+      "address": "klyhahpjmn86e3ahn4wpvtmjnwzqguz3zv9woqh8u",
       "punishmentPeriods": []
     },
     {
@@ -2104,7 +2104,7 @@ curl --location 'http://localhost:7887/rpc' \
       "commission": 10000,
       "lastCommissionIncreaseHeight": 0,
       "sharingCoefficients": [],
-      "address": "lskhdhtc72gmb27t7kugxn7n5hmgx34uvo5pt26xr",
+      "address": "klyhdhtc72gmb27t7kugxn7n5hmgx34uvo5pt26xr",
       "punishmentPeriods": []
     },
     {
@@ -2118,7 +2118,7 @@ curl --location 'http://localhost:7887/rpc' \
       "commission": 10000,
       "lastCommissionIncreaseHeight": 0,
       "sharingCoefficients": [],
-      "address": "lskhh3qt6yzht3a93ubheoczvro7fch39mm85sk9o",
+      "address": "klyhh3qt6yzht3a93ubheoczvro7fch39mm85sk9o",
       "punishmentPeriods": []
     },
     {
@@ -2137,7 +2137,7 @@ curl --location 'http://localhost:7887/rpc' \
           "coefficient": "20c157e32fecfda501718a0f"
         }
       ],
-      "address": "lskhf3gtj3wecxaxy7csqb5k8kszugghpscvat5b4",
+      "address": "klyhf3gtj3wecxaxy7csqb5k8kszugghpscvat5b4",
       "punishmentPeriods": []
     },
     {
@@ -2151,7 +2151,7 @@ curl --location 'http://localhost:7887/rpc' \
       "commission": 10000,
       "lastCommissionIncreaseHeight": 0,
       "sharingCoefficients": [],
-      "address": "lskfszrq5nbepgf84d9wrvnags6pcn32bxt8cx9ec",
+      "address": "klyfszrq5nbepgf84d9wrvnags6pcn32bxt8cx9ec",
       "punishmentPeriods": []
     },
     {
@@ -2165,7 +2165,7 @@ curl --location 'http://localhost:7887/rpc' \
       "commission": 10000,
       "lastCommissionIncreaseHeight": 0,
       "sharingCoefficients": [],
-      "address": "lskgvqzr5kjsnexsr8eurg27vqxapjz66894qc68k",
+      "address": "klygvqzr5kjsnexsr8eurg27vqxapjz66894qc68k",
       "punishmentPeriods": []
     },
     {
@@ -2184,7 +2184,7 @@ curl --location 'http://localhost:7887/rpc' \
           "coefficient": ""
         }
       ],
-      "address": "lskg6ng4o6h9cnv26j5qpfx5554ousp2nc5u62qhr",
+      "address": "klyg6ng4o6h9cnv26j5qpfx5554ousp2nc5u62qhr",
       "punishmentPeriods": []
     },
     {
@@ -2198,7 +2198,7 @@ curl --location 'http://localhost:7887/rpc' \
       "commission": 10000,
       "lastCommissionIncreaseHeight": 0,
       "sharingCoefficients": [],
-      "address": "lskg6qkdzjre9ymx8vuedcbqxjz6yr9o2onwcs6z6",
+      "address": "klyg6qkdzjre9ymx8vuedcbqxjz6yr9o2onwcs6z6",
       "punishmentPeriods": []
     },
     {
@@ -2212,7 +2212,7 @@ curl --location 'http://localhost:7887/rpc' \
       "commission": 10000,
       "lastCommissionIncreaseHeight": 0,
       "sharingCoefficients": [],
-      "address": "lskg5b3es9efs2u9ecqwvcwtnb9xdgtgdndgvb6n3",
+      "address": "klyg5b3es9efs2u9ecqwvcwtnb9xdgtgdndgvb6n3",
       "punishmentPeriods": []
     },
     {
@@ -2226,7 +2226,7 @@ curl --location 'http://localhost:7887/rpc' \
       "commission": 10000,
       "lastCommissionIncreaseHeight": 0,
       "sharingCoefficients": [],
-      "address": "lskgtaymmxz93mjakuwnqcpt8jwwksmo7oqhpreqr",
+      "address": "klygtaymmxz93mjakuwnqcpt8jwwksmo7oqhpreqr",
       "punishmentPeriods": []
     },
     {
@@ -2240,7 +2240,7 @@ curl --location 'http://localhost:7887/rpc' \
       "commission": 10000,
       "lastCommissionIncreaseHeight": 0,
       "sharingCoefficients": [],
-      "address": "lskgwn65oosep5tvedmzoww7peroe5h8v4p96p3ht",
+      "address": "klygwn65oosep5tvedmzoww7peroe5h8v4p96p3ht",
       "punishmentPeriods": []
     },
     {
@@ -2254,7 +2254,7 @@ curl --location 'http://localhost:7887/rpc' \
       "commission": 10000,
       "lastCommissionIncreaseHeight": 0,
       "sharingCoefficients": [],
-      "address": "lskgsbt7ucod8qmcwot5525nydotvk6krf4rr7a7e",
+      "address": "klygsbt7ucod8qmcwot5525nydotvk6krf4rr7a7e",
       "punishmentPeriods": []
     }
   ]
@@ -2281,8 +2281,8 @@ Specification::
 
 |`address`
 |string
-|The Lisk32 address of a validator.
-|lskzytpy82c8xtkpopchzee3vydza4cvjvcsa4fv3
+|The Klayr32 address of a validator.
+|klyzytpy82c8xtkpopchzee3vydza4cvjvcsa4fv3
 
 |===
 --
@@ -2291,7 +2291,7 @@ Node CLI::
 --
 [source,bash]
 ----
-lisk-core endpoint:invoke pos_getLockedStakedAmount '{"address":"lskzytpy82c8xtkpopchzee3vydza4cvjvcsa4fv3"}' --pretty
+klayr-core endpoint:invoke pos_getLockedStakedAmount '{"address":"klyzytpy82c8xtkpopchzee3vydza4cvjvcsa4fv3"}' --pretty
 ----
 
 --
@@ -2307,7 +2307,7 @@ curl --location 'http://localhost:7887/rpc' \
     "id": "1",
     "method": "pos_getLockedStakedAmount",
     "params": {
-        "address": "lskzytpy82c8xtkpopchzee3vydza4cvjvcsa4fv3"
+        "address": "klyzytpy82c8xtkpopchzee3vydza4cvjvcsa4fv3"
     }
 }'
 ----
@@ -2344,7 +2344,7 @@ Node CLI::
 --
 [source,bash]
 ----
-lisk-core endpoint:invoke pos_getConstants --pretty
+klayr-core endpoint:invoke pos_getConstants --pretty
 ----
 
 --
@@ -2388,7 +2388,7 @@ curl --location 'http://localhost:7887/rpc' \
   "maxBFTWeightCap": 500,
   "commissionIncreasePeriod": 260000,
   "maxCommissionIncreaseRate": 500,
-  "useInvalidBLSKey": true
+  "useInvalidBKLYey": true
 }
 ----
 ====
@@ -2413,8 +2413,8 @@ Specification::
 
 |`address`
 |string
-|The Lisk32 address of a staker.
-|lskhf3gtj3wecxaxy7csqb5k8kszugghpscvat5b4
+|The Klayr32 address of a staker.
+|klyhf3gtj3wecxaxy7csqb5k8kszugghpscvat5b4
 
 |===
 --
@@ -2423,7 +2423,7 @@ Node CLI::
 --
 [source,bash]
 ----
-lisk-core endpoint:invoke pos_getPendingUnlocks '{"address":"lskhf3gtj3wecxaxy7csqb5k8kszugghpscvat5b4"}' --pretty
+klayr-core endpoint:invoke pos_getPendingUnlocks '{"address":"klyhf3gtj3wecxaxy7csqb5k8kszugghpscvat5b4"}' --pretty
 ----
 
 --
@@ -2439,7 +2439,7 @@ curl --location 'http://localhost:7887/rpc' \
     "id": "1",
     "method": "pos_getPendingUnlocks",
     "params": {
-        "address": "lskhf3gtj3wecxaxy7csqb5k8kszugghpscvat5b4"
+        "address": "klyhf3gtj3wecxaxy7csqb5k8kszugghpscvat5b4"
     }
 }'
 ----
@@ -2455,14 +2455,14 @@ curl --location 'http://localhost:7887/rpc' \
 {
   "pendingUnlocks": [
     {
-      "validatorAddress": "lskpgd5q6up2u3m7xgfwnpazu2k2e3rea6a2pkh4k",
+      "validatorAddress": "klypgd5q6up2u3m7xgfwnpazu2k2e3rea6a2pkh4k",
       "amount": "500000000000",
       "unstakeHeight": 128838,
       "unlockable": false,
       "expectedUnlockableHeight": 154838
     },
     {
-      "validatorAddress": "lskhf3gtj3wecxaxy7csqb5k8kszugghpscvat5b4",
+      "validatorAddress": "klyhf3gtj3wecxaxy7csqb5k8kszugghpscvat5b4",
       "amount": "1000000000",
       "unstakeHeight": 92887,
       "unlockable": false,
@@ -2490,7 +2490,7 @@ Node CLI::
 --
 [source,bash]
 ----
-lisk-core endpoint:invoke pos_getPoSTokenID --pretty
+klayr-core endpoint:invoke pos_getPoSTokenID --pretty
 ----
 
 --
@@ -2553,7 +2553,7 @@ Node CLI::
 --
 [source,bash]
 ----
-lisk-core endpoint:invoke pos_getValidatorsByStake '{"limit":2}' --pretty
+klayr-core endpoint:invoke pos_getValidatorsByStake '{"limit":2}' --pretty
 ----
 
 --
@@ -2600,7 +2600,7 @@ curl --location 'http://localhost:7887/rpc' \
           "coefficient": "20c157e32fecfda501718a0f"
         }
       ],
-      "address": "lskhf3gtj3wecxaxy7csqb5k8kszugghpscvat5b4",
+      "address": "klyhf3gtj3wecxaxy7csqb5k8kszugghpscvat5b4",
       "punishmentPeriods": []
     },
     {
@@ -2619,7 +2619,7 @@ curl --location 'http://localhost:7887/rpc' \
           "coefficient": "02d9bb2355699a36df6d8b2d"
         }
       ],
-      "address": "lsk9p7zenqhs3avzy58vjavt98c9gmncvfemhayxt",
+      "address": "kly9p7zenqhs3avzy58vjavt98c9gmncvfemhayxt",
       "punishmentPeriods": []
     }
   ]
@@ -2646,8 +2646,8 @@ Specification::
 
 |`address`
 |string
-|The Lisk32 address of a validator.
-|lskhf3gtj3wecxaxy7csqb5k8kszugghpscvat5b4
+|The Klayr32 address of a validator.
+|klyhf3gtj3wecxaxy7csqb5k8kszugghpscvat5b4
 
 |`tokenID`
 |string
@@ -2660,7 +2660,7 @@ Node CLI::
 --
 [source,bash]
 ----
-lisk-core endpoint:invoke pos_getLockedReward '{"address":"lskhf3gtj3wecxaxy7csqb5k8kszugghpscvat5b4", "tokenID": "0200000000000000"}' --pretty
+klayr-core endpoint:invoke pos_getLockedReward '{"address":"klyhf3gtj3wecxaxy7csqb5k8kszugghpscvat5b4", "tokenID": "0200000000000000"}' --pretty
 ----
 
 --
@@ -2676,7 +2676,7 @@ curl --location 'http://localhost:7887/rpc' \
     "id": "1",
     "method": "pos_getLockedReward",
     "params": {
-        "address": "lskhf3gtj3wecxaxy7csqb5k8kszugghpscvat5b4",
+        "address": "klyhf3gtj3wecxaxy7csqb5k8kszugghpscvat5b4",
         "tokenID": "0200000000000000"
     }
 }'
@@ -2715,8 +2715,8 @@ Specification::
 
 |`address`
 |string
-|The Lisk32 address of a user.
-|lskhf3gtj3wecxaxy7csqb5k8kszugghpscvat5b4
+|The Klayr32 address of a user.
+|klyhf3gtj3wecxaxy7csqb5k8kszugghpscvat5b4
 
 |===
 --
@@ -2725,7 +2725,7 @@ Node CLI::
 --
 [source,bash]
 ----
-lisk-core endpoint:invoke pos_getClaimableRewards '{"address":"lskhf3gtj3wecxaxy7csqb5k8kszugghpscvat5b4"}' --pretty
+klayr-core endpoint:invoke pos_getClaimableRewards '{"address":"klyhf3gtj3wecxaxy7csqb5k8kszugghpscvat5b4"}' --pretty
 ----
 
 --
@@ -2741,7 +2741,7 @@ curl --location 'http://localhost:7887/rpc' \
     "id": "1",
     "method": "pos_getClaimableRewards",
     "params": {
-        "address": "lskhf3gtj3wecxaxy7csqb5k8kszugghpscvat5b4"
+        "address": "klyhf3gtj3wecxaxy7csqb5k8kszugghpscvat5b4"
     }
 }'
 ----
@@ -2782,7 +2782,7 @@ Node CLI::
 --
 [source,bash]
 ----
-lisk-core endpoint:invoke pos_getRegistrationFee --pretty
+klayr-core endpoint:invoke pos_getRegistrationFee --pretty
 ----
 
 --
@@ -2834,8 +2834,8 @@ Specification::
 
 |`validatorAddress`
 |string
-|The Lisk32 address of a validator.
-|lskhf3gtj3wecxaxy7csqb5k8kszugghpscvat5b4
+|The Klayr32 address of a validator.
+|klyhf3gtj3wecxaxy7csqb5k8kszugghpscvat5b4
 
 |`validatorReward`
 |string
@@ -2853,7 +2853,7 @@ Node CLI::
 --
 [source,bash]
 ----
-lisk-core endpoint:invoke pos_getExpectedSharedRewards '{"validatorAddress": "lskhf3gtj3wecxaxy7csqb5k8kszugghpscvat5b4", "validatorReward": "500000000", "stake":"1000000000" }' --pretty
+klayr-core endpoint:invoke pos_getExpectedSharedRewards '{"validatorAddress": "klyhf3gtj3wecxaxy7csqb5k8kszugghpscvat5b4", "validatorReward": "500000000", "stake":"1000000000" }' --pretty
 ----
 
 --
@@ -2869,7 +2869,7 @@ curl --location 'http://localhost:7887/rpc' \
     "id": "1",
     "method": "pos_getExpectedSharedRewards",
     "params": {
-        "validatorAddress": "lskhf3gtj3wecxaxy7csqb5k8kszugghpscvat5b4",
+        "validatorAddress": "klyhf3gtj3wecxaxy7csqb5k8kszugghpscvat5b4",
         "validatorReward":"500000000",
         "stake": "1000000000"
     }

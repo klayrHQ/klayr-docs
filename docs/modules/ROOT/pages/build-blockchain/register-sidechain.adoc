@@ -5,25 +5,25 @@ Chris Braithwaite <christopher.braithwaite@lightcurve.io>, Mona Bärenfänger <m
 :toc: preamble
 :idprefix:
 :idseparator: -
-:docs_sdk: lisk-sdk::
+:docs_sdk: klayr-sdk::
 // URLs
-:url_lisk_wallet: https://lisk.com/wallet
-:url_bls_key: https://github.com/LiskHQ/lips/blob/main/proposals/lip-0038.md#public-key-registration-and-proof-of-possession
-:url_lip56: https://github.com/LiskHQ/lips/blob/main/proposals/lip-0056.md
+:url_klayr_wallet: https://klayr.xyz/wallet
+:url_bls_key: https://github.com/KlayrHQ/lips/blob/main/proposals/lip-0038.md#public-key-registration-and-proof-of-possession
+:url_lip56: https://github.com/KlayrHQ/lips/blob/main/proposals/lip-0056.md
 :url_lip56_bftweight: {url_lip56}#terminology
-:url_github_sdk_interop: https://github.com/LiskHQ/lisk-sdk/blob/development/examples/interop
+:url_github_sdk_interop: https://github.com/KlayrHQ/klayr-sdk/blob/development/examples/interop
 :url_github_sdk_scregistration: {url_github_sdk_interop}/pos-mainchain-fast/config/scripts/sidechain_registration.ts
 :url_github_sdk_mcregistration: {url_github_sdk_interop}/common/mainchain_registration.ts
-:url_github_sdk_cctransfer: {url_github_sdk_interop}/pos-mainchain-fast/config/scripts/transfer_lsk_sidechain_one.ts
-:url_github_appregistry: https://github.com/LiskHQ/app-registry
-:url_github_appregistry_readme: {url_github_appregistry}#lisk-application-registry
+:url_github_sdk_cctransfer: {url_github_sdk_interop}/pos-mainchain-fast/config/scripts/transfer_kly_sidechain_one.ts
+:url_github_appregistry: https://github.com/KlayrHQ/app-registry
+:url_github_appregistry_readme: {url_github_appregistry}#klayr-application-registry
 :url_github_appregistry_schema_app: {url_github_appregistry}/blob/main/schema/app.json
 :url_github_appregistry_schema_tokens: {url_github_appregistry}/blob/main/schema/nativetokens.json
-:url_update_cross_chain_lip53: https://github.com/LiskHQ/lips/blob/main/proposals/lip-0053.md#outboxrootwitness
-:url_exmaples_guides_createparams: https://github.com/LiskHQ/lisk-sdk-examples/blob/development/guides/chain-registration/mainchain/paramsCreation.ts
-:url_exmaples_guides_validatorsignatures: https://github.com/LiskHQ/lisk-sdk-examples/blob/development/guides/chain-registration/mainchain/validatorSignatures.ts
-:url_exmaples_guides_mcregistration: https://github.com/LiskHQ/lisk-sdk-examples/blob/development/guides/chain-registration/mainchain/mainchainRegistration.ts
-:url_github_exmaples_sidechaintegistration: https://github.com/LiskHQ/lisk-sdk-examples/blob/development/guides/chain-registration/sidechain/sidechainRegistration.ts
+:url_update_cross_chain_lip53: https://github.com/KlayrHQ/lips/blob/main/proposals/lip-0053.md#outboxrootwitness
+:url_exmaples_guides_createparams: https://github.com/KlayrHQ/klayr-sdk-examples/blob/development/guides/chain-registration/mainchain/paramsCreation.ts
+:url_exmaples_guides_validatorsignatures: https://github.com/KlayrHQ/klayr-sdk-examples/blob/development/guides/chain-registration/mainchain/validatorSignatures.ts
+:url_exmaples_guides_mcregistration: https://github.com/KlayrHQ/klayr-sdk-examples/blob/development/guides/chain-registration/mainchain/mainchainRegistration.ts
+:url_github_exmaples_sidechaintegistration: https://github.com/KlayrHQ/klayr-sdk-examples/blob/development/guides/chain-registration/sidechain/sidechainRegistration.ts
 // Project URLs
 :url_understand_interop_chainid: understand-blockchain/interoperability/index.adoc#chain-identifiers
 :url_ccm: understand-blockchain/interoperability/communication.adoc#sending-cross-chain-transactions-to-generate-ccms
@@ -39,8 +39,8 @@ Chris Braithwaite <christopher.braithwaite@lightcurve.io>, Mona Bärenfänger <m
 :url_sidechain_chain_validators_store: {url_sidechain_reg_recovery}#chain-validators-substore
 :url_sidechain_reg_command: {url_sidechain_reg_recovery}#register-sidechain-command
 :url_mainchain_reg: {url_sidechain_reg_recovery}#register-mainchain-command
-:url_api_rpc_getnodeinfo: api/lisk-node-rpc.adoc#system_getnodeinfo
-:url_api_rpc_bftparams: api/lisk-node-rpc.adoc#consensus_getbftparameters
+:url_api_rpc_getnodeinfo: api/klayr-node-rpc.adoc#system_getnodeinfo
+:url_api_rpc_bftparams: api/klayr-node-rpc.adoc#consensus_getbftparameters
 :url_api_mainchain_endpoints_chainid: api/module-rpc-api/mainchain-interoperability-endpoints.adoc#interoperability_ischainidavailable
 :url_api_mainchain_endpoints_name: api/module-rpc-api/mainchain-interoperability-endpoints.adoc#interoperability_ischainnameavailable
 :url_api_token_balances: api/module-rpc-api/token-endpoints.adoc#token_getbalances
@@ -70,12 +70,12 @@ TIP: Please read xref:{url_sidechain_reg_recovery}[] to get more information abo
 
 A sidechain is registered on the mainchain by posting a xref:{url_sidechain_reg_command}[Sidechain Registration transaction].
 
-A Sidechain Registration transaction *can be sent by any user account on the Lisk Mainchain* that has adequate funds to pay the required <<sidechain-registration-fee,fee>>.
+A Sidechain Registration transaction *can be sent by any user account on the Klayr Mainchain* that has adequate funds to pay the required <<sidechain-registration-fee,fee>>.
 
 The transaction requires specific parameters.
 It is recommended to prepare the transaction and all required parameters in a dedicated script.
 
-NOTE: The process of registering a sidechain on the mainchain is explained by following the existing example {url_github_sdk_scregistration}[sidechain_registration.ts^], which can be found in the {url_github_sdk_interop}[interoperability example^] in the Lisk SDK repository.
+NOTE: The process of registering a sidechain on the mainchain is explained by following the existing example {url_github_sdk_scregistration}[sidechain_registration.ts^], which can be found in the {url_github_sdk_interop}[interoperability example^] in the Klayr SDK repository.
 
 === Sidechain registration fee
 When the "Sidechain Registration" command is processed, it creates a sidechain account in the mainchain state which is associated with a unique chain identifier and a name.
@@ -84,14 +84,14 @@ Additionally, every newly registered sidechain can increase the size of every cr
 
 For these two reasons, the minimum fee for this command has an added constant similar to the extra fee in a Register Validator transaction.
 
-NOTE: The extra registration fee for a sidechain registration is *10 LSK* tokens.
+NOTE: The extra registration fee for a sidechain registration is *10 KLY* tokens.
 
 === Connect to a mainchain and a sidechain node
 
 .sidechain_registration.ts
 [source,typescript]
 ----
-import { apiClient, codec, sidechainRegParams, cryptography, Transaction } from 'lisk-sdk';
+import { apiClient, codec, sidechainRegParams, cryptography, Transaction } from 'klayr-sdk';
 // Replace this with the path to a file storing the public and private keys of a mainchain account that will send the sidechain registration transaction.
 // (Can be any account with enough tokens).
 import { keys } from '../default/dev-validators.json';
@@ -101,15 +101,15 @@ import { keys } from '../default/dev-validators.json';
 
 	// Replace this with the alias of the sidechain node(s)
 	const SIDECHAIN_ARRAY = ['pos-sidechain-example-one', 'pos-sidechain-example-two'];
-	// Replace this with the alias of the mainchain node(s), e.g. lisk-core
+	// Replace this with the alias of the mainchain node(s), e.g. klayr-core
 	// Note: The number of mainchain nodes should be equal to sidechain nodes, for this script to work properly.
 	const MAINCHAIN_ARRAY = ['mainchain-node-one', 'mainchain-node-two'];
 	let i = 0;
 	for (const nodeAlias of SIDECHAIN_ARRAY) {
         // Connect to the sidechain node
-		const sidechainClient = await apiClient.createIPCClient(`~/.lisk/${nodeAlias}`);
+		const sidechainClient = await apiClient.createIPCClient(`~/.klayr/${nodeAlias}`);
 		// Connect to the mainchain node
-		const mainchainClient = await apiClient.createIPCClient(`~/.lisk/${MAINCHAIN_ARRAY[i]}`);
+		const mainchainClient = await apiClient.createIPCClient(`~/.klayr/${MAINCHAIN_ARRAY[i]}`);
 
         // ...
     }
@@ -186,7 +186,7 @@ const params = {
 // Get public key and nonce of the sender account
 const relayerKeyInfo = keys[2];
 const { nonce } = await mainchainClient.invoke<{ nonce: string }>('auth_getAuthAccount', {
-    address: address.getLisk32AddressFromPublicKey(Buffer.from(relayerKeyInfo.publicKey, 'hex')),
+    address: address.getKlayr32AddressFromPublicKey(Buffer.from(relayerKeyInfo.publicKey, 'hex')),
 });
 
 // Create registerSidechain transaction
@@ -209,7 +209,7 @@ tx.sign(
 
 ==== chainID
 The xref:{url_understand_interop_chainid}[chainID] of the sidechain.
-Has to be *unique* within the Lisk ecosystem.
+Has to be *unique* within the Klayr ecosystem.
 
 [CAUTION]
 ====
@@ -222,7 +222,7 @@ To check if a certain chain ID is still available in the network, call RPC endpo
 If the chain ID is still available, it should return `true`.
 
 ==== Name
-The name of the sidechain is a string that has to be *unique* within the Lisk ecosystem and should only contain characters from the set `[a-z0-9!@$&_.]`.
+The name of the sidechain is a string that has to be *unique* within the Klayr ecosystem and should only contain characters from the set `[a-z0-9!@$&_.]`.
 
 [CAUTION]
 ====
@@ -254,11 +254,11 @@ Minimum and maximum values for the certificate threshold are calculated using th
 .How to calculate minimum and maximum certificate thresholds for sidechain validators
 [source,js]
 ----
-const { apiClient } = require('@liskhq/lisk-client');
+const { apiClient } = require('@klayr/client');
 
 (async () => {
 	// Update the path to point to your sidechain client data folder
-	const sidechainClient = await apiClient.createIPCClient('~/.lisk/hello_client');
+	const sidechainClient = await apiClient.createIPCClient('~/.klayr/hello_client');
 	const sidechainNodeInfo = await sidechainClient.invoke('system_getNodeInfo');
 	// Get active validators from sidechain
 	const bftParams = await sidechainClient.invoke('consensus_getBFTParameters', { height: sidechainNodeInfo.height });
@@ -334,7 +334,7 @@ Mainchain node CLI::
 --
 [source,bash]
 ----
-lisk-core endpoint:invoke interoperability_getChainData '{"chainID": "04000001"}'
+klayr-core endpoint:invoke interoperability_getChainData '{"chainID": "04000001"}'
 ----
 --
 cURL::
@@ -393,7 +393,7 @@ Mainchain node CLI::
 --
 [source,bash]
 ----
-lisk-core endpoint:invoke interoperability_getChannelData '{"chainID": "04000001"}'
+klayr-core endpoint:invoke interoperability_getChannelData '{"chainID": "04000001"}'
 ----
 --
 cURL::
@@ -458,7 +458,7 @@ Mainchain node CLI::
 --
 [source,bash]
 ----
-lisk-core endpoint:invoke interoperability_getChainValidators '{"chainID": "04000001"}'
+klayr-core endpoint:invoke interoperability_getChainValidators '{"chainID": "04000001"}'
 ----
 --
 cURL::
@@ -507,7 +507,7 @@ This will return the respective sidechain account stored in the xref:{url_sidech
 The mainchain is registered on a sidechain by posting a xref:{url_mainchain_reg}[Register Mainchain transaction].
 A "Register Mainchain" transaction can be sent by any user account in the sidechain that has adequate funds to pay the required fee.
 
-NOTE: The process of registering the mainchain on a sidechain is explained by following the existing example {url_github_sdk_mcregistration}[mainchain_registration.ts^], which can be found in the Lisk SDK repository.
+NOTE: The process of registering the mainchain on a sidechain is explained by following the existing example {url_github_sdk_mcregistration}[mainchain_registration.ts^], which can be found in the Klayr SDK repository.
 
 [CAUTION]
 ====
@@ -540,7 +540,7 @@ import {
 	registrationSignatureMessageSchema,
 	mainchainRegParams as mainchainRegParamsSchema,
 	MESSAGE_TAG_CHAIN_REG,
-} from 'lisk-sdk';
+} from 'klayr-sdk';
 
 /**
  * Registers the mainchain to a specific sidechain node.
@@ -551,7 +551,7 @@ import {
 import { keys as sidechainDevValidators } from '../default/dev-validators.json';
 
  * (async () => {
- *	await registerMainchain("lisk-core","my-lisk-app",sidechainDevValidators);
+ *	await registerMainchain("klayr-core","my-klayr-app",sidechainDevValidators);
  *})();
  * ```
  *
@@ -565,9 +565,9 @@ export const registerMainchain = async (mc: string, sc: string, sidechainDevVali
 	const { bls, address } = cryptography;
 
 	// Connect to the mainchain node
-	const mainchainClient = await apiClient.createIPCClient(`~/.lisk/${mc}`);
+	const mainchainClient = await apiClient.createIPCClient(`~/.klayr/${mc}`);
 	// Connect to the sidechain node
-	const sidechainClient = await apiClient.createIPCClient(`~/.lisk/${sc}`);
+	const sidechainClient = await apiClient.createIPCClient(`~/.klayr/${sc}`);
 
 	// Get node info from sidechain and mainchain
 	const mainchainNodeInfo = await mainchainClient.invoke('system_getNodeInfo');
@@ -656,7 +656,7 @@ const { validators: sidechainActiveValidators } = await sidechainClient.invoke(
 );
 
 // Add validator private keys to the sidechain validator list
-const activeValidatorsBLSKeys: { blsPublicKey: Buffer; blsPrivateKey: Buffer }[] = [];
+const activeValidatorsBKLYeys: { blsPublicKey: Buffer; blsPrivateKey: Buffer }[] = [];
 for (const activeValidator of sidechainActiveValidators as {
     blsKey: string;
     bftWeight: string;
@@ -665,22 +665,22 @@ for (const activeValidator of sidechainActiveValidators as {
         devValidator => devValidator.plain.blsKey === activeValidator.blsKey,
     );
     if (sidechainDevValidator) {
-        activeValidatorsBLSKeys.push({
+        activeValidatorsBKLYeys.push({
             blsPublicKey: Buffer.from(activeValidator.blsKey, 'hex'),
             blsPrivateKey: Buffer.from(sidechainDevValidator.plain.blsPrivateKey, 'hex'),
         });
     }
 }
 
-console.log('Total activeValidatorsBLSKeys:', activeValidatorsBLSKeys.length);
+console.log('Total activeValidatorsBKLYeys:', activeValidatorsBKLYeys.length);
 
 // Sort active validators from the sidechain lexicographically after their BLS public key
-activeValidatorsBLSKeys.sort((a, b) => a.blsPublicKey.compare(b.blsPublicKey));
+activeValidatorsBKLYeys.sort((a, b) => a.blsPublicKey.compare(b.blsPublicKey));
 
 const sidechainValidatorsSignatures: { publicKey: Buffer; signature: Buffer }[] = [];
 
 // Sign parameters with each active sidechain validator
-for (const validator of activeValidatorsBLSKeys) {
+for (const validator of activeValidatorsBKLYeys) {
     const signature = bls.signData(
         MESSAGE_TAG_CHAIN_REG,
         params.ownChainID,
@@ -690,7 +690,7 @@ for (const validator of activeValidatorsBLSKeys) {
     sidechainValidatorsSignatures.push({ publicKey: validator.blsPublicKey, signature });
 }
 
-const publicKeysList = activeValidatorsBLSKeys.map(v => v.blsPublicKey);
+const publicKeysList = activeValidatorsBKLYeys.map(v => v.blsPublicKey);
 console.log('Total active sidechain validators:', sidechainValidatorsSignatures.length);
 ----
 
@@ -721,7 +721,7 @@ const { aggregationBits, signature } = bls.createAggSig(
 // Get public key and nonce of the sender account
 const relayerKeyInfo = sidechainDevValidators[0];
 const { nonce } = await sidechainClient.invoke<{ nonce: string }>('auth_getAuthAccount', {
-    address: address.getLisk32AddressFromPublicKey(Buffer.from(relayerKeyInfo.publicKey, 'hex')),
+    address: address.getKlayr32AddressFromPublicKey(Buffer.from(relayerKeyInfo.publicKey, 'hex')),
 });
 
 // Add aggregated signature to the parameters of the mainchain registration
@@ -823,7 +823,7 @@ This should return the mainchain account stored in the xref:{url_sidechain_chain
     "stateRoot": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
     "validatorsHash": "36d3f20ea724a9708ead8b00e52c68d9188f1655e057bb523b19db35271d9073"
   },
-  "name": "lisk_mainchain",
+  "name": "klayr_mainchain",
   "status": 0
 }
 ----
@@ -1296,7 +1296,7 @@ where `<APP>` is the name of the sidechain app.
 IMPORTANT: Please refer to the {url_github_appregistry_readme}[README.md^] for all important details about the app registration process, like the required image formats and sizes.
 
 `app.json`::
-Off-chain metadata of a sidechain, to be used by client applications such as Lisk Desktop, Mobile and other explorers.
+Off-chain metadata of a sidechain, to be used by client applications such as Klayr Desktop, Mobile and other explorers.
 
 .Example: app.json
 [%collapsible]
@@ -1304,37 +1304,37 @@ Off-chain metadata of a sidechain, to be used by client applications such as Lis
 [source,json]
 ----
 {
-    "title": "Lisk - Betanet",
-    "description": "Metadata configuration for the Lisk blockchain (mainchain) in betanet",
-    "chainName": "Lisk",
+    "title": "Klayr - Betanet",
+    "description": "Metadata configuration for the Klayr blockchain (mainchain) in betanet",
+    "chainName": "Klayr",
     "chainID": "02000000",
     "networkType": "betanet",
-    "genesisURL": "https://downloads.lisk.com/lisk/betanet/genesis_block.json.tar.gz",
-    "projectPage": "https://lisk.com",
+    "genesisURL": "https://downloads.klayr.xyz/klayr/betanet/genesis_block.json.tar.gz",
+    "projectPage": "https://klayr.xyz",
     "logo": {
-        "png": "https://raw.githubusercontent.com/LiskHQ/app-registry/main/betanet/Lisk/images/application/lisk.png",
-        "svg": "https://raw.githubusercontent.com/LiskHQ/app-registry/main/betanet/Lisk/images/application/lisk.svg"
+        "png": "https://raw.githubusercontent.com/KlayrHQ/app-registry/main/betanet/Klayr/images/application/klayr.png",
+        "svg": "https://raw.githubusercontent.com/KlayrHQ/app-registry/main/betanet/Klayr/images/application/klayr.svg"
     },
     "backgroundColor": "#f7f9fb",
     "serviceURLs": [
         {
-            "http": "https://betanet-service.lisk.com",
-            "ws": "wss://betanet-service.lisk.com"
+            "http": "https://betanet-service.klayr.xyz",
+            "ws": "wss://betanet-service.klayr.xyz"
         }
     ],
     "explorers": [
         {
-            "url": "https://betanet.liskscan.com",
-            "txnPage": "https://betanet.liskscan.com/transactions"
+            "url": "https://explorer.klayr.xyz",
+            "txnPage": "https://explorer.klayr.xyz/transactions"
         }
     ],
     "appNodes": [
         {
-            "url": "https://betanet.lisk.com",
+            "url": "https://betanet.klayr.xyz",
             "maintainer": "Lightcurve GmbH"
         },
         {
-            "url": "wss://betanet.lisk.com",
+            "url": "wss://betanet.klayr.xyz",
             "maintainer": "Lightcurve GmbH"
         }
     ]
@@ -1353,12 +1353,12 @@ Off-chain metadata about the native tokens of a sidechain.
 [source,json]
 ----
 {
-    "title": "Lisk - Betanet - Native tokens",
+    "title": "Klayr - Betanet - Native tokens",
     "tokens": [
         {
             "tokenID": "0200000000000000",
-            "tokenName": "Lisk",
-            "description": "Default token for the entire Lisk ecosystem",
+            "tokenName": "Klayr",
+            "description": "Default token for the entire Klayr ecosystem",
             "denomUnits": [
                 {
                     "denom": "beddows",
@@ -1368,19 +1368,19 @@ Off-chain metadata about the native tokens of a sidechain.
                     ]
                 },
                 {
-                    "denom": "lsk",
+                    "denom": "kly",
                     "decimals": 8,
                     "aliases": [
-                        "Lisk"
+                        "Klayr"
                     ]
                 }
             ],
             "baseDenom": "beddows",
-            "displayDenom": "lsk",
-            "symbol": "LSK",
+            "displayDenom": "kly",
+            "symbol": "KLY",
             "logo": {
-                "png": "https://raw.githubusercontent.com/LiskHQ/app-registry/main/betanet/Lisk/images/tokens/lisk.png",
-                "svg": "https://raw.githubusercontent.com/LiskHQ/app-registry/main/betanet/Lisk/images/tokens/lisk.svg"
+                "png": "https://raw.githubusercontent.com/KlayrHQ/app-registry/main/betanet/Klayr/images/tokens/klayr.png",
+                "svg": "https://raw.githubusercontent.com/KlayrHQ/app-registry/main/betanet/Klayr/images/tokens/klayr.svg"
             }
         }
     ]
@@ -1396,11 +1396,11 @@ Icons to be used for the sidechain application.
 `images/tokens/`::
 Icons to be used for the native tokens of the sidechain.
 
-=== Move LSK to sidechain
+=== Move KLY to sidechain
 
-NOTE: This step is not necessary, if the default token for the CCM fees (LSK) is changed to a native sidechain token.
+NOTE: This step is not necessary, if the default token for the CCM fees (KLY) is changed to a native sidechain token.
 
-To be able to pay the CCM transaction fees, it is necessary to move a sufficient amount of LSK tokens from the mainchain to the sidechain via a cross-chain transfer transaction.
+To be able to pay the CCM transaction fees, it is necessary to move a sufficient amount of KLY tokens from the mainchain to the sidechain via a cross-chain transfer transaction.
 
 NOTE: Sending CCMs from the mainchain to the sidechain does not <<activate-the-sidechain>>, yet.
 Only a CCM from the sidechain to the mainchain will enable the xref:{url_sidechain_reg_recovery_liveness}[liveness condition].
@@ -1410,29 +1410,29 @@ Create the following transaction with your mainchain node:
 .Example: Creating a cross-chain transfer transaction
 [source,bash]
 ----
-$ lisk-core transaction:create token transferCrossChain 10000000
+$ klayr-core transaction:create token transferCrossChain 10000000
 ? Please enter passphrase:  [hidden]
 ? Please enter: tokenID:  0100000000000000
 ? Please enter: amount:  1000000000
 ? Please enter: receivingChainID:  01000001
-? Please enter: recipientAddress:  lsk24cd35u4jdq8szo3pnsqe5dsxwrnazyqqqg5eu
+? Please enter: recipientAddress:  kly24cd35u4jdq8szo3pnsqe5dsxwrnazyqqqg5eu
 ? Please enter: data:  cross-chain transfer
 ? Please enter: messageFee:  1
 ? Please enter: messageFeeTokenID:  0100000000000000
 ----
 
-* `tokenID`: The token ID of the LSK token.
-* `receivingChainID`: Enter the chain ID of the respective sidechain where you intend to transfer your LSK tokens.
+* `tokenID`: The token ID of the KLY token.
+* `receivingChainID`: Enter the chain ID of the respective sidechain where you intend to transfer your KLY tokens.
 * `recipientAddress`: Enter the recipient address for the account on the sidechain.
 * `messageFee`: Enter the fee for the CCM.
 * `messageFeeTokenID`: Enter the token ID of the token that should be used to pay the fee.
-Enter here the tokenID of the LSK token.
+Enter here the tokenID of the KLY token.
 
 To verify that the cross-chain transfer was executed successfully, request the xref:{url_api_token_balances}[token_getBalance] endpoint with the recipient address as a parameter.
 
 [TIP]
 ====
-Alternatively, the following script can be used to perform the cross-chain transfer: {url_github_sdk_cctransfer}[transfer_lsk_sidechain_one.ts^]
+Alternatively, the following script can be used to perform the cross-chain transfer: {url_github_sdk_cctransfer}[transfer_kly_sidechain_one.ts^]
 
 To make it work for your sidechain, please adjust the script as explained in the code comments of the script.
 
@@ -1440,7 +1440,7 @@ The script is executed like so:
 
 [source,bash]
 ----
-ts-node pos-mainchain-fast/config/scripts/transfer_lsk_sidechain_one.ts
+ts-node pos-mainchain-fast/config/scripts/transfer_kly_sidechain_one.ts
 ----
 ====
 
@@ -1456,4 +1456,4 @@ To activate the sidechain, send a xref:{url_sidechain_reg_recovery_1stccu}[first
 * Once the sidechain is *active*, it needs to fulfill the xref:{url_sidechain_reg_recovery_liveness}[liveness condition], otherwise, it will be *terminated*.
 ====
 
-Once the first CCU is sent successfully from the sidechain to the mainchain, the sidechain is activated and is interoperable with the mainchain and other sidechains within the Lisk ecosystem.
+Once the first CCU is sent successfully from the sidechain to the mainchain, the sidechain is activated and is interoperable with the mainchain and other sidechains within the Klayr ecosystem.

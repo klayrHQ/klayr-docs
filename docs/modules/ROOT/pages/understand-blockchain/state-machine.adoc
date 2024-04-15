@@ -1,12 +1,12 @@
 = State machine
 //Settings
 :toc:
-:fn_lip32: footnote:lip32[The details are specified in https://github.com/LiskHQ/lips/blob/main/proposals/lip-0032.md[LIP 0032^].]
+:fn_lip32: footnote:lip32[The details are specified in https://github.com/KlayrHQ/lips/blob/main/proposals/lip-0032.md[LIP 0032^].]
 
 // URLs
 :url_wiki_dfsm: https://en.wikipedia.org/wiki/Deterministic_finite_automaton
-:url_blog_tree: https://lisk.com/blog/posts/introducing-lisk-tree
-:url_blog_merkle: https://lisk.com/blog/posts/sparse-merkle-trees-and-new-state-model
+:url_blog_tree: https://klayr.xyz/blog/posts/introducing-klayr-tree
+:url_blog_merkle: https://klayr.xyz/blog/posts/sparse-merkle-trees-and-new-state-model
 //Project URLs
 :url_intro_how_blockchain_works: intro/how-blockchain-works.adoc#state-machine
 :url_ccc: understand-blockchain/interoperability/communication.adoc
@@ -31,7 +31,7 @@ TIP: See also xref:{url_intro_how_blockchain_works}[Intro > How blockchain works
 In the blockchain context, these elements are represented as follows:
 
 * A *state* is a state of the blockchain.
-In Lisk, a *key-value* store is used as a database, containing all data that is considered part of the blockchain.
+In Klayr, a *key-value* store is used as a database, containing all data that is considered part of the blockchain.
 * A *transition* of states is triggered through *blocks* and their containing *transactions* which are added to the blockchain.
 When executing a block `B`, the state machine changes its state from a state `S` to a state `S’`.
 This one state transition can further be broken down into smaller intermediate state transitions, for instance, by considering that executing a block means executing all transactions in that block sequentially.
@@ -58,7 +58,7 @@ NOTE: Due to the history independence, SMTs are the suitable choice to authentic
 .RMT vs SMT
 image::understand-blockchain/rmt-vs-smt.png[]
 
-A blockchain created with the Lisk SDK defines a single global store.
+A blockchain created with the Klayr SDK defines a single global store.
 An SMT is created on top of the global state store, called the **state tree**.
 Then the Merkle root of this tree, the state root, is inserted into each block header.
 
@@ -75,22 +75,22 @@ This is done to separate the Interoperability module from other modules in the s
 Substore prefixes are byte values, having a length of 2 bytes.
 ** **sha256(Store key)**: Here we take the hash of the store key which identifies a certain element within a store bucket.
 * *Store value*: serialized object (with JSON schema)
-** **JSON schema**: The schema used in `lisk-codec` to serialize the value
+** **JSON schema**: The schema used in `klayr-codec` to serialize the value
 
 [#data-stores]
 .Module data stores of a sidechain as SMT
 image::understand-blockchain/smt.png[]
 
-== Use cases of Merkle trees in Lisk
+== Use cases of Merkle trees in Klayr
 
 .SMTs allow efficient inclusion & non-inclusion proofs
 [NOTE]
 A Prover is able to convince a Verifier that a certain element is present in the underlying data structure **without revealing any other element**, and the *proof size scales logarithmically* with the number of data blocks.
 A Prover can convince a Verifier that a certain entry is not present in the map, and the proof size scales logarithmically with the number of data blocks.
 
-A list of all use cases for SMTs in the Lisk Protocol, and their corresponding SMT is described below:
+A list of all use cases for SMTs in the Klayr Protocol, and their corresponding SMT is described below:
 
-.Use cases for SMTs in the Lisk protocol
+.Use cases for SMTs in the Klayr protocol
 [cols="2,2a,5a"]
 |===
 |Use Case|SMT|Description
@@ -104,9 +104,9 @@ Reference to the last blockchain state will be stored as the Merkle root of the 
 |Proofs-of-Inclusion for Events in a Block|`eventRoot`| The root of the event Sparse Merkle Tree is added to the block header to allow checking the inclusion and non-inclusion of events.
 |===
 
-A list of all use cases for RMTs in the Lisk Protocol, and their corresponding RMT is described below:
+A list of all use cases for RMTs in the Klayr Protocol, and their corresponding RMT is described below:
 
-.Use cases for RMTs in the Lisk protocol
+.Use cases for RMTs in the Klayr protocol
 [cols="2,2a,5a"]
 |===
 |Use Case|RMT|Description

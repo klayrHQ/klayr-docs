@@ -5,14 +5,13 @@ Mona Bärenfänger <mona@lightcurve.io>
 :idseparator: -
 :sectnums:
 :sectnumlevels: 2
-:docs_sdk: lisk-sdk::
+:docs_sdk: klayr-sdk::
 //Footnotes
-:fn_lip44: footnote:lip44[For more details about the validator registration process and the related cryptography, check out https://github.com/LiskHQ/lips/blob/main/proposals/lip-0044.md[LIP 0044 - Introduce Validators module^].]
-:fn_lip23: footnote:lip23[For more details about the Lisk staking protocol, please read https://github.com/LiskHQ/lips/blob/main/proposals/lip-0023.md[LIP 0023 - Introduce vote locking periods and new vote weight definition^].]
+:fn_lip44: footnote:lip44[For more details about the validator registration process and the related cryptography, check out https://github.com/KlayrHQ/lips/blob/main/proposals/lip-0044.md[LIP 0044 - Introduce Validators module^].]
+:fn_lip23: footnote:lip23[For more details about the Klayr staking protocol, please read https://github.com/KlayrHQ/lips/blob/main/proposals/lip-0023.md[LIP 0023 - Introduce vote locking periods and new vote weight definition^].]
 // URLs
-:url_lisk_wallet: https://lisk.com/wallet
-:url_liskscan: https://liskscan.com/
-:url_liskobserver: https://lisk.observer/
+:url_klayr_wallet: https://klayr.xyz/wallet
+:url_explorer: https://explorer.klayr.xyz
 :url_jsonrpc: https://www.jsonrpc.org/specification
 // Project URLs
 :url_run_staking: run-blockchain/staking.adoc
@@ -29,7 +28,7 @@ Mona Bärenfänger <mona@lightcurve.io>
 :url_getHashOnionUsage: api/module-rpc-api/random-endpoints.adoc#random_gethashonionusage
 
 ====
-On this page, you'll learn how to become a validator for a blockchain that uses the Lisk PoS module, like the Lisk Mainnet.
+On this page, you'll learn how to become a validator for a blockchain that uses the Klayr PoS module, like the Klayr Mainnet.
 
 This includes how to:
 
@@ -41,9 +40,9 @@ This includes how to:
 
 To be able to become a validator for a blockchain, it is assumed that the following requirements are fulfilled:
 
-. Operating a xref:{url_run_nodes}[node] connected to the respective blockchain network, e.g. a Lisk Core node connected to the Lisk Mainnet.
+. Operating a xref:{url_run_nodes}[node] connected to the respective blockchain network, e.g. a Klayr Core node connected to the Klayr Mainnet.
 . Owning an account on the respective blockchain.
-. A sufficient account balance to send the "Register Validator" transaction (minimum 10 LSK for the Lisk Mainnet).
+. A sufficient account balance to send the "Register Validator" transaction (minimum 10 KLY for the Klayr Mainnet).
 You can verify your balance for example by requesting the `token_getBalance` endpoint.
 . A sufficient account balance to perform the <<how-to-stake-to-increase-the-validator-weight,self-stake>>.
 
@@ -61,13 +60,13 @@ To do so, use the command xref:{url_sdk_cli_keyscreate}[keys:create].
 
 [tabs]
 =====
-Lisk Core::
+Klayr Core::
 +
 --
-//TODO: Update Lisk Core
+//TODO: Update Klayr Core
 [source,bash]
 ----
-lisk-core keys:create --output config/keys.json
+klayr-core keys:create --output config/keys.json
 ----
 --
 Sidechain node::
@@ -101,7 +100,7 @@ This will generate the following file, which includes all important keys for the
 {
   "keys": [
     {
-      "address": "lskp24b6ev62w67v8qvk8wnvkhh2gv3hcoohes5z3",
+      "address": "klyp24b6ev62w67v8qvk8wnvkhh2gv3hcoohes5z3",
       "keyPath": "m/44'/134'/0'",
       "publicKey": "83eac294606806e0f4125203e2d0dac5ef1fc8730d5ec12e77e94f823f2262fa",
       "privateKey": "eafb0bc7f148e60f69fda52e0cc862071871bbfff884aad095ae84bdde8d298283eac294606806e0f4125203e2d0dac5ef1fc8730d5ec12e77e94f823f2262fa",
@@ -166,13 +165,13 @@ NOTE: If it is not already running, start the node to create the transaction as 
 
 [tabs]
 =====
-Lisk Core::
+Klayr Core::
 +
 --
-//TODO: Verify Lisk Core command
+//TODO: Verify Klayr Core command
 [source,bash]
 ----
-lisk-core transaction:create pos registerValidator 1100000000 \
+klayr-core transaction:create pos registerValidator 1100000000 \
 --params='{"name":"myuniqueame","generatorKey":"aaecd278a3fadc40a4a824d6f4aa24547d8fb9d075ec4d6967a7084f9a3f2541","blsKey":"815a9e7643cf2bace98d1337f1dca8e39949592cd3fcb79bf3ab5784981468b9987b3340527bc9ca263a2fd061812024","proofOfPossession":"add8669bb57f3dceec04dc0f875906cb52a677f1df911536c01f447c8830bf27cd43713af18d84de5a64ec504aeaf9a30521c09438bb5a4d5fd634946c65e0fc4ea3681fdb4f6949cb6c1bc1ac1ddec3df058a13466af5a13d50737938fd7d5f"}'
 ----
 --
@@ -209,12 +208,12 @@ Copy the transaction in the hex format that was created in the previous step and
 
 [tabs]
 =====
-Lisk Core::
+Klayr Core::
 +
 --
 [source,bash]
 ----
-lisk-core transaction:send 0805100018032080d6c28c042a20bad983c72bed43fd274f852658c298b74c71ab6fc50508879fef309e3836384b32080a066d796e616d653a4045afdd04d0c0bc6e548c0915d5fabef1311b1b75b1eb919a43b88dab539e7b6a99b9075f5d6382ec3bbebfca3301651a15d8af3f999d5b6fa7873b3969cd3d0c
+klayr-core transaction:send 0805100018032080d6c28c042a20bad983c72bed43fd274f852658c298b74c71ab6fc50508879fef309e3836384b32080a066d796e616d653a4045afdd04d0c0bc6e548c0915d5fabef1311b1b75b1eb919a43b88dab539e7b6a99b9075f5d6382ec3bbebfca3301651a15d8af3f999d5b6fa7873b3969cd3d0c
 ----
 --
 Sidechain node::
@@ -241,13 +240,13 @@ After the `registerValidator` transaction got included in a block, invoke the `p
 
 [tabs]
 =====
-Lisk Core::
+Klayr Core::
 +
 --
-//TODO: Verify Lisk Core command
+//TODO: Verify Klayr Core command
 [source,bash]
 ----
-lisk-core endpoint:invoke pos_getValidator '{ "address":"lskqaxxmj78frvgpjgwvf4yqjjkcrr9yhn2sxxwm3"}' --pretty
+klayr-core endpoint:invoke pos_getValidator '{ "address":"klyqaxxmj78frvgpjgwvf4yqjjkcrr9yhn2sxxwm3"}' --pretty
 ----
 --
 Sidechain node::
@@ -255,7 +254,7 @@ Sidechain node::
 --
 [source,bash]
 ----
-./bin/run endpoint:invoke pos_getValidator '{ "address":"lskqaxxmj78frvgpjgwvf4yqjjkcrr9yhn2sxxwm3"}' --pretty
+./bin/run endpoint:invoke pos_getValidator '{ "address":"klyqaxxmj78frvgpjgwvf4yqjjkcrr9yhn2sxxwm3"}' --pretty
 ----
 --
 =====
@@ -275,7 +274,7 @@ The new validator's name should be displayed in the response, along with the cor
   "commission": 10000,
   "lastCommissionIncreaseHeight": 14,
   "sharingCoefficients": [],
-  "address": "lskqaxxmj78frvgpjgwvf4yqjjkcrr9yhn2sxxwm3",
+  "address": "klyqaxxmj78frvgpjgwvf4yqjjkcrr9yhn2sxxwm3",
   "punishmentPeriods": []
 }
 ----
@@ -310,13 +309,13 @@ After creating the validator keys as suggested in the  <<creating-the-validator-
 
 [tabs]
 =====
-Lisk Core::
+Klayr Core::
 +
 --
-//TODO: Verify Lisk Core command
+//TODO: Verify Klayr Core command
 [source,bash]
 ----
-lisk-core keys:import --file-path config/keys.json
+klayr-core keys:import --file-path config/keys.json
 ----
 --
 Sidechain node::
@@ -335,13 +334,13 @@ After the validator keys are imported to the node, it is possible to verify that
 
 [tabs]
 =====
-Lisk Core::
+Klayr Core::
 +
 --
-//TODO: Verify Lisk Core command
+//TODO: Verify Klayr Core command
 [source,bash]
 ----
-lisk-core endpoint:invoke generator_getAllKeys --pretty
+klayr-core endpoint:invoke generator_getAllKeys --pretty
 ----
 --
 Sidechain node::
@@ -361,7 +360,7 @@ That will return the validator keys that are currently imported on the node:
 {
   "keys": [
     {
-      "address": "lskqaxxmj78frvgpjgwvf4yqjjkcrr9yhn2sxxwm3",
+      "address": "klyqaxxmj78frvgpjgwvf4yqjjkcrr9yhn2sxxwm3",
       "type": "encrypted",
       "data": {
         "ciphertext": "4e9c24db810fb641d9ad148e0a9c461db5c52b001592c910b2b11a4f4ce9bf271d530d2bfd9a6b50c59b09a4e872ef7a0ff65802e0bde6e685dd07db6b9b4f365b24af0488a5fdb3d4688b5c5a4ffbf302573a53219a1ec120bd1b1bc602e356bdb910ab7be245e7488409fc1ea059ffcb4382cfb309d5673a258cd2cf4114a39ffbb0097f3bef6985c45ea3ffbc2f7b793a2366d9e5921d3ba8490906a17bf458a85c19100834877fde498fc3165a02f68a72e1b6e8509f",
@@ -397,14 +396,14 @@ Setting the default hash onion::
 .Set hash onion on a mainchain node
 [source,bash]
 ----
-lisk-core endpoint:invoke random_setHashOnion '{"address":"lskqaxxmj78frvgpjgwvf4yqjjkcrr9yhn2sxxwm3"}'
+klayr-core endpoint:invoke random_setHashOnion '{"address":"klyqaxxmj78frvgpjgwvf4yqjjkcrr9yhn2sxxwm3"}'
 ----
 *OR*
 
 .Set hash onion on a sidechain node
 [source,bash]
 ----
-./bin/run endpoint:invoke random_setHashOnion '{"address":"lskqaxxmj78frvgpjgwvf4yqjjkcrr9yhn2sxxwm3"}'
+./bin/run endpoint:invoke random_setHashOnion '{"address":"klyqaxxmj78frvgpjgwvf4yqjjkcrr9yhn2sxxwm3"}'
 ----
 --
 Setting a custom hash onion::
@@ -419,21 +418,21 @@ To generate a higher value of hash onion, perform the following steps:
 +
 [source,bash]
 ----
-lisk-core hash-onion --count "200000" --output "$HOME/hash_onion.json"
+klayr-core hash-onion --count "200000" --output "$HOME/hash_onion.json"
 ----
 +
 . Next, add the `ADDRESS` to the hash onion file, by passing the location of the recently created hash onion and the relevant address:
 +
 [source,bash]
 ----
-echo $( cat "$HOME/hash_onion.json" | jq --arg x lskqaxxmj78frvgpjgwvf4yqjjkcrr9yhn2sxxwm3 '. + {address: $x}' ) > "$HOME/hash_onion.json"
+echo $( cat "$HOME/hash_onion.json" | jq --arg x klyqaxxmj78frvgpjgwvf4yqjjkcrr9yhn2sxxwm3 '. + {address: $x}' ) > "$HOME/hash_onion.json"
 ----
 +
 . Import the hash onion file created in the last step and pass it to the `random_setHashOnion` endpoint.
 +
 [source,bash]
 ----
-lisk-core endpoint:invoke random_setHashOnion --file "$HOME/hash_onion.json"
+klayr-core endpoint:invoke random_setHashOnion --file "$HOME/hash_onion.json"
 ----
 +
 . Once the hash onion is set, retrieve the recently set hash onion and its usage stats as described in the <<get-the-hash-onion>> section.
@@ -448,7 +447,7 @@ If you see the following error after running the command:
 
 [source,bash]
 ----
-$ lisk-core endpoint:invoke random_setHashOnion '{"address":"lskqaxxmj78frvgpjgwvf4yqjjkcrr9yhn2sxxwm3"}'
+$ klayr-core endpoint:invoke random_setHashOnion '{"address":"klyqaxxmj78frvgpjgwvf4yqjjkcrr9yhn2sxxwm3"}'
  ›   Error: Response not received in 3000ms
 ----
 
@@ -465,7 +464,7 @@ Use the previously stored hash onion seed values such as the `address`, `seed`, 
 
 [source,bash]
 ----
-lisk-core endpoint:invoke random_setHashOnion '{"address":"lskqaxxmj78frvgpjgwvf4yqjjkcrr9yhn2sxxwm3","seed":"2aa20ce749838a5c6bac8bdf14dcebd8","count":1000000,"distance":1000}'
+klayr-core endpoint:invoke random_setHashOnion '{"address":"klyqaxxmj78frvgpjgwvf4yqjjkcrr9yhn2sxxwm3","seed":"2aa20ce749838a5c6bac8bdf14dcebd8","count":1000000,"distance":1000}'
 ----
 ====
 
@@ -480,12 +479,12 @@ To get the hash onion seed, request the `random_getHashOnionSeeds` endpoint.
 
 [tabs]
 =====
-Lisk Core::
+Klayr Core::
 +
 --
 [source,bash]
 ----
-lisk-core endpoint:invoke random_getHashOnionSeeds '{"address":"lskqaxxmj78frvgpjgwvf4yqjjkcrr9yhn2sxxwm3"}' --pretty
+klayr-core endpoint:invoke random_getHashOnionSeeds '{"address":"klyqaxxmj78frvgpjgwvf4yqjjkcrr9yhn2sxxwm3"}' --pretty
 ----
 --
 Sidechain node::
@@ -493,7 +492,7 @@ Sidechain node::
 --
 [source,bash]
 ----
-./bin/run endpoint:invoke random_getHashOnionSeeds '{"address":"lskqaxxmj78frvgpjgwvf4yqjjkcrr9yhn2sxxwm3"}' --pretty
+./bin/run endpoint:invoke random_getHashOnionSeeds '{"address":"klyqaxxmj78frvgpjgwvf4yqjjkcrr9yhn2sxxwm3"}' --pretty
 ----
 --
 =====
@@ -505,7 +504,7 @@ This will return a list of all hash onion seeds that are stored in the node.
 {
   "seeds": [
     {
-      "address": "lskqaxxmj78frvgpjgwvf4yqjjkcrr9yhn2sxxwm3",
+      "address": "klyqaxxmj78frvgpjgwvf4yqjjkcrr9yhn2sxxwm3",
       "seed": "5be11bacb61de5c1309d50a5548b1834",
       "count": 1000000,
       "distance": 1000
@@ -542,14 +541,14 @@ Use the xref:{url_sdk_cli_generatorenable}[generator:enable] command to enable b
 
 [tabs]
 =====
-Lisk Core::
+Klayr Core::
 +
 --
-//TODO: Verify Lisk Core command
+//TODO: Verify Klayr Core command
 .Enable block generation
 [source,bash]
 ----
-lisk-core generator:enable lskqaxxmj78frvgpjgwvf4yqjjkcrr9yhn2sxxwm3 --height=0 --max-height-generated=0 --max-height-prevoted=0
+klayr-core generator:enable klyqaxxmj78frvgpjgwvf4yqjjkcrr9yhn2sxxwm3 --height=0 --max-height-generated=0 --max-height-prevoted=0
 ----
 --
 Sidechain node::
@@ -558,12 +557,12 @@ Sidechain node::
 .Enable block generation
 [source,bash]
 ----
-./bin/run generator:enable lskqaxxmj78frvgpjgwvf4yqjjkcrr9yhn2sxxwm3 --height=0 --max-height-generated=0 --max-height-prevoted=0
+./bin/run generator:enable klyqaxxmj78frvgpjgwvf4yqjjkcrr9yhn2sxxwm3 --height=0 --max-height-generated=0 --max-height-prevoted=0
 ----
 --
 =====
 
-Replace `lskqaxxmj78frvgpjgwvf4yqjjkcrr9yhn2sxxwm3` with your validator address.
+Replace `klyqaxxmj78frvgpjgwvf4yqjjkcrr9yhn2sxxwm3` with your validator address.
 
 Next, you will be prompted for the password that was defined in step <<creating-the-validator-keys>>.
 
@@ -575,7 +574,7 @@ Block generation should now be enabled for the validator.
 This is confirmed by the following message:
 
 ----
-Enabled block generation for lskqaxxmj78frvgpjgwvf4yqjjkcrr9yhn2sxxwm3
+Enabled block generation for klyqaxxmj78frvgpjgwvf4yqjjkcrr9yhn2sxxwm3
 ----
 
 == How to stake to increase the validator weight
@@ -584,16 +583,16 @@ If you followed all of the above steps, your node is now well-prepared to start 
 The last remaining step is now to perform a xref:{url_run_staking_selfstake}[self-stake].
 
 Without performing a self-stake, a validator will never be considered by the validator selection algorithm.
-Being selected directly depends on the *validator weight*, and this is computed directly from the stakes and self-stakes of a validator, as defined in the Lisk PoS protocol{fn_lip23}.
+Being selected directly depends on the *validator weight*, and this is computed directly from the stakes and self-stakes of a validator, as defined in the Klayr PoS protocol{fn_lip23}.
 Please check the xref:{url_run_staking_validatorweight}[validator weight] explanation for further information on the topic.
 
 For each blockchain network, there is a specific *minimum validator weight* that is required for a validator to be considered for block generation in general.
 
-TIP: In the Lisk Mainnet, the minimum validator weight is 1000 LSK.
+TIP: In the Klayr Mainnet, the minimum validator weight is 1000 KLY.
 
 The required validator weight to achieve an active position in the block generation is relative to the validator weights of the other validators who are participating in the network.
 A good way to check the exact validator weight required to reach an active position is to just check the validator weights of the currently active 101 validators.
-For the Lisk Mainnet, this information can be obtained directly from the {url_lisk_wallet}[Lisk Desktop^], or one of the various Lisk explorers like {url_liskscan}[^] or {url_liskobserver}[^].
+For the Klayr Mainnet, this information can be obtained directly from the {url_klayr_wallet}[Klayr Desktop^], or one of the various Klayr explorers like {url_explorer}[^].
 
 NOTE: Please note, that even if you do not have enough validator weight to be an active validator, there is still a chance for you in each round to be selected as one of the two random validators.
 To be considered for the random selection, a validator just needs to have a weight equal to or greater than the minimum validator weight of the network.

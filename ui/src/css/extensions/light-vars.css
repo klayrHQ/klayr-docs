@@ -2,7 +2,7 @@
   /* navbar */
   --navbar_hover-background: var(--color-white);
   --nav-background: var(--color-white);
-  --navbar-font-color: var(--color-ultramarine-blue);
+  --navbar-font-color: var(--color-azule);
   --page-version-menu-background: var(--color-athens-white);
   --nav-secondary-background: var(--color-athens-white);
   --panel-background: var(--color-athens-white);
@@ -11,16 +11,16 @@
   /* doc */
   --doc-font-color: var(--color-black);
   --heading-font-color: var(--color-black);
-  --link-font-color: var(--color-ultramarine-blue);
-  --link_hover-font-color: var(--color-ultramarine-blue);
+  --link-font-color: var(--color-azule);
+  --link_hover-font-color: var(--color-azule);
   --link_unresolved-font-color: var(--important-color);
-  --caption-font-color: var(--color-ink-blue);
+  --caption-font-color: var(--color-azule);
   /*  footer  */
   --footer-background: var(--color-athens-white);
-  --footer-font-color: var(--color-zodiac-blue);
-  --footer-link-font-color: var(--color-zodiac-blue);
+  --footer-font-color: var(--color-dark-blue);
+  --footer-link-font-color: var(--color-dark-blue);
   /* docsearch */
-  --docsearch-primary-color: #5468ff;
+  --docsearch-primary-color: var(--color-azule);
   --docsearch-text-color: #1c1e21;
   --docsearch-spacing: 12px;
   --docsearch-icon-stroke-width: 1.4;

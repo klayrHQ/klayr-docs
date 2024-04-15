@@ -9,12 +9,12 @@ Mona Bärenfänger <mona@lightcurve.io> Muhammad Talha <muhammad.talha@lightcurv
 :sectnums:
 :experimental:
 
-:docs_sdk: lisk-sdk::
+:docs_sdk: klayr-sdk::
 // Project URLS
 
 :url_network_page: understand-blockchain/network.adoc
 :url_mainchain_page: understand-blockchain/mainchain.adoc
-:url_coreIndex_page: lisk-core::index.adoc
+:url_coreIndex_page: klayr-core::index.adoc
 
 
 :url_guides_config: build-blockchain/configuration.adoc
@@ -27,15 +27,15 @@ Mona Bärenfänger <mona@lightcurve.io> Muhammad Talha <muhammad.talha@lightcurv
 :url_guides_plugin: build-blockchain/plugin/index.adoc
 :url_guides_setup: build-blockchain/create-blockchain-client.adoc
 
-:url_references_dashboard_plugin: {site-url}/lisk-sdk/v6/references/typedoc/modules/_liskhq_lisk_framework_dashboard_plugin.html
-:url_gitHub_passphrase: https://github.com/LiskHQ/lisk-sdk-examples/blob/development/tutorials/hello/hello_client/config/default/passphrase.json
-:url_typedoc_crypto: {site-url}/lisk-sdk/v6/references/typedoc/functions/_liskhq_lisk_cryptography.address.getLisk32AddressFromAddress.html
-:url_dev_validator: https://github.com/LiskHQ/lisk-sdk-examples/blob/development/tutorials/hello/hello_client/config/default/dev-validators.json
+:url_references_dashboard_plugin: {site-url}/klayr-sdk/v6/references/typedoc/modules/_klayrhq_klayr_framework_dashboard_plugin.html
+:url_gitHub_passphrase: https://github.com/KlayrHQ/klayr-sdk-examples/blob/development/tutorials/hello/hello_client/config/default/passphrase.json
+:url_typedoc_crypto: {site-url}/klayr-sdk/v6/references/typedoc/functions/_klayrhq_klayr_cryptography.address.getKlayr32AddressFromAddress.html
+:url_dev_validator: https://github.com/KlayrHQ/klayr-sdk-examples/blob/development/tutorials/hello/hello_client/config/default/dev-validators.json
 
-The {url_references_dashboard_plugin}[Dashboard plugin^] offers various features that facilitate interaction with a Lisk application.
-The Dashboard can be registered with any Lisk Application.
+The {url_references_dashboard_plugin}[Dashboard plugin^] offers various features that facilitate interaction with a Klayr application.
+The Dashboard can be registered with any Klayr Application.
 
-For this guide, the Dashboard plugin is registered to the xref:{url_guides_setup}[Hello World application], though the steps mentioned below can be applied to any Lisk-based blockchain client.
+For this guide, the Dashboard plugin is registered to the xref:{url_guides_setup}[Hello World application], though the steps mentioned below can be applied to any Klayr-based blockchain client.
 
 ====
 On this page, you'll learn:
@@ -46,14 +46,14 @@ On this page, you'll learn:
 
 == Plugin registration
 
-With Lisk v6, the default plugins come pre-installed after an application is initiated.
+With Klayr v6, the default plugins come pre-installed after an application is initiated.
 You can check the `package.json` file of the blockchain client to ensure the installation.
 
 .hello_client/package.json
 [source,json]
 ----
 "dependencies": {
-	"@liskhq/lisk-framework-dashboard-plugin": "0.2.0",
+	"@klayr/framework-dashboard-plugin": "0.2.0",
 	//[...]
 },
 ----
@@ -62,7 +62,7 @@ Otherwise, you can install the Dashboard plugin like this:
 
 [source,bash]
 ----
-npm i @liskhq/lisk-framework-dashboard-plugin
+npm i @klayr/framework-dashboard-plugin
 ----
 
 Now open the `plugins.ts` file, import the Dashboard plugin, and register it with the application as shown below:
@@ -71,8 +71,8 @@ Now open the `plugins.ts` file, import the Dashboard plugin, and register it wit
 [source,typescript]
 ----
 /* eslint-disable @typescript-eslint/no-empty-function */
-import { Application } from 'lisk-sdk';
-import { DashboardPlugin } from '@liskhq/lisk-framework-dashboard-plugin';
+import { Application } from 'klayr-sdk';
+import { DashboardPlugin } from '@klayr/framework-dashboard-plugin';
 //[...]
 
 export const registerPlugins = (app: Application): void => {
@@ -119,11 +119,11 @@ Mainchain::
 +
 --
 * *Or*, start the blockchain client with designated flags on a `mainchain` node.
-For more information, see xref:{url_network_page}[Networks], xref:{url_mainchain_page}[Mainchain] and the xref:{url_coreIndex_page}[Lisk Core] docs.
+For more information, see xref:{url_network_page}[Networks], xref:{url_mainchain_page}[Mainchain] and the xref:{url_coreIndex_page}[Klayr Core] docs.
 +
 [source,bash]
 ----
-lisk-core start --network testnet --enable-dashboard-plugin
+klayr-core start --network testnet --enable-dashboard-plugin
 ----
 --
 =====
@@ -179,7 +179,7 @@ The hello message can be:
 [source,json]
 ----
 {
-	"message": "Greetings from Lisk!"
+	"message": "Greetings from Klayr!"
 }
 ----
 
@@ -244,7 +244,7 @@ The endpoint doesn't require any input for the request to proceed.
 .List of all the hello messages sent on-chain
 image::guides/dashboard/call_pluginaction_success.png["Plugin action success",1000]
 
-As expected, the Dashboard responds with a list of hello messages that were posted to the Lisk application.
+As expected, the Dashboard responds with a list of hello messages that were posted to the Klayr application.
 
 === Subscribing to events
 
@@ -261,15 +261,15 @@ image::guides/dashboard/receive_newHello_event.png[]
 
 [TIP]
 ==== 
-The value of the `senderAddress` retrieved in the `hello_newHello` event is in the `hex` format, which can be easily converted to the Lisk32 format through the `cryptography` package.
+The value of the `senderAddress` retrieved in the `hello_newHello` event is in the `hex` format, which can be easily converted to the Klayr32 format through the `cryptography` package.
 For example:
 
-.Converting a binary address into lisk32 format via 'lisk console'
+.Converting a binary address into klayr32 format via 'klayr console'
 [source,bash]
 ----
-lisk.cryptography.address.getLisk32AddressFromAddress(Buffer.from("8ebe46d631ae4cc7ad14ba5235edde56c5f34ec6", 'hex'));
+klayr.cryptography.address.getKlayr32AddressFromAddress(Buffer.from("8ebe46d631ae4cc7ad14ba5235edde56c5f34ec6", 'hex'));
 ----
-For more information, see {url_typedoc_crypto}[getLisk32AddressFromAddress^].
+For more information, see {url_typedoc_crypto}[getKlayr32AddressFromAddress^].
 ====
 
 The Dashboard plugin provides various other features as well, most of which are very self-explanatory.

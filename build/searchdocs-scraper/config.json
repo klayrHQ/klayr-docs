@@ -1,13 +1,13 @@
 {
-  "index_name": "lisk-docs-search",
+  "index_name": "klayr-docs-search",
   "start_urls": [
     {
-      "url": "https://lisk.com/(?=documentation/)",
+      "url": "https://klayr.xyz/(?=documentation/)",
       "variables": {
         "component": [
-          "lisk-sdk",
-          "lisk-core",
-          "lisk-service"
+          "klayr-sdk",
+          "klayr-core",
+          "klayr-service"
         ],
         "version": [
           "v2"
@@ -16,7 +16,7 @@
     }
   ],
   "sitemap_urls": [
-    "https://lisk.com/documentation/sitemap.xml"
+    "https://klayr.xyz/documentation/sitemap.xml"
   ],
   "selectors": {
     "default": {

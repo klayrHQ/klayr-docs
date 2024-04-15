@@ -5,26 +5,26 @@ Mona Bärenfänger <mona@lightcurve.io> Muhammad Talha <muhammad.talha@lightcurv
 :page-toclevels: 4
 :idprefix:
 :idseparator: -
-:docs_sdk: lisk-sdk::
+:docs_sdk: klayr-sdk::
 // URLs
-:url_typedoc_regmc_schema: {site-url}/lisk-sdk/v6/references/typedoc/classes/lisk_framework.RegisterMainchainCommand.html#schema
-:url_typedoc_regsc_schema: {site-url}/lisk-sdk/v6/references/typedoc/classes/lisk_framework.RegisterSidechainCommand.html#schema
-:url_typedoc_regvalidator_schema: {site-url}/lisk-sdk/v6/references/typedoc/classes/lisk_framework.ValidatorRegistrationCommand.html#schema
-:url_typedoc_report_schema: {site-url}/lisk-sdk/v6/references/typedoc/classes/lisk_framework.ReportMisbehaviorCommand.html#schema
-:url_typedoc_stake_schema: {site-url}/lisk-sdk/v6/references/typedoc/classes/lisk_framework.StakeCommand.html#schema
-:url_typedoc_transfer_schema: {site-url}/lisk-sdk/v6/references/typedoc/classes/lisk_framework.TransferCommand.html#schema
-:url_typedoc_transactions: {site-url}/lisk-sdk/v6/references/typedoc/modules/_liskhq_lisk_transactions.html
-:url_typedoc_validator: {site-url}/lisk-sdk/v6/references/typedoc/modules/_liskhq_lisk_validator.html
-:url_typedoc_tx_schema: {site-url}/lisk-sdk/v6/references/typedoc/variables/_liskhq_lisk_chain.transactionSchema.html
-:url_typedoc_crypto_address: {site-url}/lisk-sdk/v6/references/typedoc/modules/_liskhq_lisk_cryptography.address.html
+:url_typedoc_regmc_schema: {site-url}/klayr-sdk/v6/references/typedoc/classes/klayr_framework.RegisterMainchainCommand.html#schema
+:url_typedoc_regsc_schema: {site-url}/klayr-sdk/v6/references/typedoc/classes/klayr_framework.RegisterSidechainCommand.html#schema
+:url_typedoc_regvalidator_schema: {site-url}/klayr-sdk/v6/references/typedoc/classes/klayr_framework.ValidatorRegistrationCommand.html#schema
+:url_typedoc_report_schema: {site-url}/klayr-sdk/v6/references/typedoc/classes/klayr_framework.ReportMisbehaviorCommand.html#schema
+:url_typedoc_stake_schema: {site-url}/klayr-sdk/v6/references/typedoc/classes/klayr_framework.StakeCommand.html#schema
+:url_typedoc_transfer_schema: {site-url}/klayr-sdk/v6/references/typedoc/classes/klayr_framework.TransferCommand.html#schema
+:url_typedoc_transactions: {site-url}/klayr-sdk/v6/references/typedoc/modules/_klayrhq_klayr_transactions.html
+:url_typedoc_validator: {site-url}/klayr-sdk/v6/references/typedoc/modules/_klayrhq_klayr_validator.html
+:url_typedoc_tx_schema: {site-url}/klayr-sdk/v6/references/typedoc/variables/_klayrhq_klayr_chain.transactionSchema.html
+:url_typedoc_crypto_address: {site-url}/klayr-sdk/v6/references/typedoc/modules/_klayrhq_klayr_cryptography.address.html
 
-:url_schemas: https://github.com/LiskHQ/lisk-sdk-examples/blob/development/guides/tx-creation-and-signing/schemas.js
-:url_account: https://github.com/LiskHQ/lisk-sdk-examples/blob/development/guides/tx-creation-and-signing/offline/account.json
-:url_create-offline: https://github.com/LiskHQ/lisk-sdk-examples/blob/development/guides/tx-creation-and-signing/offline/create-offline.js
-:url_sign-offline: https://github.com/LiskHQ/lisk-sdk-examples/blob/development/guides/tx-creation-and-signing/offline/sign-offline.js
-:url_api-client: https://github.com/LiskHQ/lisk-sdk-examples/blob/development/guides/tx-creation-and-signing/api-client.js
-:url_dry-run: https://github.com/LiskHQ/lisk-sdk-examples/blob/development/guides/tx-creation-and-signing/offline/dry-run.js
-:url_index: https://github.com/LiskHQ/lisk-sdk-examples/blob/development/guides/tx-creation-and-signing/offline/index.js
+:url_schemas: https://github.com/KlayrHQ/klayr-sdk-examples/blob/development/guides/tx-creation-and-signing/schemas.js
+:url_account: https://github.com/KlayrHQ/klayr-sdk-examples/blob/development/guides/tx-creation-and-signing/offline/account.json
+:url_create-offline: https://github.com/KlayrHQ/klayr-sdk-examples/blob/development/guides/tx-creation-and-signing/offline/create-offline.js
+:url_sign-offline: https://github.com/KlayrHQ/klayr-sdk-examples/blob/development/guides/tx-creation-and-signing/offline/sign-offline.js
+:url_api-client: https://github.com/KlayrHQ/klayr-sdk-examples/blob/development/guides/tx-creation-and-signing/api-client.js
+:url_dry-run: https://github.com/KlayrHQ/klayr-sdk-examples/blob/development/guides/tx-creation-and-signing/offline/dry-run.js
+:url_index: https://github.com/KlayrHQ/klayr-sdk-examples/blob/development/guides/tx-creation-and-signing/offline/index.js
 
 // Project URLs
 :url_guides_decoding: integrate-blockchain/encode-decode.adoc
@@ -34,7 +34,7 @@ Mona Bärenfänger <mona@lightcurve.io> Muhammad Talha <muhammad.talha@lightcurv
 :url_unlock_asset: {docs_sdk}modules/dpos-module.adoc#unlocktransactionasset
 :url_pom_asset: {docs_sdk}modules/dpos-module.adoc#pomtransactionasset
 :url_framework_httpapi: {docs_sdk}plugins/http-api-plugin.adoc
-:url_service: lisk-service::index.adoc
+:url_service: klayr-service::index.adoc
 :url_create_keys: {docs_sdk}client-cli.adoc#keyscreate
 
 ====
@@ -64,7 +64,7 @@ The `--offline` flag also requires the flags `--chain-id` and `--nonce` to be sp
 ----
 ? Please enter: tokenID:  0000000100000000
 ? Please enter: amount:  1000000000
-? Please enter: recipientAddress: lskg6prjbqpm6m8rsvmsg6dgyx3e89drknbvxg7x8
+? Please enter: recipientAddress: klyg6prjbqpm6m8rsvmsg6dgyx3e89drknbvxg7x8
 ? Please enter: data:  Happy Birthday!
 ? Please enter passphrase:  [hidden]
 ----
@@ -110,7 +110,7 @@ This creates a response as seen below:
     "params": {
       "tokenID": "0000000100000000",
       "amount": "10000000000",
-      "recipientAddress": "lskg6prjbqpm6m8rsvmsg6dgyx3e89drknbvxg7x8",
+      "recipientAddress": "klyg6prjbqpm6m8rsvmsg6dgyx3e89drknbvxg7x8",
       "data": "Hello"
     },
     "id": "a01f5a6e5e753a872652cbefc1578bcf90b99a89cbfc522b4afded53ce344cbc"
@@ -119,22 +119,22 @@ This creates a response as seen below:
 ----
 ====
 
-== Option 2: Creating transactions offline with Lisk Elements
+== Option 2: Creating transactions offline with Klayr Elements
 
 [NOTE]
 ====
 The relevant files discussed in this guide are {url_schemas}[schemas.js^], {url_account}[account.json^], {url_create-offline}[create-offline.js^], {url_sign-offline}[sign-offline.js^], {url_api-client}[api-client.js^], {url_dry-run}[dry-run.js^] and {url_index}[index.js^].
 ====
 
-The following Lisk Elements packages are required to create and sign a transaction offline:
+The following Klayr Elements packages are required to create and sign a transaction offline:
 
-* `@liskhq/lisk-client`, including the following libraries:
-** {url_typedoc_transactions}[@liskhq/lisk-transactions^]
-** {url_typedoc_validator}[@liskhq/lisk-validator^] (optional)
+* `@klayr/client`, including the following libraries:
+** {url_typedoc_transactions}[@klayr/transactions^]
+** {url_typedoc_validator}[@klayr/validator^] (optional)
 
 === Provide the transaction schema and params schema
 
-To create, validate, and sign transactions offline with Lisk Elements, it is necessary to access their schemas.
+To create, validate, and sign transactions offline with Klayr Elements, it is necessary to access their schemas.
 
 The corresponding param schemas can be found in the module reference pages listed below:
 
@@ -156,7 +156,7 @@ In this example, we will send a Transfer Token transaction, therefore two differ
 [source,js]
 ----
 const transactionSchema = {
-    $id: '/lisk/transaction',
+    $id: '/klayr/transaction',
     type: 'object',
     required: ['module', 'command', 'nonce', 'fee', 'senderPublicKey', 'params'],
     properties: {
@@ -201,7 +201,7 @@ const transactionSchema = {
 };
 
 const transferParamsSchema = {
-    $id: '/lisk/transferParams',
+    $id: '/klayr/transferParams',
     title: 'Transfer transaction params',
     type: 'object',
     required: ['tokenID', 'amount', 'recipientAddress', 'data'],
@@ -219,7 +219,7 @@ const transferParamsSchema = {
         recipientAddress: {
             dataType: 'bytes',
             fieldNumber: 3,
-            format: 'lisk32',
+            format: 'klayr32',
         },
         data: {
             dataType: 'string',
@@ -251,7 +251,7 @@ In this example, we use the following example account credentials:
 [source,json]
 ----
 {
-  "address": "lskg6prjbqpm6m8rsvmsg6dgyx3e89drknbvxg7x8",
+  "address": "klyg6prjbqpm6m8rsvmsg6dgyx3e89drknbvxg7x8",
   "keyPath": "m/44'/134'/0'",
   "publicKey": "ec10255d3e78b2977f04e59ea9afd3e9a2ce9a6b44619ef9f6c47c29695b1df3",
   "privateKey": "ac3e34eb369d52a3cddf0bc4312d9b0aa3625b04721039bb114f4c607fb5256eec10255d3e78b2977f04e59ea9afd3e9a2ce9a6b44619ef9f6c47c29695b1df3",
@@ -260,21 +260,21 @@ In this example, we use the following example account credentials:
 ----
 
 ==== Retrieving `binaryAddress`
-Each account's credential contains an `address` in the Lisk32 format.
-To convert an address into a binary string format, you can use `lisk-console`.
+Each account's credential contains an `address` in the Klayr32 format.
+To convert an address into a binary string format, you can use `klayr-console`.
 
-. Start a Lisk console session.
+. Start a Klayr console session.
 +
 [source,bash]
 ----
-lisk-console
+klayr-console
 ----
 +
-. Pass the Lisk32 address to the `getAddressFromLisk32Address` function:
+. Pass the Klayr32 address to the `getAddressFromKlayr32Address` function:
 +
 [source,bash]
 ----
-lisk.cryptography.address.getAddressFromLisk32Address('lskg6prjbqpm6m8rsvmsg6dgyx3e89drknbvxg7x8').toString('hex')
+klayr.cryptography.address.getAddressFromKlayr32Address('klyg6prjbqpm6m8rsvmsg6dgyx3e89drknbvxg7x8').toString('hex')
 ----
 +
 . The console will output the resultant binary address, as shown below:
@@ -284,7 +284,7 @@ lisk.cryptography.address.getAddressFromLisk32Address('lskg6prjbqpm6m8rsvmsg6dgy
 'fa892e1aa42a8af96c45dfd5afc428b3dba950e6'
 ----
 
-For all the available conversions, please refer to the {url_typedoc_crypto_address}[lisk.cryptography.address^] package.
+For all the available conversions, please refer to the {url_typedoc_crypto_address}[klayr.cryptography.address^] package.
 
 
 === Creating the transaction
@@ -293,14 +293,14 @@ Create a new file `create-offline.js` to create the unsigned transaction object.
 
 Define the unsigned transaction object manually by following the <<provide-the-transaction-schema-and-params-schema,transaction schema>>.
 
-It is recommended to verify the correct format of the transaction with the `validator.validate()` function of the `@liskhq/lisk-validator` package afterwards.
+It is recommended to verify the correct format of the transaction with the `validator.validate()` function of the `@klayr/validator` package afterwards.
 
 Then, manually define the parameters for the *Token Transfer* command, and add them to the unsigned transaction.
 
 .create-offline.js
 [source,js]
 ----
-const { validator } = require('@liskhq/lisk-client');
+const { validator } = require('@klayr/client');
 const { transactionSchema } = require('./schemas');
 // Example account credentials
 const account = require('./account.json');
@@ -346,7 +346,7 @@ The transaction object is now returned, and ready to be signed by the sender in 
 
 Create a new file `sign-offline.js` to create a script that will sign a given unsigned transaction object.
 
-To sign the transaction, use the `signTransaction()` function of the `@liskhq/lisk-transactions` package.
+To sign the transaction, use the `signTransaction()` function of the `@klayr/transactions` package.
 It requires the following parameters:
 
 . The unsigned transaction
@@ -357,7 +357,7 @@ It requires the following parameters:
 .sign-offline.js
 [source,js]
 ----
-const { transactions } = require('@liskhq/lisk-client');
+const { transactions } = require('@klayr/client');
 const { transferParamsSchema } = require('./schemas');
 const account = require('./account.json');
 
@@ -383,14 +383,14 @@ A transaction dry-run can only be performed *online*, by connecting to a node.
 
 Without dry-running the transaction, its validity cannot be verified, and the transaction might fail.
 
-To connect to a node, create a function `getClient()` which provides an instance of the Lisk API client.
+To connect to a node, create a function `getClient()` which provides an instance of the Klayr API client.
 
 Create a new file `api-client.js` and paste the following code:
 
 .api-client.js
 [source,js]
 ----
-const { apiClient } = require('@liskhq/lisk-client');
+const { apiClient } = require('@klayr/client');
 
 const RPC_ENDPOINT = 'ws://127.0.0.1:7887/rpc-ws';
 let clientCache;
