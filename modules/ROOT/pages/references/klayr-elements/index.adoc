@@ -7,7 +7,7 @@ Mona Bärenfänger <mona@lightcurve.io>
 :imagesdir: ../../../assets/images
 :title-logo-image: image:test-logo.png[]
 // URLs
-:url_typedoc: {site-url}/lisk-sdk/references/typedoc/modules
+:url_typedoc: {site-url}/klayr-sdk/references/typedoc/modules
 :url_nodejs: https://nodejs.org/
 :url_nodejs_download: https://nodejs.org/en/download/
 :url_npm_klayr_api: https://www.npmjs.com/package/@klayr/api-client

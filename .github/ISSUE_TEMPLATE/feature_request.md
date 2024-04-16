@@ -1,6 +1,6 @@
 ---
 name: Feature request
-about: Suggest to add new content to the Lisk documentation.
+about: Suggest to add new content to the Klayr documentation.
 title: ''
 labels: 'type: feature'
 assignees: ''
