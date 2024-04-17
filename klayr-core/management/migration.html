@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Testnet and Mainnet v4 migration guide :: Klayr documentation</title>
+    <title>Testnet and Mainnet Klayr migration guide :: Klayr documentation</title>
     <link rel="canonical" href="https://klayr.xyz/documentation/klayr-core/management/migration.html">
     <link rel="prev" href="configuration.html">
     <link rel="next" href="../core-cli.html">
@@ -49,6 +49,9 @@
         <a href="../.." class="docs-logo"></a>
       </div>
       <!--<a class="navbar-item" href="https://klayr.xyz/documentation">Klayr documentation</a>-->
+        <div id="docsearch" class="navbar-menu search-box hide-for-print">
+          <!--<input id="search-input-toolbar" type="text" placeholder="Search me ...">-->
+        </div>
       <button class="navbar-burger" data-target="topbar-nav">
         <span></span>
         <span></span>
@@ -115,9 +118,12 @@
   <ul>
     <li><a href="../index.html">Klayr Core</a></li>
     <li>Management</li>
-    <li><a href="migration.html">Testnet and Mainnet v4 migration guide</a></li>
+    <li><a href="migration.html">Testnet and Mainnet Klayr migration guide</a></li>
   </ul>
 </nav>
+    <div id="docsearch-toolbar" class="search-box hide-for-print toolbar-search">
+      <!--<input id="search-input" type="text" placeholder="Search me ...">-->
+    </div>
   <div class="edit-this-page"><a href="https://github.com/KlayrHQ/klayr-core/edit/development/docs/antora/modules/ROOT/pages/management/migration.adoc">Edit this Page</a></div>
 </div>
 
@@ -169,7 +175,7 @@
     <a class="nav-link" href="configuration.html">Configuration</a>
   </li>
   <li class="nav-item is-current-page" data-depth="2">
-    <a class="nav-link" href="migration.html">Testnet and Mainnet v4 migration guide</a>
+    <a class="nav-link" href="migration.html">Testnet and Mainnet Klayr migration guide</a>
   </li>
 </ul>
   </li>
@@ -230,15 +236,15 @@
   <div class="toc-menu"></div>
 </aside>
 <article class="doc">
-      <h1 class="page">Testnet and Mainnet v4 migration guide</h1>
+      <h1 class="page">Testnet and Mainnet Klayr migration guide</h1>
     <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>This guide explains how to migrate a Klayr Core v3 node to Klayr Core v4 using the Klayr Migrator v2.</p>
+<p>This guide explains how to migrate a Lisk Core node to Klayr Core using the Klayr Migrator v2.</p>
 </div>
 <div class="paragraph">
-<p>The Klayr migrator CLI will generate a new genesis block for Klayr Core v4.
-The new genesis block is created based on a snapshot of the old blockchain (running on Klayr Core v3.1.0 or later) at a given height.</p>
+<p>The Klayr migrator CLI will generate a new genesis block for Klayr Core.
+The new genesis block is created based on a snapshot of the old Lisk blockchain (running on Lisk Core v4.0.2 or later) at a given height.</p>
 </div>
 <div class="admonitionblock important">
 <table>
@@ -248,10 +254,10 @@ The new genesis block is created based on a snapshot of the old blockchain (runn
 </td>
 <td class="content">
 <div class="paragraph">
-<p>All active validators on the Klayr Mainnet and the Klayr Testnet need to follow this guide to correctly migrate their nodes to the new network, in order to not miss any blocks after the network hard fork.</p>
+<p>All active validators on the Lisk Mainnet and the Lisk Testnet need to follow this guide to correctly migrate their nodes to the new network, in order to not miss any blocks after the network hard fork.</p>
 </div>
 <div class="paragraph">
-<p>Optionally, anyone running a Klayr Core v3.1.0 (or later) who is not an active validator can also participate in the migration process.
+<p>Optionally, anyone running a Lisk Core v4.0.2 (or later) who is not an active validator can also participate in the migration process.
 In this case, the following steps 2.4 and 2.5 in this guide can be skipped, as they are only relevant for the current validators.</p>
 </div>
 </td>
@@ -264,7 +270,7 @@ In this case, the following steps 2.4 and 2.5 in this guide can be skipped, as t
 <ul class="sectlevel1">
 <li><a href="#preparation">1. Preparation</a>
 <ul class="sectlevel2">
-<li><a href="#ensure-you-are-running-version-3-1-0-or-later-of-klayr-core">1.1. Ensure you are running version 3.1.0 (or later) of Klayr Core</a></li>
+<li><a href="#ensure-you-are-running-version-4-0-2-or-later-of-lisk-core">1.1. Ensure you are running version 4.0.2 (or later) of Lisk Core</a></li>
 <li><a href="#setting-up-the-klayr-migrator">1.2. Setting up the Klayr Migrator</a>
 <ul class="sectlevel3">
 <li><a href="#download-the-migration-script">1.2.1. Download the migration script</a></li>
@@ -273,7 +279,7 @@ In this case, the following steps 2.4 and 2.5 in this guide can be skipped, as t
 </ul>
 </li>
 <li><a href="#check-the-announced-snapshot-height">1.3. Check the announced snapshot height</a></li>
-<li><a href="#ensure-klayr-core-v3-1-x-is-fully-synced-with-the-network">1.4. Ensure Klayr Core v3.1.x is fully synced with the network</a></li>
+<li><a href="#ensure-lisk-core-v4-0-x-is-fully-synced-with-the-network">1.4. Ensure Lisk Core v4.0.x is fully synced with the network</a></li>
 <li><a href="#open-ports">1.5. Open ports</a></li>
 <li><a href="#run-klayr-migrator">1.6. Run klayr migrator</a></li>
 </ul>
@@ -281,7 +287,7 @@ In this case, the following steps 2.4 and 2.5 in this guide can be skipped, as t
 <li><a href="#migration-steps">2. Migration steps</a>
 <ul class="sectlevel2">
 <li><a href="#wait-until-the-network-reaches-the-snapshot-height">2.1. Wait until the network reaches the snapshot height</a></li>
-<li><a href="#stop-klayr-core-v3-1-x">2.2. Stop Klayr Core v3.1.x</a></li>
+<li><a href="#stop-lisk-core-v4-0-x">2.2. Stop Lisk Core v4.0.x</a></li>
 <li><a href="#start-klayr-core-v4">2.3. Start Klayr Core v4</a></li>
 <li><a href="#enable-block-generation-after-the-migration-for-validators">2.4. Enable block generation after the migration (for validators)</a>
 <ul class="sectlevel3">
@@ -293,7 +299,6 @@ In this case, the following steps 2.4 and 2.5 in this guide can be skipped, as t
 <li><a href="#enable-block-generation">2.4.6. Enable block generation</a></li>
 </ul>
 </li>
-<li><a href="#register-legacy-validator-keys">2.5. Register legacy validator keys</a></li>
 </ul>
 </li>
 </ul>
@@ -320,7 +325,7 @@ In this case, the following steps 2.4 and 2.5 in this guide can be skipped, as t
 <div class="ulist">
 <ul>
 <li>
-<p>minimum of 8GB  RAM</p>
+<p>minimum of 8GB RAM</p>
 </li>
 </ul>
 </div>
@@ -377,12 +382,12 @@ In this case, the following steps 2.4 and 2.5 in this guide can be skipped, as t
 </ul>
 </div>
 </dd>
-<dt class="hdlist1">Klayr Core</dt>
+<dt class="hdlist1">Lisk Core</dt>
 <dd>
 <div class="ulist">
 <ul>
 <li>
-<p>Version 3.1.0 or later</p>
+<p>Version 4.0.2 or later</p>
 </li>
 </ul>
 </div>
@@ -394,19 +399,16 @@ In this case, the following steps 2.4 and 2.5 in this guide can be skipped, as t
 </table>
 </div>
 <div class="sect2">
-<h3 id="ensure-you-are-running-version-3-1-0-or-later-of-klayr-core"><a class="anchor" href="#ensure-you-are-running-version-3-1-0-or-later-of-klayr-core"></a>1.1. Ensure you are running version 3.1.0 (or later) of Klayr Core</h3>
+<h3 id="ensure-you-are-running-version-4-0-2-or-later-of-lisk-core"><a class="anchor" href="#ensure-you-are-running-version-4-0-2-or-later-of-lisk-core"></a>1.1. Ensure you are running version 4.0.2 (or later) of Lisk Core</h3>
 <div class="paragraph">
-<p>Ensure you are running version 3.1.0 (or later) of Klayr Core to be able to seamlessly migrate to Klayr Core 4.0.0.</p>
+<p>Ensure you are running version 4.0.2 (or later) of Lisk Core to be able to seamlessly migrate to Klayr Core.</p>
 </div>
 <div class="paragraph">
-<p>We <strong>recommend</strong> to install <strong>v3.1.1</strong> of Klayr Core, because it comes with the Mainnet snapshot height pre-configured. If using an existing data directory, kindly make sure to use the <code>--overwrite-config</code> flag when restarting the application.</p>
-</div>
-<div class="paragraph">
-<p>Print the Klayr Core node info in the terminal, and check the value of <code>version</code>. Also, kindly ensure that the <code>backup.height</code> property is present and the corresponding value matches the announced migration height of 23390991.</p>
+<p>Print the Lisk Core node info in the terminal, and check the value of <code>version</code>. Also, kindly ensure that the <code>backup.height</code> property is present and the corresponding value matches the announced migration height of -.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">klayr-core node:info --pretty</code></pre>
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">lisk-core node:info --pretty</code></pre>
 </div>
 </div>
 <div class="admonitionblock note">
@@ -416,7 +418,7 @@ In this case, the following steps 2.4 and 2.5 in this guide can be skipped, as t
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-If your version is 3.1.0, please ensure to set <code>backup.height</code> to the announced snapshot height in your node config and restart the node with the <code>--overwrite-config</code> flag.
+If your version is 4.0.x, please ensure to set <code>backup.height</code> to the announced snapshot height in your node config and restart the node with the <code>--overwrite-config</code> flag.
 </td>
 </tr>
 </table>
@@ -447,21 +449,21 @@ If your version is 3.1.0, please ensure to set <code>backup.height</code> to the
 <div class="tab-pane" aria-labelledby="tabset1_linux-x64">
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">curl -o klayr-migrator-v2.0.1-linux-x64.tar.gz https://downloads.klayr.com/klayr-migrator/klayr-migrator-v2.0.1-linux-x64.tar.gz</code></pre>
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">curl -o klayr-migrator-v2.0.7.tar.gz https://downloads.klayr.xyz/klayr-migrator/klayr-migrator-v2.0.7.tar.gz</code></pre>
 </div>
 </div>
 </div>
 <div class="tab-pane" aria-labelledby="tabset1_darwin-x64">
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">curl -o klayr-migrator-v2.0.1-darwin-x64.tar.gz https://downloads.klayr.com/klayr-migrator/klayr-migrator-v2.0.1-darwin-x64.tar.gz</code></pre>
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">curl -o klayr-migrator-v2.0.7-darwin-x64.tar.gz https://downloads.klayr.xyz/klayr-migrator/klayr-migrator-v2.0.7-darwin-x64.tar.gz</code></pre>
 </div>
 </div>
 </div>
 <div class="tab-pane" aria-labelledby="tabset1_darwin-arm64">
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">curl -o klayr-migrator-v2.0.1-darwin-arm64.tar.gz https://downloads.klayr.com/klayr-migrator/klayr-migrator-v2.0.1-darwin-arm64.tar.gz</code></pre>
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">curl -o klayr-migrator-v2.0.7-darwin-arm64.tar.gz https://downloads.klayr.xyz/klayr-migrator/klayr-migrator-v2.0.7-darwin-arm64.tar.gz</code></pre>
 </div>
 </div>
 </div>
@@ -494,21 +496,21 @@ If your version is 3.1.0, please ensure to set <code>backup.height</code> to the
 <div class="tab-pane" aria-labelledby="tabset2_linux-x64">
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">curl -o klayr-migrator-v2.0.1-linux-x64.tar.gz.SHA256 https://downloads.klayr.com/klayr-migrator/klayr-migrator-v2.0.1-linux-x64.tar.gz.SHA256</code></pre>
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">curl -o klayr-migrator-v2.0.7.tar.gz.SHA256 https://downloads.klayr.xyz/klayr-migrator/klayr-migrator-v2.0.7.tar.gz.SHA256</code></pre>
 </div>
 </div>
 </div>
 <div class="tab-pane" aria-labelledby="tabset2_darwin-x64">
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">curl -o klayr-migrator-v2.0.1-darwin-x64.tar.gz.SHA256 https://downloads.klayr.com/klayr-migrator/klayr-migrator-v2.0.1-darwin-x64.tar.gz.SHA256</code></pre>
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">curl -o klayr-migrator-v2.0.7-darwin-x64.tar.gz.SHA256 https://downloads.klayr.xyz/klayr-migrator/klayr-migrator-v2.0.7-darwin-x64.tar.gz.SHA256</code></pre>
 </div>
 </div>
 </div>
 <div class="tab-pane" aria-labelledby="tabset2_darwin-arm64">
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">curl -o klayr-migrator-v2.0.1-darwin-arm64.tar.gz.SHA256 https://downloads.klayr.com/klayr-migrator/klayr-migrator-v2.0.1-darwin-arm64.tar.gz.SHA256</code></pre>
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">curl -o klayr-migrator-v2.0.7-darwin-arm64.tar.gz.SHA256 https://downloads.klayr.xyz/klayr-migrator/klayr-migrator-v2.0.7-darwin-arm64.tar.gz.SHA256</code></pre>
 </div>
 </div>
 </div>
@@ -532,14 +534,14 @@ If your version is 3.1.0, please ensure to set <code>backup.height</code> to the
 <div class="tab-pane" aria-labelledby="tabset3_linux">
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">sha256sum -c klayr-migrator-v2.0.1-linux-x64.tar.gz.SHA256</code></pre>
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">sha256sum -c klayr-migrator-v2.0.7.tar.gz.SHA256</code></pre>
 </div>
 </div>
 </div>
 <div class="tab-pane" aria-labelledby="tabset3_darwin">
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">sha -a 256 klayr-migrator-v2.0.1-linux-x64.tar.gz.SHA256</code></pre>
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">sha -a 256 klayr-migrator-v2.0.7.tar.gz.SHA256</code></pre>
 </div>
 </div>
 </div>
@@ -553,7 +555,7 @@ If your version is 3.1.0, please ensure to set <code>backup.height</code> to the
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">tar -xf ./klayr-migrator-v2.0.1-linux-x64.tar.gz</code></pre>
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">tar -xf ./klayr-migrator-v2.0.7.tar.gz</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -574,12 +576,12 @@ If your version is 3.1.0, please ensure to set <code>backup.height</code> to the
 <div class="ulist">
 <ul>
 <li>
-<p>For Mainnet: 23390991<br>
-For more information check the <a href="https://klayr.com/blog/posts/announcing-klayr-mainnet-v4-migration" target="_blank" rel="noopener">Mainnet migration announcement</a>.</p>
+<p>For Mainnet: -<br>
+For more information check the <a href="https://klayr.xyz/blog/posts/announcing-klayr-mainnet-v4-migration" target="_blank" rel="noopener">Mainnet migration announcement</a>.</p>
 </li>
 <li>
-<p>For Testnet: 20449414<br>
-For more information check the <a href="https://klayr.com/blog/posts/announcing-klayr-testnet-v4-migration" target="_blank" rel="noopener">Testnet migration announcement</a>.</p>
+<p>For Testnet: 21916546<br>
+For more information check the <a href="https://klayr.xyz/blog/posts/announcing-klayr-testnet-v4-migration" target="_blank" rel="noopener">Testnet migration announcement</a>.</p>
 </li>
 </ul>
 </div>
@@ -589,17 +591,17 @@ A snapshot of the blockchain will be created at this particular height, which wi
 </div>
 </div>
 <div class="sect2">
-<h3 id="ensure-klayr-core-v3-1-x-is-fully-synced-with-the-network"><a class="anchor" href="#ensure-klayr-core-v3-1-x-is-fully-synced-with-the-network"></a>1.4. Ensure Klayr Core v3.1.x is fully synced with the network</h3>
+<h3 id="ensure-lisk-core-v4-0-x-is-fully-synced-with-the-network"><a class="anchor" href="#ensure-lisk-core-v4-0-x-is-fully-synced-with-the-network"></a>1.4. Ensure Lisk Core v4.0.x is fully synced with the network</h3>
 <div class="paragraph">
 <p>Check the current block height of your node directly in the terminal by running the following command:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">klayr-core node:info --pretty</code></pre>
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">lisk-core node:info --pretty</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>Compare the current height of your node to the network height in <a href="https://klayr.com/wallet" target="_blank" rel="noopener">Klayr Desktop</a>, which is shown on the <kbd>Network</kbd> or <kbd>Blocks</kbd> pages.</p>
+<p>Compare the current height of your node to the network height in <a href="https://lisk.com/wallet" target="_blank" rel="noopener">Lisk Desktop</a>, which is shown on the <kbd>Network</kbd> or <kbd>Blocks</kbd> pages.</p>
 </div>
 <div class="admonitionblock tip">
 <table>
@@ -608,20 +610,20 @@ A snapshot of the blockchain will be created at this particular height, which wi
 <i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
-To view the current height of the <strong>Klayr Testnet</strong>, use the network switcher of Klayr Desktop, which can be enabled in the settings.
+To view the current height of the <strong>Lisk Testnet</strong>, use the network switcher of Lisk Desktop, which can be enabled in the settings.
 </td>
 </tr>
 </table>
 </div>
 <div class="paragraph">
-<p>Alternatively, users can also verify the current height by comparing <code>data.height</code> in the response from the <a href="https://service.klayr.com/api/v2/network/status" class="bare" target="_blank" rel="noopener">https://service.klayr.com/api/v2/network/status</a> endpoint.</p>
+<p>Alternatively, users can also verify the current height by comparing <code>data.height</code> in the response from the <a href="https://service.lisk.com/api/v3/network/status" class="bare" target="_blank" rel="noopener">https://service.lisk.com/api/v3/network/status</a> endpoint.</p>
 </div>
 <div class="paragraph">
 <p>To directly check the current height via the command line, run:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">curl --silent https://service.klayr.com/api/v2/network/status | jq '.data.height'</code></pre>
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">curl --silent https://service.klayr.com/api/v3/network/status | jq '.data.height'</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -634,7 +636,7 @@ To view the current height of the <strong>Klayr Testnet</strong>, use the networ
 <div class="sect2">
 <h3 id="open-ports"><a class="anchor" href="#open-ports"></a>1.5. Open ports</h3>
 <div class="paragraph">
-<p>Open the necessary ports for Klayr Core v4.</p>
+<p>Open the necessary ports for Klayr Core.</p>
 </div>
 <div class="admonitionblock important">
 <table>
@@ -644,7 +646,7 @@ To view the current height of the <strong>Klayr Testnet</strong>, use the networ
 </td>
 <td class="content">
 <div class="paragraph">
-<p>If you migrate the existing Klayr Core v3 config with the <code>--auto-migrate-config</code> flag in the next step <a href="#run-klayr-migrator">Run klayr migrator</a>, please ensure that the necessary ports in the final v4 config are open for communication.</p>
+<p>If you migrate the existing Lisk Core v4 config with the <code>--auto-migrate-config</code> flag in the next step <a href="#run-klayr-migrator">Run klayr migrator</a>, please ensure that the necessary ports in the final v4 config are open for communication.</p>
 </div>
 <div class="paragraph">
 <p>The final config (when auto-migrating) is printed on the screen for the user&#8217;s confirmation. You can check for the exact port details there.
@@ -703,14 +705,14 @@ Ideally, they should already be open.</p>
 <div class="tab-pane" aria-labelledby="tabset4_mainnet">
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">klayr-migrator --snapshot-height 23390991 --auto-migrate-config --auto-start-klayr-core-v4</code></pre>
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">klayr-migrator --snapshot-height - --auto-migrate-config --auto-start-klayr-core-v4</code></pre>
 </div>
 </div>
 </div>
 <div class="tab-pane" aria-labelledby="tabset4_testnet">
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">klayr-migrator --snapshot-height 20449414 --auto-migrate-config --auto-start-klayr-core-v4</code></pre>
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">klayr-migrator --snapshot-height 21916546 --auto-migrate-config --auto-start-klayr-core-v4</code></pre>
 </div>
 </div>
 </div>
@@ -746,11 +748,11 @@ If you choose to specify custom output path with the <code>--output</code> flag,
 <td class="content">
 <div class="title">Custom data path</div>
 <div class="paragraph">
-<p>In case a custom <a href="../../klayr-sdk/config.html#system" class="xref page">dataPath</a> is defined in the config, that is different from the default path <code>~/.klayr/klayr-core</code>, then it is possible to define the data path with the <code>--klayr-core-v3-data-path</code> flag like so:</p>
+<p>In case a custom <a href="../../klayr-sdk/config.html#system" class="xref page">dataPath</a> is defined in the config, that is different from the default path <code>~/.lisk/lisk-core</code>, then it is possible to define the data path with the <code>--lisk-core-data-path</code> flag like so:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">klayr-migrator --snapshot-height 23390991 --klayr-core-v3-data-path ~/klayr/custom/path/  --auto-migrate-config --auto-start-klayr-core-v4</code></pre>
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">klayr-migrator --snapshot-height - --klayr-core-data-path ~/klayr/custom/path/  --auto-migrate-config --auto-start-klayr-core-v4</code></pre>
 </div>
 </div>
 </td>
@@ -766,11 +768,11 @@ If you choose to specify custom output path with the <code>--output</code> flag,
 <td class="content">
 <div class="title">Custom config</div>
 <div class="paragraph">
-<p>In case a <a href="../../build-blockchain/configuration.html#how-to-use-a-custom-configuration" class="xref page">custom config</a> is used for Klayr Core v3, then it is also possible to define the path to the custom config file with the <code>--config</code> flag like so:</p>
+<p>In case a <a href="../../build-blockchain/configuration.html#how-to-use-a-custom-configuration" class="xref page">custom config</a> is used for Lisk Core v4, then it is also possible to define the path to the custom config file with the <code>--config</code> flag like so:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">klayr-migrator --snapshot-height 23390991 --config=/path/to/config.json --auto-migrate-config --auto-start-klayr-core-v4</code></pre>
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">klayr-migrator --snapshot-height - --config=/path/to/config.json --auto-migrate-config --auto-start-klayr-core-v4</code></pre>
 </div>
 </div>
 </td>
@@ -794,7 +796,7 @@ If you choose to specify custom output path with the <code>--output</code> flag,
 <div class="listingblock">
 <div class="title">Example (Mainnet) <sup class="footnoteref">[<a class="footnote" href="#_footnotedef_1" title="View footnote.">1</a>]</sup></div>
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">screen -dmSL migration klayr-migrator --snapshot-height 23390991 --auto-migrate-config --auto-start-klayr-core-v4</code></pre>
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">screen -dmSL migration klayr-migrator --snapshot-height - --auto-migrate-config --auto-start-klayr-core-v4</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -885,7 +887,7 @@ For everyone else, it will not have any impact.
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">grep \"id\": ./klayr-migrator/output/4c09e6a781fc4c7bdb936ee815de8f94190f8a7519becd9de2081832be309a99/genesis_block.json</code></pre>
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">grep \"id\": ./klayr-migrator/output/00000000/genesis_block.json</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -897,9 +899,9 @@ For everyone else, it will not have any impact.
 </div>
 </div>
 <div class="sect2">
-<h3 id="stop-klayr-core-v3-1-x"><a class="anchor" href="#stop-klayr-core-v3-1-x"></a>2.2. Stop Klayr Core v3.1.x</h3>
+<h3 id="stop-lisk-core-v4-0-x"><a class="anchor" href="#stop-lisk-core-v4-0-x"></a>2.2. Stop Lisk Core v4.0.x</h3>
 <div class="paragraph">
-<p>After the <code>klayr-migrator</code> script has finished and the announced snapshot height has passed, there is no reason to continue running Klayr Core v3.1.x, and therefore it is recommended to stop it.</p>
+<p>After the <code>klayr-migrator</code> script has finished and the announced snapshot height has passed, there is no reason to continue running Lisk Core v4.0.x, and therefore it is recommended to stop it.</p>
 </div>
 <div class="admonitionblock important">
 <table>
@@ -909,13 +911,13 @@ For everyone else, it will not have any impact.
 </td>
 <td class="content">
 <div class="paragraph">
-<p>It is important to stop Klayr Core v3 <strong>before</strong> starting Klayr Core v4.
-If the migrator is started with <code>--auto-start-klayr-core-v4</code> flag, the user is prompted to verify that Klayr Core v3 is stopped - only afterwards, the migration script will continue.</p>
+<p>It is important to stop Lisk Core <strong>before</strong> starting Klayr Core.
+If the migrator is started with <code>--auto-start-klayr-core-v4</code> flag, the user is prompted to verify that Lisk Core is stopped - only afterwards, the migration script will continue.</p>
 </div>
 <div class="literalblock">
 <div class="title">Prompt when</div>
 <div class="content">
-<pre>Please stop Klayr Core v3 to continue. Type 'yes' and press Enter when ready. [yes/no]: yes</pre>
+<pre>Please stop Lisk Core to continue. Type 'yes' and press Enter when ready. [yes/no]: yes</pre>
 </div>
 </div>
 </td>
@@ -929,19 +931,19 @@ If the migrator is started with <code>--auto-start-klayr-core-v4</code> flag, th
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-Users that have set something up to start Klayr Core on boot, whether it&#8217;s through <code>cron</code> or <code>systemd</code> or something else, should keep that in mind and adjust things accordingly so that Klayr Core 4.0.0 gets started instead of Klayr Core 3.1.x.
+Users that have set something up to start Lisk Core on boot, whether it&#8217;s through <code>cron</code> or <code>systemd</code> or something else, should keep that in mind and adjust things accordingly so that Klayr Core gets started instead of Lisk Core.
 </td>
 </tr>
 </table>
 </div>
 <div class="paragraph">
-<p>Last but not least, remove the folder with Klayr Core v3.1.x.</p>
+<p>Last but not least, remove the folder with Lisk Core.</p>
 </div>
 </div>
 <div class="sect2">
 <h3 id="start-klayr-core-v4"><a class="anchor" href="#start-klayr-core-v4"></a>2.3. Start Klayr Core v4</h3>
 <div class="paragraph">
-<p>If you set the flag <code>--auto-start-klayr-core-v4</code> when running klayr-migrator, it will start Klayr Core v4 in the background (managed by PM2) right after successful migration.</p>
+<p>If you set the flag <code>--auto-start-klayr-core-v4</code> when running klayr-migrator, it will start Klayr Core in the background (managed by PM2) right after successful migration.</p>
 </div>
 <div class="paragraph">
 <p>Otherwise, start Klayr Core manually like so:</p>
@@ -998,21 +1000,21 @@ To run Klayr Core in the background install PM2, as described in the guide <a hr
 </div>
 </div>
 <div class="paragraph">
-<p>Check the value of <code>version</code> in the response, to verify you are running version 4.0.0 of Klayr Core.</p>
+<p>Check the value of <code>version</code> in the response, to verify you are running version 4.0.5 of Klayr Core.</p>
 </div>
 </div>
 <div class="sect2">
 <h3 id="enable-block-generation-after-the-migration-for-validators"><a class="anchor" href="#enable-block-generation-after-the-migration-for-validators"></a>2.4. Enable block generation after the migration (for validators)</h3>
 <div class="paragraph">
-<p>After migration, <strong>101 initial validators</strong> will be active to generate blocks during the <code>initRounds</code>.
-All other validators will be banned during the bootstrap period.</p>
+<p>After migration, <strong>51 initial validators</strong> will be active to generate blocks during the <code>initRounds</code>.
+All other validators will be inactive during the bootstrap period.</p>
 </div>
 <div class="paragraph">
 <p><code>initRounds</code> is the number of rounds for the bootstrap period of the new network.
-The bootstrap period after migration to Core v4 is <strong>587 rounds</strong>.</p>
+The bootstrap period after migration to Klayr is <strong>587 rounds</strong>.</p>
 </div>
 <div class="paragraph">
-<p>The initial validators will be exactly the 101 validators that were in active positions in the Klayr Core v3 network, at the time of the migration.</p>
+<p>The initial validators will be exactly the top 51 validators that were in active positions in the Lisk network, at the time of the migration.</p>
 </div>
 <div class="paragraph">
 <p>For the initial validators, it will be important to enable block generation as soon as possible on the new node, to not miss any block rewards.</p>
@@ -1020,7 +1022,7 @@ The bootstrap period after migration to Core v4 is <strong>587 rounds</strong>.<
 <div class="paragraph">
 <p>It is also important that a maximum number of validators participate in the network migration.
 If only a small number of validators migrate their nodes, this can prolong the bootstrap period.
-Additionally, for blocks to be finalized, enough of the active validators (minimum 68) need to participate in the migration process.</p>
+Additionally, for blocks to be finalized, enough of the active validators (minimum 35) need to participate in the migration process.</p>
 </div>
 <div class="paragraph">
 <p>After 587 rounds, the normal Klayr PoS protocol will be followed to generate the list of active validators, but only for the validators who have <a href="#register-legacy-validator-keys">registered their validator keys</a>.</p>
@@ -1033,7 +1035,7 @@ Additionally, for blocks to be finalized, enough of the active validators (minim
 </td>
 <td class="content">
 All migrated validators who <strong>did not register their keys</strong> until the bootstrap period ends will stay <strong>banned</strong>.
-To be un-banned, a validator needs to <a href="#register-legacy-validator-keys">Register legacy validator keys</a>.
+To be un-banned, a validator needs to <a href="#register-legacy-validator-keys">[register-legacy-validator-keys]</a>.
 </td>
 </tr>
 </table>
@@ -1257,12 +1259,12 @@ To not miss any rewards, it is of high interest for a validator to set the hash 
 <div class="sect3">
 <h4 id="import-validator-info-data"><a class="anchor" href="#import-validator-info-data"></a>2.4.5. Import validator info data</h4>
 <div class="paragraph">
-<p>Look in the output directory of the klayr-migrator for a file called <code>forgingStatus.json</code> (the specific location will be in the migrator output), this will contain the valid validator info data to enable block generation on the Klayr Core v4 node.</p>
+<p>Look in the output directory of the klayr-migrator for a file called <code>forgingStatus.json</code> (the specific location will be in the migrator output), this will contain the valid validator info data to enable block generation on the Klayr Core node.</p>
 </div>
 <div class="literalblock">
 <div class="title">Migrator output example</div>
 <div class="content">
-<pre>Finished exporting forging status to /root/klayr-migrator/output/15f0dacc1060e91818224a94286b13aa04279c640bd5d6f193182031d133df7c/forgingStatus.json</pre>
+<pre>Finished exporting forging status to ~/klayr-migrator/output/00000000/forgingStatus.json</pre>
 </div>
 </div>
 <div class="admonitionblock tip">
@@ -1279,18 +1281,18 @@ In case the validator info data is lost, the validator can use the <strong>snaps
 </table>
 </div>
 <div class="paragraph">
-<p>The v3 forging info data corresponds to the v4 validator info data in the following way:</p>
+<p>The Lisk forging info data corresponds to the Klayr validator info data in the following way:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><code>height</code> &#8594; <code>height</code></p>
+<p><code>height</code></p>
 </li>
 <li>
-<p><code>maxHeightPrevoted</code> &#8594; <code>maxHeightPrevoted</code></p>
+<p><code>maxHeightPrevoted</code></p>
 </li>
 <li>
-<p><code>maxHeightPreviouslyForged</code> &#8594; <code>maxHeightGenerated</code></p>
+<p><code>maxHeightGenerated</code></p>
 </li>
 </ul>
 </div>
@@ -1325,7 +1327,7 @@ In case the validator info data is lost, the validator can use the <strong>snaps
 <td class="content">
 <div class="title">Don&#8217;t use zeros as validator info data!</div>
 <div class="paragraph">
-<p>If the validator already generated blocks with Klayr Core v3, they need to use their current validator info data.
+<p>If the validator already generated blocks with Lisk Core, they need to use their current validator info data.
 The validator info data is migrated during the migration process, and can directly be used to enable block generation on the v4 node.</p>
 </div>
 <div class="paragraph">
@@ -1351,64 +1353,12 @@ The validator info data is migrated during the migration process, and can direct
 </tr>
 </table>
 </div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="register-legacy-validator-keys"><a class="anchor" href="#register-legacy-validator-keys"></a>2.5. Register legacy validator keys</h3>
-<div class="admonitionblock important">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-important" title="Important"></i>
-</td>
-<td class="content">
-<div class="title">This step is crucial for migrating validators!</div>
-As already mentioned, all non-initial validators will be <strong>banned</strong> during the bootstrap period.
-The registration of the legacy validator keys has to be done at the <strong>latest by the end of <code>initRounds</code></strong>, to be eligible to generate blocks in the new network.
-Otherwise, the validator will continue to be banned on the network, until the validator keys are registered in the legacy module.
-</td>
-</tr>
-</table>
-</div>
 <div class="paragraph">
-<p>To register the legacy validator keys with the new node, create a new <code>registerKeys</code> transaction like so:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">klayr-core transaction:create legacy registerKeys 400000 --key-derivation-path=legacy --send</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>It will ask you for the required parameters:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre>? Please enter passphrase:  [hidden]
-? Please enter: blsKey:
-? Please enter: proofOfPossession:
-? Please enter: generatorKey:</pre>
-</div>
-</div>
-<div class="paragraph">
-<p>The required parameters can be obtained from the <code>keys.json</code> file, which was created in step <a href="#create-the-validator-keys">Create the validator keys</a> previously.</p>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-To send transactions from multisignature accounts, please follow the instructions <a href="../../integrate-blockchain/multisignature-accounts-and-transactions.html#how-to-create-a-multi-signature-transaction" class="xref page">here</a>.
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>The migration of Klayr Core from v3 to v4 is now completed.</p>
+<p>The migration of Lisk Core to Klayr Core is now completed.</p>
 </div>
 <div class="paragraph">
 <p>If you have specific questions regarding the process or need additional support, please reach out in the dedicated community channels, like <a href="https://klayr.chat/" class="bare" target="_blank" rel="noopener">https://klayr.chat/</a>.</p>
+</div>
 </div>
 </div>
 </div>
@@ -1449,6 +1399,51 @@ To send transactions from multisignature accounts, please follow the instruction
 <script async src="../../_/js/vendor/swagger-ui.js"></script>
 <script async src="../../_/js/vendor/component-versions.js"></script>
 <script src="../../_/js/vendor/custom.js"></script>
+  <script src="../../_/js/vendor/docsearch.js"></script>
+  <!--<script src="../../_/js/vendor/docsearch.min.js"></script>-->
+  <!--<script src="https://cdn.jsdelivr.net/npm/@docsearch/js@alpha"></script>-->
+  <script>
+    docsearch({
+      container: '#docsearch',
+        appId: 'FFW39DRU80',
+      apiKey: '5be52cb9a3e5e04a8c7ec42b589e5e2e',
+      indexName: 'klayr-docs'
+    });
+    docsearch({
+      container: '#docsearch-toolbar',
+        appId: 'FFW39DRU80',
+      apiKey: '5be52cb9a3e5e04a8c7ec42b589e5e2e',
+      indexName: 'klayr-docs'
+    });
+  </script>
+  <!--<script>
+    function focusSearchInput () { document.querySelector('#search-input').focus() }
+    var search = docsearch({
+        appId: 'FFW39DRU80',
+      apiKey: '5be52cb9a3e5e04a8c7ec42b589e5e2e',
+      indexName: 'klayr-docs',
+      inputSelector: '#search-input',
+      autocompleteOptions: { hint: false, keyboardShortcuts: ['s'] },
+      algoliaOptions: { hitsPerPage: 10 }
+    }).autocomplete
+    search.on('autocomplete:closed', function () { search.autocomplete.setVal() })
+    focusSearchInput()
+    window.addEventListener('load', focusSearchInput)
+  </script>-->
+  <!--  <script>
+    function focusSearchInputToolbar () { document.querySelector('#search-input-toolbar').focus() }
+    var search = docsearch({
+        appId: 'FFW39DRU80',
+      apiKey: '5be52cb9a3e5e04a8c7ec42b589e5e2e',
+      indexName: 'klayr-docs',
+      inputSelector: '#search-input-toolbar',
+      autocompleteOptions: { hint: false, keyboardShortcuts: ['s'] },
+      algoliaOptions: { hitsPerPage: 10 }
+    }).autocomplete
+    search.on('autocomplete:closed', function () { search.autocomplete.setVal() })
+    focusSearchInputToolbar()
+    window.addEventListener('load', focusSearchInputToolbar)
+  </script>-->
 
   </body>
 </html>
