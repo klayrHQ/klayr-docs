@@ -132,9 +132,6 @@ A DDoS attack is not specific to the blockchain, although it involves the attack
 
 === Proof-of-Stake
 
-.Proof-of-Stake
-image::intro/pos-v3.png[ align="center" ,800]
-
 To explain PoS briefly, users can stake an asset/token which in turn opens up the possibility to be chosen as a **validator** of a new block.
 
 NOTE: Staking is defined as a number of tokens/assets that are actively held or locked by an account for a certain period. This enables these assets to be used to achieve consensus and results in the user receiving a reward.
