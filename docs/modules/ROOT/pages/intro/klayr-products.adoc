@@ -16,8 +16,6 @@ Chris Braithwaite <christopher.braithwaite@lightcurve.io> Mona Bärenfänger <mo
 :url_kips: https://github.com/KlayrHQ/kips
 :url_research: https://research.klayr.xyz/
 
-image:intro/klayr-ecosystem.png[align="center"]
-
 == Overview
 
 The Klayr platform has been designed with a view to offering a complete plug-and-play system that is scalable, sustainable, and secure.
@@ -91,4 +89,3 @@ Initially, the research team will start a dialogue regarding the specific topic 
 Each KIP document allows for an open and transparent debate and the exchange of views on how the Klayr network is further developed, coupled with defining the objectives on the latest version of the roadmap.
 The contents generally describe and cover the rationale, the motivation, and the requirements for the specific subject matter.
 All KIPs are thoroughly researched and are in-depth technical documents, which follow the tradition of the Bitcoin Improvement Proposals (BIPs), to document and improve the blockchain system.
-Further information can also be found here on the {url_research}[Klayr Research Forum^].
