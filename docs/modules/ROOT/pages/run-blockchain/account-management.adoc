@@ -485,7 +485,6 @@ Following this, take the time to assess your storage practices to prevent a recu
 
 As long as you retain your passphrase, your account access remains intact.
 Furthermore, please note that your passphrase can be used interchangeably within the Klayr ecosystem.
-Hence, it is possible to utilize the same passphrase to log in to both Klayr Desktop and Klayr Mobile, granting access to your account.
 
 
 

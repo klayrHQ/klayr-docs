@@ -12,11 +12,11 @@ Chris Braithwaite <christopher.braithwaite@lightcurve.io> Mona Bärenfänger <mo
 :url_klayr_core: klayr-core::index.adoc
 :url_klayr_service: klayr-service::index.adoc
 :url_klayr_desktop: https://klayr.xyz/wallet
-:url_klayr_mobile: https://klayr.xyz/wallet
 :url_kips: https://github.com/KlayrHQ/kips
 :url_research: https://research.klayr.xyz/
 
-image:intro/klayr-ecosystem.png[align="center"]
+//todo edit image
+//image:intro/klayr-ecosystem.png[align="center"]
 
 == Overview
 
@@ -65,13 +65,13 @@ image::intro/klayr-service.png[ align="center" ,400]
 
 The xref:{url_klayr_service}[Klayr Service] is a web application that enables interaction with the entire Klayr ecosystem.
 This encompasses accessing blockchain data, storing users' private data, retrieving and storing market data, and interacting with social media.
-The overall concept of Klayr Service is to provide data to the UI clients, such as Klayr Mobile and  Klayr Desktop.
+The overall concept of Klayr Service is to provide data to the UI clients, such as Klayr Desktop.
 One of the key benefits here is the possibility to access all live blockchain data in a similar manner to the Klayr SDK API.
 To complement this further many more details and endpoints are also available from various network statistics to geolocation.
 
 The whole system is based on xref:{url_microservices}[microservices], and several microservices can be delivered using the existing technical stack whereby each one of them provides a specific functionality.
 The actual data is served in JSON format and exposed by a xref:{url_restful_api}[public RESTful API].
-From a backend perspective as mentioned, it is designed to meet the requirements of frontend developers, especially in Klayr Desktop and Klayr Mobile.
+From a backend perspective as mentioned, it is designed to meet the requirements of frontend developers, especially in Klayr Desktop.
 
 == Klayr Desktop
 
