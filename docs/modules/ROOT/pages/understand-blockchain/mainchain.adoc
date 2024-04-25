@@ -50,9 +50,13 @@ xref:{url_core}[Klayr Core] is the blockchain client that is required to be inst
 |Mainnet{fnlip63}
 |Testnet
 
+|Genesis height Klayr fork
+|24823618
+|21976183
+
 |Genesis height v4
-|TBD
-|TBD
+|23390991
+|20449414
 
 |Genesis height v3
 |16270294
@@ -190,7 +194,7 @@ Configurations of the Dynamic Reward module of the Klayr Mainnet mainchain.
 |3000000 blocks
 
 |Brackets (Block reward for each milestone in Beddows)
-|["500000000", "400000000", "300000000", "200000000", "100000000"]
+|["500000000", "400000000", "300000000", "200000000", "200000000"]
 |===
 
 === Registered modules
@@ -278,7 +282,7 @@ Configurations of the Dynamic Reward module of Klayr Testnet mainchain.
 |3000000 blocks
 
 |Brackets (Block reward for each milestone in Beddows)
-|["500000000", "400000000", "300000000", "200000000", "100000000"]
+|["500000000", "400000000", "300000000", "200000000", "200000000"]
 |===
 
 === Registered modules
@@ -461,5 +465,5 @@ Default configurations of the Dynamic Reward module of Klayr Testnet mainchain.
 |1000 blocks
 
 |Brackets (Block reward for each milestone in Beddows)
-|["500000000", "400000000", "300000000", "200000000", "100000000"]
+|["500000000", "400000000", "300000000", "200000000", "200000000"]
 |===
