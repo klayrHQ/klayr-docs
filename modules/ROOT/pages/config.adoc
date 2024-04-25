@@ -81,13 +81,13 @@ a|[source,js]
 | number
 | mandatory
 | The frequency of blocks to be created.
-| 10
+| 7
 
 | bftBatchSize
 | number
 | mandatory
 | The length of a round for block generation.
-| 103
+| 53
 
 |===
 
