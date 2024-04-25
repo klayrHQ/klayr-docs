@@ -99,7 +99,7 @@ Run the following script to perform a cross chain transfer from the mainchain to
 ./examples/interop/
 [source,bash]
 ----
-ts-node pos-mainchain-fast/config/scripts/transfer_lsk_sidechain_two.ts
+ts-node pos-mainchain-fast/config/scripts/transfer_kly_sidechain_two.ts
 ----
 
 NOTE: Wait for a few moments until you check the Balance on sidechain 2, as the cross-chain transfer can take some time
@@ -109,7 +109,7 @@ Verify the account intending to send the CCM has enough balance to pay the trans
 .pos-sidechain-example-two
 [source,bash]
 ----
-./bin/run endpoint:invoke token_getBalances '{"address":"lskx5uqu2zzybdwrqswd8c6b5v5aj77yytn4k6mv6"}' --pretty
+./bin/run endpoint:invoke token_getBalances '{"address":"klyx5uqu2zzybdwrqswd8c6b5v5aj77yytn4k6mv6"}' --pretty
 ----
 
 As the response shows, the account has now more than enough sidechain and mainchain tokens to pay the required fees.
@@ -190,7 +190,7 @@ To verify that the Hello message was in fact created on the blockchain, use the 
 .pos-sidechain-example-one
 [source,bash]
 ----
-./bin/run endpoint:invoke hello_getHello '{"address":"lskmjwp8z88avvxn4voktmx8cu9wk4opjkna5owt5"}'
+./bin/run endpoint:invoke hello_getHello '{"address":"klymjwp8z88avvxn4voktmx8cu9wk4opjkna5owt5"}'
 ----
 
 If all works correctly, the node should respond with the Hello message that was created in the previous step.
@@ -242,7 +242,7 @@ This property is required to create the CCM.
 .pos-sidechain-example-two
 [source,bash]
 ----
-./bin/run transaction:create react crossChainReact 1000000 --json --pretty --key-derivation-path="m/44'/134'/12'" --params='{"reactionType":0,"helloMessageID":"lskmjwp8z88avvxn4voktmx8cu9wk4opjkna5owt5","receivingChainID":"04000001","data":"","messageFee":"2100000","messageFeeTokenID":"0400000000000000"}' -p "crack tide merry unit rival joke drum private object top obey twelve exit scale sure pipe apple view forward surge aspect farm meat farm" --send
+./bin/run transaction:create react crossChainReact 1000000 --json --pretty --key-derivation-path="m/44'/134'/12'" --params='{"reactionType":0,"helloMessageID":"klymjwp8z88avvxn4voktmx8cu9wk4opjkna5owt5","receivingChainID":"04000001","data":"","messageFee":"2100000","messageFeeTokenID":"0400000000000000"}' -p "crack tide merry unit rival joke drum private object top obey twelve exit scale sure pipe apple view forward surge aspect farm meat farm" --send
 ----
 
 TIP: In the above example, we provide the passphrase directly in the command via the `-p` flag, therefore we are not prompted for the passphrase, and the transaction is signed directly.
@@ -270,7 +270,7 @@ TIP: In the above example, we provide the passphrase directly in the command via
     ],
     "params": {
       "reactionType": 0,
-      "helloMessageID": "lskmjwp8z88avvxn4voktmx8cu9wk4opjkna5owt5",
+      "helloMessageID": "klymjwp8z88avvxn4voktmx8cu9wk4opjkna5owt5",
       "receivingChainID": "04000001",
       "data": "",
       "messageFee": "2100000"
@@ -340,7 +340,7 @@ Once the CCM is received and executed on the node, it is possible to request the
 .Sidechain 1:
 [source,bash]
 ----
-./bin/run endpoint:invoke hello_getReactions '{"address":"lskmjwp8z88avvxn4voktmx8cu9wk4opjkna5owt5"}'
+./bin/run endpoint:invoke hello_getReactions '{"address":"klymjwp8z88avvxn4voktmx8cu9wk4opjkna5owt5"}'
 ----
 
 .Response, after one account has liked the message

@@ -233,7 +233,7 @@ npm run build
 +
 [source,bash]
 ----
-./bin/run endpoint:invoke hello_getHello '{"address": "lskuz5p98kz3mqzxnu68qdrjxtvdvr2o7pprtj4yv"}'
+./bin/run endpoint:invoke hello_getHello '{"address": "klyuz5p98kz3mqzxnu68qdrjxtvdvr2o7pprtj4yv"}'
 ----
 +
 When the request is successful, the node will reply with the following:

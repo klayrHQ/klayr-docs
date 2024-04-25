@@ -210,13 +210,13 @@ describe('RegisterAsset', () => {
 				});
 
 				expect(() => transactionAsset.validate(context)).toThrow(
-					'Invalid TLD found "hussain". Valid TLDs are "lsk"',
+					'Invalid TLD found "hussain". Valid TLDs are "kly"',
 				);
 			});
 
 			it('should be ok for valid schema', () => {
 				const context = testing.createValidateAssetContext({
-					asset: { name: 'nazar.lsk', ttl: 60 * 60, registerFor: 1 },
+					asset: { name: 'nazar.kly', ttl: 60 * 60, registerFor: 1 },
 					transaction: { senderAddress: Buffer.alloc(0) } as any,
 				});
 
@@ -242,12 +242,12 @@ describe('RegisterAsset', () => {
 
 		describe('valid cases', () => {
 			it('should update the state store with nameahsh key', async () => {
-				const name = 'nazar.lsk';
+				const name = 'nazar.kly';
 				const node = getNodeForName(name);
 				const key = getKeyForNode(node);
 				const context = testing.createApplyAssetContext({
 					stateStore,
-					asset: { name: 'nazar.lsk', ttl: 60 * 60, registerFor: 1 },
+					asset: { name: 'nazar.kly', ttl: 60 * 60, registerFor: 1 },
 					transaction: { senderAddress: account.address } as any,
 				});
 
@@ -257,11 +257,11 @@ describe('RegisterAsset', () => {
 			});
 
 			it('should update the state store with updated sender account', async () => {
-				const name = 'nazar.lsk';
+				const name = 'nazar.kly';
 				const node = getNodeForName(name);
 				const context = testing.createApplyAssetContext({
 					stateStore,
-					asset: { name: 'nazar.lsk', ttl: 60 * 60, registerFor: 1 },
+					asset: { name: 'nazar.kly', ttl: 60 * 60, registerFor: 1 },
 					transaction: { senderAddress: account.address } as any,
 				});
 				await transactionAsset.apply(context);
@@ -272,11 +272,11 @@ describe('RegisterAsset', () => {
 			});
 
 			it('should update the state store with correct ttl value', async () => {
-				const name = 'nazar.lsk';
+				const name = 'nazar.kly';
 				const node = getNodeForName(name);
 				const context = testing.createApplyAssetContext({
 					stateStore,
-					asset: { name: 'nazar.lsk', ttl: 60 * 70, registerFor: 1 },
+					asset: { name: 'nazar.kly', ttl: 60 * 70, registerFor: 1 },
 					transaction: { senderAddress: account.address } as any,
 				});
 				await transactionAsset.apply(context);
@@ -287,11 +287,11 @@ describe('RegisterAsset', () => {
 			});
 
 			it('should update the state store with correct expiry date', async () => {
-				const name = 'nazar.lsk';
+				const name = 'nazar.kly';
 				const node = getNodeForName(name);
 				const context = testing.createApplyAssetContext({
 					stateStore,
-					asset: { name: 'nazar.lsk', ttl: 60 * 70, registerFor: 2 },
+					asset: { name: 'nazar.kly', ttl: 60 * 70, registerFor: 2 },
 					transaction: { senderAddress: account.address } as any,
 				});
 				const expiryTimestamp = Math.ceil(addYears(new Date(), 2).getTime() / 1000);
@@ -308,14 +308,14 @@ describe('RegisterAsset', () => {
 			it('should throw error if name is already registered', async () => {
 				const context = testing.createApplyAssetContext({
 					stateStore,
-					asset: { name: 'nazar.lsk', ttl: 60 * 60, registerFor: 1 },
+					asset: { name: 'nazar.kly', ttl: 60 * 60, registerFor: 1 },
 					transaction: { senderAddress: account.address } as any,
 				});
 
 				await transactionAsset.apply(context);
 
 				await expect(transactionAsset.apply(context)).rejects.toThrow(
-					'The name "nazar.lsk" already registered',
+					'The name "nazar.kly" already registered',
 				);
 			});
 		});
@@ -343,7 +343,7 @@ Write tests to check the following:
 Before each test:
 
 * Create a new default account for the LNS application.
-* Add two registered names to the account: `john.lsk` and `doe.lsk`.
+* Add two registered names to the account: `john.kly` and `doe.kly`.
 * Add the newly created account to the `accounts` list of the `StateStore` mock.
 * Spy on the functions `stateStore.chain.get` and `stateStore.chain.set`.
 This allows checking in the tests, if the respective functions have been called or not.
@@ -398,7 +398,7 @@ describe('ReverseLookupAsset', () => {
 		let ownNodes: Buffer[];
 
 		beforeEach(() => {
-			ownNodes = [getNodeForName('john.lsk'), getNodeForName('doe.lsk')];
+			ownNodes = [getNodeForName('john.kly'), getNodeForName('doe.kly')];
 			account = testing.fixtures.createDefaultAccount<LNSAccountProps>([LnsModule]);
 			account.lns.ownNodes = ownNodes;
 
@@ -414,7 +414,7 @@ describe('ReverseLookupAsset', () => {
 			it('should update sender account lns reverse-lookup with given node if not already set', async () => {
 				const context = testing.createApplyAssetContext({
 					stateStore,
-					asset: { name: 'john.lsk' },
+					asset: { name: 'john.kly' },
 					transaction: { senderAddress: account.address } as any,
 				});
 				await transactionAsset.apply(context);
@@ -431,7 +431,7 @@ describe('ReverseLookupAsset', () => {
 				});
 				const context = testing.createApplyAssetContext({
 					stateStore,
-					asset: { name: 'john.lsk' },
+					asset: { name: 'john.kly' },
 					transaction: { senderAddress: account.address } as any,
 				});
 				await transactionAsset.apply(context);
@@ -446,7 +446,7 @@ describe('ReverseLookupAsset', () => {
 			it('should throw error if node to set-lookup is not owned by sender', async () => {
 				const context = testing.createApplyAssetContext({
 					stateStore,
-					asset: { name: 'alpha.lsk' },
+					asset: { name: 'alpha.kly' },
 					transaction: { senderAddress: account.address } as any,
 				});
 
@@ -569,7 +569,7 @@ describe('LnsModule', () => {
 						assetName: 'register',
 						asset: {
 							registerFor: 1,
-							name: 'nazar.lsk',
+							name: 'nazar.kly',
 							ttl: 36000,
 						},
 						fee: BigInt(transactions.convertKLYToBeddows('0.1')),
@@ -580,10 +580,10 @@ describe('LnsModule', () => {
 				await appEnv.waitNBlocks(1);
 
 				await expect(
-					appEnv.ipcClient.invoke('lns:resolveName', { name: 'nazar.lsk' }),
+					appEnv.ipcClient.invoke('lns:resolveName', { name: 'nazar.kly' }),
 				).resolves.toEqual(
 					expect.objectContaining({
-						name: 'nazar.lsk',
+						name: 'nazar.kly',
 						ownerAddress: address.toString('hex'),
 						ttl: 36000,
 						records: [],

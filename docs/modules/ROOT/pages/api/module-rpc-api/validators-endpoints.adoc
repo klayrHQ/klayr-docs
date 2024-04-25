@@ -108,7 +108,7 @@ Specification::
 |`address`
 |string
 |The Klayr32 address to query.
-|lske5sqed53fdcs4m9et28f2k7u9fk6hno9bauday
+|klye5sqed53fdcs4m9et28f2k7u9fk6hno9bauday
 |===
 
 --
@@ -117,7 +117,7 @@ Node CLI::
 --
 [source,bash]
 ----
-klayr-core endpoint:invoke validators_getValidator '{"address":"lske5sqed53fdcs4m9et28f2k7u9fk6hno9bauday"}' --pretty
+klayr-core endpoint:invoke validators_getValidator '{"address":"klye5sqed53fdcs4m9et28f2k7u9fk6hno9bauday"}' --pretty
 ----
 
 --
@@ -133,7 +133,7 @@ curl --location --request POST 'http://localhost:7887/rpc' \
     "id": "1",
     "method": "validators_getValidator",
     "params": {
-         "address":  "lske5sqed53fdcs4m9et28f2k7u9fk6hno9bauday"
+         "address":  "klye5sqed53fdcs4m9et28f2k7u9fk6hno9bauday"
 }'
 ----
 --

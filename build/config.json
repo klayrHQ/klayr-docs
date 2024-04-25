@@ -10,34 +10,7 @@
           "klayr-service"
         ],
         "version": [
-          "!v3",
           "!v4"
-        ]
-      }
-    },
-    {
-      "url": "https://klayr.xyz/documentation/(?=klayr-core(?!/v2)/)",
-      "variables": {
-        "component": [
-          "klayr-sdk",
-          "klayr-core",
-          "klayr-service"
-        ],
-        "version": [
-          "v2"
-        ]
-      }
-    },
-    {
-      "url": "https://klayr.xyz/documentation/(?=klayr-service(?!/v0.3)/)",
-      "variables": {
-        "component": [
-          "klayr-sdk",
-          "klayr-core",
-          "klayr-service"
-        ],
-        "version": [
-          "v2"
         ]
       }
     }

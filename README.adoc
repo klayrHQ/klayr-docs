@@ -7,9 +7,9 @@
 :url_antora_ui_docs: https://docs.antora.org/antora-ui-default/
 :url_antora: https://antora.org/
 :url_antora_directories: https://docs.antora.org/antora/latest/standard-directories/
-:url_docs: https://klayrhq.github.io/klayr-docs
+:url_docs: https://klayr.xyz/documentation
 :url_docs_gitpage: https://klayrhq.github.io/klayr-docs
-:url_github_sdk: https://github.com/KlayrHQ/klayr-sdk/tree/development/docs
+:url_github_sdk: https://github.com/KlayrHQ/klayr-sdk/tree/development/docs/antora
 :url_github_core: https://github.com/KlayrHQ/klayr-core/tree/development/docs/antora
 :url_github_service: https://github.com/KlayrHQ/klayr-service/tree/development/docs/antora
 :url_github_lips: https://github.com/KlayrHQ/lips
@@ -80,7 +80,7 @@ https://github.com/KlayrHQ/klayr-docs/graphs/contributors
 
 == License
 
-Copyright 2016-2023 Klayr
+Copyright 2024 Klayr
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.

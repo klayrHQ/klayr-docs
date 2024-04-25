@@ -258,7 +258,7 @@ Add the following two constants.
 [source,typescript]
 ----
 export const MIN_TTL_VALUE = 60 * 60; // 1 hour
-export const VALID_TLDS = ['lsk'];
+export const VALID_TLDS = ['kly'];
 ----
 
 Now import the constants into the `register` asset, and use them to check the validity of transaction assets:

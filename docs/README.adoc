@@ -3,7 +3,7 @@
 
 Klayr uses https://antora.org/[Antora] as documentation generator.
 
-Click here to see the live version of the https://klayr.one/documentation/klayr-sdk/index.html[Klayr Documentation].
+Click here to see the live version of the https://klayr.io/documentation/klayr-sdk/index.html[Klayr Documentation].
 
 xref:CONTRIBUTING.adoc[How to contribute to the Klayr Documentation]
 

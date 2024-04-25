@@ -188,13 +188,13 @@ When the request is successful, the node will reply with something similar to th
 [
     {
         "ID": 1,
-        "senderAddress": "lsko5v2u2wjswjogxgxdr79c45kewprypouyaky76",
+        "senderAddress": "klyo5v2u2wjswjogxgxdr79c45kewprypouyaky76",
         "message": "Hello from Klayr.",
         "blockHeight": 22
     },
     {
         "ID": 2,
-        "senderAddress": "lsko5v2u2wjswjogxgxdr79c45kewprypouyaky76",
+        "senderAddress": "klyo5v2u2wjswjogxgxdr79c45kewprypouyaky76",
         "message": "Hello from Lightcurve.",
         "blockHeight": 54
     }

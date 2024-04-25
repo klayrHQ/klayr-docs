@@ -95,13 +95,13 @@ import { DB_KEY_EVENT_INFO, DB_LAST_COUNTER_INFO, DB_LAST_HEIGHT_INFO } from './
 // Stores event data in the database.
 export const setEventHelloInfo = async (
 	db: KVStore,
-	_lskAddress: Buffer,
+	_klyAddress: Buffer,
 	_message: string,
 	_eventHeight: number,
 	lastCounter: number,
 ): Promise<void> => {
 	const encodedAddressInfo = codec.encode(offChainEventSchema, {
-		senderAddress: _lskAddress,
+		senderAddress: _klyAddress,
 		message: _message,
 		height: _eventHeight,
 	});

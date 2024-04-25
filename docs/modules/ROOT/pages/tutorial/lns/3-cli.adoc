@@ -89,7 +89,7 @@ Create a new class `LNSResolveCommand`, which extends the class {url_sdk_baseipc
 ./klayr-name-service/lns/src/commands/lns/resolve.ts
 [source,typescript]
 ----
-import { BaseIPCClientCommand } from 'klayr.xyzmander';
+import { BaseIPCClientCommand } from 'klayr-commander';
 
 export class LNSResolveCommand extends BaseIPCClientCommand {
 
@@ -108,7 +108,7 @@ You may also add some examples about the usage of the command, which will be add
 ./klayr-name-service/lns/src/commands/lns/resolve.ts
 [source,typescript]
 ----
-import { BaseIPCClientCommand } from 'klayr.xyzmander';
+import { BaseIPCClientCommand } from 'klayr-commander';
 
 export class LNSResolveCommand extends BaseIPCClientCommand {
     // Available command arguments
@@ -121,7 +121,7 @@ export class LNSResolveCommand extends BaseIPCClientCommand {
 	];
 
 	// Command usage examples
-	static examples = ['lns:resolve jhon.lsk', 'lns:resolve jhon.lsk --pretty'];
+	static examples = ['lns:resolve jhon.kly', 'lns:resolve jhon.kly --pretty'];
 
 	// Executed every time the respective command is executed in the CLI.
 	public async run(): Promise<void> {
@@ -159,7 +159,7 @@ The implementation is analog to the previous command, nevertheless, now use the 
 ./klayr-name-service/lns/src/commands/lns/lookup.ts
 [source,typescript]
 ----
-import { BaseIPCClientCommand } from 'klayr.xyzmander';
+import { BaseIPCClientCommand } from 'klayr-commander';
 
 export class LNSLookupCommand extends BaseIPCClientCommand {
 	static args = [
@@ -238,11 +238,11 @@ If the LNS application is not already running, start it again:
 $ ./bin/run start
 ----
 
-Now resolve the domain name `my-name.lsk`, which was registered previously.
+Now resolve the domain name `my-name.kly`, which was registered previously.
 
 [source,bash]
 ----
-./bin/run lns:resolve my-name.lsk
+./bin/run lns:resolve my-name.kly
 ----
 
 This will return the corresponding LNS object:
@@ -251,7 +251,7 @@ This will return the corresponding LNS object:
 ----
 {
   "ownerAddress":"39cdb96af23eaf431ef3fb8e5da58d9950c3bc96",
-  "name":"my-name.lsk",
+  "name":"my-name.kly",
   "ttl":4000,
   "expiry":1694173170,
   "createdAt":1631101170,
@@ -277,7 +277,7 @@ This will return the corresponding LNS object:
 ----
 {
   "ownerAddress":"39cdb96af23eaf431ef3fb8e5da58d9950c3bc96",
-  "name":"awesome.lsk",
+  "name":"awesome.kly",
   "ttl":3600,
   "expiry":1662734230,
   "createdAt":1631198230,
@@ -290,7 +290,7 @@ This will return the corresponding LNS object:
 
 ====
 Each account can register multiple domain names to their account.
-The address lookup returns a different object for the provided address, because the account has set `awesome.lsk` to be the default domain name for this account.
+The address lookup returns a different object for the provided address, because the account has set `awesome.kly` to be the default domain name for this account.
 ====
 
 How to display the topic reference:

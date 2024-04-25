@@ -32,7 +32,7 @@ Specification::
 |`address`
 |string
 |The Klayr32 address to query.
-|lsk24cd35u4jdq8szo3pnsqe5dsxwrnazyqqqg5eu
+|kly24cd35u4jdq8szo3pnsqe5dsxwrnazyqqqg5eu
 |===
 
 --
@@ -41,7 +41,7 @@ Node CLI::
 --
 [source,bash]
 ----
-klayr-core endpoint:invoke auth_getAuthAccount '{ "address": "lsk24cd35u4jdq8szo3pnsqe5dsxwrnazyqqqg5eu" }' --pretty
+klayr-core endpoint:invoke auth_getAuthAccount '{ "address": "kly24cd35u4jdq8szo3pnsqe5dsxwrnazyqqqg5eu" }' --pretty
 ----
 
 --
@@ -57,7 +57,7 @@ curl --location --request POST 'http://localhost:7887/rpc' \
     "id": "1",
     "method": "auth_getAuthAccount",
     "params": {
-         "address": "lsk24cd35u4jdq8szo3pnsqe5dsxwrnazyqqqg5eu"
+         "address": "kly24cd35u4jdq8szo3pnsqe5dsxwrnazyqqqg5eu"
     }
 }'
 ----

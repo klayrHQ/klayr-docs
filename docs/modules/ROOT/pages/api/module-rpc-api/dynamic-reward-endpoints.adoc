@@ -39,7 +39,7 @@ Specification::
 |`validatorAddress`
 |string
 |The Klayr32 address of a validator.
-|lskguo9kqnea2zsfo3a6qppozsxsg92nuuma3p7ad
+|klyguo9kqnea2zsfo3a6qppozsxsg92nuuma3p7ad
 |===
 --
 Node CLI::
@@ -47,7 +47,7 @@ Node CLI::
 --
 [source,bash]
 ----
-klayr-core endpoint:invoke dynamicReward_getExpectedValidatorRewards '{"validatorAddress":"lskguo9kqnea2zsfo3a6qppozsxsg92nuuma3p7ad"}' --pretty
+klayr-core endpoint:invoke dynamicReward_getExpectedValidatorRewards '{"validatorAddress":"klyguo9kqnea2zsfo3a6qppozsxsg92nuuma3p7ad"}' --pretty
 ----
 
 --
@@ -63,7 +63,7 @@ curl --location '127.0.0.1:7887/rpc' \
     "id": "1",
     "method": "dynamicReward_getExpectedValidatorRewards",
     "params": {
-         "validatorAddress": "lskguo9kqnea2zsfo3a6qppozsxsg92nuuma3p7ad"
+         "validatorAddress": "klyguo9kqnea2zsfo3a6qppozsxsg92nuuma3p7ad"
     }
 }'
 ----
