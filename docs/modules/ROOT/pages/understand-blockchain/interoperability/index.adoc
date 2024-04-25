@@ -274,9 +274,14 @@ Example of interoperability between the Klayr mainchain and sidechains.
 //video::BTtLbhSgubA?t=827[youtube,500,300,align=center]
 
 .Additional educational resources to learn about the Klayr interoperability solution
+
+//todo Check youtube and research blogs
+////
 [TIP]
 ====
 Check out the {url_yt_klayr}[Klayr YouTube channel^] to see more videos about Klayr's interoperability solution.
 
 The Klayr blog provides additional resources about the Klayr interoperability solution, structured in blog posts: {url_blog_research}[Klayr Blog > Research^]
 ====
+////
+

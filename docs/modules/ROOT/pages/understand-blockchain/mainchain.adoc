@@ -4,13 +4,10 @@ Mona Bärenfänger <mona@lightcurve.io>
 :idseparator: -
 :toc: preamble
 //URLs
-:url_klayr_chat: https://klayr.chat
-:url_observer: https://klayr.observer/
-:url_observer_testnet: https://testnet.klayr.observer/
-:url_observer_betanet: https://betanet.klayr.observer/
+:url_klayr_chat: http://klayr.chat
 :url_explorer: https://explorer.klayr.xyz
-:url_explorer_testnet: https://testnet.explorer.klayr.xyz
-:url_explorer_betanet: https://betanet.explorer.klayr.xyz
+:url_explorer_testnet: https://testnet-explorer.klayr.xyz
+:url_explorer_betanet: https://betanet-explorer.klayr.xyz
 :url_faucet_testnet: https://testnet-faucet.klayr.xyz/
 :url_faucet_betanet: https://betanet-faucet.klayr.xyz/
 :url_klayr_desktop: https://klayr.xyz/wallet
@@ -78,8 +75,8 @@ xref:{url_core}[Klayr Core] is the blockchain client that is required to be inst
 |<<proof-of-stake-testnet,PoS (Testnet)>>
 
 |Block time
-|10 seconds
-|10 seconds
+|7 seconds
+|7 seconds
 
 |Maximum block size
 | 15 kB
@@ -115,11 +112,9 @@ xref:{url_core}[Klayr Core] is the blockchain client that is required to be inst
 
 |Explorer
 a|
-* {url_observer}[^]
 * {url_explorer}[^]
 
 a|
-* {url_observer_testnet}[^]
 * {url_explorer_testnet}[^]
 
 |Klayr service API base URLs
@@ -163,10 +158,10 @@ Configurations of the {url_typedoc_pos}[PoS module^] of Klayr Mainnet mainchain.
 |100000000000 Beddows (1000 KLY)
 
 |xref:{url_pos_validator}[Round] length
-|103 blocks
+|53 blocks
 
 |Number of active validators
-|101
+|51
 
 |Number of standby validators
 |2
@@ -248,13 +243,13 @@ Configurations of the {url_typedoc_pos}[PoS module^] of the Klayr Testnet mainch
 |20
 
 |xref:{url_pos_validator}[Round] length
-|103 blocks
+|53 blocks
 
 |Minimum weight for standby delegates
 |1000 KLY
 
 |Number of active validators
-|101
+|51
 
 |Number of standby validators
 |2
@@ -329,7 +324,6 @@ The most important properties of the Klayr Betanet are listed in the table below
 
 |Explorer
 a|
-* {url_observer_betanet}[^]
 * {url_explorer_betanet}[^]
 
 |Klayr service API base URLs
@@ -388,7 +382,7 @@ IMPORTANT: Please note that *all* configurations displayed in <<table6,Table 6>>
 |<<proof-of-stake-mainnet,PoS>>
 
 |Block time
-|10 seconds
+|7 seconds
 
 |Maximum block size
 | 15 kB
@@ -431,13 +425,13 @@ Default configurations of the {url_typedoc_pos}[PoS module^] of Klayr Testnet ma
 |20
 
 |xref:{url_pos_validator}[Round] length
-|103 blocks
+|53 blocks
 
 |Minimum weight for standby delegates
 |1000 KLY
 
 |Number of active validators
-|101
+|51
 
 |Number of standby validators
 |2
