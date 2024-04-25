@@ -7,35 +7,27 @@ asciidoc:
   attributes:
     plantuml-server-url: http://www.plantuml.com/plantuml
     imagesdir: ~
-#    description: ~
     idprefix: ''
     idseparator: '-'
     page-pagination: true
   extensions:
-#  - asciidoctor-emoji
-#  - asciidoctor-plantuml
-#  - asciidoctor-chart
-  - ./lib/tabs-block/extension.js
+    - ./lib/tabs-block/extension.js
 content:
   sources:
-  - url: https://github.com/KlayrHQ/klayr-docs.git
-    branches: [docs-sdk, docs-sdk-v5, docs-service-v0.6, docs-core-v3]
-  - url: https://github.com/KlayrHQ/klayr-docs.git
-    branches: [ main, docs-klayr-v3 ]
-    start_path: docs
-  #- url: https://github.com/KlayrHQ/klayr-sdk.git
-  #  branches: [add-docs]
-  #  start_path: docs
-  - url: https://github.com/KlayrHQ/klayr-core.git
-    branches: [ development ]
-    start_path: docs/antora
-  - url: https://github.com/KlayrHQ/klayr-service.git
-    branches: [ development ]
-    start_path: docs/antora
+    - url: https://github.com/KlayrHQ/klayr-docs.git
+      branches: [docs-sdk]
+    - url: https://github.com/KlayrHQ/klayr-docs.git
+      branches: [ main ]
+      start_path: docs
+    - url: https://github.com/KlayrHQ/klayr-core.git
+      branches: [ development ]
+      start_path: docs/antora
+    - url: https://github.com/KlayrHQ/klayr-service.git
+      branches: [ development ]
+      start_path: docs/antora
 ui:
   bundle:
-   url: https://github.com/KlayrHQ/klayr-docs/raw/development/ui/build/ui-bundle.zip
-#   url: ../ui/build/ui-bundle.zip
-   snapshot: true
+    url: https://github.com/KlayrHQ/klayr-docs/raw/development/ui/build/ui-bundle.zip
+    snapshot: true
 output:
   dir: ../live

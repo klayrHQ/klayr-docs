@@ -10,5 +10,6 @@ searchdocs-scraper/docsearch-scraper
 searchdocs-scraper/Pipfile
 searchdocs-scraper/Pipfile.lock
 searchdocs-scraper/.env
-local/ 
+local/
 preview-site.yml
+typedoc/
