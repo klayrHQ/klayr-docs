@@ -17,7 +17,7 @@ Muhammad Talha <muhammad.talha@lightcurve.io>
 :url_chainConnector_authorize: api/plugin-rpc-api/chain-connector-api.adoc#chainconnector_authorize
 :url_system_getmetadata: api/klayr-node-rpc.adoc#system_getmetadata
 
-// :fn_mainnet: footnote:witness[For more information about setting up a sidechain node, see the xref:{url_mainnet_node}[How to set up a Lisk Mainnet node] section.]
+// :fn_mainnet: footnote:witness[For more information about setting up a sidechain node, see the xref:{url_mainnet_node}[How to set up a Klayr Mainnet node] section.]
 :url_lip_53: https://github.com/KlayrHQ/lips/blob/main/proposals/lip-0053.md#appendix
 :url_lip_43: https://github.com/KlayrHQ/lips/blob/main/proposals/lip-0043.md
 :url_lip_40: https://github.com/KlayrHQ/lips/blob/main/proposals/lip-0040.md#module-store-prefix
@@ -281,7 +281,7 @@ Sample configuration::
 {
     // Default configurations
     "system": {
-		"dataPath": "~/.lisk/pos-sidechain-example-one",
+		"dataPath": "~/.klayr/pos-sidechain-example-one",
 		"keepEventsForHeights": 300,
 		"logLevel": "info",
 

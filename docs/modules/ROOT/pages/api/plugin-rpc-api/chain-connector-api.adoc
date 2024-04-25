@@ -298,7 +298,7 @@ Node CLI::
 --
 [source,bash]
 ----
-lisk-core endpoint:invoke chainConnector_getBlockHeaders --pretty
+klayr-core endpoint:invoke chainConnector_getBlockHeaders --pretty
 ----
 
 --
