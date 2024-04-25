@@ -48,29 +48,29 @@ At the same time, the maintenance effort of PoS blockchains is significantly hig
 
 === Validator selection
 
-Blocks in the Klayr PoS protocol are grouped together into batches of 103 consecutive blocks, which are referred to as a *round*.
+Blocks in the Klayr PoS protocol are grouped together into batches of 53 consecutive blocks, which are referred to as a *round*.
 
 A *validator* is any account that successfully submits a Register Validator transaction.
 
 TIP: For more info on how to become a validator, check out the corresponding guide: xref:{url_run_validator}[]
 
-Every round, a new *validator list* is generated, which is an ordered list of 103 validators who are allowed to generate a block in that round.
+Every round, a new *validator list* is generated, which is an ordered list of 53 validators who are allowed to generate a block in that round.
 The order of the validators in the list is completely random.
 
-The top 101 validators with the most <<validator-weight>> are also called *active validators*.
-To become an active validator, a validator needs to increase their validator weight, until they are among the top 101 validators with the most validator weight.
+The top 51 validators with the most <<validator-weight>> are also called *active validators*.
+To become an active validator, a validator needs to increase their validator weight, until they are among the top 51 validators with the most validator weight.
 
 The remaining 2 validator spots in each round are given to two randomly selected *standby validators*.
 
-Starting with the first validator on the validator list, every validator has a *10 second block slot window* in which they can generate a block and broadcast it to the network.
+Starting with the first validator on the validator list, every validator has a *7 second block slot window* in which they can generate a block and broadcast it to the network.
 
 [NOTE]
 ====
-If every validator on the list manages to generate a block in their block slot building on the block by the previous validator, a round lasts 1,030 seconds (around 17 minutes).
+If every validator on the list manages to generate a block in their block slot building on the block by the previous validator, a round lasts 371 seconds (around 6 minutes).
 
 It can happen that a validator *misses the block slot*, meaning that there is no block added to the chain by the validator in their designated block slot.
-Consequently, the end of the validator list is reached before 103 blocks are added to the chain.
-In this case, block slots are assigned again from the beginning of the validator list until 103 blocks are generated.
+Consequently, the end of the validator list is reached before 53 blocks are added to the chain.
+In this case, block slots are assigned again from the beginning of the validator list until 53 blocks are generated.
 ====
 
 === Staking and validator weight
@@ -126,14 +126,15 @@ Validators get a new random position on the list for each round.
 The list is generated as follows:
 
 . Compute two values `randomSeed1` and `randomSeed2` from the values provided by the validators in the `seedReveal` property of the block headers of the previous 3 rounds.
-. Add the 101 active validators to the list.
+. Add the 51 active validators to the list.
 Moreover, add 2 standby validators to the list using a random selection proportional to the validator weight.
 The random selection utilizes `randomSeed1` and `randomSeed2`, respectively.
-The computation of 101 active validators as well as the standby validator selection is based on the validator weights from two rounds before.
+The computation of 51 active validators as well as the standby validator selection is based on the validator weights from two rounds before.
 . Shuffle the list using `randomSeed1`.
 
 .How the validator list is generated for a round
-image::understand-blockchain/validator-list.jpeg[validator list]
+//todo Edit image
+//image::understand-blockchain/validator-list.jpeg[validator list]
 
 The random selection of two standby validators and the commit-reveal scheme that the `seedReveal` values provided by the validators in the block header must follow are described in detail in {url_github_lip_22}[LIP 0022^].
 
@@ -141,7 +142,7 @@ The random selection of two standby validators and the commit-reveal scheme that
 
 As a fail-safe mechanism, a validator that does not generate blocks for an extended period is banned.
 This is to avoid the situation where a validator who is not running a node leads to frequently missing block slots.
-More specifically, a validator is banned in case they miss 50 consecutive blocks, and the height of the last block they generated differs by more than 260,000 from the current height of the chain (the block is 30 days old).
+More specifically, a validator is banned in case they miss 50 consecutive blocks, and the height of the last block they generated differs by more than 260,000 from the current height of the chain (the block is 21 days old).
 As soon as a validator is banned, they are excluded from the validator weight snapshots used for the validator list computation.
 The ban is permanent, but the validator account holder can move their funds to a different account and register a new validator.
 
