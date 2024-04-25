@@ -1296,7 +1296,7 @@ where `<APP>` is the name of the sidechain app.
 IMPORTANT: Please refer to the {url_github_appregistry_readme}[README.md^] for all important details about the app registration process, like the required image formats and sizes.
 
 `app.json`::
-Off-chain metadata of a sidechain, to be used by client applications such as Klayr Desktop, Mobile and other explorers.
+Off-chain metadata of a sidechain, to be used by client applications such as Klayr Desktop and other explorers.
 
 .Example: app.json
 [%collapsible]

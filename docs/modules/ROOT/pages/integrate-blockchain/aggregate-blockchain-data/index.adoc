@@ -32,7 +32,7 @@ Muhammad Talha <muhammad.talha@lightcurve.io>
 
 xref:{url_service_index}[Klayr Service] is a web application middleware that allows interaction with various blockchain networks based on the Klayr protocol.
 
-Data delivery to UI clients like {url_klayr_wallet}[Klayr Desktop^], {url_klayr_wallet}[Klayr Mobile^], or a custom frontend like xref:{url_integrate_ui}[Hello Frontend] is the primary goal of Klayr Service.
+Data delivery to UI clients like {url_klayr_wallet}[Klayr Desktop^], or a custom frontend like xref:{url_integrate_ui}[Hello Frontend] is the primary goal of Klayr Service.
 Klayr Service offers users a lot more information and endpoints as compared to node APIs, including geolocation and different statistics about network utilization.
 In addition, Klayr Service makes it possible to access all the live blockchain data such as the Klayr SDK API.
 

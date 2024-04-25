@@ -7,7 +7,7 @@
 Welcome to the official Klayr documentation!
 
 [.overview-banner]
-.Getting started image:bannerwhite.svg[]
+.Getting started image:klayrbanner-whitespace.png[Klayr Swirls,390]
 ****
 
 ****
