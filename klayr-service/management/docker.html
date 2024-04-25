@@ -76,7 +76,7 @@
         <div class="navbar-item has-dropdown is-hoverable">
           <a class="navbar-link" href="#">Explorers</a>
           <div class="navbar-dropdown">
-            <a class="navbar-item" href="https://explorer.klayr.xyz/" target="_blank">Klayr Explorer</a>
+            <a class="navbar-item" href="https://explorer.klayr.xyz" target="_blank">Klayr Explorer</a>
           </div>
         </div>
         <div class="navbar-item has-dropdown is-hoverable">
@@ -679,50 +679,50 @@ In case the database needs to be flushed please execute the <code>make down</cod
 <p>Checkout the version with <strong><code>git checkout &lt;tag&gt;</code></strong></p>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">git checkout v0.7.0</code></pre>
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">git checkout v0.7.7</code></pre>
 </div>
 </div>
 </li>
 <li>
 <p>Update <code>docker-compose.yml</code> to download the specific image versions from the DockerHub as shown below.
-Update specified images with the desired version, for example <code>0.7.0</code>.</p>
+Update specified images with the desired version, for example <code>0.7.7</code>.</p>
 <div class="listingblock">
 <div class="title">docker-compose.yml</div>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">blockchain-app-registry:
-    image: klayr/service_blockchain_app_registry:0.7.0
+    image: klayr/service_blockchain_app_registry:0.7.7
     ...
 
   blockchain-connector:
-    image: klayr/service_blockchain_connector:0.7.0
+    image: klayr/service_blockchain_connector:0.7.7
     ...
 
   blockchain-indexer:
-    image: klayr/service_blockchain_indexer:0.7.0
+    image: klayr/service_blockchain_indexer:0.7.7
     ...
 
   blockchain-coordinator:
-    image: klayr/service_blockchain_coordinator:0.7.0
+    image: klayr/service_blockchain_coordinator:0.7.7
     ...
 
   transaction-statistics:
-    image: klayr/service_transaction_statistics:0.7.0
+    image: klayr/service_transaction_statistics:0.7.7
     ...
 
   fee-estimator:
-    image: klayr/service_fee_estimator:0.7.0
+    image: klayr/service_fee_estimator:0.7.7
     ...
 
   gateway:
-    image: klayr/service_gateway:0.7.0
+    image: klayr/service_gateway:0.7.7
     ...
 
   market:
-    image: klayr/service_market:0.7.0
+    image: klayr/service_market:0.7.7
     ...
 
   export:
-    image: klayr/service_export:0.7.0</code></pre>
+    image: klayr/service_export:0.7.7</code></pre>
 </div>
 </div>
 </li>
@@ -768,7 +768,7 @@ In case the database needs to be flushed please execute the <code>make down</cod
 <p>Checkout the version with <strong><code>git checkout &lt;tag&gt;</code></strong></p>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">git checkout v0.7.0</code></pre>
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">git checkout v0.7.7</code></pre>
 </div>
 </div>
 </li>
@@ -808,13 +808,12 @@ In case the database needs to be flushed please execute the <code>make down</cod
 </div>
 <footer class="footer">
   <div class="footerdiv">
-    <p>© 2023 Klayr</p>
+    <p>© 2024 Klayr</p>
     <!-- <div class="community-section">
       <p class="community-section__text">Follow Klayr on: </p>
       <div class="community-section__icons"> -->
     <div class="community_icons">
       <a href="https://klayr.chat" title="Discord" target="_blank" class="footer_icon icon-discord"><p>Discord</p></a>
-      <a href="https://dev.klayr.xyz" title="Discourse" target="_blank" class="footer_icon icon-discourse"><p>Discourse</p></a>
       <a href="https://github.com/KlayrHQ" title="GitHub" target="_blank" class="footer_icon icon-github"><p>GitHub</p></a>
       <!--    </div> -->
     </div>

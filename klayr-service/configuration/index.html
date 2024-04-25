@@ -75,7 +75,7 @@
         <div class="navbar-item has-dropdown is-hoverable">
           <a class="navbar-link" href="#">Explorers</a>
           <div class="navbar-dropdown">
-            <a class="navbar-item" href="https://explorer.klayr.xyz/" target="_blank">Klayr Explorer</a>
+            <a class="navbar-item" href="https://explorer.klayr.xyz" target="_blank">Klayr Explorer</a>
           </div>
         </div>
         <div class="navbar-item has-dropdown is-hoverable">
@@ -275,7 +275,7 @@ On this page, we will thoroughly discuss the configuration options available for
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-The actual <a href="https://github.com/KlayrHQ/klayr-service/blob/release/0.7.0/ecosystem.config.js" target="_blank" rel="noopener"><code><strong>ecosystem.config.js</strong></code></a> file for Klayr Service can be found in the <a href="https://github.com/KlayrHQ/klayr-service" target="_blank" rel="noopener">klayr-service</a> GitHub repository.
+The actual <a href="https://github.com/KlayrHQ/klayr-service/blob/release/0.7.7/ecosystem.config.js" target="_blank" rel="noopener"><code><strong>ecosystem.config.js</strong></code></a> file for Klayr Service can be found in the <a href="https://github.com/KlayrHQ/klayr-service" target="_blank" rel="noopener">klayr-service</a> GitHub repository.
 </td>
 </tr>
 </table>
@@ -725,14 +725,14 @@ Requires <code>KLAYR_APP_DATA_PATH</code> to be set.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>GEOIP_JSON</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">URL of the GeoIP server.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="https://geoip.klayr.com/json" target="_blank" rel="noopener">GeoIP Server&#8217;s URL</a></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="https://geoip.klayr.xyz/json" target="_blank" rel="noopener">GeoIP Server&#8217;s URL</a></code></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>GENESIS_BLOCK_URL</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">URL of the Klayr SDK-based application&#8217;s genesis block.
 Only to be used when the genesis block is large enough to be transmitted over API calls within the timeout.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="https://downloads.klayr.com/klayr/mainnet/genesis_block.json.tar.gz" target="_blank" rel="noopener">Genesis block URL</a></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="https://downloads.klayr.xyz/klayr/mainnet/genesis_block.json.tar.gz" target="_blank" rel="noopener">Genesis block URL</a></code></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>ENABLE_BLOCK_CACHING</code></p></td>
@@ -783,8 +783,8 @@ By default, it is set to <code>3</code>.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>ENDPOINT_INVOKE_RETRY_DELAY</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">number</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Delay (in milliseconds) between each endpoint invocation request retry.
-By default, it is set to <code>50</code>.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>50</code></p></td>
+By default, it is set to <code>1000</code>.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>1000</code></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>CONNECTOR_EXIT_DELAY_IN_HOURS</code></p></td>
@@ -841,7 +841,7 @@ By default, it is set to an empty string <code>''</code>.</p></td>
         // --- Remember to set the properties below
         SERVICE_BROKER: 'redis://klayr:password@127.0.0.1:6379/0',
         KLAYR_APP_WS: 'ws://127.0.0.1:7887',
-        GEOIP_JSON: 'https://geoip.klayr.com/json',
+        GEOIP_JSON: 'https://geoip.klayr.xyz/json',
         // ENABLE_BLOCK_CACHING: true,
         // EXPIRY_IN_HOURS: 12,
         // USE_KLAYR_IPC_CLIENT: true,
@@ -854,7 +854,7 @@ By default, it is set to an empty string <code>''</code>.</p></td>
         // SERVICE_LOG_GELF: false,
         // SERVICE_LOG_FILE: false,
         // DOCKER_HOST: 'local',
-        // GENESIS_BLOCK_URL: 'https://downloads.klayr.com/klayr/mainnet/genesis_block.json.tar.gz',
+        // GENESIS_BLOCK_URL: 'https://downloads.klayr.xyz/klayr/mainnet/genesis_block.json.tar.gz',
         // JOB_INTERVAL_CACHE_CLEANUP: 0,
         // JOB_SCHEDULE_CACHE_CLEANUP: '0 */12 * * *',
         // JOB_INTERVAL_REFRESH_PEERS: 60,
@@ -1028,7 +1028,7 @@ Must match the value supplied for the <code>coordinator</code> microservice.</p>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>KLAYR_STATIC</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">URL of Klayr static assets.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="https://static-data.klayr.com" class="bare">https://static-data.klayr.com</a></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="https://static-data.klayr.xyz" class="bare">https://static-data.klayr.xyz</a></code></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>JOB_INTERVAL_DELETE_SERIALIZED_EVENTS</code></p></td>
@@ -1167,7 +1167,7 @@ By default, it is set to <code>100000</code>.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>MAINCHAIN_SERVICE_URL</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Mainchain service URL for custom deployments.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="https://service.klayr.com" class="bare">https://service.klayr.com</a></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="https://service.klayr.xyz" class="bare">https://service.klayr.xyz</a></code></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>INVOKE_ALLOWED_METHODS</code></p></td>
@@ -1262,8 +1262,8 @@ To allow invocation of specific methods, set it similar to <code>chain_getBlocks
         // SERVICE_LOG_GELF: 'false',
         // SERVICE_LOG_FILE: 'false',
         // DOCKER_HOST: 'local',
-        // MAINCHAIN_SERVICE_URL: 'https://service.klayr.com',
-        // KLAYR_STATIC: 'https://static-data.klayr.com',
+        // MAINCHAIN_SERVICE_URL: 'https://service.klayr.xyz',
+        // KLAYR_STATIC: 'https://static-data.klayr.xyz',
         // DEVNET_MAINCHAIN_URL: 'http://devnet-service.klayrdev.net:9901',
         // ESTIMATES_BUFFER_BYTES_LENGTH: 0,
         // ACCOUNT_BALANCE_UPDATE_BATCH_SIZE: 1000,
@@ -1695,7 +1695,7 @@ All Fiat currencies used here need to be comma separated.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Exchange rates exposed to the Gateway.
 The values listed here must be comma separated.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>KLY_BTC,KLY_EUR,BTC_CHF</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>LSK_BTC,LSK_EUR,BTC_CHF</code></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>EXCHANGERATESAPI_IO_API_KEY</code></p></td>
@@ -1794,7 +1794,7 @@ By default, it is set to an empty string <code>''</code>.</p></td>
         SERVICE_BROKER: 'redis://klayr:password@127.0.0.1:6379/0',
         SERVICE_MARKET_REDIS: 'redis://klayr:password@127.0.0.1:6379/2',
         SERVICE_MARKET_FIAT_CURRENCIES: 'EUR,USD,CHF,GBP,RUB,PLN,JPY,AUD,GBP,INR',
-        SERVICE_MARKET_TARGET_PAIRS: 'KLY_BTC,KLY_EUR,KLY_USD,KLY_CHF,KLY_PLN,KLY_JPY,KLY_AUD,KLY_GBP,KLY_INR,BTC_EUR,BTC_USD,BTC_CHF',
+        SERVICE_MARKET_TARGET_PAIRS: 'LSK_BTC,LSK_EUR,LSK_USD,LSK_CHF,LSK_PLN,LSK_JPY,LSK_AUD,LSK_GBP,LSK_INR,BTC_EUR,BTC_USD,BTC_CHF',
         // EXCHANGERATESAPI_IO_API_KEY: ''
         // SERVICE_BROKER_TIMEOUT: 10,
         // SERVICE_LOG_LEVEL: 'info',
@@ -2010,13 +2010,12 @@ By default, it is set to run daily at <code>04:45 am</code>.</p></td>
 </div>
 <footer class="footer">
   <div class="footerdiv">
-    <p>© 2023 Klayr</p>
+    <p>© 2024 Klayr</p>
     <!-- <div class="community-section">
       <p class="community-section__text">Follow Klayr on: </p>
       <div class="community-section__icons"> -->
     <div class="community_icons">
       <a href="https://klayr.chat" title="Discord" target="_blank" class="footer_icon icon-discord"><p>Discord</p></a>
-      <a href="https://dev.klayr.xyz" title="Discourse" target="_blank" class="footer_icon icon-discourse"><p>Discourse</p></a>
       <a href="https://github.com/KlayrHQ" title="GitHub" target="_blank" class="footer_icon icon-github"><p>GitHub</p></a>
       <!--    </div> -->
     </div>

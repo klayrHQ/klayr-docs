@@ -75,7 +75,7 @@
         <div class="navbar-item has-dropdown is-hoverable">
           <a class="navbar-link" href="#">Explorers</a>
           <div class="navbar-dropdown">
-            <a class="navbar-item" href="https://explorer.klayr.xyz/" target="_blank">Klayr Explorer</a>
+            <a class="navbar-item" href="https://explorer.klayr.xyz" target="_blank">Klayr Explorer</a>
           </div>
         </div>
         <div class="navbar-item has-dropdown is-hoverable">
@@ -254,7 +254,7 @@
 <p><a href="https://github.com/KlayrHQ/klayr-service" target="_blank" rel="noopener">Klayr Service</a> is a web application middleware that allows interaction with various blockchain networks based on the Klayr protocol.</p>
 </div>
 <div class="paragraph">
-<p>The main focus of Klayr Service is to provide data to the UI clients such as <a href="https://klayr.com/wallet">Klayr Desktop</a> and <a href="https://klayr.com/wallet">Klayr Mobile</a>.
+<p>The main focus of Klayr Service is to provide data to the UI clients such as <a href="https://klayr.xyz/wallet">Klayr Desktop</a>.
 Klayr Service makes it possible to access all blockchain live data in a similar way to the regular Klayr SDK API, and in addition provides users with much more detailed in-depth information and endpoints, such as geolocation and various statistics regarding network usage.</p>
 </div>
 <div class="paragraph">
@@ -430,7 +430,7 @@ This API can be utilized to build powerful wallets and user interfaces for block
 <div class="ulist">
 <ul>
 <li>
-<p>Public API base URL: <code><a href="https://service.klayr.com/api/v3" class="bare">https://service.klayr.com/api/v3</a></code></p>
+<p>Public API base URL: <code><a href="https://service.klayr.xyz/api/v3" class="bare">https://service.klayr.xyz/api/v3</a></code></p>
 </li>
 <li>
 <p>API specification: <a href="../api/klayr-service-http.html" class="xref page">Klayr Service HTTP API reference (Mainnet)</a></p>
@@ -443,7 +443,7 @@ This API can be utilized to build powerful wallets and user interfaces for block
 <div class="ulist">
 <ul>
 <li>
-<p>Public API base URL: <code><a href="https://testnet-service.klayr.com/api/v3" class="bare">https://testnet-service.klayr.com/api/v3</a></code></p>
+<p>Public API base URL: <code><a href="https://testnet-service.klayr.xyz/api/v3" class="bare">https://testnet-service.klayr.xyz/api/v3</a></code></p>
 </li>
 <li>
 <p>API specification: <a href="../api/klayr-service-http-testnet.html" class="xref page">Klayr Service HTTP API reference (Testnet)</a></p>
@@ -469,10 +469,10 @@ This API can be utilized to build powerful wallets and user interfaces for block
 <div class="ulist">
 <ul>
 <li>
-<p><a href="https://service.klayr.com/api/v3/transactions" class="bare">https://service.klayr.com/api/v3/transactions</a></p>
+<p><a href="https://service.klayr.xyz/api/v3/transactions" class="bare">https://service.klayr.xyz/api/v3/transactions</a></p>
 </li>
 <li>
-<p><a href="https://testnet-service.klayr.com/api/v3/transactions" class="bare">https://testnet-service.klayr.com/api/v3/transactions</a></p>
+<p><a href="https://testnet-service.klayr.xyz/api/v3/transactions" class="bare">https://testnet-service.klayr.xyz/api/v3/transactions</a></p>
 </li>
 </ul>
 </div>
@@ -485,7 +485,7 @@ This API can be utilized to build powerful wallets and user interfaces for block
 <div class="sect2">
 <h3 id="the-websocket-json-rpc-api"><a class="anchor" href="#the-websocket-json-rpc-api"></a>The WebSocket JSON-RPC API</h3>
 <div class="paragraph">
-<p>The <a href="https://github.com/KlayrHQ/klayr-service/blob/v0.7.0-rc.2/docs/api/version3.md" target="_blank" rel="noopener">WebSocket JSON-RPC API</a> provides blockchain data in standardized JSON format.
+<p>The <a href="https://github.com/KlayrHQ/klayr-service/blob/v0.7.7/docs/api/version3.md" target="_blank" rel="noopener">WebSocket JSON-RPC API</a> provides blockchain data in standardized JSON format.
 The API uses the Socket.IO library and is compatible with JSON-RPC 2.0 standards.
 This enables efficient and seamless integration within the Klayr blockchain network, coupled with offering a more responsive, and efficient alternative to the traditional HTTP based APIs.</p>
 </div>
@@ -501,7 +501,7 @@ The only exception is the <code>/export/download</code> endpoint.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Public API: <code>wss://service.klayr.com/rpc-v3</code></p>
+<p>Public API: <code>wss://service.klayr.xyz/rpc-v3</code></p>
 </li>
 </ul>
 </div>
@@ -511,7 +511,7 @@ The only exception is the <code>/export/download</code> endpoint.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Public API: <code>wss://testnet-service.klayr.com/rpc-v3</code></p>
+<p>Public API: <code>wss://testnet-service.klayr.xyz/rpc-v3</code></p>
 </li>
 </ul>
 </div>
@@ -522,7 +522,7 @@ The only exception is the <code>/export/download</code> endpoint.</p>
 <div class="sect2">
 <h3 id="the-subscribe-api"><a class="anchor" href="#the-subscribe-api"></a>The Subscribe API</h3>
 <div class="paragraph">
-<p>The <a href="https://github.com/KlayrHQ/klayr-service/blob/v0.7.0-rc.2/docs/api/websocket_subscribe_api.md" target="_blank" rel="noopener">Subscribe API</a> is an event-driven API that uses a two-way streaming connection, which can notify the client about new data instantly as it arrives.
+<p>The <a href="https://github.com/KlayrHQ/klayr-service/blob/v0.7.7/docs/api/websocket_subscribe_api.md" target="_blank" rel="noopener">Subscribe API</a> is an event-driven API that uses a two-way streaming connection, which can notify the client about new data instantly as it arrives.
 It is responsible for updating users regarding changes in the blockchain network and markets.
 The Subscribe API is particularly useful for providing the user with real-time data, e.g., real-time monitoring systems, notification services, and applications that need to react immediately to specific events that occur on the blockchain.</p>
 </div>
@@ -545,7 +545,7 @@ Check out the <a href="../api/klayr-service-pubsub.html" class="xref page">Publi
 <div class="ulist">
 <ul>
 <li>
-<p>Public API: <code>wss://service.klayr.com/blockchain</code></p>
+<p>Public API: <code>wss://service.klayr.xyz/blockchain</code></p>
 </li>
 </ul>
 </div>
@@ -555,7 +555,7 @@ Check out the <a href="../api/klayr-service-pubsub.html" class="xref page">Publi
 <div class="ulist">
 <ul>
 <li>
-<p>Public API: <code>wss://testnet-service.klayr.com/blockchain</code></p>
+<p>Public API: <code>wss://testnet-service.klayr.xyz/blockchain</code></p>
 </li>
 </ul>
 </div>
@@ -574,13 +574,12 @@ Check out the <a href="../api/klayr-service-pubsub.html" class="xref page">Publi
 </div>
 <footer class="footer">
   <div class="footerdiv">
-    <p>© 2023 Klayr</p>
+    <p>© 2024 Klayr</p>
     <!-- <div class="community-section">
       <p class="community-section__text">Follow Klayr on: </p>
       <div class="community-section__icons"> -->
     <div class="community_icons">
       <a href="https://klayr.chat" title="Discord" target="_blank" class="footer_icon icon-discord"><p>Discord</p></a>
-      <a href="https://dev.klayr.xyz" title="Discourse" target="_blank" class="footer_icon icon-discourse"><p>Discourse</p></a>
       <a href="https://github.com/KlayrHQ" title="GitHub" target="_blank" class="footer_icon icon-github"><p>GitHub</p></a>
       <!--    </div> -->
     </div>
