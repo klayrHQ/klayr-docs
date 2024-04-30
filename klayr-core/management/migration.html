@@ -1163,6 +1163,18 @@ If you used the migrator with the <code>--auto-start-klayr-core-v4</code> flag, 
 </div>
 <div class="sect3">
 <h4 id="create-the-validator-keys"><a class="anchor" href="#create-the-validator-keys"></a>2.4.2. Create the validator keys</h4>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Most likely you already have a <code>keys.json</code> file from the Lisk Core v4 node. Skip this step if you have already have a <code>keys.json</code> file.
+</td>
+</tr>
+</table>
+</div>
 <div class="paragraph">
 <p>It is possible to generate all relevant validator keys to enable block generation from the account passphrase.</p>
 </div>
@@ -1306,6 +1318,21 @@ So after the keys are imported in step <a href="#import-the-validator-keys">Impo
 <h4 id="import-the-validator-keys"><a class="anchor" href="#import-the-validator-keys"></a>2.4.3. Import the validator keys</h4>
 <div class="paragraph">
 <p>After creating the validator keys as suggested in the  <a href="#create-the-validator-keys">Create the validator keys</a> section, the next step is to import them into the node.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>You most likely already have a <code>keys.json</code> file from the Lisk Core v4 node. If you have already have the keys file, you need to update the address in the <code>keys.json</code> file to the new address of the validator.
+By replacing the <code>lsk</code> prefix with <code>kly</code> in the address, you can use the same keys for the Klayr Core node.</p>
+</div>
+</td>
+</tr>
+</table>
 </div>
 <div class="listingblock">
 <div class="content">
