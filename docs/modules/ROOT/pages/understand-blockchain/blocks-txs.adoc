@@ -8,9 +8,9 @@
 :url_lip42_constants: https://github.com/KlayrHQ/lips/blob/main/proposals/lip-0042.md#constants
 :url_lip71_rewardcomputation: https://github.com/KlayrHQ/lips/blob/main/proposals/lip-0071.md#reward-computation
 :url_lip55: https://github.com/KlayrHQ/lips/blob/main/proposals/lip-0055.md
-:url_typedoc_command_registervalidator: {site-url}/klayr-sdk/v6/references/typedoc/classes/klayr_framework.ValidatorRegistrationCommand.html
-:url_typedoc_command_registersc: {site-url}/klayr-sdk/v6/references/typedoc/classes/klayr_framework.RegisterSidechainCommand.html
-:url_typedoc_command_transfer: {site-url}/klayr-sdk/v6/references/typedoc/classes/klayr_framework.TransferCommand.html
+:url_typedoc_command_registervalidator: {site-url}/klayr-sdk/references/typedoc/classes/klayr_framework.ValidatorRegistrationCommand.html
+:url_typedoc_command_registersc: {site-url}/klayr-sdk/references/typedoc/classes/klayr_framework.RegisterSidechainCommand.html
+:url_typedoc_command_transfer: {site-url}/klayr-sdk/references/typedoc/classes/klayr_framework.TransferCommand.html
 // Project URLs
 :url_what_is_blockchain: intro/what-is-blockchain.adoc
 :url_intro_consensus: intro/how-blockchain-works.adoc#consensus-mechanisms
@@ -296,7 +296,7 @@ factorMinRewardActiveValidators * (getDefaultRewardAtHeight(blockHeader.height))
 For the Klayr mainchain, the minimum reward is calculated like this:
 +
 ----
-10^7^ Beddows or 0.1 KLY = 1000 * (100000000 / 10000) = 1000 * 10000
+2 * 10^7^ Beddows or 0.2 KLY = 1000 * (200000000 / 10000) = 2000 * 10000
 ----
 
 ==== Rewards proportional to the validators weight
@@ -337,7 +337,7 @@ totalRewardActiveValidators - Pos.getActiveValidatorsNumber * minimumRewardActiv
 For the Klayr mainchain, the total reward per round is calculated like this:
 +
 ----
-90.9 * 10^8^ Beddows or 90.9 KLY = 10100000000 - (101 * 10000000) = 101 * 10^8 - 101 * 10^7^
+90.9 * 10^8^ Beddows or 90.9 KLY = 10100000000 - (51 * 20000000) = 51 * 10^8 - 51 * 10^7^
 ----
 
 ==== Default reward for standby validators
@@ -353,7 +353,7 @@ The default reward per round for standby validators irrespective of their valida
 getDefaultRewardAtHeight(blockHeader.height)
 ----
 +
-For the Klayr mainchain, the default reward for standby validators is: 10^8^ Beddows or 1 KLY.
+For the Klayr mainchain, the default reward for standby validators is: 2 * 10^8^ Beddows or 2 KLY.
 
 ==== Default block reward
 The amount for the default block reward depends on the block height according to the table shown below:
@@ -364,19 +364,10 @@ The amount for the default block reward depends on the block height according to
 |Heights
 |Reward
 
-|From 1,451,520 to 4,451,519
-|5 KLY
-
-|From 4,451,520 to 7,451,519
-|4 KLY
-
-|From 7,451,520 to 10,451,519
-|3 KLY
-
-|From 10,451,520 to 13,451,519
+|From 85,701 to 9,285,701
 |2 KLY
 
-|From 13,451,520 onwards
+|From 9,285,701 onwards
 |1 KLY
 |===
 
@@ -384,7 +375,7 @@ The amount for the default block reward depends on the block height according to
 After applying the block, a certain quantity of the native token of the blockchain is minted.
 The exact amount assigned to the block generator.
 
-Currently, in the Klayr mainchain, the inflation is limited to a maximum minting of `6 * 60 * 24 * 365 = 3153600 KLY` per year.
+Currently, in the Klayr mainchain, the inflation is limited to a maximum minting of `60 * 60 * 24 * 365 / 7 * 2 = 9010285 KLY` per year.
 Every time a validator misses their block, 1 KLY less is minted per year.
 
 ==== Reward for missed blocks
