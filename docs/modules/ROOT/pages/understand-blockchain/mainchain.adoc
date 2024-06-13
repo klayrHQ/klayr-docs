@@ -11,14 +11,14 @@ Mona Bärenfänger <mona@lightcurve.io>
 :url_faucet_testnet: https://testnet-faucet.klayr.xyz/
 :url_faucet_betanet: https://betanet-faucet.klayr.xyz/
 :url_klayr_desktop: https://klayr.xyz/wallet
-:url_typedoc_auth: {site-url}/klayr-sdk/v6/references/typedoc/classes/klayr_framework.AuthModule.html
-:url_typedoc_token: {site-url}/klayr-sdk/v6/references/typedoc/classes/klayr_framework.TokenModule.html
-:url_typedoc_fee: {site-url}/klayr-sdk/v6/references/typedoc/classes/klayr_framework.FeeModule.html
-:url_typedoc_reward: TBD
-:url_typedoc_random: {site-url}/klayr-sdk/v6/references/typedoc/classes/klayr_framework.RandomModule.html
-:url_typedoc_validator: {site-url}/klayr-sdk/v6/references/typedoc/classes/klayr_framework.ValidatorsModule.html
-:url_typedoc_pos: {site-url}/klayr-sdk/v6/references/typedoc/classes/klayr_framework.PoSModule.html
-:url_typedoc_mc: {site-url}/klayr-sdk/v6/references/typedoc/classes/klayr_framework.MainchainInteroperabilityModule.html
+:url_typedoc_auth: {site-url}/klayr-sdk/references/typedoc/classes/klayr_framework.AuthModule.html
+:url_typedoc_token: {site-url}/klayr-sdk/references/typedoc/classes/klayr_framework.TokenModule.html
+:url_typedoc_fee: {site-url}/klayr-sdk/references/typedoc/classes/klayr_framework.FeeModule.html
+:url_typedoc_reward: {site-url}/klayr-sdk/references/typedoc/classes/klayr_framework.DynamicRewardModule.html
+:url_typedoc_random: {site-url}/klayr-sdk/references/typedoc/classes/klayr_framework.RandomModule.html
+:url_typedoc_validator: {site-url}/klayr-sdk/references/typedoc/classes/klayr_framework.ValidatorsModule.html
+:url_typedoc_pos: {site-url}/klayr-sdk/references/typedoc/classes/klayr_framework.PoSModule.html
+:url_typedoc_mc: {site-url}/klayr-sdk/references/typedoc/classes/klayr_framework.MainchainInteroperabilityModule.html
 :url_github_legacy: https://github.com/KlayrHQ/lips/blob/main/proposals/lip-0050.md
 :url_lip63_constants: https://github.com/KlayrHQ/lips/blob/main/proposals/lip-0063.md#constants
 :url_lip24: https://github.com/KlayrHQ/lips/blob/main/proposals/lip-0024.md
@@ -51,8 +51,8 @@ xref:{url_core}[Klayr Core] is the blockchain client that is required to be inst
 |Testnet
 
 |Genesis height Klayr fork
-|24823618
-|21976183
+|0
+|0
 
 |Genesis height v4
 |23390991
@@ -87,8 +87,8 @@ xref:{url_core}[Klayr Core] is the blockchain client that is required to be inst
 | 15 kB
 
 |Default P2P Port
-|7667
-|7667
+|8778
+|8778
 
 |Default RPC Port
 |7887
@@ -111,8 +111,8 @@ xref:{url_core}[Klayr Core] is the blockchain client that is required to be inst
 |For latest 300 blocks
 
 |PoS init rounds{fnlip63}
-|60,480 = 7 * 24 * 3600
-|60,480 = 7 * 24 * 3600
+|1567
+|465
 
 |Explorer
 a|
@@ -188,13 +188,13 @@ Configurations of the Dynamic Reward module of the Klayr Mainnet mainchain.
 |0000000000000000
 
 |Offset for starting with block rewards
-|2160 blocks
+|85701 blocks
 
 |Distance for each xref:{url_blocks_blockreward}[milestone]
-|3000000 blocks
+|9200000 blocks
 
 |Brackets (Block reward for each milestone in Beddows)
-|["500000000", "400000000", "300000000", "200000000", "200000000"]
+|["200000000", "100000000"]
 |===
 
 === Registered modules
@@ -276,13 +276,13 @@ Configurations of the Dynamic Reward module of Klayr Testnet mainchain.
 |0100000000000000
 
 |Offset for starting with block rewards
-|2160 blocks
+|27295 blocks
 
 |Distance for each xref:{url_blocks_blockreward}[milestone]
-|3000000 blocks
+|9200000 blocks
 
 |Brackets (Block reward for each milestone in Beddows)
-|["500000000", "400000000", "300000000", "200000000", "200000000"]
+|["200000000", "100000000"]
 |===
 
 === Registered modules
@@ -298,62 +298,62 @@ Configurations of the Dynamic Reward module of Klayr Testnet mainchain.
 . {url_typedoc_mc}[Mainchain Interoperability module^]
 . {url_github_legacy}[Legacy module^]
 
-== Klayr Betanet
-
-The Klayr Betanet is a temporarily accessible public blockchain network, that is used to test new beta releases of Klayr Core, prior to testing them on the Testnet.
-
-In contrast to the <<klayr-testnet>>, the Klayr Betanet is exclusively accessible during the beta testing phases of Klayr Core, which typically occur in preparation for major updates to the blockchain protocol.
-
-The Betanet holds significant appeal for validators and Klayr application developers, offering them the opportunity to explore new releases ahead of their deployment on the Testnet and the Mainnet. This allows them to gain insights into new features and stay updated with the latest advancements in the protocol.
-
-Furthermore, it is the first publicly accessible network for new releases of Klayr Core, which is testing the new release in a broader scope.
-This helps to identify and fix remaining issues with the release, and therefore participation from the community is welcomed during this phase.
-Feel free to play around in the Betanet and report any feedback or issues you might encounter in the dedicated channels on {url_klayr_chat}[Klayr.chat^].
-
-The most important properties of the Klayr Betanet are listed in the table below:
-
-[cols="1,1",options="header",stripes="hover"]
-|===
-|Property
-|Betanet
-
-|Chain ID
-|02000000
-
-|KLY Token ID
-|0200000000000000
-
-|P2P Port
-|7667
-
-|Explorer
-a|
-* {url_explorer_betanet}[^]
-
-|Klayr service API base URLs
-|https://betanet-service.klayr.xyz/api/v3/[^]
-
-|Faucet
-| {url_faucet_betanet}[^]
-
-|===
-
-== Klayr Alphanet
-The Klayr Alphanet is used to test alpha releases for new Klayr Core versions.
-
-Generally, a Klayr Alphanet is only used for internal testing purposes and will only stay online temporarily to perform quality assurance of the new software release.
-
-[cols="1,1",options="header",stripes="hover"]
-|===
-|Property
-|Alphanet
-
-|Chain ID
-|03000000
-
-|KLY Token ID
-|0300000000000000
-|===
+// == Klayr Betanet
+//
+// The Klayr Betanet is a temporarily accessible public blockchain network, that is used to test new beta releases of Klayr Core, prior to testing them on the Testnet.
+//
+// In contrast to the <<klayr-testnet>>, the Klayr Betanet is exclusively accessible during the beta testing phases of Klayr Core, which typically occur in preparation for major updates to the blockchain protocol.
+//
+// The Betanet holds significant appeal for validators and Klayr application developers, offering them the opportunity to explore new releases ahead of their deployment on the Testnet and the Mainnet. This allows them to gain insights into new features and stay updated with the latest advancements in the protocol.
+//
+// Furthermore, it is the first publicly accessible network for new releases of Klayr Core, which is testing the new release in a broader scope.
+// This helps to identify and fix remaining issues with the release, and therefore participation from the community is welcomed during this phase.
+// Feel free to play around in the Betanet and report any feedback or issues you might encounter in the dedicated channels on {url_klayr_chat}[Klayr.chat^].
+//
+// The most important properties of the Klayr Betanet are listed in the table below:
+//
+// [cols="1,1",options="header",stripes="hover"]
+// |===
+// |Property
+// |Betanet
+//
+// |Chain ID
+// |02000000
+//
+// |KLY Token ID
+// |0200000000000000
+//
+// |P2P Port
+// |7667
+//
+// |Explorer
+// a|
+// * {url_explorer_betanet}[^]
+//
+// |Klayr service API base URLs
+// |https://betanet-service.klayr.xyz/api/v3/[^]
+//
+// |Faucet
+// | {url_faucet_betanet}[^]
+//
+// |===
+//
+// == Klayr Alphanet
+// The Klayr Alphanet is used to test alpha releases for new Klayr Core versions.
+//
+// Generally, a Klayr Alphanet is only used for internal testing purposes and will only stay online temporarily to perform quality assurance of the new software release.
+//
+// [cols="1,1",options="header",stripes="hover"]
+// |===
+// |Property
+// |Alphanet
+//
+// |Chain ID
+// |03000000
+//
+// |KLY Token ID
+// |0300000000000000
+// |===
 
 == Klayr Devnet
 
