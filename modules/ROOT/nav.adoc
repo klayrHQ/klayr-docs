@@ -36,7 +36,7 @@
 *** {site-url}/klayr-sdk/references/typedoc/modules/_klayr_utils.html[Klayr Utils reference^]
 *** {site-url}/klayr-sdk/references/typedoc/modules/_klayr_validator.html[Klayr Validator reference^]
 ** xref:references/klayr-commander/index.adoc[Klayr Commander]
-*** {site-url}/klayr-sdk/references/typedoc/modules/klayr-commander.html[Klayr Commander reference^]
+*** {site-url}/klayr-sdk/references/typedoc/modules/klayr_commander.html[Klayr Commander reference^]
 ** {site-url}/klayr-sdk/references/typedoc/modules/klayr_framework.html[Klayr Framework reference^]
 
 
