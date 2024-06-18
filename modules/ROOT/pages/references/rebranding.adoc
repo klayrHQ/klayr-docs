@@ -1,0 +1,173 @@
+= Migration guide Lisk to Klayr
+// Settings
+:toc: preamble
+:idprefix:
+:idseparator: -
+:docs-general: ROOT::
+:sectnums:
+
+// Libraries
+:lisk_client: @liskhq/lisk-client
+:klayr_client: @klayr/client
+:lisk_api_client: @liskhq/lisk-api-client
+:klayr_api_client: @klayr/api-client
+:lisk_chain: @liskhq/lisk-chain
+:klayr_chain: @klayr/chain
+:lisk_codec: @liskhq/lisk-codec
+:klayr_codec: @klayr/codec
+:lisk_cryptography: @liskhq/lisk-cryptography
+:klayr_cryptography: @klayr/cryptography
+:lisk_p2p: @liskhq/lisk-p2p
+:klayr_p2p: @klayr/p2p
+:lisk_passphrase: @liskhq/lisk-passphrase
+:klayr_passphrase: @klayr/passphrase
+:lisk_transaction_pool: @liskhq/lisk-transaction-pool
+:klayr_transaction_pool: @klayr/transaction-pool
+:lisk_transactions: @liskhq/lisk-transactions
+:klayr_transactions: @klayr/transactions
+:lisk_tree: @liskhq/lisk-tree
+:klayr_tree: @klayr/tree
+:lisk_utils: @liskhq/lisk-utils
+:klayr_utils: @klayr/utils
+:lisk_validator: @liskhq/lisk-validator
+:klayr_validator: @klayr/validator
+:lisk_elements: lisk-elements
+:klayr_elements: @klayr/elements
+:lisk_framework: lisk-framework
+:klayr_framework: klayr-framework
+:lisk_sdk: lisk-sdk
+:klayr_sdk: klayr-sdk
+:lisk_core: lisk-core
+:klayr_core: klayr-core
+:lisk_chain_connector_plugin: @liskhq/lisk-framework-chain-connector-plugin
+:klayr_chain_connector_plugin: @klayr/chain-connector-plugin
+:lisk_dashboard_plugin: @liskhq/lisk-framework-dashboard-plugin
+:klayr_dashboard_plugin: @klayr/dashboard-plugin
+:lisk_forger_plugin: @liskhq/lisk-framework-forger-plugin
+:klayr_forger_plugin: @klayr/generator-plugin
+:lisk_faucet_plugin: @liskhq/lisk-framework-faucet-plugin
+:klayr_faucet_plugin: @klayr/faucet-plugin
+:lisk_report_misbehavior_plugin: @liskhq/lisk-framework-report-misbehavior-plugin
+:klayr_report_misbehavior_plugin: @klayr/report-misbehavior-plugin
+:klayr_monitor_plugin: @klayr/monitor-plugin
+:lisk_monitor_plugin: @liskhq/lisk-framework-monitor-plugin
+
+// Urls
+:url_npm: https://www.npmjs.com/package/
+:url_lisk_client: {url_npm}{lisk_client}
+:url_klayr_client: {url_npm}{klayr_client}
+:url_lisk_api_client: {url_npm}{lisk_api_client}
+:url_klayr_api_client: {url_npm}{klayr_api_client}
+:url_lisk_chain: {url_npm}{lisk_chain}
+:url_klayr_chain: {url_npm}{klayr_chain}
+:url_lisk_codec: {url_npm}{lisk_codec}
+:url_klayr_codec: {url_npm}{klayr_codec}
+:url_lisk_cryptography: {url_npm}{lisk_cryptography}
+:url_klayr_cryptography: {url_npm}{klayr_cryptography}
+:url_lisk_p2p: {url_npm}{lisk_p2p}
+:url_klayr_p2p: {url_npm}{klayr_p2p}
+:url_lisk_passphrase: {url_npm}{lisk_passphrase}
+:url_klayr_passphrase: {url_npm}{klayr_passphrase}
+:url_lisk_transaction_pool: {url_npm}{lisk_transaction_pool}
+:url_klayr_transaction_pool: {url_npm}{klayr_transaction_pool}
+:url_lisk_transactions: {url_npm}{lisk_transactions}
+:url_klayr_transactions: {url_npm}{klayr_transactions}
+:url_lisk_tree: {url_npm}{lisk_tree}
+:url_klayr_tree: {url_npm}{klayr_tree}
+:url_lisk_utils: {url_npm}{lisk_utils}
+:url_klayr_utils: {url_npm}{klayr_utils}
+:url_lisk_validator: {url_npm}{lisk_validator}
+:url_klayr_validator: {url_npm}{klayr_validator}
+:url_lisk_elements: {url_npm}{lisk_elements}
+:url_klayr_elements: {url_npm}{klayr_elements}
+:url_lisk_framework: {url_npm}{lisk_framework}
+:url_klayr_framework: {url_npm}{klayr_framework}
+:url_lisk_sdk: {url_npm}{lisk_sdk}
+:url_klayr_sdk: {url_npm}{klayr_sdk}
+:url_lisk_core: {url_npm}{lisk_core}
+:url_klayr_core: {url_npm}{klayr_core}
+:url_lisk_chain_connector_plugin: {url_npm}{lisk_chain_connector_plugin}
+:url_klayr_chain_connector_plugin: {url_npm}{klayr_chain_connector_plugin}
+:url_lisk_dashboard_plugin: {url_npm}{lisk_dashboard_plugin}
+:url_klayr_dashboard_plugin: {url_npm}{klayr_dashboard_plugin}
+:url_lisk_forger_plugin: {url_npm}{lisk_forger_plugin}
+:url_klayr_forger_plugin: {url_npm}{klayr_forger_plugin}
+:url_lisk_faucet_plugin: {url_npm}{lisk_faucet_plugin}
+:url_klayr_faucet_plugin: {url_npm}{klayr_faucet_plugin}
+:url_lisk_report_misbehavior_plugin: {url_npm}{lisk_report_misbehavior_plugin}
+:url_klayr_report_misbehavior_plugin: {url_npm}{klayr_report_misbehavior_plugin}
+:url_klayr_monitor_plugin: {url_npm}{klayr_monitor_plugin}
+:url_lisk_monitor_plugin: {url_npm}{lisk_monitor_plugin}
+
+== Package changes
+
+Different packages are renamed in the Klayr ecosystem. Below is a list of the old Lisk packages and their new Klayr counterparts.
+
+.Package changes Lisk vs Klayr
+[cols="1,1",options="header"]
+|===
+| Lisk (old) | Klayr (new)
+| {url_lisk_sdk}[`{lisk_sdk}`] | {url_klayr_sdk}[`{klayr_sdk}`]
+| {url_lisk_core}[`{lisk_core}`] | {url_klayr_core}[`{klayr_core}`]
+| {url_lisk_framework}[`{lisk_framework}`] | {url_klayr_framework}[`{klayr_framework}`]
+|===
+
+== Library changes
+
+The following libraries are renamed in the Klayr ecosystem. Below is a list of the old Lisk libraries and their new Klayr counterparts.
+
+.Library changes Lisk vs Klayr
+[cols="1,1",options="header"]
+|===
+| Lisk (old) | Klayr (new)
+| {url_lisk_elements}[`{lisk_elements}`] | {url_klayr_elements}[`{klayr_elements}`]
+| {url_lisk_client}[`{lisk_client}`] | {url_klayr_client}[`{klayr_client}`]
+| {url_lisk_api_client}[`{lisk_api_client}`] | {url_klayr_api_client}[`{klayr_api_client}`]
+| {url_lisk_chain}[`{lisk_chain}`] | {url_klayr_chain}[`{klayr_chain}`]
+| {url_lisk_codec}[`{lisk_codec}`] | {url_klayr_codec}[`{klayr_codec}`]
+| {url_lisk_cryptography}[`{lisk_cryptography}`] | {url_klayr_cryptography}[`{klayr_cryptography}`]
+| {url_lisk_p2p}[`{lisk_p2p}`] | {url_klayr_p2p}[`{klayr_p2p}`]
+| {url_lisk_passphrase}[`{lisk_passphrase}`] | {url_klayr_passphrase}[`{klayr_passphrase}`]
+| {url_lisk_transaction_pool}[`{lisk_transaction_pool}`] | {url_klayr_transaction_pool}[`{klayr_transaction_pool}`]
+| {url_lisk_transactions}[`{lisk_transactions}`] | {url_klayr_transactions}[`{klayr_transactions}`]
+| {url_lisk_tree}[`{lisk_tree}`] | {url_klayr_tree}[`{klayr_tree}`]
+| {url_lisk_utils}[`{lisk_utils}`] | {url_klayr_utils}[`{klayr_utils}`]
+| {url_lisk_validator}[`{lisk_validator}`] | {url_klayr_validator}[`{klayr_validator}`]
+|===
+
+== Framework plugin changes
+
+Framework plugins are renamed in the Klayr ecosystem. Below is a list of the old Lisk plugins and their new Klayr counterparts.
+
+.Framework plugins Lisk vs Klayr
+[cols="1,1",options="header"]
+|===
+| Lisk (old) | Klayr (new)
+| {url_lisk_chain_connector_plugin}[`{lisk_chain_connector_plugin}`] | {url_klayr_chain_connector_plugin}[`{klayr_chain_connector_plugin}`]
+| {url_lisk_dashboard_plugin}[`{lisk_dashboard_plugin}`] | {url_klayr_dashboard_plugin}[`{klayr_dashboard_plugin}`]
+| {url_lisk_forger_plugin}[`{lisk_forger_plugin}`] | {url_klayr_forger_plugin}[`{klayr_forger_plugin}`]
+| {url_lisk_faucet_plugin}[`{lisk_faucet_plugin}`] | {url_klayr_faucet_plugin}[`{klayr_faucet_plugin}`]
+| {url_lisk_report_misbehavior_plugin}[`{lisk_report_misbehavior_plugin}`] | {url_klayr_report_misbehavior_plugin}[`{klayr_report_misbehavior_plugin}`]
+| {url_lisk_monitor_plugin}[`{lisk_monitor_plugin}`] | {url_klayr_monitor_plugin}[`{klayr_monitor_plugin}`]
+|===
+
+
+== Method changes
+
+Some methods are renamed in the Klayr ecosystem. Below is a list of the old Lisk methods and their new Klayr counterparts.
+
+.Method changes Lisk vs Klayr
+[cols="1,1",options="header"]
+|===
+| Lisk (old) | Klayr (new)
+| `convertLSKToBeddows()` | `convertKLYToBeddows()`
+| `convertBeddowsToLSK()` | `convertBeddowsToKLY()`
+| `getLisk32AddressFromAddress()` | `getKlayr32AddressFromAddress()`
+| `getAddressFromLisk32Address()` | `getAddressFromKlayr32Address()`
+| `validateLisk32Address()` | `validateKlayr32Address()`
+| `lisk32()` | `klayr()`
+|===
+
+== Schema format changes
+
+The `lisk32` codec schema property format type is renamed to `klayr32` in the Klayr ecosystem.

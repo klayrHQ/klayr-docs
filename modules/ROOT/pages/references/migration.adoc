@@ -1,4 +1,4 @@
-= SDK Migration Guide
+= Migration V5 -> V6
 Mona Bärenfänger <mona@lightcurve.io>
 // Settings
 :toc: preamble
