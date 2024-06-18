@@ -22,6 +22,7 @@
 ** {site-url}/klayr-sdk/references/typedoc/modules/_klayr_generator_plugin.html[Klayr Generator plugin^]
 ** {site-url}/klayr-sdk/references/typedoc/modules/_klayr_report_misbehavior_plugin.html[Klayr Report Misbehavior plugin^]
 * References
+** xref:references/rebranding.adoc[]
 ** xref:references/migration.adoc[]
 ** xref:references/klayr-elements/index.adoc[Klayr Elements]
 *** {site-url}/klayr-sdk/references/typedoc/modules/_klayr_api_client.html[Klayr API client reference^]
