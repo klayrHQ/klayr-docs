@@ -106,7 +106,7 @@ In the Klayr xref:{url_pos}[PoS], a certain set of validators is selected by the
 To participate in the block generation process, a validator needs to set up a node and configure it to enable block generation.
 These nodes are called *validator nodes*.
 
-In the Klayr Mainnet, exactly 103 validators exist in the network for each block generation round.
+In the Klayr Mainnet, exactly 53 validators exist in the network for each block generation round.
 Validator nodes are the only nodes that can propose new blocks to the blockchain.
 During a block generation round, every validator node has the opportunity to generate at least one block.
 
