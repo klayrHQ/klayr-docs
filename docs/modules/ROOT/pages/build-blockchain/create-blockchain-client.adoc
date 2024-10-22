@@ -66,10 +66,10 @@ NOTE: Please note that the SDK does not come with any official support for Windo
 
 [options="header",]
 |===
-|Dependencies |Version 
-|Git | v2 (latest) 
-|Node.js | v18 (latest LTS) 
-|Klayr Commander | v6.0.0 (latest) 
+|Dependencies |Version
+|Git | v2 (latest)
+|Node.js | v18 (latest LTS)
+|Klayr Commander | v6.1.2 (latest)
 |Homebrew (macOS) | v3.6.7 (latest)
 |automake | 1.16.5 (latest)
 |autoconf | 2.71 (latest)
@@ -168,6 +168,8 @@ klayr init
 
 NOTE: The `init` command can be executed anywhere on the disk to bootstrap a sidechain client, however, to accommodate both *frontend* and the *sidechain client*, we have to create the aforementioned folders.
 
+IMPORTANT: When choosing a chainID it needs to start with it's mainchain byte `00` for mainnet, `01` for testnet, `02` for betanet and `04` for devnet. The chainID can be changed later in the `config.json` file.
+
 As a result of executing the `init` command, you will be asked for the *Name*, *ChainID*, *Description*, *Author*, and *License* of the blockchain client.
 
 ----
@@ -176,7 +178,7 @@ Initializing git repository
 Updating .klayrrc.json file
 Creating project structure
 ? Application name hello_client
-? Chain ID in hex representation. ChainID must be 4 bytes (8 characters) 12345678
+? Chain ID in hex representation. ChainID must be 4 bytes (8 characters) 01234567
 ? Application description A simple blockchain application that saves hello messages in user accounts.
 ? Author XYZ
 ? License ISC
@@ -213,7 +215,7 @@ zshrc::
 .~/.zshrc/
 [source,bash]
 ----
-alias hello_client="$HOME/hello_client/bin/run" 
+alias hello_client="$HOME/hello_client/bin/run"
 ----
 Add the path to where your `hello_client` is located.
 
@@ -336,7 +338,7 @@ import { registerPlugins } from './plugins';
 
 export const getApplication = (config: PartialApplicationConfig): Application => {
 	const { app } = Application.defaultApplication(config); //Creates a sidechain client with the default modules.
-  
+
   // Will register additional modules to the client.
   // Currently, no additional modules are available for the client.
   // To add new modules update the `modules.ts` file.
@@ -353,7 +355,7 @@ export const getApplication = (config: PartialApplicationConfig): Application =>
 ----
 
 In most cases, the <<default-modules,default modules>> don't need to be changed, as they provide the basic functionality that most blockchain clients need.
-But in case you want to replace the default modules with other modules, you can also run the application without the default modules by replacing 
+But in case you want to replace the default modules with other modules, you can also run the application without the default modules by replacing
 
 [source,typescript]
 ----

@@ -437,6 +437,15 @@ klayr-core endpoint:invoke random_setHashOnion --file "$HOME/hash_onion.json"
 +
 . Once the hash onion is set, retrieve the recently set hash onion and its usage stats as described in the <<get-the-hash-onion>> section.
 --
+Setting a hash onion one-liner::
++
+--
+.Set hash onion on a mainchain node change the `ADDRESS` to the relevant address.
+[source,bash]
+----
+ADDRESS="kly..."; klayr-core hash-onion --count 1000000 --output $HOME/hash_onion.json; jq --arg x $ADDRESS '. + {address: $x}' $HOME/hash_onion.json > tmp && mv tmp $HOME/hash_onion.json; klayr-core endpoint:invoke random_setHashOnion --file $HOME/hash_onion.json; rm $HOME/hash_onion.json
+----
+--
 =====
 
 To verify that the hash onion was set correctly, <<get-the-hash-onion>> back from the node.

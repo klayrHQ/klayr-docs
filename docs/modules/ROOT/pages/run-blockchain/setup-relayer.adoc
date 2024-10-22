@@ -126,8 +126,13 @@ If the user-provided fee is lower than the calculated minimum fee then the calcu
 
 |`registrationHeight`
 |integer
-|Height at the time of registration on the receiving chain.
+|Height at the time of registration on the sending chain.
 |100
+
+|`noFeeHeight`
+|integer
+|Height until no fees are being applied to CCUs.
+|0
 
 |`receivingChainID`
 |string

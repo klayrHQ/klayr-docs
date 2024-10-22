@@ -222,14 +222,14 @@ If available, it is recommended to synchronize from a snapshot, to speed up the 
 +
 [source,bash]
 ----
-klayr-core generator:export --output genInfo.json
+klayr-core generator:export --output ./genInfo.json
 ----
 . Login to the server with the new node.
 . Restore the validator info data.
 +
 [source,bash]
 ----
-klayr-core generator:import ./genInfo.json
+klayr-core generator:import --file-path ./genInfo.json
 ----
 . xref:{url_run_validator_import}[Import the validator keys].
 . xref:{url_run_validator_set_hashonion}[Import the hash onion seed] used by the validator.
