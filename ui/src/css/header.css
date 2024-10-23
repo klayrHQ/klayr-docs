@@ -6,6 +6,35 @@ body {
   padding-top: var(--navbar-height);
 }
 
+.topbanner {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 25px;
+  width: 100%;
+  text-align: center;
+  background: var(--navbar-font-color);
+  color: var(--color-white);
+  align-content: center;
+  align-items: center;
+  font-size: 0.675rem;
+}
+
+.topbanner-link {
+  color: var(--color-white);
+  text-decoration: underline !important;
+  font-size: 0.675rem;
+}
+
+.topbanner-close {
+  position: absolute;
+  right: 10px;
+  top: 5px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
 .navbar {
   background: var(--navbar-background);
   color: var(--navbar-font-color);

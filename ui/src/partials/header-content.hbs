@@ -1,5 +1,18 @@
 <header class="header">
   <nav class="navbar">
+
+    <div id="topbanner" class="topbanner">Wanna ignite your blockchain building journey? <a class="topbanner-link" href="https://klayr.xyz/ignite-grants/" referrerpolicy="no-referrer" target="_blank">Earn a 10,000 $KLY Ignite Grant</a> for building a sidechain concept on our testnet!
+      <span onclick="closeb()" class="topbanner-close">x</span>
+    </div>
+    <script>
+      function closeb() {
+        document.getElementById("topbanner").style.display = "none";
+        localStorage.setItem("topbanner", "closed");
+      };
+      if (localStorage.getItem("topbanner") === "closed") {
+        document.getElementById("topbanner").style.display = "none";
+      }
+    </script>
     <div class="navbar-brand">
       <div class="top-logo">
         <a href="{{{or siteRootPath site.url}}}" class="klayr-logo"></a>
