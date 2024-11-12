@@ -157,18 +157,12 @@ Open the command skeleton in `create_hello_command.ts`:
 .hello_client/src/app/modules/hello/commands/create_hello_command.ts
 [source,typescript]
 ----
-import {
-    BaseCommand,
-    CommandVerifyContext,
-    CommandExecuteContext,
-    VerificationResult,
-    VerifyStatus,
-} from 'klayr-sdk';
+import { Modules, StateMachine } from 'klayr-sdk';
 
 interface Params {
 }
 
-export class CreateHelloCommand extends BaseCommand {
+export class CreateHelloCommand extends Modules.BaseCommand {
 	public schema = {
 		$id: 'CreateHelloCommand',
 		type: 'object',
@@ -176,11 +170,11 @@ export class CreateHelloCommand extends BaseCommand {
 	};
 
 	// eslint-disable-next-line @typescript-eslint/require-await
-	public async verify(_context: CommandVerifyContext<Params>): Promise<VerificationResult> {
-		return { status: VerifyStatus.OK };
+	public async verify(_context: StateMachine.CommandVerifyContext<Params>): Promise<StateMachine.VerificationResult> {
+		return { status: StateMachine.VerifyStatus.OK };
 	}
 
-	public async execute(_context: CommandExecuteContext<Params>): Promise<void> {
+	public async execute(_context: StateMachine.CommandExecuteContext<Params>): Promise<void> {
 	}
 }
 ----
@@ -240,7 +234,7 @@ Now, import the schema to the Hello module and use it for the `schema` attribute
 ----
 import { createHelloSchema } from '../schema';
 // [...]
-export class CreateHelloCommand extends BaseCommand {
+export class CreateHelloCommand extends Modules.BaseCommand {
     public schema = createHelloSchema;
     // [...]
 }
@@ -257,8 +251,10 @@ To do this, create a new method `init()` in the command, that can be called in t
 .hello_client/src/app/modules/hello/commands/create_hello_command.ts
 [source,typescript]
 ----
+import { ModuleConfig } from '../types';
 // [...]
-export class CreateHelloCommand extends BaseCommand {
+
+export class CreateHelloCommand extends Modules.BaseCommand {
     public schema = createHelloSchema;
 	private _blacklist!: string[];
 
@@ -283,9 +279,9 @@ Then, call the method at the bottom of the `init()` method of the module and use
 [source,typescript]
 ----
 // [...]
-export class HelloModule extends BaseModule {
+export class HelloModule extends Modules.BaseModule {
     // [...]
-    public async init(args: ModuleInitArgs): Promise<void> {
+    public async init(args: Modules.ModuleInitArgs): Promise<void> {
         // Get the module config defined in the config.json file
         const { moduleConfig } = args;
         // Overwrite the default module config with values from config.json, if set
@@ -326,7 +322,7 @@ So let's implement the `verify()` method to filter the message for words in the 
 [source,typescript]
 ----
 // [...]
-export class CreateHelloCommand extends BaseCommand {
+export class CreateHelloCommand extends Modules.BaseCommand {
     public schema = createHelloSchema;
     private _blacklist!: string[];
 
@@ -334,8 +330,8 @@ export class CreateHelloCommand extends BaseCommand {
         // [...]
     }
 
-    public async verify(context: CommandVerifyContext<Params>): Promise<VerificationResult> {
-        let validation: VerificationResult;
+    public async verify(context: StateMachine.CommandVerifyContext<Params>): Promise<StateMachine.VerificationResult> {
+        let validation: StateMachine.VerificationResult;
         const wordList = context.params.message.split(" ");
         const found = this._blacklist.filter(value => wordList.includes(value));
         if (found.length > 0) {
@@ -346,7 +342,7 @@ export class CreateHelloCommand extends BaseCommand {
         } else {
             context.logger.info("==== NOT FOUND: Message contains no blacklisted words ====");
             validation = {
-                status: VerifyStatus.OK
+                status: StateMachine.VerifyStatus.OK
             };
         }
         return validation;
@@ -390,20 +386,14 @@ NOTE: The code already includes a blockchain event, which is created and describ
 .hello_client/src/app/modules/hello/commands/create_hello_command.ts
 [source,typescript]
 ----
-import {
-	BaseCommand,
-	CommandVerifyContext,
-	CommandExecuteContext,
-	VerificationResult,
-	VerifyStatus,
-} from 'klayr-sdk';
+import { Modules, StateMachine } from 'klayr-sdk';
 import { createHelloSchema } from '../schema';
 import { MessageStore } from '../stores/message';
 import { counterKey, CounterStore, CounterStoreData } from '../stores/counter';
 import { ModuleConfig } from '../types';
 import { NewHelloEvent } from '../events/new_hello';
 
-export class CreateHelloCommand extends BaseCommand {
+export class CreateHelloCommand extends Modules.BaseCommand {
     public schema = createHelloSchema;
     private _blacklist!: string[];
     public async init(config: ModuleConfig): Promise<void> {
@@ -411,11 +401,11 @@ export class CreateHelloCommand extends BaseCommand {
     }
 
 	// eslint-disable-next-line @typescript-eslint/require-await
-    public async verify(context: CommandVerifyContext<Params>): Promise<VerificationResult> {
+    public async verify(context: StateMachine.CommandVerifyContext<Params>): Promise<StateMachine.VerificationResult> {
         // [...]
     }
 
-    public async execute(context: CommandExecuteContext<Params>): Promise<void> {
+    public async execute(context: StateMachine.CommandExecuteContext<Params>): Promise<void> {
         // 1. Get account data of the sender of the Hello transaction.
         const { senderAddress } = context.transaction;
         // 2. Get message and counter stores.

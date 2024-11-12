@@ -42,9 +42,9 @@ Initially, the modules don't include any endpoints:
 .hello_client/src/app/modules/hello/endpoint.ts
 [source,typescript]
 ----
-import { BaseEndpoint } from 'klayr-sdk';
+import { Modules } from 'klayr-sdk';
 
-export class HelloEndpoint extends BaseEndpoint {
+export class HelloEndpoint extends Modules.BaseEndpoint {
 
 }
 ----
@@ -60,11 +60,11 @@ To create the endpoint for getting a Hello message by address, import the follow
 .hello_client/src/app/modules/hello/endpoint.ts
 [source,typescript]
 ----
-import { BaseEndpoint, ModuleEndpointContext, cryptography } from 'klayr-sdk';
+import { cryptography, Modules, Types } from 'klayr-sdk';
 import { MessageStore, MessageStoreData } from './stores/message';
 
-export class HelloEndpoint extends BaseEndpoint {
-    public async getHello(ctx: ModuleEndpointContext): Promise<MessageStoreData> {
+export class HelloEndpoint extends Modules.BaseEndpoint {
+    public async getHello(ctx: Types.ModuleEndpointContext): Promise<MessageStoreData> {
         // 1. Get message store
         const messageSubStore = this.stores.get(MessageStore);
         // 2. Get the address from the endpoint params
@@ -94,16 +94,16 @@ To create the endpoint for getting the Hello counter, import the following:
 .hello_client/src/app/modules/hello/endpoint.ts
 [source,typescript]
 ----
-import { BaseEndpoint, ModuleEndpointContext, cryptography } from 'klayr-sdk';
+import { cryptography, Modules, Types } from 'klayr-sdk';
 import { MessageStore, MessageStoreData } from './stores/message';
 import { counterKey, CounterStore, CounterStoreData } from './stores/counter';
 
-export class HelloEndpoint extends BaseEndpoint {
-    public async getHello(ctx: ModuleEndpointContext): Promise<MessageStoreData> {
+export class HelloEndpoint extends Modules.BaseEndpoint {
+    public async getHello(ctx: Types.ModuleEndpointContext): Promise<MessageStoreData> {
         // [...]
 	}
 
-    public async getHelloCounter(ctx: ModuleEndpointContext): Promise<CounterStoreData> {
+    public async getHelloCounter(ctx: Types.ModuleEndpointContext): Promise<CounterStoreData> {
 		const counterSubStore = this.stores.get(CounterStore);
 
 		const helloCounter = await counterSubStore.get(
@@ -128,9 +128,9 @@ Initially, the modules don't include any methods:
 .hello_client/src/app/modules/hello/method.ts
 [source,typescript]
 ----
-import { BaseMethod } from 'klayr-sdk';
+import { Modules } from 'klayr-sdk';
 
-export class HelloMethod extends BaseMethod {
+export class HelloMethod extends Modules.BaseMethod {
 
 }
 ----
@@ -145,13 +145,13 @@ To create the endpoint for getting a Hello message by address, import the follow
 .hello_client/src/app/modules/hello/method.ts
 [source,typescript]
 ----
-import { BaseMethod, ImmutableMethodContext } from 'klayr-sdk';
+import { Modules, StateMachine } from 'klayr-sdk';
 import { MessageStore, MessageStoreData } from './stores/message';
 
-export class HelloMethod extends BaseMethod {
+export class HelloMethod extends Modules.BaseMethod {
 
 	public async getHello(
-		methodContext: ImmutableMethodContext,
+		methodContext: StateMachine.ImmutableMethodContext,
 		address: Buffer,
 	): Promise<MessageStoreData> {
         // 1. Get message store
@@ -185,7 +185,7 @@ Then update the `metadata` of the module as follows:
 ./hello_client/src/app/modules/hello/module.ts
 [source,typescript]
 -----
-public metadata(): ModuleMetadata {
+public metadata(): Modules.ModuleMetadata {
 	return {
 		endpoints: [
 			{

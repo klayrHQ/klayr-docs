@@ -89,12 +89,12 @@ export const messageStoreSchema = {
 };
 ----
 
-Now, import the `BaseStore` from the `klayr-sdk`
+Now, import the `Modules` from the `klayr-sdk`
 
 .hello_client/src/app/modules/hello/stores/message.ts
 [source,typescript]
 ----
-import { BaseStore } from 'klayr-sdk';
+import { Modules } from 'klayr-sdk';
 ----
 
 and create the message store class like this:
@@ -102,7 +102,7 @@ and create the message store class like this:
 .hello_client/src/app/modules/hello/stores/message.ts
 [source,typescript]
 ----
-export class MessageStore extends BaseStore<MessageStoreData> {
+export class MessageStore extends Modules.BaseStore<MessageStoreData> {
 	public schema = messageStoreSchema;
 }
 ----
@@ -114,7 +114,7 @@ The complete message store looks like this:
 .hello_client/src/app/modules/hello/stores/message.ts
 [source,typescript]
 ----
-import { BaseStore } from 'klayr-sdk';
+import { Modules } from 'klayr-sdk';
 
 export interface MessageStoreData {
 	message: string;
@@ -132,7 +132,7 @@ export const messageStoreSchema = {
 	},
 };
 
-export class MessageStore extends BaseStore<MessageStoreData> {
+export class MessageStore extends Modules.BaseStore<MessageStoreData> {
 	public schema = messageStoreSchema;
 }
 ----
@@ -148,7 +148,7 @@ The respective counter store looks like this:
 .hello_client/src/app/modules/hello/stores/counter.ts
 [source,typescript]
 ----
-import { BaseStore } from 'klayr-sdk';
+import { Modules } from 'klayr-sdk';
 
 export interface CounterStoreData {
 	counter: number;
@@ -168,7 +168,7 @@ export const counterStoreSchema = {
 	},
 };
 
-export class CounterStore extends BaseStore<CounterStoreData> {
+export class CounterStore extends Modules.BaseStore<CounterStoreData> {
 	public schema = counterStoreSchema;
 }
 ----
@@ -194,7 +194,7 @@ export class HelloModule extends BaseModule {
         super();
         // registration of stores and events
         this.stores.register(CounterStore, new CounterStore(this.name, 0));
-	this.stores.register(MessageStore, new MessageStore(this.name, 1));
+	    this.stores.register(MessageStore, new MessageStore(this.name, 1));
     }
     // [...]
  }
