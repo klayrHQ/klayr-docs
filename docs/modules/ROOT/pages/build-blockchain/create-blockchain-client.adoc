@@ -105,7 +105,7 @@ klayr --version
 
 .Output
 ----
-klayr-commander/6.0.0 darwin-arm64 node-v18.16.0
+klayr-commander/6.1.2 darwin-arm64 node-v18.20.4
 ----
 
 ==== Toolchain dependencies
@@ -332,11 +332,11 @@ The client is created in the file `app.ts`:
 .src/app/app.ts
 [source,typescript]
 ----
-import { Application, PartialApplicationConfig } from 'klayr-sdk';
+import { Application, Types } from 'klayr-sdk';
 import { registerModules } from './modules';
 import { registerPlugins } from './plugins';
 
-export const getApplication = (config: PartialApplicationConfig): Application => {
+export const getApplication = (config: Types.PartialApplicationConfig): Application => {
 	const { app } = Application.defaultApplication(config); //Creates a sidechain client with the default modules.
 
   // Will register additional modules to the client.

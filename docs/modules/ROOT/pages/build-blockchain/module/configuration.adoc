@@ -63,7 +63,7 @@ Once the default config is created, define the corresponding module config inter
 .hello_client/src/app/modules/hello/types.ts
 [source,typescript]
 ----
-import { JSONObject } from 'klayr-sdk';
+import { Types } from 'klayr-sdk';
 
 export interface ModuleConfig {
     maxMessageLength: number;
@@ -71,7 +71,7 @@ export interface ModuleConfig {
     blacklist: string[];
 }
 
-export type ModuleConfigJSON = JSONObject<ModuleConfig>;
+export type ModuleConfigJSON = Types.JSONObject<ModuleConfig>;
 ----
 
 The config schema is required to validate the module config defined in `config.json`, so add the respective config schema to `schema.ts` as well:
@@ -137,14 +137,11 @@ Now, to make the custom config accessible in the module, retrieve the config opt
 .hello_client/src/app/modules/hello/module.ts
 [source,typescript]
 ----
-import {
-    BaseModule, BlockAfterExecuteContext, BlockExecuteContext, BlockVerifyContext,
-    GenesisBlockExecuteContext, InsertAssetContext, ModuleInitArgs,
-    ModuleMetadata, TransactionExecuteContext, TransactionVerifyContext,
-    VerificationResult, codec, utils
-} from 'klayr-sdk';
+import { Modules, StateMachine, utils } from 'klayr-sdk';
 import { validator } from '@klayr/validator';
-import { createHelloSchema, CreateHelloParams, configSchema } from './schema';
+import { HelloEndpoint } from './endpoint';
+import { HelloMethod } from './method';
+import { configSchema } from './schema';
 import { ModuleConfigJSON } from './types';
 // [...]
 export const defaultConfig = {
@@ -153,10 +150,10 @@ export const defaultConfig = {
 	minMessageLength: 3
 };
 
-export class HelloModule extends BaseModule {
+export class HelloModule extends Modules.BaseModule {
     // [...]
 
-    public async init(args: ModuleInitArgs): Promise<void> {
+    public async init(args: Modules.ModuleInitArgs): Promise<void> {
         // Get the module config defined in the config.json of the node
         const { moduleConfig } = args;
         // Overwrite the default module config with values from config.json, if set

@@ -76,7 +76,7 @@ To create the event class, import the `BaseEvent` from the `klayr-sdk`.
 .hello_client/src/app/modules/hello/events/new_hello.ts
 [source,typescript]
 ----
-import { BaseEvent } from 'klayr-sdk';
+import { Modules } from 'klayr-sdk';
 
 export interface NewHelloEventData {
     //...
@@ -86,7 +86,7 @@ export const newHelloEventSchema = {
     //...
 };
 
-export class NewHelloEvent extends BaseEvent<NewHelloEventData> {
+export class NewHelloEvent extends Modules.BaseEvent<NewHelloEventData> {
 	public schema = newHelloEventSchema;
 }
 ----
@@ -110,7 +110,7 @@ Now that we created a new event type, import it into the `module.ts` file, and r
 import { NewHelloEvent } from './events/new_hello';
 // [...]
 
-export class HelloModule extends BaseModule {
+export class HelloModule extends Modules.BaseModule {
     // [...]
 
     public constructor() {
@@ -147,7 +147,7 @@ interface Params {
 	message: string;
 }
 
-export class CreateHelloCommand extends BaseCommand {
+export class CreateHelloCommand extends Modules.BaseCommand {
 	public schema = createHelloSchema;
 	private _blacklist!: string[];
 
@@ -157,11 +157,11 @@ export class CreateHelloCommand extends BaseCommand {
 	}
 
 	// eslint-disable-next-line @typescript-eslint/require-await
-	public async verify(context: CommandVerifyContext<Params>): Promise<VerificationResult> {
+	public async verify(context: StateMachine.CommandVerifyContext<Params>): Promise<StateMachine.VerificationResult> {
         // [...]
 	}
 
-	public async execute(context: CommandExecuteContext<Params>): Promise<void> {
+	public async execute(context: StateMachine.CommandExecuteContext<Params>): Promise<void> {
 		// [...]
 
 		// 6. Save the Hello counter to the counter store.
