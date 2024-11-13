@@ -37,7 +37,7 @@ So let's instantiate our plugin instance in our already available `load()` funct
 .hello_client/src/app/plugins/hello_info/hello_info_plugin.ts
 [source,typescript]
 ----
-import { BasePlugin, db as klayrDB, codec } from 'klayr-sdk';
+import { Plugins, db as klayrDB, codec } from 'klayr-sdk';
 import {
 	getDBInstance,
 	getLastCounter,
@@ -49,7 +49,7 @@ import {
 import { configSchema } from './schemas';
 import { HelloInfoPluginConfig, Height, Counter } from './types';
 
-export class HelloInfoPlugin extends BasePlugin<HelloInfoPluginConfig> {
+export class HelloInfoPlugin extends Plugins.BasePlugin<HelloInfoPluginConfig> {
 	public configSchema = configSchema;
 	private _pluginDB!: klayrDB.Database;
 
@@ -95,7 +95,7 @@ This value will increment after an event is stored in the database.
 [source,typescript]
 ----
 // [...]
-export class HelloInfoPlugin extends BasePlugin<HelloInfoPluginConfig> {
+export class HelloInfoPlugin extends Plugins.BasePlugin<HelloInfoPluginConfig> {
 
     // [...]
 	private async _getLastCounter(): Promise<Counter> {
@@ -123,7 +123,7 @@ Similar to the counter, we want to make sure that the height key-value pair has 
 [source,typescript]
 ----
 // [...]
-export class HelloInfoPlugin extends BasePlugin<HelloInfoPluginConfig> {
+export class HelloInfoPlugin extends Plugins.BasePlugin<HelloInfoPluginConfig> {
 
     // [...]
 	private async _getLastHeight(): Promise<Height> {
@@ -150,7 +150,7 @@ Let's now work on the synching logic, to make sure that we don't miss a block, w
 [source,typescript]
 ----
 // [...]
-export class HelloInfoPlugin extends BasePlugin<HelloInfoPluginConfig> {
+export class HelloInfoPlugin extends Plugins.BasePlugin<HelloInfoPluginConfig> {
     // [...]
 	private async _syncChainEvents(): Promise<void> {
 		// 1. Get the latest block height from the blockchain
@@ -187,7 +187,7 @@ The `\_saveEventInfoToDB()` function will take the _decoded data_ and the _block
 [source,typescript]
 ----
 // [...]
-export class HelloInfoPlugin extends BasePlugin<HelloInfoPluginConfig> {
+export class HelloInfoPlugin extends Plugins.BasePlugin<HelloInfoPluginConfig> {
     // [...]
 	// eslint-disable-next-line @typescript-eslint/no-explicit-any
 	private async _saveEventInfoToDB(parsedData: { senderAddress: Buffer; message: string }, chainHeight: number, counterValue: number): Promise<string> {
@@ -210,7 +210,7 @@ The last step is to add the interval logic to the HelloInfo plugin. Inside the `
 [source,typescript]
 ----
 // [...]
-export class HelloInfoPlugin extends BasePlugin<HelloInfoPluginConfig> {
+export class HelloInfoPlugin extends Plugins.BasePlugin<HelloInfoPluginConfig> {
     // [...]
 	public async load(): Promise<void> {
 		// [...]
