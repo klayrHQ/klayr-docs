@@ -39,8 +39,8 @@ The `Endpoint` class is based on the `BasePluginEndpoint` class, which is availa
 [source,typescript]
 ----
 import {
-    BasePluginEndpoint,
-    PluginEndpointContext,
+    Plugins,
+    Types,
     db as klayrDB,
     cryptography,
 } from 'klayr-sdk';
@@ -48,7 +48,7 @@ import {
     getEventHelloInfo,
 } from './db';
 
-export class Endpoint extends BasePluginEndpoint {
+export class Endpoint extends Plugins.BasePluginEndpoint {
     private _pluginDB!: klayrDB.Database;
 
     // Initialize the database instance here
@@ -70,7 +70,7 @@ The way to do that is to create an instance of the `Endpoint` class inside the `
 // [...]
 import { Endpoint } from './endpoint';
 
-export class HelloInfoPlugin extends BasePlugin<HelloInfoPluginConfig> {
+export class HelloInfoPlugin extends Plugins.BasePlugin<HelloInfoPluginConfig> {
 	// [...]
 
     public endpoint = new Endpoint();
@@ -98,11 +98,11 @@ The `getMessageList()` will have a `messageList` and a `data[]` which will conta
 .hello_client/src/app/plugins/hello_info/endpoint.ts
 [source,typescript]
 ----
-export class Endpoint extends BasePluginEndpoint {
+export class Endpoint extends Plugins.BasePluginEndpoint {
     // [...]
 
     // Returns all Sender Addresses, Hello Messages, and Block Height of the block where the Hello Event was emitted.
-    public async getMessageList(_context: PluginEndpointContext): Promise<unknown[]> {
+    public async getMessageList(_context: Types.PluginEndpointContext): Promise<unknown[]> {
         const data: {
             ID: number;
             senderAddress: string;
