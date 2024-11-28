@@ -44,7 +44,7 @@ With Klayr v6 the default plugins come pre-installed after an application is ini
 [source,json]
 ----
 "dependencies": {
-	"@klayr/framework-faucet-plugin": "0.3.0",
+	"@klayr/faucet-plugin": "0.3.0",
 	// [...]
 },
 ----
@@ -53,7 +53,7 @@ Otherwise to register the Faucet plugin, first install it with NPM:
 
 [source,bash]
 ----
-npm i @klayr/framework-faucet-plugin
+npm i @klayr/faucet-plugin
 ----
 [#plugin]
 
@@ -64,7 +64,7 @@ Now open the `plugins.ts` file of the blockchain client, import the Faucet plugi
 ----
 /* eslint-disable @typescript-eslint/no-empty-function */
 import { Application } from 'klayr-sdk';
-import { FaucetPlugin } from '@klayr/framework-faucet-plugin';
+import { FaucetPlugin } from '@klayr/faucet-plugin';
 
 // @ts-expect-error Unused variable error happens here until at least one module is registered
 export const registerPlugins = (app: Application): void => {
