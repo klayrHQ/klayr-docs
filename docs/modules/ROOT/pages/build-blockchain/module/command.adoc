@@ -7,7 +7,7 @@ Mona Bärenfänger <mona@lightcurve.io>
 :sectnums:
 :docs_sdk: klayr-sdk::
 // URLs
-:url_json_schema: https://json-schema.org/understanding-json-schema/reference/index.html
+:url_json_schema: https://json-schema.org/understanding-json-schema/reference
 :url_json_schema_length: https://json-schema.org/understanding-json-schema/reference/string.html#length
 :url_github_hello_command: https://github.com/KlayrHQ/klayr-sdk-examples/tree/development/tutorials/hello/hello_client/src/app/modules/hello/commands/create_hello_command.ts
 // Project URLs
