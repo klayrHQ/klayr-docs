@@ -57,6 +57,8 @@ macOS::
 * 11.04 (Big Sur)
 * 12.6.1 (Monterey)
 * 13.0 (Ventura)
+* 14.0 (Sonoma)
+* 15.0 (Sequoia)
 --
 =====
 
