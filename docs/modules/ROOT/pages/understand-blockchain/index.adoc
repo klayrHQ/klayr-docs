@@ -238,8 +238,7 @@ Each node inside the network can deploy various kinds of plugins to support thei
 For example, consider a case whereby a node wants to investigate any possible misbehavior in the Klayr network. To achieve this, the node operator must acquire all the blocks' data from the network, save it, and then analyze it to determine if any misbehavior had occurred.
 
 A node manager can write a script to perform the aforementioned task. However, Klayr provides the {url_references_report_misbbehavior_plugin}[Report Misbehavior Plugin^] which listens to blocks' data and reports a node with regard to a generator's misbehavior.
-A node manager can write a script to perform the aforementioned task.
-However, Klayr provides the Report Misbehavior Plugin which listens to blocks' data and reports a node with regard to a generator's misbehavior.
+
 
 To add a new plugin to your application, either reuse an existing plugin from another app or create a new plugin based on the specific requirements of your application.
 
